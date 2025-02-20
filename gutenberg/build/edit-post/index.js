@@ -580,7 +580,6 @@ const getMetaBoxContainer = location => {
 };
 
 ;// ./packages/edit-post/build-module/store/actions.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -1079,7 +1078,6 @@ const toggleFullscreenMode = () => ({
 };
 
 ;// ./packages/edit-post/build-module/store/selectors.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -1900,7 +1898,6 @@ function MetaBoxVisibility({
 }
 
 ;// ./packages/edit-post/build-module/components/meta-boxes/index.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -2096,7 +2093,6 @@ function EnablePanelOption(props) {
 }
 
 ;// ./packages/edit-post/build-module/components/preferences-modal/meta-boxes-section.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -2551,7 +2547,6 @@ function usePaddingAppender(enabled) {
 }
 
 ;// ./packages/edit-post/build-module/components/layout/use-should-iframe.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -2833,7 +2828,7 @@ function MetaBoxesMain() {
   }, setHeightConstraints] = (0,external_wp_element_namespaceObject.useState)(() => ({}));
   // Keeps the resizable area’s size constraints updated taking into account
   // editor notices. The constraints are also used to derive the value for the
-  // aria-valuenow attribute on the seperator.
+  // aria-valuenow attribute on the separator.
   const effectSizeConstraints = (0,external_wp_compose_namespaceObject.useRefEffect)(node => {
     const container = node.closest('.interface-interface-skeleton__content');
     const noticeLists = container.querySelectorAll(':scope > .components-notice-list');

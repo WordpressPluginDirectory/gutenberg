@@ -103,7 +103,6 @@ __webpack_require__.d(actions_namespaceObject, {
 ;// external ["wp","data"]
 const external_wp_data_namespaceObject = window["wp"]["data"];
 ;// ./packages/rich-text/build-module/store/reducer.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -138,7 +137,6 @@ function formatTypes(state = {}, action) {
 }));
 
 ;// ./packages/rich-text/build-module/store/selectors.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -419,7 +417,6 @@ function isFormatEqual(format1, format2) {
 }
 
 ;// ./packages/rich-text/build-module/normalise-formats.js
-/* wp:polyfill */
 /**
  * Internal dependencies
  */
@@ -458,7 +455,6 @@ function normaliseFormats(value) {
 }
 
 ;// ./packages/rich-text/build-module/apply-format.js
-/* wp:polyfill */
 /**
  * Internal dependencies
  */
@@ -588,7 +584,6 @@ const ZWNBSP = '\ufeff';
 ;// external ["wp","escapeHtml"]
 const external_wp_escapeHtml_namespaceObject = window["wp"]["escapeHtml"];
 ;// ./packages/rich-text/build-module/get-active-formats.js
-/* wp:polyfill */
 /** @typedef {import('./types').RichTextValue} RichTextValue */
 /** @typedef {import('./types').RichTextFormatList} RichTextFormatList */
 
@@ -696,7 +691,6 @@ function get_format_type_getFormatType(name) {
 }
 
 ;// ./packages/rich-text/build-module/to-tree.js
-/* wp:polyfill */
 /**
  * Internal dependencies
  */
@@ -987,7 +981,6 @@ function toTree({
 }
 
 ;// ./packages/rich-text/build-module/to-html-string.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -1131,7 +1124,6 @@ function getTextContent({
 }
 
 ;// ./packages/rich-text/build-module/create.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -1746,7 +1738,6 @@ function getAttributes({
 }
 
 ;// ./packages/rich-text/build-module/concat.js
-/* wp:polyfill */
 /**
  * Internal dependencies
  */
@@ -1785,7 +1776,6 @@ function concat(...values) {
 }
 
 ;// ./packages/rich-text/build-module/get-active-format.js
-/* wp:polyfill */
 /**
  * Internal dependencies
  */
@@ -1885,7 +1875,6 @@ function isEmpty({
 }
 
 ;// ./packages/rich-text/build-module/join.js
-/* wp:polyfill */
 /**
  * Internal dependencies
  */
@@ -1911,14 +1900,14 @@ function join(values, separator = '') {
       text: separator
     });
   }
-  return normaliseFormats(values.reduce((accumlator, {
+  return normaliseFormats(values.reduce((accumulator, {
     formats,
     replacements,
     text
   }) => ({
-    formats: accumlator.formats.concat(separator.formats, formats),
-    replacements: accumlator.replacements.concat(separator.replacements, replacements),
-    text: accumlator.text + separator.text + text
+    formats: accumulator.formats.concat(separator.formats, formats),
+    replacements: accumulator.replacements.concat(separator.replacements, replacements),
+    text: accumulator.text + separator.text + text
   })));
 }
 
@@ -2014,7 +2003,6 @@ function registerFormatType(name, settings) {
 }
 
 ;// ./packages/rich-text/build-module/remove-format.js
-/* wp:polyfill */
 /**
  * Internal dependencies
  */
@@ -2285,7 +2273,6 @@ function slice(value, startIndex = value.start, endIndex = value.end) {
 }
 
 ;// ./packages/rich-text/build-module/split.js
-/* wp:polyfill */
 /**
  * Internal dependencies
  */
@@ -2850,7 +2837,7 @@ const external_wp_compose_namespaceObject = window["wp"]["compose"];
 function getFormatElement(range, editableContentElement, tagName, className) {
   let element = range.startContainer;
 
-  // Even if the active format is defined, the actualy DOM range's start
+  // Even if the active format is defined, the actually DOM range's start
   // container may be outside of the format's DOM element:
   // `a‸<strong>b</strong>` (DOM) while visually it's `a<strong>‸b</strong>`.
   // So at a given selection index, start with the deepest format DOM element.
@@ -3203,7 +3190,6 @@ function useBoundaryStyle({
 ;// external ["wp","keycodes"]
 const external_wp_keycodes_namespaceObject = window["wp"]["keycodes"];
 ;// ./packages/rich-text/build-module/component/event-listeners/format-boundaries.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -3350,7 +3336,6 @@ const EMPTY_ACTIVE_FORMATS = [];
 });
 
 ;// ./packages/rich-text/build-module/update-formats.js
-/* wp:polyfill */
 /**
  * Internal dependencies
  */
@@ -3741,7 +3726,6 @@ function preventFocusCapture() {
 }
 
 ;// ./packages/rich-text/build-module/component/event-listeners/index.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -3926,7 +3910,7 @@ function useRichText({
   }
   const didMountRef = (0,external_wp_element_namespaceObject.useRef)(false);
 
-  // Value updates must happen synchonously to avoid overwriting newer values.
+  // Value updates must happen synchronously to avoid overwriting newer values.
   (0,external_wp_element_namespaceObject.useLayoutEffect)(() => {
     if (didMountRef.current && value !== _valueRef.current) {
       applyFromProps();
@@ -3934,7 +3918,7 @@ function useRichText({
     }
   }, [value]);
 
-  // Value updates must happen synchonously to avoid overwriting newer values.
+  // Value updates must happen synchronously to avoid overwriting newer values.
   (0,external_wp_element_namespaceObject.useLayoutEffect)(() => {
     if (!hadSelectionUpdateRef.current) {
       return;

@@ -6817,7 +6817,6 @@ const {
 } = (0,external_wp_privateApis_namespaceObject.__dangerousOptInToUnstableAPIsOnlyForCoreModules)('I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.', '@wordpress/blocks');
 
 ;// ./packages/blocks/build-module/api/registration.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -7703,7 +7702,6 @@ function getBlockBindingsSources() {
 }
 
 ;// ./packages/blocks/build-module/api/utils.js
-/* wp:polyfill */
 /**
  * External dependencies
  */
@@ -8052,7 +8050,6 @@ function omit(object, keys) {
 }
 
 ;// ./packages/blocks/build-module/store/reducer.js
-/* wp:polyfill */
 /**
  * External dependencies
  */
@@ -8434,7 +8431,6 @@ function blockBindingsSources(state = {}, action) {
 var remove_accents = __webpack_require__(9681);
 var remove_accents_default = /*#__PURE__*/__webpack_require__.n(remove_accents);
 ;// ./packages/blocks/build-module/store/utils.js
-/* wp:polyfill */
 /**
  * Helper util to return a value from a certain path of the object.
  * Path is specified as either:
@@ -8479,7 +8475,6 @@ function matchesAttributes(blockAttributes, variationAttributes) {
 }
 
 ;// ./packages/blocks/build-module/store/private-selectors.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -8657,7 +8652,6 @@ const hasContentRoleAttribute = (state, blockTypeName) => {
 };
 
 ;// ./packages/blocks/build-module/store/selectors.js
-/* wp:polyfill */
 /**
  * External dependencies
  */
@@ -9482,7 +9476,6 @@ var react_is = __webpack_require__(4398);
 ;// external ["wp","hooks"]
 const external_wp_hooks_namespaceObject = window["wp"]["hooks"];
 ;// ./packages/blocks/build-module/store/process-block-type.js
-/* wp:polyfill */
 /**
  * External dependencies
  */
@@ -9972,7 +9965,7 @@ function removeBlockCollection(namespace) {
 
 /**
  * Add bootstrapped block type metadata to the store. These metadata usually come from
- * the `block.json` file and are either statically boostrapped from the server, or
+ * the `block.json` file and are either statically bootstrapped from the server, or
  * passed as the `metadata` parameter to the `registerBlockType` function.
  *
  * @param {string}      name      Block name.
@@ -10163,7 +10156,6 @@ function v4(options, buf, offset) {
 
 /* harmony default export */ const esm_browser_v4 = (v4);
 ;// ./packages/blocks/build-module/api/factory.js
-/* wp:polyfill */
 /**
  * External dependencies
  */
@@ -10628,7 +10620,6 @@ const external_wp_autop_namespaceObject = window["wp"]["autop"];
 const external_wp_isShallowEqual_namespaceObject = window["wp"]["isShallowEqual"];
 var external_wp_isShallowEqual_default = /*#__PURE__*/__webpack_require__.n(external_wp_isShallowEqual_namespaceObject);
 ;// ./packages/blocks/build-module/api/parser/serialize-raw-block.js
-/* wp:polyfill */
 /**
  * Internal dependencies
  */
@@ -10681,7 +10672,6 @@ function serializeRawBlock(rawBlock, options = {}) {
 ;// external "ReactJSXRuntime"
 const external_ReactJSXRuntime_namespaceObject = window["ReactJSXRuntime"];
 ;// ./packages/blocks/build-module/api/serializer.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -11748,7 +11738,6 @@ function createQueuedLogger() {
 }
 
 ;// ./packages/blocks/build-module/api/validation/index.js
-/* wp:polyfill */
 /**
  * External dependencies
  */
@@ -11856,7 +11845,7 @@ const TEXT_NORMALIZATIONS = [identity, getTextWithCollapsedWhitespace];
  * "The ampersand must be followed by one of the names given in the named
  * character references section, using the same case."
  *
- * Tested aginst "12.5 Named character references":
+ * Tested against "12.5 Named character references":
  *
  * ```
  * const references = Array.from( document.querySelectorAll(
@@ -11911,7 +11900,7 @@ function isValidCharacterReference(text) {
 }
 
 /**
- * Subsitute EntityParser class for `simple-html-tokenizer` which uses the
+ * Substitute EntityParser class for `simple-html-tokenizer` which uses the
  * implementation of `decodeEntities` from `html-entities`, in order to avoid
  * bundling a massive named character reference.
  *
@@ -13235,7 +13224,6 @@ function children_matcher(selector) {
 });
 
 ;// ./packages/blocks/build-module/api/parser/get-block-attributes.js
-/* wp:polyfill */
 /**
  * External dependencies
  */
@@ -13474,7 +13462,6 @@ function getBlockAttributes(blockTypeOrName, innerHTML, attributes = {}) {
 }
 
 ;// ./packages/blocks/build-module/api/parser/fix-custom-classname.js
-/* wp:polyfill */
 /**
  * Internal dependencies
  */
@@ -13540,10 +13527,62 @@ function fixCustomClassname(blockAttributes, blockType, innerHTML) {
   return modifiedBlockAttributes;
 }
 
+;// ./packages/blocks/build-module/api/parser/fix-aria-label.js
+/**
+ * Internal dependencies
+ */
+
+
+const ARIA_LABEL_ATTR_SCHEMA = {
+  type: 'string',
+  source: 'attribute',
+  selector: '[data-aria-label] > *',
+  attribute: 'aria-label'
+};
+
+/**
+ * Given an HTML string, returns the aria-label attribute assigned to
+ * the root element in the markup.
+ *
+ * @param {string} innerHTML Markup string from which to extract the aria-label.
+ *
+ * @return {string} The aria-label assigned to the root element.
+ */
+function getHTMLRootElementAriaLabel(innerHTML) {
+  const parsed = parseWithAttributeSchema(`<div data-aria-label>${innerHTML}</div>`, ARIA_LABEL_ATTR_SCHEMA);
+  return parsed;
+}
+
+/**
+ * Given a parsed set of block attributes, if the block supports ariaLabel
+ * and an aria-label attribute is found, the aria-label attribute is assigned
+ * to the block attributes.
+ *
+ * @param {Object} blockAttributes Original block attributes.
+ * @param {Object} blockType       Block type settings.
+ * @param {string} innerHTML       Original block markup.
+ *
+ * @return {Object} Filtered block attributes.
+ */
+function fixAriaLabel(blockAttributes, blockType, innerHTML) {
+  if (!hasBlockSupport(blockType, 'ariaLabel', false)) {
+    return blockAttributes;
+  }
+  const modifiedBlockAttributes = {
+    ...blockAttributes
+  };
+  const ariaLabel = getHTMLRootElementAriaLabel(innerHTML);
+  if (ariaLabel) {
+    modifiedBlockAttributes.ariaLabel = ariaLabel;
+  }
+  return modifiedBlockAttributes;
+}
+
 ;// ./packages/blocks/build-module/api/parser/apply-built-in-validation-fixes.js
 /**
  * Internal dependencies
  */
+
 
 
 /**
@@ -13558,7 +13597,16 @@ function fixCustomClassname(blockAttributes, blockType, innerHTML) {
  * @return {WPBlock} Fixed block object
  */
 function applyBuiltInValidationFixes(block, blockType) {
-  const updatedBlockAttributes = fixCustomClassname(block.attributes, blockType, block.originalContent);
+  const {
+    attributes,
+    originalContent
+  } = block;
+  let updatedBlockAttributes = attributes;
+
+  // Fix block invalidation for className attribute.
+  updatedBlockAttributes = fixCustomClassname(attributes, blockType, originalContent);
+  // Fix block invalidation for ariaLabel attribute.
+  updatedBlockAttributes = fixAriaLabel(updatedBlockAttributes, blockType, originalContent);
   return {
     ...block,
     attributes: updatedBlockAttributes
@@ -13677,7 +13725,6 @@ function applyBlockDeprecatedVersions(block, rawBlock, blockType) {
 }
 
 ;// ./packages/blocks/build-module/api/parser/index.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -13869,7 +13916,7 @@ function parseRawBlock(rawBlock, options) {
   // Try finding the type for known block name.
   let blockType = getBlockType(normalizedBlock.blockName);
 
-  // If not blockType is found for the specified name, fallback to the "unregistedBlockType".
+  // If not blockType is found for the specified name, fallback to the "unregisteredBlockType".
   if (!blockType) {
     normalizedBlock = createMissingBlockType(normalizedBlock);
     blockType = getBlockType(normalizedBlock.blockName);
@@ -13959,7 +14006,6 @@ function parser_parse(content, options) {
 }
 
 ;// ./packages/blocks/build-module/api/raw-handling/get-raw-transforms.js
-/* wp:polyfill */
 /**
  * Internal dependencies
  */
@@ -13976,7 +14022,6 @@ function getRawTransforms() {
 }
 
 ;// ./packages/blocks/build-module/api/raw-handling/html-to-blocks.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -14095,7 +14140,6 @@ function normaliseBlocks(HTML, options = {}) {
 }
 
 ;// ./packages/blocks/build-module/api/raw-handling/special-comment-converter.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -14194,7 +14238,6 @@ function createNextpage(doc) {
 }
 
 ;// ./packages/blocks/build-module/api/raw-handling/list-reducer.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -14357,7 +14400,6 @@ function figureContentReducer(node, doc, schema) {
 ;// external ["wp","shortcode"]
 const external_wp_shortcode_namespaceObject = window["wp"]["shortcode"];
 ;// ./packages/blocks/build-module/api/raw-handling/shortcode-converter.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -14450,7 +14492,6 @@ function segmentHTMLToShortcodeBlock(HTML, lastIndex = 0, excludedBlockNames = [
 /* harmony default export */ const shortcode_converter = (segmentHTMLToShortcodeBlock);
 
 ;// ./packages/blocks/build-module/api/raw-handling/utils.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -14554,7 +14595,7 @@ function getBlockContentSchemaFromTransforms(transforms, context) {
 
 /**
  * Gets the block content schema, which is extracted and merged from all
- * registered blocks with raw transfroms.
+ * registered blocks with raw transforms.
  *
  * @param {string} context Set to "paste" when in paste context, where the
  *                         schema is more strict.
@@ -14636,7 +14677,6 @@ function getSibling(node, which) {
 }
 
 ;// ./packages/blocks/build-module/api/raw-handling/index.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -14736,7 +14776,6 @@ function commentRemover(node) {
 }
 
 ;// ./packages/blocks/build-module/api/raw-handling/is-inline-content.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -14844,7 +14883,6 @@ function headRemover(node) {
 }
 
 ;// ./packages/blocks/build-module/api/raw-handling/ms-list-ignore.js
-/* wp:polyfill */
 /**
  * Looks for comments, and removes them.
  *
@@ -15127,7 +15165,7 @@ function htmlFormattingRemover(node) {
   }
 
   // Remove the trailing space if the text element is at the end of a block,
-  // is succeded by a line break element, or has a space in the next text
+  // is succeeded by a line break element, or has a space in the next text
   // node.
   if (newData[newData.length - 1] === ' ') {
     const nextSibling = getSibling(node, 'next');
@@ -15205,7 +15243,6 @@ function slackParagraphCorrector(node) {
 }
 
 ;// ./packages/blocks/build-module/api/raw-handling/paste-handler.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -15484,7 +15521,6 @@ function categories_updateCategory(slug, category) {
 }
 
 ;// ./packages/blocks/build-module/api/templates.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -15596,7 +15632,7 @@ function synchronizeBlocksWithTemplate(blocks = [], template) {
 //
 // This has multiple practical implications: when parsing, we can safely dispose
 // of any block boundary found within a block from the innerHTML property when
-// transfering to state. Not doing so would have a compounding effect on memory
+// transferring to state. Not doing so would have a compounding effect on memory
 // and uncertainty over the source of truth. This can be illustrated in how,
 // given a tree of `n` nested blocks, the entry node would have to contain the
 // actual content of each block while each subsequent block node in the state
@@ -15612,7 +15648,7 @@ function synchronizeBlocksWithTemplate(blocks = [], template) {
 
 // While block transformations account for a specific surface of the API, there
 // are also raw transformations which handle arbitrary sources not made out of
-// blocks but producing block basaed on various heursitics. This includes
+// blocks but producing block basaed on various heuristics. This includes
 // pasting rich text or HTML data.
 
 

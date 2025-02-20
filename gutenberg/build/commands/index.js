@@ -3182,7 +3182,7 @@ const external_wp_keyboardShortcuts_namespaceObject = window["wp"]["keyboardShor
  * Return an SVG icon.
  *
  * @param {IconProps}                                 props icon is the SVG component to render
- *                                                          size is a number specifiying the icon size in pixels
+ *                                                          size is a number specifying the icon size in pixels
  *                                                          Other props will be passed to wrapped SVG component
  * @param {import('react').ForwardedRef<HTMLElement>} ref   The forwarded ref to the SVG element.
  *
@@ -3444,7 +3444,6 @@ function actions_close() {
 }
 
 ;// ./packages/commands/build-module/store/selectors.js
-/* wp:polyfill */
 /**
  * WordPress dependencies
  */
@@ -3565,7 +3564,6 @@ const store = (0,external_wp_data_namespaceObject.createReduxStore)(STORE_NAME, 
 unlock(store).registerPrivateActions(private_actions_namespaceObject);
 
 ;// ./packages/commands/build-module/components/command-menu.js
-/* wp:polyfill */
 /**
  * External dependencies
  */
