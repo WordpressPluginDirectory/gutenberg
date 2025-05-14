@@ -2559,6 +2559,7 @@ function usePaddingAppender(enabled) {
  * Internal dependencies
  */
 
+const isGutenbergPlugin =  true ? true : 0;
 function useShouldIframe() {
   return (0,external_wp_data_namespaceObject.useSelect)(select => {
     const {
@@ -2567,17 +2568,16 @@ function useShouldIframe() {
       getDeviceType
     } = select(external_wp_editor_namespaceObject.store);
     return (
-      // If the theme is block based, we ALWAYS use the iframe for
-      // consistency across the post and site editor. The iframe was
-      // introduced long before the sited editor and block themes, so
-      // these themes are expecting it.
-      getEditorSettings().__unstableIsBlockBasedTheme ||
-      // For classic themes, we also still want to iframe all the special
+      // If the theme is block based and the Gutenberg plugin is active,
+      // we ALWAYS use the iframe for consistency across the post and site
+      // editor.
+      isGutenbergPlugin && getEditorSettings().__unstableIsBlockBasedTheme ||
+      // We also still want to iframe all the special
       // editor features and modes such as device previews, zoom out, and
       // template/pattern editing.
       getDeviceType() !== 'Desktop' || ['wp_template', 'wp_block'].includes(getCurrentPostType()) || unlock(select(external_wp_blockEditor_namespaceObject.store)).isZoomOut() ||
-      // Finally, still iframe the editor for classic themes if all blocks
-      // are v3 (which means they are marked as iframe-compatible).
+      // Finally, still iframe the editor if all blocks are v3 (which means
+      // they are marked as iframe-compatible).
       select(external_wp_blocks_namespaceObject.store).getBlockTypes().every(type => type.apiVersion >= 3)
     );
   }, []);
@@ -2807,7 +2807,14 @@ function useEditorStyles(...additionalStyles) {
     return baseStyles;
   }, [editorSettings.defaultEditorStyles, editorSettings.disableLayoutStyles, editorSettings.styles, hasThemeStyleSupport, addedStyles]);
 }
-function MetaBoxesMain() {
+
+/**
+ * @param {Object}  props
+ * @param {boolean} props.isLegacy True when the editor canvas is not in an iframe.
+ */
+function MetaBoxesMain({
+  isLegacy
+}) {
   const [isOpen, openHeight, hasAnyVisible] = (0,external_wp_data_namespaceObject.useSelect)(select => {
     const {
       get
@@ -2877,15 +2884,19 @@ function MetaBoxesMain() {
     return;
   }
   const contents = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)("div", {
+    className: dist_clsx(
     // The class name 'edit-post-layout__metaboxes' is retained because some plugins use it.
-    className: "edit-post-layout__metaboxes edit-post-meta-boxes-main__liner",
-    hidden: isShort && !isOpen,
+    'edit-post-layout__metaboxes', !isLegacy && 'edit-post-meta-boxes-main__liner'),
+    hidden: !isLegacy && isShort && !isOpen,
     children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(MetaBoxes, {
       location: "normal"
     }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(MetaBoxes, {
       location: "advanced"
     })]
   });
+  if (isLegacy) {
+    return contents;
+  }
   const isAutoHeight = openHeight === undefined;
   let usedMax = '50%'; // Approximation before max has a value.
   if (max !== undefined) {
@@ -3033,7 +3044,8 @@ function Layout({
     showMetaBoxes,
     isWelcomeGuideVisible,
     templateId,
-    enablePaddingAppender
+    enablePaddingAppender,
+    isDevicePreview
   } = (0,external_wp_data_namespaceObject.useSelect)(select => {
     var _getPostType$viewable;
     const {
@@ -3061,7 +3073,8 @@ function Layout({
     const {
       getEditorMode,
       getRenderingMode,
-      getDefaultRenderingMode
+      getDefaultRenderingMode,
+      getDeviceType
     } = unlock(select(external_wp_editor_namespaceObject.store));
     const isRenderingPostOnly = getRenderingMode() === 'post-only';
     const isNotDesignPostType = !DESIGN_POST_TYPES.includes(currentPostType);
@@ -3079,7 +3092,8 @@ function Layout({
       showMetaBoxes: isNotDesignPostType && !isZoomOut() || isDirectlyEditingPattern,
       isWelcomeGuideVisible: isFeatureActive('welcomeGuide'),
       templateId: supportsTemplateMode && isViewable && canViewTemplate && !isEditingTemplate ? _templateId : null,
-      enablePaddingAppender: !isZoomOut() && isRenderingPostOnly && isNotDesignPostType
+      enablePaddingAppender: !isZoomOut() && isRenderingPostOnly && isNotDesignPostType,
+      isDevicePreview: getDeviceType() !== 'Desktop'
     };
   }, [currentPostType, currentPostId, isEditingTemplate, settings.supportsTemplateMode, onNavigateToPreviousEntityRecord]);
   useMetaBoxInitialization(hasActiveMetaboxes && hasResolvedMode);
@@ -3185,7 +3199,9 @@ function Layout({
           extraSidebarPanels: showMetaBoxes && /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(MetaBoxes, {
             location: "side"
           }),
-          extraContent: !isDistractionFree && showMetaBoxes && /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(MetaBoxesMain, {}),
+          extraContent: !isDistractionFree && showMetaBoxes && /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(MetaBoxesMain, {
+            isLegacy: !shouldIframe || isDevicePreview
+          }),
           children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_editor_namespaceObject.PostLockedModal, {}), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(EditorInitialization, {}), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(FullscreenMode, {
             isActive: isFullscreenActive
           }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(browser_url, {}), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_editor_namespaceObject.UnsavedChangesWarning, {}), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_editor_namespaceObject.AutosaveMonitor, {}), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_editor_namespaceObject.LocalAutosaveMonitor, {}), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(keyboard_shortcuts, {}), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_editor_namespaceObject.EditorKeyboardShortcutsRegister, {}), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(BlockKeyboardShortcuts, {}), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(InitPatternModal, {}), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_plugins_namespaceObject.PluginArea, {

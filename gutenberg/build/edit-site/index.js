@@ -26999,7 +26999,8 @@ function getOverviewBlockExamples(colors) {
   const typographyBlockExamples = [];
   if ((0,external_wp_blocks_namespaceObject.getBlockType)('core/heading')) {
     const headingBlock = (0,external_wp_blocks_namespaceObject.createBlock)('core/heading', {
-      content: (0,external_wp_i18n_namespaceObject.__)(`AaBbCcDdEeFfGgHhiiJjKkLIMmNnOoPpQakRrssTtUuVVWwXxxYyZzOl23356789X{(…)},2!*&:/A@HELFO™`),
+      // translators: Typography example. Your local alphabet, numbers and some common special characters.
+      content: (0,external_wp_i18n_namespaceObject.__)(`AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789X{(…)},.-<>?!*&:/A@HELFO™©`),
       level: 1
     });
     typographyBlockExamples.push(headingBlock);
@@ -29016,10 +29017,19 @@ const external_wp_blob_namespaceObject = window["wp"]["blob"];
 
 
 
+
 function SiteExport() {
+  const canExport = (0,external_wp_data_namespaceObject.useSelect)(select => {
+    var _select$getCurrentThe;
+    const targetHints = (_select$getCurrentThe = select(external_wp_coreData_namespaceObject.store).getCurrentTheme()?._links?.['wp:export-theme']?.[0]?.targetHints) !== null && _select$getCurrentThe !== void 0 ? _select$getCurrentThe : {};
+    return !!targetHints.allow?.includes('GET');
+  }, []);
   const {
     createErrorNotice
   } = (0,external_wp_data_namespaceObject.useDispatch)(external_wp_notices_namespaceObject.store);
+  if (!canExport) {
+    return null;
+  }
   async function handleExport() {
     try {
       const response = await external_wp_apiFetch_default()({
@@ -29079,8 +29089,6 @@ function WelcomeGuideMenuItem() {
  */
 
 
-
-
 /**
  * Internal dependencies
  */
@@ -29093,12 +29101,9 @@ const {
   PreferencesModal
 } = unlock(external_wp_editor_namespaceObject.privateApis);
 function MoreMenu() {
-  const isBlockBasedTheme = (0,external_wp_data_namespaceObject.useSelect)(select => {
-    return select(external_wp_coreData_namespaceObject.store).getCurrentTheme().is_block_theme;
-  }, []);
   return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_ReactJSXRuntime_namespaceObject.Fragment, {
     children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(ToolsMoreMenuGroup, {
-      children: [isBlockBasedTheme && /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(SiteExport, {}), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(WelcomeGuideMenuItem, {})]
+      children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(SiteExport, {}), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(WelcomeGuideMenuItem, {})]
     }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(PreferencesModal, {})]
   });
 }
@@ -30331,7 +30336,8 @@ function NavigationMenuContent({
       rootClientId: listViewRootClientId,
       onSelect: offCanvasOnselect,
       blockSettingsMenu: LeafMoreMenu,
-      showAppender: false
+      showAppender: false,
+      isExpanded: true
     }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)("div", {
       className: "edit-site-sidebar-navigation-screen-navigation-menus__helper-block-editor",
       children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_blockEditor_namespaceObject.BlockList, {})
@@ -38181,12 +38187,13 @@ function ActionModal({
   items,
   closeModal
 }) {
+  var _action$modalFocusOnM;
   const label = typeof action.label === 'string' ? action.label : action.label(items);
   return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.Modal, {
     title: action.modalHeader || label,
     __experimentalHideHeader: !!action.hideModalHeader,
     onRequestClose: closeModal,
-    focusOnMount: "firstContentElement",
+    focusOnMount: (_action$modalFocusOnM = action.modalFocusOnMount) !== null && _action$modalFocusOnM !== void 0 ? _action$modalFocusOnM : true,
     size: action.modalSize || 'medium',
     overlayClassName: `dataviews-action-modal dataviews-action-modal__${dataviews_item_actions_kebabCase(action.id)}`,
     children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(action.RenderModal, {
@@ -43726,7 +43733,7 @@ function AddCustomGenericTemplateModalContent({
     setIsBusy(true);
     try {
       await createTemplate({
-        slug: 'wp-custom-template-' + paramCase(title || defaultTitle),
+        slug: paramCase(title || defaultTitle) || 'wp-custom-template',
         title: title || defaultTitle
       }, false);
     } finally {
@@ -45175,8 +45182,6 @@ function DataViewsSidebarContent({
 
 
 const drawerRight = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.SVG, {
-  width: "24",
-  height: "24",
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 24 24",
   children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.Path, {

@@ -380,7 +380,174 @@ module.exports.strategies = {
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-var GradientParser = {};
+var GradientParser = (GradientParser || {});
+
+GradientParser.stringify = (function() {
+
+  var visitor = {
+
+    'visit_linear-gradient': function(node) {
+      return visitor.visit_gradient(node);
+    },
+
+    'visit_repeating-linear-gradient': function(node) {
+      return visitor.visit_gradient(node);
+    },
+
+    'visit_radial-gradient': function(node) {
+      return visitor.visit_gradient(node);
+    },
+
+    'visit_repeating-radial-gradient': function(node) {
+      return visitor.visit_gradient(node);
+    },
+
+    'visit_gradient': function(node) {
+      var orientation = visitor.visit(node.orientation);
+      if (orientation) {
+        orientation += ', ';
+      }
+
+      return node.type + '(' + orientation + visitor.visit(node.colorStops) + ')';
+    },
+
+    'visit_shape': function(node) {
+      var result = node.value,
+          at = visitor.visit(node.at),
+          style = visitor.visit(node.style);
+
+      if (style) {
+        result += ' ' + style;
+      }
+
+      if (at) {
+        result += ' at ' + at;
+      }
+
+      return result;
+    },
+
+    'visit_default-radial': function(node) {
+      var result = '',
+          at = visitor.visit(node.at);
+
+      if (at) {
+        result += at;
+      }
+      return result;
+    },
+
+    'visit_extent-keyword': function(node) {
+      var result = node.value,
+          at = visitor.visit(node.at);
+
+      if (at) {
+        result += ' at ' + at;
+      }
+
+      return result;
+    },
+
+    'visit_position-keyword': function(node) {
+      return node.value;
+    },
+
+    'visit_position': function(node) {
+      return visitor.visit(node.value.x) + ' ' + visitor.visit(node.value.y);
+    },
+
+    'visit_%': function(node) {
+      return node.value + '%';
+    },
+
+    'visit_em': function(node) {
+      return node.value + 'em';
+    },
+
+    'visit_px': function(node) {
+      return node.value + 'px';
+    },
+
+    'visit_literal': function(node) {
+      return visitor.visit_color(node.value, node);
+    },
+
+    'visit_hex': function(node) {
+      return visitor.visit_color('#' + node.value, node);
+    },
+
+    'visit_rgb': function(node) {
+      return visitor.visit_color('rgb(' + node.value.join(', ') + ')', node);
+    },
+
+    'visit_rgba': function(node) {
+      return visitor.visit_color('rgba(' + node.value.join(', ') + ')', node);
+    },
+
+    'visit_color': function(resultColor, node) {
+      var result = resultColor,
+          length = visitor.visit(node.length);
+
+      if (length) {
+        result += ' ' + length;
+      }
+      return result;
+    },
+
+    'visit_angular': function(node) {
+      return node.value + 'deg';
+    },
+
+    'visit_directional': function(node) {
+      return 'to ' + node.value;
+    },
+
+    'visit_array': function(elements) {
+      var result = '',
+          size = elements.length;
+
+      elements.forEach(function(element, i) {
+        result += visitor.visit(element);
+        if (i < size - 1) {
+          result += ', ';
+        }
+      });
+
+      return result;
+    },
+
+    'visit': function(element) {
+      if (!element) {
+        return '';
+      }
+      var result = '';
+
+      if (element instanceof Array) {
+        return visitor.visit_array(element, result);
+      } else if (element.type) {
+        var nodeVisitor = visitor['visit_' + element.type];
+        if (nodeVisitor) {
+          return nodeVisitor(element);
+        } else {
+          throw Error('Missing visitor visit_' + element.type);
+        }
+      } else {
+        throw Error('Invalid node.');
+      }
+    }
+
+  };
+
+  return function(root) {
+    return visitor.visit(root);
+  };
+})();
+
+// Copyright (c) 2014 Rafael Caricio. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+var GradientParser = (GradientParser || {});
 
 GradientParser.parse = (function() {
 
@@ -476,7 +643,7 @@ GradientParser.parse = (function() {
         error('Missing (');
       }
 
-      result = callback(captures);
+      var result = callback(captures);
 
       if (!scan(tokens.endCall)) {
         error('Missing )');
@@ -529,12 +696,21 @@ GradientParser.parse = (function() {
     if (radialType) {
       radialType.at = matchAtPosition();
     } else {
-      var defaultPosition = matchPositioning();
-      if (defaultPosition) {
-        radialType = {
-          type: 'default-radial',
-          at: defaultPosition
-        };
+      var extent = matchExtentKeyword();
+      if (extent) {
+        radialType = extent;
+        var positionAt = matchAtPosition();
+        if (positionAt) {
+          radialType.at = positionAt;
+        }
+      } else {
+        var defaultPosition = matchPositioning();
+        if (defaultPosition) {
+          radialType = {
+            type: 'default-radial',
+            at: defaultPosition
+          };
+        }
       }
     }
 
@@ -714,7 +890,8 @@ GradientParser.parse = (function() {
   };
 })();
 
-exports.parse = (GradientParser || {}).parse;
+exports.parse = GradientParser.parse;
+exports.stringify = GradientParser.stringify;
 
 
 /***/ }),
@@ -34225,6 +34402,13 @@ function overlayMiddlewares() {
 
 const SLOT_NAME = 'Popover';
 
+/**
+ * Virtual padding to account for overflow boundaries.
+ *
+ * @type {number}
+ */
+const OVERFLOW_PADDING = 8;
+
 // An SVG displaying a triangle facing down, filled with a solid
 // color and bordered in such a way to create an arrow-like effect.
 // Keeping the SVG's viewbox squared simplify the arrow positioning
@@ -34335,6 +34519,7 @@ const UnforwardedPopover = (props, forwardedRef) => {
   const hasArrow = !isExpanded && !noArrow;
   const normalizedPlacementFromProps = position ? positionToPlacement(position) : placementProp;
   const middleware = [...(placementProp === 'overlay' ? overlayMiddlewares() : []), offset(offsetProp), computedFlipProp && floating_ui_dom_flip(), computedResizeProp && floating_ui_dom_size({
+    padding: OVERFLOW_PADDING,
     apply(sizeProps) {
       var _refs$floating$curren;
       const {
@@ -34348,7 +34533,7 @@ const UnforwardedPopover = (props, forwardedRef) => {
 
       // Reduce the height of the popover to the available space.
       Object.assign(firstElementChild.style, {
-        maxHeight: `${sizeProps.availableHeight}px`,
+        maxHeight: `${Math.max(0, sizeProps.availableHeight)}px`,
         overflow: 'auto'
       });
     }
@@ -34522,6 +34707,18 @@ const UnforwardedPopover = (props, forwardedRef) => {
   });
 };
 
+// Export the PopoverSlot individually to allow typescript to pick the types up.
+const PopoverSlot = (0,external_wp_element_namespaceObject.forwardRef)(({
+  name = SLOT_NAME
+}, ref) => {
+  return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(slot_fill_Slot, {
+    bubblesVirtually: true,
+    name: name,
+    className: "popover-slot",
+    ref: ref
+  });
+});
+
 /**
  * `Popover` renders its content in a floating modal. If no explicit anchor is passed via props, it anchors to its parent element by default.
  *
@@ -34545,22 +34742,22 @@ const UnforwardedPopover = (props, forwardedRef) => {
  * ```
  *
  */
-const popover_Popover = contextConnect(UnforwardedPopover, 'Popover');
-function PopoverSlot({
-  name = SLOT_NAME
-}, ref) {
-  return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(slot_fill_Slot, {
-    bubblesVirtually: true,
-    name: name,
-    className: "popover-slot",
-    ref: ref
-  });
-}
-
-// @ts-expect-error For Legacy Reasons
-popover_Popover.Slot = (0,external_wp_element_namespaceObject.forwardRef)(PopoverSlot);
-// @ts-expect-error For Legacy Reasons
-popover_Popover.__unstableSlotNameProvider = slotNameContext.Provider;
+const popover_Popover = Object.assign(contextConnect(UnforwardedPopover, 'Popover'), {
+  /**
+   * Renders a slot that is used internally by Popover for rendering content.
+   */
+  Slot: Object.assign(PopoverSlot, {
+    displayName: 'Popover.Slot'
+  }),
+  /**
+   * Provides a context to manage popover slot names.
+   *
+   * This is marked as unstable and should not be used directly.
+   */
+  __unstableSlotNameProvider: Object.assign(slotNameContext.Provider, {
+    displayName: 'Popover.__unstableSlotNameProvider'
+  })
+});
 /* harmony default export */ const popover = (popover_Popover);
 
 ;// ./packages/components/build-module/autocomplete/autocompleter-ui.js
@@ -36094,7 +36291,7 @@ function UnconnectedToggleGroupControl(props, forwardedRef) {
   const [selectedElement, setSelectedElement] = (0,external_wp_element_namespaceObject.useState)();
   const [controlElement, setControlElement] = (0,external_wp_element_namespaceObject.useState)();
   const refs = (0,external_wp_compose_namespaceObject.useMergeRefs)([setControlElement, forwardedRef]);
-  const selectedRect = useTrackElementOffsetRect(value || value === 0 ? selectedElement : undefined);
+  const selectedRect = useTrackElementOffsetRect(value !== null && value !== undefined ? selectedElement : undefined);
   useAnimatedOffsetRect(controlElement, selectedRect, {
     prefix: 'selected',
     dataAttribute: 'indicator-animated',
@@ -40377,15 +40574,16 @@ const useCustomUnits = ({
   defaultValues
 }) => {
   const customUnitsToReturn = filterUnitsWithSettings(availableUnits, units);
-  if (defaultValues) {
-    customUnitsToReturn.forEach((unit, i) => {
-      if (defaultValues[unit.value]) {
-        const [parsedDefaultValue] = parseQuantityAndUnitFromRawValue(defaultValues[unit.value]);
-        customUnitsToReturn[i].default = parsedDefaultValue;
-      }
-    });
+  if (!defaultValues) {
+    return customUnitsToReturn;
   }
-  return customUnitsToReturn;
+  return customUnitsToReturn.map(unit => {
+    const [defaultValue] = defaultValues[unit.value] ? parseQuantityAndUnitFromRawValue(defaultValues[unit.value]) : [];
+    return {
+      ...unit,
+      default: defaultValue
+    };
+  });
 };
 
 /**
@@ -44324,7 +44522,7 @@ const item =  true ? {
   styles: "box-sizing:border-box;width:100%;display:block;margin:0;color:inherit"
 } : 0;
 const bordered = /*#__PURE__*/emotion_react_browser_esm_css("border:1px solid ", config_values.surfaceBorderColor, ";" + ( true ? "" : 0),  true ? "" : 0);
-const separated = /*#__PURE__*/emotion_react_browser_esm_css(">*:not( marquee )>*{border-bottom:1px solid ", config_values.surfaceBorderColor, ";}>*:last-of-type>*:not( :focus ){border-bottom-color:transparent;}" + ( true ? "" : 0),  true ? "" : 0);
+const separated = /*#__PURE__*/emotion_react_browser_esm_css(">*:not( marquee )>*{border-bottom:1px solid ", config_values.surfaceBorderColor, ";}>*:last-of-type>*{border-bottom-color:transparent;}" + ( true ? "" : 0),  true ? "" : 0);
 const styles_borderRadius = config_values.radiusSmall;
 const styles_spacedAround = /*#__PURE__*/emotion_react_browser_esm_css("border-radius:", styles_borderRadius, ";" + ( true ? "" : 0),  true ? "" : 0);
 const styles_rounded = /*#__PURE__*/emotion_react_browser_esm_css("border-radius:", styles_borderRadius, ";>*:first-of-type>*{border-top-left-radius:", styles_borderRadius, ";border-top-right-radius:", styles_borderRadius, ";}>*:last-of-type>*{border-bottom-left-radius:", styles_borderRadius, ";border-bottom-right-radius:", styles_borderRadius, ";}" + ( true ? "" : 0),  true ? "" : 0);
@@ -58463,6 +58661,8 @@ function Guide({
   className,
   contentLabel,
   finishButtonText = (0,external_wp_i18n_namespaceObject.__)('Finish'),
+  nextButtonText = (0,external_wp_i18n_namespaceObject.__)('Next'),
+  previousButtonText = (0,external_wp_i18n_namespaceObject.__)('Previous'),
   onFinish,
   pages = []
 }) {
@@ -58537,13 +58737,13 @@ function Guide({
           variant: "tertiary",
           onClick: goBack,
           __next40pxDefaultSize: true,
-          children: (0,external_wp_i18n_namespaceObject.__)('Previous')
+          children: previousButtonText
         }), canGoForward && /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(build_module_button, {
           className: "components-guide__forward-button",
           variant: "primary",
           onClick: goForward,
           __next40pxDefaultSize: true,
-          children: (0,external_wp_i18n_namespaceObject.__)('Next')
+          children: nextButtonText
         }), !canGoForward && /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(build_module_button, {
           className: "components-guide__finish-button",
           variant: "primary",
