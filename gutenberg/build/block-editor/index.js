@@ -8188,6 +8188,8 @@ const globalStylesLinksDataKey = Symbol('globalStylesLinks');
 const selectBlockPatternsKey = Symbol('selectBlockPatternsKey');
 const reusableBlocksSelectKey = Symbol('reusableBlocksSelect');
 const sectionRootClientIdKey = Symbol('sectionRootClientIdKey');
+const mediaEditKey = Symbol('mediaEditKey');
+const essentialFormatKey = Symbol('essentialFormat');
 
 ;// external ["wp","privateApis"]
 const external_wp_privateApis_namespaceObject = window["wp"]["privateApis"];
@@ -15845,7 +15847,11 @@ const mergeBlocks = (firstBlockClientId, secondBlockClientId) => ({
     return;
   }
   if (!blockAType.merge) {
-    dispatch.selectBlock(blockA.clientId);
+    if ((0,external_wp_blocks_namespaceObject.isUnmodifiedBlock)(blockB, 'content')) {
+      dispatch.removeBlock(clientIdB, select.isBlockSelected(clientIdB));
+    } else {
+      dispatch.selectBlock(blockA.clientId);
+    }
     return;
   }
   const blockBType = (0,external_wp_blocks_namespaceObject.getBlockType)(blockB.name);
@@ -17586,9 +17592,11 @@ const PRESET_METADATA = [{
   path: ['spacing', 'spacingSizes'],
   valueKey: 'size',
   cssVarInfix: 'spacing',
-  valueFunc: ({
-    size
-  }) => size,
+  classes: []
+}, {
+  path: ['border', 'radiusSizes'],
+  valueKey: 'size',
+  cssVarInfix: 'border-radius',
   classes: []
 }];
 const STYLE_PATH_TO_CSS_VAR_INFIX = {
@@ -18035,7 +18043,7 @@ const EMPTY_CONFIG = {
   settings: {},
   styles: {}
 };
-const VALID_SETTINGS = ['appearanceTools', 'useRootPaddingAwareAlignments', 'background.backgroundImage', 'background.backgroundRepeat', 'background.backgroundSize', 'background.backgroundPosition', 'border.color', 'border.radius', 'border.style', 'border.width', 'shadow.presets', 'shadow.defaultPresets', 'color.background', 'color.button', 'color.caption', 'color.custom', 'color.customDuotone', 'color.customGradient', 'color.defaultDuotone', 'color.defaultGradients', 'color.defaultPalette', 'color.duotone', 'color.gradients', 'color.heading', 'color.link', 'color.palette', 'color.text', 'custom', 'dimensions.aspectRatio', 'dimensions.minHeight', 'layout.contentSize', 'layout.definitions', 'layout.wideSize', 'lightbox.enabled', 'lightbox.allowEditing', 'position.fixed', 'position.sticky', 'spacing.customSpacingSize', 'spacing.defaultSpacingSizes', 'spacing.spacingSizes', 'spacing.spacingScale', 'spacing.blockGap', 'spacing.margin', 'spacing.padding', 'spacing.units', 'typography.fluid', 'typography.customFontSize', 'typography.defaultFontSizes', 'typography.dropCap', 'typography.fontFamilies', 'typography.fontSizes', 'typography.fontStyle', 'typography.fontWeight', 'typography.letterSpacing', 'typography.lineHeight', 'typography.textAlign', 'typography.textColumns', 'typography.textDecoration', 'typography.textTransform', 'typography.writingMode'];
+const VALID_SETTINGS = ['appearanceTools', 'useRootPaddingAwareAlignments', 'background.backgroundImage', 'background.backgroundRepeat', 'background.backgroundSize', 'background.backgroundPosition', 'border.color', 'border.radius', 'border.style', 'border.width', 'border.radiusSizes', 'shadow.presets', 'shadow.defaultPresets', 'color.background', 'color.button', 'color.caption', 'color.custom', 'color.customDuotone', 'color.customGradient', 'color.defaultDuotone', 'color.defaultGradients', 'color.defaultPalette', 'color.duotone', 'color.gradients', 'color.heading', 'color.link', 'color.palette', 'color.text', 'custom', 'dimensions.aspectRatio', 'dimensions.minHeight', 'layout.contentSize', 'layout.definitions', 'layout.wideSize', 'lightbox.enabled', 'lightbox.allowEditing', 'position.fixed', 'position.sticky', 'spacing.customSpacingSize', 'spacing.defaultSpacingSizes', 'spacing.spacingSizes', 'spacing.spacingScale', 'spacing.blockGap', 'spacing.margin', 'spacing.padding', 'spacing.units', 'typography.fluid', 'typography.customFontSize', 'typography.defaultFontSizes', 'typography.dropCap', 'typography.fontFamilies', 'typography.fontSizes', 'typography.fontStyle', 'typography.fontWeight', 'typography.letterSpacing', 'typography.lineHeight', 'typography.textAlign', 'typography.textColumns', 'typography.textDecoration', 'typography.textTransform', 'typography.writingMode'];
 const useGlobalStylesReset = () => {
   const {
     user,
@@ -18495,7 +18503,7 @@ function usePrivateStyleOverride({
  * @return {Object} Settings object.
  */
 function useBlockSettings(name, parentLayout) {
-  const [backgroundImage, backgroundSize, customFontFamilies, defaultFontFamilies, themeFontFamilies, defaultFontSizesEnabled, customFontSizes, defaultFontSizes, themeFontSizes, customFontSize, fontStyle, fontWeight, lineHeight, textAlign, textColumns, textDecoration, writingMode, textTransform, letterSpacing, padding, margin, blockGap, defaultSpacingSizesEnabled, customSpacingSize, userSpacingSizes, defaultSpacingSizes, themeSpacingSizes, units, aspectRatio, minHeight, layout, borderColor, borderRadius, borderStyle, borderWidth, customColorsEnabled, customColors, customDuotone, themeColors, defaultColors, defaultPalette, defaultDuotone, userDuotonePalette, themeDuotonePalette, defaultDuotonePalette, userGradientPalette, themeGradientPalette, defaultGradientPalette, defaultGradients, areCustomGradientsEnabled, isBackgroundEnabled, isLinkEnabled, isTextEnabled, isHeadingEnabled, isButtonEnabled, shadow] = use_settings_useSettings('background.backgroundImage', 'background.backgroundSize', 'typography.fontFamilies.custom', 'typography.fontFamilies.default', 'typography.fontFamilies.theme', 'typography.defaultFontSizes', 'typography.fontSizes.custom', 'typography.fontSizes.default', 'typography.fontSizes.theme', 'typography.customFontSize', 'typography.fontStyle', 'typography.fontWeight', 'typography.lineHeight', 'typography.textAlign', 'typography.textColumns', 'typography.textDecoration', 'typography.writingMode', 'typography.textTransform', 'typography.letterSpacing', 'spacing.padding', 'spacing.margin', 'spacing.blockGap', 'spacing.defaultSpacingSizes', 'spacing.customSpacingSize', 'spacing.spacingSizes.custom', 'spacing.spacingSizes.default', 'spacing.spacingSizes.theme', 'spacing.units', 'dimensions.aspectRatio', 'dimensions.minHeight', 'layout', 'border.color', 'border.radius', 'border.style', 'border.width', 'color.custom', 'color.palette.custom', 'color.customDuotone', 'color.palette.theme', 'color.palette.default', 'color.defaultPalette', 'color.defaultDuotone', 'color.duotone.custom', 'color.duotone.theme', 'color.duotone.default', 'color.gradients.custom', 'color.gradients.theme', 'color.gradients.default', 'color.defaultGradients', 'color.customGradient', 'color.background', 'color.link', 'color.text', 'color.heading', 'color.button', 'shadow');
+  const [backgroundImage, backgroundSize, customFontFamilies, defaultFontFamilies, themeFontFamilies, defaultFontSizesEnabled, customFontSizes, defaultFontSizes, themeFontSizes, customFontSize, fontStyle, fontWeight, lineHeight, textAlign, textColumns, textDecoration, writingMode, textTransform, letterSpacing, padding, margin, blockGap, defaultSpacingSizesEnabled, customSpacingSize, userSpacingSizes, defaultSpacingSizes, themeSpacingSizes, units, aspectRatio, minHeight, layout, borderColor, borderRadius, borderStyle, borderWidth, borderRadiusSizes, customColorsEnabled, customColors, customDuotone, themeColors, defaultColors, defaultPalette, defaultDuotone, userDuotonePalette, themeDuotonePalette, defaultDuotonePalette, userGradientPalette, themeGradientPalette, defaultGradientPalette, defaultGradients, areCustomGradientsEnabled, isBackgroundEnabled, isLinkEnabled, isTextEnabled, isHeadingEnabled, isButtonEnabled, shadow] = use_settings_useSettings('background.backgroundImage', 'background.backgroundSize', 'typography.fontFamilies.custom', 'typography.fontFamilies.default', 'typography.fontFamilies.theme', 'typography.defaultFontSizes', 'typography.fontSizes.custom', 'typography.fontSizes.default', 'typography.fontSizes.theme', 'typography.customFontSize', 'typography.fontStyle', 'typography.fontWeight', 'typography.lineHeight', 'typography.textAlign', 'typography.textColumns', 'typography.textDecoration', 'typography.writingMode', 'typography.textTransform', 'typography.letterSpacing', 'spacing.padding', 'spacing.margin', 'spacing.blockGap', 'spacing.defaultSpacingSizes', 'spacing.customSpacingSize', 'spacing.spacingSizes.custom', 'spacing.spacingSizes.default', 'spacing.spacingSizes.theme', 'spacing.units', 'dimensions.aspectRatio', 'dimensions.minHeight', 'layout', 'border.color', 'border.radius', 'border.style', 'border.width', 'border.radiusSizes', 'color.custom', 'color.palette.custom', 'color.customDuotone', 'color.palette.theme', 'color.palette.default', 'color.defaultPalette', 'color.defaultDuotone', 'color.duotone.custom', 'color.duotone.theme', 'color.duotone.default', 'color.gradients.custom', 'color.gradients.theme', 'color.gradients.default', 'color.defaultGradients', 'color.customGradient', 'color.background', 'color.link', 'color.text', 'color.heading', 'color.button', 'shadow');
   const rawSettings = (0,external_wp_element_namespaceObject.useMemo)(() => {
     return {
       background: {
@@ -18570,7 +18578,8 @@ function useBlockSettings(name, parentLayout) {
         color: borderColor,
         radius: borderRadius,
         style: borderStyle,
-        width: borderWidth
+        width: borderWidth,
+        radiusSizes: borderRadiusSizes
       },
       dimensions: {
         aspectRatio,
@@ -18580,7 +18589,7 @@ function useBlockSettings(name, parentLayout) {
       parentLayout,
       shadow
     };
-  }, [backgroundImage, backgroundSize, customFontFamilies, defaultFontFamilies, themeFontFamilies, defaultFontSizesEnabled, customFontSizes, defaultFontSizes, themeFontSizes, customFontSize, fontStyle, fontWeight, lineHeight, textAlign, textColumns, textDecoration, textTransform, letterSpacing, writingMode, padding, margin, blockGap, defaultSpacingSizesEnabled, customSpacingSize, userSpacingSizes, defaultSpacingSizes, themeSpacingSizes, units, aspectRatio, minHeight, layout, parentLayout, borderColor, borderRadius, borderStyle, borderWidth, customColorsEnabled, customColors, customDuotone, themeColors, defaultColors, defaultPalette, defaultDuotone, userDuotonePalette, themeDuotonePalette, defaultDuotonePalette, userGradientPalette, themeGradientPalette, defaultGradientPalette, defaultGradients, areCustomGradientsEnabled, isBackgroundEnabled, isLinkEnabled, isTextEnabled, isHeadingEnabled, isButtonEnabled, shadow]);
+  }, [backgroundImage, backgroundSize, customFontFamilies, defaultFontFamilies, themeFontFamilies, defaultFontSizesEnabled, customFontSizes, defaultFontSizes, themeFontSizes, customFontSize, fontStyle, fontWeight, lineHeight, textAlign, textColumns, textDecoration, textTransform, letterSpacing, writingMode, padding, margin, blockGap, defaultSpacingSizesEnabled, customSpacingSize, userSpacingSizes, defaultSpacingSizes, themeSpacingSizes, units, aspectRatio, minHeight, layout, parentLayout, borderColor, borderRadius, borderStyle, borderWidth, borderRadiusSizes, customColorsEnabled, customColors, customDuotone, themeColors, defaultColors, defaultPalette, defaultDuotone, userDuotonePalette, themeDuotonePalette, defaultDuotonePalette, userGradientPalette, themeGradientPalette, defaultGradientPalette, defaultGradients, areCustomGradientsEnabled, isBackgroundEnabled, isLinkEnabled, isTextEnabled, isHeadingEnabled, isButtonEnabled, shadow]);
   return useSettingsForBlockElement(rawSettings, name);
 }
 function createBlockEditFilter(features) {
@@ -26056,6 +26065,44 @@ function useMultipleOriginColorsAndGradients() {
   return colorGradientSettings;
 }
 
+;// ./packages/icons/build-module/library/link.js
+/**
+ * WordPress dependencies
+ */
+
+
+const link_link = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 24 24",
+  children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.Path, {
+    d: "M10 17.389H8.444A5.194 5.194 0 1 1 8.444 7H10v1.5H8.444a3.694 3.694 0 0 0 0 7.389H10v1.5ZM14 7h1.556a5.194 5.194 0 0 1 0 10.39H14v-1.5h1.556a3.694 3.694 0 0 0 0-7.39H14V7Zm-4.5 6h5v-1.5h-5V13Z"
+  })
+});
+/* harmony default export */ const library_link = (link_link);
+
+;// ./packages/block-editor/build-module/components/border-radius-control/linked-button.js
+/**
+ * WordPress dependencies
+ */
+
+
+
+
+function LinkedButton({
+  isLinked,
+  ...props
+}) {
+  const label = isLinked ? (0,external_wp_i18n_namespaceObject.__)('Unlink radii') : (0,external_wp_i18n_namespaceObject.__)('Link radii');
+  return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.Button, {
+    ...props,
+    className: "components-border-radius-control__linked-button",
+    size: "small",
+    icon: isLinked ? library_link : link_off,
+    iconSize: 24,
+    label: label
+  });
+}
+
 ;// ./packages/block-editor/build-module/components/border-radius-control/utils.js
 /**
  * WordPress dependencies
@@ -26121,7 +26168,7 @@ function getAllValue(values = {}) {
   const allUnits = parsedQuantitiesAndUnits.map(value => value[1]);
   const value = allValues.every(v => v === allValues[0]) ? allValues[0] : '';
   const unit = mode(allUnits);
-  const allValue = value === 0 || value ? `${value}${unit}` : undefined;
+  const allValue = value === 0 || value ? `${value}${unit || ''}` : undefined;
   return allValue;
 }
 
@@ -26132,9 +26179,21 @@ function getAllValue(values = {}) {
  * @return {boolean}      Whether values are mixed.
  */
 function hasMixedValues(values = {}) {
-  const allValue = getAllValue(values);
-  const isMixed = typeof values === 'string' ? false : isNaN(parseFloat(allValue));
-  return isMixed;
+  if (typeof values === 'string') {
+    return false;
+  }
+  if (!values || typeof values !== 'object') {
+    return false;
+  }
+  const cornerValues = Object.values(values);
+  if (cornerValues.length === 0) {
+    return false;
+  }
+  const firstValue = cornerValues[0];
+
+  // Check if all values are exactly the same (including undefined)
+  const allSame = cornerValues.every(value => value === firstValue);
+  return !allSame;
 }
 
 /**
@@ -26161,10 +26220,307 @@ function hasDefinedValues(values) {
   return !!filteredValues.length;
 }
 
-;// ./packages/block-editor/build-module/components/border-radius-control/all-input-control.js
+/**
+ * Checks is given value is a radius preset.
+ *
+ * @param {string} value Value to check
+ *
+ * @return {boolean} Return true if value is string in format var:preset|border-radius|.
+ */
+function isValuePreset(value) {
+  if (!value?.includes) {
+    return false;
+  }
+  return value === '0' || value.includes('var:preset|border-radius|');
+}
+
+/**
+ * Returns the slug section of the given preset string.
+ *
+ * @param {string} value Value to extract slug from.
+ *
+ * @return {string|undefined} The int value of the slug from given preset.
+ */
+function getPresetSlug(value) {
+  if (!value) {
+    return;
+  }
+  if (value === '0' || value === 'default') {
+    return value;
+  }
+  const slug = value.match(/var:preset\|border-radius\|(.+)/);
+  return slug ? slug[1] : undefined;
+}
+
+/**
+ * Converts radius preset value into a Range component value .
+ *
+ * @param {string} presetValue Value to convert to Range value.
+ * @param {Array}  presets     Array of current radius preset value objects.
+ *
+ * @return {number} The int value for use in Range control.
+ */
+function utils_getSliderValueFromPreset(presetValue, presets) {
+  if (presetValue === undefined) {
+    return 0;
+  }
+  const slug = parseFloat(presetValue, 10) === 0 ? '0' : getPresetSlug(presetValue);
+  const sliderValue = presets.findIndex(size => {
+    return String(size.slug) === slug;
+  });
+
+  // Returning NaN rather than undefined as undefined makes range control thumb sit in center
+  return sliderValue !== -1 ? sliderValue : NaN;
+}
+
+/**
+ * Converts a preset into a custom value.
+ *
+ * @param {string} value   Value to convert
+ * @param {Array}  presets Array of the current radius preset objects
+ *
+ * @return {string} Mapping of the radius preset to its equivalent custom value.
+ */
+function utils_getCustomValueFromPreset(value, presets) {
+  if (!isValuePreset(value)) {
+    return value;
+  }
+  const slug = parseFloat(value, 10) === 0 ? '0' : getPresetSlug(value);
+  const radiusSize = presets.find(size => String(size.slug) === slug);
+  return radiusSize?.size;
+}
+
+/**
+ * Converts a control value into a preset value.
+ *
+ * @param {number} controlValue to convert to preset value.
+ * @param {string} controlType  Type of control
+ * @param {Array}  presets      Array of current radius preset value objects.
+ *
+ * @return {string} The custom value for use in Range control.
+ */
+function getPresetValueFromControlValue(controlValue, controlType, presets) {
+  const size = parseInt(controlValue, 10);
+  if (controlType === 'selectList') {
+    if (size === 0) {
+      return undefined;
+    }
+  } else if (size === 0) {
+    return '0';
+  }
+  return `var:preset|border-radius|${presets[controlValue]?.slug}`;
+}
+
+/**
+ * Converts a custom value to preset value if one can be found.
+ *
+ * Returns value as-is if no match is found.
+ *
+ * @param {string} value   Value to convert
+ * @param {Array}  presets Array of the current border radius preset objects
+ *
+ * @return {string} The preset value if it can be found.
+ */
+function utils_getPresetValueFromCustomValue(value, presets) {
+  // Return value as-is if it is undefined or is already a preset, or '0';
+  if (!value || isValuePreset(value) || value === '0') {
+    return value;
+  }
+  const spacingMatch = presets.find(size => String(size.size) === String(value));
+  if (spacingMatch?.slug) {
+    return `var:preset|border-radius|${spacingMatch.slug}`;
+  }
+  return value;
+}
+
+/**
+ * Converts all preset values in a values object to their custom equivalents.
+ *
+ * @param {Object} values  Values object to convert
+ * @param {Array}  presets Array of current border radius preset objects
+ *
+ * @return {Object} Values with presets converted to custom values
+ */
+function convertPresetsToCustomValues(values, presets) {
+  if (!values || typeof values !== 'object') {
+    return values;
+  }
+  const converted = {};
+  Object.keys(values).forEach(key => {
+    const value = values[key];
+    if (isValuePreset(value)) {
+      const customValue = utils_getCustomValueFromPreset(value, presets);
+      converted[key] = customValue !== undefined ? customValue : value;
+    } else {
+      converted[key] = value;
+    }
+  });
+  return converted;
+}
+
+;// ./packages/icons/build-module/library/settings.js
 /**
  * WordPress dependencies
  */
+
+
+const settings_settings = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_wp_primitives_namespaceObject.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 24 24",
+  children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.Path, {
+    d: "m19 7.5h-7.628c-.3089-.87389-1.1423-1.5-2.122-1.5-.97966 0-1.81309.62611-2.12197 1.5h-2.12803v1.5h2.12803c.30888.87389 1.14231 1.5 2.12197 1.5.9797 0 1.8131-.62611 2.122-1.5h7.628z"
+  }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.Path, {
+    d: "m19 15h-2.128c-.3089-.8739-1.1423-1.5-2.122-1.5s-1.8131.6261-2.122 1.5h-7.628v1.5h7.628c.3089.8739 1.1423 1.5 2.122 1.5s1.8131-.6261 2.122-1.5h2.128z"
+  })]
+});
+/* harmony default export */ const library_settings = (settings_settings);
+
+;// ./packages/icons/build-module/library/corner-all.js
+/**
+ * WordPress dependencies
+ */
+
+
+const cornerAll = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 24 24",
+  children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.Path, {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M5.75 6A.25.25 0 0 1 6 5.75h3v-1.5H6A1.75 1.75 0 0 0 4.25 6v3h1.5V6ZM18 18.25h-3v1.5h3A1.75 1.75 0 0 0 19.75 18v-3h-1.5v3a.25.25 0 0 1-.25.25ZM18.25 9V6a.25.25 0 0 0-.25-.25h-3v-1.5h3c.966 0 1.75.784 1.75 1.75v3h-1.5Zm-12.5 9v-3h-1.5v3c0 .966.784 1.75 1.75 1.75h3v-1.5H6a.25.25 0 0 1-.25-.25Z"
+  })
+});
+/* harmony default export */ const corner_all = (cornerAll);
+
+;// ./packages/icons/build-module/library/corner-top-left.js
+/**
+ * WordPress dependencies
+ */
+
+
+const cornerTopLeft = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_wp_primitives_namespaceObject.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 24 24",
+  children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.G, {
+    opacity: ".25",
+    children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.Path, {
+      d: "M5.75 6A.25.25 0 0 1 6 5.75h3v-1.5H6A1.75 1.75 0 0 0 4.25 6v3h1.5V6ZM18 18.25h-3v1.5h3A1.75 1.75 0 0 0 19.75 18v-3h-1.5v3a.25.25 0 0 1-.25.25ZM18.25 9V6a.25.25 0 0 0-.25-.25h-3v-1.5h3c.966 0 1.75.784 1.75 1.75v3h-1.5ZM5.75 18v-3h-1.5v3c0 .966.784 1.75 1.75 1.75h3v-1.5H6a.25.25 0 0 1-.25-.25Z"
+    })
+  }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.Path, {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M6 5.75a.25.25 0 0 0-.25.25v3h-1.5V6c0-.966.784-1.75 1.75-1.75h3v1.5H6Z"
+  })]
+});
+/* harmony default export */ const corner_top_left = (cornerTopLeft);
+
+;// ./packages/icons/build-module/library/corner-top-right.js
+/**
+ * WordPress dependencies
+ */
+
+
+const cornerTopRight = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_wp_primitives_namespaceObject.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 24 24",
+  children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.G, {
+    opacity: ".25",
+    children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.Path, {
+      d: "M5.75 6A.25.25 0 0 1 6 5.75h3v-1.5H6A1.75 1.75 0 0 0 4.25 6v3h1.5V6ZM18 18.25h-3v1.5h3A1.75 1.75 0 0 0 19.75 18v-3h-1.5v3a.25.25 0 0 1-.25.25ZM18.25 9V6a.25.25 0 0 0-.25-.25h-3v-1.5h3c.966 0 1.75.784 1.75 1.75v3h-1.5ZM5.75 18v-3h-1.5v3c0 .966.784 1.75 1.75 1.75h3v-1.5H6a.25.25 0 0 1-.25-.25Z"
+    })
+  }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.Path, {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M18.25 9V6a.25.25 0 0 0-.25-.25h-3v-1.5h3c.966 0 1.75.784 1.75 1.75v3h-1.5Z"
+  })]
+});
+/* harmony default export */ const corner_top_right = (cornerTopRight);
+
+;// ./packages/icons/build-module/library/corner-bottom-left.js
+/**
+ * WordPress dependencies
+ */
+
+
+const cornerBottomLeft = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_wp_primitives_namespaceObject.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 24 24",
+  children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.G, {
+    opacity: ".25",
+    children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.Path, {
+      d: "M5.75 6A.25.25 0 0 1 6 5.75h3v-1.5H6A1.75 1.75 0 0 0 4.25 6v3h1.5V6ZM18 18.25h-3v1.5h3A1.75 1.75 0 0 0 19.75 18v-3h-1.5v3a.25.25 0 0 1-.25.25ZM18.25 9V6a.25.25 0 0 0-.25-.25h-3v-1.5h3c.966 0 1.75.784 1.75 1.75v3h-1.5ZM5.75 18v-3h-1.5v3c0 .966.784 1.75 1.75 1.75h3v-1.5H6a.25.25 0 0 1-.25-.25Z"
+    })
+  }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.Path, {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M5.75 15v3c0 .138.112.25.25.25h3v1.5H6A1.75 1.75 0 0 1 4.25 18v-3h1.5Z"
+  })]
+});
+/* harmony default export */ const corner_bottom_left = (cornerBottomLeft);
+
+;// ./packages/icons/build-module/library/corner-bottom-right.js
+/**
+ * WordPress dependencies
+ */
+
+
+const cornerBottomRight = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_wp_primitives_namespaceObject.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 24 24",
+  children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.G, {
+    opacity: ".25",
+    children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.Path, {
+      d: "M5.75 6A.25.25 0 0 1 6 5.75h3v-1.5H6A1.75 1.75 0 0 0 4.25 6v3h1.5V6ZM18 18.25h-3v1.5h3A1.75 1.75 0 0 0 19.75 18v-3h-1.5v3a.25.25 0 0 1-.25.25ZM18.25 9V6a.25.25 0 0 0-.25-.25h-3v-1.5h3c.966 0 1.75.784 1.75 1.75v3h-1.5ZM5.75 18v-3h-1.5v3c0 .966.784 1.75 1.75 1.75h3v-1.5H6a.25.25 0 0 1-.25-.25Z"
+    })
+  }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.Path, {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M15 18.25h3a.25.25 0 0 0 .25-.25v-3h1.5v3A1.75 1.75 0 0 1 18 19.75h-3v-1.5Z"
+  })]
+});
+/* harmony default export */ const corner_bottom_right = (cornerBottomRight);
+
+;// ./packages/block-editor/build-module/components/border-radius-control/constants.js
+/**
+ * WordPress dependencies
+ */
+
+
+const constants_DEFAULT_VALUES = {
+  topLeft: undefined,
+  topRight: undefined,
+  bottomLeft: undefined,
+  bottomRight: undefined
+};
+const constants_RANGE_CONTROL_MAX_SIZE = 8;
+const constants_EMPTY_ARRAY = [];
+const CORNERS = {
+  all: (0,external_wp_i18n_namespaceObject.__)('Border radius'),
+  topLeft: (0,external_wp_i18n_namespaceObject.__)('Top left'),
+  topRight: (0,external_wp_i18n_namespaceObject.__)('Top right'),
+  bottomLeft: (0,external_wp_i18n_namespaceObject.__)('Bottom left'),
+  bottomRight: (0,external_wp_i18n_namespaceObject.__)('Bottom right')
+};
+const constants_ICONS = {
+  all: corner_all,
+  topLeft: corner_top_left,
+  topRight: corner_top_right,
+  bottomLeft: corner_bottom_left,
+  bottomRight: corner_bottom_right
+};
+const MIN_BORDER_RADIUS_VALUE = 0;
+const MAX_BORDER_RADIUS_VALUES = {
+  px: 100,
+  em: 20,
+  rem: 20
+};
+
+;// ./packages/block-editor/build-module/components/border-radius-control/single-input-control.js
+/**
+ * WordPress dependencies
+ */
+
+
 
 
 
@@ -26173,74 +26529,32 @@ function hasDefinedValues(values) {
  */
 
 
-function AllInputControl({
-  onChange,
-  selectedUnits,
-  setSelectedUnits,
-  values,
-  ...props
-}) {
-  let allValue = getAllValue(values);
-  if (allValue === undefined) {
-    // If we don't have any value set the unit to any current selection
-    // or the most common unit from the individual radii values.
-    allValue = getAllUnit(selectedUnits);
-  }
-  const hasValues = hasDefinedValues(values);
-  const isMixed = hasValues && hasMixedValues(values);
-  const allPlaceholder = isMixed ? (0,external_wp_i18n_namespaceObject.__)('Mixed') : null;
 
-  // Filter out CSS-unit-only values to prevent invalid styles.
-  const handleOnChange = next => {
-    const isNumeric = !isNaN(parseFloat(next));
-    const nextValue = isNumeric ? next : undefined;
-    onChange(nextValue);
-  };
-
-  // Store current unit selection for use as fallback for individual
-  // radii controls.
-  const handleOnUnitChange = unit => {
-    setSelectedUnits({
-      topLeft: unit,
-      topRight: unit,
-      bottomLeft: unit,
-      bottomRight: unit
-    });
-  };
-  return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.__experimentalUnitControl, {
-    ...props,
-    "aria-label": (0,external_wp_i18n_namespaceObject.__)('Border radius'),
-    disableUnits: isMixed,
-    isOnly: true,
-    value: allValue,
-    onChange: handleOnChange,
-    onUnitChange: handleOnUnitChange,
-    placeholder: allPlaceholder,
-    size: "__unstable-large"
-  });
-}
-
-;// ./packages/block-editor/build-module/components/border-radius-control/input-controls.js
-/**
- * WordPress dependencies
- */
-
-
-
-const CORNERS = {
-  topLeft: (0,external_wp_i18n_namespaceObject.__)('Top left'),
-  topRight: (0,external_wp_i18n_namespaceObject.__)('Top right'),
-  bottomLeft: (0,external_wp_i18n_namespaceObject.__)('Bottom left'),
-  bottomRight: (0,external_wp_i18n_namespaceObject.__)('Bottom right')
-};
-function BoxInputControls({
+function SingleInputControl({
+  corner,
   onChange,
   selectedUnits,
   setSelectedUnits,
   values: valuesProp,
-  ...props
+  units,
+  presets
 }) {
-  const createHandleOnChange = corner => next => {
+  const changeCornerValue = validatedValue => {
+    if (corner === 'all') {
+      onChange({
+        topLeft: validatedValue,
+        topRight: validatedValue,
+        bottomLeft: validatedValue,
+        bottomRight: validatedValue
+      });
+    } else {
+      onChange({
+        ...values,
+        [corner]: validatedValue
+      });
+    }
+  };
+  const onChangeValue = next => {
     if (!onChange) {
       return;
     }
@@ -26248,16 +26562,20 @@ function BoxInputControls({
     // Filter out CSS-unit-only values to prevent invalid styles.
     const isNumeric = !isNaN(parseFloat(next));
     const nextValue = isNumeric ? next : undefined;
-    onChange({
-      ...values,
-      [corner]: nextValue
-    });
+    changeCornerValue(nextValue);
   };
-  const createHandleOnUnitChange = side => next => {
+  const onChangeUnit = next => {
     const newUnits = {
       ...selectedUnits
     };
-    newUnits[side] = next;
+    if (corner === 'all') {
+      newUnits.topLeft = next;
+      newUnits.topRight = next;
+      newUnits.bottomLeft = next;
+      newUnits.bottomRight = next;
+    } else {
+      newUnits[corner] = next;
+    }
     setSelectedUnits(newUnits);
   };
 
@@ -26269,68 +26587,129 @@ function BoxInputControls({
     bottomRight: valuesProp
   };
 
+  // For 'all' corner, convert presets to custom values before calling getAllValue
+  // For individual corners, check if the value should be converted to a preset
+  let value;
+  if (corner === 'all') {
+    const convertedValues = convertPresetsToCustomValues(values, presets);
+    const customValue = getAllValue(convertedValues);
+    value = utils_getPresetValueFromCustomValue(customValue, presets);
+  } else {
+    value = utils_getPresetValueFromCustomValue(values[corner], presets);
+  }
+  const resolvedPresetValue = isValuePreset(value) ? utils_getCustomValueFromPreset(value, presets) : value;
+  const [parsedQuantity, parsedUnit] = (0,external_wp_components_namespaceObject.__experimentalParseQuantityAndUnitFromRawValue)(resolvedPresetValue);
+  const computedUnit = value ? parsedUnit : selectedUnits[corner] || selectedUnits.flat || 'px';
+  const unitConfig = units && units.find(item => item.value === computedUnit);
+  const step = unitConfig?.step || 1;
+  const [showCustomValueControl, setShowCustomValueControl] = (0,external_wp_element_namespaceObject.useState)(value !== undefined && !isValuePreset(value));
+  const showRangeControl = presets.length <= constants_RANGE_CONTROL_MAX_SIZE;
+  const presetIndex = utils_getSliderValueFromPreset(value, presets);
+  const rangeTooltip = newValue => value === undefined ? undefined : presets[newValue]?.name;
+  const marks = presets.slice(1, presets.length - 1).map((_newValue, index) => ({
+    value: index + 1,
+    label: undefined
+  }));
+  const hasPresets = marks.length > 0;
+  let options = [];
+  if (!showRangeControl) {
+    options = [...presets, {
+      name: (0,external_wp_i18n_namespaceObject.__)('Custom'),
+      slug: 'custom',
+      size: resolvedPresetValue
+    }].map((size, index) => ({
+      key: index,
+      name: size.name
+    }));
+  }
+  const icon = constants_ICONS[corner];
+  const handleSliderChange = next => {
+    const val = next !== undefined ? `${next}${computedUnit}` : undefined;
+    changeCornerValue(val);
+  };
+
   // Controls are wrapped in tooltips as visible labels aren't desired here.
   // Tooltip rendering also requires the UnitControl to be wrapped. See:
   // https://github.com/WordPress/gutenberg/pull/24966#issuecomment-685875026
-  return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)("div", {
-    className: "components-border-radius-control__input-controls-wrapper",
-    children: Object.entries(CORNERS).map(([corner, label]) => {
-      const [parsedQuantity, parsedUnit] = (0,external_wp_components_namespaceObject.__experimentalParseQuantityAndUnitFromRawValue)(values[corner]);
-      const computedUnit = values[corner] ? parsedUnit : selectedUnits[corner] || selectedUnits.flat;
-      return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.Tooltip, {
-        text: label,
+  return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_wp_components_namespaceObject.__experimentalHStack, {
+    children: [icon && /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.Icon, {
+      className: "components-border-radius-control__icon",
+      icon: icon,
+      size: 24
+    }), (!hasPresets || showCustomValueControl) && /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)("div", {
+      className: "components-border-radius-control__input-controls-wrapper",
+      children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.Tooltip, {
+        text: CORNERS[corner],
         placement: "top",
         children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)("div", {
           className: "components-border-radius-control__tooltip-wrapper",
           children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.__experimentalUnitControl, {
-            ...props,
-            "aria-label": label,
+            className: "components-border-radius-control__unit-control",
+            "aria-label": CORNERS[corner],
             value: [parsedQuantity, computedUnit].join(''),
-            onChange: createHandleOnChange(corner),
-            onUnitChange: createHandleOnUnitChange(corner),
-            size: "__unstable-large"
+            onChange: onChangeValue,
+            onUnitChange: onChangeUnit,
+            size: "__unstable-large",
+            min: MIN_BORDER_RADIUS_VALUE,
+            units: units
           })
         })
-      }, corner);
-    })
-  });
-}
-
-;// ./packages/icons/build-module/library/link.js
-/**
- * WordPress dependencies
- */
-
-
-const link_link = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.SVG, {
-  xmlns: "http://www.w3.org/2000/svg",
-  viewBox: "0 0 24 24",
-  children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.Path, {
-    d: "M10 17.389H8.444A5.194 5.194 0 1 1 8.444 7H10v1.5H8.444a3.694 3.694 0 0 0 0 7.389H10v1.5ZM14 7h1.556a5.194 5.194 0 0 1 0 10.39H14v-1.5h1.556a3.694 3.694 0 0 0 0-7.39H14V7Zm-4.5 6h5v-1.5h-5V13Z"
-  })
-});
-/* harmony default export */ const library_link = (link_link);
-
-;// ./packages/block-editor/build-module/components/border-radius-control/linked-button.js
-/**
- * WordPress dependencies
- */
-
-
-
-
-function LinkedButton({
-  isLinked,
-  ...props
-}) {
-  const label = isLinked ? (0,external_wp_i18n_namespaceObject.__)('Unlink radii') : (0,external_wp_i18n_namespaceObject.__)('Link radii');
-  return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.Button, {
-    ...props,
-    className: "component-border-radius-control__linked-button",
-    size: "small",
-    icon: isLinked ? library_link : link_off,
-    iconSize: 24,
-    label: label
+      }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.RangeControl, {
+        __next40pxDefaultSize: true,
+        label: (0,external_wp_i18n_namespaceObject.__)('Border radius'),
+        hideLabelFromVision: true,
+        className: "components-border-radius-control__range-control",
+        value: parsedQuantity !== null && parsedQuantity !== void 0 ? parsedQuantity : '',
+        min: MIN_BORDER_RADIUS_VALUE,
+        max: MAX_BORDER_RADIUS_VALUES[computedUnit],
+        initialPosition: 0,
+        withInputField: false,
+        onChange: handleSliderChange,
+        step: step,
+        __nextHasNoMarginBottom: true
+      })]
+    }), hasPresets && showRangeControl && !showCustomValueControl && /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.RangeControl, {
+      __next40pxDefaultSize: true,
+      className: "components-border-radius-control__range-control",
+      value: presetIndex,
+      onChange: newSize => {
+        changeCornerValue(getPresetValueFromControlValue(newSize, 'range', presets));
+      },
+      withInputField: false,
+      "aria-valuenow": presetIndex,
+      "aria-valuetext": presets[presetIndex]?.name,
+      renderTooltipContent: rangeTooltip,
+      min: 0,
+      max: presets.length - 1,
+      marks: marks,
+      label: CORNERS[corner],
+      hideLabelFromVision: true,
+      __nextHasNoMarginBottom: true
+    }), !showRangeControl && !showCustomValueControl && /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.CustomSelectControl, {
+      className: "components-border-radius-control__custom-select-control",
+      value: options.find(option => option.key === presetIndex) || options[options.length - 1],
+      onChange: selection => {
+        if (selection.selectedItem.key === options.length - 1) {
+          setShowCustomValueControl(true);
+        } else {
+          changeCornerValue(getPresetValueFromControlValue(selection.selectedItem.key, 'selectList', presets));
+        }
+      },
+      options: options,
+      label: CORNERS[corner],
+      hideLabelFromVision: true,
+      size: "__unstable-large"
+    }), hasPresets && /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.Button, {
+      label: showCustomValueControl ? (0,external_wp_i18n_namespaceObject.__)('Use border radius preset') : (0,external_wp_i18n_namespaceObject.__)('Set custom border radius'),
+      icon: library_settings,
+      onClick: () => {
+        setShowCustomValueControl(!showCustomValueControl);
+      },
+      isPressed: showCustomValueControl,
+      size: "small",
+      className: "components-border-radius-control__custom-toggle",
+      iconSize: 24
+    })]
   });
 }
 
@@ -26351,18 +26730,24 @@ function LinkedButton({
 
 
 
-const border_radius_control_DEFAULT_VALUES = {
-  topLeft: undefined,
-  topRight: undefined,
-  bottomLeft: undefined,
-  bottomRight: undefined
-};
-const MIN_BORDER_RADIUS_VALUE = 0;
-const MAX_BORDER_RADIUS_VALUES = {
-  px: 100,
-  em: 20,
-  rem: 20
-};
+function useBorderRadiusSizes(presets) {
+  var _presets$default, _presets$custom, _presets$theme;
+  const defaultSizes = (_presets$default = presets?.default) !== null && _presets$default !== void 0 ? _presets$default : constants_EMPTY_ARRAY;
+  const customSizes = (_presets$custom = presets?.custom) !== null && _presets$custom !== void 0 ? _presets$custom : constants_EMPTY_ARRAY;
+  const themeSizes = (_presets$theme = presets?.theme) !== null && _presets$theme !== void 0 ? _presets$theme : constants_EMPTY_ARRAY;
+  return (0,external_wp_element_namespaceObject.useMemo)(() => {
+    const sizes = [{
+      name: (0,external_wp_i18n_namespaceObject.__)('None'),
+      slug: '0',
+      size: 0
+    }, ...customSizes, ...themeSizes, ...defaultSizes];
+    return sizes.length > constants_RANGE_CONTROL_MAX_SIZE ? [{
+      name: (0,external_wp_i18n_namespaceObject.__)('Default'),
+      slug: 'default',
+      size: undefined
+    }, ...sizes] : sizes;
+  }, [customSizes, themeSizes, defaultSizes]);
+}
 
 /**
  * Control to display border radius options.
@@ -26370,15 +26755,17 @@ const MAX_BORDER_RADIUS_VALUES = {
  * @param {Object}   props          Component props.
  * @param {Function} props.onChange Callback to handle onChange.
  * @param {Object}   props.values   Border radius values.
+ * @param {Object}   props.presets  Border radius presets.
  *
  * @return {Element}              Custom border radius control.
  */
 function BorderRadiusControl({
   onChange,
-  values
+  values,
+  presets
 }) {
   const [isLinked, setIsLinked] = (0,external_wp_element_namespaceObject.useState)(!hasDefinedValues(values) || !hasMixedValues(values));
-
+  const options = useBorderRadiusSizes(presets);
   // Tracking selected units via internal state allows filtering of CSS unit
   // only values from being saved while maintaining preexisting unit selection
   // behaviour. Filtering CSS unit only values prevents invalid style values.
@@ -26393,55 +26780,38 @@ function BorderRadiusControl({
   const units = (0,external_wp_components_namespaceObject.__experimentalUseCustomUnits)({
     availableUnits: availableUnits || ['px', 'em', 'rem']
   });
-  const unit = getAllUnit(selectedUnits);
-  const unitConfig = units && units.find(item => item.value === unit);
-  const step = unitConfig?.step || 1;
-  const [allValue] = (0,external_wp_components_namespaceObject.__experimentalParseQuantityAndUnitFromRawValue)(getAllValue(values));
   const toggleLinked = () => setIsLinked(!isLinked);
-  const handleSliderChange = next => {
-    onChange(next !== undefined ? `${next}${unit}` : undefined);
-  };
   return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)("fieldset", {
     className: "components-border-radius-control",
-    children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.BaseControl.VisualLabel, {
-      as: "legend",
-      children: (0,external_wp_i18n_namespaceObject.__)('Radius')
-    }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)("div", {
-      className: "components-border-radius-control__wrapper",
-      children: [isLinked ? /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_ReactJSXRuntime_namespaceObject.Fragment, {
-        children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(AllInputControl, {
-          className: "components-border-radius-control__unit-control",
-          values: values,
-          min: MIN_BORDER_RADIUS_VALUE,
-          onChange: onChange,
-          selectedUnits: selectedUnits,
-          setSelectedUnits: setSelectedUnits,
-          units: units
-        }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.RangeControl, {
-          __next40pxDefaultSize: true,
-          label: (0,external_wp_i18n_namespaceObject.__)('Border radius'),
-          hideLabelFromVision: true,
-          className: "components-border-radius-control__range-control",
-          value: allValue !== null && allValue !== void 0 ? allValue : '',
-          min: MIN_BORDER_RADIUS_VALUE,
-          max: MAX_BORDER_RADIUS_VALUES[unit],
-          initialPosition: 0,
-          withInputField: false,
-          onChange: handleSliderChange,
-          step: step,
-          __nextHasNoMarginBottom: true
-        })]
-      }) : /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(BoxInputControls, {
-        min: MIN_BORDER_RADIUS_VALUE,
-        onChange: onChange,
-        selectedUnits: selectedUnits,
-        setSelectedUnits: setSelectedUnits,
-        values: values || border_radius_control_DEFAULT_VALUES,
-        units: units
+    children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_wp_components_namespaceObject.__experimentalHStack, {
+      className: "components-border-radius-control__header",
+      children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.BaseControl.VisualLabel, {
+        as: "legend",
+        children: (0,external_wp_i18n_namespaceObject.__)('Radius')
       }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(LinkedButton, {
         onClick: toggleLinked,
         isLinked: isLinked
       })]
+    }), isLinked ? /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_ReactJSXRuntime_namespaceObject.Fragment, {
+      children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(SingleInputControl, {
+        onChange: onChange,
+        selectedUnits: selectedUnits,
+        setSelectedUnits: setSelectedUnits,
+        values: values,
+        units: units,
+        corner: "all",
+        presets: options
+      })
+    }) : /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_components_namespaceObject.__experimentalVStack, {
+      children: ['topLeft', 'topRight', 'bottomLeft', 'bottomRight'].map(corner => /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(SingleInputControl, {
+        onChange: onChange,
+        selectedUnits: selectedUnits,
+        setSelectedUnits: setSelectedUnits,
+        values: values || constants_DEFAULT_VALUES,
+        units: units,
+        corner: corner,
+        presets: options
+      }, corner))
     })]
   });
 }
@@ -26825,7 +27195,17 @@ function BorderPanel({
 
   // Border radius.
   const showBorderRadius = useHasBorderRadiusControl(settings);
-  const borderRadiusValues = decodeValue(border?.radius);
+  const borderRadiusValues = (0,external_wp_element_namespaceObject.useMemo)(() => {
+    if (typeof border?.radius !== 'object') {
+      return decodeValue(border?.radius);
+    }
+    return {
+      topLeft: decodeValue(border?.radius?.topLeft),
+      topRight: decodeValue(border?.radius?.topRight),
+      bottomLeft: decodeValue(border?.radius?.bottomLeft),
+      bottomRight: decodeValue(border?.radius?.bottomRight)
+    };
+  }, [border?.radius, decodeValue]);
   const setBorderRadius = newBorderRadius => setBorder({
     ...border,
     radius: newBorderRadius
@@ -26932,6 +27312,7 @@ function BorderPanel({
       isShownByDefault: defaultControls.radius,
       panelId: panelId,
       children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(BorderRadiusControl, {
+        presets: settings?.border?.radiusSizes,
         values: borderRadiusValues,
         onChange: newValue => {
           setBorderRadius(newValue || undefined);
@@ -30859,23 +31240,6 @@ function useSpacingSizes() {
   }, [customSizes, themeSizes, defaultSizes]);
 }
 
-;// ./packages/icons/build-module/library/settings.js
-/**
- * WordPress dependencies
- */
-
-
-const settings_settings = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_wp_primitives_namespaceObject.SVG, {
-  xmlns: "http://www.w3.org/2000/svg",
-  viewBox: "0 0 24 24",
-  children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.Path, {
-    d: "m19 7.5h-7.628c-.3089-.87389-1.1423-1.5-2.122-1.5-.97966 0-1.81309.62611-2.12197 1.5h-2.12803v1.5h2.12803c.30888.87389 1.14231 1.5 2.12197 1.5.9797 0 1.8131-.62611 2.122-1.5h7.628z"
-  }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(external_wp_primitives_namespaceObject.Path, {
-    d: "m19 15h-2.128c-.3089-.8739-1.1423-1.5-2.122-1.5s-1.8131.6261-2.122 1.5h-7.628v1.5h7.628c.3089.8739 1.1423 1.5 2.122 1.5s1.8131-.6261 2.122-1.5h2.128z"
-  })]
-});
-/* harmony default export */ const library_settings = (settings_settings);
-
 ;// ./packages/block-editor/build-module/components/spacing-sizes-control/input-controls/spacing-input-control.js
 /**
  * WordPress dependencies
@@ -31326,7 +31690,7 @@ function SeparatedInputControls({
 
 
 
-function SingleInputControl({
+function single_SingleInputControl({
   minimumCustomValue,
   onChange,
   onMouseOut,
@@ -31497,7 +31861,7 @@ function SpacingSizesControl({
         ...inputControlProps
       });
     }
-    return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(SingleInputControl, {
+    return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(single_SingleInputControl, {
       side: view,
       ...inputControlProps,
       showSideInLabel: showSideInLabel
@@ -34450,7 +34814,7 @@ function DuotonePanelPure({
             }
           };
           setAttributes({
-            style: newStyle
+            style: utils_cleanEmptyObject(newStyle)
           });
         },
         settings: settings
@@ -34474,7 +34838,7 @@ function DuotonePanelPure({
             }
           };
           setAttributes({
-            style: newStyle
+            style: utils_cleanEmptyObject(newStyle)
           });
         },
         settings: settings
@@ -39192,7 +39556,8 @@ const BLOCK_BINDINGS_ALLOWED_BLOCKS = {
   'core/paragraph': ['content'],
   'core/heading': ['content'],
   'core/image': ['id', 'url', 'title', 'alt'],
-  'core/button': ['url', 'text', 'linkTarget', 'rel']
+  'core/button': ['url', 'text', 'linkTarget', 'rel'],
+  'core/post-date': ['datetime']
 };
 
 /**
@@ -47724,6 +48089,9 @@ function getDropTargetPosition(blocksData, position, orientation = 'vertical', o
     blockOrientation
   }) => {
     const rect = getBoundingClientRect();
+    if (!rect) {
+      return;
+    }
     let [distance, edge] = getDistanceToNearestEdge(position, rect, allowedEdges);
     // If the the point is close to a side, prioritize that side.
     const [sideDistance, sideEdge] = getDistanceToNearestEdge(position, rect, ['left', 'right']);
@@ -47919,7 +48287,10 @@ function useBlockDropZone({
       const clientId = block.clientId;
       return {
         isUnmodifiedDefaultBlock: (0,external_wp_blocks_namespaceObject.isUnmodifiedDefaultBlock)(block),
-        getBoundingClientRect: () => ownerDocument.getElementById(`block-${clientId}`).getBoundingClientRect(),
+        getBoundingClientRect: () => {
+          const blockElement = ownerDocument.getElementById(`block-${clientId}`);
+          return blockElement ? blockElement.getBoundingClientRect() : null;
+        },
         blockIndex: getBlockIndex(clientId),
         blockOrientation: getBlockListSettings(clientId)?.orientation
       };
@@ -48538,7 +48909,6 @@ function ZoomOutSeparator({
     return {
       sectionRootClientId: root,
       sectionClientIds: sectionRootClientIds,
-      blockOrder: getBlockOrder(root),
       insertionPoint: getInsertionPoint(),
       blockInsertionPoint: getBlockInsertionPoint(),
       blockInsertionPointVisible: isBlockInsertionPointVisible(),
@@ -49871,7 +50241,9 @@ function useClickSelection() {
       const startClientId = getBlockSelectionStart();
       const clickedClientId = getBlockClientId(event.target);
       if (event.shiftKey) {
-        if (startClientId !== clickedClientId) {
+        // When selecting a single block in a document by holding the shift key,
+        // don't mark this action as multiselection.
+        if (startClientId && startClientId !== clickedClientId) {
           node.contentEditable = true;
           // Firefox doesn't automatically move focus.
           node.focus();
@@ -51209,8 +51581,15 @@ function Iframe({
     function interceptLinkClicks(event) {
       if (event.target.tagName === 'A' && event.target.getAttribute('href')?.startsWith('#')) {
         event.preventDefault();
-        // Manually handle link fragment navigation within the iframe to prevent page reloads.
-        // This ensures smooth scrolling to anchor links (e.g., footnotes) despite the iframe's different base URL.
+        // Manually handle link fragment navigation within the iframe. The iframe's
+        // location is a blob URL, which can't be used to resolve relative links like
+        // `#hash`. The relative link would be resolved against the iframe's base URL
+        // or the parent frame's URL, causing the iframe to navigate to a completely
+        // different page. Setting the `location.hash` works because it really sets the
+        // blob URL's hash.
+        //
+        // Links with fragments are used for example with footnotes. Clicking on these
+        // links will scroll smoothly to the anchors in the editor canvas.
         iFrameDocument.defaultView.location.hash = event.target.getAttribute('href').slice(1);
       }
     }
@@ -63597,6 +63976,7 @@ function BlockSettingsDropdown({
     selectedBlockClientIds,
     openedBlockSettingsMenu,
     isContentOnly,
+    isNavigationMode,
     isZoomOut
   } = (0,external_wp_data_namespaceObject.useSelect)(select => {
     const {
@@ -63607,6 +63987,7 @@ function BlockSettingsDropdown({
       getBlockAttributes,
       getOpenedBlockSettingsMenu,
       getBlockEditingMode,
+      isNavigationMode: _isNavigationMode,
       isZoomOut: _isZoomOut
     } = unlock(select(store));
     const {
@@ -63621,6 +64002,7 @@ function BlockSettingsDropdown({
       selectedBlockClientIds: getSelectedBlockClientIds(),
       openedBlockSettingsMenu: getOpenedBlockSettingsMenu(),
       isContentOnly: getBlockEditingMode(firstBlockClientId) === 'contentOnly',
+      isNavigationMode: _isNavigationMode(),
       isZoomOut: _isZoomOut()
     };
   }, [firstBlockClientId]);
@@ -63645,6 +64027,7 @@ function BlockSettingsDropdown({
     };
   }, []);
   const hasSelectedBlocks = selectedBlockClientIds.length > 0;
+  const isContentOnlyWriteMode = isNavigationMode && isContentOnly;
   async function updateSelectionAfterDuplicate(clientIdsPromise) {
     if (!__experimentalSelectBlock) {
       return;
@@ -63735,11 +64118,11 @@ function BlockSettingsDropdown({
               parentBlockType: parentBlockType
             }), count === 1 && /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(block_html_convert_button, {
               clientId: firstBlockClientId
-            }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(CopyMenuItem, {
+            }), !isContentOnlyWriteMode && /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(CopyMenuItem, {
               clientIds: clientIds,
               onCopy: onCopy,
               shortcut: shortcuts.copy
-            }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(CopyMenuItem, {
+            }), !isContentOnlyWriteMode && /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(CopyMenuItem, {
               clientIds: clientIds,
               label: (0,external_wp_i18n_namespaceObject.__)('Cut'),
               eventType: "cut",
@@ -64655,7 +65038,8 @@ function PrivateBlockToolbar({
       getSettings,
       getParentSectionBlock,
       isZoomOut,
-      isNavigationMode: _isNavigationMode
+      isNavigationMode: _isNavigationMode,
+      isSectionBlock
     } = unlock(select(store));
     const selectedBlockClientIds = getSelectedBlockClientIds();
     const selectedBlockClientId = selectedBlockClientIds[0];
@@ -64665,6 +65049,7 @@ function PrivateBlockToolbar({
     const parentBlockName = getBlockName(parentClientId);
     const parentBlockType = (0,external_wp_blocks_namespaceObject.getBlockType)(parentBlockName);
     const editingMode = getBlockEditingMode(selectedBlockClientId);
+    const isNavigationModeEnabled = _isNavigationMode();
     const _isDefaultEditingMode = editingMode === 'default';
     const _blockName = getBlockName(selectedBlockClientId);
     const isValid = selectedBlockClientIds.every(id => isBlockValid(id));
@@ -64690,9 +65075,10 @@ function PrivateBlockToolbar({
       showSlots: !_isZoomOut,
       showGroupButtons: !_isZoomOut,
       showLockButtons: !_isZoomOut,
-      showSwitchSectionStyleButton: _isZoomOut,
+      showSwitchSectionStyleButton: _isZoomOut || isNavigationModeEnabled && editingMode === 'contentOnly' && isSectionBlock(selectedBlockClientId),
+      // Zoom out or Write Mode Section Blocks
       hasFixedToolbar: getSettings().hasFixedToolbar,
-      isNavigationMode: _isNavigationMode()
+      isNavigationMode: isNavigationModeEnabled
     };
   }, []);
   const toolbarWrapperRef = (0,external_wp_element_namespaceObject.useRef)(null);
@@ -67134,7 +67520,8 @@ function ListViewBlock({
           className: 'block-editor-list-view-block__menu',
           tabIndex,
           onClick: clearSettingsAnchorRect,
-          onFocus
+          onFocus,
+          size: 'small'
         },
         disableOpenOnArrowDown: true,
         expand: expand,
@@ -70295,12 +70682,15 @@ const constants_POPOVER_PROPS = {
 /**
  * WordPress dependencies
  */
-// Disable Reason: Needs to be refactored.
-// eslint-disable-next-line no-restricted-imports
 
 
 
 
+
+
+/**
+ * Internal dependencies
+ */
 
 
 const messages = {
@@ -70321,11 +70711,27 @@ function useSaveImage({
     createSuccessNotice
   } = (0,external_wp_data_namespaceObject.useDispatch)(external_wp_notices_namespaceObject.store);
   const [isInProgress, setIsInProgress] = (0,external_wp_element_namespaceObject.useState)(false);
+  const {
+    editMediaEntity
+  } = (0,external_wp_data_namespaceObject.useSelect)(select => {
+    const settings = select(store).getSettings();
+    return {
+      editMediaEntity: settings?.[mediaEditKey]
+    };
+  }, []);
   const cancel = (0,external_wp_element_namespaceObject.useCallback)(() => {
     setIsInProgress(false);
     onFinishEditing();
   }, [onFinishEditing]);
-  const apply = (0,external_wp_element_namespaceObject.useCallback)(() => {
+  const apply = (0,external_wp_element_namespaceObject.useCallback)(async () => {
+    if (!editMediaEntity) {
+      onFinishEditing();
+      createErrorNotice((0,external_wp_i18n_namespaceObject.__)('Sorry, you are not allowed to edit images on this site.'), {
+        id: 'image-editing-error',
+        type: 'snackbar'
+      });
+      return;
+    }
     setIsInProgress(true);
     const modifiers = [];
     if (rotation > 0) {
@@ -70357,41 +70763,42 @@ function useSaveImage({
       return;
     }
     const modifierType = modifiers.length === 1 ? modifiers[0].type : 'cropAndRotate';
-    external_wp_apiFetch_default()({
-      path: `/wp/v2/media/${id}/edit`,
-      method: 'POST',
-      data: {
+    try {
+      const savedImage = await editMediaEntity(id, {
         src: url,
         modifiers
+      }, {
+        throwOnError: true
+      });
+      if (savedImage) {
+        onSaveImage({
+          id: savedImage.id,
+          url: savedImage.source_url
+        });
+        createSuccessNotice(messages[modifierType], {
+          type: 'snackbar',
+          actions: [{
+            label: (0,external_wp_i18n_namespaceObject.__)('Undo'),
+            onClick: () => {
+              onSaveImage({
+                id,
+                url
+              });
+            }
+          }]
+        });
       }
-    }).then(response => {
-      onSaveImage({
-        id: response.id,
-        url: response.source_url
-      });
-      createSuccessNotice(messages[modifierType], {
-        type: 'snackbar',
-        actions: [{
-          label: (0,external_wp_i18n_namespaceObject.__)('Undo'),
-          onClick: () => {
-            onSaveImage({
-              id,
-              url
-            });
-          }
-        }]
-      });
-    }).catch(error => {
+    } catch (error) {
       createErrorNotice((0,external_wp_i18n_namespaceObject.sprintf)(/* translators: %s: Error message. */
       (0,external_wp_i18n_namespaceObject.__)('Could not edit image. %s'), (0,external_wp_dom_namespaceObject.__unstableStripHTML)(error.message)), {
         id: 'image-editing-error',
         type: 'snackbar'
       });
-    }).finally(() => {
+    } finally {
       setIsInProgress(false);
       onFinishEditing();
-    });
-  }, [crop, rotation, id, url, onSaveImage, createErrorNotice, createSuccessNotice, onFinishEditing]);
+    }
+  }, [crop, rotation, id, url, onSaveImage, createErrorNotice, createSuccessNotice, onFinishEditing, editMediaEntity]);
   return (0,external_wp_element_namespaceObject.useMemo)(() => ({
     isInProgress,
     apply,
@@ -73048,6 +73455,11 @@ function useMarkPersistent({
 
 
 
+
+/**
+ * Internal dependencies
+ */
+
 function formatTypesSelector(select) {
   return select(external_wp_richText_namespaceObject.store).getFormatTypes();
 }
@@ -73080,26 +73492,32 @@ function getPrefixedSelectKeys(selected, prefix) {
  * This hook provides RichText with the `formatTypes` and its derived props from
  * experimental format type settings.
  *
- * @param {Object}  $0                              Options
- * @param {string}  $0.clientId                     Block client ID.
- * @param {string}  $0.identifier                   Block attribute.
- * @param {boolean} $0.withoutInteractiveFormatting Whether to clean the interactive formatting or not.
- * @param {Array}   $0.allowedFormats               Allowed formats
+ * @param {Object}  options                                Options
+ * @param {string}  options.clientId                       Block client ID.
+ * @param {string}  options.identifier                     Block attribute.
+ * @param {Array}   options.allowedFormats                 Allowed formats
+ * @param {boolean} options.withoutInteractiveFormatting   Whether to clean the interactive formatting or not.
+ * @param {boolean} options.disableNoneEssentialFormatting Whether to disable none-essential formatting or not.
  */
 function useFormatTypes({
   clientId,
   identifier,
+  allowedFormats,
   withoutInteractiveFormatting,
-  allowedFormats
+  disableNoneEssentialFormatting = false
 }) {
   const allFormatTypes = (0,external_wp_data_namespaceObject.useSelect)(formatTypesSelector, []);
   const formatTypes = (0,external_wp_element_namespaceObject.useMemo)(() => {
     return allFormatTypes.filter(({
       name,
       interactive,
-      tagName
+      tagName,
+      [essentialFormatKey]: isEssential
     }) => {
       if (allowedFormats && !allowedFormats.includes(name)) {
+        return false;
+      }
+      if (disableNoneEssentialFormatting && !isEssential) {
         return false;
       }
       if (withoutInteractiveFormatting && (interactive || interactiveContentTags.has(tagName))) {
@@ -73107,7 +73525,7 @@ function useFormatTypes({
       }
       return true;
     });
-  }, [allFormatTypes, allowedFormats, withoutInteractiveFormatting]);
+  }, [allFormatTypes, allowedFormats, disableNoneEssentialFormatting, withoutInteractiveFormatting]);
   const keyedSelected = (0,external_wp_data_namespaceObject.useSelect)(select => formatTypes.reduce((accumulator, type) => {
     if (!type.__experimentalGetPropsForEditableTreePreparation) {
       return accumulator;
@@ -74324,7 +74742,9 @@ function RichTextWrapper({
     }
     const {
       getSelectionStart,
-      getSelectionEnd
+      getSelectionEnd,
+      getBlockEditingMode,
+      isNavigationMode
     } = select(store);
     const selectionStart = getSelectionStart();
     const selectionEnd = getSelectionEnd();
@@ -74337,13 +74757,15 @@ function RichTextWrapper({
     return {
       selectionStart: isSelected ? selectionStart.offset : undefined,
       selectionEnd: isSelected ? selectionEnd.offset : undefined,
-      isSelected
+      isSelected,
+      isContentOnlyWriteMode: isNavigationMode() && getBlockEditingMode(clientId) === 'contentOnly'
     };
   };
   const {
     selectionStart,
     selectionEnd,
-    isSelected
+    isSelected,
+    isContentOnlyWriteMode
   } = (0,external_wp_data_namespaceObject.useSelect)(selector, [clientId, identifier, instanceId, originalIsSelected, isBlockSelected]);
   const {
     disableBoundBlock,
@@ -74450,8 +74872,9 @@ function RichTextWrapper({
   } = useFormatTypes({
     clientId,
     identifier,
+    allowedFormats: adjustedAllowedFormats,
     withoutInteractiveFormatting,
-    allowedFormats: adjustedAllowedFormats
+    disableNoneEssentialFormatting: isContentOnlyWriteMode
   });
   function addEditorOnlyFormats(value) {
     return valueHandlers.reduce((accumulator, fn) => fn(accumulator, value.text), value.formats);
@@ -75209,6 +75632,7 @@ const image_image = /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx
 
 
 
+
 /**
  * Internal dependencies
  */
@@ -75308,7 +75732,7 @@ const ImageURLInputUI = ({
         // This check will ensure our link destination is correct.
         const selectedDestination = getLinkDestinations().find(destination => destination.url === urlInput)?.linkDestination || LINK_DESTINATION_CUSTOM;
         onChangeUrl({
-          href: urlInput,
+          href: (0,external_wp_url_namespaceObject.prependHTTP)(urlInput),
           linkDestination: selectedDestination,
           lightbox: {
             enabled: false
@@ -76943,6 +77367,7 @@ function PublishDateTimePicker({
   showPopoverHeaderActions,
   isCompact,
   currentDate,
+  title,
   ...additionalProps
 }, ref) {
   const datePickerProps = {
@@ -76957,7 +77382,7 @@ function PublishDateTimePicker({
     ref: ref,
     className: "block-editor-publish-date-time-picker",
     children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(InspectorPopoverHeader, {
-      title: (0,external_wp_i18n_namespaceObject.__)('Publish'),
+      title: title || (0,external_wp_i18n_namespaceObject.__)('Publish'),
       actions: showPopoverHeaderActions ? [{
         label: (0,external_wp_i18n_namespaceObject.__)('Now'),
         onClick: () => onChange?.(null)
@@ -80852,7 +81277,9 @@ lock(privateApis, {
   setBackgroundStyleDefaults: setBackgroundStyleDefaults,
   sectionRootClientIdKey: sectionRootClientIdKey,
   CommentIconSlotFill: block_comment_icon_slot,
-  CommentIconToolbarSlotFill: block_comment_icon_toolbar_slot
+  CommentIconToolbarSlotFill: block_comment_icon_toolbar_slot,
+  mediaEditKey: mediaEditKey,
+  essentialFormatKey: essentialFormatKey
 });
 
 ;// ./packages/block-editor/build-module/index.js

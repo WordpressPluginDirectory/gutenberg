@@ -468,6 +468,10 @@ GradientParser.stringify = (function() {
       return node.value + 'px';
     },
 
+    'visit_calc': function(node) {
+      return 'calc(' + node.value + ')';
+    },
+
     'visit_literal': function(node) {
       return visitor.visit_color(node.value, node);
     },
@@ -482,6 +486,18 @@ GradientParser.stringify = (function() {
 
     'visit_rgba': function(node) {
       return visitor.visit_color('rgba(' + node.value.join(', ') + ')', node);
+    },
+
+    'visit_hsl': function(node) {
+      return visitor.visit_color('hsl(' + node.value[0] + ', ' + node.value[1] + '%, ' + node.value[2] + '%)', node);
+    },
+
+    'visit_hsla': function(node) {
+      return visitor.visit_color('hsla(' + node.value[0] + ', ' + node.value[1] + '%, ' + node.value[2] + '%, ' + node.value[3] + ')', node);
+    },
+
+    'visit_var': function(node) {
+      return visitor.visit_color('var(' + node.value + ')', node);
     },
 
     'visit_color': function(resultColor, node) {
@@ -516,6 +532,13 @@ GradientParser.stringify = (function() {
       return result;
     },
 
+    'visit_object': function(obj) {
+      if (obj.width && obj.height) {
+        return visitor.visit(obj.width) + ' ' + visitor.visit(obj.height);
+      }
+      return '';
+    },
+
     'visit': function(element) {
       if (!element) {
         return '';
@@ -523,7 +546,9 @@ GradientParser.stringify = (function() {
       var result = '';
 
       if (element instanceof Array) {
-        return visitor.visit_array(element, result);
+        return visitor.visit_array(element);
+      } else if (typeof element === 'object' && !element.type) {
+        return visitor.visit_object(element);
       } else if (element.type) {
         var nodeVisitor = visitor['visit_' + element.type];
         if (nodeVisitor) {
@@ -556,13 +581,14 @@ GradientParser.parse = (function() {
     repeatingLinearGradient: /^(\-(webkit|o|ms|moz)\-)?(repeating\-linear\-gradient)/i,
     radialGradient: /^(\-(webkit|o|ms|moz)\-)?(radial\-gradient)/i,
     repeatingRadialGradient: /^(\-(webkit|o|ms|moz)\-)?(repeating\-radial\-gradient)/i,
-    sideOrCorner: /^to (left (top|bottom)|right (top|bottom)|left|right|top|bottom)/i,
+    sideOrCorner: /^to (left (top|bottom)|right (top|bottom)|top (left|right)|bottom (left|right)|left|right|top|bottom)/i,
     extentKeywords: /^(closest\-side|closest\-corner|farthest\-side|farthest\-corner|contain|cover)/,
     positionKeywords: /^(left|center|right|top|bottom)/i,
     pixelValue: /^(-?(([0-9]*\.[0-9]+)|([0-9]+\.?)))px/,
     percentageValue: /^(-?(([0-9]*\.[0-9]+)|([0-9]+\.?)))\%/,
     emValue: /^(-?(([0-9]*\.[0-9]+)|([0-9]+\.?)))em/,
     angleValue: /^(-?(([0-9]*\.[0-9]+)|([0-9]+\.?)))deg/,
+    radianValue: /^(-?(([0-9]*\.[0-9]+)|([0-9]+\.?)))rad/,
     startCall: /^\(/,
     endCall: /^\)/,
     comma: /^,/,
@@ -570,7 +596,12 @@ GradientParser.parse = (function() {
     literalColor: /^([a-zA-Z]+)/,
     rgbColor: /^rgb/i,
     rgbaColor: /^rgba/i,
-    number: /^(([0-9]*\.[0-9]+)|([0-9]+\.?))/
+    varColor: /^var/i,
+    calcValue: /^calc/i,
+    variableName: /^(--[a-zA-Z0-9-,\s\#]+)/,
+    number: /^(([0-9]*\.[0-9]+)|([0-9]+\.?))/,
+    hslColor: /^hsl/i,
+    hslaColor: /^hsla/i,
   };
 
   var input = '';
@@ -654,8 +685,24 @@ GradientParser.parse = (function() {
   }
 
   function matchLinearOrientation() {
-    return matchSideOrCorner() ||
-      matchAngle();
+    // Check for standard CSS3 "to" direction
+    var sideOrCorner = matchSideOrCorner();
+    if (sideOrCorner) {
+      return sideOrCorner;
+    }
+    
+    // Check for legacy single keyword direction (e.g., "right", "top")
+    var legacyDirection = match('position-keyword', tokens.positionKeywords, 1);
+    if (legacyDirection) {
+      // For legacy syntax, we convert to the directional type
+      return {
+        type: 'directional',
+        value: legacyDirection.value
+      };
+    }
+    
+    // If neither, check for angle
+    return matchAngle();
   }
 
   function matchSideOrCorner() {
@@ -663,7 +710,8 @@ GradientParser.parse = (function() {
   }
 
   function matchAngle() {
-    return match('angular', tokens.angleValue, 1);
+    return match('angular', tokens.angleValue, 1) ||
+      match('angular', tokens.radianValue, 1);
   }
 
   function matchListRadialOrientations() {
@@ -704,12 +752,21 @@ GradientParser.parse = (function() {
           radialType.at = positionAt;
         }
       } else {
-        var defaultPosition = matchPositioning();
-        if (defaultPosition) {
+        // Check for "at" position first, which is a common browser output format
+        var atPosition = matchAtPosition();
+        if (atPosition) {
           radialType = {
             type: 'default-radial',
-            at: defaultPosition
+            at: atPosition
           };
+        } else {
+          var defaultPosition = matchPositioning();
+          if (defaultPosition) {
+            radialType = {
+              type: 'default-radial',
+              at: defaultPosition
+            };
+          }
         }
       }
     }
@@ -731,7 +788,7 @@ GradientParser.parse = (function() {
     var ellipse = match('shape', /^(ellipse)/i, 0);
 
     if (ellipse) {
-      ellipse.style =  matchDistance() || matchExtentKeyword();
+      ellipse.style = matchPositioning() || matchDistance() || matchExtentKeyword();
     }
 
     return ellipse;
@@ -803,8 +860,11 @@ GradientParser.parse = (function() {
 
   function matchColor() {
     return matchHexColor() ||
+      matchHSLAColor() ||
+      matchHSLColor() ||
       matchRGBAColor() ||
       matchRGBColor() ||
+      matchVarColor() ||
       matchLiteralColor();
   }
 
@@ -834,6 +894,70 @@ GradientParser.parse = (function() {
     });
   }
 
+  function matchVarColor() {
+    return matchCall(tokens.varColor, function () {
+      return {
+        type: 'var',
+        value: matchVariableName()
+      };
+    });
+  }
+
+  function matchHSLColor() {
+    return matchCall(tokens.hslColor, function() {
+      // Check for percentage before trying to parse the hue
+      var lookahead = scan(tokens.percentageValue);
+      if (lookahead) {
+        error('HSL hue value must be a number in degrees (0-360) or normalized (-360 to 360), not a percentage');
+      }
+      
+      var hue = matchNumber();
+      scan(tokens.comma);
+      var captures = scan(tokens.percentageValue);
+      var sat = captures ? captures[1] : null;
+      scan(tokens.comma);
+      captures = scan(tokens.percentageValue);
+      var light = captures ? captures[1] : null;
+      if (!sat || !light) {
+        error('Expected percentage value for saturation and lightness in HSL');
+      }
+      return {
+        type: 'hsl',
+        value: [hue, sat, light]
+      };
+    });
+  }
+
+  function matchHSLAColor() {
+    return matchCall(tokens.hslaColor, function() {
+      var hue = matchNumber();
+      scan(tokens.comma);
+      var captures = scan(tokens.percentageValue);
+      var sat = captures ? captures[1] : null;
+      scan(tokens.comma);
+      captures = scan(tokens.percentageValue);
+      var light = captures ? captures[1] : null;
+      scan(tokens.comma);
+      var alpha = matchNumber();
+      if (!sat || !light) {
+        error('Expected percentage value for saturation and lightness in HSLA');
+      }
+      return {
+        type: 'hsla',
+        value: [hue, sat, light, alpha]
+      };
+    });
+  }
+
+  function matchPercentage() {
+    var captures = scan(tokens.percentageValue);
+    return captures ? captures[1] : null;
+  }
+
+  function matchVariableName() {
+    return scan(tokens.variableName)[1];
+  }
+
   function matchNumber() {
     return scan(tokens.number)[1];
   }
@@ -841,11 +965,46 @@ GradientParser.parse = (function() {
   function matchDistance() {
     return match('%', tokens.percentageValue, 1) ||
       matchPositionKeyword() ||
+      matchCalc() ||
       matchLength();
   }
 
   function matchPositionKeyword() {
     return match('position-keyword', tokens.positionKeywords, 1);
+  }
+
+  function matchCalc() {
+    return matchCall(tokens.calcValue, function() {
+      var openParenCount = 1; // Start with the opening parenthesis from calc(
+      var i = 0;
+      
+      // Parse through the content looking for balanced parentheses
+      while (openParenCount > 0 && i < input.length) {
+        var char = input.charAt(i);
+        if (char === '(') {
+          openParenCount++;
+        } else if (char === ')') {
+          openParenCount--;
+        }
+        i++;
+      }
+      
+      // If we exited because we ran out of input but still have open parentheses, error
+      if (openParenCount > 0) {
+        error('Missing closing parenthesis in calc() expression');
+      }
+      
+      // Get the content inside the calc() without the last closing paren
+      var calcContent = input.substring(0, i - 1);
+      
+      // Consume the calc expression content
+      consume(i - 1); // -1 because we don't want to consume the closing parenthesis
+      
+      return {
+        type: 'calc',
+        value: calcContent
+      };
+    });
   }
 
   function matchLength() {
@@ -885,7 +1044,11 @@ GradientParser.parse = (function() {
   }
 
   return function(code) {
-    input = code.toString();
+    input = code.toString().trim();
+    // Remove trailing semicolon if present
+    if (input.endsWith(';')) {
+      input = input.slice(0, -1);
+    }
     return getAST();
   };
 })();
@@ -37803,10 +37966,10 @@ var range_control_styles_ref2 =  true ? {
   name: "1lr98c4",
   styles: "bottom:-80%"
 } : 0;
-const tooltipPosition = ({
-  position
+const tooltipPlacement = ({
+  placement
 }) => {
-  const isBottom = position === 'bottom';
+  const isBottom = placement === 'bottom';
   if (isBottom) {
     return range_control_styles_ref2;
   }
@@ -37814,7 +37977,7 @@ const tooltipPosition = ({
 };
 const range_control_styles_Tooltip = /*#__PURE__*/emotion_styled_base_browser_esm("span",  true ? {
   target: "e1epgpqk2"
-} : 0)("background:rgba( 0, 0, 0, 0.8 );border-radius:", config_values.radiusSmall, ";color:white;font-size:12px;min-width:32px;padding:4px 8px;pointer-events:none;position:absolute;text-align:center;user-select:none;line-height:1.4;", tooltipShow, ";", tooltipPosition, ";", rtl({
+} : 0)("background:rgba( 0, 0, 0, 0.8 );border-radius:", config_values.radiusSmall, ";color:white;font-size:12px;min-width:32px;padding:4px 8px;pointer-events:none;position:absolute;text-align:center;user-select:none;line-height:1.4;", tooltipShow, ";", tooltipPlacement, ";", rtl({
   transform: 'translateX(-50%)'
 }, {
   transform: 'translateX(50%)'
@@ -38026,7 +38189,7 @@ function SimpleTooltip(props) {
   const {
     className,
     inputRef,
-    tooltipPosition,
+    tooltipPlacement,
     show = false,
     style = {},
     value = 0,
@@ -38034,9 +38197,9 @@ function SimpleTooltip(props) {
     zIndex = 100,
     ...restProps
   } = props;
-  const position = useTooltipPosition({
+  const placement = useTooltipPlacement({
     inputRef,
-    tooltipPosition
+    tooltipPlacement
   });
   const classes = dist_clsx('components-simple-tooltip', className);
   const styles = {
@@ -38047,33 +38210,33 @@ function SimpleTooltip(props) {
     ...restProps,
     "aria-hidden": "false",
     className: classes,
-    position: position,
+    placement: placement,
     show: show,
     role: "tooltip",
     style: styles,
     children: renderTooltipContent(value)
   });
 }
-function useTooltipPosition({
+function useTooltipPlacement({
   inputRef,
-  tooltipPosition
+  tooltipPlacement
 }) {
-  const [position, setPosition] = (0,external_wp_element_namespaceObject.useState)();
-  const setTooltipPosition = (0,external_wp_element_namespaceObject.useCallback)(() => {
+  const [placement, setPlacement] = (0,external_wp_element_namespaceObject.useState)();
+  const setTooltipPlacement = (0,external_wp_element_namespaceObject.useCallback)(() => {
     if (inputRef && inputRef.current) {
-      setPosition(tooltipPosition);
+      setPlacement(tooltipPlacement);
     }
-  }, [tooltipPosition, inputRef]);
+  }, [tooltipPlacement, inputRef]);
   (0,external_wp_element_namespaceObject.useEffect)(() => {
-    setTooltipPosition();
-  }, [setTooltipPosition]);
+    setTooltipPlacement();
+  }, [setTooltipPlacement]);
   (0,external_wp_element_namespaceObject.useEffect)(() => {
-    window.addEventListener('resize', setTooltipPosition);
+    window.addEventListener('resize', setTooltipPlacement);
     return () => {
-      window.removeEventListener('resize', setTooltipPosition);
+      window.removeEventListener('resize', setTooltipPlacement);
     };
   });
-  return position;
+  return placement;
 }
 
 ;// ./packages/components/build-module/range-control/index.js
@@ -38331,7 +38494,7 @@ function UnforwardedRangeControl(props, forwardedRef) {
         }), enableTooltip && /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(SimpleTooltip, {
           className: "components-range-control__tooltip",
           inputRef: inputRef,
-          tooltipPosition: "bottom",
+          tooltipPlacement: "bottom",
           renderTooltipContent: renderTooltipContent,
           show: isCurrentlyFocused || showTooltip,
           style: offsetStyle,
@@ -38455,7 +38618,7 @@ const ColorInputWrapper = /*#__PURE__*/emotion_styled_base_browser_esm(flex_comp
 } : 0)("padding-top:", space(4), ";padding-left:", space(4), ";padding-right:", space(3), ";padding-bottom:", space(5), ";" + ( true ? "" : 0));
 const ColorfulWrapper = /*#__PURE__*/emotion_styled_base_browser_esm("div",  true ? {
   target: "ez9hsf40"
-} : 0)(boxSizingReset, ";width:216px;.react-colorful{display:flex;flex-direction:column;align-items:center;width:216px;height:auto;}.react-colorful__saturation{width:100%;border-radius:0;height:216px;margin-bottom:", space(4), ";border-bottom:none;}.react-colorful__hue,.react-colorful__alpha{width:184px;height:16px;border-radius:", config_values.radiusFull, ";margin-bottom:", space(2), ";}.react-colorful__pointer{height:16px;width:16px;border:none;box-shadow:0 0 2px 0 rgba( 0, 0, 0, 0.25 );outline:2px solid transparent;}.react-colorful__pointer-fill{box-shadow:inset 0 0 0 ", config_values.borderWidthFocus, " #fff;}", interactiveHueStyles, ";" + ( true ? "" : 0));
+} : 0)(boxSizingReset, ";width:216px;.react-colorful{display:flex;flex-direction:column;align-items:center;width:216px;height:auto;}.react-colorful__saturation{width:100%;border-radius:0;height:216px;margin-bottom:", space(4), ";border-bottom:none;}.react-colorful__hue,.react-colorful__alpha{width:184px;height:16px;border-radius:", config_values.radiusFull, ";margin-bottom:", space(2), ";}.react-colorful__pointer{height:16px;width:16px;border:none;box-shadow:0 0 2px 0 rgba( 0, 0, 0, 0.25 );outline:2px solid transparent;@media not ( prefers-reduced-motion ){transition:transform ", config_values.transitionDurationFast, " ease-in-out;}}.react-colorful__interactive:focus .react-colorful__pointer{box-shadow:0 0 0 ", config_values.borderWidthFocus, " ", config_values.surfaceColor, ";border:", config_values.borderWidthFocus, " solid black;transform:translate( -50%, -50% ) scale( 1.5 );}.react-colorful__pointer-fill{box-shadow:inset 0 0 0 ", config_values.borderWidthFocus, " #fff;}", interactiveHueStyles, ";" + ( true ? "" : 0));
 
 ;// ./packages/icons/build-module/library/check.js
 /**
@@ -45478,6 +45641,17 @@ function serializeGradientColor({
   if (type === 'hex') {
     return `#${value}`;
   }
+  if (type === 'var') {
+    return `var(${value})`;
+  }
+  if (type === 'hsl') {
+    const [hue, saturation, lightness] = value;
+    return `hsl(${hue},${saturation}%,${lightness}%)`;
+  }
+  if (type === 'hsla') {
+    const [hue, saturation, lightness, alpha] = value;
+    return `hsla(${hue},${saturation}%,${lightness}%,${alpha})`;
+  }
   return `${type}(${value.join(',')})`;
 }
 function serializeGradientPosition(position) {
@@ -45488,6 +45662,9 @@ function serializeGradientPosition(position) {
     value,
     type
   } = position;
+  if (type === 'calc') {
+    return `calc(${value})`;
+  }
   return `${value}${type}`;
 }
 function serializeGradientColorStop({
@@ -45612,9 +45789,21 @@ function getStopCssColor(colorStop) {
       return `#${colorStop.value}`;
     case 'literal':
       return colorStop.value;
+    case 'var':
+      return `${colorStop.type}(${colorStop.value})`;
     case 'rgb':
     case 'rgba':
       return `${colorStop.type}(${colorStop.value.join(',')})`;
+    case 'hsl':
+      {
+        const [hue, saturation, lightness] = colorStop.value;
+        return `hsl(${hue},${saturation}%,${lightness}%)`;
+      }
+    case 'hsla':
+      {
+        const [hue, saturation, lightness, alpha] = colorStop.value;
+        return `hsla(${hue},${saturation}%,${lightness}%,${alpha})`;
+      }
     default:
       // Should be unreachable if passing an AST from gradient-parser.
       // See https://github.com/rafaelcaricio/gradient-parser#ast.
@@ -46767,7 +46956,7 @@ function palette_edit_Option({
         children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(IndicatorStyled, {
           colorValue: value
         })
-      }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(flex_item_component, {
+      }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(flex_block_component, {
         children: !canOnlyChangeValues ? /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(NameInput, {
           label: isGradient ? (0,external_wp_i18n_namespaceObject.__)('Gradient name') : (0,external_wp_i18n_namespaceObject.__)('Color name'),
           value: element.name,
@@ -54505,6 +54694,7 @@ const useLilius = ({
 
 ;// ./packages/components/build-module/date-time/date/styles.js
 
+function date_styles_EMOTION_STRINGIFIED_CSS_ERROR_() { return "You have tried to stringify object returned from `css` function. It isn't supposed to be used directly (e.g. as value of the `className` prop), but rather handed to emotion so it can handle it (e.g. as value of `css` prop)."; }
 /**
  * External dependencies
  */
@@ -54518,28 +54708,36 @@ const useLilius = ({
 
 
 const styles_Wrapper = /*#__PURE__*/emotion_styled_base_browser_esm("div",  true ? {
-  target: "e105ri6r5"
+  target: "e105ri6r7"
 } : 0)(boxSizingReset, ";" + ( true ? "" : 0));
 const Navigator = /*#__PURE__*/emotion_styled_base_browser_esm(h_stack_component,  true ? {
+  target: "e105ri6r6"
+} : 0)("column-gap:", space(2), ";display:grid;grid-template-columns:0.5fr repeat( 5, 1fr ) 0.5fr;justify-items:center;margin-bottom:", space(4), ";" + ( true ? "" : 0));
+const ViewPreviousMonthButton = /*#__PURE__*/emotion_styled_base_browser_esm(build_module_button,  true ? {
+  target: "e105ri6r5"
+} : 0)( true ? {
+  name: "sarfoe",
+  styles: "grid-column:1/2"
+} : 0);
+const ViewNextMonthButton = /*#__PURE__*/emotion_styled_base_browser_esm(build_module_button,  true ? {
   target: "e105ri6r4"
-} : 0)("margin-bottom:", space(4), ";" + ( true ? "" : 0));
+} : 0)( true ? {
+  name: "1v98r3z",
+  styles: "grid-column:7/8"
+} : 0);
 const NavigatorHeading = /*#__PURE__*/emotion_styled_base_browser_esm(heading_component,  true ? {
   target: "e105ri6r3"
-} : 0)("font-size:", config_values.fontSize, ";font-weight:", config_values.fontWeight, ";strong{font-weight:", config_values.fontWeightHeading, ";}" + ( true ? "" : 0));
+} : 0)("font-size:", config_values.fontSize, ";font-weight:", config_values.fontWeight, ";grid-column:2/7;strong{font-weight:", config_values.fontWeightHeading, ";}" + ( true ? "" : 0));
 const Calendar = /*#__PURE__*/emotion_styled_base_browser_esm("div",  true ? {
   target: "e105ri6r2"
 } : 0)("column-gap:", space(2), ";display:grid;grid-template-columns:0.5fr repeat( 5, 1fr ) 0.5fr;justify-items:center;row-gap:", space(2), ";" + ( true ? "" : 0));
 const DayOfWeek = /*#__PURE__*/emotion_styled_base_browser_esm("div",  true ? {
   target: "e105ri6r1"
-} : 0)("color:", COLORS.theme.gray[700], ";font-size:", config_values.fontSize, ";line-height:", config_values.fontLineHeightBase, ";&:nth-of-type( 1 ){justify-self:start;}&:nth-of-type( 7 ){justify-self:end;}" + ( true ? "" : 0));
+} : 0)("color:", COLORS.theme.gray[700], ";font-size:", config_values.fontSize, ";line-height:", config_values.fontLineHeightBase, ";" + ( true ? "" : 0));
 const DayButton = /*#__PURE__*/emotion_styled_base_browser_esm(build_module_button,  true ? {
   shouldForwardProp: prop => !['column', 'isSelected', 'isToday', 'hasEvents'].includes(prop),
   target: "e105ri6r0"
-} : 0)("grid-column:", props => props.column, ";position:relative;justify-content:center;", props => props.column === 1 && `
-		justify-self: start;
-		`, " ", props => props.column === 7 && `
-		justify-self: end;
-		`, " ", props => props.disabled && `
+} : 0)("grid-column:", props => props.column, ";position:relative;justify-content:center;", props => props.disabled && `
 		pointer-events: none;
 		`, " &&&{border-radius:", config_values.radiusRound, ";height:", space(7), ";width:", space(7), ";", props => props.isSelected && `
 				background: ${COLORS.theme.accent};
@@ -54680,7 +54878,6 @@ const TIMEZONELESS_FORMAT = "yyyy-MM-dd'T'HH:mm:ss";
 
 
 
-
 /**
  * DatePicker is a React component that renders a calendar for date selection.
  *
@@ -54746,7 +54943,7 @@ function DatePicker({
     role: "application",
     "aria-label": (0,external_wp_i18n_namespaceObject.__)('Calendar'),
     children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(Navigator, {
-      children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(build_module_button, {
+      children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ViewPreviousMonthButton, {
         icon: (0,external_wp_i18n_namespaceObject.isRTL)() ? arrow_right : arrow_left,
         variant: "tertiary",
         "aria-label": (0,external_wp_i18n_namespaceObject.__)('View previous month'),
@@ -54761,7 +54958,7 @@ function DatePicker({
         children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)("strong", {
           children: (0,external_wp_date_namespaceObject.dateI18n)('F', viewing, -viewing.getTimezoneOffset())
         }), ' ', (0,external_wp_date_namespaceObject.dateI18n)('Y', viewing, -viewing.getTimezoneOffset())]
-      }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(build_module_button, {
+      }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ViewNextMonthButton, {
         icon: (0,external_wp_i18n_namespaceObject.isRTL)() ? arrow_left : arrow_right,
         variant: "tertiary",
         "aria-label": (0,external_wp_i18n_namespaceObject.__)('View next month'),
@@ -59115,6 +59312,7 @@ function UnforwardedMenuItem(props, ref) {
     role: role,
     icon: iconPosition === 'left' ? icon : undefined,
     className: className,
+    accessibleWhenDisabled: true,
     ...buttonProps,
     children: [/*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)("span", {
       className: "components-menu-item__item",
@@ -66277,6 +66475,11 @@ const StyledTextarea = /*#__PURE__*/emotion_styled_base_browser_esm("textarea", 
 
 ;// ./packages/components/build-module/textarea-control/index.js
 /**
+ * External dependencies
+ */
+
+
+/**
  * WordPress dependencies
  */
 
@@ -66303,6 +66506,7 @@ function UnforwardedTextareaControl(props, ref) {
   const instanceId = (0,external_wp_compose_namespaceObject.useInstanceId)(TextareaControl);
   const id = `inspector-textarea-control-${instanceId}`;
   const onChangeValue = event => onChange(event.target.value);
+  const classes = dist_clsx('components-textarea-control', className);
   return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(base_control, {
     __nextHasNoMarginBottom: __nextHasNoMarginBottom,
     __associatedWPComponentName: "TextareaControl",
@@ -66310,7 +66514,7 @@ function UnforwardedTextareaControl(props, ref) {
     hideLabelFromVision: hideLabelFromVision,
     id: id,
     help: help,
-    className: className,
+    className: classes,
     children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(StyledTextarea, {
       className: "components-textarea-control__input",
       id: id,
@@ -81146,10 +81350,364 @@ const DateRangeCalendar = ({
   });
 };
 
+;// ./packages/components/build-module/validated-form-controls/validity-indicator.js
+/**
+ * External dependencies
+ */
+
+
+/**
+ * WordPress dependencies
+ */
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+function ValidityIndicator({
+  type,
+  message
+}) {
+  const ICON = {
+    valid: library_published,
+    invalid: library_error
+  };
+  return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)("p", {
+    className: dist_clsx('components-validated-control__indicator', `is-${type}`),
+    children: [type === 'validating' ? /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(spinner, {
+      className: "components-validated-control__indicator-spinner"
+    }) : /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(build_module_icon, {
+      className: "components-validated-control__indicator-icon",
+      icon: ICON[type],
+      size: 16,
+      fill: "currentColor"
+    }), message]
+  });
+}
+
+;// ./packages/components/build-module/validated-form-controls/control-with-error.js
+/**
+ * WordPress dependencies
+ */
+
+
+/**
+ * External dependencies
+ */
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+function appendRequiredIndicator(label, required, markWhenOptional) {
+  if (required && !markWhenOptional) {
+    return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_ReactJSXRuntime_namespaceObject.Fragment, {
+      children: [label, " ", `(${(0,external_wp_i18n_namespaceObject.__)('Required')})`]
+    });
+  }
+  if (!required && markWhenOptional) {
+    return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)(external_ReactJSXRuntime_namespaceObject.Fragment, {
+      children: [label, " ", `(${(0,external_wp_i18n_namespaceObject.__)('Optional')})`]
+    });
+  }
+  return label;
+}
+
+/**
+ * HTML elements that support the Constraint Validation API.
+ *
+ * Here, we exclude HTMLButtonElement because although it does technically support the API,
+ * normal buttons are actually exempted from any validation.
+ * @see https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Form_validation
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/willValidate
+ */
+
+function UnforwardedControlWithError({
+  required,
+  markWhenOptional,
+  onValidate,
+  customValidity,
+  getValidityTarget,
+  children
+}, forwardedRef) {
+  const [errorMessage, setErrorMessage] = (0,external_wp_element_namespaceObject.useState)();
+  const [statusMessage, setStatusMessage] = (0,external_wp_element_namespaceObject.useState)();
+  const [isTouched, setIsTouched] = (0,external_wp_element_namespaceObject.useState)(false);
+
+  // Ensure that error messages are visible after user attemps to submit a form
+  // with multiple invalid fields.
+  (0,external_wp_element_namespaceObject.useEffect)(() => {
+    const validityTarget = getValidityTarget();
+    const showValidationMessage = () => setErrorMessage(validityTarget?.validationMessage);
+    validityTarget?.addEventListener('invalid', showValidationMessage);
+    return () => {
+      validityTarget?.removeEventListener('invalid', showValidationMessage);
+    };
+  });
+  (0,external_wp_element_namespaceObject.useEffect)(() => {
+    if (!isTouched) {
+      return;
+    }
+    const validityTarget = getValidityTarget();
+    if (!customValidity?.type) {
+      validityTarget?.setCustomValidity('');
+      setErrorMessage(validityTarget?.validationMessage);
+      setStatusMessage(undefined);
+      return;
+    }
+    switch (customValidity.type) {
+      case 'validating':
+        {
+          // Wait before showing a validating state.
+          const timer = setTimeout(() => {
+            setStatusMessage({
+              type: 'validating',
+              message: customValidity.message
+            });
+          }, 1000);
+          return () => clearTimeout(timer);
+        }
+      case 'valid':
+        {
+          validityTarget?.setCustomValidity('');
+          setErrorMessage(validityTarget?.validationMessage);
+          setStatusMessage({
+            type: 'valid',
+            message: customValidity.message
+          });
+          return;
+        }
+      case 'invalid':
+        {
+          var _customValidity$messa;
+          validityTarget?.setCustomValidity((_customValidity$messa = customValidity.message) !== null && _customValidity$messa !== void 0 ? _customValidity$messa : '');
+          setErrorMessage(validityTarget?.validationMessage);
+          setStatusMessage(undefined);
+          return undefined;
+        }
+    }
+  }, [isTouched, customValidity?.type, customValidity?.message, getValidityTarget]);
+  const onBlur = event => {
+    // Only consider "blurred from the component" if focus has fully left the wrapping div.
+    // This prevents unnecessary blurs from components with multiple focusable elements.
+    if (!event.relatedTarget || !event.currentTarget.contains(event.relatedTarget)) {
+      setIsTouched(true);
+      const validityTarget = getValidityTarget();
+
+      // Prevents a double flash of the native error tooltip when the control is already showing one.
+      if (!validityTarget?.validity.valid) {
+        if (!errorMessage) {
+          setErrorMessage(validityTarget?.validationMessage);
+        }
+        return;
+      }
+      onValidate?.();
+    }
+  };
+  const onChange = (...args) => {
+    children.props.onChange?.(...args);
+
+    // Only validate incrementally if the field has blurred at least once,
+    // or currently has an error message.
+    if (isTouched || errorMessage) {
+      onValidate?.();
+    }
+  };
+  const onKeyDown = event => {
+    // Ensures that custom validators are triggered when the user submits by pressing Enter,
+    // without ever blurring the control.
+    if (event.key === 'Enter') {
+      onValidate?.();
+    }
+  };
+  return (
+    /*#__PURE__*/
+    // Disable reason: Just listening to a bubbled event, not for interaction.
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+    (0,external_ReactJSXRuntime_namespaceObject.jsxs)("div", {
+      className: "components-validated-control",
+      ref: forwardedRef,
+      onBlur: onBlur,
+      onKeyDown: withIgnoreIMEEvents(onKeyDown),
+      children: [(0,external_wp_element_namespaceObject.cloneElement)(children, {
+        label: appendRequiredIndicator(children.props.label, required, markWhenOptional),
+        onChange,
+        required
+      }), /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsxs)("div", {
+        "aria-live": "polite",
+        children: [errorMessage && /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ValidityIndicator, {
+          type: "invalid",
+          message: errorMessage
+        }), !errorMessage && statusMessage && /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ValidityIndicator, {
+          type: statusMessage.type,
+          message: statusMessage.message
+        })]
+      })]
+    })
+  );
+}
+const ControlWithError = (0,external_wp_element_namespaceObject.forwardRef)(UnforwardedControlWithError);
+
+;// ./packages/components/build-module/validated-form-controls/components/number-control.js
+/**
+ * WordPress dependencies
+ */
+
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+const UnforwardedValidatedNumberControl = ({
+  required,
+  onValidate,
+  customValidity,
+  onChange,
+  markWhenOptional,
+  ...restProps
+}, forwardedRef) => {
+  const validityTargetRef = (0,external_wp_element_namespaceObject.useRef)(null);
+  const mergedRefs = (0,external_wp_compose_namespaceObject.useMergeRefs)([forwardedRef, validityTargetRef]);
+  const valueRef = (0,external_wp_element_namespaceObject.useRef)(restProps.value);
+  return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ControlWithError, {
+    required: required,
+    markWhenOptional: markWhenOptional,
+    onValidate: () => {
+      return onValidate?.(valueRef.current);
+    },
+    customValidity: customValidity,
+    getValidityTarget: () => validityTargetRef.current,
+    children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(number_control, {
+      __next40pxDefaultSize: true,
+      ref: mergedRefs
+      // TODO: Upstream limitation - When form is submitted when value is undefined, it will
+      // automatically set a clamped value (as defined by `min` attribute, so 0 by default).
+      ,
+      onChange: (value, ...args) => {
+        valueRef.current = value;
+        onChange?.(value, ...args);
+      },
+      ...restProps
+    })
+  });
+};
+const ValidatedNumberControl = (0,external_wp_element_namespaceObject.forwardRef)(UnforwardedValidatedNumberControl);
+
+;// ./packages/components/build-module/validated-form-controls/components/text-control.js
+/**
+ * WordPress dependencies
+ */
+
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+const UnforwardedValidatedTextControl = ({
+  required,
+  onValidate,
+  customValidity,
+  onChange,
+  markWhenOptional,
+  ...restProps
+}, forwardedRef) => {
+  const validityTargetRef = (0,external_wp_element_namespaceObject.useRef)(null);
+  const mergedRefs = (0,external_wp_compose_namespaceObject.useMergeRefs)([forwardedRef, validityTargetRef]);
+  const valueRef = (0,external_wp_element_namespaceObject.useRef)(restProps.value);
+  return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ControlWithError, {
+    required: required,
+    markWhenOptional: markWhenOptional,
+    onValidate: () => {
+      return onValidate?.(valueRef.current);
+    },
+    customValidity: customValidity,
+    getValidityTarget: () => validityTargetRef.current,
+    children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(text_control, {
+      __next40pxDefaultSize: true,
+      __nextHasNoMarginBottom: true,
+      ref: mergedRefs,
+      onChange: value => {
+        valueRef.current = value;
+        onChange?.(value);
+      },
+      ...restProps
+    })
+  });
+};
+const ValidatedTextControl = (0,external_wp_element_namespaceObject.forwardRef)(UnforwardedValidatedTextControl);
+
+;// ./packages/components/build-module/validated-form-controls/components/toggle-control.js
+/**
+ * WordPress dependencies
+ */
+
+
+
+/**
+ * Internal dependencies
+ */
+
+
+
+// TODO: Should we customize the default `missingValue` message? It says to "check this box".
+
+const UnforwardedValidatedToggleControl = ({
+  required,
+  onValidate,
+  customValidity,
+  onChange,
+  markWhenOptional,
+  ...restProps
+}, forwardedRef) => {
+  const validityTargetRef = (0,external_wp_element_namespaceObject.useRef)(null);
+  const mergedRefs = (0,external_wp_compose_namespaceObject.useMergeRefs)([forwardedRef, validityTargetRef]);
+  const valueRef = (0,external_wp_element_namespaceObject.useRef)(restProps.checked);
+
+  // TODO: Upstream limitation - The `required` attribute is not passed down to the input,
+  // so we need to set it manually.
+  (0,external_wp_element_namespaceObject.useEffect)(() => {
+    if (validityTargetRef.current) {
+      validityTargetRef.current.required = required !== null && required !== void 0 ? required : false;
+    }
+  }, [required]);
+  return /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(ControlWithError, {
+    required: required,
+    markWhenOptional: markWhenOptional,
+    onValidate: () => {
+      return onValidate?.(valueRef.current);
+    },
+    customValidity: customValidity,
+    getValidityTarget: () => validityTargetRef.current,
+    children: /*#__PURE__*/(0,external_ReactJSXRuntime_namespaceObject.jsx)(toggle_control, {
+      __nextHasNoMarginBottom: true,
+      ref: mergedRefs,
+      onChange: value => {
+        valueRef.current = value;
+        onChange?.(value);
+      },
+      ...restProps
+    })
+  });
+};
+const ValidatedToggleControl = (0,external_wp_element_namespaceObject.forwardRef)(UnforwardedValidatedToggleControl);
+
 ;// ./packages/components/build-module/private-apis.js
 /**
  * Internal dependencies
  */
+
 
 
 
@@ -81173,7 +81731,10 @@ lock(privateApis, {
   normalizeTextString: normalizeTextString,
   DateCalendar: DateCalendar,
   DateRangeCalendar: DateRangeCalendar,
-  TZDate: date_TZDate
+  TZDate: date_TZDate,
+  ValidatedNumberControl: ValidatedNumberControl,
+  ValidatedTextControl: ValidatedTextControl,
+  ValidatedToggleControl: ValidatedToggleControl
 });
 
 ;// ./packages/components/build-module/index.js
