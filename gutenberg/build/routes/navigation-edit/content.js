@@ -116,19 +116,21 @@ var import_i18n = __toESM(require_i18n(), 1);
 var import_components = __toESM(require_components(), 1);
 var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
 import { Link } from "@wordpress/route";
-var BreadcrumbItem = ({
-  item: { label, to }
-}) => {
-  if (!to) {
-    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_components.__experimentalHeading, { level: 1, truncate: true, children: label }) });
-  }
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, { to, children: label }) });
-};
 var Breadcrumbs = ({ items }) => {
   if (!items.length) {
     return null;
   }
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", { "aria-label": (0, import_i18n.__)("Breadcrumbs"), children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+  const precedingItems = items.slice(0, -1);
+  const lastItem = items[items.length - 1];
+  if (true) {
+    const invalidItem = precedingItems.find((item) => !item.to);
+    if (invalidItem) {
+      throw new Error(
+        `Breadcrumbs: item "${invalidItem.label}" is missing a \`to\` prop. All items except the last one must have a \`to\` prop.`
+      );
+    }
+  }
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", { "aria-label": (0, import_i18n.__)("Breadcrumbs"), children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
     import_components.__experimentalHStack,
     {
       as: "ul",
@@ -136,7 +138,10 @@ var Breadcrumbs = ({ items }) => {
       spacing: 0,
       justify: "flex-start",
       alignment: "center",
-      children: items.map((item, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BreadcrumbItem, { item }, index))
+      children: [
+        precedingItems.map((item, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, { to: item.to, children: item.label }) }, index)),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: lastItem.to ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, { to: lastItem.to, children: lastItem.label }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_components.__experimentalHeading, { level: 1, truncate: true, children: lastItem.label }) })
+      ]
     }
   ) });
 };
@@ -189,6 +194,21 @@ function useRefWithInit(init, initArg) {
     ref.current = init(initArg);
   }
   return ref;
+}
+
+// node_modules/@base-ui/utils/esm/warn.js
+var set;
+if (true) {
+  set = /* @__PURE__ */ new Set();
+}
+function warn(...messages) {
+  if (true) {
+    const messageKey = messages.join(" ");
+    if (!set.has(messageKey)) {
+      set.add(messageKey);
+      console.warn(`Base UI: ${messageKey}`);
+    }
+  }
 }
 
 // node_modules/@base-ui/react/esm/utils/useRenderElement.js
@@ -354,20 +374,21 @@ function resolveStyle(style, state) {
 // node_modules/@base-ui/react/esm/merge-props/mergeProps.js
 var EMPTY_PROPS = {};
 function mergeProps(a, b, c, d, e) {
-  let merged = {
-    ...resolvePropsGetter(a, EMPTY_PROPS)
-  };
+  if (!c && !d && !e && !a) {
+    return createInitialMergedProps(b);
+  }
+  let merged = createInitialMergedProps(a);
   if (b) {
-    merged = mergeOne(merged, b);
+    merged = mergeInto(merged, b);
   }
   if (c) {
-    merged = mergeOne(merged, c);
+    merged = mergeInto(merged, c);
   }
   if (d) {
-    merged = mergeOne(merged, d);
+    merged = mergeInto(merged, d);
   }
   if (e) {
-    merged = mergeOne(merged, e);
+    merged = mergeInto(merged, e);
   }
   return merged;
 }
@@ -376,21 +397,39 @@ function mergePropsN(props) {
     return EMPTY_PROPS;
   }
   if (props.length === 1) {
-    return resolvePropsGetter(props[0], EMPTY_PROPS);
+    return createInitialMergedProps(props[0]);
   }
-  let merged = {
-    ...resolvePropsGetter(props[0], EMPTY_PROPS)
-  };
+  let merged = createInitialMergedProps(props[0]);
   for (let i = 1; i < props.length; i += 1) {
-    merged = mergeOne(merged, props[i]);
+    merged = mergeInto(merged, props[i]);
   }
   return merged;
 }
-function mergeOne(merged, inputProps) {
+function createInitialMergedProps(inputProps) {
   if (isPropsGetter(inputProps)) {
-    return inputProps(merged);
+    return {
+      ...resolvePropsGetter(inputProps, EMPTY_PROPS)
+    };
+  }
+  return copyInitialProps(inputProps);
+}
+function mergeInto(merged, inputProps) {
+  if (isPropsGetter(inputProps)) {
+    return resolvePropsGetter(inputProps, merged);
   }
   return mutablyMergeInto(merged, inputProps);
+}
+function copyInitialProps(inputProps) {
+  const copiedProps = {
+    ...inputProps
+  };
+  for (const propName in copiedProps) {
+    const propValue = copiedProps[propName];
+    if (isEventHandler(propName, propValue)) {
+      copiedProps[propName] = wrapEventHandler(propValue);
+    }
+  }
+  return copiedProps;
 }
 function mutablyMergeInto(mergedProps, externalProps) {
   if (!externalProps) {
@@ -438,7 +477,7 @@ function mergeEventHandlers(ourHandler, theirHandler) {
     return ourHandler;
   }
   if (!ourHandler) {
-    return theirHandler;
+    return wrapEventHandler(theirHandler);
   }
   return (event) => {
     if (isSyntheticEvent(event)) {
@@ -453,6 +492,17 @@ function mergeEventHandlers(ourHandler, theirHandler) {
     const result = theirHandler(event);
     ourHandler?.(event);
     return result;
+  };
+}
+function wrapEventHandler(handler) {
+  if (!handler) {
+    return handler;
+  }
+  return (event) => {
+    if (isSyntheticEvent(event)) {
+      makeEventPreventable(event);
+    }
+    return handler(event);
   };
 }
 function makeEventPreventable(event) {
@@ -477,6 +527,12 @@ function isSyntheticEvent(event) {
 // node_modules/@base-ui/utils/esm/empty.js
 var EMPTY_ARRAY = Object.freeze([]);
 var EMPTY_OBJECT = Object.freeze({});
+
+// node_modules/@base-ui/react/esm/utils/constants.js
+var BASE_UI_SWIPE_IGNORE_ATTRIBUTE = "data-base-ui-swipe-ignore";
+var LEGACY_SWIPE_IGNORE_ATTRIBUTE = "data-swipe-ignore";
+var BASE_UI_SWIPE_IGNORE_SELECTOR = `[${BASE_UI_SWIPE_IGNORE_ATTRIBUTE}]`;
+var LEGACY_SWIPE_IGNORE_SELECTOR = `[${LEGACY_SWIPE_IGNORE_ATTRIBUTE}]`;
 
 // node_modules/@base-ui/react/esm/utils/useRenderElement.js
 var import_react = __toESM(require_react(), 1);
@@ -505,7 +561,8 @@ function useRenderElementProps(componentProps, params = {}) {
   const className = enabled ? resolveClassName(classNameProp, state) : void 0;
   const style = enabled ? resolveStyle(styleProp, state) : void 0;
   const stateProps = enabled ? getStateAttributesProps(state, stateAttributesMapping) : EMPTY_OBJECT;
-  const outProps = enabled ? mergeObjects(stateProps, Array.isArray(props) ? mergePropsN(props) : props) ?? EMPTY_OBJECT : EMPTY_OBJECT;
+  const resolvedProps = enabled && props ? resolveRenderFunctionProps(props) : void 0;
+  const outProps = enabled ? mergeObjects(stateProps, resolvedProps) ?? {} : EMPTY_OBJECT;
   if (typeof document !== "undefined") {
     if (!enabled) {
       useMergedRefs(null, null);
@@ -526,10 +583,21 @@ function useRenderElementProps(componentProps, params = {}) {
   }
   return outProps;
 }
+function resolveRenderFunctionProps(props) {
+  if (Array.isArray(props)) {
+    return mergePropsN(props);
+  }
+  return mergeProps(void 0, props);
+}
 var REACT_LAZY_TYPE = /* @__PURE__ */ Symbol.for("react.lazy");
+var COMPONENT_IDENTIFIER_PATTERN = /^[A-Z][A-Za-z0-9$]*$/;
+var LOWERCASE_CHARACTER_PATTERN = /[a-z]/;
 function evaluateRenderProp(element, render, props, state) {
   if (render) {
     if (typeof render === "function") {
+      if (true) {
+        warnIfRenderPropLooksLikeComponent(render);
+      }
       return render(props, state);
     }
     const mergedProps = mergeProps(props, render.props);
@@ -551,7 +619,20 @@ function evaluateRenderProp(element, render, props, state) {
       return renderTag(element, props);
     }
   }
-  throw new Error(true ? "Base UI: Render element or function are not defined." : formatErrorMessage(8));
+  throw new Error(true ? "Base UI: Render element or function are not defined." : formatErrorMessage_default(8));
+}
+function warnIfRenderPropLooksLikeComponent(renderFn) {
+  const functionName = renderFn.name;
+  if (functionName.length === 0) {
+    return;
+  }
+  if (!COMPONENT_IDENTIFIER_PATTERN.test(functionName)) {
+    return;
+  }
+  if (!LOWERCASE_CHARACTER_PATTERN.test(functionName)) {
+    return;
+  }
+  warn(`The \`render\` prop received a function named \`${functionName}\` that starts with an uppercase letter.`, "This usually means a React component was passed directly as `render={Component}`.", "Base UI calls `render` as a plain function, which can break the Rules of Hooks during reconciliation.", "If this is an intentional render callback, rename it to start with a lowercase letter.", "Use `render={<Component />}` or `render={(props) => <Component {...props} />}` instead.", "https://base-ui.com/r/invalid-render-prop");
 }
 function renderTag(Tag, props) {
   if (Tag === "button") {
@@ -593,9 +674,9 @@ var more_vertical_default = /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(import_
 
 // packages/ui/build-module/stack/stack.mjs
 var import_element2 = __toESM(require_element(), 1);
-if (typeof document !== "undefined" && true && !document.head.querySelector("style[data-wp-hash='71d20935c2']")) {
+if (typeof document !== "undefined" && true && !document.head.querySelector("style[data-wp-hash='b51ff41489']")) {
   const style = document.createElement("style");
-  style.setAttribute("data-wp-hash", "71d20935c2");
+  style.setAttribute("data-wp-hash", "b51ff41489");
   style.appendChild(document.createTextNode("@layer wp-ui-utilities, wp-ui-components, wp-ui-compositions, wp-ui-overrides;@layer wp-ui-components{._19ce0419607e1896__stack{display:flex}}"));
   document.head.appendChild(style);
 }
@@ -697,7 +778,7 @@ function Page({
   const classes = clsx_default("admin-ui-page", className);
   const effectiveAriaLabel = ariaLabel ?? (typeof title === "string" ? title : "");
   return /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(navigable_region_default, { className: classes, ariaLabel: effectiveAriaLabel, children: [
-    (title || breadcrumbs || badges) && /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+    (title || breadcrumbs || badges || actions) && /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
       Header,
       {
         headingLevel,
@@ -724,14 +805,14 @@ var import_html_entities = __toESM(require_html_entities());
 // routes/navigation-edit/editor/index.tsx
 var import_element4 = __toESM(require_element());
 var import_block_editor3 = __toESM(require_block_editor());
-var import_blocks2 = __toESM(require_blocks());
+var import_blocks3 = __toESM(require_blocks());
 var import_components4 = __toESM(require_components());
 import { useEditorAssets } from "@wordpress/lazy-editor";
 
 // routes/navigation-edit/editor/style.scss
-if (typeof document !== "undefined" && true && !document.head.querySelector("style[data-wp-hash='023c02af3d']")) {
+if (typeof document !== "undefined" && true && !document.head.querySelector("style[data-wp-hash='ab713497c1']")) {
   const style = document.createElement("style");
-  style.setAttribute("data-wp-hash", "023c02af3d");
+  style.setAttribute("data-wp-hash", "ab713497c1");
   style.appendChild(document.createTextNode(".navigation-edit-editor__hidden-blocks{display:none}"));
   document.head.appendChild(style);
 }
@@ -739,7 +820,7 @@ if (typeof document !== "undefined" && true && !document.head.querySelector("sty
 // routes/navigation-edit/editor/content.tsx
 var import_block_editor2 = __toESM(require_block_editor());
 var import_data2 = __toESM(require_data());
-var import_blocks = __toESM(require_blocks());
+var import_blocks2 = __toESM(require_blocks());
 var import_element3 = __toESM(require_element());
 var import_core_data = __toESM(require_core_data());
 
@@ -755,6 +836,7 @@ var import_components3 = __toESM(require_components());
 var import_data = __toESM(require_data());
 var import_i18n2 = __toESM(require_i18n());
 var import_block_editor = __toESM(require_block_editor());
+var import_blocks = __toESM(require_blocks());
 var POPOVER_PROPS = {
   className: "block-editor-block-settings-menu__popover",
   placement: "bottom-start"
@@ -764,18 +846,44 @@ function LeafMoreMenu({
   ...props
 }) {
   const { clientId } = block;
-  const { moveBlocksDown, moveBlocksUp, removeBlocks } = (0, import_data.useDispatch)(import_block_editor.store);
+  const {
+    moveBlocksDown,
+    moveBlocksUp,
+    removeBlocks,
+    duplicateBlocks,
+    insertBeforeBlock,
+    insertAfterBlock
+  } = (0, import_data.useDispatch)(import_block_editor.store);
   const removeLabel = (0, import_i18n2.sprintf)(
     /* translators: %s: block name */
     (0, import_i18n2.__)("Remove %s"),
     (0, import_block_editor.BlockTitle)({ clientId, maximumLength: 25 })
   );
-  const rootClientId = (0, import_data.useSelect)(
+  const { rootClientId, canDuplicate, canInsertBlock, isFirst, isLast } = (0, import_data.useSelect)(
     (select) => {
-      const { getBlockRootClientId } = select(import_block_editor.store);
-      return getBlockRootClientId(clientId);
+      const {
+        getBlockRootClientId,
+        canInsertBlockType,
+        getDirectInsertBlock,
+        getBlockIndex,
+        getBlockCount
+      } = select(import_block_editor.store);
+      const { getDefaultBlockName } = select(import_blocks.store);
+      const _rootClientId = getBlockRootClientId(clientId);
+      const canInsertDefaultBlock = canInsertBlockType(
+        getDefaultBlockName(),
+        _rootClientId
+      );
+      const directInsertBlock = _rootClientId ? getDirectInsertBlock(_rootClientId) : null;
+      return {
+        rootClientId: _rootClientId,
+        canDuplicate: !!block && (0, import_blocks.hasBlockSupport)(block.name, "multiple", true) && canInsertBlockType(block.name, _rootClientId),
+        canInsertBlock: (canInsertDefaultBlock || !!directInsertBlock) && !!block && canInsertBlockType(block.name, _rootClientId),
+        isFirst: getBlockIndex(clientId) === 0,
+        isLast: getBlockIndex(clientId) === getBlockCount(_rootClientId) - 1
+      };
     },
-    [clientId]
+    [clientId, block]
   );
   return /* @__PURE__ */ React.createElement(
     import_components3.DropdownMenu,
@@ -791,6 +899,8 @@ function LeafMoreMenu({
       import_components3.MenuItem,
       {
         icon: chevron_up_default,
+        disabled: isFirst,
+        accessibleWhenDisabled: true,
         onClick: () => {
           moveBlocksUp([clientId], rootClientId);
           onClose();
@@ -801,13 +911,42 @@ function LeafMoreMenu({
       import_components3.MenuItem,
       {
         icon: chevron_down_default,
+        disabled: isLast,
+        accessibleWhenDisabled: true,
         onClick: () => {
           moveBlocksDown([clientId], rootClientId);
           onClose();
         }
       },
       (0, import_i18n2.__)("Move down")
-    )), /* @__PURE__ */ React.createElement(import_components3.MenuGroup, null, /* @__PURE__ */ React.createElement(
+    ), canDuplicate && /* @__PURE__ */ React.createElement(
+      import_components3.MenuItem,
+      {
+        onClick: () => {
+          duplicateBlocks([clientId]);
+          onClose();
+        }
+      },
+      (0, import_i18n2.__)("Duplicate")
+    ), canInsertBlock && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(
+      import_components3.MenuItem,
+      {
+        onClick: () => {
+          insertBeforeBlock(clientId);
+          onClose();
+        }
+      },
+      (0, import_i18n2.__)("Add before")
+    ), /* @__PURE__ */ React.createElement(
+      import_components3.MenuItem,
+      {
+        onClick: () => {
+          insertAfterBlock(clientId);
+          onClose();
+        }
+      },
+      (0, import_i18n2.__)("Add after")
+    ))), /* @__PURE__ */ React.createElement(import_components3.MenuGroup, null, /* @__PURE__ */ React.createElement(
       import_components3.MenuItem,
       {
         onClick: () => {
@@ -871,7 +1010,7 @@ function NavigationMenuContent({
         __unstableMarkNextChangeAsNotPersistent();
         replaceBlock(
           block.clientId,
-          (0, import_blocks.createBlock)("core/navigation-link", block.attributes)
+          (0, import_blocks2.createBlock)("core/navigation-link", block.attributes)
         );
       }
     },
@@ -898,7 +1037,7 @@ function NavigationMenuEditor({ id }) {
     if (!assetsReady || !id) {
       return [];
     }
-    return [(0, import_blocks2.createBlock)("core/navigation", { ref: id })];
+    return [(0, import_blocks3.createBlock)("core/navigation", { ref: id })];
   }, [assetsReady, id]);
   if (!assetsReady || !blocks.length) {
     return /* @__PURE__ */ React.createElement(

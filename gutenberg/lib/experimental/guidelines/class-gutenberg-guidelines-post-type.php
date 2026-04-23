@@ -1,6 +1,6 @@
 <?php
 /**
- * Content Guidelines Post Type registration.
+ * Guidelines Post Type registration.
  *
  * @package gutenberg
  */
@@ -10,16 +10,39 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Handles registration of the Content Guidelines custom post type.
+ * Handles registration of the Guidelines custom post type.
  */
-class Gutenberg_Content_Guidelines_Post_Type {
+class Gutenberg_Guidelines_Post_Type {
 
 	/**
 	 * The post type name.
 	 *
 	 * @var string
 	 */
-	const POST_TYPE = 'wp_content_guideline';
+	const POST_TYPE = 'wp_guideline';
+
+	/**
+	 * The taxonomy name for guideline types.
+	 *
+	 * @var string
+	 */
+	const TAXONOMY = 'wp_guideline_type';
+
+	/**
+	 * Taxonomy term slug used for site-wide content guidelines.
+	 *
+	 * @var string
+	 */
+	const TERM_CONTENT = 'content';
+
+	/**
+	 * Neutral default term slug for manually-created guidelines whose type
+	 * hasn't been chosen yet. The REST controller that owns the content
+	 * singleton always writes its own term explicitly.
+	 *
+	 * @var string
+	 */
+	const TERM_ARTIFACT = 'artifact';
 
 	/**
 	 * The standard guideline category meta keys.
@@ -63,12 +86,16 @@ class Gutenberg_Content_Guidelines_Post_Type {
 	 *
 	 * @var string
 	 */
-	const BLOCK_META_PREFIX = '_content_guideline_block_';
+	const BLOCK_META_PREFIX = '_guideline_block_';
 
 	/**
 	 * Register the custom post type.
 	 */
 	public static function register() {
+		if ( post_type_exists( self::POST_TYPE ) ) {
+			return;
+		}
+
 		$args = array(
 			'labels'                          => array(
 				'name'          => __( 'Guidelines', 'gutenberg' ),
@@ -76,12 +103,12 @@ class Gutenberg_Content_Guidelines_Post_Type {
 			),
 			'public'                          => false,
 			'publicly_queryable'              => false,
-			'show_ui'                         => false,
+			'show_ui'                         => true,
 			'show_in_menu'                    => false,
 			'show_in_rest'                    => true,
-			'rest_base'                       => 'content-guidelines',
-			'rest_controller_class'           => 'Gutenberg_Content_Guidelines_REST_Controller',
-			'revisions_rest_controller_class' => 'Gutenberg_Content_Guidelines_Revisions_Controller',
+			'rest_base'                       => 'guidelines',
+			'rest_controller_class'           => 'Gutenberg_Guidelines_REST_Controller',
+			'revisions_rest_controller_class' => 'Gutenberg_Guidelines_Revisions_Controller',
 			'capability_type'                 => 'post',
 			'capabilities'                    => array(
 				'read'                   => 'edit_posts',
@@ -95,7 +122,7 @@ class Gutenberg_Content_Guidelines_Post_Type {
 				'publish_posts'          => 'manage_options',
 			),
 			'map_meta_cap'                    => true,
-			'supports'                        => array( 'revisions' ),
+			'supports'                        => array( 'title', 'editor', 'excerpt', 'author', 'revisions' ),
 			'hierarchical'                    => false,
 			'has_archive'                     => false,
 			'rewrite'                         => false,
@@ -104,6 +131,56 @@ class Gutenberg_Content_Guidelines_Post_Type {
 		);
 
 		register_post_type( self::POST_TYPE, $args );
+
+		register_taxonomy(
+			self::TAXONOMY,
+			self::POST_TYPE,
+			array(
+				'public'             => false,
+				'publicly_queryable' => false,
+				'hierarchical'       => true,
+				'labels'             => array(
+					'name'          => __( 'Guideline Types', 'gutenberg' ),
+					'singular_name' => __( 'Guideline Type', 'gutenberg' ),
+				),
+				'query_var'          => false,
+				'rewrite'            => false,
+				'show_ui'            => true,
+				'show_admin_column'  => true,
+				'show_in_nav_menus'  => false,
+				'show_in_rest'       => true,
+				'default_term'       => array(
+					'name' => __( 'Artifact', 'gutenberg' ),
+					'slug' => self::TERM_ARTIFACT,
+				),
+			)
+		);
+	}
+
+	/**
+	 * Resolves a taxonomy term by slug, creating it if it doesn't exist yet.
+	 *
+	 * @param string $slug Term slug.
+	 * @param string $name Human-readable term name, used when creating.
+	 * @return int|WP_Error Term ID on success, WP_Error on failure.
+	 */
+	public static function get_or_create_term_id( $slug, $name ) {
+		$term = get_term_by( 'slug', $slug, self::TAXONOMY );
+		if ( $term ) {
+			return (int) $term->term_id;
+		}
+
+		$inserted = wp_insert_term(
+			$name,
+			self::TAXONOMY,
+			array( 'slug' => $slug )
+		);
+
+		if ( is_wp_error( $inserted ) ) {
+			return $inserted;
+		}
+
+		return (int) $inserted['term_id'];
 	}
 
 	/**
@@ -123,7 +200,7 @@ class Gutenberg_Content_Guidelines_Post_Type {
 
 		// Register standard category meta.
 		foreach ( self::CATEGORY_META_KEYS as $category ) {
-			register_post_meta( self::POST_TYPE, '_content_guideline_' . $category, $meta_args );
+			register_post_meta( self::POST_TYPE, '_guideline_' . $category, $meta_args );
 		}
 
 		// Register meta for content blocks.
@@ -174,7 +251,7 @@ class Gutenberg_Content_Guidelines_Post_Type {
 	 * Convert a block name to a meta key.
 	 *
 	 * @param string $block_name The block name (e.g., 'core/paragraph').
-	 * @return string The meta key (e.g., '_content_guideline_block_core_paragraph').
+	 * @return string The meta key (e.g., '_guideline_block_core_paragraph').
 	 */
 	public static function block_name_to_meta_key( $block_name ) {
 		// Replace '/' with '_' to create a valid meta key.
@@ -185,7 +262,7 @@ class Gutenberg_Content_Guidelines_Post_Type {
 	/**
 	 * Convert a meta key back to a block name.
 	 *
-	 * @param string $meta_key The meta key (e.g., '_content_guideline_block_core_paragraph').
+	 * @param string $meta_key The meta key (e.g., '_guideline_block_core_paragraph').
 	 * @return string The block name (e.g., 'core/paragraph').
 	 */
 	public static function meta_key_to_block_name( $meta_key ) {
@@ -225,7 +302,7 @@ class Gutenberg_Content_Guidelines_Post_Type {
 
 		// Get standard categories.
 		foreach ( self::CATEGORY_META_KEYS as $category ) {
-			$meta_key = '_content_guideline_' . $category;
+			$meta_key = '_guideline_' . $category;
 			$value    = get_post_meta( $post_id, $meta_key, true );
 
 			$guideline_categories[ $category ] = array(
@@ -241,7 +318,7 @@ class Gutenberg_Content_Guidelines_Post_Type {
 		foreach ( $all_meta as $meta_key => $meta_values ) {
 			if ( self::is_block_meta_key( $meta_key ) ) {
 				$block_name = self::meta_key_to_block_name( $meta_key );
-				$value      = isset( $meta_values[0] ) ? $meta_values[0] : '';
+				$value      = $meta_values[0] ?? '';
 
 				if ( ! empty( $value ) ) {
 					$blocks[ $block_name ] = array(
