@@ -417,8 +417,6 @@ var wp;
   var index_exports = {};
   __export(index_exports, {
     EntityProvider: () => EntityProvider,
-    SelectionDirection: () => SelectionDirection,
-    SelectionType: () => SelectionType,
     __experimentalFetchLinkSuggestions: () => fetchLinkSuggestions,
     __experimentalFetchUrlData: () => experimental_fetch_url_data_default,
     __experimentalUseEntityRecord: () => useDeprecatedEntityRecord,
@@ -1232,6 +1230,17 @@ var wp;
   var import_data2 = __toESM(require_data(), 1);
   var import_sync2 = __toESM(require_sync(), 1);
   var import_block_editor = __toESM(require_block_editor(), 1);
+  function getContainingBlockYMap(yType) {
+    let current = yType;
+    while (current) {
+      const parent = current.parent;
+      if (parent instanceof import_sync2.Y.Map && parent.parent instanceof import_sync2.Y.Array && parent.get("clientId") !== void 0 && parent.get("innerBlocks") instanceof import_sync2.Y.Array) {
+        return parent;
+      }
+      current = parent instanceof import_sync2.Y.AbstractType ? parent : null;
+    }
+    return null;
+  }
   function getBlockPathInYdoc(yType) {
     const path = [];
     let current = yType;
@@ -1334,6 +1343,9 @@ var wp;
     syncManager = createSyncManager();
     return syncManager;
   }
+  function hasSyncManager() {
+    return Boolean(syncManager);
+  }
 
   // packages/core-data/build-module/utils/crdt-utils.mjs
   function getRootMap(doc, key) {
@@ -1344,6 +1356,33 @@ var wp;
   }
   function isYMap(value) {
     return value instanceof import_sync4.Y.Map;
+  }
+  function asRichTextOffset(offset) {
+    return offset;
+  }
+  function asHtmlStringIndex(index) {
+    return index;
+  }
+  function getYTextByAttributeKey(attributes, attributeKey) {
+    const directValue = attributes.get(attributeKey);
+    if (directValue instanceof import_sync4.Y.Text) {
+      return directValue;
+    }
+    let value = attributes;
+    for (const pathPart of attributeKey.split(".")) {
+      if (value instanceof import_sync4.Y.Map) {
+        value = value.get(pathPart);
+      } else if (value instanceof import_sync4.Y.Array) {
+        const index = Number.parseInt(pathPart, 10);
+        if (!Number.isSafeInteger(index) || index < 0 || index.toString() !== pathPart) {
+          return null;
+        }
+        value = value.get(index);
+      } else {
+        return null;
+      }
+    }
+    return value instanceof import_sync4.Y.Text ? value : null;
   }
   function findBlockByClientIdInDoc(blockId, ydoc) {
     const ymap = getRootMap(ydoc, CRDT_RECORD_MAP_KEY);
@@ -1366,24 +1405,24 @@ var wp;
   }
   function htmlIndexToRichTextOffset(html, htmlIndex) {
     if (!html.includes("<") && !html.includes("&")) {
-      return htmlIndex;
+      return asRichTextOffset(htmlIndex);
     }
     const marker = pickMarker(html);
     if (!marker) {
-      return htmlIndex;
+      return asRichTextOffset(htmlIndex);
     }
     const withMarker = html.slice(0, htmlIndex) + marker + html.slice(htmlIndex);
     const value = (0, import_rich_text.create)({ html: withMarker });
     const markerPos = value.text.indexOf(marker);
-    return markerPos === -1 ? htmlIndex : markerPos;
+    return asRichTextOffset(markerPos === -1 ? htmlIndex : markerPos);
   }
   function richTextOffsetToHtmlIndex(html, richTextOffset) {
     if (!html.includes("<") && !html.includes("&")) {
-      return richTextOffset;
+      return asHtmlStringIndex(richTextOffset);
     }
     const marker = pickMarker(html);
     if (!marker) {
-      return richTextOffset;
+      return asHtmlStringIndex(richTextOffset);
     }
     const value = (0, import_rich_text.create)({ html });
     const markerValue = (0, import_rich_text.create)({ text: marker });
@@ -1398,7 +1437,9 @@ var wp;
     );
     const htmlWithMarker = (0, import_rich_text.toHTMLString)({ value: withMarker });
     const markerIndex = htmlWithMarker.indexOf(marker);
-    return markerIndex === -1 ? richTextOffset : markerIndex;
+    return asHtmlStringIndex(
+      markerIndex === -1 ? richTextOffset : markerIndex
+    );
   }
   function findBlockByClientIdInBlocks(blockId, blocks) {
     for (const block of blocks) {
@@ -1431,6 +1472,11 @@ var wp;
     SelectionType2["WholeBlock"] = "whole-block";
     return SelectionType2;
   })(SelectionType || {});
+  var SelectionDirection = /* @__PURE__ */ ((SelectionDirection2) => {
+    SelectionDirection2["Forward"] = "f";
+    SelectionDirection2["Backward"] = "b";
+    return SelectionDirection2;
+  })(SelectionDirection || {});
   function getSelectionState(selectionStart, selectionEnd, yDoc, options) {
     const { selectionDirection } = options ?? {};
     const ymap = getRootMap(yDoc, CRDT_RECORD_MAP_KEY);
@@ -1500,17 +1546,21 @@ var wp;
       return null;
     }
     const attributes = block.get("attributes");
-    const currentYText = attributes?.get(selection.attributeKey);
+    const currentYText = attributes ? getYTextByAttributeKey(attributes, selection.attributeKey) : null;
     if (!(currentYText instanceof import_sync6.Y.Text)) {
       return null;
     }
     const relativePosition = import_sync6.Y.createRelativePositionFromTypeIndex(
       currentYText,
-      richTextOffsetToHtmlIndex(currentYText.toString(), selection.offset)
+      richTextOffsetToHtmlIndex(
+        currentYText.toString(),
+        asRichTextOffset(selection.offset)
+      )
     );
     return {
       relativePosition,
-      absoluteOffset: selection.offset
+      absoluteOffset: selection.offset,
+      attributeKey: selection.attributeKey
     };
   }
   function getBlockPathForLocalClientId(clientId) {
@@ -1614,13 +1664,6 @@ var wp;
     const isAbsoluteOffsetEqual = cursorPosition1.absoluteOffset === cursorPosition2.absoluteOffset;
     return isRelativePositionEqual && isAbsoluteOffsetEqual;
   }
-
-  // packages/core-data/build-module/types.mjs
-  var SelectionDirection = /* @__PURE__ */ ((SelectionDirection2) => {
-    SelectionDirection2["Forward"] = "f";
-    SelectionDirection2["Backward"] = "b";
-    return SelectionDirection2;
-  })(SelectionDirection || {});
 
   // packages/core-data/build-module/awareness/post-editor-awareness.mjs
   var PostEditorAwareness = class extends BaseAwarenessState {
@@ -1755,7 +1798,11 @@ var wp;
      */
     convertSelectionStateToAbsolute(selection) {
       if (selection.type === SelectionType.None) {
-        return { richTextOffset: null, localClientId: null };
+        return {
+          richTextOffset: null,
+          localClientId: null,
+          attributeKey: null
+        };
       }
       if (selection.type === SelectionType.WholeBlock) {
         const absolutePos = import_sync8.Y.createAbsolutePositionFromRelativePosition(
@@ -1771,7 +1818,11 @@ var wp;
             localClientId2 = path2 ? resolveBlockClientIdByPath(path2) : null;
           }
         }
-        return { richTextOffset: null, localClientId: localClientId2 };
+        return {
+          richTextOffset: null,
+          localClientId: localClientId2,
+          attributeKey: null
+        };
       }
       const cursorPos = "cursorPosition" in selection ? selection.cursorPosition : selection.cursorStartPosition;
       const absolutePosition = import_sync8.Y.createAbsolutePositionFromRelativePosition(
@@ -1779,17 +1830,22 @@ var wp;
         this.doc
       );
       if (!absolutePosition) {
-        return { richTextOffset: null, localClientId: null };
+        return {
+          richTextOffset: null,
+          localClientId: null,
+          attributeKey: null
+        };
       }
-      const yType = absolutePosition.type.parent?.parent;
-      const path = yType instanceof import_sync8.Y.Map ? getBlockPathInYdoc(yType) : null;
+      const yType = getContainingBlockYMap(absolutePosition.type);
+      const path = yType ? getBlockPathInYdoc(yType) : null;
       const localClientId = path ? resolveBlockClientIdByPath(path) : null;
       return {
         richTextOffset: htmlIndexToRichTextOffset(
           absolutePosition.type.toString(),
-          absolutePosition.index
+          asHtmlStringIndex(absolutePosition.index)
         ),
-        localClientId
+        localClientId,
+        attributeKey: cursorPos.attributeKey ?? null
       };
     }
     /**
@@ -1870,45 +1926,41 @@ var wp;
   var import_blocks3 = __toESM(require_blocks(), 1);
   var import_sync13 = __toESM(require_sync(), 1);
 
-  // node_modules/uuid/dist/esm-browser/rng.js
-  var getRandomValues;
-  var rnds8 = new Uint8Array(16);
-  function rng() {
-    if (!getRandomValues) {
-      getRandomValues = typeof crypto !== "undefined" && crypto.getRandomValues && crypto.getRandomValues.bind(crypto);
-      if (!getRandomValues) {
-        throw new Error("crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported");
-      }
-    }
-    return getRandomValues(rnds8);
-  }
-
-  // node_modules/uuid/dist/esm-browser/stringify.js
+  // node_modules/uuid/dist/stringify.js
   var byteToHex = [];
   for (let i = 0; i < 256; ++i) {
     byteToHex.push((i + 256).toString(16).slice(1));
   }
   function unsafeStringify(arr, offset = 0) {
-    return byteToHex[arr[offset + 0]] + byteToHex[arr[offset + 1]] + byteToHex[arr[offset + 2]] + byteToHex[arr[offset + 3]] + "-" + byteToHex[arr[offset + 4]] + byteToHex[arr[offset + 5]] + "-" + byteToHex[arr[offset + 6]] + byteToHex[arr[offset + 7]] + "-" + byteToHex[arr[offset + 8]] + byteToHex[arr[offset + 9]] + "-" + byteToHex[arr[offset + 10]] + byteToHex[arr[offset + 11]] + byteToHex[arr[offset + 12]] + byteToHex[arr[offset + 13]] + byteToHex[arr[offset + 14]] + byteToHex[arr[offset + 15]];
+    return (byteToHex[arr[offset + 0]] + byteToHex[arr[offset + 1]] + byteToHex[arr[offset + 2]] + byteToHex[arr[offset + 3]] + "-" + byteToHex[arr[offset + 4]] + byteToHex[arr[offset + 5]] + "-" + byteToHex[arr[offset + 6]] + byteToHex[arr[offset + 7]] + "-" + byteToHex[arr[offset + 8]] + byteToHex[arr[offset + 9]] + "-" + byteToHex[arr[offset + 10]] + byteToHex[arr[offset + 11]] + byteToHex[arr[offset + 12]] + byteToHex[arr[offset + 13]] + byteToHex[arr[offset + 14]] + byteToHex[arr[offset + 15]]).toLowerCase();
   }
 
-  // node_modules/uuid/dist/esm-browser/native.js
-  var randomUUID = typeof crypto !== "undefined" && crypto.randomUUID && crypto.randomUUID.bind(crypto);
-  var native_default = {
-    randomUUID
-  };
+  // node_modules/uuid/dist/rng.js
+  var rnds8 = new Uint8Array(16);
+  function rng() {
+    return crypto.getRandomValues(rnds8);
+  }
 
-  // node_modules/uuid/dist/esm-browser/v4.js
+  // node_modules/uuid/dist/v4.js
   function v4(options, buf, offset) {
-    if (native_default.randomUUID && !buf && !options) {
-      return native_default.randomUUID();
+    if (!buf && !options && crypto.randomUUID) {
+      return crypto.randomUUID();
     }
+    return _v4(options, buf, offset);
+  }
+  function _v4(options, buf, offset) {
     options = options || {};
-    const rnds = options.random || (options.rng || rng)();
+    const rnds = options.random ?? options.rng?.() ?? rng();
+    if (rnds.length < 16) {
+      throw new Error("Random bytes length must be >= 16");
+    }
     rnds[6] = rnds[6] & 15 | 64;
     rnds[8] = rnds[8] & 63 | 128;
     if (buf) {
       offset = offset || 0;
+      if (offset < 0 || offset + 16 > buf.length) {
+        throw new RangeError(`UUID byte range ${offset}:${offset + 15} is out of buffer bounds`);
+      }
       for (let i = 0; i < 16; ++i) {
         buf[offset + i] = rnds[i];
       }
@@ -1977,8 +2029,19 @@ var wp;
   }
   function makeBlocksSerializable(blocks) {
     return blocks.map((block) => {
-      const { name, innerBlocks, attributes, ...rest } = block;
-      delete rest.validationIssues;
+      const {
+        name,
+        innerBlocks,
+        attributes,
+        /*
+         * Any validation issues discovered when loading a block are appended
+         * to the block node with a logging function, which cannot be serialized.
+         *
+         * @see import("@wordpress/blocks/src/api/parser").parseRawBlock()
+         */
+        validationIssues,
+        ...rest
+      } = block;
       return {
         ...rest,
         name,
@@ -2134,111 +2197,141 @@ var wp;
       )
     );
   }
-  function mergeCrdtBlocks(yblocks, incomingBlocks, cursorPosition) {
+  function mergeCrdtBlocks(yblocks, incomingBlocks, attributeCursor) {
     if (!serializableBlocksCache.has(incomingBlocks)) {
       serializableBlocksCache.set(
         incomingBlocks,
         makeBlocksSerializable(incomingBlocks)
       );
     }
-    const blocksToSync = serializableBlocksCache.get(incomingBlocks) ?? [];
+    const incomingBlocksToSync = serializableBlocksCache.get(incomingBlocks) ?? [];
     const numOfCommonEntries = Math.min(
-      blocksToSync.length ?? 0,
+      incomingBlocksToSync.length ?? 0,
       yblocks.length
     );
     let left = 0;
     let right = 0;
-    for (; left < numOfCommonEntries && areBlocksEqual(blocksToSync[left], yblocks.get(left)); left++) {
+    for (; left < numOfCommonEntries && areBlocksEqual(incomingBlocksToSync[left], yblocks.get(left)); left++) {
     }
     for (; right < numOfCommonEntries - left && areBlocksEqual(
-      blocksToSync[blocksToSync.length - right - 1],
+      incomingBlocksToSync[incomingBlocksToSync.length - right - 1],
       yblocks.get(yblocks.length - right - 1)
     ); right++) {
     }
     const numOfUpdatesNeeded = numOfCommonEntries - left - right;
     const numOfInsertionsNeeded = Math.max(
       0,
-      blocksToSync.length - yblocks.length
+      incomingBlocksToSync.length - yblocks.length
     );
     const numOfDeletionsNeeded = Math.max(
       0,
-      yblocks.length - blocksToSync.length
+      yblocks.length - incomingBlocksToSync.length
     );
     for (let i = 0; i < numOfUpdatesNeeded; i++, left++) {
-      const block = blocksToSync[left];
-      const yblock = yblocks.get(left);
-      Object.entries(block).forEach(([key, value]) => {
-        switch (key) {
-          case "attributes": {
-            const currentAttributes = yblock.get(key);
-            if (!currentAttributes) {
-              yblock.set(
-                key,
-                createNewYAttributeMap(block.name, value)
+      const incomingYBlock = incomingBlocksToSync[left];
+      const localYBlock = yblocks.get(left);
+      Object.entries(incomingYBlock).forEach(
+        ([incomingBlockProperty, incomingBlockPropertyValue]) => {
+          switch (incomingBlockProperty) {
+            case "attributes": {
+              const localAttributes = localYBlock.get(
+                incomingBlockProperty
+              );
+              const incomingAttributes = incomingBlockPropertyValue;
+              if (!localAttributes) {
+                localYBlock.set(
+                  incomingBlockProperty,
+                  createNewYAttributeMap(
+                    incomingYBlock.name,
+                    incomingAttributes
+                  )
+                );
+                break;
+              }
+              Object.entries(incomingAttributes).forEach(
+                ([
+                  incomingAttributeName,
+                  incomingAttributeValue
+                ]) => {
+                  const currentAttribute = localAttributes?.get(
+                    incomingAttributeName
+                  );
+                  const isExpectedType = isExpectedAttributeType(
+                    incomingYBlock.name,
+                    incomingAttributeName,
+                    currentAttribute
+                  );
+                  const isYType = currentAttribute instanceof import_sync9.Y.AbstractType;
+                  const isAttributeChanged = !isExpectedType || isYType || !(0, import_es62.default)(
+                    currentAttribute,
+                    incomingAttributeValue
+                  );
+                  if (isAttributeChanged) {
+                    updateYBlockAttribute(
+                      incomingYBlock.name,
+                      incomingYBlock.clientId,
+                      incomingAttributeName,
+                      incomingAttributeValue,
+                      localAttributes,
+                      attributeCursor
+                    );
+                  }
+                }
+              );
+              localAttributes.forEach(
+                (_attrValue, attrName) => {
+                  if (!incomingBlockPropertyValue.hasOwnProperty(
+                    attrName
+                  )) {
+                    localAttributes.delete(attrName);
+                  }
+                }
               );
               break;
             }
-            Object.entries(value).forEach(
-              ([attributeName, attributeValue]) => {
-                const currentAttribute = currentAttributes?.get(attributeName);
-                const isExpectedType = isExpectedAttributeType(
-                  block.name,
-                  attributeName,
-                  currentAttribute
+            case "innerBlocks": {
+              let yInnerBlocks = localYBlock.get(
+                incomingBlockProperty
+              );
+              if (!(yInnerBlocks instanceof import_sync9.Y.Array)) {
+                yInnerBlocks = new import_sync9.Y.Array();
+                localYBlock.set(
+                  incomingBlockProperty,
+                  yInnerBlocks
                 );
-                const isYType = currentAttribute instanceof import_sync9.Y.AbstractType;
-                const isAttributeChanged = !isExpectedType || isYType || !(0, import_es62.default)(
-                  currentAttribute,
-                  attributeValue
+              }
+              mergeCrdtBlocks(
+                yInnerBlocks,
+                incomingBlockPropertyValue ?? [],
+                attributeCursor
+              );
+              break;
+            }
+            case "clientId": {
+              break;
+            }
+            default:
+              if (!(0, import_es62.default)(
+                incomingYBlock[incomingBlockProperty],
+                localYBlock.get(incomingBlockProperty)
+              )) {
+                localYBlock.set(
+                  incomingBlockProperty,
+                  incomingBlockPropertyValue
                 );
-                if (isAttributeChanged) {
-                  updateYBlockAttribute(
-                    block.name,
-                    attributeName,
-                    attributeValue,
-                    currentAttributes,
-                    cursorPosition
-                  );
-                }
               }
-            );
-            currentAttributes.forEach(
-              (_attrValue, attrName) => {
-                if (!value.hasOwnProperty(attrName)) {
-                  currentAttributes.delete(attrName);
-                }
-              }
-            );
-            break;
           }
-          case "innerBlocks": {
-            let yInnerBlocks = yblock.get(key);
-            if (!(yInnerBlocks instanceof import_sync9.Y.Array)) {
-              yInnerBlocks = new import_sync9.Y.Array();
-              yblock.set(key, yInnerBlocks);
-            }
-            mergeCrdtBlocks(
-              yInnerBlocks,
-              value ?? [],
-              cursorPosition
-            );
-            break;
-          }
-          default:
-            if (!(0, import_es62.default)(block[key], yblock.get(key))) {
-              yblock.set(key, value);
-            }
         }
-      });
-      yblock.forEach((_v, k) => {
-        if (!block.hasOwnProperty(k)) {
-          yblock.delete(k);
+      );
+      localYBlock.forEach((_v, k) => {
+        if (!incomingYBlock.hasOwnProperty(k)) {
+          localYBlock.delete(k);
         }
       });
     }
     yblocks.delete(left, numOfDeletionsNeeded);
     for (let i = 0; i < numOfInsertionsNeeded; i++, left++) {
-      const newBlock = [createNewYBlock(blocksToSync[left])];
+      const newBlock = [createNewYBlock(incomingBlocksToSync[left])];
       yblocks.insert(left, newBlock);
     }
     const knownClientIds = /* @__PURE__ */ new Set();
@@ -2261,7 +2354,7 @@ var wp;
     }
     return (0, import_es62.default)(newElement, yElement);
   }
-  function mergeYArray(yArray, newValue, schema, cursorPosition) {
+  function mergeYArray(yArray, newValue, schema, cursorPosition, cursorScope) {
     if (!schema.query) {
       return;
     }
@@ -2285,7 +2378,8 @@ var wp;
           currentElement,
           newElement,
           query,
-          cursorPosition
+          cursorPosition,
+          cursorScope
         );
       } else {
         yArray.delete(0, yArray.length);
@@ -2318,14 +2412,24 @@ var wp;
       yArray.insert(insertAt, itemsToInsert);
     }
   }
-  function mergeYValue(schema, newVal, yMap, key, cursorPosition) {
+  function mergeYValue(schema, newVal, yMap, key, cursorPosition, cursorScope) {
     const currentVal = yMap.get(key);
     if (schema?.type === "rich-text" && typeof newVal === "string" && currentVal instanceof import_sync9.Y.Text) {
-      mergeRichTextUpdate(currentVal, newVal, cursorPosition);
+      mergeRichTextUpdate(
+        currentVal,
+        newVal,
+        resolveRichTextCursorPosition(cursorPosition, cursorScope, newVal)
+      );
     } else if (schema?.type === "array" && schema.query && Array.isArray(newVal) && currentVal instanceof import_sync9.Y.Array) {
-      mergeYArray(currentVal, newVal, schema, cursorPosition);
+      mergeYArray(currentVal, newVal, schema, cursorPosition, cursorScope);
     } else if (schema?.type === "object" && schema.query && isRecord(newVal) && currentVal instanceof import_sync9.Y.Map) {
-      mergeYMapValues(currentVal, newVal, schema.query, cursorPosition);
+      mergeYMapValues(
+        currentVal,
+        newVal,
+        schema.query,
+        cursorPosition,
+        cursorScope
+      );
     } else {
       const newYValue = createYValueFromSchema(schema, newVal);
       if (newYValue !== newVal || !(0, import_es62.default)(currentVal, newVal)) {
@@ -2333,9 +2437,16 @@ var wp;
       }
     }
   }
-  function mergeYMapValues(yMap, newObj, query, cursorPosition) {
+  function mergeYMapValues(yMap, newObj, query, cursorPosition, cursorScope) {
     for (const [key, newVal] of Object.entries(newObj)) {
-      mergeYValue(query[key], newVal, yMap, key, cursorPosition);
+      mergeYValue(
+        query[key],
+        newVal,
+        yMap,
+        key,
+        cursorPosition,
+        cursorScope
+      );
     }
     for (const key of yMap.keys()) {
       if (!Object.hasOwn(newObj, key)) {
@@ -2343,15 +2454,22 @@ var wp;
       }
     }
   }
-  function updateYBlockAttribute(blockName, attributeName, attributeValue, currentAttributes, cursorPosition) {
+  function updateYBlockAttribute(blockName, clientId, attributeName, attributeValue, currentAttributes, newCursorPosition) {
     const schema = getBlockAttributeSchema(blockName, attributeName);
     mergeYValue(
       schema,
       attributeValue,
       currentAttributes,
       attributeName,
-      cursorPosition
+      newCursorPosition,
+      { attributeKey: attributeName, clientId }
     );
+  }
+  function resolveRichTextCursorPosition(cursorPosition, cursorScope, updatedValue) {
+    return cursorPosition && cursorPosition.clientId === cursorScope.clientId && cursorPosition.attributeKey === cursorScope.attributeKey && "number" === typeof cursorPosition.offset && Number.isInteger(cursorPosition.offset) ? richTextOffsetToHtmlIndex(
+      updatedValue,
+      asRichTextOffset(cursorPosition.offset)
+    ) : null;
   }
   var cachedBlockAttributeSchemas;
   function getBlockAttributeSchema(blockName, attributeName) {
@@ -2393,20 +2511,25 @@ var wp;
     return "local" === getBlockAttributeSchema(blockName, attributeName)?.role;
   }
   var localDoc;
-  function mergeRichTextUpdate(blockYText, updatedValue, cursorPosition = null) {
+  function mergeRichTextUpdate(blockYText, updatedValue, htmlCursorIndex = null) {
+    const currentValueAsDelta = new Delta(blockYText.toDelta());
+    const updatedValueAsDelta = new Delta([{ insert: updatedValue }]);
+    const deltaDiff = currentValueAsDelta.diffWithCursor(
+      updatedValueAsDelta,
+      htmlCursorIndex
+    );
+    const safeDiff = htmlCursorIndex === null || isDeltaVerificationMatch(blockYText, deltaDiff, updatedValue) ? deltaDiff : currentValueAsDelta.diff(updatedValueAsDelta);
+    blockYText.applyDelta(safeDiff.ops);
+  }
+  function isDeltaVerificationMatch(blockYText, delta, expectedValue) {
     if (!localDoc) {
       localDoc = new import_sync9.Y.Doc();
     }
-    const localYText = localDoc.getText("temporary-text");
-    localYText.delete(0, localYText.length);
-    localYText.insert(0, updatedValue);
-    const currentValueAsDelta = new Delta(blockYText.toDelta());
-    const updatedValueAsDelta = new Delta(localYText.toDelta());
-    const deltaDiff = currentValueAsDelta.diffWithCursor(
-      updatedValueAsDelta,
-      cursorPosition
-    );
-    blockYText.applyDelta(deltaDiff.ops);
+    const verificationYText = localDoc.getText("verification-text");
+    verificationYText.delete(0, verificationYText.length);
+    verificationYText.insert(0, blockYText.toString());
+    verificationYText.applyDelta(delta.ops);
+    return verificationYText.toString() === expectedValue;
   }
 
   // packages/core-data/build-module/utils/crdt-selection.mjs
@@ -2462,10 +2585,11 @@ var wp;
     const block = findBlockByClientIdInDoc(clientId, ydoc);
     const attributes = block?.get("attributes");
     const attributeKey = selection.attributeKey;
-    const changedYText = attributeKey ? attributes?.get(attributeKey) : void 0;
-    const isYText = changedYText instanceof import_sync11.Y.Text;
-    const isFullyDefinedSelection = attributeKey && clientId;
-    if (!isYText || !isFullyDefinedSelection) {
+    let changedYText = null;
+    if (attributeKey && attributes) {
+      changedYText = getYTextByAttributeKey(attributes, attributeKey);
+    }
+    if (!(changedYText instanceof import_sync11.Y.Text) || !attributeKey || !clientId) {
       return {
         type: "BlockSelection",
         clientId
@@ -2474,7 +2598,10 @@ var wp;
     const offset = selection.offset ?? 0;
     const relativePosition = import_sync11.Y.createRelativePositionFromTypeIndex(
       changedYText,
-      richTextOffsetToHtmlIndex(changedYText.toString(), offset)
+      richTextOffsetToHtmlIndex(
+        changedYText.toString(),
+        asRichTextOffset(offset)
+      )
     );
     return {
       type: "RelativeSelection",
@@ -2514,7 +2641,7 @@ var wp;
           attributeKey,
           offset: htmlIndexToRichTextOffset(
             absolutePosition.type.toString(),
-            absolutePosition.index
+            asHtmlStringIndex(absolutePosition.index)
           )
         };
       }
@@ -2647,7 +2774,18 @@ var wp;
       }
       switch (key) {
         case "blocks": {
-          if (!newValue) {
+          const newCursorPosition = parseCursorSelection(
+            changes.selection
+          );
+          const rawContent = getRawValue(changes.content);
+          if (!newValue && typeof rawContent === "string") {
+            mergeContentWithoutBlocks(
+              ymap,
+              rawContent,
+              newCursorPosition
+            );
+            break;
+          } else if (!newValue) {
             ymap.set(key, void 0);
             break;
           }
@@ -2656,8 +2794,7 @@ var wp;
             currentBlocks = new import_sync13.Y.Array();
             ymap.set(key, currentBlocks);
           }
-          const cursorPosition = changes.selection?.selectionStart?.offset ?? null;
-          mergeCrdtBlocks(currentBlocks, newValue, cursorPosition);
+          mergeCrdtBlocks(currentBlocks, newValue, newCursorPosition);
           break;
         }
         case "content":
@@ -2721,6 +2858,26 @@ var wp;
         updateSelectionHistory(ydoc, selection);
       }, 0);
     }
+  }
+  function mergeContentWithoutBlocks(ymap, rawContent, cursorPosition) {
+    let currentBlocks = ymap.get("blocks");
+    if (!(currentBlocks instanceof import_sync13.Y.Array)) {
+      currentBlocks = new import_sync13.Y.Array();
+      ymap.set("blocks", currentBlocks);
+    }
+    mergeCrdtBlocks(
+      currentBlocks,
+      (0, import_blocks3.parse)(rawContent),
+      cursorPosition
+    );
+  }
+  function parseCursorSelection(selection) {
+    const selectionStart = selection?.selectionStart;
+    return selectionStart?.clientId && selectionStart.attributeKey && "number" === typeof selectionStart.offset && Number.isInteger(selectionStart.offset) ? {
+      attributeKey: selectionStart.attributeKey,
+      clientId: selectionStart.clientId,
+      offset: asRichTextOffset(selectionStart.offset)
+    } : null;
   }
   function defaultGetChangesFromCRDTDoc(crdtDoc) {
     return getRootMap(crdtDoc, CRDT_RECORD_MAP_KEY).toJSON();
@@ -2792,6 +2949,10 @@ var wp;
       changes.blocks = deserializeBlockAttributes(
         changes.blocks
       );
+    }
+    if (changes.blocks && !changes.content) {
+      const capturedBlocks = changes.blocks;
+      changes.content = () => (0, import_blocks3.__unstableSerializeAndClean)(capturedBlocks);
     }
     if ("object" === typeof changes.meta) {
       changes.meta = {
@@ -3939,7 +4100,6 @@ var wp;
     getReferenceByDistinctEdits: () => getReferenceByDistinctEdits,
     getRevision: () => getRevision,
     getRevisions: () => getRevisions,
-    getSyncConnectionStatus: () => getSyncConnectionStatus,
     getThemeSupports: () => getThemeSupports,
     getUndoEdit: () => getUndoEdit,
     getUserPatternCategories: () => getUserPatternCategories,
@@ -3973,6 +4133,7 @@ var wp;
     getNavigationFallbackId: () => getNavigationFallbackId,
     getPostsPageId: () => getPostsPageId,
     getRegisteredPostMeta: () => getRegisteredPostMeta,
+    getSyncConnectionStatus: () => getSyncConnectionStatus,
     getTemplateId: () => getTemplateId,
     getUndoManager: () => getUndoManager,
     getViewConfig: () => getViewConfig,
@@ -4181,6 +4342,19 @@ var wp;
       view_list: void 0,
       form: void 0
     };
+  }
+  function getSyncConnectionStatus(state) {
+    if (!state.syncConnectionStatuses) {
+      return void 0;
+    }
+    const PRIORITIZED_STATUSES = ["disconnected", "connecting", "connected"];
+    let coalesced;
+    for (const status of Object.values(state.syncConnectionStatuses)) {
+      if (!coalesced || PRIORITIZED_STATUSES.indexOf(status.status) < PRIORITIZED_STATUSES.indexOf(coalesced.status)) {
+        coalesced = status;
+      }
+    }
+    return coalesced;
   }
 
   // packages/core-data/build-module/selectors.mjs
@@ -4735,19 +4909,6 @@ var wp;
       ];
     }
   );
-  function getSyncConnectionStatus(state) {
-    if (!state.syncConnectionStatuses) {
-      return void 0;
-    }
-    const PRIORITIZED_STATUSES = ["disconnected", "connecting", "connected"];
-    let coalesced;
-    for (const status of Object.values(state.syncConnectionStatuses)) {
-      if (!coalesced || PRIORITIZED_STATUSES.indexOf(status.status) < PRIORITIZED_STATUSES.indexOf(coalesced.status)) {
-        coalesced = status;
-      }
-    }
-    return coalesced;
-  }
 
   // packages/core-data/build-module/actions.mjs
   var actions_exports = {};
@@ -4779,7 +4940,6 @@ var wp;
     redo: () => redo,
     saveEditedEntityRecord: () => saveEditedEntityRecord,
     saveEntityRecord: () => saveEntityRecord,
-    setSyncConnectionStatus: () => setSyncConnectionStatus,
     undo: () => undo
   });
   var import_es65 = __toESM(require_es6(), 1);
@@ -5246,11 +5406,13 @@ var wp;
   var __unstableCreateUndoLevel = () => ({ select: select5 }) => {
     select5.getUndoManager().addRecord();
   };
-  var saveEntityRecord = (kind, name, record, {
-    isAutosave = false,
-    __unstableFetch = import_api_fetch3.default,
-    throwOnError = false
-  } = {}) => async ({ select: select5, resolveSelect: resolveSelect2, dispatch: dispatch3 }) => {
+  var saveEntityRecord = (kind, name, record, options = {}) => async ({ select: select5, resolveSelect: resolveSelect2, dispatch: dispatch3 }) => {
+    const {
+      isAutosave = false,
+      __unstableFetch = import_api_fetch3.default,
+      __unstableSkipSyncUpdate = false,
+      throwOnError = false
+    } = options;
     logEntityDeprecation(kind, name, "saveEntityRecord");
     const configs = await resolveSelect2.getEntitiesConfig(kind);
     const entityConfig = configs.find(
@@ -5394,7 +5556,7 @@ var wp;
             getSyncManager()?.update(
               `${kind}/${name}`,
               recordId,
-              updatedRecord,
+              __unstableSkipSyncUpdate ? {} : updatedRecord,
               LOCAL_UNDO_IGNORED_ORIGIN,
               { isSave: true }
             );
@@ -5568,23 +5730,6 @@ var wp;
       invalidateCache
     });
   };
-  function setSyncConnectionStatus(kind, name, key, status) {
-    if (!status) {
-      return {
-        type: "CLEAR_SYNC_CONNECTION_STATUS",
-        kind,
-        name,
-        key
-      };
-    }
-    return {
-      type: "SET_SYNC_CONNECTION_STATUS",
-      kind,
-      name,
-      key,
-      status
-    };
-  }
 
   // packages/core-data/build-module/private-actions.mjs
   var private_actions_exports = {};
@@ -5594,7 +5739,8 @@ var wp;
     receiveEditorSettings: () => receiveEditorSettings,
     receiveRegisteredPostMeta: () => receiveRegisteredPostMeta,
     receiveViewConfig: () => receiveViewConfig,
-    setCollaborationSupported: () => setCollaborationSupported
+    setCollaborationSupported: () => setCollaborationSupported,
+    setSyncConnectionStatus: () => setSyncConnectionStatus
   });
   var import_api_fetch4 = __toESM(require_api_fetch(), 1);
   function receiveRegisteredPostMeta(postType, registeredPostMeta2) {
@@ -5686,6 +5832,9 @@ var wp;
   }
   var setCollaborationSupported = (supported) => ({ dispatch: dispatch3 }) => {
     dispatch3({ type: "SET_COLLABORATION_SUPPORTED", supported });
+    if (!supported && hasSyncManager()) {
+      getSyncManager().unloadAll();
+    }
   };
   function receiveViewConfig(kind, name, config) {
     return {
@@ -5693,6 +5842,23 @@ var wp;
       kind,
       name,
       config
+    };
+  }
+  function setSyncConnectionStatus(kind, name, key, status) {
+    if (!status) {
+      return {
+        type: "CLEAR_SYNC_CONNECTION_STATUS",
+        kind,
+        name,
+        key
+      };
+    }
+    return {
+      type: "SET_SYNC_CONNECTION_STATUS",
+      kind,
+      name,
+      key,
+      status
     };
   }
 
@@ -5935,6 +6101,12 @@ var wp;
     );
   }
 
+  // packages/core-data/build-module/parsed-blocks-cache.mjs
+  var parsedBlocksCache = /* @__PURE__ */ new Map();
+  function getCacheKey(kind, name, id) {
+    return `${kind}:${name}:${id}`;
+  }
+
   // packages/core-data/build-module/resolvers.mjs
   var getAuthors2 = (query) => async ({ dispatch: dispatch3 }) => {
     const path = (0, import_url6.addQueryArgs)(
@@ -6019,6 +6191,12 @@ var wp;
         ).forEach(([propName, transientConfig]) => {
           recordWithTransients[propName] = transientConfig.read(recordWithTransients);
         });
+        if (recordWithTransients.blocks && typeof recordWithTransients.content?.raw === "string") {
+          parsedBlocksCache.set(getCacheKey(kind, name, key), {
+            content: recordWithTransients.content.raw,
+            blocks: recordWithTransients.blocks
+          });
+        }
         void getSyncManager()?.load(
           entityConfig.syncConfig,
           objectType,
@@ -6078,10 +6256,14 @@ var wp;
                 if ("auto-draft" === status || !meta) {
                   return;
                 }
+                const entityIdKey = entityConfig.key || DEFAULT_ENTITY_KEY;
                 dispatch3.saveEntityRecord(
                   kind,
                   name,
-                  editedRecord
+                  {
+                    [entityIdKey]: editedRecord[entityIdKey]
+                  },
+                  { __unstableSkipSyncUpdate: true }
                 );
               });
             },
@@ -6570,7 +6752,7 @@ var wp;
     });
   };
   getDefaultTemplateId2.shouldInvalidate = (action) => {
-    return action.type === "RECEIVE_ITEMS" && action.kind === "root" && action.name === "site";
+    return action.type === "RECEIVE_ITEMS" && action.kind === "root" && action.name === "site" && !!action.persistedEdits;
   };
   var getRevisions2 = (kind, name, recordKey, query = {}) => async ({ dispatch: dispatch3, registry, resolveSelect: resolveSelect2 }) => {
     const configs = await resolveSelect2.getEntitiesConfig(kind);
@@ -7321,12 +7503,10 @@ var wp;
       (resolve) => {
         const hasId = isEntity ? !!resource.id : !!id;
         const { canUser: canUser3 } = resolve(store);
-        const create3 = canUser3(
-          "create",
-          isEntity ? { kind: resource.kind, name: resource.name } : resource
-        );
+        const collectionResource = isEntity ? { kind: resource.kind, name: resource.name } : resource;
+        const create3 = canUser3("create", collectionResource);
         if (!hasId) {
-          const read2 = canUser3("read", resource);
+          const read2 = canUser3("read", collectionResource);
           const isResolving2 = create3.isResolving || read2.isResolving;
           const hasResolved2 = create3.hasResolved && read2.hasResolved;
           let status2 = Status.Idle;
@@ -7525,7 +7705,6 @@ var wp;
 
   // packages/core-data/build-module/hooks/use-entity-block-editor.mjs
   var EMPTY_ARRAY2 = [];
-  var parsedBlocksCache = /* @__PURE__ */ new Map();
   function useEntityBlockEditor(kind, name, { id: _id } = {}) {
     const providerId = useEntityId(kind, name);
     const id = _id ?? providerId;
@@ -7555,7 +7734,7 @@ var wp;
       if (!content || typeof content !== "string") {
         return EMPTY_ARRAY2;
       }
-      const cacheKey = `${kind}:${name}:${id}`;
+      const cacheKey = getCacheKey(kind, name, id);
       const cached = parsedBlocksCache.get(cacheKey);
       let _blocks;
       if (cached && cached.content === content) {
@@ -7674,7 +7853,8 @@ var wp;
   var import_element8 = __toESM(require_element(), 1);
   var defaultResolvedSelection = {
     richTextOffset: null,
-    localClientId: null
+    localClientId: null,
+    attributeKey: null
   };
   var defaultState = {
     activeCollaborators: [],
@@ -7843,8 +8023,7 @@ var wp;
   }
 
   // packages/core-data/build-module/private-apis.mjs
-  var privateApis = {};
-  lock(privateApis, {
+  var lockedApis = {
     useEntityRecordsWithPermissions,
     RECEIVE_INTERMEDIATE_RESULTS,
     retrySyncConnection,
@@ -7852,8 +8031,12 @@ var wp;
     useResolvedSelection,
     useOnCollaboratorJoin,
     useOnCollaboratorLeave,
-    useOnPostSave
-  });
+    useOnPostSave,
+    SelectionType,
+    SelectionDirection
+  };
+  var privateApis = {};
+  lock(privateApis, lockedApis);
 
   // packages/core-data/build-module/index.mjs
   var entitiesConfig2 = [
@@ -7946,4 +8129,5 @@ var wp;
   (0, import_data15.register)(store);
   return __toCommonJS(index_exports);
 })();
+if(wp.coreData&&typeof wp.coreData==='object'){wp.coreData=Object.assign({},wp.coreData);}
 //# sourceMappingURL=index.js.map
