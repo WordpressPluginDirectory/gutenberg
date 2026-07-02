@@ -345,7 +345,18 @@ var wp;
       );
     }
   };
-  var dimensions_default = [height, minHeight, minWidth, aspectRatio, width2];
+  var objectFit = {
+    name: "objectFit",
+    generate: (style, options) => {
+      return generateRule(
+        style,
+        options,
+        ["dimensions", "objectFit"],
+        "objectFit"
+      );
+    }
+  };
+  var dimensions_default = [height, minHeight, minWidth, aspectRatio, width2, objectFit];
 
   // packages/style-engine/build-module/styles/background/index.mjs
   var backgroundImage = {
@@ -606,6 +617,17 @@ var wp;
       );
     }
   };
+  var textShadow = {
+    name: "textShadow",
+    generate: (style, options) => {
+      return generateRule(
+        style,
+        options,
+        ["typography", "textShadow"],
+        "textShadow"
+      );
+    }
+  };
   var typography_default = [
     fontFamily,
     fontSize,
@@ -616,6 +638,7 @@ var wp;
     textColumns,
     textDecoration,
     textIndent,
+    textShadow,
     textTransform,
     writingMode
   ];
@@ -680,5 +703,4 @@ var wp;
   }
   return __toCommonJS(index_exports);
 })();
-if(wp.styleEngine&&typeof wp.styleEngine==='object'){wp.styleEngine=Object.assign({},wp.styleEngine);}
 //# sourceMappingURL=index.js.map
