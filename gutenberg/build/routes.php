@@ -111,25 +111,6 @@ function gutenberg_register_options_connectors_wp_admin_page_routes() {
 }
 add_action( 'options-connectors-wp-admin_init', 'gutenberg_register_options_connectors_wp_admin_page_routes' );
 
-// Page-specific route registration functions for content-types
-/**
- * Register routes for content-types page (full-page mode).
- */
-function gutenberg_register_content_types_page_routes() {
-	global $gutenberg_content_types_routes_data;
-	gutenberg_register_page_routes( $gutenberg_content_types_routes_data, 'gutenberg_register_content_types_route' );
-}
-add_action( 'content-types_init', 'gutenberg_register_content_types_page_routes' );
-
-/**
- * Register routes for content-types page (wp-admin mode).
- */
-function gutenberg_register_content_types_wp_admin_page_routes() {
-	global $gutenberg_content_types_routes_data;
-	gutenberg_register_page_routes( $gutenberg_content_types_routes_data, 'gutenberg_register_content_types_wp_admin_route' );
-}
-add_action( 'content-types-wp-admin_init', 'gutenberg_register_content_types_wp_admin_page_routes' );
-
 // Page-specific route registration functions for dashboard
 /**
  * Register routes for dashboard page (full-page mode).
@@ -243,4 +224,23 @@ function gutenberg_register_media_editor_wp_admin_page_routes() {
 	gutenberg_register_page_routes( $gutenberg_media_editor_routes_data, 'gutenberg_register_media_editor_wp_admin_route' );
 }
 add_action( 'media-editor-wp-admin_init', 'gutenberg_register_media_editor_wp_admin_page_routes' );
+
+// Page-specific route registration functions for theme-preview
+/**
+ * Register routes for theme-preview page (full-page mode).
+ */
+function gutenberg_register_theme_preview_page_routes() {
+	global $gutenberg_theme_preview_routes_data;
+	gutenberg_register_page_routes( $gutenberg_theme_preview_routes_data, 'gutenberg_register_theme_preview_route' );
+}
+add_action( 'theme-preview_init', 'gutenberg_register_theme_preview_page_routes' );
+
+/**
+ * Register routes for theme-preview page (wp-admin mode).
+ */
+function gutenberg_register_theme_preview_wp_admin_page_routes() {
+	global $gutenberg_theme_preview_routes_data;
+	gutenberg_register_page_routes( $gutenberg_theme_preview_routes_data, 'gutenberg_register_theme_preview_wp_admin_route' );
+}
+add_action( 'theme-preview-wp-admin_init', 'gutenberg_register_theme_preview_wp_admin_page_routes' );
 

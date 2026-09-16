@@ -1,3 +1,4 @@
+(function() {
 "use strict";
 var wp;
 (wp ||= {}).privateApis = (() => {
@@ -39,7 +40,6 @@ var wp;
     "@wordpress/connectors",
     "@wordpress/workflows",
     "@wordpress/components",
-    "@wordpress/content-types",
     "@wordpress/core-commands",
     "@wordpress/core-data",
     "@wordpress/customize-widgets",
@@ -52,7 +52,6 @@ var wp;
     "@wordpress/format-library",
     "@wordpress/patterns",
     "@wordpress/preferences",
-    "@wordpress/reusable-blocks",
     "@wordpress/rich-text",
     "@wordpress/route",
     "@wordpress/router",
@@ -60,6 +59,9 @@ var wp;
     "@wordpress/storybook",
     "@wordpress/sync",
     "@wordpress/theme",
+    // Do not remove: older `@wordpress/dataviews` versions published to npm
+    // call the opt-in at module load, so a plugin bundling one of those
+    // copies throws at load time if this entry is missing.
     "@wordpress/dataviews",
     "@wordpress/fields",
     "@wordpress/lazy-editor",
@@ -114,5 +116,7 @@ var wp;
   var lockedData = /* @__PURE__ */ new WeakMap();
   var __private = /* @__PURE__ */ Symbol("Private API ID");
   return __toCommonJS(index_exports);
+})();
+(window.wp ||= {}).privateApis = wp.privateApis;
 })();
 //# sourceMappingURL=index.js.map

@@ -111,7 +111,53 @@ function resolveFields(fields) {
   });
 }
 
+// packages/widget-primitives/build-module/icon-resolver/icon-resolver.mjs
+var iconResolver;
+function registerIconResolver(resolver) {
+  if (iconResolver) {
+    return void 0;
+  }
+  iconResolver = resolver;
+  return resolver;
+}
+async function resolveIcon(reference) {
+  if (!iconResolver) {
+    return null;
+  }
+  try {
+    return await iconResolver(reference);
+  } catch {
+    return null;
+  }
+}
+
 // packages/widget-primitives/build-module/hooks/use-widget-types.mjs
+var pendingIcon = (0, import_element2.createElement)("svg", {
+  viewBox: "0 0 24 24"
+});
+function withRenderableIcons(actions, holdPending) {
+  return actions.map(({ icon, ...action }) => {
+    if ((0, import_element2.isValidElement)(icon)) {
+      return { ...action, icon };
+    }
+    if (holdPending && typeof icon === "string") {
+      return { ...action, icon: pendingIcon };
+    }
+    return action;
+  });
+}
+var DEFAULT_API_VERSION = 1;
+function recordOverlay(record) {
+  return {
+    name: record.name,
+    renderModule: record.render_module ?? "",
+    ...record.presentation ? { presentation: record.presentation } : {},
+    ...record.category ? { category: record.category } : {},
+    ...record.description ? { description: record.description } : {},
+    ...record.help ? { help: record.help } : {},
+    ...record.keywords ? { keywords: record.keywords } : {}
+  };
+}
 function useWidgetTypes(records) {
   const [widgetTypes, setWidgetTypes] = (0, import_element2.useState)([]);
   const [isResolvingWidgetTypes, setIsResolvingWidgetTypes] = (0, import_element2.useState)(true);
@@ -130,7 +176,21 @@ function useWidgetTypes(records) {
     Promise.all(
       records.map(async (record) => {
         if (!record.widget_module) {
-          return null;
+          if (!record.render_module) {
+            return null;
+          }
+          return {
+            apiVersion: DEFAULT_API_VERSION,
+            title: record.title ?? record.name,
+            ...record.icon ? { icon: pendingIcon } : {},
+            ...record.actions ? {
+              actions: withRenderableIcons(
+                record.actions,
+                true
+              )
+            } : {},
+            ...recordOverlay(record)
+          };
         }
         try {
           const module = await import(
@@ -141,15 +201,18 @@ function useWidgetTypes(records) {
             return null;
           }
           const metadata = module.default;
+          const moduleIcon = (0, import_element2.isValidElement)(metadata.icon) ? metadata.icon : void 0;
+          const icon = moduleIcon ?? (record.icon ? pendingIcon : void 0);
+          const actions = record.actions ?? metadata.actions;
           return {
+            apiVersion: DEFAULT_API_VERSION,
             ...metadata,
             ...metadata.attributes ? {
               attributes: resolveFields(
                 metadata.attributes
               )
             } : {},
-            name: record.name,
-            renderModule: record.render_module ?? "",
+            icon,
             /*
              * `title` is required:
              * - Server-side title wins
@@ -157,12 +220,13 @@ function useWidgetTypes(records) {
              * - Then the record's name as fallback
              */
             title: record.title ?? metadata.title ?? record.name,
-            ...record.presentation ? { presentation: record.presentation } : {},
-            ...record.category ? { category: record.category } : {},
-            ...record.description ? { description: record.description } : {},
-            ...record.help ? { help: record.help } : {},
-            ...record.keywords ? { keywords: record.keywords } : {},
-            ...record.actions ? { actions: record.actions } : {}
+            ...actions ? {
+              actions: withRenderableIcons(
+                actions,
+                actions === record.actions
+              )
+            } : {},
+            ...recordOverlay(record)
           };
         } catch {
           return null;
@@ -176,6 +240,61 @@ function useWidgetTypes(records) {
         results.filter((t) => t !== null)
       );
       setIsResolvingWidgetTypes(false);
+      for (const record of records) {
+        if (!record.icon) {
+          continue;
+        }
+        void resolveIcon(record.icon).then((resolved) => {
+          if (cancelled) {
+            return;
+          }
+          setWidgetTypes(
+            (prev) => prev.map((widgetType) => {
+              if (widgetType.name !== record.name) {
+                return widgetType;
+              }
+              if (resolved) {
+                return { ...widgetType, icon: resolved };
+              }
+              return widgetType.icon === pendingIcon ? { ...widgetType, icon: void 0 } : widgetType;
+            })
+          );
+        });
+      }
+      for (const record of records) {
+        for (const action of record.actions ?? []) {
+          if (typeof action.icon !== "string") {
+            continue;
+          }
+          void resolveIcon(action.icon).then((resolved) => {
+            if (cancelled) {
+              return;
+            }
+            setWidgetTypes(
+              (prev) => prev.map((type) => {
+                if (type.name !== record.name) {
+                  return type;
+                }
+                return {
+                  ...type,
+                  actions: type.actions?.map((entry) => {
+                    if (entry.id !== action.id) {
+                      return entry;
+                    }
+                    if (resolved) {
+                      return {
+                        ...entry,
+                        icon: resolved
+                      };
+                    }
+                    return entry.icon === pendingIcon ? { ...entry, icon: void 0 } : entry;
+                  })
+                };
+              })
+            );
+          });
+        }
+      }
     });
     return () => {
       cancelled = true;
@@ -183,9 +302,31 @@ function useWidgetTypes(records) {
   }, [records]);
   return [widgetTypes, isResolvingWidgetTypes];
 }
+
+// packages/widget-primitives/build-module/widget-host/widget-host.mjs
+var import_element3 = __toESM(require_element(), 1);
+var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
+var WidgetHostContext = (0, import_element3.createContext)({});
+function WidgetHostProvider({
+  value,
+  children
+}) {
+  const inherited = (0, import_element3.useContext)(WidgetHostContext);
+  const merged = (0, import_element3.useMemo)(
+    () => ({ ...inherited, ...value }),
+    [inherited, value]
+  );
+  return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(WidgetHostContext.Provider, { value: merged, children });
+}
+function useWidgetHost() {
+  return (0, import_element3.useContext)(WidgetHostContext);
+}
 export {
+  WidgetHostProvider,
   WidgetRender,
   registerFieldType,
+  registerIconResolver,
+  useWidgetHost,
   useWidgetTypes
 };
 //# sourceMappingURL=index.js.map

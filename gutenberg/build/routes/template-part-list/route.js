@@ -67,9 +67,10 @@ var require_private_apis = __commonJS({
 });
 
 // routes/template-part-list/route.ts
-var import_data4 = __toESM(require_data());
-var import_core_data2 = __toESM(require_core_data());
+var import_data5 = __toESM(require_data());
+var import_core_data3 = __toESM(require_core_data());
 var import_i18n = __toESM(require_i18n());
+import { notFound } from "@wordpress/route";
 
 // packages/views/build-module/use-view.mjs
 var import_element = __toESM(require_element(), 1);
@@ -81,91 +82,102 @@ function generatePreferenceKey(kind, name, slug) {
   return `dataviews-${kind}-${name}-${slug}`;
 }
 
-// packages/views/build-module/filter-utils.mjs
-var SCALAR_VALUES = [
-  "titleField",
-  "mediaField",
-  "descriptionField",
-  "showTitle",
-  "showMedia",
-  "showDescription",
-  "showLevels",
-  "infiniteScrollEnabled"
-];
-function mergeActiveViewOverrides(view, activeViewOverrides, defaultView) {
-  if (!activeViewOverrides) {
-    return view;
-  }
-  let result = view;
-  for (const key of SCALAR_VALUES) {
-    if (key in activeViewOverrides) {
-      result = { ...result, [key]: activeViewOverrides[key] };
-    }
-  }
-  if (activeViewOverrides.filters && activeViewOverrides.filters.length > 0) {
-    const activeFields = new Set(
-      activeViewOverrides.filters.map((f) => f.field)
-    );
-    const preserved = (view.filters ?? []).filter(
-      (f) => !activeFields.has(f.field)
-    );
-    result = {
-      ...result,
-      filters: [...preserved, ...activeViewOverrides.filters]
-    };
-  }
-  if (activeViewOverrides.sort) {
-    const isDefaultSort = defaultView && view.sort?.field === defaultView.sort?.field && view.sort?.direction === defaultView.sort?.direction;
-    if (isDefaultSort) {
-      result = {
-        ...result,
-        sort: activeViewOverrides.sort
-      };
-    }
-  }
-  if (activeViewOverrides.layout) {
-    result = {
-      ...result,
-      layout: {
-        ...result.layout,
-        ...activeViewOverrides.layout
-      }
-    };
-  }
-  if (activeViewOverrides.groupBy) {
-    result = {
-      ...result,
-      groupBy: activeViewOverrides.groupBy
-    };
+// packages/views/build-module/resolve-view.mjs
+var QUERY_PARAMS = ["page", "search"];
+function isPlainObject(value) {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+function withoutQueryParams(layer) {
+  const result = isPlainObject(layer) ? { ...layer } : {};
+  for (const key of QUERY_PARAMS) {
+    delete result[key];
   }
   return result;
+}
+function mergeLayer(lower, upper) {
+  const result = { ...lower };
+  for (const key of Object.keys(upper)) {
+    const value = upper[key];
+    const current = result[key];
+    result[key] = isPlainObject(current) && isPlainObject(value) ? mergeLayer(current, value) : value;
+  }
+  return result;
+}
+function getLockedFilters(overrides) {
+  return (overrides?.filters ?? []).filter((filter) => filter.isLocked);
+}
+function applyLockedFilters(view, overrides) {
+  const locked = getLockedFilters(overrides);
+  if (locked.length === 0) {
+    return view;
+  }
+  const rest = (view.filters ?? []).filter(
+    (filter) => !locked.some((f) => f.field === filter.field)
+  );
+  return { ...view, filters: [...locked, ...rest] };
+}
+function getApplicablePersistedView(persistedView, defaultLayouts) {
+  if (!persistedView || persistedView.type === void 0 || !defaultLayouts || defaultLayouts[persistedView.type]) {
+    return persistedView;
+  }
+  const { type, ...rest } = persistedView;
+  return Object.keys(rest).length > 0 ? rest : void 0;
+}
+function resolveBaseView(layers, effectiveType) {
+  const { defaultView, defaultLayouts, activeViewOverrides } = layers;
+  const layoutDefaults = defaultLayouts?.[effectiveType];
+  return applyLockedFilters(
+    [layoutDefaults, activeViewOverrides].reduce(
+      (lower, upper) => mergeLayer(lower, withoutQueryParams(upper)),
+      withoutQueryParams(defaultView)
+    ),
+    activeViewOverrides
+  );
+}
+function resolveView(args) {
+  const { defaultView, defaultLayouts, activeViewOverrides, page, search } = args;
+  const persistedView = getApplicablePersistedView(
+    args.persistedView,
+    defaultLayouts
+  );
+  const effectiveType = persistedView?.type ?? activeViewOverrides?.type ?? defaultView?.type;
+  const baseView = resolveBaseView(args, effectiveType);
+  const view = {
+    ...applyLockedFilters(
+      mergeLayer(baseView, withoutQueryParams(persistedView)),
+      activeViewOverrides
+    ),
+    page: Number(page ?? 1),
+    search: search ?? ""
+  };
+  return view;
 }
 
 // packages/views/build-module/load-view.mjs
 var import_data2 = __toESM(require_data(), 1);
 var import_preferences2 = __toESM(require_preferences(), 1);
 async function loadView(config) {
-  const { kind, name, slug, defaultView, activeViewOverrides, queryParams } = config;
+  const {
+    kind,
+    name,
+    slug,
+    defaultView,
+    defaultLayouts,
+    activeViewOverrides,
+    queryParams
+  } = config;
   const preferenceKey = generatePreferenceKey(kind, name, slug);
-  const persistedView = (0, import_data2.select)(import_preferences2.store).get(
-    "core/views",
-    preferenceKey
-  );
-  const baseView = persistedView ?? defaultView;
-  const page = queryParams?.page ?? 1;
-  const search = queryParams?.search ?? "";
-  const rawDefaults = config.defaultLayouts?.[baseView?.type];
-  const layoutTypeDefaults = !rawDefaults || rawDefaults === true ? {} : rawDefaults;
-  const combinedOverrides = { ...layoutTypeDefaults, ...activeViewOverrides };
-  return mergeActiveViewOverrides(
-    {
-      ...baseView,
-      page,
-      search
-    },
-    combinedOverrides,
-    defaultView
-  );
+  const persistedView = (0, import_data2.select)(
+    import_preferences2.store
+  ).get("core/views", preferenceKey);
+  return resolveView({
+    defaultView,
+    defaultLayouts,
+    activeViewOverrides,
+    persistedView,
+    page: queryParams?.page,
+    search: queryParams?.search
+  });
 }
 
 // packages/views/build-module/use-view-config.mjs
@@ -180,57 +192,52 @@ var { lock, unlock } = (0, import_private_apis.__dangerousOptInToUnstableAPIsOnl
 );
 
 // routes/template-part-list/view-utils.ts
-var DEFAULT_VIEW = {
-  type: "grid",
-  sort: {
-    field: "date",
-    direction: "desc"
-  },
-  fields: [],
-  titleField: "title",
-  mediaField: "preview"
-};
-function getActiveViewOverridesForTab(area) {
-  if (area === "all") {
-    return {};
-  }
+var import_data4 = __toESM(require_data());
+var import_core_data2 = __toESM(require_core_data());
+
+// routes/lock-unlock/index.ts
+var import_private_apis2 = __toESM(require_private_apis());
+var { lock: lock2, unlock: unlock2 } = (0, import_private_apis2.__dangerousOptInToUnstableAPIsOnlyForCoreModules)(
+  "I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.",
+  "@wordpress/routes"
+);
+
+// routes/template-part-list/view-utils.ts
+var TEMPLATE_PART_POST_TYPE = "wp_template_part";
+async function loadTemplatePartViewConfig() {
+  const config = await unlock2((0, import_data4.resolveSelect)(import_core_data2.store)).getViewConfig(
+    "postType",
+    TEMPLATE_PART_POST_TYPE
+  );
   return {
-    filters: [
-      {
-        field: "area",
-        operator: "is",
-        value: area
-      }
-    ]
+    default_view: config?.default_view,
+    default_layouts: config?.default_layouts,
+    view_list: config?.view_list
   };
 }
 async function ensureView(area, search) {
+  const {
+    default_view: defaultView,
+    default_layouts: defaultLayouts,
+    view_list: viewList
+  } = await loadTemplatePartViewConfig();
+  if (!defaultView) {
+    throw new Error(
+      `Missing view configuration for the ${TEMPLATE_PART_POST_TYPE} post type.`
+    );
+  }
   return loadView({
     kind: "postType",
-    name: "wp_template_part",
+    name: TEMPLATE_PART_POST_TYPE,
     slug: "default-new",
-    defaultView: DEFAULT_VIEW,
-    activeViewOverrides: getActiveViewOverridesForTab(area ?? "all"),
+    defaultView,
+    defaultLayouts,
+    activeViewOverrides: viewList?.find((v) => v.slug === area)?.view ?? {},
     queryParams: search
   });
 }
 function viewToQuery(view) {
-  const result = {};
-  if (void 0 !== view.perPage) {
-    result.per_page = view.perPage;
-  }
-  if (void 0 !== view.page) {
-    result.page = view.page;
-  }
-  if (![void 0, ""].includes(view.search)) {
-    result.search = view.search;
-  }
-  if (void 0 !== view.sort?.field) {
-    result.orderby = view.sort.field;
-  }
-  if (void 0 !== view.sort?.direction) {
-    result.order = view.sort.direction;
-  }
+  const result = { per_page: -1 };
   const areaFilter = view.filters?.find(
     (filter) => filter.field === "area"
   );
@@ -242,6 +249,13 @@ function viewToQuery(view) {
 
 // routes/template-part-list/route.ts
 var route = {
+  async beforeLoad() {
+    const theme = await (0, import_data5.resolveSelect)(import_core_data3.store).getCurrentTheme();
+    const supports = theme?.theme_supports;
+    if (!supports?.["block-templates"] && !supports?.["block-template-parts"]) {
+      throw notFound();
+    }
+  },
   title: () => (0, import_i18n.__)("Template Parts"),
   async canvas(context) {
     const { params, search } = context;
@@ -257,27 +271,21 @@ var route = {
       return {
         postType: "wp_template_part",
         postId,
-        isPreview: true,
-        editLink: `/types/wp_template_part/edit/${encodeURIComponent(
-          postId
-        )}`
+        isPreview: true
       };
     }
     const query = viewToQuery(view);
-    const posts = await (0, import_data4.resolveSelect)(import_core_data2.store).getEntityRecords(
+    const posts = await (0, import_data5.resolveSelect)(import_core_data3.store).getEntityRecords(
       "postType",
       "wp_template_part",
-      { ...query, per_page: 1 }
+      query
     );
     if (posts && posts.length > 0) {
       const postId = posts[0].id.toString();
       return {
         postType: "wp_template_part",
         postId,
-        isPreview: true,
-        editLink: `/types/wp_template_part/edit/${encodeURIComponent(
-          postId
-        )}`
+        isPreview: true
       };
     }
     return void 0;

@@ -33,11 +33,6 @@ return array(
 		'asset' => 'block-library/file/view.min.asset.php',
 	),
 	array(
-		'id' => '@wordpress/block-library/form/view',
-		'path' => 'block-library/form/view',
-		'asset' => 'block-library/form/view.min.asset.php',
-	),
-	array(
 		'id' => '@wordpress/block-library/image/view',
 		'path' => 'block-library/image/view',
 		'asset' => 'block-library/image/view.min.asset.php',
@@ -76,11 +71,6 @@ return array(
 		'id' => '@wordpress/connectors',
 		'path' => 'connectors/index',
 		'asset' => 'connectors/index.min.asset.php',
-	),
-	array(
-		'id' => '@wordpress/content-types',
-		'path' => 'content-types/index',
-		'asset' => 'content-types/index.min.asset.php',
 	),
 	array(
 		'id' => '@wordpress/core-abilities',
