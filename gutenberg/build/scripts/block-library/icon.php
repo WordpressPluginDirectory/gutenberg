@@ -15,8 +15,17 @@
  * @return string Returns the Icon.
  */
 function gutenberg_render_block_core_icon( $attributes ) {
-	if ( empty( $attributes['icon'] ) ) {
+	if ( empty( $attributes['icon'] ) || ! is_string( $attributes['icon'] ) ) {
 		return;
+	}
+
+	// Icons in non-public collections are not available in the editor, so do not render them either.
+	$registered_icon = WP_Icons_Registry::get_instance()->get_registered_icon( $attributes['icon'] );
+	if ( null !== $registered_icon ) {
+		$icon_collection = WP_Icon_Collections_Registry::get_instance()->get_registered( $registered_icon['collection'] );
+		if ( null !== $icon_collection && ! $icon_collection['public'] ) {
+			return;
+		}
 	}
 
 	// Text color and background color.

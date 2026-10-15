@@ -63,16 +63,16 @@ var require_react_dom = __commonJS({
   }
 });
 
-// node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js
+// node_modules/.store/use-sync-external-store@1.6.0-I0W9gfWaba5M6uWU9Ouj4A/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js
 var require_use_sync_external_store_shim_development = __commonJS({
-  "node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js"(exports) {
+  "node_modules/.store/use-sync-external-store@1.6.0-I0W9gfWaba5M6uWU9Ouj4A/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js"(exports) {
     "use strict";
     (function() {
       function is(x2, y2) {
         return x2 === y2 && (0 !== x2 || 1 / x2 === 1 / y2) || x2 !== x2 && y2 !== y2;
       }
       function useSyncExternalStore$2(subscribe, getSnapshot) {
-        didWarnOld18Alpha || void 0 === React102.startTransition || (didWarnOld18Alpha = true, console.error(
+        didWarnOld18Alpha || void 0 === React103.startTransition || (didWarnOld18Alpha = true, console.error(
           "You are using an outdated, pre-release alpha of React 18 that does not support useSyncExternalStore. The use-sync-external-store shim will not work correctly. Upgrade to a newer pre-release."
         ));
         var value = getSnapshot();
@@ -94,7 +94,7 @@ var require_use_sync_external_store_shim_development = __commonJS({
           },
           [subscribe, value, getSnapshot]
         );
-        useEffect31(
+        useEffect30(
           function() {
             checkIfSnapshotChanged(inst) && forceUpdate({ inst });
             return subscribe(function() {
@@ -120,16 +120,16 @@ var require_use_sync_external_store_shim_development = __commonJS({
         return getSnapshot();
       }
       "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-      var React102 = require_react(), objectIs = "function" === typeof Object.is ? Object.is : is, useState34 = React102.useState, useEffect31 = React102.useEffect, useLayoutEffect4 = React102.useLayoutEffect, useDebugValue2 = React102.useDebugValue, didWarnOld18Alpha = false, didWarnUncachedGetSnapshot = false, shim = "undefined" === typeof window || "undefined" === typeof window.document || "undefined" === typeof window.document.createElement ? useSyncExternalStore$1 : useSyncExternalStore$2;
-      exports.useSyncExternalStore = void 0 !== React102.useSyncExternalStore ? React102.useSyncExternalStore : shim;
+      var React103 = require_react(), objectIs = "function" === typeof Object.is ? Object.is : is, useState34 = React103.useState, useEffect30 = React103.useEffect, useLayoutEffect4 = React103.useLayoutEffect, useDebugValue2 = React103.useDebugValue, didWarnOld18Alpha = false, didWarnUncachedGetSnapshot = false, shim = "undefined" === typeof window || "undefined" === typeof window.document || "undefined" === typeof window.document.createElement ? useSyncExternalStore$1 : useSyncExternalStore$2;
+      exports.useSyncExternalStore = void 0 !== React103.useSyncExternalStore ? React103.useSyncExternalStore : shim;
       "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(Error());
     })();
   }
 });
 
-// node_modules/use-sync-external-store/shim/index.js
+// node_modules/.store/use-sync-external-store@1.6.0-I0W9gfWaba5M6uWU9Ouj4A/node_modules/use-sync-external-store/shim/index.js
 var require_shim = __commonJS({
-  "node_modules/use-sync-external-store/shim/index.js"(exports, module) {
+  "node_modules/.store/use-sync-external-store@1.6.0-I0W9gfWaba5M6uWU9Ouj4A/node_modules/use-sync-external-store/shim/index.js"(exports, module) {
     "use strict";
     if (false) {
       module.exports = null;
@@ -139,18 +139,18 @@ var require_shim = __commonJS({
   }
 });
 
-// node_modules/use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.development.js
+// node_modules/.store/use-sync-external-store@1.6.0-I0W9gfWaba5M6uWU9Ouj4A/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.development.js
 var require_with_selector_development = __commonJS({
-  "node_modules/use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.development.js"(exports) {
+  "node_modules/.store/use-sync-external-store@1.6.0-I0W9gfWaba5M6uWU9Ouj4A/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim/with-selector.development.js"(exports) {
     "use strict";
     (function() {
       function is(x2, y2) {
         return x2 === y2 && (0 !== x2 || 1 / x2 === 1 / y2) || x2 !== x2 && y2 !== y2;
       }
       "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-      var React102 = require_react(), shim = require_shim(), objectIs = "function" === typeof Object.is ? Object.is : is, useSyncExternalStore3 = shim.useSyncExternalStore, useRef50 = React102.useRef, useEffect31 = React102.useEffect, useMemo41 = React102.useMemo, useDebugValue2 = React102.useDebugValue;
+      var React103 = require_react(), shim = require_shim(), objectIs = "function" === typeof Object.is ? Object.is : is, useSyncExternalStore3 = shim.useSyncExternalStore, useRef51 = React103.useRef, useEffect30 = React103.useEffect, useMemo41 = React103.useMemo, useDebugValue2 = React103.useDebugValue;
       exports.useSyncExternalStoreWithSelector = function(subscribe, getSnapshot, getServerSnapshot, selector, isEqual) {
-        var instRef = useRef50(null);
+        var instRef = useRef51(null);
         if (null === instRef.current) {
           var inst = { hasValue: false, value: null };
           instRef.current = inst;
@@ -191,7 +191,7 @@ var require_with_selector_development = __commonJS({
           [getSnapshot, getServerSnapshot, selector, isEqual]
         );
         var value = useSyncExternalStore3(subscribe, instRef[0], instRef[1]);
-        useEffect31(
+        useEffect30(
           function() {
             inst.hasValue = true;
             inst.value = value;
@@ -206,9 +206,9 @@ var require_with_selector_development = __commonJS({
   }
 });
 
-// node_modules/use-sync-external-store/shim/with-selector.js
+// node_modules/.store/use-sync-external-store@1.6.0-I0W9gfWaba5M6uWU9Ouj4A/node_modules/use-sync-external-store/shim/with-selector.js
 var require_with_selector = __commonJS({
-  "node_modules/use-sync-external-store/shim/with-selector.js"(exports, module) {
+  "node_modules/.store/use-sync-external-store@1.6.0-I0W9gfWaba5M6uWU9Ouj4A/node_modules/use-sync-external-store/shim/with-selector.js"(exports, module) {
     "use strict";
     if (false) {
       module.exports = null;
@@ -267,58 +267,58 @@ var require_data = __commonJS({
   }
 });
 
-// node_modules/fast-deep-equal/es6/index.js
+// node_modules/.store/fast-deep-equal@3.1.3-Dk0kpzcWCOUHE1bkOO2LLA/node_modules/fast-deep-equal/es6/index.js
 var require_es6 = __commonJS({
-  "node_modules/fast-deep-equal/es6/index.js"(exports, module) {
+  "node_modules/.store/fast-deep-equal@3.1.3-Dk0kpzcWCOUHE1bkOO2LLA/node_modules/fast-deep-equal/es6/index.js"(exports, module) {
     "use strict";
-    module.exports = function equal(a2, b2) {
-      if (a2 === b2) return true;
-      if (a2 && b2 && typeof a2 == "object" && typeof b2 == "object") {
-        if (a2.constructor !== b2.constructor) return false;
-        var length, i2, keys;
-        if (Array.isArray(a2)) {
-          length = a2.length;
-          if (length != b2.length) return false;
-          for (i2 = length; i2-- !== 0; )
-            if (!equal(a2[i2], b2[i2])) return false;
+    module.exports = function equal(a, b) {
+      if (a === b) return true;
+      if (a && b && typeof a == "object" && typeof b == "object") {
+        if (a.constructor !== b.constructor) return false;
+        var length, i, keys;
+        if (Array.isArray(a)) {
+          length = a.length;
+          if (length != b.length) return false;
+          for (i = length; i-- !== 0; )
+            if (!equal(a[i], b[i])) return false;
           return true;
         }
-        if (a2 instanceof Map && b2 instanceof Map) {
-          if (a2.size !== b2.size) return false;
-          for (i2 of a2.entries())
-            if (!b2.has(i2[0])) return false;
-          for (i2 of a2.entries())
-            if (!equal(i2[1], b2.get(i2[0]))) return false;
+        if (a instanceof Map && b instanceof Map) {
+          if (a.size !== b.size) return false;
+          for (i of a.entries())
+            if (!b.has(i[0])) return false;
+          for (i of a.entries())
+            if (!equal(i[1], b.get(i[0]))) return false;
           return true;
         }
-        if (a2 instanceof Set && b2 instanceof Set) {
-          if (a2.size !== b2.size) return false;
-          for (i2 of a2.entries())
-            if (!b2.has(i2[0])) return false;
+        if (a instanceof Set && b instanceof Set) {
+          if (a.size !== b.size) return false;
+          for (i of a.entries())
+            if (!b.has(i[0])) return false;
           return true;
         }
-        if (ArrayBuffer.isView(a2) && ArrayBuffer.isView(b2)) {
-          length = a2.length;
-          if (length != b2.length) return false;
-          for (i2 = length; i2-- !== 0; )
-            if (a2[i2] !== b2[i2]) return false;
+        if (ArrayBuffer.isView(a) && ArrayBuffer.isView(b)) {
+          length = a.length;
+          if (length != b.length) return false;
+          for (i = length; i-- !== 0; )
+            if (a[i] !== b[i]) return false;
           return true;
         }
-        if (a2.constructor === RegExp) return a2.source === b2.source && a2.flags === b2.flags;
-        if (a2.valueOf !== Object.prototype.valueOf) return a2.valueOf() === b2.valueOf();
-        if (a2.toString !== Object.prototype.toString) return a2.toString() === b2.toString();
-        keys = Object.keys(a2);
+        if (a.constructor === RegExp) return a.source === b.source && a.flags === b.flags;
+        if (a.valueOf !== Object.prototype.valueOf) return a.valueOf() === b.valueOf();
+        if (a.toString !== Object.prototype.toString) return a.toString() === b.toString();
+        keys = Object.keys(a);
         length = keys.length;
-        if (length !== Object.keys(b2).length) return false;
-        for (i2 = length; i2-- !== 0; )
-          if (!Object.prototype.hasOwnProperty.call(b2, keys[i2])) return false;
-        for (i2 = length; i2-- !== 0; ) {
-          var key = keys[i2];
-          if (!equal(a2[key], b2[key])) return false;
+        if (length !== Object.keys(b).length) return false;
+        for (i = length; i-- !== 0; )
+          if (!Object.prototype.hasOwnProperty.call(b, keys[i])) return false;
+        for (i = length; i-- !== 0; ) {
+          var key = keys[i];
+          if (!equal(a[key], b[key])) return false;
         }
         return true;
       }
-      return a2 !== a2 && b2 !== b2;
+      return a !== a && b !== b;
     };
   }
 });
@@ -330,9 +330,9 @@ var require_date = __commonJS({
   }
 });
 
-// node_modules/deepmerge/dist/cjs.js
+// node_modules/.store/deepmerge@4.3.1-130J0Lhhc9LM1JWY-5q3ww/node_modules/deepmerge/dist/cjs.js
 var require_cjs = __commonJS({
-  "node_modules/deepmerge/dist/cjs.js"(exports, module) {
+  "node_modules/.store/deepmerge@4.3.1-130J0Lhhc9LM1JWY-5q3ww/node_modules/deepmerge/dist/cjs.js"(exports, module) {
     "use strict";
     var isMergeableObject = function isMergeableObject2(value) {
       return isNonNullObject(value) && !isSpecial(value);
@@ -447,44 +447,55 @@ var require_api_fetch = __commonJS({
   }
 });
 
-// node_modules/clsx/dist/clsx.mjs
-function r(e2) {
-  var t2, f2, n2 = "";
-  if ("string" == typeof e2 || "number" == typeof e2) n2 += e2;
-  else if ("object" == typeof e2) if (Array.isArray(e2)) {
-    var o2 = e2.length;
-    for (t2 = 0; t2 < o2; t2++) e2[t2] && (f2 = r(e2[t2])) && (n2 && (n2 += " "), n2 += f2);
-  } else for (f2 in e2) e2[f2] && (n2 && (n2 += " "), n2 += f2);
-  return n2;
+// node_modules/.store/clsx@2.1.1-XOLP1vUL9vEGfpiXm37fAw/node_modules/clsx/dist/clsx.mjs
+function r(e) {
+  var t, f, n = "";
+  if ("string" == typeof e || "number" == typeof e) n += e;
+  else if ("object" == typeof e) if (Array.isArray(e)) {
+    var o = e.length;
+    for (t = 0; t < o; t++) e[t] && (f = r(e[t])) && (n && (n += " "), n += f);
+  } else for (f in e) e[f] && (n && (n += " "), n += f);
+  return n;
 }
 function clsx() {
-  for (var e2, t2, f2 = 0, n2 = "", o2 = arguments.length; f2 < o2; f2++) (e2 = arguments[f2]) && (t2 = r(e2)) && (n2 && (n2 += " "), n2 += t2);
-  return n2;
+  for (var e, t, f = 0, n = "", o = arguments.length; f < o; f++) (e = arguments[f]) && (t = r(e)) && (n && (n += " "), n += t);
+  return n;
 }
 var clsx_default = clsx;
 
 // packages/ui/build-module/badge/badge.mjs
 var import_element11 = __toESM(require_element(), 1);
 
-// node_modules/@base-ui/utils/useControlled.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/useControlled.mjs
 var React = __toESM(require_react(), 1);
 
-// node_modules/@base-ui/utils/error.mjs
-var set;
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/createLogOnce.mjs
+var loggedMessages;
 if (true) {
-  set = /* @__PURE__ */ new Set();
+  loggedMessages = /* @__PURE__ */ new Set();
 }
-function error(...messages) {
-  if (true) {
-    const messageKey = messages.join(" ");
-    if (!set.has(messageKey)) {
-      set.add(messageKey);
-      console.error(`Base UI: ${messageKey}`);
+function createLogOnce(severity, prefix) {
+  return function logOnce(...messages) {
+    if (true) {
+      const message2 = messages.join(" ");
+      const output = prefix ? `${prefix}: ${message2}` : message2;
+      const key = `${severity}:${output}`;
+      if (!loggedMessages.has(key)) {
+        loggedMessages.add(key);
+        if (severity === "warn") {
+          console.warn(output);
+        } else {
+          console.error(output);
+        }
+      }
     }
-  }
+  };
 }
 
-// node_modules/@base-ui/utils/useControlled.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/error.mjs
+var error = createLogOnce("error", "Base UI");
+
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/useControlled.mjs
 function useControlled({
   controlled,
   default: defaultProp,
@@ -495,7 +506,7 @@ function useControlled({
     current: isControlled
   } = React.useRef(controlled !== void 0);
   const [valueState, setValue] = React.useState(defaultProp);
-  const value = isControlled ? controlled : valueState;
+  const value = isControlled && controlled !== void 0 ? controlled : valueState;
   if (true) {
     React.useEffect(() => {
       if (isControlled !== (controlled !== void 0)) {
@@ -545,13 +556,13 @@ function serializeToDevModeString(input) {
   }
 }
 
-// node_modules/@base-ui/utils/safeReact.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/safeReact.mjs
 var React2 = __toESM(require_react(), 1);
 var SafeReact = {
   ...React2
 };
 
-// node_modules/@base-ui/utils/useRefWithInit.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/useRefWithInit.mjs
 var React3 = __toESM(require_react(), 1);
 var UNINITIALIZED = {};
 function useRefWithInit(init, initArg) {
@@ -562,7 +573,7 @@ function useRefWithInit(init, initArg) {
   return ref;
 }
 
-// node_modules/@base-ui/utils/useStableCallback.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/useStableCallback.mjs
 var useInsertionEffect = SafeReact.useInsertionEffect;
 var useSafeInsertionEffect = (
   // React 17 doesn't have useInsertionEffect.
@@ -595,35 +606,29 @@ function assertNotCalled() {
   }
 }
 
-// node_modules/@base-ui/utils/warn.mjs
-var set2;
-if (true) {
-  set2 = /* @__PURE__ */ new Set();
-}
-function warn(...messages) {
-  if (true) {
-    const messageKey = messages.join(" ");
-    if (!set2.has(messageKey)) {
-      set2.add(messageKey);
-      console.warn(`Base UI: ${messageKey}`);
-    }
-  }
-}
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/warn.mjs
+var warn = createLogOnce("warn", "Base UI");
 
-// node_modules/@base-ui/utils/useIsoLayoutEffect.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/empty.mjs
+function NOOP() {
+}
+var EMPTY_ARRAY = Object.freeze([]);
+var EMPTY_OBJECT = Object.freeze({});
+
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/useIsoLayoutEffect.mjs
 var React4 = __toESM(require_react(), 1);
 var noop = () => {
 };
 var useIsoLayoutEffect = typeof document !== "undefined" ? React4.useLayoutEffect : noop;
 
-// node_modules/@base-ui/react/internals/useRenderElement.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/useRenderElement.mjs
 var React7 = __toESM(require_react(), 1);
 
-// node_modules/@base-ui/utils/useMergedRefs.mjs
-function useMergedRefs(a2, b2, c2, d2) {
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/useMergedRefs.mjs
+function useMergedRefs(a, b, c2, d) {
   const forkRef = useRefWithInit(createForkRef).current;
-  if (didChange(forkRef, a2, b2, c2, d2)) {
-    update(forkRef, [a2, b2, c2, d2]);
+  if (didChange(forkRef, a, b, c2, d)) {
+    update(forkRef, [a, b, c2, d]);
   }
   return forkRef.callback;
 }
@@ -641,8 +646,8 @@ function createForkRef() {
     refs: []
   };
 }
-function didChange(forkRef, a2, b2, c2, d2) {
-  return forkRef.refs[0] !== a2 || forkRef.refs[1] !== b2 || forkRef.refs[2] !== c2 || forkRef.refs[3] !== d2;
+function didChange(forkRef, a, b, c2, d) {
+  return forkRef.refs[0] !== a || forkRef.refs[1] !== b || forkRef.refs[2] !== c2 || forkRef.refs[3] !== d;
 }
 function didChangeN(forkRef, newRefs) {
   return forkRef.refs.length !== newRefs.length || forkRef.refs.some((ref, index2) => ref !== newRefs[index2]);
@@ -660,8 +665,8 @@ function update(forkRef, refs) {
     }
     if (instance != null) {
       const cleanupCallbacks = Array(refs.length).fill(null);
-      for (let i2 = 0; i2 < refs.length; i2 += 1) {
-        const ref = refs[i2];
+      for (let i = 0; i < refs.length; i += 1) {
+        const ref = refs[i];
         if (ref == null) {
           continue;
         }
@@ -669,7 +674,7 @@ function update(forkRef, refs) {
           case "function": {
             const refCleanup = ref(instance);
             if (typeof refCleanup === "function") {
-              cleanupCallbacks[i2] = refCleanup;
+              cleanupCallbacks[i] = refCleanup;
             }
             break;
           }
@@ -681,14 +686,14 @@ function update(forkRef, refs) {
         }
       }
       forkRef.cleanup = () => {
-        for (let i2 = 0; i2 < refs.length; i2 += 1) {
-          const ref = refs[i2];
+        for (let i = 0; i < refs.length; i += 1) {
+          const ref = refs[i];
           if (ref == null) {
             continue;
           }
           switch (typeof ref) {
             case "function": {
-              const cleanupCallback = cleanupCallbacks[i2];
+              const cleanupCallback = cleanupCallbacks[i];
               if (typeof cleanupCallback === "function") {
                 cleanupCallback();
               } else {
@@ -708,17 +713,17 @@ function update(forkRef, refs) {
   };
 }
 
-// node_modules/@base-ui/utils/getReactElementRef.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/getReactElementRef.mjs
 var React6 = __toESM(require_react(), 1);
 
-// node_modules/@base-ui/utils/reactVersion.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/reactVersion.mjs
 var React5 = __toESM(require_react(), 1);
 var majorVersion = parseInt(React5.version, 10);
 function isReactVersionAtLeast(reactVersionToCheck) {
   return majorVersion >= reactVersionToCheck;
 }
 
-// node_modules/@base-ui/utils/getReactElementRef.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/getReactElementRef.mjs
 function getReactElementRef(element) {
   if (!/* @__PURE__ */ React6.isValidElement(element)) {
     return null;
@@ -728,30 +733,24 @@ function getReactElementRef(element) {
   return (isReactVersionAtLeast(19) ? propsWithRef?.ref : reactElement.ref) ?? null;
 }
 
-// node_modules/@base-ui/utils/mergeObjects.mjs
-function mergeObjects(a2, b2) {
-  if (a2 && !b2) {
-    return a2;
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/mergeObjects.mjs
+function mergeObjects(a, b) {
+  if (a && !b) {
+    return a;
   }
-  if (!a2 && b2) {
-    return b2;
+  if (!a && b) {
+    return b;
   }
-  if (a2 || b2) {
+  if (a || b) {
     return {
-      ...a2,
-      ...b2
+      ...a,
+      ...b
     };
   }
   return void 0;
 }
 
-// node_modules/@base-ui/utils/empty.mjs
-function NOOP() {
-}
-var EMPTY_ARRAY = Object.freeze([]);
-var EMPTY_OBJECT = Object.freeze({});
-
-// node_modules/@base-ui/react/internals/getStateAttributesProps.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/getStateAttributesProps.mjs
 function getStateAttributesProps(state, customMapping) {
   const props = {};
   for (const key in state) {
@@ -772,34 +771,34 @@ function getStateAttributesProps(state, customMapping) {
   return props;
 }
 
-// node_modules/@base-ui/react/utils/resolveClassName.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/resolveClassName.mjs
 function resolveClassName(className, state) {
   return typeof className === "function" ? className(state) : className;
 }
 
-// node_modules/@base-ui/react/utils/resolveStyle.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/resolveStyle.mjs
 function resolveStyle(style, state) {
   return typeof style === "function" ? style(state) : style;
 }
 
-// node_modules/@base-ui/react/merge-props/mergeProps.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/merge-props/mergeProps.mjs
 var EMPTY_PROPS = {};
-function mergeProps(a2, b2, c2, d2, e2) {
-  if (!c2 && !d2 && !e2 && !a2) {
-    return createInitialMergedProps(b2);
+function mergeProps(a, b, c2, d, e) {
+  if (!c2 && !d && !e && !a) {
+    return createInitialMergedProps(b);
   }
-  let merged = createInitialMergedProps(a2);
-  if (b2) {
-    merged = mergeInto(merged, b2);
+  let merged = createInitialMergedProps(a);
+  if (b) {
+    merged = mergeInto(merged, b);
   }
   if (c2) {
     merged = mergeInto(merged, c2);
   }
-  if (d2) {
-    merged = mergeInto(merged, d2);
+  if (d) {
+    merged = mergeInto(merged, d);
   }
-  if (e2) {
-    merged = mergeInto(merged, e2);
+  if (e) {
+    merged = mergeInto(merged, e);
   }
   return merged;
 }
@@ -811,8 +810,8 @@ function mergePropsN(props) {
     return createInitialMergedProps(props[0]);
   }
   let merged = createInitialMergedProps(props[0]);
-  for (let i2 = 1; i2 < props.length; i2 += 1) {
-    merged = mergeInto(merged, props[i2]);
+  for (let i = 1; i < props.length; i += 1) {
+    merged = mergeInto(merged, props[i]);
   }
   return merged;
 }
@@ -937,22 +936,24 @@ function isSyntheticEvent(event) {
   return event != null && typeof event === "object" && "nativeEvent" in event;
 }
 
-// node_modules/@base-ui/react/internals/useRenderElement.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/useRenderElement.mjs
 var import_react = __toESM(require_react(), 1);
 function useRenderElement(element, componentProps, params = {}) {
-  const renderProp = componentProps.render;
-  const outProps = useRenderElementProps(componentProps, params);
+  let renderProp = componentProps.render;
+  if (params.enabled !== false) {
+    renderProp = unwrapLazyRenderProp(renderProp);
+  }
+  const outProps = useRenderElementProps(componentProps, params, renderProp);
   if (params.enabled === false) {
     return null;
   }
   const state = params.state ?? EMPTY_OBJECT;
   return evaluateRenderProp(element, renderProp, outProps, state);
 }
-function useRenderElementProps(componentProps, params = {}) {
+function useRenderElementProps(componentProps, params, renderProp) {
   const {
     className: classNameProp,
-    style: styleProp,
-    render: renderProp
+    style: styleProp
   } = componentProps;
   const {
     state = EMPTY_OBJECT,
@@ -995,6 +996,13 @@ function resolveRenderFunctionProps(props) {
 var REACT_LAZY_TYPE = /* @__PURE__ */ Symbol.for("react.lazy");
 var COMPONENT_IDENTIFIER_PATTERN = /^[A-Z][A-Za-z0-9$]*$/;
 var LOWERCASE_CHARACTER_PATTERN = /[a-z]/;
+function unwrapLazyRenderProp(render4) {
+  if (render4?.$$typeof !== REACT_LAZY_TYPE) {
+    return render4;
+  }
+  const unwrapped = React7.Children.toArray(render4)[0];
+  return /* @__PURE__ */ React7.isValidElement(unwrapped) ? unwrapped : render4;
+}
 function evaluateRenderProp(element, render4, props, state) {
   if (render4) {
     if (typeof render4 === "function") {
@@ -1005,17 +1013,12 @@ function evaluateRenderProp(element, render4, props, state) {
     }
     const mergedProps = mergeProps(props, render4.props);
     mergedProps.ref = props.ref;
-    let newElement = render4;
-    if (newElement?.$$typeof === REACT_LAZY_TYPE) {
-      const children = React7.Children.toArray(render4);
-      newElement = children[0];
-    }
     if (true) {
-      if (!/* @__PURE__ */ React7.isValidElement(newElement)) {
+      if (!/* @__PURE__ */ React7.isValidElement(render4)) {
         throw new Error(["Base UI: The `render` prop was provided an invalid React element as `React.isValidElement(render)` is `false`.", "A valid React element must be provided to the `render` prop because it is cloned with props to replace the default element.", "https://base-ui.com/r/invalid-render-prop"].join("\n"));
       }
     }
-    return /* @__PURE__ */ React7.cloneElement(newElement, mergedProps);
+    return /* @__PURE__ */ React7.cloneElement(render4, mergedProps);
   }
   if (element) {
     if (typeof element === "string") {
@@ -1055,7 +1058,7 @@ function renderTag(Tag, props) {
   return /* @__PURE__ */ React7.createElement(Tag, props);
 }
 
-// node_modules/@base-ui/utils/useId.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/useId.mjs
 var React8 = __toESM(require_react(), 1);
 var globalId = 0;
 function useGlobalId(idOverride, prefix = "mui") {
@@ -1078,15 +1081,15 @@ function useId(idOverride, prefix) {
   return useGlobalId(idOverride, prefix);
 }
 
-// node_modules/@base-ui/react/internals/useBaseUiId.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/useBaseUiId.mjs
 function useBaseUiId(idOverride) {
   return useId(idOverride, "base-ui");
 }
 
-// node_modules/@base-ui/react/collapsible/root/useCollapsibleRoot.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/collapsible/root/useCollapsibleRoot.mjs
 var React11 = __toESM(require_react(), 1);
 
-// node_modules/@base-ui/react/internals/reason-parts.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/reason-parts.mjs
 var reason_parts_exports = {};
 __export(reason_parts_exports, {
   cancelOpen: () => cancelOpen,
@@ -1161,7 +1164,7 @@ var imperativeAction = "imperative-action";
 var swipe = "swipe";
 var windowResize = "window-resize";
 
-// node_modules/@base-ui/react/internals/createBaseUIEventDetails.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/createBaseUIEventDetails.mjs
 function createChangeEventDetails(reason, event, trigger, customProperties) {
   let canceled = false;
   let allowPropagation = false;
@@ -1187,16 +1190,16 @@ function createChangeEventDetails(reason, event, trigger, customProperties) {
   return details;
 }
 
-// node_modules/@base-ui/react/internals/useTransitionStatus.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/useTransitionStatus.mjs
 var React10 = __toESM(require_react(), 1);
 
-// node_modules/@base-ui/utils/useOnMount.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/useOnMount.mjs
 var React9 = __toESM(require_react(), 1);
 function useOnMount(fn) {
   React9.useEffect(fn, EMPTY_ARRAY);
 }
 
-// node_modules/@base-ui/utils/useAnimationFrame.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/useAnimationFrame.mjs
 var EMPTY = null;
 var LAST_RAF = globalThis.requestAnimationFrame;
 var Scheduler = class {
@@ -1220,8 +1223,8 @@ var Scheduler = class {
     this.callbacksCount = 0;
     this.startId = this.nextId;
     if (currentCallbacksCount > 0) {
-      for (let i2 = 0; i2 < currentCallbacks.length; i2 += 1) {
-        currentCallbacks[i2]?.(timestamp);
+      for (let i = 0; i < currentCallbacks.length; i += 1) {
+        currentCallbacks[i]?.(timestamp);
       }
     }
   };
@@ -1240,6 +1243,9 @@ var Scheduler = class {
   cancel(id) {
     const index2 = id - this.startId;
     if (index2 < 0 || index2 >= this.callbacks.length) {
+      return;
+    }
+    if (this.callbacks[index2] === null) {
       return;
     }
     this.callbacks[index2] = null;
@@ -1284,22 +1290,22 @@ function useAnimationFrame() {
   return timeout;
 }
 
-// node_modules/@base-ui/react/internals/useTransitionStatus.mjs
-function useTransitionStatus(open, enableIdleState = false, deferEndingState = false) {
-  const [transitionStatus, setTransitionStatus] = React10.useState(open && enableIdleState ? "idle" : void 0);
-  const [mounted, setMounted] = React10.useState(open);
-  if (open && !mounted) {
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/useTransitionStatus.mjs
+function useTransitionStatus(open3, enableIdleState = false, deferEndingState = false, animateInitialOpen = false) {
+  const [transitionStatus, setTransitionStatus] = React10.useState(open3 && enableIdleState ? "idle" : void 0);
+  const [mounted, setMounted] = React10.useState(open3 && !animateInitialOpen);
+  if (open3 && !mounted) {
     setMounted(true);
     setTransitionStatus("starting");
   }
-  if (!open && mounted && transitionStatus !== "ending" && !deferEndingState) {
+  if (!open3 && mounted && transitionStatus !== "ending" && !deferEndingState) {
     setTransitionStatus("ending");
   }
-  if (!open && !mounted && transitionStatus === "ending") {
+  if (!open3 && !mounted && transitionStatus === "ending") {
     setTransitionStatus(void 0);
   }
   useIsoLayoutEffect(() => {
-    if (!open && mounted && transitionStatus !== "ending" && deferEndingState) {
+    if (!open3 && mounted && transitionStatus !== "ending" && deferEndingState) {
       const frame = AnimationFrame.request(() => {
         setTransitionStatus("ending");
       });
@@ -1308,9 +1314,9 @@ function useTransitionStatus(open, enableIdleState = false, deferEndingState = f
       };
     }
     return void 0;
-  }, [open, mounted, transitionStatus, deferEndingState]);
+  }, [open3, mounted, transitionStatus, deferEndingState]);
   useIsoLayoutEffect(() => {
-    if (!open || enableIdleState) {
+    if (!open3 || enableIdleState) {
       return void 0;
     }
     const frame = AnimationFrame.request(() => {
@@ -1319,12 +1325,12 @@ function useTransitionStatus(open, enableIdleState = false, deferEndingState = f
     return () => {
       AnimationFrame.cancel(frame);
     };
-  }, [enableIdleState, open]);
+  }, [enableIdleState, open3]);
   useIsoLayoutEffect(() => {
-    if (!open || !enableIdleState) {
+    if (!open3 || !enableIdleState) {
       return void 0;
     }
-    if (open && mounted && transitionStatus !== "idle") {
+    if (open3 && mounted && transitionStatus !== "idle") {
       setTransitionStatus("starting");
     }
     const frame = AnimationFrame.request(() => {
@@ -1333,7 +1339,7 @@ function useTransitionStatus(open, enableIdleState = false, deferEndingState = f
     return () => {
       AnimationFrame.cancel(frame);
     };
-  }, [enableIdleState, open, mounted, transitionStatus]);
+  }, [enableIdleState, open3, mounted, transitionStatus]);
   return {
     mounted,
     setMounted,
@@ -1341,15 +1347,15 @@ function useTransitionStatus(open, enableIdleState = false, deferEndingState = f
   };
 }
 
-// node_modules/@base-ui/react/collapsible/root/useCollapsibleRoot.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/collapsible/root/useCollapsibleRoot.mjs
 function useCollapsibleRoot(parameters) {
   const {
     open: openParam,
-    defaultOpen,
+    defaultOpen = false,
     onOpenChange,
     disabled: disabled2
   } = parameters;
-  const [open, setOpen] = useControlled({
+  const [open3, setOpen] = useControlled({
     controlled: openParam,
     default: defaultOpen,
     name: "Collapsible",
@@ -1359,12 +1365,12 @@ function useCollapsibleRoot(parameters) {
     mounted,
     setMounted,
     transitionStatus
-  } = useTransitionStatus(open, true, true);
+  } = useTransitionStatus(open3, true, true);
   const defaultPanelId = useBaseUiId();
   const [registeredPanelId, setPanelIdState] = React11.useState();
   const panelId = registeredPanelId === null ? void 0 : registeredPanelId ?? defaultPanelId;
   const handleTrigger = useStableCallback((event) => {
-    const nextOpen = !open;
+    const nextOpen = !open3;
     const eventDetails = createChangeEventDetails(reason_parts_exports.triggerPress, event.nativeEvent);
     onOpenChange(nextOpen, eventDetails);
     if (eventDetails.isCanceled) {
@@ -1377,16 +1383,16 @@ function useCollapsibleRoot(parameters) {
     disabled: disabled2,
     handleTrigger,
     mounted,
-    open,
+    open: open3,
     panelId,
     setMounted,
     setOpen,
     setPanelIdState,
     transitionStatus
-  }), [defaultPanelId, disabled2, handleTrigger, mounted, open, panelId, setMounted, setOpen, setPanelIdState, transitionStatus]);
+  }), [defaultPanelId, disabled2, handleTrigger, mounted, open3, panelId, setMounted, setOpen, setPanelIdState, transitionStatus]);
 }
 
-// node_modules/@base-ui/react/collapsible/root/CollapsibleRootContext.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/collapsible/root/CollapsibleRootContext.mjs
 var React12 = __toESM(require_react(), 1);
 var CollapsibleRootContext = /* @__PURE__ */ React12.createContext(void 0);
 if (true) CollapsibleRootContext.displayName = "CollapsibleRootContext";
@@ -1398,17 +1404,21 @@ function useCollapsibleRootContext() {
   return context;
 }
 
-// node_modules/@base-ui/react/internals/stateAttributesMapping.mjs
-var TransitionStatusDataAttributes = /* @__PURE__ */ (function(TransitionStatusDataAttributes2) {
-  TransitionStatusDataAttributes2["startingStyle"] = "data-starting-style";
-  TransitionStatusDataAttributes2["endingStyle"] = "data-ending-style";
-  return TransitionStatusDataAttributes2;
-})({});
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/TransitionStatusDataAttributes.mjs
+var TransitionStatusDataAttributes_exports = {};
+__export(TransitionStatusDataAttributes_exports, {
+  endingStyle: () => endingStyle,
+  startingStyle: () => startingStyle
+});
+var startingStyle = "data-starting-style";
+var endingStyle = "data-ending-style";
+
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/stateAttributesMapping.mjs
 var STARTING_HOOK = {
-  "data-starting-style": ""
+  [startingStyle]: ""
 };
 var ENDING_HOOK = {
-  "data-ending-style": ""
+  [endingStyle]: ""
 };
 var transitionStatusMapping = {
   transitionStatus(value) {
@@ -1422,33 +1432,27 @@ var transitionStatusMapping = {
   }
 };
 
-// node_modules/@base-ui/react/collapsible/panel/CollapsiblePanelDataAttributes.mjs
-var CollapsiblePanelDataAttributes = (function(CollapsiblePanelDataAttributes2) {
-  CollapsiblePanelDataAttributes2["open"] = "data-open";
-  CollapsiblePanelDataAttributes2["closed"] = "data-closed";
-  CollapsiblePanelDataAttributes2[CollapsiblePanelDataAttributes2["startingStyle"] = TransitionStatusDataAttributes.startingStyle] = "startingStyle";
-  CollapsiblePanelDataAttributes2[CollapsiblePanelDataAttributes2["endingStyle"] = TransitionStatusDataAttributes.endingStyle] = "endingStyle";
-  return CollapsiblePanelDataAttributes2;
-})({});
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/collapsible/panel/CollapsiblePanelDataAttributes.mjs
+var open = "data-open";
+var closed = "data-closed";
+var startingStyle2 = TransitionStatusDataAttributes_exports.startingStyle;
+var endingStyle2 = TransitionStatusDataAttributes_exports.endingStyle;
 
-// node_modules/@base-ui/react/collapsible/trigger/CollapsibleTriggerDataAttributes.mjs
-var CollapsibleTriggerDataAttributes = /* @__PURE__ */ (function(CollapsibleTriggerDataAttributes2) {
-  CollapsibleTriggerDataAttributes2["panelOpen"] = "data-panel-open";
-  return CollapsibleTriggerDataAttributes2;
-})({});
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/collapsible/trigger/CollapsibleTriggerDataAttributes.mjs
+var panelOpen = "data-panel-open";
 
-// node_modules/@base-ui/react/utils/collapsibleOpenStateMapping.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/collapsibleOpenStateMapping.mjs
 var PANEL_OPEN_HOOK = {
-  [CollapsiblePanelDataAttributes.open]: ""
+  [open]: ""
 };
 var PANEL_CLOSED_HOOK = {
-  [CollapsiblePanelDataAttributes.closed]: ""
+  [closed]: ""
 };
 var triggerOpenStateMapping = {
   open(value) {
     if (value) {
       return {
-        [CollapsibleTriggerDataAttributes.panelOpen]: ""
+        [panelOpen]: ""
       };
     }
     return null;
@@ -1463,10 +1467,10 @@ var collapsibleOpenStateMapping = {
   }
 };
 
-// node_modules/@base-ui/react/internals/use-button/useButton.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/use-button/useButton.mjs
 var React15 = __toESM(require_react(), 1);
 
-// node_modules/@floating-ui/utils/dist/floating-ui.utils.dom.mjs
+// node_modules/.store/@floating-ui/utils@0.2.12-gOxTzMf36nCrbeHpEew-rw/node_modules/@floating-ui/utils/dist/floating-ui.utils.dom.mjs
 function hasWindow() {
   return typeof window !== "undefined";
 }
@@ -1622,7 +1626,7 @@ function getFrameElement(win) {
   return win.parent && Object.getPrototypeOf(win.parent) ? win.frameElement : null;
 }
 
-// node_modules/@base-ui/react/internals/composite/root/CompositeRootContext.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/composite/root/CompositeRootContext.mjs
 var React13 = __toESM(require_react(), 1);
 var CompositeRootContext = /* @__PURE__ */ React13.createContext(void 0);
 if (true) CompositeRootContext.displayName = "CompositeRootContext";
@@ -1634,7 +1638,7 @@ function useCompositeRootContext(optional = false) {
   return context;
 }
 
-// node_modules/@base-ui/react/utils/useFocusableWhenDisabled.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/useFocusableWhenDisabled.mjs
 var React14 = __toESM(require_react(), 1);
 function useFocusableWhenDisabled(parameters) {
   const {
@@ -1674,12 +1678,12 @@ function useFocusableWhenDisabled(parameters) {
   };
 }
 
-// node_modules/@base-ui/utils/owner.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/owner.mjs
 function ownerDocument(node) {
   return node?.ownerDocument || document;
 }
 
-// node_modules/@base-ui/react/utils/dispatchClickWithModifiers.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/dispatchClickWithModifiers.mjs
 function dispatchClickWithModifiers(target, sourceEvent, {
   detail = 0
 } = {}) {
@@ -1695,7 +1699,7 @@ function dispatchClickWithModifiers(target, sourceEvent, {
   }));
 }
 
-// node_modules/@base-ui/react/internals/use-button/useButton.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/use-button/useButton.mjs
 function useButton(parameters = {}) {
   const {
     disabled: disabled2 = false,
@@ -1858,10 +1862,10 @@ function isValidLinkElement(elem) {
   return isHTMLElement(elem) && elem.tagName === "A" && Boolean(elem.href);
 }
 
-// node_modules/@base-ui/react/collapsible/panel/useCollapsiblePanel.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/collapsible/panel/useCollapsiblePanel.mjs
 var React17 = __toESM(require_react(), 1);
 
-// node_modules/@base-ui/utils/addEventListener.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/addEventListener.mjs
 function addEventListener(target, type, listener, options) {
   target.addEventListener(type, listener, options);
   return () => {
@@ -1869,7 +1873,7 @@ function addEventListener(target, type, listener, options) {
   };
 }
 
-// node_modules/@base-ui/utils/useValueAsRef.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/useValueAsRef.mjs
 function useValueAsRef(value) {
   const latest = useRefWithInit(createLatestRef, value).current;
   latest.next = value;
@@ -1887,13 +1891,13 @@ function createLatestRef(value) {
   return latest;
 }
 
-// node_modules/@base-ui/react/internals/useOpenChangeComplete.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/useOpenChangeComplete.mjs
 var React16 = __toESM(require_react(), 1);
 
-// node_modules/@base-ui/react/internals/useAnimationsFinished.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/useAnimationsFinished.mjs
 var ReactDOM = __toESM(require_react_dom(), 1);
 
-// node_modules/@base-ui/react/utils/resolveRef.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/resolveRef.mjs
 function resolveRef(maybeRef) {
   if (maybeRef == null) {
     return maybeRef;
@@ -1901,8 +1905,24 @@ function resolveRef(maybeRef) {
   return "current" in maybeRef ? maybeRef.current : maybeRef;
 }
 
-// node_modules/@base-ui/react/internals/useAnimationsFinished.mjs
-function useAnimationsFinished(elementOrRef, waitForStartingStyleRemoved = false) {
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/useAnimationsFinished.mjs
+var pendingCallbacks = null;
+function flushBeforePaint(fn) {
+  if (!pendingCallbacks) {
+    const callbacks = [];
+    pendingCallbacks = callbacks;
+    queueMicrotask(() => {
+      pendingCallbacks = null;
+      ReactDOM.flushSync(() => {
+        for (const callback of callbacks) {
+          callback();
+        }
+      });
+    });
+  }
+  pendingCallbacks.push(fn);
+}
+function useAnimationsFinished(elementOrRef, waitForStartingStyleRemoved = false, batch = false) {
   const frame = useAnimationFrame();
   return useStableCallback((fnToExecute, signal = null) => {
     frame.cancel();
@@ -1912,7 +1932,15 @@ function useAnimationsFinished(elementOrRef, waitForStartingStyleRemoved = false
     }
     const resolvedElement = element;
     const done = () => {
-      ReactDOM.flushSync(fnToExecute);
+      if (!batch) {
+        ReactDOM.flushSync(fnToExecute);
+        return;
+      }
+      flushBeforePaint(() => {
+        if (!signal?.aborted) {
+          fnToExecute();
+        }
+      });
     };
     if (typeof resolvedElement.getAnimations !== "function" || globalThis.BASE_UI_ANIMATIONS_DISABLED) {
       fnToExecute();
@@ -1936,7 +1964,7 @@ function useAnimationsFinished(elementOrRef, waitForStartingStyleRemoved = false
       });
     }
     if (waitForStartingStyleRemoved) {
-      const startingStyleAttribute = "data-starting-style";
+      const startingStyleAttribute = startingStyle;
       if (!resolvedElement.hasAttribute(startingStyleAttribute)) {
         frame.request(exec);
         return;
@@ -1960,16 +1988,17 @@ function useAnimationsFinished(elementOrRef, waitForStartingStyleRemoved = false
   });
 }
 
-// node_modules/@base-ui/react/internals/useOpenChangeComplete.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/useOpenChangeComplete.mjs
 function useOpenChangeComplete(parameters) {
   const {
     enabled = true,
-    open,
+    open: open3,
     ref,
+    batch = false,
     onComplete: onCompleteParam
   } = parameters;
   const onComplete = useStableCallback(onCompleteParam);
-  const runOnceAnimationsFinish = useAnimationsFinished(ref, open);
+  const runOnceAnimationsFinish = useAnimationsFinished(ref, open3, batch);
   React16.useEffect(() => {
     if (!enabled) {
       return void 0;
@@ -1979,10 +2008,10 @@ function useOpenChangeComplete(parameters) {
     return () => {
       abortController.abort();
     };
-  }, [enabled, open, onComplete, runOnceAnimationsFinish]);
+  }, [enabled, open3, onComplete, runOnceAnimationsFinish]);
 }
 
-// node_modules/@base-ui/react/collapsible/panel/useCollapsiblePanel.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/collapsible/panel/useCollapsiblePanel.mjs
 var EMPTY_DIMENSIONS = {
   height: void 0,
   width: void 0
@@ -1995,7 +2024,7 @@ function useCollapsiblePanel(parameters) {
     keepMounted,
     mounted,
     onOpenChange,
-    open,
+    open: open3,
     setMounted,
     setOpen,
     transitionStatus
@@ -2005,20 +2034,20 @@ function useCollapsiblePanel(parameters) {
   const [dimensions, setDimensionsUnwrapped] = React17.useState(EMPTY_DIMENSIONS);
   const lastMeasuredDimensionsRef = React17.useRef(EMPTY_DIMENSIONS);
   const shouldSkipNextOpenRef = React17.useRef(false);
-  const shouldPreventMountAnimationRef = React17.useRef(open);
+  const shouldPreventMountAnimationRef = React17.useRef(open3);
   const shouldPreventActivityResumeAnimationRef = React17.useRef(false);
   const [forcePanelIdle, setForcePanelIdle] = React17.useState(false);
   const pendingTemporaryStyleRestoreRef = React17.useRef(null);
   const mergedPanelRef = useMergedRefs(externalRef, panelRef);
-  const latestOpenRef = useValueAsRef(open);
+  const latestOpenRef = useValueAsRef(open3);
   const runOnceCloseAnimationsFinish = useAnimationsFinished(panelRef);
-  const hidden = !open && !mounted;
+  const hidden = !open3 && !mounted;
   const panelTransitionStatus = forcePanelIdle ? "idle" : transitionStatus;
-  const shouldPreventOpenAnimation = open && // These 2 refs are safe to read in render, they are only written from committed
+  const shouldPreventOpenAnimation = open3 && // These 2 refs are safe to read in render, they are only written from committed
   // layout/effect paths and gate one-shot motion suppression for the next open
   // lifecycle. They intentionally expose the last committed motion snapshot.
   (shouldPreventMountAnimationRef.current || shouldPreventActivityResumeAnimationRef.current);
-  const renderedDimensions = !open && mounted && // These 2 refs are also safe to read in render, both hold the last committed
+  const renderedDimensions = !open3 && mounted && // These 2 refs are also safe to read in render, both hold the last committed
   // animation mode and measurement. This fallback only restores a previously
   // measured pixel size after the live dimensions state has been reset back to `auto`.
   animationTypeRef.current === "css-animation" && dimensions.height === void 0 && dimensions.width === void 0 ? lastMeasuredDimensionsRef.current : dimensions;
@@ -2041,7 +2070,7 @@ function useCollapsiblePanel(parameters) {
     };
   });
   const markActivityResumeAnimationSuppressed = useStableCallback(() => {
-    if (open && mounted && animationTypeRef.current === "css-animation") {
+    if (open3 && mounted && animationTypeRef.current === "css-animation") {
       shouldPreventActivityResumeAnimationRef.current = true;
     }
   });
@@ -2062,16 +2091,16 @@ function useCollapsiblePanel(parameters) {
     if (!panel) {
       return void 0;
     }
-    if (!open && pendingTemporaryStyleRestoreRef.current) {
+    if (!open3 && pendingTemporaryStyleRestoreRef.current) {
       restorePendingTemporaryStyle();
     }
     const animationType = getAnimationType(panel, shouldPreventOpenAnimation);
     animationTypeRef.current = animationType;
-    if (open && transitionStatus === "idle" && shouldPreventMountAnimationRef.current && animationType === "css-animation") {
+    if (open3 && transitionStatus === "idle" && shouldPreventMountAnimationRef.current && animationType === "css-animation") {
       lastMeasuredDimensionsRef.current = getDimensions(panel);
       return void 0;
     }
-    if (open && transitionStatus === "starting") {
+    if (open3 && transitionStatus === "starting") {
       const skipNextOpen = shouldSkipNextOpenRef.current;
       shouldSkipNextOpenRef.current = false;
       if (animationType === "none") {
@@ -2102,7 +2131,7 @@ function useCollapsiblePanel(parameters) {
       setForcePanelIdle(true);
       return void 0;
     }
-    if (!open && mounted && (transitionStatus === "idle" || transitionStatus === "starting")) {
+    if (!open3 && mounted && (transitionStatus === "idle" || transitionStatus === "starting")) {
       shouldPreventMountAnimationRef.current = false;
       shouldPreventActivityResumeAnimationRef.current = false;
       if (animationType === "none") {
@@ -2132,20 +2161,20 @@ function useCollapsiblePanel(parameters) {
       restoreAnimationName();
     }
     return void 0;
-  }, [mounted, open, restorePendingTemporaryStyle, setDimensions, setMounted, setPendingTemporaryStyleRestore, shouldPreventOpenAnimation, transitionStatus]);
+  }, [mounted, open3, restorePendingTemporaryStyle, setDimensions, setMounted, setPendingTemporaryStyleRestore, shouldPreventOpenAnimation, transitionStatus]);
   useOpenChangeComplete({
-    enabled: open && mounted && panelTransitionStatus === "idle",
+    enabled: open3 && mounted && panelTransitionStatus === "idle",
     open: true,
     ref: panelRef,
     onComplete() {
-      if (!open) {
+      if (!open3) {
         return;
       }
       setDimensions(EMPTY_DIMENSIONS, false);
     }
   });
   React17.useEffect(() => {
-    if (open || !mounted || panelTransitionStatus !== "ending") {
+    if (open3 || !mounted || panelTransitionStatus !== "ending") {
       return void 0;
     }
     const panel = panelRef.current;
@@ -2168,7 +2197,7 @@ function useCollapsiblePanel(parameters) {
       AnimationFrame.cancel(endingStyleFrame);
       abortController.abort();
     };
-  }, [latestOpenRef, mounted, open, panelTransitionStatus, runOnceCloseAnimationsFinish, setDimensions, setMounted]);
+  }, [latestOpenRef, mounted, open3, panelTransitionStatus, runOnceCloseAnimationsFinish, setDimensions, setMounted]);
   useIsoLayoutEffect(() => {
     const panel = panelRef.current;
     if (!panel || !hiddenUntilFound || !hidden) {
@@ -2192,12 +2221,12 @@ function useCollapsiblePanel(parameters) {
     }
     return addEventListener(panel, "beforematch", handleBeforeMatch);
   }, [onOpenChange, setOpen]);
-  const shouldRender = keepMounted || hiddenUntilFound || mounted || open;
+  const shouldRender = keepMounted || hiddenUntilFound || mounted || open3;
   return {
     height: renderedDimensions.height,
     props: {
       ...shouldPersistHiddenTransitionStyles ? {
-        [CollapsiblePanelDataAttributes.startingStyle]: ""
+        [startingStyle2]: ""
       } : void 0,
       hidden,
       id: idParam
@@ -2274,16 +2303,17 @@ function resetLayoutStyles(element) {
   };
 }
 
-// node_modules/@base-ui/utils/platform/parts.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/platform/parts.mjs
 var parts_exports = {};
 __export(parts_exports, {
   engine: () => engine_exports,
   env: () => env_exports,
+  mediaQuery: () => media_query_exports,
   os: () => os_exports,
   screenReader: () => screen_reader_exports
 });
 
-// node_modules/@base-ui/utils/platform/os.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/platform/os.mjs
 var os_exports = {};
 __export(os_exports, {
   android: () => android,
@@ -2294,7 +2324,7 @@ __export(os_exports, {
   windows: () => windows
 });
 
-// node_modules/@base-ui/utils/platform/shared.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/platform/shared.mjs
 function readRawData() {
   if (typeof navigator === "undefined") {
     return {
@@ -2330,7 +2360,7 @@ var {
 var lowerUserAgent = userAgent.toLowerCase();
 var lowerPlatform = platform.toLowerCase();
 
-// node_modules/@base-ui/utils/platform/os.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/platform/os.mjs
 var ios = /^i(os$|p)/.test(lowerPlatform) || lowerPlatform === "macintel" && maxTouchPoints > 1;
 var ANDROID_STRING = "android";
 var android = lowerPlatform === ANDROID_STRING || lowerUserAgent.includes(ANDROID_STRING);
@@ -2339,7 +2369,7 @@ var windows = lowerPlatform.startsWith("win");
 var linux = !android && /^(linux|chrome os)/.test(lowerPlatform);
 var apple = mac || ios;
 
-// node_modules/@base-ui/utils/platform/engine.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/platform/engine.mjs
 var engine_exports = {};
 __export(engine_exports, {
   blink: () => blink,
@@ -2350,21 +2380,28 @@ var webkit = typeof CSS !== "undefined" && !!CSS.supports?.("-webkit-backdrop-fi
 var gecko = !webkit && lowerUserAgent.includes("firefox");
 var blink = !webkit && lowerUserAgent.includes("chrom");
 
-// node_modules/@base-ui/utils/platform/screen-reader.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/platform/screen-reader.mjs
 var screen_reader_exports = {};
 __export(screen_reader_exports, {
   voiceOver: () => voiceOver
 });
 var voiceOver = apple;
 
-// node_modules/@base-ui/utils/platform/env.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/platform/env.mjs
 var env_exports = {};
 __export(env_exports, {
   jsdom: () => jsdom
 });
 var jsdom = /jsdom|happydom/.test(lowerUserAgent);
 
-// node_modules/@base-ui/utils/useTimeout.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/platform/media-query.mjs
+var media_query_exports = {};
+__export(media_query_exports, {
+  iOS: () => iOS
+});
+var iOS = "@supports (-webkit-touch-callout: none)";
+
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/useTimeout.mjs
 var EMPTY2 = 0;
 var Timeout = class _Timeout {
   static create() {
@@ -2400,12 +2437,21 @@ function useTimeout() {
   return timeout;
 }
 
-// node_modules/@base-ui/react/floating-ui-react/components/FloatingDelayGroup.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/components/FloatingDelayGroup.mjs
 var React18 = __toESM(require_react(), 1);
 
-// node_modules/@base-ui/react/floating-ui-react/utils/event.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/utils/event.mjs
 function isReactEvent(event) {
   return "nativeEvent" in event;
+}
+function isVirtualClick(event) {
+  if (event.pointerType === "" && event.isTrusted) {
+    return true;
+  }
+  if (parts_exports.os.android && event.pointerType) {
+    return event.type === "click" && event.buttons === 1;
+  }
+  return event.detail === 0 && !event.pointerType;
 }
 function isMouseLikePointerType(pointerType, strict) {
   const values = ["mouse", "pen"];
@@ -2419,11 +2465,7 @@ function isClickLikeEvent(event) {
   return type === "click" || type === "mousedown" || type === "keydown" || type === "keyup";
 }
 
-// node_modules/@base-ui/react/floating-ui-react/utils/constants.mjs
-var FOCUSABLE_ATTRIBUTE = "data-base-ui-focusable";
-var TYPEABLE_SELECTOR = "input:not([type='hidden']):not([disabled]),[contenteditable]:not([contenteditable='false']),textarea:not([disabled])";
-
-// node_modules/@base-ui/react/internals/shadowDom.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/shadowDom.mjs
 function activeElement(doc) {
   let element = doc.activeElement;
   while (element?.shadowRoot?.activeElement != null) {
@@ -2452,23 +2494,89 @@ function contains(parent, child) {
 }
 function getTarget(event) {
   if ("composedPath" in event) {
-    return event.composedPath()[0];
+    return event.composedPath()[0] ?? event.target;
   }
   return event.target;
 }
 
-// node_modules/@base-ui/react/floating-ui-react/utils/element.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/utils/constants.mjs
+var FOCUSABLE_ATTRIBUTE = "data-base-ui-focusable";
+var TYPEABLE_SELECTOR = "input:not([type='hidden']):not([disabled]),[contenteditable]:not([contenteditable='false']),textarea:not([disabled])";
+
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/CommonPopupDataAttributes.mjs
+var open2 = "data-open";
+var closed2 = "data-closed";
+var anchorHidden = "data-anchor-hidden";
+
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/CommonTriggerDataAttributes.mjs
+var CommonTriggerDataAttributes_exports = {};
+__export(CommonTriggerDataAttributes_exports, {
+  popupOpen: () => popupOpen,
+  pressed: () => pressed
+});
+var popupOpen = "data-popup-open";
+var pressed = "data-pressed";
+
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/popupStateMapping.mjs
+var TRIGGER_HOOK = {
+  [popupOpen]: ""
+};
+var PRESSABLE_TRIGGER_HOOK = {
+  [popupOpen]: "",
+  [pressed]: ""
+};
+var POPUP_OPEN_HOOK = {
+  [open2]: ""
+};
+var POPUP_CLOSED_HOOK = {
+  [closed2]: ""
+};
+var ANCHOR_HIDDEN_HOOK = {
+  [anchorHidden]: ""
+};
+var triggerOpenStateMapping2 = {
+  open(value) {
+    if (value) {
+      return TRIGGER_HOOK;
+    }
+    return null;
+  }
+};
+var popupStateMapping = {
+  open(value) {
+    if (value) {
+      return POPUP_OPEN_HOOK;
+    }
+    return POPUP_CLOSED_HOOK;
+  },
+  anchorHidden(value) {
+    if (value) {
+      return ANCHOR_HIDDEN_HOOK;
+    }
+    return null;
+  }
+};
+var popupTransitionStateMapping = {
+  ...popupStateMapping,
+  ...transitionStatusMapping
+};
+
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tooltip/trigger/TooltipTriggerDataAttributes.mjs
+var popupOpen2 = CommonTriggerDataAttributes_exports.popupOpen;
+var triggerDisabled = "data-trigger-disabled";
+
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/utils/element.mjs
 function isTargetInsideEnabledTrigger(target, triggerElements) {
   if (!isElement(target)) {
     return false;
   }
   const targetElement = target;
   if (triggerElements.hasElement(targetElement)) {
-    return !targetElement.hasAttribute("data-trigger-disabled");
+    return !targetElement.hasAttribute(triggerDisabled);
   }
   for (const [, trigger] of triggerElements.entries()) {
     if (contains(trigger, targetElement)) {
-      return !trigger.hasAttribute("data-trigger-disabled");
+      return !trigger.hasAttribute(triggerDisabled);
     }
   }
   return false;
@@ -2503,7 +2611,7 @@ function matchesFocusVisible(element) {
   }
 }
 
-// node_modules/@base-ui/react/floating-ui-react/hooks/useHoverShared.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/hooks/useHoverShared.mjs
 function resolveValue(value, pointerType) {
   if (pointerType != null && !isMouseLikePointerType(pointerType)) {
     return 0;
@@ -2533,7 +2641,7 @@ function isHoverOpenEvent(openEventType) {
   return openEventType?.includes("mouse") && openEventType !== "mousedown";
 }
 
-// node_modules/@base-ui/react/floating-ui-react/components/FloatingDelayGroup.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/components/FloatingDelayGroup.mjs
 var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
 var FloatingDelayGroupContext = /* @__PURE__ */ React18.createContext({
   hasProvider: false,
@@ -2595,7 +2703,7 @@ function useDelayGroup(context, options = {
   open: false
 }) {
   const {
-    open
+    open: open3
   } = options;
   const store = "rootStore" in context ? context.rootStore : context;
   const floatingId = store.useState("floatingId");
@@ -2610,10 +2718,10 @@ function useDelayGroup(context, options = {
     timeout
   } = groupContext;
   const [isInstantPhase, setIsInstantPhase] = React18.useState(false);
-  const openRef = React18.useRef(open);
+  const openRef = React18.useRef(open3);
   useIsoLayoutEffect(() => {
-    openRef.current = open;
-  }, [open]);
+    openRef.current = open3;
+  }, [open3]);
   useIsoLayoutEffect(() => {
     function unset() {
       currentContextRef.current?.setIsInstantPhase(false);
@@ -2625,7 +2733,7 @@ function useDelayGroup(context, options = {
     if (!currentIdRef.current) {
       return void 0;
     }
-    if (!open && currentIdRef.current === floatingId) {
+    if (!open3 && currentIdRef.current === floatingId) {
       setIsInstantPhase(false);
       if (timeoutMs) {
         const closingId = floatingId;
@@ -2644,9 +2752,9 @@ function useDelayGroup(context, options = {
       unset();
     }
     return void 0;
-  }, [open, floatingId, currentIdRef, delayRef, timeoutMs, initialDelayRef, currentContextRef, timeout, store]);
+  }, [open3, floatingId, currentIdRef, delayRef, timeoutMs, initialDelayRef, currentContextRef, timeout, store]);
   useIsoLayoutEffect(() => {
-    if (!open) {
+    if (!open3) {
       return;
     }
     const prevContext = currentContextRef.current;
@@ -2669,7 +2777,7 @@ function useDelayGroup(context, options = {
       setIsInstantPhase(false);
       prevContext?.setIsInstantPhase(false);
     }
-  }, [open, floatingId, store, currentIdRef, delayRef, initialDelayRef, currentContextRef, timeout]);
+  }, [open3, floatingId, store, currentIdRef, delayRef, initialDelayRef, currentContextRef, timeout]);
   useIsoLayoutEffect(() => {
     return () => {
       if (currentIdRef.current === floatingId) {
@@ -2684,17 +2792,18 @@ function useDelayGroup(context, options = {
     };
   }, [currentContextRef, currentIdRef, delayRef, floatingId, initialDelayRef, timeout]);
   return React18.useMemo(() => ({
+    activeIdRef: currentIdRef,
     hasProvider,
     delayRef,
     isInstantPhase
-  }), [hasProvider, delayRef, isInstantPhase]);
+  }), [currentIdRef, hasProvider, delayRef, isInstantPhase]);
 }
 
-// node_modules/@base-ui/utils/mergeCleanups.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/mergeCleanups.mjs
 function mergeCleanups(...cleanups) {
   return () => {
-    for (let i2 = 0; i2 < cleanups.length; i2 += 1) {
-      const cleanup = cleanups[i2];
+    for (let i = 0; i < cleanups.length; i += 1) {
+      const cleanup = cleanups[i];
       if (cleanup) {
         cleanup();
       }
@@ -2702,10 +2811,10 @@ function mergeCleanups(...cleanups) {
   };
 }
 
-// node_modules/@base-ui/react/utils/FocusGuard.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/FocusGuard.mjs
 var React19 = __toESM(require_react(), 1);
 
-// node_modules/@base-ui/utils/visuallyHidden.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/visuallyHidden.mjs
 var visuallyHiddenBase = {
   clipPath: "inset(50%)",
   overflow: "hidden",
@@ -2727,7 +2836,7 @@ var visuallyHiddenInput = {
   position: "absolute"
 };
 
-// node_modules/@base-ui/react/utils/FocusGuard.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/FocusGuard.mjs
 var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
 var FocusGuard = /* @__PURE__ */ React19.forwardRef(function FocusGuard2(props, ref) {
   const [role, setRole] = React19.useState();
@@ -2752,7 +2861,7 @@ var FocusGuard = /* @__PURE__ */ React19.forwardRef(function FocusGuard2(props, 
 });
 if (true) FocusGuard.displayName = "FocusGuard";
 
-// node_modules/@floating-ui/utils/dist/floating-ui.utils.mjs
+// node_modules/.store/@floating-ui/utils@0.2.12-gOxTzMf36nCrbeHpEew-rw/node_modules/@floating-ui/utils/dist/floating-ui.utils.mjs
 var min = Math.min;
 var max = Math.max;
 var round = Math.round;
@@ -2880,7 +2989,7 @@ function rectToClientRect(rect) {
   };
 }
 
-// node_modules/@base-ui/react/floating-ui-react/utils/composite.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/utils/composite.mjs
 function isHiddenByStyles(styles) {
   return styles.visibility === "hidden" || styles.visibility === "collapse";
 }
@@ -2894,7 +3003,7 @@ function isElementVisible(element, styles = element ? getComputedStyle2(element)
   return styles.display !== "none" && styles.display !== "contents";
 }
 
-// node_modules/@base-ui/react/floating-ui-react/utils/tabbable.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/utils/tabbable.mjs
 var CANDIDATE_SELECTOR = 'a[href],button,input,select,textarea,summary,details,iframe,object,embed,[tabindex],[contenteditable]:not([contenteditable="false"]),audio[controls],video[controls]';
 function getParentElement(element) {
   const assignedSlot = element.assignedSlot;
@@ -3062,22 +3171,22 @@ function enableFocusInside(container) {
   });
 }
 
-// node_modules/@base-ui/react/floating-ui-react/utils/nodes.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/utils/nodes.mjs
 function getNodeChildren(nodes, id, onlyOpenChildren = true) {
   const directChildren = nodes.filter((node) => node.parentId === id);
   return directChildren.flatMap((child) => [...!onlyOpenChildren || child.context?.open ? [child] : [], ...getNodeChildren(nodes, child.id, onlyOpenChildren)]);
 }
 
-// node_modules/@base-ui/react/floating-ui-react/utils/createAttribute.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/utils/createAttribute.mjs
 function createAttribute(name) {
   return `data-base-ui-${name}`;
 }
 
-// node_modules/@base-ui/react/floating-ui-react/components/FloatingPortal.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/components/FloatingPortal.mjs
 var React20 = __toESM(require_react(), 1);
 var ReactDOM2 = __toESM(require_react_dom(), 1);
 
-// node_modules/@base-ui/react/internals/constants.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/constants.mjs
 var DISABLED_TRANSITIONS_STYLE = {
   style: {
     transition: "none"
@@ -3097,7 +3206,7 @@ var ownerVisuallyHidden = {
   left: 0
 };
 
-// node_modules/@base-ui/react/floating-ui-react/components/FloatingPortal.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/components/FloatingPortal.mjs
 var import_jsx_runtime3 = __toESM(require_jsx_runtime(), 1);
 var PortalContext = /* @__PURE__ */ React20.createContext(null);
 if (true) PortalContext.displayName = "PortalContext";
@@ -3168,6 +3277,7 @@ var FloatingPortal = /* @__PURE__ */ React20.forwardRef(function FloatingPortal2
     style,
     children,
     container,
+    portalOwnerRole,
     ...elementProps
   } = componentProps;
   const {
@@ -3187,7 +3297,7 @@ var FloatingPortal = /* @__PURE__ */ React20.forwardRef(function FloatingPortal2
   const [focusManagerState, setFocusManagerState] = React20.useState(null);
   const focusInsideDisabledRef = React20.useRef(false);
   const modal = focusManagerState?.modal;
-  const open = focusManagerState?.open;
+  const open3 = focusManagerState?.open;
   const shouldRenderGuards = !!focusManagerState && !focusManagerState.modal && focusManagerState.open && !!portalNode;
   React20.useEffect(() => {
     if (!portalNode || modal) {
@@ -3209,12 +3319,12 @@ var FloatingPortal = /* @__PURE__ */ React20.forwardRef(function FloatingPortal2
     return mergeCleanups(addEventListener(portalNode, "focusin", onFocus, true), addEventListener(portalNode, "focusout", onFocus, true));
   }, [portalNode, modal]);
   useIsoLayoutEffect(() => {
-    if (!portalNode || open !== true || !focusInsideDisabledRef.current) {
+    if (!portalNode || open3 !== true || !focusInsideDisabledRef.current) {
       return;
     }
     enableFocusInside(portalNode);
     focusInsideDisabledRef.current = false;
-  }, [open, portalNode]);
+  }, [open3, portalNode]);
   const portalContextValue = React20.useMemo(() => ({
     beforeOutsideRef,
     afterOutsideRef,
@@ -3239,6 +3349,7 @@ var FloatingPortal = /* @__PURE__ */ React20.forwardRef(function FloatingPortal2
           }
         }
       }), shouldRenderGuards && portalNode && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", {
+        role: portalOwnerRole,
         "aria-owns": portalNodeId,
         style: ownerVisuallyHidden
       }), portalNode && /* @__PURE__ */ ReactDOM2.createPortal(children, portalNode), shouldRenderGuards && portalNode && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(FocusGuard, {
@@ -3262,10 +3373,10 @@ var FloatingPortal = /* @__PURE__ */ React20.forwardRef(function FloatingPortal2
 });
 if (true) FloatingPortal.displayName = "FloatingPortal";
 
-// node_modules/@base-ui/react/floating-ui-react/components/FloatingTree.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/components/FloatingTree.mjs
 var React21 = __toESM(require_react(), 1);
 
-// node_modules/@base-ui/react/floating-ui-react/utils/createEventEmitter.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/utils/createEventEmitter.mjs
 function createEventEmitter() {
   const map = /* @__PURE__ */ new Map();
   return {
@@ -3284,7 +3395,7 @@ function createEventEmitter() {
   };
 }
 
-// node_modules/@base-ui/react/floating-ui-react/components/FloatingTree.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/components/FloatingTree.mjs
 var import_jsx_runtime4 = __toESM(require_jsx_runtime(), 1);
 var FloatingNodeContext = /* @__PURE__ */ React21.createContext(null);
 if (true) FloatingNodeContext.displayName = "FloatingNodeContext";
@@ -3296,7 +3407,7 @@ var useFloatingTree = (externalTree) => {
   return externalTree ?? contextTree;
 };
 
-// node_modules/@base-ui/react/floating-ui-react/hooks/useClientPoint.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/hooks/useClientPoint.mjs
 var React22 = __toESM(require_react(), 1);
 function createVirtualElement(domElement, data) {
   let offsetX = null;
@@ -3360,7 +3471,7 @@ function useClientPoint(context, props = {}) {
     axis = "both"
   } = props;
   const store = "rootStore" in context ? context.rootStore : context;
-  const open = store.useState("open");
+  const open3 = store.useState("open");
   const floating = store.useState("floatingElement");
   const domReference = store.useState("domReferenceElement");
   const dataRef = store.context.dataRef;
@@ -3387,14 +3498,14 @@ function useClientPoint(context, props = {}) {
     }));
   });
   const handleReferenceEnterOrMove = useStableCallback((event) => {
-    if (!open) {
+    if (!open3) {
       setReference(event.clientX, event.clientY, event.currentTarget);
     } else if (!cleanupListenerRef.current) {
       setReference(event.clientX, event.clientY, event.currentTarget);
       setReactive([]);
     }
   });
-  const openCheck = isMouseLikePointerType(pointerType) ? floating : open;
+  const openCheck = isMouseLikePointerType(pointerType) ? floating : open3;
   React22.useEffect(() => {
     if (!enabled) {
       resetReference(domReference);
@@ -3432,10 +3543,10 @@ function useClientPoint(context, props = {}) {
     }
   }, [enabled, floating]);
   React22.useEffect(() => {
-    if (!enabled && open) {
+    if (!enabled && open3) {
       initialRef.current = true;
     }
-  }, [enabled, open]);
+  }, [enabled, open3]);
   const reference = React22.useMemo(() => {
     function setPointerTypeRef(event) {
       setPointerType(event.pointerType);
@@ -3453,7 +3564,7 @@ function useClientPoint(context, props = {}) {
   } : {}, [enabled, reference]);
 }
 
-// node_modules/@base-ui/react/floating-ui-react/hooks/useDismiss.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/hooks/useDismiss.mjs
 var React23 = __toESM(require_react(), 1);
 function alwaysFalse() {
   return false;
@@ -3475,10 +3586,11 @@ function useDismiss(context, props = {}) {
     externalTree
   } = props;
   const store = "rootStore" in context ? context.rootStore : context;
-  const open = store.useState("open");
+  const open3 = store.useState("open");
   const floatingElement = store.useState("floatingElement");
   const {
-    dataRef
+    dataRef,
+    events
   } = store.context;
   const tree = useFloatingTree(externalTree);
   const outsidePressFn = useStableCallback(typeof outsidePressProp === "function" ? outsidePressProp : () => false);
@@ -3492,6 +3604,7 @@ function useDismiss(context, props = {}) {
   const pressStartedInsideRef = React23.useRef(false);
   const pressStartPreventedRef = React23.useRef(false);
   const suppressNextOutsideClickRef = React23.useRef(false);
+  const sawPressWhileOpenRef = React23.useRef(false);
   const isComposingRef = React23.useRef(false);
   const currentPointerTypeRef = React23.useRef("");
   const touchStateRef = React23.useRef(null);
@@ -3516,7 +3629,7 @@ function useDismiss(context, props = {}) {
     store.setOpen(false, createChangeEventDetails(reason_parts_exports.triggerPress, event.nativeEvent));
   });
   const closeOnEscapeKeyDown = useStableCallback((event) => {
-    if (!open || !enabled || !escapeKey2 || event.key !== "Escape") {
+    if (!open3 || !enabled || !escapeKey2 || event.key !== "Escape") {
       return;
     }
     if (isComposingRef.current) {
@@ -3540,7 +3653,7 @@ function useDismiss(context, props = {}) {
     clearInsideReactTreeTimeout.start(0, clearInsideReactTree);
   });
   const markPressStartedInsideReactTree = useStableCallback((event) => {
-    if (!open || !enabled || event.button !== 0) {
+    if (!open3 || !enabled || event.button !== 0) {
       return;
     }
     const target = getTarget(event.nativeEvent);
@@ -3553,7 +3666,7 @@ function useDismiss(context, props = {}) {
     }
   });
   const markInsidePressStartPrevented = useStableCallback((event) => {
-    if (!open || !enabled) {
+    if (!open3 || !enabled) {
       return;
     }
     if (!(event.defaultPrevented || event.nativeEvent.defaultPrevented)) {
@@ -3564,13 +3677,28 @@ function useDismiss(context, props = {}) {
     }
   });
   React23.useEffect(() => {
-    if (!open || !enabled) {
+    function handleOpenChange(details) {
+      if (!details.open) {
+        sawPressWhileOpenRef.current = false;
+      }
+    }
+    events.on("openchange", handleOpenChange);
+    return () => {
+      events.off("openchange", handleOpenChange);
+    };
+  }, [events]);
+  React23.useEffect(() => {
+    if (!open3 || !enabled) {
+      if (!open3) {
+        sawPressWhileOpenRef.current = false;
+      }
       return clearInsideReactTree;
     }
     dataRef.current.__escapeKeyBubbles = escapeKeyBubbles;
     dataRef.current.__outsidePressBubbles = outsidePressBubbles;
     const compositionTimeout = new Timeout();
     const preventedPressSuppressionTimeout = new Timeout();
+    const doc = ownerDocument(floatingElement);
     function handleCompositionStart() {
       compositionTimeout.clear();
       isComposingRef.current = true;
@@ -3667,10 +3795,15 @@ function useDismiss(context, props = {}) {
       if (isEventWithinFloatingTree(event)) {
         return;
       }
-      if (getOutsidePressEvent() === "intentional" && suppressNextOutsideClickRef.current) {
-        preventedPressSuppressionTimeout.clear();
-        suppressNextOutsideClickRef.current = false;
-        return;
+      if (getOutsidePressEvent() === "intentional") {
+        if (event.detail !== 0 && !isVirtualClick(event) && !sawPressWhileOpenRef.current) {
+          return;
+        }
+        if (suppressNextOutsideClickRef.current) {
+          preventedPressSuppressionTimeout.clear();
+          suppressNextOutsideClickRef.current = false;
+          return;
+        }
       }
       if (typeof outsidePress2 === "function" && !outsidePress2(event)) {
         return;
@@ -3725,6 +3858,9 @@ function useDismiss(context, props = {}) {
     function closeOnPressOutsideCapture(event) {
       cancelDismissOnEndTimeout.clear();
       if (event.type === "pointerdown") {
+        if (event.button === 0) {
+          sawPressWhileOpenRef.current = true;
+        }
         currentPointerTypeRef.current = event.pointerType;
       }
       if (event.type === "mousedown" && touchStateRef.current && !touchStateRef.current.dismissOnMouseDown) {
@@ -3739,6 +3875,9 @@ function useDismiss(context, props = {}) {
       });
     }
     function handlePressEndCapture(event) {
+      if (event.type === "pointercancel") {
+        sawPressWhileOpenRef.current = false;
+      }
       if (!pressStartedInsideRef.current) {
         return;
       }
@@ -3803,8 +3942,16 @@ function useDismiss(context, props = {}) {
     function handleTouchEndCapture(event) {
       addTargetEventListenerOnce(event, handleTouchEnd);
     }
-    const doc = ownerDocument(floatingElement);
-    const unsubscribe = mergeCleanups(escapeKey2 && mergeCleanups(addEventListener(doc, "keydown", closeOnEscapeKeyDown), addEventListener(doc, "compositionstart", handleCompositionStart), addEventListener(doc, "compositionend", handleCompositionEnd)), outsidePressEnabled && mergeCleanups(addEventListener(doc, "click", closeOnPressOutsideCapture, true), addEventListener(doc, "pointerdown", closeOnPressOutsideCapture, true), addEventListener(doc, "pointerup", handlePressEndCapture, true), addEventListener(doc, "pointercancel", handlePressEndCapture, true), addEventListener(doc, "mousedown", closeOnPressOutsideCapture, true), addEventListener(doc, "mouseup", handlePressEndCapture, true), addEventListener(doc, "touchstart", handleTouchStartCapture, true), addEventListener(doc, "touchmove", handleTouchMoveCapture, true), addEventListener(doc, "touchend", handleTouchEndCapture, true)));
+    const unsubscribe = mergeCleanups(escapeKey2 && mergeCleanups(addEventListener(doc, "keydown", closeOnEscapeKeyDown), addEventListener(doc, "compositionstart", handleCompositionStart), addEventListener(doc, "compositionend", handleCompositionEnd)), outsidePressEnabled && mergeCleanups(addEventListener(doc, "click", closeOnPressOutsideCapture, true), addEventListener(doc, "pointerdown", closeOnPressOutsideCapture, true), addEventListener(doc, "pointerup", handlePressEndCapture, true), addEventListener(doc, "pointercancel", handlePressEndCapture, true), addEventListener(doc, "mousedown", closeOnPressOutsideCapture, true), addEventListener(doc, "mouseup", handlePressEndCapture, true), addEventListener(doc, "touchstart", handleTouchStartCapture, {
+      capture: true,
+      passive: true
+    }), addEventListener(doc, "touchmove", handleTouchMoveCapture, {
+      capture: true,
+      passive: true
+    }), addEventListener(doc, "touchend", handleTouchEndCapture, {
+      capture: true,
+      passive: true
+    })));
     return () => {
       unsubscribe();
       compositionTimeout.clear();
@@ -3813,7 +3960,7 @@ function useDismiss(context, props = {}) {
       suppressNextOutsideClickRef.current = false;
       clearInsideReactTree();
     };
-  }, [dataRef, floatingElement, escapeKey2, outsidePressEnabled, outsidePress2, open, enabled, escapeKeyBubbles, outsidePressBubbles, closeOnEscapeKeyDown, clearInsideReactTree, getOutsidePressEventProp, hasBlockingChild, isEventWithinOwnElements, tree, store, cancelDismissOnEndTimeout]);
+  }, [dataRef, floatingElement, escapeKey2, outsidePressEnabled, outsidePress2, open3, enabled, escapeKeyBubbles, outsidePressBubbles, closeOnEscapeKeyDown, clearInsideReactTree, getOutsidePressEventProp, hasBlockingChild, isEventWithinOwnElements, tree, store, cancelDismissOnEndTimeout]);
   const reference = React23.useMemo(() => ({
     onKeyDown: closeOnEscapeKeyDown,
     onPointerDown: closeOnReferencePress,
@@ -3846,10 +3993,10 @@ function useDismiss(context, props = {}) {
   } : {}, [enabled, reference, floating]);
 }
 
-// node_modules/@base-ui/react/floating-ui-react/hooks/useFloating.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/hooks/useFloating.mjs
 var React31 = __toESM(require_react(), 1);
 
-// node_modules/@floating-ui/core/dist/floating-ui.core.mjs
+// node_modules/.store/@floating-ui/core@1.8.0-3V8aS7jJHHGcsCINjP9-5A/node_modules/@floating-ui/core/dist/floating-ui.core.mjs
 function computeCoordsFromPlacement(_ref, placement, rtl) {
   let {
     reference,
@@ -3979,8 +4126,8 @@ var computePosition = async (reference, floating, config) => {
   let statefulPlacement = placement;
   let resetCount = 0;
   const middlewareData = {};
-  for (let i2 = 0; i2 < middleware.length; i2++) {
-    const currentMiddleware = middleware[i2];
+  for (let i = 0; i < middleware.length; i++) {
+    const currentMiddleware = middleware[i];
     if (!currentMiddleware) {
       continue;
     }
@@ -4031,7 +4178,7 @@ var computePosition = async (reference, floating, config) => {
           y: y2
         } = computeCoordsFromPlacement(rects, statefulPlacement, rtl));
       }
-      i2 = -1;
+      i = -1;
     }
   }
   return {
@@ -4103,7 +4250,7 @@ var flip = function(options) {
           const ignoreCrossAxisOverflow = checkCrossAxis === "alignment" ? initialSideAxis !== getSideAxis(nextPlacement) : false;
           if (!ignoreCrossAxisOverflow || // We leave the current main axis only if every placement on that axis
           // overflows the main axis.
-          overflowsData.every((d2) => getSideAxis(d2.placement) === initialSideAxis ? d2.overflows[0] > 0 : true)) {
+          overflowsData.every((d) => getSideAxis(d.placement) === initialSideAxis ? d.overflows[0] > 0 : true)) {
             return {
               data: {
                 index: nextIndex,
@@ -4115,20 +4262,20 @@ var flip = function(options) {
             };
           }
         }
-        let resetPlacement = (_overflowsData$filter = overflowsData.filter((d2) => d2.overflows[0] <= 0).sort((a2, b2) => a2.overflows[1] - b2.overflows[1])[0]) == null ? void 0 : _overflowsData$filter.placement;
+        let resetPlacement = (_overflowsData$filter = overflowsData.filter((d) => d.overflows[0] <= 0).sort((a, b) => a.overflows[1] - b.overflows[1])[0]) == null ? void 0 : _overflowsData$filter.placement;
         if (!resetPlacement) {
           switch (fallbackStrategy) {
             case "bestFit": {
               var _overflowsData$filter2;
-              const placement2 = (_overflowsData$filter2 = overflowsData.filter((d2) => {
+              const placement2 = (_overflowsData$filter2 = overflowsData.filter((d) => {
                 if (hasFallbackAxisSideDirection) {
-                  const currentSideAxis = getSideAxis(d2.placement);
+                  const currentSideAxis = getSideAxis(d.placement);
                   return currentSideAxis === initialSideAxis || // Create a bias to the `y` side axis due to horizontal
                   // reading directions favoring greater width.
                   currentSideAxis === "y";
                 }
                 return true;
-              }).map((d2) => [d2.placement, d2.overflows.filter((overflow2) => overflow2 > 0).reduce((acc, overflow2) => acc + overflow2, 0)]).sort((a2, b2) => a2[1] - b2[1])[0]) == null ? void 0 : _overflowsData$filter2[0];
+              }).map((d) => [d.placement, d.overflows.filter((overflow2) => overflow2 > 0).reduce((acc, overflow2) => acc + overflow2, 0)]).sort((a, b) => a[1] - b[1])[0]) == null ? void 0 : _overflowsData$filter2[0];
               if (placement2) {
                 resetPlacement = placement2;
               }
@@ -4392,25 +4539,25 @@ var size = function(options) {
       const overflowAvailableWidth = min(width - overflow[widthSide], maximumClippingWidth);
       const shiftData = state.middlewareData.shift;
       const noShift = !shiftData;
-      let availableHeight = overflowAvailableHeight;
-      let availableWidth = overflowAvailableWidth;
+      let availableHeight2 = overflowAvailableHeight;
+      let availableWidth2 = overflowAvailableWidth;
       if (shiftData != null && shiftData.enabled.x) {
-        availableWidth = maximumClippingWidth;
+        availableWidth2 = maximumClippingWidth;
       }
       if (shiftData != null && shiftData.enabled.y) {
-        availableHeight = maximumClippingHeight;
+        availableHeight2 = maximumClippingHeight;
       }
       if (noShift && !alignment) {
         if (isYAxis) {
-          availableWidth = width - 2 * max(overflow.left, overflow.right);
+          availableWidth2 = width - 2 * max(overflow.left, overflow.right);
         } else {
-          availableHeight = height - 2 * max(overflow.top, overflow.bottom);
+          availableHeight2 = height - 2 * max(overflow.top, overflow.bottom);
         }
       }
       await apply({
         ...state,
-        availableWidth,
-        availableHeight
+        availableWidth: availableWidth2,
+        availableHeight: availableHeight2
       });
       const nextDimensions = await platform3.getDimensions(elements.floating);
       if (width !== nextDimensions.width || height !== nextDimensions.height) {
@@ -4425,7 +4572,7 @@ var size = function(options) {
   };
 };
 
-// node_modules/@floating-ui/dom/dist/floating-ui.dom.mjs
+// node_modules/.store/@floating-ui/dom@1.8.0-vHXcr4FgWneV0cgwFw-d7A/node_modules/@floating-ui/dom/dist/floating-ui.dom.mjs
 function getCssDimensions(element) {
   const css = getComputedStyle2(element);
   let width = parseFloat(css.width) || 0;
@@ -4736,8 +4883,8 @@ function getClippingRect(_ref) {
   let right = firstRect.right;
   let bottom = firstRect.bottom;
   let left = firstRect.left;
-  for (let i2 = 1; i2 < clippingAncestors.length; i2++) {
-    const rect = getClientRectFromClippingAncestor(element, clippingAncestors[i2], strategy);
+  for (let i = 1; i < clippingAncestors.length; i++) {
+    const rect = getClientRectFromClippingAncestor(element, clippingAncestors[i], strategy);
     top = max(rect.top, top);
     right = min(rect.right, right);
     bottom = min(rect.bottom, bottom);
@@ -4862,8 +5009,8 @@ var platform2 = {
   isElement,
   isRTL
 };
-function rectsAreEqual(a2, b2) {
-  return a2.x === b2.x && a2.y === b2.y && a2.width === b2.width && a2.height === b2.height;
+function rectsAreEqual(a, b) {
+  return a.x === b.x && a.y === b.y && a.width === b.width && a.height === b.height;
 }
 function observeMove(element, onMove, ancestorResize) {
   let io = null;
@@ -5032,7 +5179,7 @@ var computePosition2 = (reference, floating, options) => {
   });
 };
 
-// node_modules/@floating-ui/react-dom/dist/floating-ui.react-dom.mjs
+// node_modules/.store/@floating-ui/react-dom@2.1.9-AxWcAwqlMfOrAFOinFKSVg/node_modules/@floating-ui/react-dom/dist/floating-ui.react-dom.mjs
 var React24 = __toESM(require_react(), 1);
 var import_react2 = __toESM(require_react(), 1);
 var ReactDOM3 = __toESM(require_react_dom(), 1);
@@ -5040,52 +5187,52 @@ var isClient = typeof document !== "undefined";
 var noop2 = function noop3() {
 };
 var index = isClient ? import_react2.useLayoutEffect : noop2;
-function deepEqual(a2, b2) {
-  if (a2 === b2) {
+function deepEqual(a, b) {
+  if (a === b) {
     return true;
   }
-  if (typeof a2 !== typeof b2) {
+  if (typeof a !== typeof b) {
     return false;
   }
-  if (typeof a2 === "function" && a2.toString() === b2.toString()) {
+  if (typeof a === "function" && a.toString() === b.toString()) {
     return true;
   }
   let length;
-  let i2;
+  let i;
   let keys;
-  if (a2 && b2 && typeof a2 === "object") {
-    if (Array.isArray(a2)) {
-      length = a2.length;
-      if (length !== b2.length) return false;
-      for (i2 = length; i2-- !== 0; ) {
-        if (!deepEqual(a2[i2], b2[i2])) {
+  if (a && b && typeof a === "object") {
+    if (Array.isArray(a)) {
+      length = a.length;
+      if (length !== b.length) return false;
+      for (i = length; i-- !== 0; ) {
+        if (!deepEqual(a[i], b[i])) {
           return false;
         }
       }
       return true;
     }
-    keys = Object.keys(a2);
+    keys = Object.keys(a);
     length = keys.length;
-    if (length !== Object.keys(b2).length) {
+    if (length !== Object.keys(b).length) {
       return false;
     }
-    for (i2 = length; i2-- !== 0; ) {
-      if (!{}.hasOwnProperty.call(b2, keys[i2])) {
+    for (i = length; i-- !== 0; ) {
+      if (!{}.hasOwnProperty.call(b, keys[i])) {
         return false;
       }
     }
-    for (i2 = length; i2-- !== 0; ) {
-      const key = keys[i2];
-      if (key === "_owner" && a2.$$typeof) {
+    for (i = length; i-- !== 0; ) {
+      const key = keys[i];
+      if (key === "_owner" && a.$$typeof) {
         continue;
       }
-      if (!deepEqual(a2[key], b2[key])) {
+      if (!deepEqual(a[key], b[key])) {
         return false;
       }
     }
     return true;
   }
-  return a2 !== a2 && b2 !== b2;
+  return a !== a && b !== b;
 }
 function getDPR(element) {
   if (typeof window === "undefined") {
@@ -5120,7 +5267,7 @@ function useFloating(options) {
     } = {},
     transform = true,
     whileElementsMounted,
-    open
+    open: open3
   } = options;
   const [data, setData] = React24.useState({
     x: 0,
@@ -5156,7 +5303,7 @@ function useFloating(options) {
   const hasWhileElementsMounted = whileElementsMounted != null;
   const whileElementsMountedRef = useLatestRef(whileElementsMounted);
   const platformRef = useLatestRef(platform3);
-  const openRef = useLatestRef(open);
+  const openRef = useLatestRef(open3);
   const update2 = React24.useCallback(() => {
     if (!referenceRef.current || !floatingRef.current) {
       return;
@@ -5187,14 +5334,14 @@ function useFloating(options) {
     });
   }, [latestMiddleware, placement, strategy, platformRef, openRef]);
   index(() => {
-    if (open === false && dataRef.current.isPositioned) {
+    if (open3 === false && dataRef.current.isPositioned) {
       dataRef.current.isPositioned = false;
       setData((data2) => ({
         ...data2,
         isPositioned: false
       }));
     }
-  }, [open]);
+  }, [open3]);
   const isMountedRef = React24.useRef(false);
   index(() => {
     isMountedRef.current = true;
@@ -5296,7 +5443,7 @@ var size3 = (options, deps) => {
   };
 };
 
-// node_modules/@base-ui/react/utils/popups/popupHandle.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/popups/popupHandle.mjs
 var BasePopupHandle = class {
   /**
    * Stores of every root currently using this handle, in attach order. A handle is meant to be used
@@ -5364,8 +5511,8 @@ var BasePopupHandle = class {
   }
   /**
    * Points the handle at a root's store and notifies subscribers so detached triggers re-render and
-   * re-register into it (their registration ref re-fires on the store-pointer change). Returns a
-   * cleanup function that detaches the store again.
+   * re-register into it (their registration effect migrates them when the store pointer changes).
+   * Returns a cleanup function that detaches the store again.
    * @internal
    */
   attachStore(newStore) {
@@ -5424,8 +5571,8 @@ var BasePopupHandle = class {
     }
     let triggerElement;
     if (triggerId) {
-      for (let i2 = this.attachedStores.length - 1; i2 >= 0 && !triggerElement; i2 -= 1) {
-        triggerElement = this.attachedStores[i2].context.triggerElements.getById(triggerId);
+      for (let i = this.attachedStores.length - 1; i >= 0 && !triggerElement; i -= 1) {
+        triggerElement = this.attachedStores[i].context.triggerElements.getById(triggerId);
       }
       triggerElement ??= this.fallbackStore.context.triggerElements.getById(triggerId);
     }
@@ -5457,19 +5604,19 @@ var BasePopupHandle = class {
   }
 };
 
-// node_modules/@base-ui/react/utils/popups/popupStoreUtils.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/popups/popupStoreUtils.mjs
 var React29 = __toESM(require_react(), 1);
 var ReactDOM4 = __toESM(require_react_dom(), 1);
 
-// node_modules/@base-ui/react/floating-ui-react/hooks/useSyncedFloatingRootContext.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/hooks/useSyncedFloatingRootContext.mjs
 var React28 = __toESM(require_react(), 1);
 
-// node_modules/@base-ui/utils/store/useStore.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/store/useStore.mjs
 var React26 = __toESM(require_react(), 1);
 var import_shim = __toESM(require_shim(), 1);
 var import_with_selector = __toESM(require_with_selector(), 1);
 
-// node_modules/@base-ui/utils/fastHooks.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/fastHooks.mjs
 var React25 = __toESM(require_react(), 1);
 var hooks = [];
 var currentInstance = void 0;
@@ -5510,7 +5657,7 @@ function createInstance() {
   };
 }
 
-// node_modules/@base-ui/utils/store/useStore.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/store/useStore.mjs
 var canUseRawUseSyncExternalStore = isReactVersionAtLeast(19);
 var useStoreImplementation = canUseRawUseSyncExternalStore ? useStoreFast : useStoreLegacy;
 function useStore(store, selector, a1, a2, a3) {
@@ -5529,8 +5676,8 @@ register({
       instance.didChangeStore = true;
       instance.getSnapshot = () => {
         let didChange2 = false;
-        for (let i2 = 0; i2 < instance.syncHooks.length; i2 += 1) {
-          const hook = instance.syncHooks[i2];
+        for (let i = 0; i < instance.syncHooks.length; i += 1) {
+          const hook = instance.syncHooks[i];
           const value = hook.selector(hook.store.state, hook.a1, hook.a2, hook.a3);
           if (!Object.is(hook.value, value)) {
             didChange2 = true;
@@ -5606,8 +5753,16 @@ function useStoreLegacy(store, selector, a1, a2, a3) {
   return (0, import_with_selector.useSyncExternalStoreWithSelector)(store.subscribe, store.getSnapshot, store.getSnapshot, (state) => selector(state, a1, a2, a3));
 }
 
-// node_modules/@base-ui/utils/store/Store.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/store/Store.mjs
 var Store = class {
+  /**
+   * Creates a store with the given initial state, constructing the class it is called on.
+   * Calling it on a generic base class (e.g. `ReactStore.create(...)`) constructs that
+   * class but degrades the inferred instance type to `Store`; use `new` there instead.
+   */
+  static create(state) {
+    return new this(state);
+  }
   /**
    * The current state of the store.
    * This property is updated immediately when the state changes as a result of calling {@link setState}, {@link update}, or {@link set}.
@@ -5661,6 +5816,8 @@ var Store = class {
   }
   /**
    * Merges the provided changes into the current state and notifies listeners if there are changes.
+   * Each value must match its state key. Pass an exact known subset rather than a broad
+   * `Partial<State>`, which may contain `undefined` for required state fields.
    *
    * @param changes An object containing the changes to apply to the current state.
    */
@@ -5703,7 +5860,7 @@ var Store = class {
   }
 };
 
-// node_modules/@base-ui/utils/store/ReactStore.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/store/ReactStore.mjs
 var React27 = __toESM(require_react(), 1);
 var ReactStore = class extends Store {
   /**
@@ -5756,9 +5913,13 @@ var ReactStore = class extends Store {
   }
   /**
    * Synchronizes multiple external values into the store.
+   * Each value must match its state key. Pass an exact known subset rather than a broad
+   * `Partial<State>`, which may contain `undefined` for required state fields.
    *
    * Note that the while the values in `state` are updated immediately, the values returned
    * by `useState` are updated before the next render (similarly to React's `useState`).
+   *
+   * @param statePart An exact subset of state fields to synchronize. Unknown keys are not accepted.
    */
   useSyncedValues(statePart) {
     const store = this;
@@ -5874,7 +6035,7 @@ var ReactStore = class extends Store {
   }
 };
 
-// node_modules/@base-ui/react/floating-ui-react/components/FloatingRootStore.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/components/FloatingRootStore.mjs
 var selectors = {
   open: (state) => state.open,
   transitionStatus: (state) => state.transitionStatus,
@@ -5947,7 +6108,7 @@ var FloatingRootStore = class extends ReactStore {
   };
 };
 
-// node_modules/@base-ui/react/floating-ui-react/hooks/useSyncedFloatingRootContext.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/hooks/useSyncedFloatingRootContext.mjs
 function useSyncedFloatingRootContext(options) {
   const {
     popupStore,
@@ -5957,7 +6118,7 @@ function useSyncedFloatingRootContext(options) {
     nested,
     onOpenChange
   } = options;
-  const open = popupStore.useState("open");
+  const open3 = popupStore.useState("open");
   const referenceElement = popupStore.useState("activeTriggerElement");
   const floatingElement = popupStore.useState(treatPopupAsFloatingElement ? "popupElement" : "positionerElement");
   const triggerElements = popupStore.context.triggerElements;
@@ -5965,7 +6126,7 @@ function useSyncedFloatingRootContext(options) {
   const internalStoreRef = React28.useRef(null);
   if (floatingRootContextProp === void 0 && internalStoreRef.current === null) {
     internalStoreRef.current = new FloatingRootStore({
-      open,
+      open: open3,
       transitionStatus: void 0,
       referenceElement,
       floatingElement,
@@ -5980,7 +6141,7 @@ function useSyncedFloatingRootContext(options) {
   popupStore.useSyncedValue("floatingId", floatingId);
   useIsoLayoutEffect(() => {
     const valuesToSync = {
-      open,
+      open: open3,
       floatingId,
       referenceElement,
       floatingElement
@@ -5992,13 +6153,13 @@ function useSyncedFloatingRootContext(options) {
       valuesToSync.positionReference = referenceElement;
     }
     store.update(valuesToSync);
-  }, [open, floatingId, referenceElement, floatingElement, store]);
+  }, [open3, floatingId, referenceElement, floatingElement, store]);
   store.context.onOpenChange = handleOpenChange;
   store.context.nested = nested;
   return store;
 }
 
-// node_modules/@base-ui/react/utils/popups/popupStoreUtils.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/popups/popupStoreUtils.mjs
 var FOCUSABLE_POPUP_PROPS = {
   tabIndex: -1,
   [FOCUSABLE_ATTRIBUTE]: ""
@@ -6026,50 +6187,58 @@ function PopupHandleAttachment({
   }, [handle, store]);
   return null;
 }
-function useTriggerRegistration(id, store) {
-  const registeredElementIdRef = React29.useRef(null);
-  const registeredElementRef = React29.useRef(null);
-  return React29.useCallback((element) => {
-    if (id === void 0) {
-      return;
-    }
-    let shouldSyncTriggerCount = false;
-    if (registeredElementIdRef.current !== null) {
-      const registeredId = registeredElementIdRef.current;
-      const registeredElement = registeredElementRef.current;
-      const currentElement = store.context.triggerElements.getById(registeredId);
-      if (registeredElement && currentElement === registeredElement) {
-        store.context.triggerElements.delete(registeredId);
-        shouldSyncTriggerCount = true;
-      }
-      registeredElementIdRef.current = null;
-      registeredElementRef.current = null;
-    }
-    if (element !== null) {
-      registeredElementIdRef.current = id;
-      registeredElementRef.current = element;
-      store.context.triggerElements.add(id, element);
-      shouldSyncTriggerCount = true;
-    }
-    if (shouldSyncTriggerCount) {
-      const triggerCount = store.context.triggerElements.size;
-      if (store.select("open") && store.state.triggerCount !== triggerCount) {
-        store.set("triggerCount", triggerCount);
-      }
-    }
-  }, [store, id]);
+function syncTriggerCount(store) {
+  const triggerCount = store.context.triggerElements.size;
+  if (store.select("open") && store.state.triggerCount !== triggerCount) {
+    store.set("triggerCount", triggerCount);
+  }
 }
-function setPopupOpenState(state, open, trigger, preventUnmountOnClose = false) {
-  if (open) {
-    state.preventUnmountingOnClose = false;
+function useTriggerRegistration(id, store) {
+  const registrationRef = React29.useRef(null);
+  return useStableCallback((element) => {
+    const registration = registrationRef.current;
+    if (registration !== null) {
+      if (registration.element === element && registration.store === store && registration.id === id) {
+        return;
+      }
+      registrationRef.current = null;
+      const registeredStore = registration.store;
+      if (registeredStore.context.triggerElements.getById(registration.id) === registration.element) {
+        registeredStore.context.triggerElements.delete(registration.id);
+        syncTriggerCount(registeredStore);
+      }
+    }
+    if (element !== null && id !== void 0) {
+      registrationRef.current = {
+        store,
+        id,
+        element
+      };
+      store.context.triggerElements.add(id, element);
+      syncTriggerCount(store);
+    }
+  });
+}
+function createPopupOpenState(state, open3, trigger, preventUnmountOnClose = false) {
+  let preventUnmountingOnClose = state.preventUnmountingOnClose;
+  if (open3) {
+    preventUnmountingOnClose = false;
   } else if (preventUnmountOnClose) {
-    state.preventUnmountingOnClose = true;
+    preventUnmountingOnClose = true;
   }
   const triggerId = trigger?.id ?? null;
-  if (triggerId || open) {
-    state.activeTriggerId = triggerId;
-    state.activeTriggerElement = trigger ?? null;
+  let activeTriggerId = state.activeTriggerId;
+  let activeTriggerElement = state.activeTriggerElement;
+  if (triggerId || open3) {
+    activeTriggerId = triggerId;
+    activeTriggerElement = trigger ?? null;
   }
+  return {
+    open: open3,
+    preventUnmountingOnClose,
+    activeTriggerId,
+    activeTriggerElement
+  };
 }
 function attachPreventUnmountOnClose(eventDetails) {
   let preventUnmountOnClose = false;
@@ -6091,9 +6260,10 @@ function applyPopupOpenChange(store, nextOpen, eventDetails, options = {}) {
   options.onBeforeDispatch?.();
   store.state.floatingRootContext.dispatchOpenChange(nextOpen, eventDetails);
   const changeState = () => {
+    const popupOpenState = createPopupOpenState(store.state, nextOpen, eventDetails.trigger, shouldPreventUnmountOnClose());
     const updatedState = {
       ...options.extraState,
-      open: nextOpen
+      ...popupOpenState
     };
     if (isFocusOpen) {
       updatedState.instantType = "focus";
@@ -6102,7 +6272,6 @@ function applyPopupOpenChange(store, nextOpen, eventDetails, options = {}) {
     } else if (isHover) {
       updatedState.instantType = void 0;
     }
-    setPopupOpenState(updatedState, nextOpen, eventDetails.trigger, shouldPreventUnmountOnClose());
     store.update(updatedState);
   };
   if (isHover) {
@@ -6115,35 +6284,42 @@ function useTriggerDataForwarding(triggerId, triggerElementRef, store, stateUpda
   const isMountedByThisTrigger = store.useState("isMountedByTrigger", triggerId);
   const baseRegisterTrigger = useTriggerRegistration(triggerId, store);
   const applyTriggerData = useStableCallback((element) => {
-    const open = store.select("open");
+    const open3 = store.select("open");
     const activeTriggerId = store.select("activeTriggerId");
     if (activeTriggerId === triggerId) {
-      store.update({
+      const changes = {
         activeTriggerElement: element,
-        ...open ? stateUpdates : null
-      });
+        ...open3 ? stateUpdates : null
+      };
+      store.update(changes);
       return;
     }
-    if (activeTriggerId == null && open) {
-      store.update({
-        activeTriggerId: triggerId,
+    if (activeTriggerId == null && open3) {
+      const changes = {
+        activeTriggerId: triggerId ?? null,
         activeTriggerElement: element,
         ...stateUpdates
-      });
+      };
+      store.update(changes);
     }
   });
-  const registerTrigger = React29.useCallback((element) => {
+  const registerTrigger = useStableCallback((element) => {
     baseRegisterTrigger(element);
     if (element) {
       applyTriggerData(element);
     }
-  }, [baseRegisterTrigger, applyTriggerData]);
+  });
+  useIsoLayoutEffect(() => {
+    registerTrigger(triggerElementRef.current);
+    return () => registerTrigger(null);
+  }, [registerTrigger, triggerElementRef, store, triggerId]);
   useIsoLayoutEffect(() => {
     if (isMountedByThisTrigger) {
-      store.update({
+      const changes = {
         activeTriggerElement: triggerElementRef.current,
         ...stateUpdates
-      });
+      };
+      store.update(changes);
     }
   }, [isMountedByThisTrigger, store, triggerElementRef, ...Object.values(stateUpdates)]);
   return {
@@ -6156,12 +6332,12 @@ function useImplicitActiveTrigger(store, options = {}) {
     closeOnActiveTriggerUnmount = false
   } = options;
   const resolvedActiveTriggerIdRef = React29.useRef(null);
-  const open = store.useState("open");
+  const open3 = store.useState("open");
   const reactiveTriggerCount = store.useState("triggerCount");
   const activeTriggerId = store.useState("activeTriggerId");
   const reactiveActiveTriggerElement = store.useState("activeTriggerElement");
   useIsoLayoutEffect(() => {
-    if (!open) {
+    if (!open3) {
       resolvedActiveTriggerIdRef.current = null;
       if (store.state.triggerCount !== 0) {
         store.set("triggerCount", 0);
@@ -6230,16 +6406,16 @@ function useImplicitActiveTrigger(store, options = {}) {
         });
       }
     }
-  }, [open, store, reactiveTriggerCount, activeTriggerId, reactiveActiveTriggerElement, closeOnActiveTriggerUnmount]);
+  }, [open3, store, reactiveTriggerCount, activeTriggerId, reactiveActiveTriggerElement, closeOnActiveTriggerUnmount]);
 }
-function useOpenStateTransitions(open, store, onUnmount) {
+function useOpenStateTransitions(open3, store, onUnmount, animateInitialOpen) {
   const {
     mounted,
     setMounted,
     transitionStatus
-  } = useTransitionStatus(open);
+  } = useTransitionStatus(open3, false, false, animateInitialOpen);
   const preventUnmountingOnClose = store.useState("preventUnmountingOnClose");
-  const syncedPreventUnmountingOnClose = open ? false : preventUnmountingOnClose;
+  const syncedPreventUnmountingOnClose = open3 ? false : preventUnmountingOnClose;
   store.useSyncedValues({
     mounted,
     transitionStatus,
@@ -6257,11 +6433,11 @@ function useOpenStateTransitions(open, store, onUnmount) {
     store.context.onOpenChangeComplete?.(false);
   });
   useOpenChangeComplete({
-    enabled: mounted && !open && !syncedPreventUnmountingOnClose,
-    open,
+    enabled: mounted && !open3 && !syncedPreventUnmountingOnClose,
+    open: open3,
     ref: store.context.popupRef,
     onComplete() {
-      if (!open) {
+      if (!open3) {
         forceUnmount();
       }
     }
@@ -6282,7 +6458,7 @@ function usePopupInteractionProps(store, statePart) {
   }, [store]);
 }
 
-// node_modules/@base-ui/react/utils/popups/popupTriggerMap.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/popups/popupTriggerMap.mjs
 var devElementIdsByMap;
 function getDevElementIds(map) {
   devElementIdsByMap ??= /* @__PURE__ */ new WeakMap();
@@ -6377,30 +6553,25 @@ var PopupTriggerMap = class {
   }
 };
 
-// node_modules/@base-ui/react/floating-ui-react/utils/getEmptyRootContext.mjs
-function getEmptyRootContext() {
-  return new FloatingRootStore({
-    open: false,
-    transitionStatus: void 0,
-    floatingElement: null,
-    referenceElement: null,
-    triggerElements: new PopupTriggerMap(),
-    floatingId: void 0,
-    syncOnly: false,
-    nested: false,
-    onOpenChange: void 0
-  });
-}
-
-// node_modules/@base-ui/react/utils/popups/store.mjs
-function createInitialPopupStoreState() {
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/popups/store.mjs
+function createInitialPopupStoreState(triggerElements, floatingId, nested = false) {
   return {
     open: false,
     openProp: void 0,
     mounted: false,
     transitionStatus: void 0,
-    floatingRootContext: getEmptyRootContext(),
-    floatingId: void 0,
+    floatingRootContext: new FloatingRootStore({
+      open: false,
+      transitionStatus: void 0,
+      floatingElement: null,
+      referenceElement: null,
+      triggerElements,
+      floatingId,
+      syncOnly: true,
+      nested,
+      onOpenChange: void 0
+    }),
+    floatingId,
     triggerCount: 0,
     preventUnmountingOnClose: false,
     payload: void 0,
@@ -6413,19 +6584,6 @@ function createInitialPopupStoreState() {
     inactiveTriggerProps: EMPTY_OBJECT,
     popupProps: EMPTY_OBJECT
   };
-}
-function createPopupFloatingRootContext(triggerElements, floatingId, nested = false) {
-  return new FloatingRootStore({
-    open: false,
-    transitionStatus: void 0,
-    floatingElement: null,
-    referenceElement: null,
-    triggerElements,
-    floatingId,
-    syncOnly: true,
-    nested,
-    onOpenChange: void 0
-  });
 }
 var activeTriggerIdSelector = (state) => state.triggerIdProp ?? state.activeTriggerId;
 var openSelector = (state) => state.openProp ?? state.open;
@@ -6475,7 +6633,7 @@ var popupStoreSelectors = {
   positionerElement: (state) => state.positionerElement
 };
 
-// node_modules/@base-ui/react/utils/popups/usePopupHandleStore.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/popups/usePopupHandleStore.mjs
 var React30 = __toESM(require_react(), 1);
 var import_shim2 = __toESM(require_shim(), 1);
 function usePopupHandleStore(handle) {
@@ -6491,7 +6649,7 @@ function usePopupHandleStore(handle) {
   return (0, import_shim2.useSyncExternalStore)(subscribe, getSnapshot, () => handle?.serverStore);
 }
 
-// node_modules/@base-ui/react/floating-ui-react/hooks/useFloating.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/hooks/useFloating.mjs
 function useBaseUIFloating(options) {
   return useFloatingWithStore(options, options.rootContext);
 }
@@ -6503,7 +6661,7 @@ function useFloatingWithStore(options, store) {
   const referenceElement = store.useState("referenceElement");
   const floatingElement = store.useState("floatingElement");
   const domReferenceElement = store.useState("domReferenceElement");
-  const open = store.useState("open");
+  const open3 = store.useState("open");
   const floatingId = store.useState("floatingId");
   const [positionReference, setPositionReferenceRaw] = React31.useState(null);
   const [localDomReference, setLocalDomReference] = React31.useState(void 0);
@@ -6568,7 +6726,7 @@ function useFloatingWithStore(options, store) {
   const context = React31.useMemo(() => ({
     ...position,
     dataRef: store.context.dataRef,
-    open,
+    open: open3,
     onOpenChange: store.setOpen,
     events: store.context.events,
     floatingId,
@@ -6576,7 +6734,7 @@ function useFloatingWithStore(options, store) {
     elements,
     nodeId,
     rootStore: store
-  }), [position, refs, elements, nodeId, store, open, floatingId]);
+  }), [position, refs, elements, nodeId, store, open3, floatingId]);
   useIsoLayoutEffect(() => {
     if (domReferenceElement) {
       domReferenceRef.current = domReferenceElement;
@@ -6584,7 +6742,7 @@ function useFloatingWithStore(options, store) {
   }, [domReferenceElement]);
   useIsoLayoutEffect(() => {
     store.context.dataRef.current.floatingContext = context;
-    const node = tree?.nodesRef.current.find((n2) => n2.id === nodeId);
+    const node = tree?.nodesRef.current.find((n) => n.id === nodeId);
     if (node) {
       node.context = context;
     }
@@ -6598,7 +6756,7 @@ function useFloatingWithStore(options, store) {
   }), [position, refs, elements, context, store]);
 }
 
-// node_modules/@base-ui/react/floating-ui-react/hooks/useFocus.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/hooks/useFocus.mjs
 var React32 = __toESM(require_react(), 1);
 var isMacSafari = parts_exports.os.mac && parts_exports.engine.webkit;
 function useFocus(context, props = {}) {
@@ -6625,6 +6783,7 @@ function useFocus(context, props = {}) {
       const currentDomReference = store.select("domReferenceElement");
       if (!store.select("open") && isHTMLElement(currentDomReference) && currentDomReference === activeElement(ownerDocument(currentDomReference))) {
         blockFocusRef.current = true;
+        blockedReferenceRef.current = currentDomReference;
       }
     }
     function onKeyDown() {
@@ -6726,10 +6885,10 @@ function useFocus(context, props = {}) {
   } : {}, [enabled, reference]);
 }
 
-// node_modules/@base-ui/react/floating-ui-react/hooks/useHoverFloatingInteraction.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/hooks/useHoverFloatingInteraction.mjs
 var React33 = __toESM(require_react(), 1);
 
-// node_modules/@base-ui/react/floating-ui-react/hooks/useHoverInteractionSharedState.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/hooks/useHoverInteractionSharedState.mjs
 var HoverInteraction = class _HoverInteraction {
   constructor() {
     this.pointerType = void 0;
@@ -6803,7 +6962,7 @@ function useHoverInteractionSharedState(store) {
   return data.hoverInteractionState;
 }
 
-// node_modules/@base-ui/react/floating-ui-react/hooks/useHoverFloatingInteraction.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/hooks/useHoverFloatingInteraction.mjs
 function useHoverFloatingInteraction(context, parameters = {}) {
   const {
     enabled = true,
@@ -6811,7 +6970,7 @@ function useHoverFloatingInteraction(context, parameters = {}) {
     nodeId: nodeIdProp
   } = parameters;
   const store = "rootStore" in context ? context.rootStore : context;
-  const open = store.useState("open");
+  const open3 = store.useState("open");
   const floatingElement = store.useState("floatingElement");
   const domReferenceElement = store.useState("domReferenceElement");
   const {
@@ -6831,13 +6990,13 @@ function useHoverFloatingInteraction(context, parameters = {}) {
     clearSafePolygonPointerEventsMutation(instance);
   });
   useIsoLayoutEffect(() => {
-    if (!open) {
+    if (!open3) {
       instance.pointerType = void 0;
       instance.restTimeoutPending = false;
       instance.interactedInside = false;
       clearPointerEvents();
     }
-  }, [open, instance, clearPointerEvents]);
+  }, [open3, instance, clearPointerEvents]);
   React33.useEffect(() => {
     return clearPointerEvents;
   }, [clearPointerEvents]);
@@ -6845,7 +7004,7 @@ function useHoverFloatingInteraction(context, parameters = {}) {
     if (!enabled) {
       return void 0;
     }
-    if (open && instance.handleCloseOptions?.blockPointerEvents && isHoverOpen() && isElement(domReferenceElement) && floatingElement) {
+    if (open3 && instance.handleCloseOptions?.blockPointerEvents && isHoverOpen() && isElement(domReferenceElement) && floatingElement) {
       const ref = domReferenceElement;
       const floatingEl = floatingElement;
       const doc = ownerDocument(floatingElement);
@@ -6866,7 +7025,7 @@ function useHoverFloatingInteraction(context, parameters = {}) {
       };
     }
     return void 0;
-  }, [enabled, open, domReferenceElement, floatingElement, instance, isHoverOpen, tree, parentId, clearPointerEvents]);
+  }, [enabled, open3, domReferenceElement, floatingElement, instance, isHoverOpen, tree, parentId, clearPointerEvents]);
   React33.useEffect(() => {
     if (!enabled) {
       return void 0;
@@ -6941,7 +7100,7 @@ function useHoverFloatingInteraction(context, parameters = {}) {
   }, [enabled, floatingElement, store, dataRef, closeDelayProp, nodeIdProp, isHoverOpen, isClickLikeOpenEvent2, clearPointerEvents, instance, tree, parentId, childClosedTimeout]);
 }
 
-// node_modules/@base-ui/react/floating-ui-react/hooks/useHoverReferenceInteraction.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/hooks/useHoverReferenceInteraction.mjs
 var React34 = __toESM(require_react(), 1);
 var ReactDOM5 = __toESM(require_react_dom(), 1);
 var EMPTY_REF = {
@@ -7006,7 +7165,7 @@ function useHoverReferenceInteraction(context, props = {}) {
     clearSafePolygonPointerEventsMutation(instance);
   });
   if (isActiveTrigger) {
-    instance.handleCloseOptions = handleCloseRef.current?.__options;
+    instance.handleCloseOptions = handleClose?.__options;
   }
   React34.useEffect(() => cleanupMouseMoveHandler, [cleanupMouseMoveHandler]);
   React34.useEffect(() => {
@@ -7225,7 +7384,7 @@ function useHoverReferenceInteraction(context, props = {}) {
   }, [enabled, instance, isClickLikeOpenEvent2, isOverInactiveTrigger, mouseOnly, store, restMsRef, checkShouldOpen]);
 }
 
-// node_modules/@base-ui/react/floating-ui-react/safePolygon.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/safePolygon.mjs
 var CURSOR_SPEED_THRESHOLD = 0.1;
 var CURSOR_SPEED_THRESHOLD_SQUARED = CURSOR_SPEED_THRESHOLD * CURSOR_SPEED_THRESHOLD;
 var POLYGON_BUFFER = 0.5;
@@ -7441,7 +7600,7 @@ function safePolygon(options = {}) {
   return fn;
 }
 
-// node_modules/@base-ui/react/utils/NullStore.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/NullStore.mjs
 var NullStore = class extends ReactStore {
   // `update`/`set`/`notifyAll` funnel through `setState` in the base `Store`, so overriding
   // `setState` alone would neutralize them today. They are overridden explicitly so the store stays
@@ -7456,57 +7615,7 @@ var NullStore = class extends ReactStore {
   }
 };
 
-// node_modules/@base-ui/react/utils/popupStateMapping.mjs
-var CommonPopupDataAttributes = (function(CommonPopupDataAttributes2) {
-  CommonPopupDataAttributes2["open"] = "data-open";
-  CommonPopupDataAttributes2["closed"] = "data-closed";
-  CommonPopupDataAttributes2[CommonPopupDataAttributes2["startingStyle"] = TransitionStatusDataAttributes.startingStyle] = "startingStyle";
-  CommonPopupDataAttributes2[CommonPopupDataAttributes2["endingStyle"] = TransitionStatusDataAttributes.endingStyle] = "endingStyle";
-  CommonPopupDataAttributes2["anchorHidden"] = "data-anchor-hidden";
-  CommonPopupDataAttributes2["side"] = "data-side";
-  CommonPopupDataAttributes2["align"] = "data-align";
-  return CommonPopupDataAttributes2;
-})({});
-var TRIGGER_HOOK = {
-  "data-popup-open": ""
-};
-var POPUP_OPEN_HOOK = {
-  "data-open": ""
-};
-var POPUP_CLOSED_HOOK = {
-  "data-closed": ""
-};
-var ANCHOR_HIDDEN_HOOK = {
-  "data-anchor-hidden": ""
-};
-var triggerOpenStateMapping2 = {
-  open(value) {
-    if (value) {
-      return TRIGGER_HOOK;
-    }
-    return null;
-  }
-};
-var popupStateMapping = {
-  open(value) {
-    if (value) {
-      return POPUP_OPEN_HOOK;
-    }
-    return POPUP_CLOSED_HOOK;
-  },
-  anchorHidden(value) {
-    if (value) {
-      return ANCHOR_HIDDEN_HOOK;
-    }
-    return null;
-  }
-};
-var popupTransitionStateMapping = {
-  ...popupStateMapping,
-  ...transitionStatusMapping
-};
-
-// node_modules/@base-ui/utils/inertValue.mjs
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/inertValue.mjs
 function inertValue(value) {
   if (isReactVersionAtLeast(19)) {
     return value;
@@ -7514,10 +7623,27 @@ function inertValue(value) {
   return value ? "true" : void 0;
 }
 
-// node_modules/@base-ui/react/internals/field-root-context/FieldRootContext.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/useValueChanged.mjs
 var React35 = __toESM(require_react(), 1);
+function useValueChanged(value, onChange) {
+  const valueRef = React35.useRef(value);
+  const onChangeCallback = useStableCallback(onChange);
+  useIsoLayoutEffect(() => {
+    if (valueRef.current !== value) {
+      onChangeCallback(valueRef.current);
+    }
+    valueRef.current = value;
+  }, [value, onChangeCallback]);
+}
 
-// node_modules/@base-ui/react/internals/field-constants/constants.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/field-root-context/FieldRootContext.mjs
+var React36 = __toESM(require_react(), 1);
+
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/control/FieldControlDataAttributes.mjs
+var valid = "data-valid";
+var invalid = "data-invalid";
+
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/field-constants/constants.mjs
 var DEFAULT_VALIDITY_STATE = {
   badInput: false,
   customError: false,
@@ -7549,16 +7675,16 @@ var fieldValidityMapping = {
     }
     if (value) {
       return {
-        "data-valid": ""
+        [valid]: ""
       };
     }
     return {
-      "data-invalid": ""
+      [invalid]: ""
     };
   }
 };
 
-// node_modules/@base-ui/react/internals/field-root-context/FieldRootContext.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/field-root-context/FieldRootContext.mjs
 var DEFAULT_FIELD_ROOT_CONTEXT = {
   invalid: void 0,
   name: void 0,
@@ -7592,17 +7718,17 @@ var DEFAULT_FIELD_ROOT_CONTEXT = {
     change: NOOP
   }
 };
-var FieldRootContext = /* @__PURE__ */ React35.createContext(DEFAULT_FIELD_ROOT_CONTEXT);
+var FieldRootContext = /* @__PURE__ */ React36.createContext(DEFAULT_FIELD_ROOT_CONTEXT);
 if (true) FieldRootContext.displayName = "FieldRootContext";
 function useFieldRootContext(optional = true) {
-  const context = React35.useContext(FieldRootContext);
+  const context = React36.useContext(FieldRootContext);
   if (context.setValidityData === NOOP && !optional) {
     throw new Error(true ? "Base UI: FieldRootContext is missing. Field parts must be placed within <Field.Root>." : formatErrorMessage_default(28));
   }
   return context;
 }
 
-// node_modules/@base-ui/react/internals/field-register-control/useRegisterFieldControl.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/field-register-control/useRegisterFieldControl.mjs
 function useRegisterFieldControl(controlRef, id, value, getFormValueOverride, enabled = true, name) {
   const {
     registerFieldControl
@@ -7631,9 +7757,9 @@ function useRegisterFieldControl(controlRef, id, value, getFormValueOverride, en
   }, [registerFieldControl, sourceRef]);
 }
 
-// node_modules/@base-ui/react/internals/form-context/FormContext.mjs
-var React36 = __toESM(require_react(), 1);
-var FormContext = /* @__PURE__ */ React36.createContext({
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/form-context/FormContext.mjs
+var React37 = __toESM(require_react(), 1);
+var FormContext = /* @__PURE__ */ React37.createContext({
   elementRef: {
     current: null
   },
@@ -7645,23 +7771,24 @@ var FormContext = /* @__PURE__ */ React36.createContext({
   errors: {},
   clearErrors: NOOP,
   validationMode: "onSubmit",
-  submitAttemptedRef: {
-    current: false
+  submitCountRef: {
+    current: 0
   }
 });
 if (true) FormContext.displayName = "FormContext";
 function useFormContext() {
-  return React36.useContext(FormContext);
+  return React37.useContext(FormContext);
 }
 
-// node_modules/@base-ui/react/internals/labelable-provider/useLabelableId.mjs
-var React38 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/labelable-provider/useLabelableId.mjs
+var React39 = __toESM(require_react(), 1);
 
-// node_modules/@base-ui/react/internals/labelable-provider/LabelableContext.mjs
-var React37 = __toESM(require_react(), 1);
-var LabelableContext = /* @__PURE__ */ React37.createContext({
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/labelable-provider/LabelableContext.mjs
+var React38 = __toESM(require_react(), 1);
+var LabelableContext = /* @__PURE__ */ React38.createContext({
   controlId: void 0,
   registerControlId: NOOP,
+  resetControlId: NOOP,
   labelId: void 0,
   setLabelId: NOOP,
   messageIds: [],
@@ -7670,25 +7797,24 @@ var LabelableContext = /* @__PURE__ */ React37.createContext({
 });
 if (true) LabelableContext.displayName = "LabelableContext";
 function useLabelableContext() {
-  return React37.useContext(LabelableContext);
+  return React38.useContext(LabelableContext);
 }
 
-// node_modules/@base-ui/react/internals/labelable-provider/useLabelableId.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/labelable-provider/useLabelableId.mjs
 function useLabelableId(params = {}) {
   const {
     id,
-    implicit = false,
-    controlRef
+    enabled = true
   } = params;
   const {
     controlId,
-    registerControlId
+    registerControlId,
+    resetControlId
   } = useLabelableContext();
-  const defaultId = useBaseUiId(id);
-  const controlIdForEffect = implicit ? controlId : void 0;
+  const defaultId = useBaseUiId();
   const controlSourceRef = useRefWithInit(() => /* @__PURE__ */ Symbol());
-  const hasRegisteredRef = React38.useRef(false);
-  const hadExplicitIdRef = React38.useRef(id != null);
+  const hasRegisteredRef = React39.useRef(false);
+  const hadExplicitIdRef = React39.useRef(false);
   const unregisterControlId = useStableCallback(() => {
     if (!hasRegisteredRef.current || registerControlId === NOOP) {
       return;
@@ -7697,24 +7823,18 @@ function useLabelableId(params = {}) {
     registerControlId(controlSourceRef.current, void 0);
   });
   useIsoLayoutEffect(() => {
-    if (registerControlId === NOOP) {
+    if (!enabled || registerControlId === NOOP) {
+      unregisterControlId();
       return void 0;
     }
     let nextId;
-    if (implicit) {
-      const elem = controlRef?.current;
-      if (isElement(elem) && elem.closest("label") != null) {
-        nextId = id ?? null;
-      } else {
-        nextId = controlIdForEffect ?? defaultId;
-      }
-    } else if (id != null) {
+    if (id !== void 0) {
       hadExplicitIdRef.current = true;
       nextId = id;
     } else if (hadExplicitIdRef.current) {
       nextId = defaultId;
     } else {
-      unregisterControlId();
+      resetControlId();
       return void 0;
     }
     if (nextId === void 0) {
@@ -7724,26 +7844,26 @@ function useLabelableId(params = {}) {
     hasRegisteredRef.current = true;
     registerControlId(controlSourceRef.current, nextId);
     return void 0;
-  }, [id, controlRef, controlIdForEffect, registerControlId, implicit, defaultId, controlSourceRef, unregisterControlId]);
-  React38.useEffect(() => {
+  }, [id, enabled, registerControlId, resetControlId, defaultId, controlSourceRef, unregisterControlId]);
+  useIsoLayoutEffect(() => {
     return unregisterControlId;
   }, [unregisterControlId]);
-  return controlId ?? defaultId;
+  return (enabled ? controlId : void 0) ?? id ?? defaultId;
 }
 
-// node_modules/@base-ui/react/internals/direction-context/DirectionContext.mjs
-var React39 = __toESM(require_react(), 1);
-var DirectionContext = /* @__PURE__ */ React39.createContext(void 0);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/direction-context/DirectionContext.mjs
+var React40 = __toESM(require_react(), 1);
+var DirectionContext = /* @__PURE__ */ React40.createContext(void 0);
 if (true) DirectionContext.displayName = "DirectionContext";
 function useDirection() {
-  const context = React39.useContext(DirectionContext);
+  const context = React40.useContext(DirectionContext);
   return context?.direction ?? "ltr";
 }
 
-// node_modules/@base-ui/react/internals/useAnchorPositioning.mjs
-var React40 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/useAnchorPositioning.mjs
+var React41 = __toESM(require_react(), 1);
 
-// node_modules/@base-ui/react/floating-ui-react/middleware/arrow.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/middleware/arrow.mjs
 var baseArrow = (options) => ({
   name: "arrow",
   options,
@@ -7807,12 +7927,19 @@ var baseArrow = (options) => ({
     };
   }
 });
-var arrow4 = (options, deps) => ({
-  ...baseArrow(options),
-  options: [options, deps]
-});
+var arrow4 = (options, deps) => {
+  const {
+    name,
+    fn
+  } = baseArrow(options);
+  return {
+    name,
+    fn,
+    options: [options, deps]
+  };
+};
 
-// node_modules/@base-ui/react/utils/hideMiddleware.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/hideMiddleware.mjs
 var hide4 = {
   name: "hide",
   async fn(state) {
@@ -7822,28 +7949,37 @@ var hide4 = {
       x: x2,
       y: y2
     } = state.rects.reference;
-    const anchorHidden = width === 0 && height === 0 && x2 === 0 && y2 === 0;
+    const anchorHidden2 = width === 0 && height === 0 && x2 === 0 && y2 === 0;
     const overflow = await state.platform.detectOverflow(state, {
       elementContext: "reference"
     });
     const referenceHidden = overflow.top - height >= 0 || overflow.right - width >= 0 || overflow.bottom - height >= 0 || overflow.left - width >= 0;
     return {
       data: {
-        referenceHidden: referenceHidden || anchorHidden
+        referenceHidden: referenceHidden || anchorHidden2
       }
     };
   }
 };
 
-// node_modules/@base-ui/react/utils/adaptiveOriginConstants.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/adaptiveOriginConstants.mjs
 var DEFAULT_SIDES = {
   sideX: "left",
   sideY: "top"
 };
 
-// node_modules/@base-ui/react/internals/useAnchorPositioning.mjs
-var AVAILABLE_WIDTH_VAR = "--available-width";
-var AVAILABLE_HEIGHT_VAR = "--available-height";
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/CommonPositionerCssVars.mjs
+var availableWidth = "--available-width";
+var availableHeight = "--available-height";
+var anchorWidth = "--anchor-width";
+var anchorHeight = "--anchor-height";
+var transformOrigin = "--transform-origin";
+var positionerWidth = "--positioner-width";
+var positionerHeight = "--positioner-height";
+
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/useAnchorPositioning.mjs
+var AVAILABLE_WIDTH_VAR = availableWidth;
+var AVAILABLE_HEIGHT_VAR = availableHeight;
 function getLogicalSide(sideParam, renderedSide, isRtl) {
   const isLogicalSideParam = sideParam === "inline-start" || sideParam === "inline-end";
   const logicalRight = isRtl ? "inline-start" : "inline-end";
@@ -7903,7 +8039,7 @@ function useAnchorPositioningWithHook(params, useFloatingHook) {
     lazyFlip = false,
     externalTree
   } = params;
-  const [mountSide, setMountSide] = React40.useState(null);
+  const [mountSide, setMountSide] = React41.useState(null);
   if (!mounted && mountSide !== null) {
     setMountSide(null);
   }
@@ -7953,7 +8089,7 @@ function useAnchorPositioningWithHook(params, useFloatingHook) {
     boundary: collisionBoundary === "clipping-ancestors" ? "clippingAncestors" : collisionBoundary,
     padding: collisionPadding
   };
-  const arrowRef = React40.useRef(null);
+  const arrowRef = React41.useRef(null);
   const sideOffsetRef = useValueAsRef(sideOffset);
   const alignOffsetRef = useValueAsRef(alignOffset);
   const sideOffsetDep = typeof sideOffset !== "function" ? sideOffset : 0;
@@ -8021,16 +8157,16 @@ function useAnchorPositioningWithHook(params, useFloatingHook) {
       elements: {
         floating
       },
-      availableWidth,
-      availableHeight,
+      availableWidth: availableWidth2,
+      availableHeight: availableHeight2,
       rects
     }) {
       if (!mountedRef.current) {
         return;
       }
       const floatingStyle = floating.style;
-      floatingStyle.setProperty(AVAILABLE_WIDTH_VAR, `${availableWidth}px`);
-      floatingStyle.setProperty(AVAILABLE_HEIGHT_VAR, `${availableHeight}px`);
+      floatingStyle.setProperty(AVAILABLE_WIDTH_VAR, `${availableWidth2}px`);
+      floatingStyle.setProperty(AVAILABLE_HEIGHT_VAR, `${availableHeight2}px`);
       const dpr = getWindow(floating).devicePixelRatio || 1;
       const {
         x: x3,
@@ -8038,48 +8174,49 @@ function useAnchorPositioningWithHook(params, useFloatingHook) {
         width,
         height
       } = rects.reference;
-      const anchorWidth = (Math.round((x3 + width) * dpr) - Math.round(x3 * dpr)) / dpr;
-      const anchorHeight = (Math.round((y3 + height) * dpr) - Math.round(y3 * dpr)) / dpr;
-      floatingStyle.setProperty("--anchor-width", `${anchorWidth}px`);
-      floatingStyle.setProperty("--anchor-height", `${anchorHeight}px`);
+      const anchorWidth2 = (Math.round((x3 + width) * dpr) - Math.round(x3 * dpr)) / dpr;
+      const anchorHeight2 = (Math.round((y3 + height) * dpr) - Math.round(y3 * dpr)) / dpr;
+      floatingStyle.setProperty(anchorWidth, `${anchorWidth2}px`);
+      floatingStyle.setProperty(anchorHeight, `${anchorHeight2}px`);
     }
   }), arrow4((state) => ({
     // `transform-origin` calculations rely on an element existing. If the arrow hasn't been set,
     // we'll create a fake element.
     element: arrowRef.current || ownerDocument(state.elements.floating).createElement("div"),
-    padding: arrowPadding,
+    // No padding for the fake arrow: it would displace aligned popups on narrow anchors.
+    padding: arrowRef.current ? arrowPadding : 0,
     offsetParent: "floating"
   }), [arrowPadding]), {
     name: "transformOrigin",
     fn(state) {
       const {
-        elements: elements2,
+        elements: {
+          floating
+        },
         middlewareData: middlewareData2,
         placement: renderedPlacement2,
+        platform: platform3,
         rects,
         y: y3
       } = state;
-      const currentRenderedSide = getSide(renderedPlacement2);
-      const currentRenderedAxis = getSideAxis(currentRenderedSide);
+      const renderedSide2 = getSide(renderedPlacement2);
+      const renderedAlign2 = getAlignment(renderedPlacement2);
+      const isVertical = getSideAxis(renderedSide2) === "y";
       const arrowEl = arrowRef.current;
-      const arrowX = middlewareData2.arrow?.x || 0;
-      const arrowY = middlewareData2.arrow?.y || 0;
-      const arrowWidth = arrowEl?.clientWidth || 0;
-      const arrowHeight = arrowEl?.clientHeight || 0;
-      const transformX = arrowX + arrowWidth / 2;
-      const transformY = arrowY + arrowHeight / 2;
-      const shiftY = Math.abs(middlewareData2.shift?.y || 0);
-      const halfAnchorHeight = rects.reference.height / 2;
       const sideOffsetValue = typeof sideOffset === "function" ? sideOffset(getOffsetData(state, sideParam, isRtl)) : sideOffset;
-      const isOverlappingAnchor = shiftY > sideOffsetValue;
-      const adjacentTransformOrigin = {
-        top: `${transformX}px calc(100% + ${sideOffsetValue}px)`,
-        bottom: `${transformX}px ${-sideOffsetValue}px`,
-        left: `calc(100% + ${sideOffsetValue}px) ${transformY}px`,
-        right: `${-sideOffsetValue}px ${transformY}px`
-      }[currentRenderedSide];
-      const overlapTransformOrigin = `${transformX}px ${rects.reference.y + halfAnchorHeight - y3}px`;
-      elements2.floating.style.setProperty("--transform-origin", crossAxisShiftEnabled && currentRenderedAxis === "y" && isOverlappingAnchor ? overlapTransformOrigin : adjacentTransformOrigin);
+      let crossOrigin;
+      if (!arrowEl && renderedAlign2 && Math.abs(isVertical ? middlewareData2.shift?.x || 0 : middlewareData2.shift?.y || 0) <= 1) {
+        crossOrigin = renderedAlign2 === "start" === (isVertical && platform3.isRTL?.(floating) === true) ? "100%" : "0%";
+      } else {
+        const arrowOffset = isVertical ? middlewareData2.arrow?.x || 0 : middlewareData2.arrow?.y || 0;
+        const arrowSize = isVertical ? arrowEl?.clientWidth || 0 : arrowEl?.clientHeight || 0;
+        crossOrigin = `${arrowOffset + arrowSize / 2}px`;
+      }
+      let sideOrigin = renderedSide2 === "top" || renderedSide2 === "left" ? `calc(100% + ${sideOffsetValue}px)` : `${-sideOffsetValue}px`;
+      if (crossAxisShiftEnabled && isVertical && Math.abs(middlewareData2.shift?.y || 0) > sideOffsetValue) {
+        sideOrigin = `${rects.reference.y + rects.reference.height / 2 - y3}px`;
+      }
+      floating.style.setProperty(transformOrigin, isVertical ? `${crossOrigin} ${sideOrigin}` : `${sideOrigin} ${crossOrigin}`);
       return {};
     }
   }, hide4, adaptiveOrigin2);
@@ -8093,7 +8230,8 @@ function useAnchorPositioningWithHook(params, useFloatingHook) {
       });
     }
   }, [mounted, floatingRootContext]);
-  const autoUpdateOptions = React40.useMemo(() => ({
+  const autoUpdateOptions = React41.useMemo(() => ({
+    ancestorScroll: !disableAnchorTracking,
     elementResize: !disableAnchorTracking && typeof ResizeObserver !== "undefined",
     layoutShift: !disableAnchorTracking && typeof IntersectionObserver !== "undefined"
   }), [disableAnchorTracking]);
@@ -8123,7 +8261,7 @@ function useAnchorPositioningWithHook(params, useFloatingHook) {
     sideY
   } = middlewareData.adaptiveOrigin || DEFAULT_SIDES;
   const resolvedPosition = isPositioned ? positionMethod : "fixed";
-  const floatingStyles = React40.useMemo(() => {
+  const floatingStyles = React41.useMemo(() => {
     let base;
     if (!isPositioned) {
       base = {
@@ -8150,7 +8288,7 @@ function useAnchorPositioningWithHook(params, useFloatingHook) {
     }
     return base;
   }, [adaptiveOrigin2, resolvedPosition, sideX, x2, sideY, y2, originalFloatingStyles, isPositioned]);
-  const registeredPositionReferenceRef = React40.useRef(null);
+  const registeredPositionReferenceRef = React41.useRef(null);
   useIsoLayoutEffect(() => {
     if (!mounted) {
       return;
@@ -8164,7 +8302,7 @@ function useAnchorPositioningWithHook(params, useFloatingHook) {
       registeredPositionReferenceRef.current = finalAnchor;
     }
   }, [mounted, refs, anchorDep, anchorValueRef]);
-  React40.useEffect(() => {
+  React41.useEffect(() => {
     if (!mounted) {
       return;
     }
@@ -8177,7 +8315,7 @@ function useAnchorPositioningWithHook(params, useFloatingHook) {
       registeredPositionReferenceRef.current = anchorValue.current;
     }
   }, [mounted, refs, anchorDep, anchorValueRef]);
-  React40.useEffect(() => {
+  React41.useEffect(() => {
     if (keepMounted && mounted && elements.reference && elements.floating) {
       return autoUpdate(elements.reference, elements.floating, update2, autoUpdateOptions);
     }
@@ -8186,19 +8324,19 @@ function useAnchorPositioningWithHook(params, useFloatingHook) {
   const renderedSide = getSide(renderedPlacement);
   const logicalRenderedSide = getLogicalSide(sideParam, renderedSide, isRtl);
   const renderedAlign = getAlignment(renderedPlacement) || "center";
-  const anchorHidden = Boolean(middlewareData.hide?.referenceHidden);
+  const anchorHidden2 = Boolean(middlewareData.hide?.referenceHidden);
   useIsoLayoutEffect(() => {
     if (lazyFlip && mounted && isPositioned && renderedSide !== side) {
       setMountSide(renderedSide);
     }
   }, [lazyFlip, mounted, isPositioned, renderedSide, side]);
-  const arrowStyles = React40.useMemo(() => ({
+  const arrowStyles = React41.useMemo(() => ({
     position: "absolute",
     top: middlewareData.arrow?.y,
     left: middlewareData.arrow?.x
   }), [middlewareData.arrow]);
   const arrowUncentered = middlewareData.arrow?.centerOffset !== 0;
-  return React40.useMemo(() => ({
+  return React41.useMemo(() => ({
     positionerStyles: floatingStyles,
     arrowStyles,
     arrowRef,
@@ -8206,23 +8344,23 @@ function useAnchorPositioningWithHook(params, useFloatingHook) {
     side: logicalRenderedSide,
     align: renderedAlign,
     physicalSide: renderedSide,
-    anchorHidden,
+    anchorHidden: anchorHidden2,
     refs,
     context,
     isPositioned,
     update: update2
-  }), [floatingStyles, arrowStyles, arrowRef, arrowUncentered, logicalRenderedSide, renderedAlign, renderedSide, anchorHidden, refs, context, isPositioned, update2]);
+  }), [floatingStyles, arrowStyles, arrowRef, arrowUncentered, logicalRenderedSide, renderedAlign, renderedSide, anchorHidden2, refs, context, isPositioned, update2]);
 }
 function isRef(param) {
   return param != null && "current" in param;
 }
 
-// node_modules/@base-ui/react/internals/getDisabledMountTransitionStyles.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/getDisabledMountTransitionStyles.mjs
 function getDisabledMountTransitionStyles(transitionStatus) {
   return transitionStatus === "starting" ? DISABLED_TRANSITIONS_STYLE : EMPTY_OBJECT;
 }
 
-// node_modules/@base-ui/react/utils/usePositioner.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/usePositioner.mjs
 function usePositioner(componentProps, state, {
   styles,
   transitionStatus,
@@ -8249,9 +8387,9 @@ function usePositioner(componentProps, state, {
   });
 }
 
-// node_modules/@base-ui/react/button/Button.mjs
-var React41 = __toESM(require_react(), 1);
-var Button = /* @__PURE__ */ React41.forwardRef(function Button2(componentProps, forwardedRef) {
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/button/Button.mjs
+var React42 = __toESM(require_react(), 1);
+var Button = /* @__PURE__ */ React42.forwardRef(function Button2(componentProps, forwardedRef) {
   const {
     render: render4,
     className,
@@ -8280,32 +8418,32 @@ var Button = /* @__PURE__ */ React41.forwardRef(function Button2(componentProps,
 });
 if (true) Button.displayName = "Button";
 
-// node_modules/@base-ui/react/field/item/FieldItemContext.mjs
-var React42 = __toESM(require_react(), 1);
-var FieldItemContext = /* @__PURE__ */ React42.createContext({
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/item/FieldItemContext.mjs
+var React43 = __toESM(require_react(), 1);
+var FieldItemContext = /* @__PURE__ */ React43.createContext({
   disabled: false
 });
 if (true) FieldItemContext.displayName = "FieldItemContext";
 function useFieldItemContext() {
-  const context = React42.useContext(FieldItemContext);
+  const context = React43.useContext(FieldItemContext);
   return context;
 }
 
-// node_modules/@base-ui/react/field/root/useFieldValidation.mjs
-var React43 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/root/useFieldValidation.mjs
+var React44 = __toESM(require_react(), 1);
 
-// node_modules/@base-ui/react/field/utils/getCombinedFieldValidityData.mjs
-function getCombinedFieldValidityData(validityData, invalid) {
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/utils/getCombinedFieldValidityData.mjs
+function getCombinedFieldValidityData(validityData, invalid2) {
   return {
     ...validityData,
     state: {
       ...validityData.state,
-      valid: !invalid && validityData.state.valid
+      valid: !invalid2 && validityData.state.valid
     }
   };
 }
 
-// node_modules/@base-ui/react/field/root/useFieldValidation.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/root/useFieldValidation.mjs
 var validityKeys = Object.keys(DEFAULT_VALIDITY_STATE);
 function isEligibleInput(input, formElement) {
   if (input.matches(":disabled")) {
@@ -8329,11 +8467,15 @@ function findRepresentativeInput(inputs, formElement) {
   }
   return fallback;
 }
-function clearCustomValidity(element, inputs) {
-  for (const input of inputs.keys()) {
-    input.setCustomValidity("");
-  }
-  element?.setCustomValidity("");
+function makeState(customError) {
+  return {
+    ...DEFAULT_VALIDITY_STATE,
+    valid: !customError,
+    customError
+  };
+}
+function getNativeErrors(element) {
+  return element && element.validationMessage ? [element.validationMessage] : [];
 }
 function useFieldValidation(params) {
   const {
@@ -8345,10 +8487,11 @@ function useFieldValidation(params) {
     validate,
     validityData,
     validationDebounceTime,
-    invalid,
+    invalid: invalid2,
     markedDirtyRef,
     state,
     shouldValidateOnChange,
+    validationMode,
     registeredFieldIdRef
   } = params;
   const {
@@ -8356,10 +8499,11 @@ function useFieldValidation(params) {
     getDescriptionProps
   } = useLabelableContext();
   const timeout = useTimeout();
-  const inputRef = React43.useRef(null);
+  const inputRef = React44.useRef(null);
   const registeredInputs = useRefWithInit(() => /* @__PURE__ */ new Map()).current;
-  const validationCommitIdRef = React43.useRef(0);
-  const registerInput = React43.useCallback((element, registration) => {
+  const validationCommitIdRef = React44.useRef(0);
+  const customValidityRef = React44.useRef(null);
+  const registerInput = React44.useCallback((element, registration) => {
     registeredInputs.set(element, registration);
     return () => {
       registeredInputs.delete(element);
@@ -8372,7 +8516,7 @@ function useFieldValidation(params) {
   const commit = useStableCallback(async (value, revalidate = false) => {
     validationCommitIdRef.current += 1;
     const validationCommitId = validationCommitIdRef.current;
-    function updateRegisteredFieldValidity(nextValidityData2, externalInvalid = invalid) {
+    function updateRegisteredFieldValidity(nextValidityData, externalInvalid = invalid2) {
       const fieldId = registeredFieldIdRef.current ?? controlId;
       if (fieldId == null) {
         return;
@@ -8381,42 +8525,39 @@ function useFieldValidation(params) {
       if (!currentFieldData) {
         return;
       }
-      const validityDataWithFormErrors = getCombinedFieldValidityData(nextValidityData2, externalInvalid);
+      const validityDataWithFormErrors = getCombinedFieldValidityData(nextValidityData, externalInvalid);
       formRef.current.fields.set(fieldId, {
         ...currentFieldData,
         validityData: validityDataWithFormErrors
       });
     }
-    function publishAllValid(input, externalInvalid) {
-      const nextValidityData2 = {
+    function makeValidityData(validityState, errorMessages) {
+      const errors = validityState.valid === false ? errorMessages : [];
+      return {
         value,
-        state: {
-          ...DEFAULT_VALIDITY_STATE,
-          valid: true
-        },
-        error: "",
-        errors: [],
+        state: validityState,
+        error: errors[0] ?? "",
+        errors,
         initialValue: validityData.initialValue
       };
-      clearCustomValidity(input, registeredInputs);
-      updateRegisteredFieldValidity(nextValidityData2, externalInvalid);
-      setValidityData(nextValidityData2);
     }
-    const element = registeredInputs.size > 0 ? findRepresentativeInput(registeredInputs, elementRef.current) : inputRef.current;
-    if (revalidate) {
-      if (state.valid !== false || !element) {
-        return;
+    function setCustomValidity(element2, message2) {
+      const displaced = element2.validity.customError ? element2.validationMessage : "";
+      const ownedMessage = message2.replace(/\r\n?/g, "\n");
+      element2.setCustomValidity(ownedMessage);
+      customValidityRef.current = [element2, ownedMessage, displaced];
+    }
+    function clearCustomValidity() {
+      const record = customValidityRef.current;
+      customValidityRef.current = null;
+      if (record && (!record[0].willValidate || record[0].validationMessage === record[1])) {
+        record[0].setCustomValidity(record[2]);
       }
-      const currentNativeValidity = element.validity;
-      if (!currentNativeValidity.valueMissing) {
-        publishAllValid(element, false);
-        return;
-      }
-      for (const key of validityKeys) {
-        if (key !== "valid" && key !== "valueMissing" && key !== "customError" && currentNativeValidity[key]) {
-          return;
-        }
-      }
+    }
+    function publish(validityState, errorMessages, externalInvalid) {
+      const nextValidityData = makeValidityData(validityState, errorMessages);
+      updateRegisteredFieldValidity(nextValidityData, externalInvalid);
+      setValidityData(nextValidityData);
     }
     function getState(el) {
       const computedState = validityKeys.reduce((acc, key) => {
@@ -8440,19 +8581,37 @@ function useFieldValidation(params) {
       }
       return computedState;
     }
+    function resolveRepresentativeInput() {
+      return registeredInputs.size > 0 ? findRepresentativeInput(registeredInputs, elementRef.current) : inputRef.current;
+    }
+    let element = resolveRepresentativeInput();
+    function refreshState() {
+      element = resolveRepresentativeInput();
+      return element?.willValidate ? getState(element) : makeState(false);
+    }
+    if (revalidate) {
+      if (state.valid !== false || !element) {
+        return;
+      }
+      if (!element.validity.valueMissing) {
+        clearCustomValidity();
+        const currentElement = resolveRepresentativeInput();
+        const foreign = currentElement?.validity.customError ? getNativeErrors(currentElement) : [];
+        publish(makeState(foreign.length > 0), foreign, false);
+        return;
+      }
+      for (const key of validityKeys) {
+        if (key !== "valid" && key !== "valueMissing" && key !== "customError" && element.validity[key]) {
+          return;
+        }
+      }
+    }
     timeout.clear();
-    let result = null;
-    let validationErrors = [];
-    const nextState = element ? getState(element) : {
-      ...DEFAULT_VALIDITY_STATE,
-      valid: true
-    };
-    let defaultValidationMessage;
+    clearCustomValidity();
+    let nextState = refreshState();
+    let validationErrors = getNativeErrors(element);
     const isValidatingOnChange = shouldValidateOnChange();
-    if (element && element.validationMessage && !isValidatingOnChange) {
-      defaultValidationMessage = element.validationMessage;
-      validationErrors = [element.validationMessage];
-    } else {
+    if (validationErrors.length === 0 || isValidatingOnChange) {
       const formValues = Array.from(formRef.current.fields.values()).reduce((acc, field) => {
         if (field.name) {
           acc[field.name] = field.getValue();
@@ -8460,50 +8619,43 @@ function useFieldValidation(params) {
         return acc;
       }, {});
       const resultOrPromise = validate(value, formValues);
+      let result;
       if (typeof resultOrPromise === "object" && resultOrPromise !== null && "then" in resultOrPromise) {
+        if (nextState.valid === false) {
+          publish(nextState, validationErrors);
+        } else if (validationMode === "onSubmit" || !validityData.state.customError) {
+          nextState.valid = null;
+          publish(nextState, validationErrors);
+        }
         result = await resultOrPromise;
         if (validationCommitId !== validationCommitIdRef.current) {
           return;
         }
+        nextState = refreshState();
       } else {
         result = resultOrPromise;
       }
-      if (result !== null) {
+      validationErrors = result ? [].concat(result).filter(Boolean) : [];
+      if (validationErrors.length > 0) {
         nextState.valid = false;
         nextState.customError = true;
-        if (Array.isArray(result)) {
-          validationErrors = result;
-          element?.setCustomValidity(result.join("\n"));
-        } else if (result) {
-          validationErrors = [result];
-          element?.setCustomValidity(result);
+        if (element?.willValidate) {
+          setCustomValidity(element, validationErrors.join("\n"));
         }
-      } else if (isValidatingOnChange) {
-        clearCustomValidity(element, registeredInputs);
-        nextState.customError = false;
-        if (element && element.validationMessage) {
-          defaultValidationMessage = element.validationMessage;
-          validationErrors = [element.validationMessage];
-        } else if ((!element || element.validity.valid) && !nextState.valid) {
-          nextState.valid = true;
-        }
+      } else {
+        validationErrors = getNativeErrors(element);
       }
     }
-    const nextValidityData = {
-      value,
-      state: nextState,
-      error: defaultValidationMessage ?? (Array.isArray(result) ? result[0] : result ?? ""),
-      errors: validationErrors,
-      initialValue: validityData.initialValue
-    };
-    updateRegisteredFieldValidity(nextValidityData);
-    setValidityData(nextValidityData);
+    publish(nextState, validationErrors);
   });
-  const change = useStableCallback((value) => {
+  const change = useStableCallback((value, cancelPending = false) => {
     timeout.clear();
+    validationCommitIdRef.current += 1;
+    if (cancelPending) {
+      return;
+    }
     const validateOnChange = shouldValidateOnChange();
     if (validateOnChange && value !== "" && validationDebounceTime) {
-      validationCommitIdRef.current += 1;
       timeout.start(validationDebounceTime, () => {
         commit(value);
       });
@@ -8511,10 +8663,10 @@ function useFieldValidation(params) {
       commit(value, !validateOnChange);
     }
   });
-  const getValidationProps = React43.useCallback((disabled2, externalProps = {}) => mergeProps(getDescriptionProps(externalProps), state.valid === false && !state.disabled && !disabled2 ? {
+  const getValidationProps = React44.useCallback((disabled2, externalProps = {}) => mergeProps(getDescriptionProps(externalProps), state.valid === false && !state.disabled && !disabled2 ? {
     "aria-invalid": true
   } : EMPTY_OBJECT), [getDescriptionProps, state.disabled, state.valid]);
-  return React43.useMemo(() => ({
+  return React44.useMemo(() => ({
     getValidationProps,
     inputRef,
     registeredInputs,
@@ -8525,7 +8677,7 @@ function useFieldValidation(params) {
   }), [getValidationProps, registeredInputs, registerInput, getInputControl, commit, change]);
 }
 
-// node_modules/@base-ui/react/collapsible/index.parts.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/collapsible/index.parts.mjs
 var index_parts_exports = {};
 __export(index_parts_exports, {
   Panel: () => CollapsiblePanel,
@@ -8533,41 +8685,41 @@ __export(index_parts_exports, {
   Trigger: () => CollapsibleTrigger
 });
 
-// node_modules/@base-ui/react/collapsible/root/CollapsibleRoot.mjs
-var React44 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/collapsible/root/CollapsibleRoot.mjs
+var React45 = __toESM(require_react(), 1);
 
-// node_modules/@base-ui/react/collapsible/root/stateAttributesMapping.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/collapsible/root/stateAttributesMapping.mjs
 var collapsibleStateAttributesMapping = {
   ...collapsibleOpenStateMapping,
   ...transitionStatusMapping
 };
 
-// node_modules/@base-ui/react/collapsible/root/CollapsibleRoot.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/collapsible/root/CollapsibleRoot.mjs
 var import_jsx_runtime5 = __toESM(require_jsx_runtime(), 1);
-var CollapsibleRoot = /* @__PURE__ */ React44.forwardRef(function CollapsibleRoot2(componentProps, forwardedRef) {
+var CollapsibleRoot = /* @__PURE__ */ React45.forwardRef(function CollapsibleRoot2(componentProps, forwardedRef) {
   const {
     render: render4,
     className,
     defaultOpen = false,
     disabled: disabled2 = false,
     onOpenChange: onOpenChangeProp,
-    open,
+    open: open3,
     style,
     ...elementProps
   } = componentProps;
   const onOpenChange = useStableCallback(onOpenChangeProp);
   const collapsible = useCollapsibleRoot({
-    open,
+    open: open3,
     defaultOpen,
     onOpenChange,
     disabled: disabled2
   });
-  const state = React44.useMemo(() => ({
+  const state = React45.useMemo(() => ({
     open: collapsible.open,
     disabled: collapsible.disabled,
     transitionStatus: collapsible.transitionStatus
   }), [collapsible.open, collapsible.disabled, collapsible.transitionStatus]);
-  const contextValue = React44.useMemo(() => ({
+  const contextValue = React45.useMemo(() => ({
     ...collapsible,
     onOpenChange,
     state
@@ -8585,16 +8737,16 @@ var CollapsibleRoot = /* @__PURE__ */ React44.forwardRef(function CollapsibleRoo
 });
 if (true) CollapsibleRoot.displayName = "CollapsibleRoot";
 
-// node_modules/@base-ui/react/collapsible/trigger/CollapsibleTrigger.mjs
-var React45 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/collapsible/trigger/CollapsibleTrigger.mjs
+var React46 = __toESM(require_react(), 1);
 var stateAttributesMapping = {
   ...triggerOpenStateMapping,
   ...transitionStatusMapping
 };
-var CollapsibleTrigger = /* @__PURE__ */ React45.forwardRef(function CollapsibleTrigger2(componentProps, forwardedRef) {
+var CollapsibleTrigger = /* @__PURE__ */ React46.forwardRef(function CollapsibleTrigger2(componentProps, forwardedRef) {
   const {
     panelId,
-    open,
+    open: open3,
     handleTrigger,
     state,
     disabled: contextDisabled
@@ -8619,8 +8771,8 @@ var CollapsibleTrigger = /* @__PURE__ */ React45.forwardRef(function Collapsible
     state,
     ref: [forwardedRef, buttonRef],
     props: [{
-      "aria-controls": open ? panelId : void 0,
-      "aria-expanded": open,
+      "aria-controls": open3 ? panelId : void 0,
+      "aria-expanded": open3,
       onClick: handleTrigger
     }, elementProps, getButtonProps],
     stateAttributesMapping
@@ -8629,18 +8781,15 @@ var CollapsibleTrigger = /* @__PURE__ */ React45.forwardRef(function Collapsible
 });
 if (true) CollapsibleTrigger.displayName = "CollapsibleTrigger";
 
-// node_modules/@base-ui/react/collapsible/panel/CollapsiblePanel.mjs
-var React46 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/collapsible/panel/CollapsiblePanel.mjs
+var React47 = __toESM(require_react(), 1);
 
-// node_modules/@base-ui/react/collapsible/panel/CollapsiblePanelCssVars.mjs
-var CollapsiblePanelCssVars = /* @__PURE__ */ (function(CollapsiblePanelCssVars2) {
-  CollapsiblePanelCssVars2["collapsiblePanelHeight"] = "--collapsible-panel-height";
-  CollapsiblePanelCssVars2["collapsiblePanelWidth"] = "--collapsible-panel-width";
-  return CollapsiblePanelCssVars2;
-})({});
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/collapsible/panel/CollapsiblePanelCssVars.mjs
+var collapsiblePanelHeight = "--collapsible-panel-height";
+var collapsiblePanelWidth = "--collapsible-panel-width";
 
-// node_modules/@base-ui/react/collapsible/panel/CollapsiblePanel.mjs
-var CollapsiblePanel = /* @__PURE__ */ React46.forwardRef(function CollapsiblePanel2(componentProps, forwardedRef) {
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/collapsible/panel/CollapsiblePanel.mjs
+var CollapsiblePanel = /* @__PURE__ */ React47.forwardRef(function CollapsiblePanel2(componentProps, forwardedRef) {
   const {
     className,
     hiddenUntilFound: hiddenUntilFoundProp,
@@ -8651,7 +8800,7 @@ var CollapsiblePanel = /* @__PURE__ */ React46.forwardRef(function CollapsiblePa
     ...elementProps
   } = componentProps;
   if (true) {
-    React46.useEffect(() => {
+    React47.useEffect(() => {
       if (hiddenUntilFoundProp && keepMountedProp === false) {
         warn("The `keepMounted={false}` prop on `Collapsible.Panel` is ignored when `hiddenUntilFound` is enabled, since the panel must remain mounted while closed.");
       }
@@ -8661,7 +8810,7 @@ var CollapsiblePanel = /* @__PURE__ */ React46.forwardRef(function CollapsiblePa
     defaultPanelId,
     mounted,
     onOpenChange,
-    open,
+    open: open3,
     setMounted,
     setPanelIdState,
     setOpen,
@@ -8693,7 +8842,7 @@ var CollapsiblePanel = /* @__PURE__ */ React46.forwardRef(function CollapsiblePa
     keepMounted,
     mounted,
     onOpenChange,
-    open,
+    open: open3,
     setMounted,
     setOpen,
     transitionStatus
@@ -8713,8 +8862,8 @@ var CollapsiblePanel = /* @__PURE__ */ React46.forwardRef(function CollapsiblePa
       props,
       {
         style: {
-          [CollapsiblePanelCssVars.collapsiblePanelHeight]: height === void 0 ? "auto" : `${height}px`,
-          [CollapsiblePanelCssVars.collapsiblePanelWidth]: width === void 0 ? "auto" : `${width}px`
+          [collapsiblePanelHeight]: height === void 0 ? "auto" : `${height}px`,
+          [collapsiblePanelWidth]: width === void 0 ? "auto" : `${width}px`
         }
       },
       elementProps,
@@ -8738,7 +8887,7 @@ var CollapsiblePanel = /* @__PURE__ */ React46.forwardRef(function CollapsiblePa
 });
 if (true) CollapsiblePanel.displayName = "CollapsiblePanel";
 
-// node_modules/@base-ui/react/utils/useRegisteredLabelId.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/useRegisteredLabelId.mjs
 function useRegisteredLabelId(idProp, setLabelId) {
   const id = useBaseUiId(idProp);
   useIsoLayoutEffect(() => {
@@ -8750,7 +8899,7 @@ function useRegisteredLabelId(idProp, setLabelId) {
   return id;
 }
 
-// node_modules/@base-ui/react/internals/labelable-provider/useLabel.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/labelable-provider/useLabel.mjs
 function useLabel(params = {}) {
   const {
     id: idProp,
@@ -8797,7 +8946,7 @@ function useLabel(params = {}) {
   }
   return native ? {
     id,
-    htmlFor: resolvedControlId ?? void 0,
+    htmlFor: resolvedControlId,
     onMouseDown: handleInteraction
   } : {
     id,
@@ -8815,14 +8964,14 @@ function focusElementWithVisible(element) {
   });
 }
 
-// node_modules/@base-ui/react/utils/usePopupViewport.mjs
-var React50 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/usePopupViewport.mjs
+var React51 = __toESM(require_react(), 1);
 var ReactDOM6 = __toESM(require_react_dom(), 1);
 
-// node_modules/@base-ui/utils/usePreviousValue.mjs
-var React47 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/usePreviousValue.mjs
+var React48 = __toESM(require_react(), 1);
 function usePreviousValue(value) {
-  const [state, setState] = React47.useState({
+  const [state, setState] = React48.useState({
     current: value,
     previous: null
   });
@@ -8835,10 +8984,10 @@ function usePreviousValue(value) {
   return state.previous;
 }
 
-// node_modules/@base-ui/react/utils/usePopupAutoResize.mjs
-var React48 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/usePopupAutoResize.mjs
+var React49 = __toESM(require_react(), 1);
 
-// node_modules/@base-ui/react/utils/getCssDimensions.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/getCssDimensions.mjs
 function getCssDimensions2(element) {
   const css = getComputedStyle2(element);
   let width = parseFloat(css.width) || 0;
@@ -8857,7 +9006,11 @@ function getCssDimensions2(element) {
   };
 }
 
-// node_modules/@base-ui/react/utils/usePopupAutoResize.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/CommonPopupCssVars.mjs
+var popupWidth = "--popup-width";
+var popupHeight = "--popup-height";
+
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/usePopupAutoResize.mjs
 function usePopupAutoResize(parameters) {
   const {
     popupElement,
@@ -8871,12 +9024,12 @@ function usePopupAutoResize(parameters) {
   } = parameters;
   const runOnceAnimationsFinish = useAnimationsFinished(popupElement, true);
   const animationFrame = useAnimationFrame();
-  const committedDimensionsRef = React48.useRef(null);
-  const isInitialRenderRef = React48.useRef(true);
-  const restoreAnchoringStylesRef = React48.useRef(NOOP);
+  const committedDimensionsRef = React49.useRef(null);
+  const isInitialRenderRef = React49.useRef(true);
+  const restoreAnchoringStylesRef = React49.useRef(NOOP);
   const onMeasureLayout = useStableCallback(onMeasureLayoutParam);
   const onMeasureLayoutComplete = useStableCallback(onMeasureLayoutCompleteParam);
-  const anchoringStyles = React48.useMemo(() => getPopupAnchoringStyles(side, direction), [side, direction]);
+  const anchoringStyles = React49.useMemo(() => getPopupAnchoringStyles(side, direction), [side, direction]);
   useIsoLayoutEffect(() => {
     if (!mounted) {
       restoreAnchoringStylesRef.current = NOOP;
@@ -8893,8 +9046,8 @@ function usePopupAutoResize(parameters) {
     const restorePopupTransform = overrideElementStyle(popupElement, "transform", "none");
     const restorePopupScale = overrideElementStyle(popupElement, "scale", "1");
     const restorePositionerAvailableSize = applyElementStyles(positionerElement, {
-      "--available-width": "max-content",
-      "--available-height": "max-content"
+      [availableWidth]: "max-content",
+      [availableHeight]: "max-content"
     });
     function restoreMeasurementOverrides() {
       restorePopupPosition();
@@ -8931,8 +9084,8 @@ function usePopupAutoResize(parameters) {
     animationFrame.request(() => {
       setPopupCssSize(popupElement, newDimensions);
       runOnceAnimationsFinish(() => {
-        popupElement.style.setProperty("--popup-width", "auto");
-        popupElement.style.setProperty("--popup-height", "auto");
+        popupElement.style.setProperty(popupWidth, "auto");
+        popupElement.style.setProperty(popupHeight, "auto");
       }, abortController.signal);
     });
     return () => {
@@ -8974,24 +9127,24 @@ function applyElementStyles(element, styles) {
 function setPopupCssSize(popupElement, size4) {
   const width = size4 === "auto" ? "auto" : `${size4.width}px`;
   const height = size4 === "auto" ? "auto" : `${size4.height}px`;
-  popupElement.style.setProperty("--popup-width", width);
-  popupElement.style.setProperty("--popup-height", height);
+  popupElement.style.setProperty(popupWidth, width);
+  popupElement.style.setProperty(popupHeight, height);
 }
 function setPositionerCssSize(positionerElement, size4) {
   const width = size4 === "max-content" ? "max-content" : `${size4.width}px`;
   const height = size4 === "max-content" ? "max-content" : `${size4.height}px`;
-  positionerElement.style.setProperty("--positioner-width", width);
-  positionerElement.style.setProperty("--positioner-height", height);
+  positionerElement.style.setProperty(positionerWidth, width);
+  positionerElement.style.setProperty(positionerHeight, height);
 }
 
-// node_modules/@base-ui/react/direction-provider/DirectionProvider.mjs
-var React49 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/direction-provider/DirectionProvider.mjs
+var React50 = __toESM(require_react(), 1);
 var import_jsx_runtime6 = __toESM(require_jsx_runtime(), 1);
 var DirectionProvider = function DirectionProvider2(props) {
   const {
     direction = "ltr"
   } = props;
-  const contextValue = React49.useMemo(() => ({
+  const contextValue = React50.useMemo(() => ({
     direction
   }), [direction]);
   return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(DirectionContext.Provider, {
@@ -9001,7 +9154,7 @@ var DirectionProvider = function DirectionProvider2(props) {
 };
 if (true) DirectionProvider.displayName = "DirectionProvider";
 
-// node_modules/@base-ui/react/utils/adaptiveOriginMiddleware.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/adaptiveOriginMiddleware.mjs
 var adaptiveOrigin = {
   name: "adaptiveOrigin",
   async fn(state) {
@@ -9069,11 +9222,14 @@ var adaptiveOrigin = {
   }
 };
 
-// node_modules/@base-ui/react/utils/usePopupViewport.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/CommonViewportDataAttributes.mjs
+var activationDirection = "data-activation-direction";
+
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/usePopupViewport.mjs
 var import_jsx_runtime7 = __toESM(require_jsx_runtime(), 1);
 var popupViewportStateMapping = {
   activationDirection: (value) => value ? {
-    "data-activation-direction": value
+    [activationDirection]: value
   } : null
 };
 function usePopupViewport(parameters) {
@@ -9085,23 +9241,23 @@ function usePopupViewport(parameters) {
   const direction = useDirection();
   const activeTrigger = store.useState("activeTriggerElement");
   const activeTriggerId = store.useState("activeTriggerId");
-  const open = store.useState("open");
+  const open3 = store.useState("open");
   const payload = store.useState("payload");
   const mounted = store.useState("mounted");
   const popupElement = store.useState("popupElement");
   const positionerElement = store.useState("positionerElement");
-  const previousActiveTrigger = usePreviousValue(open ? activeTrigger : null);
+  const previousActiveTrigger = usePreviousValue(open3 ? activeTrigger : null);
   const currentContentKey = usePopupContentKey(activeTriggerId, payload);
-  const capturedNodeRef = React50.useRef(null);
-  const [previousContentNode, setPreviousContentNode] = React50.useState(null);
-  const [newTriggerOffset, setNewTriggerOffset] = React50.useState(null);
-  const currentContainerRef = React50.useRef(null);
-  const previousContainerRef = React50.useRef(null);
+  const capturedNodeRef = React51.useRef(null);
+  const [previousContentNode, setPreviousContentNode] = React51.useState(null);
+  const [newTriggerOffset, setNewTriggerOffset] = React51.useState(null);
+  const currentContainerRef = React51.useRef(null);
+  const previousContainerRef = React51.useRef(null);
   const onAnimationsFinished = useAnimationsFinished(currentContainerRef, true);
   const cleanupFrame = useAnimationFrame();
-  const cleanupControllerRef = React50.useRef(null);
-  const [previousContentDimensions, setPreviousContentDimensions] = React50.useState(null);
-  const [showStartingStyleAttribute, setShowStartingStyleAttribute] = React50.useState(false);
+  const cleanupControllerRef = React51.useRef(null);
+  const [previousContentDimensions, setPreviousContentDimensions] = React51.useState(null);
+  const [showStartingStyleAttribute, setShowStartingStyleAttribute] = React51.useState(false);
   useIsoLayoutEffect(() => {
     store.set("adaptiveOrigin", adaptiveOrigin);
     return () => {
@@ -9131,12 +9287,12 @@ function usePopupViewport(parameters) {
       capturedNodeRef.current = null;
     }, controller.signal);
   });
-  const lastHandledTriggerRef = React50.useRef(null);
+  const lastHandledTriggerRef = React51.useRef(null);
   useIsoLayoutEffect(() => {
-    if (!open || !mounted) {
+    if (!open3 || !mounted) {
       lastHandledTriggerRef.current = null;
     }
-  }, [open, mounted]);
+  }, [open3, mounted]);
   useIsoLayoutEffect(() => {
     if (activeTrigger && previousActiveTrigger && activeTrigger !== previousActiveTrigger && lastHandledTriggerRef.current !== activeTrigger && capturedNodeRef.current) {
       setPreviousContentNode(capturedNodeRef.current);
@@ -9179,15 +9335,15 @@ function usePopupViewport(parameters) {
       children
     }, currentContentKey);
   } else {
-    childrenToRender = /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(React50.Fragment, {
+    childrenToRender = /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(React51.Fragment, {
       children: [/* @__PURE__ */ (0, import_jsx_runtime7.jsx)("div", {
         "data-previous": true,
         inert: inertValue(true),
         ref: previousContainerRef,
         style: {
           ...previousContentDimensions ? {
-            "--popup-width": `${previousContentDimensions.width}px`,
-            "--popup-height": `${previousContentDimensions.height}px`
+            [popupWidth]: `${previousContentDimensions.width}px`,
+            [popupHeight]: `${previousContentDimensions.height}px`
           } : null,
           position: "absolute"
         },
@@ -9258,10 +9414,10 @@ function calculateRelativePosition(from, to) {
   };
 }
 function usePopupContentKey(activeTriggerId, payload) {
-  const [contentKey, setContentKey] = React50.useState(0);
-  const previousActiveTriggerIdRef = React50.useRef(activeTriggerId);
-  const previousPayloadRef = React50.useRef(payload);
-  const pendingPayloadUpdateRef = React50.useRef(false);
+  const [contentKey, setContentKey] = React51.useState(0);
+  const previousActiveTriggerIdRef = React51.useRef(activeTriggerId);
+  const previousPayloadRef = React51.useRef(payload);
+  const pendingPayloadUpdateRef = React51.useRef(false);
   useIsoLayoutEffect(() => {
     const previousActiveTriggerId = previousActiveTriggerIdRef.current;
     const previousPayload = previousPayloadRef.current;
@@ -9280,7 +9436,7 @@ function usePopupContentKey(activeTriggerId, payload) {
   return `${activeTriggerId ?? "current"}-${contentKey}`;
 }
 
-// node_modules/@base-ui/react/field/index.parts.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/index.parts.mjs
 var index_parts_exports2 = {};
 __export(index_parts_exports2, {
   Control: () => FieldControl,
@@ -9292,30 +9448,30 @@ __export(index_parts_exports2, {
   Validity: () => FieldValidity
 });
 
-// node_modules/@base-ui/react/field/root/FieldRoot.mjs
-var React54 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/root/FieldRoot.mjs
+var React55 = __toESM(require_react(), 1);
 
-// node_modules/@base-ui/react/fieldset/root/FieldsetRootContext.mjs
-var React51 = __toESM(require_react(), 1);
-var FieldsetRootContext = /* @__PURE__ */ React51.createContext(void 0);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/fieldset/root/FieldsetRootContext.mjs
+var React52 = __toESM(require_react(), 1);
+var FieldsetRootContext = /* @__PURE__ */ React52.createContext(void 0);
 if (true) FieldsetRootContext.displayName = "FieldsetRootContext";
 function useFieldsetRootContext(optional = false) {
-  const context = React51.useContext(FieldsetRootContext);
+  const context = React52.useContext(FieldsetRootContext);
   if (!context && !optional) {
     throw new Error(true ? "Base UI: FieldsetRootContext is missing. Fieldset parts must be placed within <Fieldset.Root>." : formatErrorMessage_default(86));
   }
   return context;
 }
 
-// node_modules/@base-ui/react/internals/labelable-provider/LabelableProvider.mjs
-var React52 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/labelable-provider/LabelableProvider.mjs
+var React53 = __toESM(require_react(), 1);
 var import_jsx_runtime8 = __toESM(require_jsx_runtime(), 1);
 var LabelableProvider = function LabelableProvider2(props) {
   const defaultId = useBaseUiId();
-  const initialControlId = props.controlId === void 0 ? defaultId : props.controlId;
-  const [controlId, setControlIdState] = React52.useState(initialControlId);
-  const [labelId, setLabelId] = React52.useState(props.labelId);
-  const [messageIds, setMessageIds] = React52.useState([]);
+  const [controlIdState, setControlIdState] = React53.useState(defaultId);
+  const [labelId, setLabelId] = React53.useState();
+  const [messageIds, setMessageIds] = React53.useState([]);
+  const controlId = controlIdState === void 0 ? defaultId : controlIdState;
   const registrationsRef = useRefWithInit(() => /* @__PURE__ */ new Map());
   const {
     messageIds: parentMessageIds
@@ -9324,16 +9480,16 @@ var LabelableProvider = function LabelableProvider2(props) {
     const registrations = registrationsRef.current;
     if (nextId === void 0) {
       registrations.delete(source);
-      return;
+    } else {
+      registrations.set(source, nextId);
     }
-    registrations.set(source, nextId);
     setControlIdState((prev) => {
       if (registrations.size === 0) {
-        return void 0;
+        return prev;
       }
       let nextControlId;
       for (const id of registrations.values()) {
-        if (prev !== void 0 && id === prev) {
+        if (id === prev) {
           return prev;
         }
         if (nextControlId === void 0) {
@@ -9343,7 +9499,12 @@ var LabelableProvider = function LabelableProvider2(props) {
       return nextControlId;
     });
   });
-  const getDescriptionProps = React52.useCallback((externalProps) => {
+  const resetControlId = useStableCallback(() => {
+    if (registrationsRef.current.size === 0) {
+      setControlIdState(defaultId);
+    }
+  });
+  const getDescriptionProps = React53.useCallback((externalProps) => {
     const ids = externalProps["aria-describedby"] ? externalProps["aria-describedby"].split(" ") : [];
     ids.push(...parentMessageIds, ...messageIds);
     return {
@@ -9351,15 +9512,16 @@ var LabelableProvider = function LabelableProvider2(props) {
       "aria-describedby": Array.from(new Set(ids)).join(" ") || void 0
     };
   }, [parentMessageIds, messageIds]);
-  const contextValue = React52.useMemo(() => ({
+  const contextValue = React53.useMemo(() => ({
     controlId,
     registerControlId,
+    resetControlId,
     labelId,
     setLabelId,
     messageIds,
     setMessageIds,
     getDescriptionProps
-  }), [controlId, registerControlId, labelId, setLabelId, messageIds, setMessageIds, getDescriptionProps]);
+  }), [controlId, registerControlId, resetControlId, labelId, setLabelId, messageIds, setMessageIds, getDescriptionProps]);
   return /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(LabelableContext.Provider, {
     value: contextValue,
     children: props.children
@@ -9367,12 +9529,13 @@ var LabelableProvider = function LabelableProvider2(props) {
 };
 if (true) LabelableProvider.displayName = "LabelableProvider";
 
-// node_modules/@base-ui/react/internals/field-register-control/useFieldControlRegistration.mjs
-var React53 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/field-register-control/useFieldControlRegistration.mjs
+var React54 = __toESM(require_react(), 1);
 function useFieldControlRegistration(params) {
   const {
+    change,
     commit,
-    invalid,
+    invalid: invalid2,
     markedDirtyRef,
     name,
     setRegisteredFieldName,
@@ -9383,9 +9546,9 @@ function useFieldControlRegistration(params) {
   const {
     formRef
   } = useFormContext();
-  const activeFieldControlSourceRef = React53.useRef(null);
-  const registrationRef = React53.useRef(null);
-  const initialValueCapturedRef = React53.useRef(false);
+  const activeFieldControlSourceRef = React54.useRef(null);
+  const registrationRef = React54.useRef(null);
+  const initialValueCapturedRef = React54.useRef(false);
   const getValueForForm = useStableCallback(() => {
     const registration = registrationRef.current;
     if (!registration) {
@@ -9417,7 +9580,7 @@ function useFieldControlRegistration(params) {
       getValue: getValueForForm,
       name: name ?? registration.name,
       controlRef: registration.controlRef,
-      validityData: getCombinedFieldValidityData(validityData, invalid),
+      validityData: getCombinedFieldValidityData(validityData, invalid2),
       validate
     });
   }
@@ -9447,10 +9610,10 @@ function useFieldControlRegistration(params) {
       getValue: getValueForForm,
       name: name ?? registration.name,
       controlRef: registration.controlRef,
-      validityData: getCombinedFieldValidityData(validityData, invalid),
+      validityData: getCombinedFieldValidityData(validityData, invalid2),
       validate
     });
-  }, [formRef, getValueForForm, invalid, name, setRegisteredFieldName, validate, validityData]);
+  }, [formRef, getValueForForm, invalid2, name, setRegisteredFieldName, validate, validityData]);
   useIsoLayoutEffect(() => {
     const fields = formRef.current.fields;
     return () => {
@@ -9464,6 +9627,7 @@ function useFieldControlRegistration(params) {
     if (!registration) {
       if (activeFieldControlSourceRef.current === source) {
         activeFieldControlSourceRef.current = null;
+        change(void 0, true);
         deleteRegistration();
         registrationRef.current = null;
         setRegisteredFieldName(void 0);
@@ -9472,6 +9636,10 @@ function useFieldControlRegistration(params) {
       return;
     }
     const previousId = registrationRef.current?.id;
+    const previousSource = activeFieldControlSourceRef.current;
+    if (previousSource && previousSource !== source) {
+      change(void 0, true);
+    }
     activeFieldControlSourceRef.current = source;
     registrationRef.current = registration;
     if (!name) {
@@ -9487,13 +9655,13 @@ function useFieldControlRegistration(params) {
   return [validate, register2];
 }
 
-// node_modules/@base-ui/react/field/root/FieldRoot.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/root/FieldRoot.mjs
 var import_jsx_runtime9 = __toESM(require_jsx_runtime(), 1);
-var FieldRootInner = /* @__PURE__ */ React54.forwardRef(function FieldRootInner2(componentProps, forwardedRef) {
+var FieldRootInner = /* @__PURE__ */ React55.forwardRef(function FieldRootInner2(componentProps, forwardedRef) {
   const {
     errors,
     validationMode: formValidationMode,
-    submitAttemptedRef
+    submitCountRef
   } = useFormContext();
   const {
     render: render4,
@@ -9513,15 +9681,15 @@ var FieldRootInner = /* @__PURE__ */ React54.forwardRef(function FieldRootInner2
   const disabledFieldset = useFieldsetRootContext(true)?.disabled;
   const validate = useStableCallback(validateProp || (() => null));
   const disabled2 = disabledFieldset || disabledProp;
-  const [touchedState, setTouchedUnwrapped] = React54.useState(false);
-  const [dirtyState, setDirtyUnwrapped] = React54.useState(false);
-  const [filled, setFilled] = React54.useState(false);
-  const [focused, setFocused] = React54.useState(false);
+  const [touchedState, setTouchedUnwrapped] = React55.useState(false);
+  const [dirtyState, setDirtyUnwrapped] = React55.useState(false);
+  const [filled, setFilled] = React55.useState(false);
+  const [focused, setFocused] = React55.useState(false);
   const dirty = dirtyProp ?? dirtyState;
   const touched = touchedProp ?? touchedState;
-  const markedDirtyRef = React54.useRef(dirty);
-  const registeredFieldIdRef = React54.useRef(void 0);
-  const [registeredFieldName, setRegisteredFieldName] = React54.useState();
+  const markedDirtyRef = React55.useRef(dirty);
+  const registeredFieldIdRef = React55.useRef(void 0);
+  const [registeredFieldName, setRegisteredFieldName] = React55.useState();
   const effectiveName = name ?? registeredFieldName;
   useIsoLayoutEffect(() => {
     if (dirtyProp !== void 0) {
@@ -9543,40 +9711,42 @@ var FieldRootInner = /* @__PURE__ */ React54.forwardRef(function FieldRootInner2
     }
     setTouchedUnwrapped(value);
   });
-  const shouldValidateOnChange = useStableCallback(() => validationMode === "onChange" || validationMode === "onSubmit" && submitAttemptedRef.current);
+  const shouldValidateOnChange = useStableCallback(() => validationMode === "onChange" || validationMode === "onSubmit" && submitCountRef.current > 0);
   const formError = effectiveName && Object.hasOwn(errors, effectiveName) ? errors[effectiveName] : null;
   const hasFormError = !!(Array.isArray(formError) ? formError.length : formError);
-  const invalid = invalidProp === true || hasFormError;
-  const [validityData, setValidityData] = React54.useState({
+  const invalid2 = invalidProp === true || hasFormError;
+  const [validityData, setValidityData] = React55.useState({
     state: DEFAULT_VALIDITY_STATE,
     error: "",
     errors: [],
     value: null,
     initialValue: null
   });
-  const valid = !invalid && (disabled2 ? null : validityData.state.valid);
-  const state = React54.useMemo(() => ({
+  const valid2 = !invalid2 && (disabled2 ? null : validityData.state.valid);
+  const state = React55.useMemo(() => ({
     disabled: disabled2,
     touched,
     dirty,
-    valid,
+    valid: valid2,
     filled,
     focused
-  }), [disabled2, touched, dirty, valid, filled, focused]);
+  }), [disabled2, touched, dirty, valid2, filled, focused]);
   const validation = useFieldValidation({
     setValidityData,
     validate,
     validityData,
     validationDebounceTime,
-    invalid,
+    invalid: invalid2,
     markedDirtyRef,
     state,
     shouldValidateOnChange,
+    validationMode,
     registeredFieldIdRef
   });
   const [validateFieldControl, registerFieldControl] = useFieldControlRegistration({
+    change: validation.change,
     commit: validation.commit,
-    invalid,
+    invalid: invalid2,
     markedDirtyRef,
     name,
     setRegisteredFieldName,
@@ -9584,11 +9754,11 @@ var FieldRootInner = /* @__PURE__ */ React54.forwardRef(function FieldRootInner2
     setValidityData,
     validityData
   });
-  React54.useImperativeHandle(actionsRef, () => ({
+  React55.useImperativeHandle(actionsRef, () => ({
     validate: validateFieldControl
   }), [validateFieldControl]);
-  const contextValue = React54.useMemo(() => ({
-    invalid,
+  const contextValue = React55.useMemo(() => ({
+    invalid: invalid2,
     name: effectiveName,
     validityData,
     setValidityData,
@@ -9602,7 +9772,7 @@ var FieldRootInner = /* @__PURE__ */ React54.forwardRef(function FieldRootInner2
     state,
     registerFieldControl,
     validation
-  }), [invalid, effectiveName, validityData, disabled2, setTouched, setDirty, setFilled, setFocused, validationMode, shouldValidateOnChange, state, registerFieldControl, validation]);
+  }), [invalid2, effectiveName, validityData, disabled2, setTouched, setDirty, setFilled, setFocused, validationMode, shouldValidateOnChange, state, registerFieldControl, validation]);
   const element = useRenderElement("div", componentProps, {
     ref: forwardedRef,
     state,
@@ -9615,7 +9785,7 @@ var FieldRootInner = /* @__PURE__ */ React54.forwardRef(function FieldRootInner2
   });
 });
 if (true) FieldRootInner.displayName = "FieldRootInner";
-var FieldRoot = /* @__PURE__ */ React54.forwardRef(function FieldRoot2(componentProps, forwardedRef) {
+var FieldRoot = /* @__PURE__ */ React55.forwardRef(function FieldRoot2(componentProps, forwardedRef) {
   return /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(LabelableProvider, {
     children: /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(FieldRootInner, {
       ...componentProps,
@@ -9625,9 +9795,9 @@ var FieldRoot = /* @__PURE__ */ React54.forwardRef(function FieldRoot2(component
 });
 if (true) FieldRoot.displayName = "FieldRoot";
 
-// node_modules/@base-ui/react/field/label/FieldLabel.mjs
-var React55 = __toESM(require_react(), 1);
-var FieldLabel = /* @__PURE__ */ React55.forwardRef(function FieldLabel2(componentProps, forwardedRef) {
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/label/FieldLabel.mjs
+var React56 = __toESM(require_react(), 1);
+var FieldLabel = /* @__PURE__ */ React56.forwardRef(function FieldLabel2(componentProps, forwardedRef) {
   const {
     render: render4,
     className,
@@ -9645,13 +9815,13 @@ var FieldLabel = /* @__PURE__ */ React55.forwardRef(function FieldLabel2(compone
     ...fieldRootContext.state,
     disabled: fieldRootContext.disabled || fieldItemContext.disabled
   };
-  const labelRef = React55.useRef(null);
+  const labelRef = React56.useRef(null);
   const labelProps = useLabel({
     id: labelId ?? idProp,
     native: nativeLabel
   });
   if (true) {
-    React55.useEffect(() => {
+    React56.useEffect(() => {
       if (!labelRef.current) {
         return;
       }
@@ -9679,14 +9849,14 @@ var FieldLabel = /* @__PURE__ */ React55.forwardRef(function FieldLabel2(compone
 });
 if (true) FieldLabel.displayName = "FieldLabel";
 
-// node_modules/@base-ui/react/field/error/FieldError.mjs
-var React56 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/error/FieldError.mjs
+var React57 = __toESM(require_react(), 1);
 var import_jsx_runtime10 = __toESM(require_jsx_runtime(), 1);
 var stateAttributesMapping2 = {
   ...fieldValidityMapping,
   ...transitionStatusMapping
 };
-var FieldError = /* @__PURE__ */ React56.forwardRef(function FieldError2(componentProps, forwardedRef) {
+var FieldError = /* @__PURE__ */ React57.forwardRef(function FieldError2(componentProps, forwardedRef) {
   const {
     render: render4,
     id: idProp,
@@ -9734,9 +9904,9 @@ var FieldError = /* @__PURE__ */ React56.forwardRef(function FieldError2(compone
       setMessageIds((v2) => v2.filter((item) => item !== id));
     };
   }, [rendered, id, setMessageIds]);
-  const errorRef = React56.useRef(null);
-  const [lastRenderedMessage, setLastRenderedMessage] = React56.useState(null);
-  const [lastRenderedMessageKey, setLastRenderedMessageKey] = React56.useState(null);
+  const errorRef = React57.useRef(null);
+  const [lastRenderedMessage, setLastRenderedMessage] = React57.useState(null);
+  const [lastRenderedMessageKey, setLastRenderedMessageKey] = React57.useState(null);
   let error2 = validityData.error;
   if (!hasSpecificMatch && hasFormError) {
     error2 = formError;
@@ -9786,9 +9956,9 @@ var FieldError = /* @__PURE__ */ React56.forwardRef(function FieldError2(compone
 });
 if (true) FieldError.displayName = "FieldError";
 
-// node_modules/@base-ui/react/field/description/FieldDescription.mjs
-var React57 = __toESM(require_react(), 1);
-var FieldDescription = /* @__PURE__ */ React57.forwardRef(function FieldDescription2(componentProps, forwardedRef) {
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/description/FieldDescription.mjs
+var React58 = __toESM(require_react(), 1);
+var FieldDescription = /* @__PURE__ */ React58.forwardRef(function FieldDescription2(componentProps, forwardedRef) {
   const {
     render: render4,
     id: idProp,
@@ -9827,9 +9997,9 @@ var FieldDescription = /* @__PURE__ */ React57.forwardRef(function FieldDescript
 });
 if (true) FieldDescription.displayName = "FieldDescription";
 
-// node_modules/@base-ui/react/field/control/FieldControl.mjs
-var React58 = __toESM(require_react(), 1);
-var FieldControl = /* @__PURE__ */ React58.forwardRef(function FieldControl2(componentProps, forwardedRef) {
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/control/FieldControl.mjs
+var React59 = __toESM(require_react(), 1);
+var FieldControl = /* @__PURE__ */ React59.forwardRef(function FieldControl2(componentProps, forwardedRef) {
   const {
     render: render4,
     className,
@@ -9856,7 +10026,9 @@ var FieldControl = /* @__PURE__ */ React58.forwardRef(function FieldControl2(com
     validation
   } = useFieldRootContext();
   const {
-    clearErrors
+    clearErrors,
+    elementRef: formElementRef,
+    submitCountRef
   } = useFormContext();
   const disabled2 = fieldDisabled || disabledProp;
   const name = fieldName ?? nameProp;
@@ -9870,20 +10042,6 @@ var FieldControl = /* @__PURE__ */ React58.forwardRef(function FieldControl2(com
   const id = useLabelableId({
     id: idProp
   });
-  useIsoLayoutEffect(() => {
-    const hasExternalValue = valueProp != null;
-    if (validation.inputRef.current?.value || hasExternalValue && valueProp !== "") {
-      setFilled(true);
-    } else if (hasExternalValue && valueProp === "") {
-      setFilled(false);
-    }
-  }, [validation.inputRef, setFilled, valueProp]);
-  const inputRef = React58.useRef(null);
-  useIsoLayoutEffect(() => {
-    if (autoFocus && inputRef.current === activeElement(ownerDocument(inputRef.current))) {
-      setFocused(true);
-    }
-  }, [autoFocus, setFocused]);
   const [valueUnwrapped] = useControlled({
     controlled: valueProp,
     default: defaultValue,
@@ -9892,8 +10050,30 @@ var FieldControl = /* @__PURE__ */ React58.forwardRef(function FieldControl2(com
   });
   const isControlled = valueProp !== void 0;
   const value = isControlled ? valueUnwrapped : void 0;
+  const serializedValue = value == null ? void 0 : String(value);
   const getValueFromInput = useStableCallback(() => validation.inputRef.current?.value);
-  useRegisterFieldControl(validation.inputRef, id, value, getValueFromInput, !disabled2, nameProp);
+  useRegisterFieldControl(validation.inputRef, id, serializedValue, getValueFromInput, !disabled2, nameProp);
+  useIsoLayoutEffect(() => {
+    const currentValue = serializedValue ?? validation.inputRef.current?.value;
+    if (currentValue !== void 0) {
+      setFilled(currentValue !== "");
+    }
+  }, [serializedValue, validation.inputRef, setFilled]);
+  useValueChanged(serializedValue, () => {
+    if (serializedValue === void 0) {
+      return;
+    }
+    clearErrors(name);
+    setDirty(serializedValue !== (validityData.initialValue ?? ""));
+    validation.change(serializedValue);
+  });
+  const inputRef = React59.useRef(null);
+  const enterValidationTimeout = useTimeout();
+  useIsoLayoutEffect(() => {
+    if (autoFocus && inputRef.current === activeElement(ownerDocument(inputRef.current))) {
+      setFocused(true);
+    }
+  }, [autoFocus, setFocused]);
   const element = useRenderElement("input", componentProps, {
     ref: [forwardedRef, inputRef],
     state,
@@ -9911,10 +10091,14 @@ var FieldControl = /* @__PURE__ */ React58.forwardRef(function FieldControl2(com
       },
       onChange(event) {
         const inputValue = event.currentTarget.value;
-        onValueChange?.(inputValue, createChangeEventDetails(reason_parts_exports.none, event.nativeEvent));
+        const details = createChangeEventDetails(reason_parts_exports.none, event.nativeEvent);
+        onValueChange?.(inputValue, details);
+        if (isControlled) {
+          return;
+        }
         setDirty(inputValue !== (validityData.initialValue ?? ""));
         setFilled(inputValue !== "");
-        if (!event.nativeEvent.defaultPrevented) {
+        if (!event.nativeEvent.defaultPrevented && !details.isCanceled) {
           clearErrors(name);
           validation.change(inputValue);
         }
@@ -9926,13 +10110,34 @@ var FieldControl = /* @__PURE__ */ React58.forwardRef(function FieldControl2(com
         setTouched(true);
         setFocused(false);
         if (validationMode === "onBlur") {
-          validation.commit(event.currentTarget.value);
+          const inputValue = event.currentTarget.value;
+          validation.commit(inputValue);
+          if (isControlled) {
+            queueMicrotask(() => {
+              const nextValue = validation.inputRef.current?.value;
+              if (nextValue !== void 0 && nextValue !== inputValue && nextValue !== (validityData.initialValue ?? "")) {
+                validation.commit(nextValue);
+              }
+            });
+          }
         }
       },
       onKeyDown(event) {
         if (event.currentTarget.tagName === "INPUT" && event.key === "Enter") {
           setTouched(true);
-          validation.commit(event.currentTarget.value);
+          const value2 = event.currentTarget.value;
+          const form = event.currentTarget.form;
+          if (form && form === formElementRef.current && !event.defaultPrevented) {
+            const input = event.currentTarget;
+            const submitCount = submitCountRef.current;
+            enterValidationTimeout.start(0, () => {
+              if (submitCountRef.current === submitCount) {
+                validation.commit(input.value);
+              }
+            });
+          } else {
+            validation.commit(value2);
+          }
         }
       }
     }, elementProps, (props) => validation.getValidationProps(disabled2, props)],
@@ -9942,8 +10147,8 @@ var FieldControl = /* @__PURE__ */ React58.forwardRef(function FieldControl2(com
 });
 if (true) FieldControl.displayName = "FieldControl";
 
-// node_modules/@base-ui/react/field/validity/FieldValidity.mjs
-var React59 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/validity/FieldValidity.mjs
+var React60 = __toESM(require_react(), 1);
 var import_jsx_runtime11 = __toESM(require_jsx_runtime(), 1);
 var FieldValidity = function FieldValidity2(props) {
   const {
@@ -9951,30 +10156,30 @@ var FieldValidity = function FieldValidity2(props) {
   } = props;
   const {
     validityData,
-    invalid
+    invalid: invalid2
   } = useFieldRootContext(false);
-  const combinedFieldValidityData = React59.useMemo(() => getCombinedFieldValidityData(validityData, invalid), [validityData, invalid]);
+  const combinedFieldValidityData = React60.useMemo(() => getCombinedFieldValidityData(validityData, invalid2), [validityData, invalid2]);
   const isInvalid = combinedFieldValidityData.state.valid === false;
   const {
     transitionStatus
   } = useTransitionStatus(isInvalid);
-  const fieldValidityState = React59.useMemo(() => {
+  const fieldValidityState = React60.useMemo(() => {
     return {
       ...combinedFieldValidityData,
       validity: combinedFieldValidityData.state,
       transitionStatus
     };
   }, [combinedFieldValidityData, transitionStatus]);
-  return /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(React59.Fragment, {
+  return /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(React60.Fragment, {
     children: children(fieldValidityState)
   });
 };
 if (true) FieldValidity.displayName = "FieldValidity";
 
-// node_modules/@base-ui/react/field/item/FieldItem.mjs
-var React60 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/item/FieldItem.mjs
+var React61 = __toESM(require_react(), 1);
 var import_jsx_runtime12 = __toESM(require_jsx_runtime(), 1);
-var FieldItem = /* @__PURE__ */ React60.forwardRef(function FieldItem2(componentProps, forwardedRef) {
+var FieldItem = /* @__PURE__ */ React61.forwardRef(function FieldItem2(componentProps, forwardedRef) {
   const {
     render: render4,
     className,
@@ -9991,7 +10196,7 @@ var FieldItem = /* @__PURE__ */ React60.forwardRef(function FieldItem2(component
     ...fieldState,
     disabled: disabled2
   };
-  const fieldItemContext = React60.useMemo(() => ({
+  const fieldItemContext = React61.useMemo(() => ({
     disabled: disabled2
   }), [disabled2]);
   const element = useRenderElement("div", componentProps, {
@@ -10009,10 +10214,10 @@ var FieldItem = /* @__PURE__ */ React60.forwardRef(function FieldItem2(component
 });
 if (true) FieldItem.displayName = "FieldItem";
 
-// node_modules/@base-ui/react/input/Input.mjs
-var React61 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/input/Input.mjs
+var React62 = __toESM(require_react(), 1);
 var import_jsx_runtime13 = __toESM(require_jsx_runtime(), 1);
-var Input = /* @__PURE__ */ React61.forwardRef(function Input2(props, forwardedRef) {
+var Input = /* @__PURE__ */ React62.forwardRef(function Input2(props, forwardedRef) {
   return /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(index_parts_exports2.Control, {
     ref: forwardedRef,
     ...props
@@ -10020,11 +10225,11 @@ var Input = /* @__PURE__ */ React61.forwardRef(function Input2(props, forwardedR
 });
 if (true) Input.displayName = "Input";
 
-// node_modules/@base-ui/react/utils/FloatingPortalLite.mjs
-var React62 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/FloatingPortalLite.mjs
+var React63 = __toESM(require_react(), 1);
 var ReactDOM7 = __toESM(require_react_dom(), 1);
 var import_jsx_runtime14 = __toESM(require_jsx_runtime(), 1);
-var FloatingPortalLite = /* @__PURE__ */ React62.forwardRef(function FloatingPortalLite2(componentProps, forwardedRef) {
+var FloatingPortalLite = /* @__PURE__ */ React63.forwardRef(function FloatingPortalLite2(componentProps, forwardedRef) {
   const {
     children,
     container,
@@ -10045,13 +10250,13 @@ var FloatingPortalLite = /* @__PURE__ */ React62.forwardRef(function FloatingPor
   if (!portalSubtree && !portalNode) {
     return null;
   }
-  return /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)(React62.Fragment, {
+  return /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)(React63.Fragment, {
     children: [portalSubtree, portalNode && /* @__PURE__ */ ReactDOM7.createPortal(children, portalNode)]
   });
 });
 if (true) FloatingPortalLite.displayName = "FloatingPortalLite";
 
-// node_modules/@base-ui/react/tooltip/index.parts.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tooltip/index.parts.mjs
 var index_parts_exports3 = {};
 __export(index_parts_exports3, {
   Arrow: () => TooltipArrow,
@@ -10066,23 +10271,23 @@ __export(index_parts_exports3, {
   createHandle: () => createTooltipHandle
 });
 
-// node_modules/@base-ui/react/tooltip/root/TooltipRoot.mjs
-var React65 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tooltip/root/TooltipRoot.mjs
+var React66 = __toESM(require_react(), 1);
 
-// node_modules/@base-ui/react/tooltip/root/TooltipRootContext.mjs
-var React63 = __toESM(require_react(), 1);
-var TooltipRootContext = /* @__PURE__ */ React63.createContext(void 0);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tooltip/root/TooltipRootContext.mjs
+var React64 = __toESM(require_react(), 1);
+var TooltipRootContext = /* @__PURE__ */ React64.createContext(void 0);
 if (true) TooltipRootContext.displayName = "TooltipRootContext";
 function useTooltipRootContext(optional) {
-  const context = React63.useContext(TooltipRootContext);
+  const context = React64.useContext(TooltipRootContext);
   if (context === void 0 && !optional) {
     throw new Error(true ? "Base UI: TooltipRootContext is missing. Tooltip parts must be placed within <Tooltip.Root>." : formatErrorMessage_default(72));
   }
   return context;
 }
 
-// node_modules/@base-ui/react/tooltip/store/TooltipStore.mjs
-var React64 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tooltip/store/TooltipStore.mjs
+var React65 = __toESM(require_react(), 1);
 var selectors2 = {
   ...popupStoreSelectors,
   disabled: (state) => state.disabled,
@@ -10122,7 +10327,7 @@ function createNullTooltipStore() {
 }
 function createInitialState(initialState, triggerElements, floatingId, nested = false) {
   const state = {
-    ...createInitialPopupStoreState(),
+    ...createInitialPopupStoreState(triggerElements, floatingId, nested),
     disabled: false,
     instantType: void 0,
     isInstantPhase: false,
@@ -10134,19 +10339,18 @@ function createInitialState(initialState, triggerElements, floatingId, nested = 
     adaptiveOrigin: void 0,
     ...initialState
   };
-  state.floatingRootContext = createPopupFloatingRootContext(triggerElements, floatingId, nested);
   return state;
 }
 function createInitialContext(triggerElements) {
   return {
-    popupRef: /* @__PURE__ */ React64.createRef(),
+    popupRef: /* @__PURE__ */ React65.createRef(),
     onOpenChange: void 0,
     onOpenChangeComplete: void 0,
     triggerElements
   };
 }
 
-// node_modules/@base-ui/react/tooltip/root/TooltipRoot.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tooltip/root/TooltipRoot.mjs
 var import_jsx_runtime15 = __toESM(require_jsx_runtime(), 1);
 var TooltipRoot = fastComponent(function TooltipRoot2(props) {
   const {
@@ -10174,7 +10378,7 @@ var TooltipRoot = fastComponent(function TooltipRoot2(props) {
   store.useContextCallback("onOpenChange", onOpenChange);
   store.useContextCallback("onOpenChangeComplete", onOpenChangeComplete);
   const openState = store.useState("open");
-  const open = !disabled2 && openState;
+  const open3 = !disabled2 && openState;
   const activeTriggerId = store.useState("activeTriggerId");
   const mounted = store.useState("mounted");
   const payload = store.useState("payload");
@@ -10189,11 +10393,11 @@ var TooltipRoot = fastComponent(function TooltipRoot2(props) {
   const {
     forceUnmount,
     transitionStatus
-  } = useOpenStateTransitions(open, store);
+  } = useOpenStateTransitions(open3, store);
   const isInstantPhase = store.useState("isInstantPhase");
   const instantType = store.useState("instantType");
   const lastOpenChangeReason = store.useState("lastOpenChangeReason");
-  const previousInstantTypeRef = React65.useRef(null);
+  const previousInstantTypeRef = React66.useRef(null);
   useIsoLayoutEffect(() => {
     if (openState && disabled2) {
       store.setOpen(false, createChangeEventDetails(reason_parts_exports.disabled));
@@ -10211,17 +10415,17 @@ var TooltipRoot = fastComponent(function TooltipRoot2(props) {
     }
   }, [transitionStatus, isInstantPhase, lastOpenChangeReason, instantType, store]);
   useIsoLayoutEffect(() => {
-    if (open) {
+    if (open3) {
       if (activeTriggerId == null) {
         store.set("payload", void 0);
       }
     }
-  }, [store, activeTriggerId, open]);
-  React65.useImperativeHandle(actionsRef, () => ({
+  }, [store, activeTriggerId, open3]);
+  React66.useImperativeHandle(actionsRef, () => ({
     unmount: forceUnmount,
     close: () => store.setOpen(false, createChangeEventDetails(reason_parts_exports.imperativeAction))
   }), [forceUnmount, store]);
-  const shouldRenderInteractions = open || mounted || !disabled2 && trackCursorAxis !== "none";
+  const shouldRenderInteractions = open3 || mounted || !disabled2 && trackCursorAxis !== "none";
   return /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)(TooltipRootContext.Provider, {
     value: store,
     children: [handle && /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(PopupHandleAttachment, {
@@ -10251,7 +10455,7 @@ function TooltipInteractions({
     enabled: !disabled2 && trackCursorAxis !== "none",
     axis: trackCursorAxis === "none" ? void 0 : trackCursorAxis
   });
-  const triggerProps = React65.useMemo(() => mergeProps(clientPoint.reference, dismiss.reference), [clientPoint.reference, dismiss.reference]);
+  const triggerProps = React66.useMemo(() => mergeProps(clientPoint.reference, dismiss.reference), [clientPoint.reference, dismiss.reference]);
   usePopupInteractionProps(store, {
     activeTriggerProps: triggerProps,
     inactiveTriggerProps: triggerProps,
@@ -10260,27 +10464,27 @@ function TooltipInteractions({
   return null;
 }
 
-// node_modules/@base-ui/react/tooltip/trigger/TooltipTrigger.mjs
-var React67 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tooltip/trigger/TooltipTrigger.mjs
+var React68 = __toESM(require_react(), 1);
 
-// node_modules/@base-ui/react/tooltip/provider/TooltipProviderContext.mjs
-var React66 = __toESM(require_react(), 1);
-var TooltipProviderContext = /* @__PURE__ */ React66.createContext(void 0);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tooltip/provider/TooltipProviderContext.mjs
+var React67 = __toESM(require_react(), 1);
+var TooltipProviderContext = /* @__PURE__ */ React67.createContext(void 0);
 if (true) TooltipProviderContext.displayName = "TooltipProviderContext";
 function useTooltipProviderContext() {
-  return React66.useContext(TooltipProviderContext);
+  return React67.useContext(TooltipProviderContext);
 }
 
-// node_modules/@base-ui/react/tooltip/utils/constants.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tooltip/utils/constants.mjs
 var OPEN_DELAY = 600;
 
-// node_modules/@base-ui/react/tooltip/trigger/TooltipTrigger.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tooltip/trigger/TooltipTrigger.mjs
 var TOOLTIP_TRIGGER_IDENTIFIER = "data-base-ui-tooltip-trigger";
 function getTargetElement(event) {
   if ("composedPath" in event) {
     const path = event.composedPath();
-    for (let i2 = 0; i2 < path.length; i2 += 1) {
-      const element = path[i2];
+    for (let i = 0; i < path.length; i += 1) {
+      const element = path[i];
       if (isElement(element)) {
         return element;
       }
@@ -10328,8 +10532,7 @@ var TooltipTrigger = fastComponentRef(function TooltipTrigger2(componentProps, f
   const isTriggerActive = store.useState("isTriggerActive", thisTriggerId);
   const isOpenedByThisTrigger = store.useState("isOpenedByTrigger", thisTriggerId);
   const floatingRootContext = store.useState("floatingRootContext");
-  const triggerElementRef = React67.useRef(null);
-  const delayWithDefault = delay ?? OPEN_DELAY;
+  const triggerElementRef = React68.useRef(null);
   const closeDelayWithDefault = closeDelay ?? 0;
   const {
     registerTrigger,
@@ -10341,6 +10544,7 @@ var TooltipTrigger = fastComponentRef(function TooltipTrigger2(componentProps, f
   });
   const providerDelay = useTooltipProviderContext();
   const {
+    activeIdRef,
     delayRef,
     isInstantPhase,
     hasProvider
@@ -10354,14 +10558,14 @@ var TooltipTrigger = fastComponentRef(function TooltipTrigger2(componentProps, f
   const disabledRef = useValueAsRef(disabled2);
   const trackCursorAxis = store.useState("trackCursorAxis");
   const disableHoverablePopup = store.useState("disableHoverablePopup");
-  const isNestedTriggerHoveredRef = React67.useRef(false);
+  const isNestedTriggerHoveredRef = React68.useRef(false);
   const nestedTriggerOpenTimeout = useTimeout();
-  const pointerTypeRef = React67.useRef(void 0);
+  const pointerTypeRef = React68.useRef(void 0);
   function getOpenDelay() {
-    if (!hasProvider) {
-      return delayWithDefault;
+    if (hasProvider && activeIdRef.current != null) {
+      return 0;
     }
-    return getDelay(delayRef.current, "open") === 0 ? 0 : delay ?? providerDelay ?? OPEN_DELAY;
+    return delay ?? providerDelay ?? OPEN_DELAY;
   }
   function isEnabledNestedTriggerTarget(target) {
     const triggerEl = triggerElementRef.current;
@@ -10420,7 +10624,7 @@ var TooltipTrigger = fastComponentRef(function TooltipTrigger2(componentProps, f
     }
     if (wasNestedTriggerHovered && !nestedTriggerHovered && targetInsideTrigger && !disabledRef.current && !store.select("open") && triggerEl && // Match the hover hook's non-strict mouse fallback for mouse-only event sequences.
     isMouseLikePointerType(pointerTypeRef.current)) {
-      const open = () => {
+      const open3 = () => {
         if (!isNestedTriggerHoveredRef.current && !disabledRef.current && !store.select("open")) {
           store.setOpen(true, createChangeEventDetails(reason_parts_exports.triggerHover, event, triggerEl));
         }
@@ -10428,9 +10632,9 @@ var TooltipTrigger = fastComponentRef(function TooltipTrigger2(componentProps, f
       const openDelay = getOpenDelay();
       if (openDelay === 0) {
         nestedTriggerOpenTimeout.clear();
-        open();
+        open3();
       } else {
-        nestedTriggerOpenTimeout.start(openDelay, open);
+        nestedTriggerOpenTimeout.start(openDelay, open3);
       }
     }
   };
@@ -10472,7 +10676,7 @@ var TooltipTrigger = fastComponentRef(function TooltipTrigger2(componentProps, f
         }
       },
       id: thisTriggerId,
-      "data-trigger-disabled": disabled2 ? "" : void 0,
+      [triggerDisabled]: disabled2 ? "" : void 0,
       [TOOLTIP_TRIGGER_IDENTIFIER]: disabled2 ? void 0 : ""
     }, elementProps],
     stateAttributesMapping: triggerOpenStateMapping2
@@ -10481,24 +10685,24 @@ var TooltipTrigger = fastComponentRef(function TooltipTrigger2(componentProps, f
 });
 if (true) TooltipTrigger.displayName = "TooltipTrigger";
 
-// node_modules/@base-ui/react/tooltip/portal/TooltipPortal.mjs
-var React69 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tooltip/portal/TooltipPortal.mjs
+var React70 = __toESM(require_react(), 1);
 
-// node_modules/@base-ui/react/tooltip/portal/TooltipPortalContext.mjs
-var React68 = __toESM(require_react(), 1);
-var TooltipPortalContext = /* @__PURE__ */ React68.createContext(void 0);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tooltip/portal/TooltipPortalContext.mjs
+var React69 = __toESM(require_react(), 1);
+var TooltipPortalContext = /* @__PURE__ */ React69.createContext(void 0);
 if (true) TooltipPortalContext.displayName = "TooltipPortalContext";
 function useTooltipPortalContext() {
-  const value = React68.useContext(TooltipPortalContext);
+  const value = React69.useContext(TooltipPortalContext);
   if (value === void 0) {
     throw new Error(true ? "Base UI: <Tooltip.Portal> is missing." : formatErrorMessage_default(70));
   }
   return value;
 }
 
-// node_modules/@base-ui/react/tooltip/portal/TooltipPortal.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tooltip/portal/TooltipPortal.mjs
 var import_jsx_runtime16 = __toESM(require_jsx_runtime(), 1);
-var TooltipPortal = /* @__PURE__ */ React69.forwardRef(function TooltipPortal2(props, forwardedRef) {
+var TooltipPortal = /* @__PURE__ */ React70.forwardRef(function TooltipPortal2(props, forwardedRef) {
   const {
     keepMounted = false,
     ...portalProps
@@ -10519,24 +10723,24 @@ var TooltipPortal = /* @__PURE__ */ React69.forwardRef(function TooltipPortal2(p
 });
 if (true) TooltipPortal.displayName = "TooltipPortal";
 
-// node_modules/@base-ui/react/tooltip/positioner/TooltipPositioner.mjs
-var React71 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tooltip/positioner/TooltipPositioner.mjs
+var React72 = __toESM(require_react(), 1);
 
-// node_modules/@base-ui/react/tooltip/positioner/TooltipPositionerContext.mjs
-var React70 = __toESM(require_react(), 1);
-var TooltipPositionerContext = /* @__PURE__ */ React70.createContext(void 0);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tooltip/positioner/TooltipPositionerContext.mjs
+var React71 = __toESM(require_react(), 1);
+var TooltipPositionerContext = /* @__PURE__ */ React71.createContext(void 0);
 if (true) TooltipPositionerContext.displayName = "TooltipPositionerContext";
 function useTooltipPositionerContext() {
-  const context = React70.useContext(TooltipPositionerContext);
+  const context = React71.useContext(TooltipPositionerContext);
   if (context === void 0) {
     throw new Error(true ? "Base UI: TooltipPositionerContext is missing. TooltipPositioner parts must be placed within <Tooltip.Positioner>." : formatErrorMessage_default(71));
   }
   return context;
 }
 
-// node_modules/@base-ui/react/tooltip/positioner/TooltipPositioner.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tooltip/positioner/TooltipPositioner.mjs
 var import_jsx_runtime17 = __toESM(require_jsx_runtime(), 1);
-var TooltipPositioner = /* @__PURE__ */ React71.forwardRef(function TooltipPositioner2(componentProps, forwardedRef) {
+var TooltipPositioner = /* @__PURE__ */ React72.forwardRef(function TooltipPositioner2(componentProps, forwardedRef) {
   const {
     render: render4,
     className,
@@ -10557,7 +10761,7 @@ var TooltipPositioner = /* @__PURE__ */ React71.forwardRef(function TooltipPosit
   } = componentProps;
   const store = useTooltipRootContext();
   const keepMounted = useTooltipPortalContext();
-  const open = store.useState("open");
+  const open3 = store.useState("open");
   const mounted = store.useState("mounted");
   const trackCursorAxis = store.useState("trackCursorAxis");
   const disableHoverablePopup = store.useState("disableHoverablePopup");
@@ -10583,20 +10787,20 @@ var TooltipPositioner = /* @__PURE__ */ React71.forwardRef(function TooltipPosit
     collisionAvoidance,
     adaptiveOrigin: adaptiveOrigin2
   });
-  const state = React71.useMemo(() => ({
-    open,
+  const state = React72.useMemo(() => ({
+    open: open3,
     side: positioning.side,
     align: positioning.align,
     anchorHidden: positioning.anchorHidden,
     instant: trackCursorAxis !== "none" ? "tracking-cursor" : instantType
-  }), [open, positioning.side, positioning.align, positioning.anchorHidden, trackCursorAxis, instantType]);
+  }), [open3, positioning.side, positioning.align, positioning.anchorHidden, trackCursorAxis, instantType]);
   const element = usePositioner(componentProps, state, {
     styles: positioning.positionerStyles,
     transitionStatus,
     props: elementProps,
     refs: [forwardedRef, store.useStateSetter("positionerElement")],
     hidden: !mounted,
-    inert: !open || trackCursorAxis === "both" || disableHoverablePopup
+    inert: !open3 || trackCursorAxis === "both" || disableHoverablePopup
   });
   return /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(TooltipPositionerContext.Provider, {
     value: positioning,
@@ -10605,9 +10809,9 @@ var TooltipPositioner = /* @__PURE__ */ React71.forwardRef(function TooltipPosit
 });
 if (true) TooltipPositioner.displayName = "TooltipPositioner";
 
-// node_modules/@base-ui/react/tooltip/popup/TooltipPopup.mjs
-var React72 = __toESM(require_react(), 1);
-var TooltipPopup = /* @__PURE__ */ React72.forwardRef(function TooltipPopup2(componentProps, forwardedRef) {
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tooltip/popup/TooltipPopup.mjs
+var React73 = __toESM(require_react(), 1);
+var TooltipPopup = /* @__PURE__ */ React73.forwardRef(function TooltipPopup2(componentProps, forwardedRef) {
   const {
     render: render4,
     className,
@@ -10619,7 +10823,7 @@ var TooltipPopup = /* @__PURE__ */ React72.forwardRef(function TooltipPopup2(com
     side,
     align
   } = useTooltipPositionerContext();
-  const open = store.useState("open");
+  const open3 = store.useState("open");
   const instantType = store.useState("instantType");
   const transitionStatus = store.useState("transitionStatus");
   const popupProps = store.useState("popupProps");
@@ -10627,10 +10831,10 @@ var TooltipPopup = /* @__PURE__ */ React72.forwardRef(function TooltipPopup2(com
   const disabled2 = store.useState("disabled");
   const closeDelay = store.useState("closeDelay");
   useOpenChangeComplete({
-    open,
+    open: open3,
     ref: store.context.popupRef,
     onComplete() {
-      if (open) {
+      if (open3) {
         store.context.onOpenChangeComplete?.(true);
       }
     }
@@ -10641,7 +10845,7 @@ var TooltipPopup = /* @__PURE__ */ React72.forwardRef(function TooltipPopup2(com
   });
   const setPopupElement = store.useStateSetter("popupElement");
   const state = {
-    open,
+    open: open3,
     side,
     align,
     instant: instantType,
@@ -10657,9 +10861,9 @@ var TooltipPopup = /* @__PURE__ */ React72.forwardRef(function TooltipPopup2(com
 });
 if (true) TooltipPopup.displayName = "TooltipPopup";
 
-// node_modules/@base-ui/react/tooltip/arrow/TooltipArrow.mjs
-var React73 = __toESM(require_react(), 1);
-var TooltipArrow = /* @__PURE__ */ React73.forwardRef(function TooltipArrow2(componentProps, forwardedRef) {
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tooltip/arrow/TooltipArrow.mjs
+var React74 = __toESM(require_react(), 1);
+var TooltipArrow = /* @__PURE__ */ React74.forwardRef(function TooltipArrow2(componentProps, forwardedRef) {
   const {
     render: render4,
     className,
@@ -10674,10 +10878,10 @@ var TooltipArrow = /* @__PURE__ */ React73.forwardRef(function TooltipArrow2(com
     arrowUncentered,
     arrowStyles
   } = useTooltipPositionerContext();
-  const open = store.useState("open");
+  const open3 = store.useState("open");
   const instantType = store.useState("instantType");
   const state = {
-    open,
+    open: open3,
     side,
     align,
     uncentered: arrowUncentered,
@@ -10696,8 +10900,8 @@ var TooltipArrow = /* @__PURE__ */ React73.forwardRef(function TooltipArrow2(com
 });
 if (true) TooltipArrow.displayName = "TooltipArrow";
 
-// node_modules/@base-ui/react/tooltip/provider/TooltipProvider.mjs
-var React74 = __toESM(require_react(), 1);
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tooltip/provider/TooltipProvider.mjs
+var React75 = __toESM(require_react(), 1);
 var import_jsx_runtime18 = __toESM(require_jsx_runtime(), 1);
 var TooltipProvider = function TooltipProvider2(props) {
   const {
@@ -10705,7 +10909,7 @@ var TooltipProvider = function TooltipProvider2(props) {
     closeDelay,
     timeout = 400
   } = props;
-  const delayValue = React74.useMemo(() => ({
+  const delayValue = React75.useMemo(() => ({
     open: delay,
     close: closeDelay
   }), [delay, closeDelay]);
@@ -10720,9 +10924,9 @@ var TooltipProvider = function TooltipProvider2(props) {
 };
 if (true) TooltipProvider.displayName = "TooltipProvider";
 
-// node_modules/@base-ui/react/tooltip/viewport/TooltipViewport.mjs
-var React75 = __toESM(require_react(), 1);
-var TooltipViewport = /* @__PURE__ */ React75.forwardRef(function TooltipViewport2(componentProps, forwardedRef) {
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tooltip/viewport/TooltipViewport.mjs
+var React76 = __toESM(require_react(), 1);
+var TooltipViewport = /* @__PURE__ */ React76.forwardRef(function TooltipViewport2(componentProps, forwardedRef) {
   const {
     render: render4,
     className,
@@ -10757,7 +10961,7 @@ var TooltipViewport = /* @__PURE__ */ React75.forwardRef(function TooltipViewpor
 });
 if (true) TooltipViewport.displayName = "TooltipViewport";
 
-// node_modules/@base-ui/react/tooltip/store/TooltipHandle.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tooltip/store/TooltipHandle.mjs
 var TooltipHandle = class extends BasePopupHandle {
   constructor() {
     super(createNullTooltipStore(), "Tooltip");
@@ -10792,7 +10996,7 @@ function createTooltipHandle() {
   return new TooltipHandle();
 }
 
-// node_modules/@base-ui/react/use-render/useRender.mjs
+// node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/use-render/useRender.mjs
 function useRender(params) {
   return useRenderElement(params.defaultTagName ?? "div", params, params);
 }
@@ -10887,23 +11091,25 @@ if (typeof process === "undefined" || true) {
   registerStyle("e8e31009f5", "._6defc79820e382c6__button{box-sizing:var(--_gcd-button-box-sizing,border-box);font-family:var(--_gcd-button-font-family,inherit);font-size:var(--_gcd-button-font-size,inherit);font-weight:var(--_gcd-button-font-weight,inherit)}.d2cff2e5dea83bd1__input{box-sizing:var(--_gcd-input-box-sizing,border-box);font-family:var(--_gcd-input-font-family,inherit);font-size:var(--_gcd-input-font-size,inherit);font-weight:var(--_gcd-input-font-weight,inherit);margin:var(--_gcd-input-margin,0);&::placeholder{color:var(--_gcd-input-placeholder-color,var(--wpds-color-foreground-interactive-neutral-weak,#707070))}&:is(textarea,[type=text],[type=password],[type=color],[type=date],[type=datetime],[type=datetime-local],[type=email],[type=month],[type=number],[type=search],[type=tel],[type=time],[type=url],[type=week]){background-color:var(--_gcd-input-background-color,transparent);border:var(--_gcd-input-border,none);border-radius:var(--_gcd-input-border-radius,0);box-shadow:var(--_gcd-input-box-shadow,0 0 0 transparent);color:var(--_gcd-input-color,var(--wpds-color-foreground-interactive-neutral,#1e1e1e));&:focus{border-color:var(--_gcd-input-border-color-focus,var(--wp-admin-theme-color));box-shadow:var(--_gcd-input-box-shadow-focus,none);outline:var(--_gcd-input-outline-focus,none)}&:disabled{background:var(--_gcd-input-background-disabled,transparent);border-color:var(--_gcd-input-border-color-disabled,transparent);box-shadow:var(--_gcd-input-box-shadow-disabled,none);color:var(--_gcd-input-color-disabled,var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d))}}&:is(textarea,[type=text],[type=password],[type=date],[type=datetime],[type=datetime-local],[type=email],[type=month],[type=number],[type=search],[type=tel],[type=time],[type=url],[type=week]){line-height:var(--_gcd-input-line-height,inherit);min-height:var(--_gcd-input-min-height,auto);padding:var(--_gcd-input-padding,0)}}._547d86373d02e108__textarea{box-sizing:var(--_gcd-textarea-box-sizing,border-box);overflow:var(--_gcd-textarea-overflow,auto);resize:var(--_gcd-textarea-resize,block)}._8c15fd0ed9f28ba4__div{outline:var(--_gcd-div-outline,0 solid transparent)}p._43cec3e1eec1066d__p{font-size:var(--_gcd-p-font-size,13px);line-height:var(--_gcd-p-line-height,1.5);margin:var(--_gcd-p-margin,0)}:is(h1,h2,h3,h4,h5,h6).e97669c6d9a38497__heading{color:var(--_gcd-heading-color,var(--wpds-color-foreground-content-neutral,#1e1e1e));font-size:var(--_gcd-heading-font-size,inherit);font-weight:var(--_gcd-heading-font-weight,var(--wpds-typography-font-weight-emphasis,600));margin:var(--_gcd-heading-margin,0)}._2c0831b0499dbd6e__a,._2c0831b0499dbd6e__a:is(:hover,:focus,:active){border-radius:var(--_gcd-a-border-radius,0);box-shadow:var(--_gcd-a-box-shadow,none);color:var(--_gcd-a-color,inherit);outline:var(--_gcd-a-outline,0 solid transparent);transition:var(--_gcd-a-transition,none)}.c59a0ebebd71fa4a__ol{list-style:var(--_gcd-ol-list-style,none);margin:var(--_gcd-ol-margin,0);padding-block:var(--_gcd-ol-padding-block,0);padding-inline:var(--_gcd-ol-padding-inline,0)}._46b5cb0c8e24e8c9__li{margin:var(--_gcd-li-margin,0)}");
 }
 var global_css_defense_default = { "button": "_6defc79820e382c6__button", "input": "d2cff2e5dea83bd1__input", "textarea": "_547d86373d02e108__textarea", "div": "_8c15fd0ed9f28ba4__div", "p": "_43cec3e1eec1066d__p", "heading": "e97669c6d9a38497__heading", "a": "_2c0831b0499dbd6e__a", "ol": "c59a0ebebd71fa4a__ol", "li": "_46b5cb0c8e24e8c9__li" };
-var Text = (0, import_element10.forwardRef)(function Text2({ variant = "body-md", render: render4, className, ...props }, ref) {
-  const element = useRender({
-    render: render4,
-    defaultTagName: "span",
-    ref,
-    props: mergeProps(props, {
-      className: clsx_default(
-        style_default.text,
-        global_css_defense_default.heading,
-        global_css_defense_default.p,
-        style_default[variant],
-        className
-      )
-    })
-  });
-  return element;
-});
+var Text = (0, import_element10.forwardRef)(
+  function UnforwardedText({ variant = "body-md", render: render4, className, ...props }, ref) {
+    const element = useRender({
+      render: render4,
+      defaultTagName: "span",
+      ref,
+      props: mergeProps(props, {
+        className: clsx_default(
+          style_default.text,
+          global_css_defense_default.heading,
+          global_css_defense_default.p,
+          style_default[variant],
+          className
+        )
+      })
+    });
+    return element;
+  }
+);
 
 // packages/ui/build-module/badge/badge.mjs
 var import_jsx_runtime19 = __toESM(require_jsx_runtime(), 1);
@@ -10991,21 +11197,23 @@ if (typeof process === "undefined" || true) {
   registerStyle2("40ea4a6382", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{._96e6251aad1a6136__badge{border-radius:var(--wpds-border-radius-lg,8px);padding-block:var(--wpds-dimension-padding-xs,4px);padding-inline:var(--wpds-dimension-padding-sm,8px)}._99f7158cb520f750__is-high-intent{background-color:var(--wpds-color-background-surface-error,#fae5e1);color:var(--wpds-color-foreground-content-error,#470000)}.c20ebef2365bc8b7__is-medium-intent{background-color:var(--wpds-color-background-surface-warning,#fde6be);color:var(--wpds-color-foreground-content-warning,#2e1900)}._365e1626c6202e52__is-low-intent{background-color:var(--wpds-color-background-surface-caution,#fee995);color:var(--wpds-color-foreground-content-caution,#281d00)}._33f8198127ddf4ef__is-stable-intent{background-color:var(--wpds-color-background-surface-success,#c2f8ca);color:var(--wpds-color-foreground-content-success,#002900)}._04c1aca8fc449412__is-informational-intent{background-color:var(--wpds-color-background-surface-info,#deebfa);color:var(--wpds-color-foreground-content-info,#001b4f)}._90726e69d495ec19__is-draft-intent{background-color:var(--wpds-color-background-surface-neutral-weak,#f4f4f4);color:var(--wpds-color-foreground-content-neutral,#1e1e1e)}._898f4a544993bd39__is-none-intent{background-color:var(--wpds-color-background-surface-neutral-strong,#fff);border:var(--wpds-border-width-xs,1px) solid var(--wpds-color-stroke-surface-neutral,#dbdbdb);color:var(--wpds-color-foreground-content-neutral,#1e1e1e);padding-block:calc(var(--wpds-dimension-padding-xs, 4px) - var(--wpds-border-width-xs, 1px));padding-inline:calc(var(--wpds-dimension-padding-sm, 8px) - var(--wpds-border-width-xs, 1px))}}}");
 }
 var style_default2 = { "badge": "_96e6251aad1a6136__badge", "is-high-intent": "_99f7158cb520f750__is-high-intent", "is-medium-intent": "c20ebef2365bc8b7__is-medium-intent", "is-low-intent": "_365e1626c6202e52__is-low-intent", "is-stable-intent": "_33f8198127ddf4ef__is-stable-intent", "is-informational-intent": "_04c1aca8fc449412__is-informational-intent", "is-draft-intent": "_90726e69d495ec19__is-draft-intent", "is-none-intent": "_898f4a544993bd39__is-none-intent" };
-var Badge = (0, import_element11.forwardRef)(function Badge2({ intent = "none", className, ...props }, ref) {
-  return /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(
-    Text,
-    {
-      ref,
-      className: clsx_default(
-        style_default2.badge,
-        style_default2[`is-${intent}-intent`],
-        className
-      ),
-      ...props,
-      variant: "body-sm"
-    }
-  );
-});
+var Badge = (0, import_element11.forwardRef)(
+  function UnforwardedBadge({ intent = "none", className, ...props }, ref) {
+    return /* @__PURE__ */ (0, import_jsx_runtime19.jsx)(
+      Text,
+      {
+        ref,
+        className: clsx_default(
+          style_default2.badge,
+          style_default2[`is-${intent}-intent`],
+          className
+        ),
+        ...props,
+        variant: "body-sm"
+      }
+    );
+  }
+);
 
 // packages/ui/build-module/tooltip/popup.mjs
 var import_element15 = __toESM(require_element(), 1);
@@ -11282,7 +11490,10 @@ var Positioner = (0, import_element13.forwardRef)(
 // packages/ui/build-module/utils/render-slot-with-children.mjs
 var import_element14 = __toESM(require_element(), 1);
 function renderSlotWithChildren(slot, defaultSlot, children) {
-  return (0, import_element14.cloneElement)(slot ?? defaultSlot, { children });
+  return (0, import_element14.cloneElement)(
+    slot ?? defaultSlot,
+    { children }
+  );
 }
 
 // packages/ui/build-module/utils/theme-provider.mjs
@@ -11528,9 +11739,9 @@ if (typeof process === "undefined" || true) {
 }
 var resets_default2 = { "box-sizing": "_336cd3e4e743482f__box-sizing" };
 if (typeof process === "undefined" || true) {
-  registerStyle6("08122b3d53", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer utilities{.af79fb116edb0dd7__outset-ring--focus:focus,.dfcfdc28396e5d98__outset-ring--focus-visible:focus-visible,.e5cd9ee879f6403a__outset-ring--focus-within:focus-within,:focus-visible ._81935a08e952f267__outset-ring--focus-parent-visible{--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within,.abc777e9713fa711__outset-ring--focus-except-active:focus{outline:none}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within:not(:has(:active)),.abc777e9713fa711__outset-ring--focus-except-active:focus:not(:active){--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}}}");
+  registerStyle6("7c3267f794", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer utilities{.af79fb116edb0dd7__outset-ring--focus:focus,.dfcfdc28396e5d98__outset-ring--focus-visible:focus-visible,.e5cd9ee879f6403a__outset-ring--focus-within:focus-within{--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within,.abc777e9713fa711__outset-ring--focus-except-active:focus{outline:none}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within:not(:has(:active)),.abc777e9713fa711__outset-ring--focus-except-active:focus:not(:active){--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}}}");
 }
-var focus_module_default = { "outset-ring--focus": "af79fb116edb0dd7__outset-ring--focus", "outset-ring--focus-visible": "dfcfdc28396e5d98__outset-ring--focus-visible", "outset-ring--focus-within": "e5cd9ee879f6403a__outset-ring--focus-within", "outset-ring--focus-parent-visible": "_81935a08e952f267__outset-ring--focus-parent-visible", "outset-ring--focus-except-active": "abc777e9713fa711__outset-ring--focus-except-active", "outset-ring--focus-within-except-active": "_3c9f5ee9fc9c136d__outset-ring--focus-within-except-active" };
+var focus_module_default = { "outset-ring--focus": "af79fb116edb0dd7__outset-ring--focus", "outset-ring--focus-visible": "dfcfdc28396e5d98__outset-ring--focus-visible", "outset-ring--focus-within": "e5cd9ee879f6403a__outset-ring--focus-within", "outset-ring--focus-except-active": "abc777e9713fa711__outset-ring--focus-except-active", "outset-ring--focus-within-except-active": "_3c9f5ee9fc9c136d__outset-ring--focus-within-except-active" };
 if (typeof process === "undefined" || true) {
   registerStyle6("e8e6a9be37", '@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{.d4250949359b05ce__link{text-decoration-thickness:from-font;text-underline-offset:.2em}.c6055659b8e2cd2c__is-brand,.c6055659b8e2cd2c__is-brand:visited{--_gcd-a-color:var(--wpds-color-foreground-interactive-brand,var(--wp-admin-theme-color,#3858e9));color:var(--wpds-color-foreground-interactive-brand,var(--wp-admin-theme-color,#3858e9))}.c6055659b8e2cd2c__is-brand:active,.c6055659b8e2cd2c__is-brand:hover{--_gcd-a-color:var(--wpds-color-foreground-interactive-brand-active,color-mix(in oklch,var(--wp-admin-theme-color,#3858e9) 52%,#000));color:var(--wpds-color-foreground-interactive-brand-active,color-mix(in oklch,var(--wp-admin-theme-color,#3858e9) 52%,#000))}._92e0dfcaeee15b88__is-neutral,._92e0dfcaeee15b88__is-neutral:visited{--_gcd-a-color:var(--wpds-color-foreground-interactive-neutral,#1e1e1e);color:var(--wpds-color-foreground-interactive-neutral,#1e1e1e);text-decoration-color:var(--wpds-color-stroke-interactive-neutral,#8d8d8d)}._92e0dfcaeee15b88__is-neutral:active,._92e0dfcaeee15b88__is-neutral:hover{--_gcd-a-color:var(--wpds-color-foreground-interactive-neutral-active,#1e1e1e);color:var(--wpds-color-foreground-interactive-neutral-active,#1e1e1e)}.cf122a9bf1035d42__is-unstyled{--_gcd-a-color:inherit;color:inherit;text-decoration:none}._0cb411afac4c86c7__link-icon{display:inline-block;font-weight:var(--wpds-typography-font-weight-default,400);line-height:1;margin-inline-start:var(--wpds-dimension-padding-xs,4px);text-decoration:none}._0cb411afac4c86c7__link-icon:after{content:"\\2197"}._0cb411afac4c86c7__link-icon:dir(rtl):after{content:"\\2196"}}}');
 }
@@ -11539,132 +11750,145 @@ if (typeof process === "undefined" || true) {
   registerStyle6("e8e31009f5", "._6defc79820e382c6__button{box-sizing:var(--_gcd-button-box-sizing,border-box);font-family:var(--_gcd-button-font-family,inherit);font-size:var(--_gcd-button-font-size,inherit);font-weight:var(--_gcd-button-font-weight,inherit)}.d2cff2e5dea83bd1__input{box-sizing:var(--_gcd-input-box-sizing,border-box);font-family:var(--_gcd-input-font-family,inherit);font-size:var(--_gcd-input-font-size,inherit);font-weight:var(--_gcd-input-font-weight,inherit);margin:var(--_gcd-input-margin,0);&::placeholder{color:var(--_gcd-input-placeholder-color,var(--wpds-color-foreground-interactive-neutral-weak,#707070))}&:is(textarea,[type=text],[type=password],[type=color],[type=date],[type=datetime],[type=datetime-local],[type=email],[type=month],[type=number],[type=search],[type=tel],[type=time],[type=url],[type=week]){background-color:var(--_gcd-input-background-color,transparent);border:var(--_gcd-input-border,none);border-radius:var(--_gcd-input-border-radius,0);box-shadow:var(--_gcd-input-box-shadow,0 0 0 transparent);color:var(--_gcd-input-color,var(--wpds-color-foreground-interactive-neutral,#1e1e1e));&:focus{border-color:var(--_gcd-input-border-color-focus,var(--wp-admin-theme-color));box-shadow:var(--_gcd-input-box-shadow-focus,none);outline:var(--_gcd-input-outline-focus,none)}&:disabled{background:var(--_gcd-input-background-disabled,transparent);border-color:var(--_gcd-input-border-color-disabled,transparent);box-shadow:var(--_gcd-input-box-shadow-disabled,none);color:var(--_gcd-input-color-disabled,var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d))}}&:is(textarea,[type=text],[type=password],[type=date],[type=datetime],[type=datetime-local],[type=email],[type=month],[type=number],[type=search],[type=tel],[type=time],[type=url],[type=week]){line-height:var(--_gcd-input-line-height,inherit);min-height:var(--_gcd-input-min-height,auto);padding:var(--_gcd-input-padding,0)}}._547d86373d02e108__textarea{box-sizing:var(--_gcd-textarea-box-sizing,border-box);overflow:var(--_gcd-textarea-overflow,auto);resize:var(--_gcd-textarea-resize,block)}._8c15fd0ed9f28ba4__div{outline:var(--_gcd-div-outline,0 solid transparent)}p._43cec3e1eec1066d__p{font-size:var(--_gcd-p-font-size,13px);line-height:var(--_gcd-p-line-height,1.5);margin:var(--_gcd-p-margin,0)}:is(h1,h2,h3,h4,h5,h6).e97669c6d9a38497__heading{color:var(--_gcd-heading-color,var(--wpds-color-foreground-content-neutral,#1e1e1e));font-size:var(--_gcd-heading-font-size,inherit);font-weight:var(--_gcd-heading-font-weight,var(--wpds-typography-font-weight-emphasis,600));margin:var(--_gcd-heading-margin,0)}._2c0831b0499dbd6e__a,._2c0831b0499dbd6e__a:is(:hover,:focus,:active){border-radius:var(--_gcd-a-border-radius,0);box-shadow:var(--_gcd-a-box-shadow,none);color:var(--_gcd-a-color,inherit);outline:var(--_gcd-a-outline,0 solid transparent);transition:var(--_gcd-a-transition,none)}.c59a0ebebd71fa4a__ol{list-style:var(--_gcd-ol-list-style,none);margin:var(--_gcd-ol-margin,0);padding-block:var(--_gcd-ol-padding-block,0);padding-inline:var(--_gcd-ol-padding-inline,0)}._46b5cb0c8e24e8c9__li{margin:var(--_gcd-li-margin,0)}");
 }
 var global_css_defense_default2 = { "button": "_6defc79820e382c6__button", "input": "d2cff2e5dea83bd1__input", "textarea": "_547d86373d02e108__textarea", "div": "_8c15fd0ed9f28ba4__div", "p": "_43cec3e1eec1066d__p", "heading": "e97669c6d9a38497__heading", "a": "_2c0831b0499dbd6e__a", "ol": "c59a0ebebd71fa4a__ol", "li": "_46b5cb0c8e24e8c9__li" };
-var Link = (0, import_element17.forwardRef)(function Link2({
-  children,
-  variant = "default",
-  tone = "brand",
-  openInNewTab = false,
-  target,
-  render: render4,
-  className,
-  ...props
-}, ref) {
-  const shouldShowNewTabIndicator = openInNewTab || /^_blank$/i.test(target ?? "");
-  const element = useRender({
+var Link = (0, import_element17.forwardRef)(
+  function UnforwardedLink({
+    children,
+    variant = "default",
+    tone = "brand",
+    openInNewTab = false,
+    target,
     render: render4,
-    defaultTagName: "a",
-    ref,
-    props: mergeProps(props, {
-      className: clsx_default(
-        global_css_defense_default2.a,
-        resets_default2["box-sizing"],
-        focus_module_default["outset-ring--focus-except-active"],
-        variant !== "unstyled" && style_default5.link,
-        variant !== "unstyled" && style_default5[`is-${tone}`],
-        variant === "unstyled" && style_default5["is-unstyled"],
-        className
-      ),
-      target: target ?? (openInNewTab ? "_blank" : void 0),
-      children: /* @__PURE__ */ (0, import_jsx_runtime26.jsxs)(import_jsx_runtime26.Fragment, { children: [
-        children,
-        shouldShowNewTabIndicator && /* @__PURE__ */ (0, import_jsx_runtime26.jsx)(
-          "span",
-          {
-            className: style_default5["link-icon"],
-            role: "img",
-            "aria-label": (
-              /* translators: accessibility text appended to link text */
-              (0, import_i18n2.__)("(opens in a new tab)")
-            )
-          }
-        )
-      ] })
-    })
-  });
-  return element;
-});
+    className,
+    ...props
+  }, ref) {
+    const shouldShowNewTabIndicator = openInNewTab || /^_blank$/i.test(target ?? "");
+    const element = useRender({
+      render: render4,
+      defaultTagName: "a",
+      ref,
+      props: mergeProps(props, {
+        className: clsx_default(
+          global_css_defense_default2.a,
+          resets_default2["box-sizing"],
+          focus_module_default["outset-ring--focus-except-active"],
+          variant !== "unstyled" && style_default5.link,
+          variant !== "unstyled" && style_default5[`is-${tone}`],
+          variant === "unstyled" && style_default5["is-unstyled"],
+          className
+        ),
+        target: target ?? (openInNewTab ? "_blank" : void 0),
+        children: /* @__PURE__ */ (0, import_jsx_runtime26.jsxs)(import_jsx_runtime26.Fragment, { children: [
+          children,
+          shouldShowNewTabIndicator && /* @__PURE__ */ (0, import_jsx_runtime26.jsx)(
+            "span",
+            {
+              className: style_default5["link-icon"],
+              role: "img",
+              "aria-label": (
+                /* translators: accessibility text appended to link text */
+                (0, import_i18n2.__)("(opens in a new tab)")
+              )
+            }
+          )
+        ] })
+      })
+    });
+    return element;
+  }
+);
 
 // packages/icons/build-module/library/chevron-down.mjs
 var import_primitives = __toESM(require_primitives(), 1);
 var import_jsx_runtime27 = __toESM(require_jsx_runtime(), 1);
-var chevron_down_default = /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_primitives.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_primitives.Path, { d: "M7 11L12 15L17 11", vectorEffect: "non-scaling-stroke" }) });
+var chevron_down_default = /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_primitives.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(import_primitives.Path, { d: "M7 11L12 15L17 11" }) });
 
 // packages/icons/build-module/library/chevron-left.mjs
 var import_primitives2 = __toESM(require_primitives(), 1);
 var import_jsx_runtime28 = __toESM(require_jsx_runtime(), 1);
-var chevron_left_default = /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(import_primitives2.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(import_primitives2.Path, { d: "M14 6.5L9 12L14 17.5", vectorEffect: "non-scaling-stroke" }) });
+var chevron_left_default = /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(import_primitives2.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime28.jsx)(import_primitives2.Path, { d: "M14 6.5L9 12L14 17.5" }) });
 
 // packages/icons/build-module/library/chevron-right.mjs
 var import_primitives3 = __toESM(require_primitives(), 1);
 var import_jsx_runtime29 = __toESM(require_jsx_runtime(), 1);
-var chevron_right_default = /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(import_primitives3.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(import_primitives3.Path, { d: "M10 6.5L15 12L10 17.5", vectorEffect: "non-scaling-stroke" }) });
+var chevron_right_default = /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(import_primitives3.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime29.jsx)(import_primitives3.Path, { d: "M10 6.5L15 12L10 17.5" }) });
 
 // packages/icons/build-module/library/close-small.mjs
 var import_primitives4 = __toESM(require_primitives(), 1);
 var import_jsx_runtime30 = __toESM(require_jsx_runtime(), 1);
-var close_small_default = /* @__PURE__ */ (0, import_jsx_runtime30.jsx)(import_primitives4.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime30.jsx)(import_primitives4.Path, { d: "M7.75 16.25L16.25 7.75M16.25 16.25L7.75 7.75", vectorEffect: "non-scaling-stroke" }) });
+var close_small_default = /* @__PURE__ */ (0, import_jsx_runtime30.jsx)(import_primitives4.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime30.jsx)(import_primitives4.Path, { d: "M7.75 16.25L16.25 7.75M16.25 16.25L7.75 7.75" }) });
 
 // packages/icons/build-module/library/envelope.mjs
 var import_primitives5 = __toESM(require_primitives(), 1);
 var import_jsx_runtime31 = __toESM(require_jsx_runtime(), 1);
-var envelope_default = /* @__PURE__ */ (0, import_jsx_runtime31.jsx)(import_primitives5.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime31.jsx)(import_primitives5.Path, { fillRule: "evenodd", clipRule: "evenodd", d: "M3 7c0-1.1.9-2 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Zm2-.5h14c.3 0 .5.2.5.5v1L12 13.5 4.5 7.9V7c0-.3.2-.5.5-.5Zm-.5 3.3V17c0 .3.2.5.5.5h14c.3 0 .5-.2.5-.5V9.8L12 15.4 4.5 9.8Z" }) });
+var envelope_default = /* @__PURE__ */ (0, import_jsx_runtime31.jsx)(import_primitives5.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime31.jsx)(import_primitives5.Path, { d: "M20.25 8.5V7C20.25 6.30964 19.6904 5.75 19 5.75H5C4.30964 5.75 3.75 6.30964 3.75 7V8.5M20.25 8.5V17C20.25 17.6904 19.6904 18.25 19 18.25H5C4.30964 18.25 3.75 17.6904 3.75 17V8.5M20.25 8.5L12 14.5L3.75 8.5" }) });
 
 // packages/icons/build-module/library/error.mjs
 var import_primitives6 = __toESM(require_primitives(), 1);
 var import_jsx_runtime32 = __toESM(require_jsx_runtime(), 1);
-var error_default = /* @__PURE__ */ (0, import_jsx_runtime32.jsx)(import_primitives6.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime32.jsx)(import_primitives6.Path, { fillRule: "evenodd", clipRule: "evenodd", d: "M12.218 5.377a.25.25 0 0 0-.436 0l-7.29 12.96a.25.25 0 0 0 .218.373h14.58a.25.25 0 0 0 .218-.372l-7.29-12.96Zm-1.743-.735c.669-1.19 2.381-1.19 3.05 0l7.29 12.96a1.75 1.75 0 0 1-1.525 2.608H4.71a1.75 1.75 0 0 1-1.525-2.608l7.29-12.96ZM12.75 17.46h-1.5v-1.5h1.5v1.5Zm-1.5-3h1.5v-5h-1.5v5Z" }) });
+var error_default = /* @__PURE__ */ (0, import_jsx_runtime32.jsx)(import_primitives6.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime32.jsx)(import_primitives6.Path, { d: "M12 9L12 14M12 15.5V17M11.1284 5.04947L3.83827 18.0097C3.46331 18.6763 3.94502 19.5 4.70985 19.5H19.2902C20.055 19.5 20.5367 18.6763 20.1617 18.0097L12.8716 5.04947C12.4893 4.36982 11.5107 4.36982 11.1284 5.04947Z" }) });
 
 // packages/icons/build-module/library/link.mjs
 var import_primitives7 = __toESM(require_primitives(), 1);
 var import_jsx_runtime33 = __toESM(require_jsx_runtime(), 1);
-var link_default = /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(import_primitives7.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(import_primitives7.Path, { d: "M9.5 12L14.5 12M10 7.75H8.25C5.90279 7.75 4 9.65279 4 12C4 14.3472 5.90279 16.25 8.25 16.25H10M14 16.25H15.75C18.0972 16.25 20 14.3472 20 12C20 9.65279 18.0972 7.75 15.75 7.75L14 7.75", vectorEffect: "non-scaling-stroke" }) });
+var link_default = /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(import_primitives7.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime33.jsx)(import_primitives7.Path, { d: "M9.5 12L14.5 12M10 7.75H8.25C5.90279 7.75 4 9.65279 4 12C4 14.3472 5.90279 16.25 8.25 16.25H10M14 16.25H15.75C18.0972 16.25 20 14.3472 20 12C20 9.65279 18.0972 7.75 15.75 7.75L14 7.75" }) });
 
 // packages/icons/build-module/library/mobile.mjs
 var import_primitives8 = __toESM(require_primitives(), 1);
 var import_jsx_runtime34 = __toESM(require_jsx_runtime(), 1);
-var mobile_default = /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(import_primitives8.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(import_primitives8.Path, { d: "M15 4H9c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm.5 14c0 .3-.2.5-.5.5H9c-.3 0-.5-.2-.5-.5V6c0-.3.2-.5.5-.5h6c.3 0 .5.2.5.5v12zm-4.5-.5h2V16h-2v1.5z" }) });
+var mobile_default = /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(import_primitives8.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(import_primitives8.Path, { d: "M11 16.5H13M16.25 18V6C16.25 5.30964 15.6904 4.75 15 4.75H9C8.30964 4.75 7.75 5.30964 7.75 6L7.75 18C7.75 18.6904 8.30964 19.25 9 19.25H15C15.6904 19.25 16.25 18.6904 16.25 18Z" }) });
 
 // packages/icons/build-module/library/pencil.mjs
 var import_primitives9 = __toESM(require_primitives(), 1);
 var import_jsx_runtime35 = __toESM(require_jsx_runtime(), 1);
-var pencil_default = /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(import_primitives9.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(import_primitives9.Path, { d: "m19 7-3-3-8.5 8.5-1 4 4-1L19 7Zm-7 11.5H5V20h7v-1.5Z" }) });
+var pencil_default = /* @__PURE__ */ (0, import_jsx_runtime35.jsxs)(import_primitives9.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: [
+  /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(import_primitives9.Path, { d: "M5 19.25H12" }),
+  /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(import_primitives9.Path, { d: "M10 15L7.5 15.5L8 13L16 5L18 7L10 15Z", fill: "currentColor" })
+] });
 
 // packages/icons/build-module/library/published.mjs
 var import_primitives10 = __toESM(require_primitives(), 1);
 var import_jsx_runtime36 = __toESM(require_jsx_runtime(), 1);
 var published_default = /* @__PURE__ */ (0, import_jsx_runtime36.jsxs)(import_primitives10.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: [
-  /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(import_primitives10.Path, { d: "M12 19.25C16.0041 19.25 19.25 16.0041 19.25 12C19.25 7.99594 16.0041 4.75 12 4.75C7.99594 4.75 4.75 7.99594 4.75 12C4.75 16.0041 7.99594 19.25 12 19.25Z", strokeLinejoin: "round", vectorEffect: "non-scaling-stroke" }),
-  /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(import_primitives10.Path, { d: "M9 12L11 14L15 10", vectorEffect: "non-scaling-stroke" })
+  /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(import_primitives10.Path, { d: "M12 19.25C16.0041 19.25 19.25 16.0041 19.25 12C19.25 7.99594 16.0041 4.75 12 4.75C7.99594 4.75 4.75 7.99594 4.75 12C4.75 16.0041 7.99594 19.25 12 19.25Z", strokeLinejoin: "round" }),
+  /* @__PURE__ */ (0, import_jsx_runtime36.jsx)(import_primitives10.Path, { d: "M9 12L11 14L15 10" })
 ] });
 
 // packages/icons/build-module/library/seen.mjs
 var import_primitives11 = __toESM(require_primitives(), 1);
 var import_jsx_runtime37 = __toESM(require_jsx_runtime(), 1);
-var seen_default = /* @__PURE__ */ (0, import_jsx_runtime37.jsx)(import_primitives11.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime37.jsx)(import_primitives11.Path, { d: "M3.99961 13C4.67043 13.3354 4.6703 13.3357 4.67017 13.3359L4.67298 13.3305C4.67621 13.3242 4.68184 13.3135 4.68988 13.2985C4.70595 13.2686 4.7316 13.2218 4.76695 13.1608C4.8377 13.0385 4.94692 12.8592 5.09541 12.6419C5.39312 12.2062 5.84436 11.624 6.45435 11.0431C7.67308 9.88241 9.49719 8.75 11.9996 8.75C14.502 8.75 16.3261 9.88241 17.5449 11.0431C18.1549 11.624 18.6061 12.2062 18.9038 12.6419C19.0523 12.8592 19.1615 13.0385 19.2323 13.1608C19.2676 13.2218 19.2933 13.2686 19.3093 13.2985C19.3174 13.3135 19.323 13.3242 19.3262 13.3305L19.3291 13.3359C19.3289 13.3357 19.3288 13.3354 19.9996 13C20.6704 12.6646 20.6703 12.6643 20.6701 12.664L20.6697 12.6632L20.6688 12.6614L20.6662 12.6563L20.6583 12.6408C20.6517 12.6282 20.6427 12.6108 20.631 12.5892C20.6078 12.5459 20.5744 12.4852 20.5306 12.4096C20.4432 12.2584 20.3141 12.0471 20.1423 11.7956C19.7994 11.2938 19.2819 10.626 18.5794 9.9569C17.1731 8.61759 14.9972 7.25 11.9996 7.25C9.00203 7.25 6.82614 8.61759 5.41987 9.9569C4.71736 10.626 4.19984 11.2938 3.85694 11.7956C3.68511 12.0471 3.55605 12.2584 3.4686 12.4096C3.42484 12.4852 3.39142 12.5459 3.36818 12.5892C3.35656 12.6108 3.34748 12.6282 3.34092 12.6408L3.33297 12.6563L3.33041 12.6614L3.32948 12.6632L3.32911 12.664C3.32894 12.6643 3.32879 12.6646 3.99961 13ZM11.9996 16C13.9326 16 15.4996 14.433 15.4996 12.5C15.4996 10.567 13.9326 9 11.9996 9C10.0666 9 8.49961 10.567 8.49961 12.5C8.49961 14.433 10.0666 16 11.9996 16Z" }) });
+var seen_default = /* @__PURE__ */ (0, import_jsx_runtime37.jsxs)(import_primitives11.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: [
+  /* @__PURE__ */ (0, import_jsx_runtime37.jsx)(import_primitives11.Path, { d: "M20.0645 13C18.5918 10.0366 15.5337 8 12 8C8.46631 8 5.40825 10.0366 3.93555 13" }),
+  /* @__PURE__ */ (0, import_jsx_runtime37.jsx)(import_primitives11.Circle, { cx: "12", cy: "12.5", r: "3", fill: "currentColor" })
+] });
 
 // packages/icons/build-module/library/unseen.mjs
 var import_primitives12 = __toESM(require_primitives(), 1);
 var import_jsx_runtime38 = __toESM(require_jsx_runtime(), 1);
-var unseen_default = /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(import_primitives12.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(import_primitives12.Path, { d: "M20.7 12.7s0-.1-.1-.2c0-.2-.2-.4-.4-.6-.3-.5-.9-1.2-1.6-1.8-.7-.6-1.5-1.3-2.6-1.8l-.6 1.4c.9.4 1.6 1 2.1 1.5.6.6 1.1 1.2 1.4 1.6.1.2.3.4.3.5v.1l.7-.3.7-.3Zm-5.2-9.3-1.8 4c-.5-.1-1.1-.2-1.7-.2-3 0-5.2 1.4-6.6 2.7-.7.7-1.2 1.3-1.6 1.8-.2.3-.3.5-.4.6 0 0 0 .1-.1.2s0 0 .7.3l.7.3V13c0-.1.2-.3.3-.5.3-.4.7-1 1.4-1.6 1.2-1.2 3-2.3 5.5-2.3H13v.3c-.4 0-.8-.1-1.1-.1-1.9 0-3.5 1.6-3.5 3.5s.6 2.3 1.6 2.9l-2 4.4.9.4 7.6-16.2-.9-.4Zm-3 12.6c1.7-.2 3-1.7 3-3.5s-.2-1.4-.6-1.9L12.4 16Z" }) });
+var unseen_default = /* @__PURE__ */ (0, import_jsx_runtime38.jsxs)(import_primitives12.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: [
+  /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(import_primitives12.Path, { d: "M8 21L10.6587 15.1842M13.1523 9.72929L13.8553 8.19144L16 3.5M20.0645 13C19.2118 11.2841 17.8276 9.87898 16.1272 9M3.93555 13C5.40825 10.0366 8.46631 8 12 8C12.636 8 13.2566 8.06597 13.8553 8.19144M13.1523 9.72929C12.7975 9.58156 12.4083 9.5 12 9.5C10.3431 9.5 9 10.8431 9 12.5C9 13.6747 9.67519 14.6917 10.6587 15.1842M13.1523 9.72929L10.6587 15.1842M13.1755 15.261C14.2481 14.8037 15 13.7397 15 12.5C15 12.1819 14.9505 11.8753 14.8587 11.5876" }),
+  /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(import_primitives12.Path, { d: "M12 9.5C10.3431 9.5 9 10.8431 9 12.5C9 13.6747 9.67519 14.6917 10.6587 15.1842L13.1523 9.72929C12.7975 9.58156 12.4083 9.5 12 9.5Z", fill: "currentColor" })
+] });
 
 // packages/ui/build-module/icon/icon.mjs
 var import_element18 = __toESM(require_element(), 1);
 var import_primitives13 = __toESM(require_primitives(), 1);
 var import_jsx_runtime39 = __toESM(require_jsx_runtime(), 1);
-var Icon = (0, import_element18.forwardRef)(function Icon2({ icon, size: size4 = 24, style, ...restProps }, ref) {
-  const mergedStyle = icon.props.style || style ? { ...icon.props.style, ...style } : void 0;
-  return /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(
-    import_primitives13.SVG,
-    {
-      ref,
-      ...icon.props,
-      ...restProps,
-      ...mergedStyle ? { style: mergedStyle } : {},
-      width: size4,
-      height: size4
-    }
-  );
-});
+var Icon = (0, import_element18.forwardRef)(
+  function UnforwardedIcon({ icon, size: size4 = 24, style, ...restProps }, ref) {
+    const mergedStyle = icon.props.style || style ? { ...icon.props.style, ...style } : void 0;
+    return /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(
+      import_primitives13.SVG,
+      {
+        ref,
+        ...icon.props,
+        ...restProps,
+        ...mergedStyle ? { style: mergedStyle } : {},
+        width: size4,
+        height: size4
+      }
+    );
+  }
+);
 
 // packages/ui/build-module/utils/keyboard-shortcut.mjs
 var import_element20 = __toESM(require_element(), 1);
@@ -11753,11 +11977,11 @@ function registerStyle7(hash, css) {
   }
 }
 if (typeof process === "undefined" || true) {
-  registerStyle7("fa606a57ae", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{.f37b9e2e191ebd66__visually-hidden{word-wrap:normal;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal}}}");
+  registerStyle7("15abcab4d0", ".f37b9e2e191ebd66__visually-hidden{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;overflow-wrap:normal;padding:0;position:absolute;width:1px;word-break:normal}");
 }
 var style_default6 = { "visually-hidden": "f37b9e2e191ebd66__visually-hidden" };
 var VisuallyHidden = (0, import_element19.forwardRef)(
-  function VisuallyHidden2({ render: render4, ...restProps }, ref) {
+  function UnforwardedVisuallyHidden({ render: render4, ...restProps }, ref) {
     const element = useRender({
       render: render4,
       ref,
@@ -11792,7 +12016,7 @@ function useKeyboardShortcutProps({
     }
   };
 }
-var KeyboardShortcutDescription = (0, import_element20.forwardRef)(function KeyboardShortcutDescription2({ descriptionId, shortcut }, ref) {
+var KeyboardShortcutDescription = (0, import_element20.forwardRef)(function UnforwardedKeyboardShortcutDescription({ descriptionId, shortcut }, ref) {
   return /* @__PURE__ */ (0, import_jsx_runtime40.jsx)(
     VisuallyHidden,
     {
@@ -11807,7 +12031,7 @@ var KeyboardShortcutDescription = (0, import_element20.forwardRef)(function Keyb
     }
   );
 });
-var KeyboardShortcutDisplay = (0, import_element20.forwardRef)(function KeyboardShortcutDisplay2({ className, shortcut }, ref) {
+var KeyboardShortcutDisplay = (0, import_element20.forwardRef)(function UnforwardedKeyboardShortcutDisplay({ className, shortcut }, ref) {
   return /* @__PURE__ */ (0, import_jsx_runtime40.jsx)("span", { ref, "aria-hidden": "true", className, dir: "ltr", children: shortcut.displayShortcut });
 });
 
@@ -11905,15 +12129,15 @@ if (typeof process === "undefined" || true) {
 }
 var resets_default3 = { "box-sizing": "_336cd3e4e743482f__box-sizing" };
 if (typeof process === "undefined" || true) {
-  registerStyle8("08122b3d53", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer utilities{.af79fb116edb0dd7__outset-ring--focus:focus,.dfcfdc28396e5d98__outset-ring--focus-visible:focus-visible,.e5cd9ee879f6403a__outset-ring--focus-within:focus-within,:focus-visible ._81935a08e952f267__outset-ring--focus-parent-visible{--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within,.abc777e9713fa711__outset-ring--focus-except-active:focus{outline:none}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within:not(:has(:active)),.abc777e9713fa711__outset-ring--focus-except-active:focus:not(:active){--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}}}");
+  registerStyle8("7c3267f794", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer utilities{.af79fb116edb0dd7__outset-ring--focus:focus,.dfcfdc28396e5d98__outset-ring--focus-visible:focus-visible,.e5cd9ee879f6403a__outset-ring--focus-within:focus-within{--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within,.abc777e9713fa711__outset-ring--focus-except-active:focus{outline:none}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within:not(:has(:active)),.abc777e9713fa711__outset-ring--focus-except-active:focus:not(:active){--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}}}");
 }
-var focus_module_default2 = { "outset-ring--focus": "af79fb116edb0dd7__outset-ring--focus", "outset-ring--focus-visible": "dfcfdc28396e5d98__outset-ring--focus-visible", "outset-ring--focus-within": "e5cd9ee879f6403a__outset-ring--focus-within", "outset-ring--focus-parent-visible": "_81935a08e952f267__outset-ring--focus-parent-visible", "outset-ring--focus-except-active": "abc777e9713fa711__outset-ring--focus-except-active", "outset-ring--focus-within-except-active": "_3c9f5ee9fc9c136d__outset-ring--focus-within-except-active" };
+var focus_module_default2 = { "outset-ring--focus": "af79fb116edb0dd7__outset-ring--focus", "outset-ring--focus-visible": "dfcfdc28396e5d98__outset-ring--focus-visible", "outset-ring--focus-within": "e5cd9ee879f6403a__outset-ring--focus-within", "outset-ring--focus-except-active": "abc777e9713fa711__outset-ring--focus-except-active", "outset-ring--focus-within-except-active": "_3c9f5ee9fc9c136d__outset-ring--focus-within-except-active" };
 if (typeof process === "undefined" || true) {
   registerStyle8("e8e31009f5", "._6defc79820e382c6__button{box-sizing:var(--_gcd-button-box-sizing,border-box);font-family:var(--_gcd-button-font-family,inherit);font-size:var(--_gcd-button-font-size,inherit);font-weight:var(--_gcd-button-font-weight,inherit)}.d2cff2e5dea83bd1__input{box-sizing:var(--_gcd-input-box-sizing,border-box);font-family:var(--_gcd-input-font-family,inherit);font-size:var(--_gcd-input-font-size,inherit);font-weight:var(--_gcd-input-font-weight,inherit);margin:var(--_gcd-input-margin,0);&::placeholder{color:var(--_gcd-input-placeholder-color,var(--wpds-color-foreground-interactive-neutral-weak,#707070))}&:is(textarea,[type=text],[type=password],[type=color],[type=date],[type=datetime],[type=datetime-local],[type=email],[type=month],[type=number],[type=search],[type=tel],[type=time],[type=url],[type=week]){background-color:var(--_gcd-input-background-color,transparent);border:var(--_gcd-input-border,none);border-radius:var(--_gcd-input-border-radius,0);box-shadow:var(--_gcd-input-box-shadow,0 0 0 transparent);color:var(--_gcd-input-color,var(--wpds-color-foreground-interactive-neutral,#1e1e1e));&:focus{border-color:var(--_gcd-input-border-color-focus,var(--wp-admin-theme-color));box-shadow:var(--_gcd-input-box-shadow-focus,none);outline:var(--_gcd-input-outline-focus,none)}&:disabled{background:var(--_gcd-input-background-disabled,transparent);border-color:var(--_gcd-input-border-color-disabled,transparent);box-shadow:var(--_gcd-input-box-shadow-disabled,none);color:var(--_gcd-input-color-disabled,var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d))}}&:is(textarea,[type=text],[type=password],[type=date],[type=datetime],[type=datetime-local],[type=email],[type=month],[type=number],[type=search],[type=tel],[type=time],[type=url],[type=week]){line-height:var(--_gcd-input-line-height,inherit);min-height:var(--_gcd-input-min-height,auto);padding:var(--_gcd-input-padding,0)}}._547d86373d02e108__textarea{box-sizing:var(--_gcd-textarea-box-sizing,border-box);overflow:var(--_gcd-textarea-overflow,auto);resize:var(--_gcd-textarea-resize,block)}._8c15fd0ed9f28ba4__div{outline:var(--_gcd-div-outline,0 solid transparent)}p._43cec3e1eec1066d__p{font-size:var(--_gcd-p-font-size,13px);line-height:var(--_gcd-p-line-height,1.5);margin:var(--_gcd-p-margin,0)}:is(h1,h2,h3,h4,h5,h6).e97669c6d9a38497__heading{color:var(--_gcd-heading-color,var(--wpds-color-foreground-content-neutral,#1e1e1e));font-size:var(--_gcd-heading-font-size,inherit);font-weight:var(--_gcd-heading-font-weight,var(--wpds-typography-font-weight-emphasis,600));margin:var(--_gcd-heading-margin,0)}._2c0831b0499dbd6e__a,._2c0831b0499dbd6e__a:is(:hover,:focus,:active){border-radius:var(--_gcd-a-border-radius,0);box-shadow:var(--_gcd-a-box-shadow,none);color:var(--_gcd-a-color,inherit);outline:var(--_gcd-a-outline,0 solid transparent);transition:var(--_gcd-a-transition,none)}.c59a0ebebd71fa4a__ol{list-style:var(--_gcd-ol-list-style,none);margin:var(--_gcd-ol-margin,0);padding-block:var(--_gcd-ol-padding-block,0);padding-inline:var(--_gcd-ol-padding-inline,0)}._46b5cb0c8e24e8c9__li{margin:var(--_gcd-li-margin,0)}");
 }
 var global_css_defense_default3 = { "button": "_6defc79820e382c6__button", "input": "d2cff2e5dea83bd1__input", "textarea": "_547d86373d02e108__textarea", "div": "_8c15fd0ed9f28ba4__div", "p": "_43cec3e1eec1066d__p", "heading": "e97669c6d9a38497__heading", "a": "_2c0831b0499dbd6e__a", "ol": "c59a0ebebd71fa4a__ol", "li": "_46b5cb0c8e24e8c9__li" };
 var Button3 = (0, import_element21.forwardRef)(
-  function Button22({
+  function UnforwardedButton({
     tone = "brand",
     variant = "solid",
     size: size4 = "default",
@@ -12043,7 +12267,7 @@ if (typeof process === "undefined" || true) {
 }
 var style_default8 = { "button": "_97b0fc33c028be1a__button", "is-unstyled": "abbb272e2ce49bd6__is-unstyled", "is-loading": "_914b42f315c0e580__is-loading", "is-small": "_908205475f9f2a92__is-small", "icon": "_9f6fc6553aeb36fe__icon", "is-brand": "dd460c965226cc77__is-brand", "is-outline": "_62d5a778b7b258ee__is-outline", "is-minimal": "ad0619a3217c6a5b__is-minimal", "is-neutral": "e722a8f96726aa99__is-neutral", "is-solid": "b50b3358c5fb4d0b__is-solid", "is-compact": "cf59cf1b69629838__is-compact", "loading-animation": "_5a1d53da6f830c8d__loading-animation" };
 var ButtonIcon = (0, import_element22.forwardRef)(
-  function ButtonIcon2({ className, icon, ...props }, ref) {
+  function UnforwardedButtonIcon({ className, icon, ...props }, ref) {
     return /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
       Icon,
       {
@@ -12067,7 +12291,7 @@ var Button4 = Object.assign(Button3, {
   Icon: ButtonIcon
 });
 
-// node_modules/@date-fns/tz/tzName/index.js
+// node_modules/.store/@date-fns/tz@1.5.0-6qk8-gBjYJv6JcqYS_Lgqg/node_modules/@date-fns/tz/tzName/index.js
 function tzName(timeZone, date, format7 = "long") {
   return new Intl.DateTimeFormat("en-US", {
     // Enforces engine to render the time. Without the option JavaScriptCore omits it.
@@ -12077,7 +12301,7 @@ function tzName(timeZone, date, format7 = "long") {
   }).format(date).split(/\s/g).slice(2).join(" ");
 }
 
-// node_modules/@date-fns/tz/tzOffset/index.js
+// node_modules/.store/@date-fns/tz@1.5.0-6qk8-gBjYJv6JcqYS_Lgqg/node_modules/@date-fns/tz/tzOffset/index.js
 var offsetFormatCache = {};
 var offsetCache = {};
 function tzOffset(timeZone, date) {
@@ -12104,7 +12328,7 @@ function calcOffset(cacheStr, values) {
   return offsetCache[cacheStr] = hours * 60 + minutes > 0 ? hours * 60 + minutes + seconds : hours * 60 - minutes - seconds;
 }
 
-// node_modules/@date-fns/tz/date/mini.js
+// node_modules/.store/@date-fns/tz@1.5.0-6qk8-gBjYJv6JcqYS_Lgqg/node_modules/@date-fns/tz/date/mini.js
 var TZDateMini = class _TZDateMini extends Date {
   //#region static
   constructor(...args) {
@@ -12255,7 +12479,7 @@ function targetInternalTime(date, time) {
   return +internal;
 }
 
-// node_modules/@date-fns/tz/date/index.js
+// node_modules/.store/@date-fns/tz@1.5.0-6qk8-gBjYJv6JcqYS_Lgqg/node_modules/@date-fns/tz/date/index.js
 var TZDate = class _TZDate extends TZDateMini {
   //#region static
   static tz(tz, ...args) {
@@ -12318,7 +12542,7 @@ var TZDate = class _TZDate extends TZDateMini {
   //#endregion
 };
 
-// node_modules/date-fns/constants.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/constants.js
 var daysInYear = 365.2425;
 var maxTime = Math.pow(10, 8) * 24 * 60 * 60 * 1e3;
 var minTime = -maxTime;
@@ -12335,7 +12559,7 @@ var secondsInMonth = secondsInYear / 12;
 var secondsInQuarter = secondsInMonth * 3;
 var constructFromSymbol = /* @__PURE__ */ Symbol.for("constructDateFrom");
 
-// node_modules/date-fns/constructFrom.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/constructFrom.js
 function constructFrom(date, value) {
   if (typeof date === "function") return date(value);
   if (date && typeof date === "object" && constructFromSymbol in date)
@@ -12344,12 +12568,12 @@ function constructFrom(date, value) {
   return new Date(value);
 }
 
-// node_modules/date-fns/toDate.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/toDate.js
 function toDate(argument, context) {
   return constructFrom(context || argument, argument);
 }
 
-// node_modules/date-fns/addDays.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/addDays.js
 function addDays(date, amount, options) {
   const _date = toDate(date, options?.in);
   if (isNaN(amount)) return constructFrom(options?.in || date, NaN);
@@ -12358,7 +12582,7 @@ function addDays(date, amount, options) {
   return _date;
 }
 
-// node_modules/date-fns/addMonths.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/addMonths.js
 function addMonths(date, amount, options) {
   const _date = toDate(date, options?.in);
   if (isNaN(amount)) return constructFrom(options?.in || date, NaN);
@@ -12381,13 +12605,13 @@ function addMonths(date, amount, options) {
   }
 }
 
-// node_modules/date-fns/_lib/defaultOptions.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/_lib/defaultOptions.js
 var defaultOptions = {};
 function getDefaultOptions() {
   return defaultOptions;
 }
 
-// node_modules/date-fns/startOfWeek.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/startOfWeek.js
 function startOfWeek(date, options) {
   const defaultOptions2 = getDefaultOptions();
   const weekStartsOn = options?.weekStartsOn ?? options?.locale?.options?.weekStartsOn ?? defaultOptions2.weekStartsOn ?? defaultOptions2.locale?.options?.weekStartsOn ?? 0;
@@ -12399,12 +12623,12 @@ function startOfWeek(date, options) {
   return _date;
 }
 
-// node_modules/date-fns/startOfISOWeek.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/startOfISOWeek.js
 function startOfISOWeek(date, options) {
   return startOfWeek(date, { ...options, weekStartsOn: 1 });
 }
 
-// node_modules/date-fns/getISOWeekYear.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/getISOWeekYear.js
 function getISOWeekYear(date, options) {
   const _date = toDate(date, options?.in);
   const year = _date.getFullYear();
@@ -12425,7 +12649,7 @@ function getISOWeekYear(date, options) {
   }
 }
 
-// node_modules/date-fns/_lib/getTimezoneOffsetInMilliseconds.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/_lib/getTimezoneOffsetInMilliseconds.js
 function getTimezoneOffsetInMilliseconds(date) {
   const _date = toDate(date);
   const utcDate = new Date(
@@ -12443,7 +12667,7 @@ function getTimezoneOffsetInMilliseconds(date) {
   return +date - +utcDate;
 }
 
-// node_modules/date-fns/_lib/normalizeDates.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/_lib/normalizeDates.js
 function normalizeDates(context, ...dates) {
   const normalize = constructFrom.bind(
     null,
@@ -12452,14 +12676,14 @@ function normalizeDates(context, ...dates) {
   return dates.map(normalize);
 }
 
-// node_modules/date-fns/startOfDay.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/startOfDay.js
 function startOfDay(date, options) {
   const _date = toDate(date, options?.in);
   _date.setHours(0, 0, 0, 0);
   return _date;
 }
 
-// node_modules/date-fns/differenceInCalendarDays.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/differenceInCalendarDays.js
 function differenceInCalendarDays(laterDate, earlierDate, options) {
   const [laterDate_, earlierDate_] = normalizeDates(
     options?.in,
@@ -12473,7 +12697,7 @@ function differenceInCalendarDays(laterDate, earlierDate, options) {
   return Math.round((laterTimestamp - earlierTimestamp) / millisecondsInDay);
 }
 
-// node_modules/date-fns/startOfISOWeekYear.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/startOfISOWeekYear.js
 function startOfISOWeekYear(date, options) {
   const year = getISOWeekYear(date, options);
   const fourthOfJanuary = constructFrom(options?.in || date, 0);
@@ -12482,32 +12706,32 @@ function startOfISOWeekYear(date, options) {
   return startOfISOWeek(fourthOfJanuary);
 }
 
-// node_modules/date-fns/addWeeks.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/addWeeks.js
 function addWeeks(date, amount, options) {
   return addDays(date, amount * 7, options);
 }
 
-// node_modules/date-fns/addYears.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/addYears.js
 function addYears(date, amount, options) {
   return addMonths(date, amount * 12, options);
 }
 
-// node_modules/date-fns/areIntervalsOverlapping.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/areIntervalsOverlapping.js
 function areIntervalsOverlapping(intervalLeft, intervalRight, options) {
   const [leftStartTime, leftEndTime] = [
     +toDate(intervalLeft.start, options?.in),
     +toDate(intervalLeft.end, options?.in)
-  ].sort((a2, b2) => a2 - b2);
+  ].sort((a, b) => a - b);
   const [rightStartTime, rightEndTime] = [
     +toDate(intervalRight.start, options?.in),
     +toDate(intervalRight.end, options?.in)
-  ].sort((a2, b2) => a2 - b2);
+  ].sort((a, b) => a - b);
   if (options?.inclusive)
     return leftStartTime <= rightEndTime && rightStartTime <= leftEndTime;
   return leftStartTime < rightEndTime && rightStartTime < leftEndTime;
 }
 
-// node_modules/date-fns/max.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/max.js
 function max2(dates, options) {
   let result;
   let context = options?.in;
@@ -12520,7 +12744,7 @@ function max2(dates, options) {
   return constructFrom(context, result || NaN);
 }
 
-// node_modules/date-fns/min.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/min.js
 function min2(dates, options) {
   let result;
   let context = options?.in;
@@ -12533,7 +12757,7 @@ function min2(dates, options) {
   return constructFrom(context, result || NaN);
 }
 
-// node_modules/date-fns/isSameDay.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/isSameDay.js
 function isSameDay(laterDate, earlierDate, options) {
   const [dateLeft_, dateRight_] = normalizeDates(
     options?.in,
@@ -12543,17 +12767,17 @@ function isSameDay(laterDate, earlierDate, options) {
   return +startOfDay(dateLeft_) === +startOfDay(dateRight_);
 }
 
-// node_modules/date-fns/isDate.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/isDate.js
 function isDate(value) {
   return value instanceof Date || typeof value === "object" && Object.prototype.toString.call(value) === "[object Date]";
 }
 
-// node_modules/date-fns/isValid.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/isValid.js
 function isValid(date) {
   return !(!isDate(date) && typeof date !== "number" || isNaN(+toDate(date)));
 }
 
-// node_modules/date-fns/differenceInCalendarMonths.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/differenceInCalendarMonths.js
 function differenceInCalendarMonths(laterDate, earlierDate, options) {
   const [laterDate_, earlierDate_] = normalizeDates(
     options?.in,
@@ -12565,7 +12789,7 @@ function differenceInCalendarMonths(laterDate, earlierDate, options) {
   return yearsDiff * 12 + monthsDiff;
 }
 
-// node_modules/date-fns/endOfMonth.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/endOfMonth.js
 function endOfMonth(date, options) {
   const _date = toDate(date, options?.in);
   const month = _date.getMonth();
@@ -12574,13 +12798,13 @@ function endOfMonth(date, options) {
   return _date;
 }
 
-// node_modules/date-fns/_lib/normalizeInterval.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/_lib/normalizeInterval.js
 function normalizeInterval(context, interval) {
   const [start, end] = normalizeDates(context, interval.start, interval.end);
   return { start, end };
 }
 
-// node_modules/date-fns/eachMonthOfInterval.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/eachMonthOfInterval.js
 function eachMonthOfInterval(interval, options) {
   const { start, end } = normalizeInterval(options?.in, interval);
   let reversed = +start > +end;
@@ -12602,7 +12826,7 @@ function eachMonthOfInterval(interval, options) {
   return reversed ? dates.reverse() : dates;
 }
 
-// node_modules/date-fns/startOfMonth.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/startOfMonth.js
 function startOfMonth(date, options) {
   const _date = toDate(date, options?.in);
   _date.setDate(1);
@@ -12610,7 +12834,7 @@ function startOfMonth(date, options) {
   return _date;
 }
 
-// node_modules/date-fns/endOfYear.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/endOfYear.js
 function endOfYear(date, options) {
   const _date = toDate(date, options?.in);
   const year = _date.getFullYear();
@@ -12619,7 +12843,7 @@ function endOfYear(date, options) {
   return _date;
 }
 
-// node_modules/date-fns/startOfYear.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/startOfYear.js
 function startOfYear(date, options) {
   const date_ = toDate(date, options?.in);
   date_.setFullYear(date_.getFullYear(), 0, 1);
@@ -12627,7 +12851,7 @@ function startOfYear(date, options) {
   return date_;
 }
 
-// node_modules/date-fns/eachYearOfInterval.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/eachYearOfInterval.js
 function eachYearOfInterval(interval, options) {
   const { start, end } = normalizeInterval(options?.in, interval);
   let reversed = +start > +end;
@@ -12649,7 +12873,7 @@ function eachYearOfInterval(interval, options) {
   return reversed ? dates.reverse() : dates;
 }
 
-// node_modules/date-fns/endOfWeek.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/endOfWeek.js
 function endOfWeek(date, options) {
   const defaultOptions2 = getDefaultOptions();
   const weekStartsOn = options?.weekStartsOn ?? options?.locale?.options?.weekStartsOn ?? defaultOptions2.weekStartsOn ?? defaultOptions2.locale?.options?.weekStartsOn ?? 0;
@@ -12661,12 +12885,12 @@ function endOfWeek(date, options) {
   return _date;
 }
 
-// node_modules/date-fns/endOfISOWeek.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/endOfISOWeek.js
 function endOfISOWeek(date, options) {
   return endOfWeek(date, { ...options, weekStartsOn: 1 });
 }
 
-// node_modules/date-fns/locale/en-US/_lib/formatDistance.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/locale/en-US/_lib/formatDistance.js
 var formatDistanceLocale = {
   lessThanXSeconds: {
     one: "less than a second",
@@ -12750,7 +12974,7 @@ var formatDistance = (token, count, options) => {
   return result;
 };
 
-// node_modules/date-fns/locale/_lib/buildFormatLongFn.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/locale/_lib/buildFormatLongFn.js
 function buildFormatLongFn(args) {
   return (options = {}) => {
     const width = options.width ? String(options.width) : args.defaultWidth;
@@ -12759,7 +12983,7 @@ function buildFormatLongFn(args) {
   };
 }
 
-// node_modules/date-fns/locale/en-US/_lib/formatLong.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/locale/en-US/_lib/formatLong.js
 var dateFormats = {
   full: "EEEE, MMMM do, y",
   long: "MMMM do, y",
@@ -12793,7 +13017,7 @@ var formatLong = {
   })
 };
 
-// node_modules/date-fns/locale/en-US/_lib/formatRelative.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/locale/en-US/_lib/formatRelative.js
 var formatRelativeLocale = {
   lastWeek: "'last' eeee 'at' p",
   yesterday: "'yesterday at' p",
@@ -12804,7 +13028,7 @@ var formatRelativeLocale = {
 };
 var formatRelative = (token, _date, _baseDate, _options) => formatRelativeLocale[token];
 
-// node_modules/date-fns/locale/_lib/buildLocalizeFn.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/locale/_lib/buildLocalizeFn.js
 function buildLocalizeFn(args) {
   return (value, options) => {
     const context = options?.context ? String(options.context) : "standalone";
@@ -12823,7 +13047,7 @@ function buildLocalizeFn(args) {
   };
 }
 
-// node_modules/date-fns/locale/en-US/_lib/localize.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/locale/en-US/_lib/localize.js
 var eraValues = {
   narrow: ["B", "A"],
   abbreviated: ["BC", "AD"],
@@ -12985,7 +13209,7 @@ var localize = {
   })
 };
 
-// node_modules/date-fns/locale/_lib/buildMatchFn.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/locale/_lib/buildMatchFn.js
 function buildMatchFn(args) {
   return (string, options = {}) => {
     const width = options.width;
@@ -13027,7 +13251,7 @@ function findIndex(array, predicate) {
   return void 0;
 }
 
-// node_modules/date-fns/locale/_lib/buildMatchPatternFn.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/locale/_lib/buildMatchPatternFn.js
 function buildMatchPatternFn(args) {
   return (string, options = {}) => {
     const matchResult = string.match(args.matchPattern);
@@ -13042,7 +13266,7 @@ function buildMatchPatternFn(args) {
   };
 }
 
-// node_modules/date-fns/locale/en-US/_lib/match.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/locale/en-US/_lib/match.js
 var matchOrdinalNumberPattern = /^(\d+)(th|st|nd|rd)?/i;
 var parseOrdinalNumberPattern = /\d+/i;
 var matchEraPatterns = {
@@ -13161,7 +13385,7 @@ var match = {
   })
 };
 
-// node_modules/date-fns/locale/en-US.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/locale/en-US.js
 var enUS = {
   code: "en-US",
   formatDistance,
@@ -13175,7 +13399,7 @@ var enUS = {
   }
 };
 
-// node_modules/date-fns/getDayOfYear.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/getDayOfYear.js
 function getDayOfYear(date, options) {
   const _date = toDate(date, options?.in);
   const diff = differenceInCalendarDays(_date, startOfYear(_date));
@@ -13183,14 +13407,14 @@ function getDayOfYear(date, options) {
   return dayOfYear;
 }
 
-// node_modules/date-fns/getISOWeek.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/getISOWeek.js
 function getISOWeek(date, options) {
   const _date = toDate(date, options?.in);
   const diff = +startOfISOWeek(_date) - +startOfISOWeekYear(_date);
   return Math.round(diff / millisecondsInWeek) + 1;
 }
 
-// node_modules/date-fns/getWeekYear.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/getWeekYear.js
 function getWeekYear(date, options) {
   const _date = toDate(date, options?.in);
   const year = _date.getFullYear();
@@ -13213,7 +13437,7 @@ function getWeekYear(date, options) {
   }
 }
 
-// node_modules/date-fns/startOfWeekYear.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/startOfWeekYear.js
 function startOfWeekYear(date, options) {
   const defaultOptions2 = getDefaultOptions();
   const firstWeekContainsDate = options?.firstWeekContainsDate ?? options?.locale?.options?.firstWeekContainsDate ?? defaultOptions2.firstWeekContainsDate ?? defaultOptions2.locale?.options?.firstWeekContainsDate ?? 1;
@@ -13225,21 +13449,21 @@ function startOfWeekYear(date, options) {
   return _date;
 }
 
-// node_modules/date-fns/getWeek.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/getWeek.js
 function getWeek(date, options) {
   const _date = toDate(date, options?.in);
   const diff = +startOfWeek(_date, options) - +startOfWeekYear(_date, options);
   return Math.round(diff / millisecondsInWeek) + 1;
 }
 
-// node_modules/date-fns/_lib/addLeadingZeros.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/_lib/addLeadingZeros.js
 function addLeadingZeros(number, targetLength) {
   const sign = number < 0 ? "-" : "";
   const output = Math.abs(number).toString().padStart(targetLength, "0");
   return sign + output;
 }
 
-// node_modules/date-fns/_lib/format/lightFormatters.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/_lib/format/lightFormatters.js
 var lightFormatters = {
   // Year
   y(date, token) {
@@ -13299,7 +13523,7 @@ var lightFormatters = {
   }
 };
 
-// node_modules/date-fns/_lib/format/formatters.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/_lib/format/formatters.js
 var dayPeriodEnum = {
   am: "am",
   pm: "pm",
@@ -13945,7 +14169,7 @@ function formatTimezone(offset4, delimiter = "") {
   return sign + hours + delimiter + minutes;
 }
 
-// node_modules/date-fns/_lib/format/longFormatters.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/_lib/format/longFormatters.js
 var dateLongFormatter = (pattern, formatLong2) => {
   switch (pattern) {
     case "P":
@@ -14002,7 +14226,7 @@ var longFormatters = {
   P: dateTimeLongFormatter
 };
 
-// node_modules/date-fns/_lib/protectedTokens.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/_lib/protectedTokens.js
 var dayOfYearTokenRE = /^D+$/;
 var weekYearTokenRE = /^Y+$/;
 var throwTokens = ["D", "DD", "YY", "YYYY"];
@@ -14022,7 +14246,7 @@ function message(token, format7, input) {
   return `Use \`${token.toLowerCase()}\` instead of \`${token}\` (in \`${format7}\`) for formatting ${subject} to the input \`${input}\`; see: https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md`;
 }
 
-// node_modules/date-fns/format.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/format.js
 var formattingTokensRegExp = /[yYQqMLwIdDecihHKkms]o|(\w)\1*|''|'(''|[^'])+('|$)|./g;
 var longFormattingTokensRegExp = /P+p+|P+|p+|''|'(''|[^'])+('|$)|./g;
 var escapedStringRegExp = /^'([^]*?)'?$/;
@@ -14088,7 +14312,7 @@ function cleanEscapedString(input) {
   return matched[1].replace(doubleQuoteRegExp, "'");
 }
 
-// node_modules/date-fns/getDaysInMonth.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/getDaysInMonth.js
 function getDaysInMonth(date, options) {
   const _date = toDate(date, options?.in);
   const year = _date.getFullYear();
@@ -14099,38 +14323,38 @@ function getDaysInMonth(date, options) {
   return lastDayOfMonth.getDate();
 }
 
-// node_modules/date-fns/getDefaultOptions.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/getDefaultOptions.js
 function getDefaultOptions2() {
   return Object.assign({}, getDefaultOptions());
 }
 
-// node_modules/date-fns/getISODay.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/getISODay.js
 function getISODay(date, options) {
   const day = toDate(date, options?.in).getDay();
   return day === 0 ? 7 : day;
 }
 
-// node_modules/date-fns/getMonth.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/getMonth.js
 function getMonth(date, options) {
   return toDate(date, options?.in).getMonth();
 }
 
-// node_modules/date-fns/getYear.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/getYear.js
 function getYear(date, options) {
   return toDate(date, options?.in).getFullYear();
 }
 
-// node_modules/date-fns/isAfter.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/isAfter.js
 function isAfter(date, dateToCompare) {
   return +toDate(date) > +toDate(dateToCompare);
 }
 
-// node_modules/date-fns/isBefore.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/isBefore.js
 function isBefore(date, dateToCompare) {
   return +toDate(date) < +toDate(dateToCompare);
 }
 
-// node_modules/date-fns/transpose.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/transpose.js
 function transpose(date, constructor) {
   const date_ = isConstructor(constructor) ? new constructor(0) : constructFrom(constructor, 0);
   date_.setFullYear(date.getFullYear(), date.getMonth(), date.getDate());
@@ -14146,7 +14370,7 @@ function isConstructor(constructor) {
   return typeof constructor === "function" && constructor.prototype?.constructor === constructor;
 }
 
-// node_modules/date-fns/parse/_lib/Setter.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/Setter.js
 var TIMEZONE_UNIT_PRIORITY = 10;
 var Setter = class {
   subPriority = 0;
@@ -14185,7 +14409,7 @@ var DateTimezoneSetter = class extends Setter {
   }
 };
 
-// node_modules/date-fns/parse/_lib/Parser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/Parser.js
 var Parser = class {
   run(dateString, token, match2, options) {
     const result = this.parse(dateString, token, match2, options);
@@ -14208,7 +14432,7 @@ var Parser = class {
   }
 };
 
-// node_modules/date-fns/parse/_lib/parsers/EraParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/EraParser.js
 var EraParser = class extends Parser {
   priority = 140;
   parse(dateString, token, match2) {
@@ -14236,7 +14460,7 @@ var EraParser = class extends Parser {
   incompatibleTokens = ["R", "u", "t", "T"];
 };
 
-// node_modules/date-fns/parse/_lib/constants.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/constants.js
 var numericPatterns = {
   month: /^(1[0-2]|0?\d)/,
   // 0 to 12
@@ -14284,7 +14508,7 @@ var timezonePatterns = {
   extendedOptionalSeconds: /^([+-])(\d{2}):(\d{2})(:(\d{2}))?|Z/
 };
 
-// node_modules/date-fns/parse/_lib/utils.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/utils.js
 function mapValue(parseFnResult, mapFn) {
   if (!parseFnResult) {
     return parseFnResult;
@@ -14327,8 +14551,8 @@ function parseTimezonePattern(pattern, dateString) {
 function parseAnyDigitsSigned(dateString) {
   return parseNumericPattern(numericPatterns.anyDigitsSigned, dateString);
 }
-function parseNDigits(n2, dateString) {
-  switch (n2) {
+function parseNDigits(n, dateString) {
+  switch (n) {
     case 1:
       return parseNumericPattern(numericPatterns.singleDigit, dateString);
     case 2:
@@ -14338,11 +14562,11 @@ function parseNDigits(n2, dateString) {
     case 4:
       return parseNumericPattern(numericPatterns.fourDigits, dateString);
     default:
-      return parseNumericPattern(new RegExp("^\\d{1," + n2 + "}"), dateString);
+      return parseNumericPattern(new RegExp("^\\d{1," + n + "}"), dateString);
   }
 }
-function parseNDigitsSigned(n2, dateString) {
-  switch (n2) {
+function parseNDigitsSigned(n, dateString) {
+  switch (n) {
     case 1:
       return parseNumericPattern(numericPatterns.singleDigitSigned, dateString);
     case 2:
@@ -14352,7 +14576,7 @@ function parseNDigitsSigned(n2, dateString) {
     case 4:
       return parseNumericPattern(numericPatterns.fourDigitsSigned, dateString);
     default:
-      return parseNumericPattern(new RegExp("^-?\\d{1," + n2 + "}"), dateString);
+      return parseNumericPattern(new RegExp("^-?\\d{1," + n + "}"), dateString);
   }
 }
 function dayPeriodEnumToHours(dayPeriod) {
@@ -14390,7 +14614,7 @@ function isLeapYearIndex(year) {
   return year % 400 === 0 || year % 4 === 0 && year % 100 !== 0;
 }
 
-// node_modules/date-fns/parse/_lib/parsers/YearParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/YearParser.js
 var YearParser = class extends Parser {
   priority = 130;
   incompatibleTokens = ["Y", "R", "u", "w", "I", "i", "e", "c", "t", "T"];
@@ -14434,7 +14658,7 @@ var YearParser = class extends Parser {
   }
 };
 
-// node_modules/date-fns/parse/_lib/parsers/LocalWeekYearParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/LocalWeekYearParser.js
 var LocalWeekYearParser = class extends Parser {
   priority = 130;
   parse(dateString, token, match2) {
@@ -14496,7 +14720,7 @@ var LocalWeekYearParser = class extends Parser {
   ];
 };
 
-// node_modules/date-fns/parse/_lib/parsers/ISOWeekYearParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/ISOWeekYearParser.js
 var ISOWeekYearParser = class extends Parser {
   priority = 130;
   parse(dateString, token) {
@@ -14530,7 +14754,7 @@ var ISOWeekYearParser = class extends Parser {
   ];
 };
 
-// node_modules/date-fns/parse/_lib/parsers/ExtendedYearParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/ExtendedYearParser.js
 var ExtendedYearParser = class extends Parser {
   priority = 130;
   parse(dateString, token) {
@@ -14547,7 +14771,7 @@ var ExtendedYearParser = class extends Parser {
   incompatibleTokens = ["G", "y", "Y", "R", "w", "I", "i", "e", "c", "t", "T"];
 };
 
-// node_modules/date-fns/parse/_lib/parsers/QuarterParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/QuarterParser.js
 var QuarterParser = class extends Parser {
   priority = 120;
   parse(dateString, token, match2) {
@@ -14615,7 +14839,7 @@ var QuarterParser = class extends Parser {
   ];
 };
 
-// node_modules/date-fns/parse/_lib/parsers/StandAloneQuarterParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/StandAloneQuarterParser.js
 var StandAloneQuarterParser = class extends Parser {
   priority = 120;
   parse(dateString, token, match2) {
@@ -14683,7 +14907,7 @@ var StandAloneQuarterParser = class extends Parser {
   ];
 };
 
-// node_modules/date-fns/parse/_lib/parsers/MonthParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/MonthParser.js
 var MonthParser = class extends Parser {
   incompatibleTokens = [
     "Y",
@@ -14752,7 +14976,7 @@ var MonthParser = class extends Parser {
   }
 };
 
-// node_modules/date-fns/parse/_lib/parsers/StandAloneMonthParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/StandAloneMonthParser.js
 var StandAloneMonthParser = class extends Parser {
   priority = 110;
   parse(dateString, token, match2) {
@@ -14821,7 +15045,7 @@ var StandAloneMonthParser = class extends Parser {
   ];
 };
 
-// node_modules/date-fns/setWeek.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/setWeek.js
 function setWeek(date, week, options) {
   const date_ = toDate(date, options?.in);
   const diff = getWeek(date_, options) - week;
@@ -14829,7 +15053,7 @@ function setWeek(date, week, options) {
   return toDate(date_, options?.in);
 }
 
-// node_modules/date-fns/parse/_lib/parsers/LocalWeekParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/LocalWeekParser.js
 var LocalWeekParser = class extends Parser {
   priority = 100;
   parse(dateString, token, match2) {
@@ -14865,7 +15089,7 @@ var LocalWeekParser = class extends Parser {
   ];
 };
 
-// node_modules/date-fns/setISOWeek.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/setISOWeek.js
 function setISOWeek(date, week, options) {
   const _date = toDate(date, options?.in);
   const diff = getISOWeek(_date, options) - week;
@@ -14873,7 +15097,7 @@ function setISOWeek(date, week, options) {
   return _date;
 }
 
-// node_modules/date-fns/parse/_lib/parsers/ISOWeekParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/ISOWeekParser.js
 var ISOWeekParser = class extends Parser {
   priority = 100;
   parse(dateString, token, match2) {
@@ -14910,7 +15134,7 @@ var ISOWeekParser = class extends Parser {
   ];
 };
 
-// node_modules/date-fns/parse/_lib/parsers/DateParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/DateParser.js
 var DAYS_IN_MONTH = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 var DAYS_IN_MONTH_LEAP_YEAR = [
   31,
@@ -14970,7 +15194,7 @@ var DateParser = class extends Parser {
   ];
 };
 
-// node_modules/date-fns/parse/_lib/parsers/DayOfYearParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/DayOfYearParser.js
 var DayOfYearParser = class extends Parser {
   priority = 90;
   subpriority = 1;
@@ -15018,7 +15242,7 @@ var DayOfYearParser = class extends Parser {
   ];
 };
 
-// node_modules/date-fns/setDay.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/setDay.js
 function setDay(date, day, options) {
   const defaultOptions2 = getDefaultOptions();
   const weekStartsOn = options?.weekStartsOn ?? options?.locale?.options?.weekStartsOn ?? defaultOptions2.weekStartsOn ?? defaultOptions2.locale?.options?.weekStartsOn ?? 0;
@@ -15031,7 +15255,7 @@ function setDay(date, day, options) {
   return addDays(date_, diff, options);
 }
 
-// node_modules/date-fns/parse/_lib/parsers/DayParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/DayParser.js
 var DayParser = class extends Parser {
   priority = 90;
   parse(dateString, token, match2) {
@@ -15073,7 +15297,7 @@ var DayParser = class extends Parser {
   incompatibleTokens = ["D", "i", "e", "c", "t", "T"];
 };
 
-// node_modules/date-fns/parse/_lib/parsers/LocalDayParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/LocalDayParser.js
 var LocalDayParser = class extends Parser {
   priority = 90;
   parse(dateString, token, match2, options) {
@@ -15145,7 +15369,7 @@ var LocalDayParser = class extends Parser {
   ];
 };
 
-// node_modules/date-fns/parse/_lib/parsers/StandAloneLocalDayParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/StandAloneLocalDayParser.js
 var StandAloneLocalDayParser = class extends Parser {
   priority = 90;
   parse(dateString, token, match2, options) {
@@ -15217,7 +15441,7 @@ var StandAloneLocalDayParser = class extends Parser {
   ];
 };
 
-// node_modules/date-fns/setISODay.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/setISODay.js
 function setISODay(date, day, options) {
   const date_ = toDate(date, options?.in);
   const currentDay = getISODay(date_, options);
@@ -15225,7 +15449,7 @@ function setISODay(date, day, options) {
   return addDays(date_, diff, options);
 }
 
-// node_modules/date-fns/parse/_lib/parsers/ISODayParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/ISODayParser.js
 var ISODayParser = class extends Parser {
   priority = 90;
   parse(dateString, token, match2) {
@@ -15327,7 +15551,7 @@ var ISODayParser = class extends Parser {
   ];
 };
 
-// node_modules/date-fns/parse/_lib/parsers/AMPMParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/AMPMParser.js
 var AMPMParser = class extends Parser {
   priority = 80;
   parse(dateString, token, match2) {
@@ -15368,7 +15592,7 @@ var AMPMParser = class extends Parser {
   incompatibleTokens = ["b", "B", "H", "k", "t", "T"];
 };
 
-// node_modules/date-fns/parse/_lib/parsers/AMPMMidnightParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/AMPMMidnightParser.js
 var AMPMMidnightParser = class extends Parser {
   priority = 80;
   parse(dateString, token, match2) {
@@ -15409,7 +15633,7 @@ var AMPMMidnightParser = class extends Parser {
   incompatibleTokens = ["a", "B", "H", "k", "t", "T"];
 };
 
-// node_modules/date-fns/parse/_lib/parsers/DayPeriodParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/DayPeriodParser.js
 var DayPeriodParser = class extends Parser {
   priority = 80;
   parse(dateString, token, match2) {
@@ -15450,7 +15674,7 @@ var DayPeriodParser = class extends Parser {
   incompatibleTokens = ["a", "b", "t", "T"];
 };
 
-// node_modules/date-fns/parse/_lib/parsers/Hour1to12Parser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/Hour1to12Parser.js
 var Hour1to12Parser = class extends Parser {
   priority = 70;
   parse(dateString, token, match2) {
@@ -15480,7 +15704,7 @@ var Hour1to12Parser = class extends Parser {
   incompatibleTokens = ["H", "K", "k", "t", "T"];
 };
 
-// node_modules/date-fns/parse/_lib/parsers/Hour0to23Parser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/Hour0to23Parser.js
 var Hour0to23Parser = class extends Parser {
   priority = 70;
   parse(dateString, token, match2) {
@@ -15503,7 +15727,7 @@ var Hour0to23Parser = class extends Parser {
   incompatibleTokens = ["a", "b", "h", "K", "k", "t", "T"];
 };
 
-// node_modules/date-fns/parse/_lib/parsers/Hour0To11Parser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/Hour0To11Parser.js
 var Hour0To11Parser = class extends Parser {
   priority = 70;
   parse(dateString, token, match2) {
@@ -15531,7 +15755,7 @@ var Hour0To11Parser = class extends Parser {
   incompatibleTokens = ["h", "H", "k", "t", "T"];
 };
 
-// node_modules/date-fns/parse/_lib/parsers/Hour1To24Parser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/Hour1To24Parser.js
 var Hour1To24Parser = class extends Parser {
   priority = 70;
   parse(dateString, token, match2) {
@@ -15555,7 +15779,7 @@ var Hour1To24Parser = class extends Parser {
   incompatibleTokens = ["a", "b", "h", "H", "K", "t", "T"];
 };
 
-// node_modules/date-fns/parse/_lib/parsers/MinuteParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/MinuteParser.js
 var MinuteParser = class extends Parser {
   priority = 60;
   parse(dateString, token, match2) {
@@ -15578,7 +15802,7 @@ var MinuteParser = class extends Parser {
   incompatibleTokens = ["t", "T"];
 };
 
-// node_modules/date-fns/parse/_lib/parsers/SecondParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/SecondParser.js
 var SecondParser = class extends Parser {
   priority = 50;
   parse(dateString, token, match2) {
@@ -15601,7 +15825,7 @@ var SecondParser = class extends Parser {
   incompatibleTokens = ["t", "T"];
 };
 
-// node_modules/date-fns/parse/_lib/parsers/FractionOfSecondParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/FractionOfSecondParser.js
 var FractionOfSecondParser = class extends Parser {
   priority = 30;
   parse(dateString, token) {
@@ -15615,7 +15839,7 @@ var FractionOfSecondParser = class extends Parser {
   incompatibleTokens = ["t", "T"];
 };
 
-// node_modules/date-fns/parse/_lib/parsers/ISOTimezoneWithZParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/ISOTimezoneWithZParser.js
 var ISOTimezoneWithZParser = class extends Parser {
   priority = 10;
   parse(dateString, token) {
@@ -15652,7 +15876,7 @@ var ISOTimezoneWithZParser = class extends Parser {
   incompatibleTokens = ["t", "T", "x"];
 };
 
-// node_modules/date-fns/parse/_lib/parsers/ISOTimezoneParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/ISOTimezoneParser.js
 var ISOTimezoneParser = class extends Parser {
   priority = 10;
   parse(dateString, token) {
@@ -15689,7 +15913,7 @@ var ISOTimezoneParser = class extends Parser {
   incompatibleTokens = ["t", "T", "X"];
 };
 
-// node_modules/date-fns/parse/_lib/parsers/TimestampSecondsParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/TimestampSecondsParser.js
 var TimestampSecondsParser = class extends Parser {
   priority = 40;
   parse(dateString) {
@@ -15701,7 +15925,7 @@ var TimestampSecondsParser = class extends Parser {
   incompatibleTokens = "*";
 };
 
-// node_modules/date-fns/parse/_lib/parsers/TimestampMillisecondsParser.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers/TimestampMillisecondsParser.js
 var TimestampMillisecondsParser = class extends Parser {
   priority = 20;
   parse(dateString) {
@@ -15713,7 +15937,7 @@ var TimestampMillisecondsParser = class extends Parser {
   incompatibleTokens = "*";
 };
 
-// node_modules/date-fns/parse/_lib/parsers.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse/_lib/parsers.js
 var parsers = {
   G: new EraParser(),
   y: new YearParser(),
@@ -15748,7 +15972,7 @@ var parsers = {
   T: new TimestampMillisecondsParser()
 };
 
-// node_modules/date-fns/parse.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parse.js
 var formattingTokensRegExp2 = /[yYQqMLwIdDecihHKkms]o|(\w)\1*|''|'(''|[^'])+('|$)|./g;
 var longFormattingTokensRegExp2 = /P+p+|P+|p+|''|'(''|[^'])+('|$)|./g;
 var escapedStringRegExp2 = /^'([^]*?)'?$/;
@@ -15836,8 +16060,8 @@ function parse(dateStr, formatStr, referenceDate, options) {
   if (dateStr.length > 0 && notWhitespaceRegExp.test(dateStr)) {
     return invalidDate();
   }
-  const uniquePrioritySetters = setters.map((setter) => setter.priority).sort((a2, b2) => b2 - a2).filter((priority, index2, array) => array.indexOf(priority) === index2).map(
-    (priority) => setters.filter((setter) => setter.priority === priority).sort((a2, b2) => b2.subPriority - a2.subPriority)
+  const uniquePrioritySetters = setters.map((setter) => setter.priority).sort((a, b) => b - a).filter((priority, index2, array) => array.indexOf(priority) === index2).map(
+    (priority) => setters.filter((setter) => setter.priority === priority).sort((a, b) => b.subPriority - a.subPriority)
   ).map((setterArray) => setterArray[0]);
   let date = toDate(referenceDate, options?.in);
   if (isNaN(+date)) return invalidDate();
@@ -15860,7 +16084,7 @@ function cleanEscapedString2(input) {
   return input.match(escapedStringRegExp2)[1].replace(doubleQuoteRegExp2, "'");
 }
 
-// node_modules/date-fns/isSameMonth.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/isSameMonth.js
 function isSameMonth(laterDate, earlierDate, options) {
   const [laterDate_, earlierDate_] = normalizeDates(
     options?.in,
@@ -15870,7 +16094,7 @@ function isSameMonth(laterDate, earlierDate, options) {
   return laterDate_.getFullYear() === earlierDate_.getFullYear() && laterDate_.getMonth() === earlierDate_.getMonth();
 }
 
-// node_modules/date-fns/isSameYear.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/isSameYear.js
 function isSameYear(laterDate, earlierDate, options) {
   const [laterDate_, earlierDate_] = normalizeDates(
     options?.in,
@@ -15880,12 +16104,12 @@ function isSameYear(laterDate, earlierDate, options) {
   return laterDate_.getFullYear() === earlierDate_.getFullYear();
 }
 
-// node_modules/date-fns/subDays.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/subDays.js
 function subDays(date, amount, options) {
   return addDays(date, -amount, options);
 }
 
-// node_modules/date-fns/parseISO.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/parseISO.js
 function parseISO(argument, options) {
   const invalidDate = () => constructFrom(options?.in, NaN);
   const additionalDigits = options?.additionalDigits ?? 2;
@@ -16060,7 +16284,7 @@ function validateTimezone(_hours, minutes) {
   return minutes >= 0 && minutes <= 59;
 }
 
-// node_modules/date-fns/setMonth.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/setMonth.js
 function setMonth(date, month, options) {
   const _date = toDate(date, options?.in);
   const year = _date.getFullYear();
@@ -16073,7 +16297,7 @@ function setMonth(date, month, options) {
   return _date;
 }
 
-// node_modules/date-fns/setYear.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/setYear.js
 function setYear(date, year, options) {
   const date_ = toDate(date, options?.in);
   if (isNaN(+date_)) return constructFrom(options?.in || date, NaN);
@@ -16081,22 +16305,22 @@ function setYear(date, year, options) {
   return date_;
 }
 
-// node_modules/date-fns/subMonths.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/subMonths.js
 function subMonths(date, amount, options) {
   return addMonths(date, -amount, options);
 }
 
-// node_modules/date-fns/subWeeks.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/subWeeks.js
 function subWeeks(date, amount, options) {
   return addWeeks(date, -amount, options);
 }
 
-// node_modules/date-fns/subYears.js
+// node_modules/.store/date-fns@4.4.0-N3CoundlhH8enmbadGmv6Q/node_modules/date-fns/subYears.js
 function subYears(date, amount, options) {
   return addYears(date, -amount, options);
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/getBroadcastWeeksInMonth.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/getBroadcastWeeksInMonth.js
 var FIVE_WEEKS = 5;
 var FOUR_WEEKS = 4;
 function getBroadcastWeeksInMonth(month, dateLib) {
@@ -16108,7 +16332,7 @@ function getBroadcastWeeksInMonth(month, dateLib) {
   return numberOfWeeks;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/startOfBroadcastWeek.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/startOfBroadcastWeek.js
 function startOfBroadcastWeek(date, dateLib) {
   const firstOfMonth = dateLib.startOfMonth(date);
   const dayOfWeek = firstOfMonth.getDay();
@@ -16121,7 +16345,7 @@ function startOfBroadcastWeek(date, dateLib) {
   }
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/endOfBroadcastWeek.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/endOfBroadcastWeek.js
 function endOfBroadcastWeek(date, dateLib) {
   const startDate = startOfBroadcastWeek(date, dateLib);
   const numberOfWeeks = getBroadcastWeeksInMonth(date, dateLib);
@@ -16129,7 +16353,7 @@ function endOfBroadcastWeek(date, dateLib) {
   return endDate;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/locale/en-US.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/locale/en-US.js
 var enUS2 = {
   ...enUS,
   labels: {
@@ -16138,7 +16362,7 @@ var enUS2 = {
       if (dateLib && typeof dateLib.format === "function") {
         formatDate2 = dateLib.format.bind(dateLib);
       } else {
-        formatDate2 = (d2, pattern) => format(d2, pattern, { locale: enUS, ...options });
+        formatDate2 = (d, pattern) => format(d, pattern, { locale: enUS, ...options });
       }
       let label = formatDate2(date, "PPPP");
       if (modifiers.today)
@@ -16157,7 +16381,7 @@ var enUS2 = {
       if (dateLib && typeof dateLib.format === "function") {
         formatDate2 = dateLib.format.bind(dateLib);
       } else {
-        formatDate2 = (d2, pattern) => format(d2, pattern, { locale: enUS, ...options });
+        formatDate2 = (d, pattern) => format(d, pattern, { locale: enUS, ...options });
       }
       return formatDate2(date, "LLLL yyyy");
     },
@@ -16166,7 +16390,7 @@ var enUS2 = {
       if (dateLib && typeof dateLib.format === "function") {
         formatDate2 = dateLib.format.bind(dateLib);
       } else {
-        formatDate2 = (d2, pattern) => format(d2, pattern, { locale: enUS, ...options });
+        formatDate2 = (d, pattern) => format(d, pattern, { locale: enUS, ...options });
       }
       let label = formatDate2(date, "PPPP");
       if (modifiers?.today) {
@@ -16181,14 +16405,14 @@ var enUS2 = {
       if (dateLib && typeof dateLib.format === "function") {
         formatDate2 = dateLib.format.bind(dateLib);
       } else {
-        formatDate2 = (d2, pattern) => format(d2, pattern, { locale: enUS, ...options });
+        formatDate2 = (d, pattern) => format(d, pattern, { locale: enUS, ...options });
       }
       return formatDate2(date, "cccc");
     }
   }
 };
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/classes/DateLib.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/classes/DateLib.js
 var DateLib = class _DateLib {
   /**
    * Creates an instance of `DateLib`.
@@ -16239,7 +16463,7 @@ var DateLib = class _DateLib {
     };
     this.eachYearOfInterval = (interval) => {
       const years = this.overrides?.eachYearOfInterval ? this.overrides.eachYearOfInterval(interval) : eachYearOfInterval(interval);
-      const uniqueYears = new Set(years.map((d2) => this.getYear(d2)));
+      const uniqueYears = new Set(years.map((d) => this.getYear(d)));
       if (uniqueYears.size === years.length) {
         return years;
       }
@@ -16347,8 +16571,8 @@ var DateLib = class _DateLib {
       numberingSystem: numerals
     });
     const digitMap = {};
-    for (let i2 = 0; i2 < 10; i2++) {
-      digitMap[i2.toString()] = formatter.format(i2);
+    for (let i = 0; i < 10; i++) {
+      digitMap[i.toString()] = formatter.format(i);
     }
     return digitMap;
   }
@@ -16430,7 +16654,7 @@ DateLib.yearFirstLocales = /* @__PURE__ */ new Set([
 ]);
 var defaultDateLib = new DateLib();
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/classes/CalendarDay.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/classes/CalendarDay.js
 var CalendarDay = class {
   constructor(date, displayMonth, dateLib = defaultDateLib) {
     this.date = date;
@@ -16453,7 +16677,7 @@ var CalendarDay = class {
   }
 };
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/classes/CalendarMonth.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/classes/CalendarMonth.js
 var CalendarMonth = class {
   constructor(month, weeks) {
     this.date = month;
@@ -16461,7 +16685,7 @@ var CalendarMonth = class {
   }
 };
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/classes/CalendarWeek.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/classes/CalendarWeek.js
 var CalendarWeek = class {
   constructor(weekNumber, days) {
     this.days = days;
@@ -16469,7 +16693,7 @@ var CalendarWeek = class {
   }
 };
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/custom-components.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/custom-components.js
 var custom_components_exports = {};
 __export(custom_components_exports, {
   CaptionLabel: () => CaptionLabel,
@@ -16499,13 +16723,13 @@ __export(custom_components_exports, {
   YearsDropdown: () => YearsDropdown
 });
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/CaptionLabel.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/CaptionLabel.js
 var import_react6 = __toESM(require_react(), 1);
 function CaptionLabel(props) {
   return import_react6.default.createElement("span", { ...props });
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/Chevron.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/Chevron.js
 var import_react7 = __toESM(require_react(), 1);
 function Chevron(props) {
   const { size: size4 = 24, orientation = "left", className, style } = props;
@@ -16519,14 +16743,14 @@ function Chevron(props) {
   );
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/Day.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/Day.js
 var import_react8 = __toESM(require_react(), 1);
 function Day(props) {
   const { day, modifiers, ...tdProps } = props;
   return import_react8.default.createElement("td", { ...tdProps });
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/DayButton.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/DayButton.js
 var import_react9 = __toESM(require_react(), 1);
 function DayButton(props) {
   const { day, modifiers, ...buttonProps } = props;
@@ -16538,10 +16762,10 @@ function DayButton(props) {
   return import_react9.default.createElement("button", { ref, ...buttonProps });
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/Dropdown.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/Dropdown.js
 var import_react11 = __toESM(require_react(), 1);
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/UI.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/UI.js
 var UI;
 (function(UI2) {
   UI2["Root"] = "root";
@@ -16596,7 +16820,7 @@ var Animation;
   Animation2["caption_before_exit"] = "caption_before_exit";
 })(Animation || (Animation = {}));
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/useDayPicker.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/useDayPicker.js
 var import_react10 = __toESM(require_react(), 1);
 var dayPickerContext = (0, import_react10.createContext)(void 0);
 function useDayPicker() {
@@ -16607,7 +16831,7 @@ function useDayPicker() {
   return context;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/Dropdown.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/Dropdown.js
 function Dropdown(props) {
   const { options, className, ...selectProps } = props;
   const { classNames, components, styles } = useDayPicker();
@@ -16626,64 +16850,64 @@ function Dropdown(props) {
   );
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/DropdownNav.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/DropdownNav.js
 var import_react12 = __toESM(require_react(), 1);
 function DropdownNav(props) {
   return import_react12.default.createElement("div", { ...props });
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/Footer.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/Footer.js
 var import_react13 = __toESM(require_react(), 1);
 function Footer(props) {
   return import_react13.default.createElement("div", { ...props });
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/Month.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/Month.js
 var import_react14 = __toESM(require_react(), 1);
 function Month(props) {
   const { calendarMonth, displayIndex, ...divProps } = props;
   return import_react14.default.createElement("div", { ...divProps }, props.children);
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/MonthCaption.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/MonthCaption.js
 var import_react15 = __toESM(require_react(), 1);
 function MonthCaption(props) {
   const { calendarMonth, displayIndex, ...divProps } = props;
   return import_react15.default.createElement("div", { ...divProps });
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/MonthGrid.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/MonthGrid.js
 var import_react16 = __toESM(require_react(), 1);
 function MonthGrid(props) {
   return import_react16.default.createElement("table", { ...props });
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/Months.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/Months.js
 var import_react17 = __toESM(require_react(), 1);
 function Months(props) {
   return import_react17.default.createElement("div", { ...props });
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/MonthsDropdown.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/MonthsDropdown.js
 var import_react18 = __toESM(require_react(), 1);
 function MonthsDropdown(props) {
   const { components } = useDayPicker();
   return import_react18.default.createElement(components.Dropdown, { ...props });
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/Nav.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/Nav.js
 var import_react19 = __toESM(require_react(), 1);
 function Nav(props) {
   const { onPreviousClick, onNextClick, previousMonth, nextMonth, ...navProps } = props;
   const { components, classNames, styles, labels: { labelPrevious: labelPrevious2, labelNext: labelNext2 } } = useDayPicker();
-  const handleNextClick = (0, import_react19.useCallback)((e2) => {
+  const handleNextClick = (0, import_react19.useCallback)((e) => {
     if (nextMonth) {
-      onNextClick?.(e2);
+      onNextClick?.(e);
     }
   }, [nextMonth, onNextClick]);
-  const handlePreviousClick = (0, import_react19.useCallback)((e2) => {
+  const handlePreviousClick = (0, import_react19.useCallback)((e) => {
     if (previousMonth) {
-      onPreviousClick?.(e2);
+      onPreviousClick?.(e);
     }
   }, [previousMonth, onPreviousClick]);
   return import_react19.default.createElement(
@@ -16702,51 +16926,51 @@ function Nav(props) {
   );
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/NextMonthButton.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/NextMonthButton.js
 var import_react20 = __toESM(require_react(), 1);
 function NextMonthButton(props) {
   return import_react20.default.createElement("button", { ...props });
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/Option.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/Option.js
 var import_react21 = __toESM(require_react(), 1);
 function Option(props) {
   return import_react21.default.createElement("option", { ...props });
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/PreviousMonthButton.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/PreviousMonthButton.js
 var import_react22 = __toESM(require_react(), 1);
 function PreviousMonthButton(props) {
   return import_react22.default.createElement("button", { ...props });
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/Root.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/Root.js
 var import_react23 = __toESM(require_react(), 1);
 function Root2(props) {
   const { rootRef, ...rest } = props;
   return import_react23.default.createElement("div", { ...rest, ref: rootRef });
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/Select.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/Select.js
 var import_react24 = __toESM(require_react(), 1);
 function Select(props) {
   return import_react24.default.createElement("select", { ...props });
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/Week.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/Week.js
 var import_react25 = __toESM(require_react(), 1);
 function Week(props) {
   const { week, ...trProps } = props;
   return import_react25.default.createElement("tr", { ...trProps });
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/Weekday.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/Weekday.js
 var import_react26 = __toESM(require_react(), 1);
 function Weekday(props) {
   return import_react26.default.createElement("th", { ...props });
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/Weekdays.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/Weekdays.js
 var import_react27 = __toESM(require_react(), 1);
 function Weekdays(props) {
   return import_react27.default.createElement(
@@ -16756,36 +16980,36 @@ function Weekdays(props) {
   );
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/WeekNumber.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/WeekNumber.js
 var import_react28 = __toESM(require_react(), 1);
 function WeekNumber(props) {
   const { week, ...thProps } = props;
   return import_react28.default.createElement("th", { ...thProps });
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/WeekNumberHeader.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/WeekNumberHeader.js
 var import_react29 = __toESM(require_react(), 1);
 function WeekNumberHeader(props) {
   return import_react29.default.createElement("th", { ...props });
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/Weeks.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/Weeks.js
 var import_react30 = __toESM(require_react(), 1);
 function Weeks(props) {
   return import_react30.default.createElement("tbody", { ...props });
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/components/YearsDropdown.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/components/YearsDropdown.js
 var import_react31 = __toESM(require_react(), 1);
 function YearsDropdown(props) {
   const { components } = useDayPicker();
   return import_react31.default.createElement(components.Dropdown, { ...props });
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/DayPicker.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/DayPicker.js
 var import_react36 = __toESM(require_react(), 1);
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/utils/rangeIncludesDate.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/utils/rangeIncludesDate.js
 function rangeIncludesDate(range, date, excludeEnds = false, dateLib = defaultDateLib) {
   let { from, to } = range;
   const { differenceInCalendarDays: differenceInCalendarDays2, isSameDay: isSameDay2 } = dateLib;
@@ -16806,7 +17030,7 @@ function rangeIncludesDate(range, date, excludeEnds = false, dateLib = defaultDa
   return false;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/utils/typeguards.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/utils/typeguards.js
 function isDateInterval(matcher) {
   return Boolean(matcher && typeof matcher === "object" && "before" in matcher && "after" in matcher);
 }
@@ -16826,7 +17050,7 @@ function isDatesArray(value, dateLib) {
   return Array.isArray(value) && value.every(dateLib.isDate);
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/utils/dateMatchModifiers.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/utils/dateMatchModifiers.js
 function dateMatchModifiers(date, matchers, dateLib = defaultDateLib) {
   const matchersArr = !Array.isArray(matchers) ? [matchers] : matchers;
   const { isSameDay: isSameDay2, differenceInCalendarDays: differenceInCalendarDays2, isAfter: isAfter2 } = dateLib;
@@ -16874,7 +17098,7 @@ function dateMatchModifiers(date, matchers, dateLib = defaultDateLib) {
   });
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/createGetModifiers.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/createGetModifiers.js
 function createGetModifiers(days, props, navStart, navEnd, dateLib) {
   const { disabled: disabled2, hidden, modifiers, showOutsideDays, broadcastCalendar, today = dateLib.today() } = props;
   const { isSameDay: isSameDay2, isSameMonth: isSameMonth2, startOfMonth: startOfMonth2, isBefore: isBefore2, endOfMonth: endOfMonth2, isAfter: isAfter2 } = dateLib;
@@ -16930,10 +17154,10 @@ function createGetModifiers(days, props, navStart, navEnd, dateLib) {
     const customModifiers = {};
     for (const name in internalModifiersMap) {
       const days2 = internalModifiersMap[name];
-      dayFlags[name] = days2.some((d2) => d2 === day);
+      dayFlags[name] = days2.some((d) => d === day);
     }
     for (const name in customModifiersMap) {
-      customModifiers[name] = customModifiersMap[name].some((d2) => d2 === day);
+      customModifiers[name] = customModifiersMap[name].some((d) => d === day);
     }
     return {
       ...dayFlags,
@@ -16943,7 +17167,7 @@ function createGetModifiers(days, props, navStart, navEnd, dateLib) {
   };
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/getClassNamesForModifiers.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/getClassNamesForModifiers.js
 function getClassNamesForModifiers(modifiers, classNames, modifiersClassNames = {}) {
   const modifierClassNames = Object.entries(modifiers).filter(([, active]) => active === true).reduce((previousValue, [key]) => {
     if (modifiersClassNames[key]) {
@@ -16958,7 +17182,7 @@ function getClassNamesForModifiers(modifiers, classNames, modifiersClassNames = 
   return modifierClassNames;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/getComponents.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/getComponents.js
 function getComponents(customComponents) {
   return {
     ...custom_components_exports,
@@ -16966,7 +17190,7 @@ function getComponents(customComponents) {
   };
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/getDataAttributes.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/getDataAttributes.js
 function getDataAttributes(props) {
   const dataAttributes = {
     "data-mode": props.mode ?? void 0,
@@ -16984,7 +17208,7 @@ function getDataAttributes(props) {
   return dataAttributes;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/getDefaultClassNames.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/getDefaultClassNames.js
 function getDefaultClassNames() {
   const classNames = {};
   for (const key in UI) {
@@ -17002,7 +17226,7 @@ function getDefaultClassNames() {
   return classNames;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/formatters/index.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/formatters/index.js
 var formatters_exports = {};
 __export(formatters_exports, {
   formatCaption: () => formatCaption,
@@ -17014,28 +17238,28 @@ __export(formatters_exports, {
   formatYearDropdown: () => formatYearDropdown
 });
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/formatters/formatCaption.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/formatters/formatCaption.js
 function formatCaption(month, options, dateLib) {
   const lib = dateLib ?? new DateLib(options);
   return lib.formatMonthYear(month);
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/formatters/formatDay.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/formatters/formatDay.js
 function formatDay(date, options, dateLib) {
   return (dateLib ?? new DateLib(options)).format(date, "d");
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/formatters/formatMonthDropdown.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/formatters/formatMonthDropdown.js
 function formatMonthDropdown(month, dateLib = defaultDateLib) {
   return dateLib.format(month, "LLLL");
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/formatters/formatWeekdayName.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/formatters/formatWeekdayName.js
 function formatWeekdayName(weekday, options, dateLib) {
   return (dateLib ?? new DateLib(options)).format(weekday, "cccccc");
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/formatters/formatWeekNumber.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/formatters/formatWeekNumber.js
 function formatWeekNumber(weekNumber, dateLib = defaultDateLib) {
   if (weekNumber < 10) {
     return dateLib.formatNumber(`0${weekNumber.toLocaleString()}`);
@@ -17043,17 +17267,17 @@ function formatWeekNumber(weekNumber, dateLib = defaultDateLib) {
   return dateLib.formatNumber(`${weekNumber.toLocaleString()}`);
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/formatters/formatWeekNumberHeader.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/formatters/formatWeekNumberHeader.js
 function formatWeekNumberHeader() {
   return ``;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/formatters/formatYearDropdown.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/formatters/formatYearDropdown.js
 function formatYearDropdown(year, dateLib = defaultDateLib) {
   return dateLib.format(year, "yyyy");
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/getFormatters.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/getFormatters.js
 function getFormatters(customFormatters) {
   return {
     ...formatters_exports,
@@ -17061,7 +17285,7 @@ function getFormatters(customFormatters) {
   };
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/labels/index.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/labels/index.js
 var labels_exports = {};
 __export(labels_exports, {
   labelDayButton: () => labelDayButton,
@@ -17077,7 +17301,7 @@ __export(labels_exports, {
   labelYearDropdown: () => labelYearDropdown
 });
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/labels/labelDayButton.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/labels/labelDayButton.js
 function labelDayButton(date, modifiers, options, dateLib) {
   let label = (dateLib ?? new DateLib(options)).format(date, "PPPP");
   if (modifiers.today)
@@ -17087,13 +17311,13 @@ function labelDayButton(date, modifiers, options, dateLib) {
   return label;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/labels/labelGrid.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/labels/labelGrid.js
 function labelGrid(date, options, dateLib) {
   const lib = dateLib ?? new DateLib(options);
   return lib.formatMonthYear(date);
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/labels/labelGridcell.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/labels/labelGridcell.js
 function labelGridcell(date, modifiers, options, dateLib) {
   let label = (dateLib ?? new DateLib(options)).format(date, "PPPP");
   if (modifiers?.today) {
@@ -17102,48 +17326,48 @@ function labelGridcell(date, modifiers, options, dateLib) {
   return label;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/labels/labelMonthDropdown.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/labels/labelMonthDropdown.js
 function labelMonthDropdown(_options) {
   return "Choose the Month";
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/labels/labelNav.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/labels/labelNav.js
 function labelNav() {
   return "";
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/labels/labelNext.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/labels/labelNext.js
 var defaultLabel = "Go to the Next Month";
 function labelNext(_month, _options) {
   return defaultLabel;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/labels/labelPrevious.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/labels/labelPrevious.js
 function labelPrevious(_month) {
   return "Go to the Previous Month";
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/labels/labelWeekday.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/labels/labelWeekday.js
 function labelWeekday(date, options, dateLib) {
   return (dateLib ?? new DateLib(options)).format(date, "cccc");
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/labels/labelWeekNumber.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/labels/labelWeekNumber.js
 function labelWeekNumber(weekNumber, _options) {
   return `Week ${weekNumber}`;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/labels/labelWeekNumberHeader.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/labels/labelWeekNumberHeader.js
 function labelWeekNumberHeader(_options) {
   return "Week Number";
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/labels/labelYearDropdown.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/labels/labelYearDropdown.js
 function labelYearDropdown(_options) {
   return "Choose the Year";
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/getLabels.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/getLabels.js
 var resolveLabel = (defaultLabel2, customLabel, localeLabel) => {
   if (customLabel)
     return customLabel;
@@ -17171,7 +17395,7 @@ function getLabels(customLabels, options) {
   };
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/getMonthOptions.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/getMonthOptions.js
 function getMonthOptions(displayMonth, navStart, navEnd, formatters2, dateLib) {
   const { startOfMonth: startOfMonth2, startOfYear: startOfYear2, endOfYear: endOfYear2, eachMonthOfInterval: eachMonthOfInterval2, getMonth: getMonth2 } = dateLib;
   const months = eachMonthOfInterval2({
@@ -17187,7 +17411,7 @@ function getMonthOptions(displayMonth, navStart, navEnd, formatters2, dateLib) {
   return options;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/getStyleForModifiers.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/getStyleForModifiers.js
 function getStyleForModifiers(dayModifiers, styles = {}, modifiersStyles = {}) {
   let style = { ...styles?.[UI.Day] };
   Object.entries(dayModifiers).filter(([, active]) => active === true).forEach(([modifier]) => {
@@ -17199,19 +17423,19 @@ function getStyleForModifiers(dayModifiers, styles = {}, modifiersStyles = {}) {
   return style;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/getWeekdays.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/getWeekdays.js
 function getWeekdays(dateLib, ISOWeek, broadcastCalendar, today) {
   const referenceToday = today ?? dateLib.today();
   const start = broadcastCalendar ? dateLib.startOfBroadcastWeek(referenceToday, dateLib) : ISOWeek ? dateLib.startOfISOWeek(referenceToday) : dateLib.startOfWeek(referenceToday);
   const days = [];
-  for (let i2 = 0; i2 < 7; i2++) {
-    const day = dateLib.addDays(start, i2);
+  for (let i = 0; i < 7; i++) {
+    const day = dateLib.addDays(start, i);
     days.push(day);
   }
   return days;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/getYearOptions.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/getYearOptions.js
 function getYearOptions(navStart, navEnd, formatters2, dateLib, reverse = false) {
   if (!navStart)
     return void 0;
@@ -17233,7 +17457,7 @@ function getYearOptions(navStart, navEnd, formatters2, dateLib, reverse = false)
   });
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/noonDateLib.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/noonDateLib.js
 function createNoonOverrides(timeZone, options = {}) {
   const { weekStartsOn, locale } = options;
   const fallbackWeekStartsOn = weekStartsOn ?? locale?.options?.weekStartsOn ?? 0;
@@ -17371,7 +17595,7 @@ function createNoonOverrides(timeZone, options = {}) {
   };
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/useAnimation.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/useAnimation.js
 var import_react32 = __toESM(require_react(), 1);
 var asHtmlElement = (element) => {
   if (element instanceof HTMLElement)
@@ -17499,10 +17723,10 @@ function useAnimation(rootElRef, enabled, { classNames, months, focused, dateLib
   });
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/useCalendar.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/useCalendar.js
 var import_react34 = __toESM(require_react(), 1);
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/getDates.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/getDates.js
 function getDates(displayMonths, maxDate, props, dateLib) {
   const firstMonth = displayMonths[0];
   const lastMonth = displayMonths[displayMonths.length - 1];
@@ -17515,15 +17739,15 @@ function getDates(displayMonths, maxDate, props, dateLib) {
   const nOfDays = differenceInCalendarDays2(gridEndDate, startWeekFirstDate);
   const nOfMonths = differenceInCalendarMonths2(lastMonth, firstMonth) + 1;
   const dates = [];
-  for (let i2 = 0; i2 <= nOfDays; i2++) {
-    const date = addDays2(startWeekFirstDate, i2);
+  for (let i = 0; i <= nOfDays; i++) {
+    const date = addDays2(startWeekFirstDate, i);
     dates.push(date);
   }
   const nrOfDaysWithFixedWeeks = broadcastCalendar ? 35 : 42;
   const extraDates = nrOfDaysWithFixedWeeks * nOfMonths;
   if (fixedWeeks && dates.length < extraDates) {
     const daysToAdd = extraDates - dates.length;
-    for (let i2 = 0; i2 < daysToAdd; i2++) {
+    for (let i = 0; i < daysToAdd; i++) {
       const date = addDays2(dates[dates.length - 1], 1);
       dates.push(date);
     }
@@ -17531,7 +17755,7 @@ function getDates(displayMonths, maxDate, props, dateLib) {
   return dates;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/getDays.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/getDays.js
 function getDays(calendarMonths) {
   const initialDays = [];
   return calendarMonths.reduce((days, month) => {
@@ -17542,12 +17766,12 @@ function getDays(calendarMonths) {
   }, initialDays.slice());
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/getDisplayMonths.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/getDisplayMonths.js
 function getDisplayMonths(firstDisplayedMonth, calendarEndMonth, props, dateLib) {
   const { numberOfMonths = 1 } = props;
   const months = [];
-  for (let i2 = 0; i2 < numberOfMonths; i2++) {
-    const month = dateLib.addMonths(firstDisplayedMonth, i2);
+  for (let i = 0; i < numberOfMonths; i++) {
+    const month = dateLib.addMonths(firstDisplayedMonth, i);
     if (calendarEndMonth && month > calendarEndMonth) {
       break;
     }
@@ -17556,7 +17780,7 @@ function getDisplayMonths(firstDisplayedMonth, calendarEndMonth, props, dateLib)
   return months;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/getInitialMonth.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/getInitialMonth.js
 function getInitialMonth(props, navStart, navEnd, dateLib) {
   const { month, defaultMonth, today = dateLib.today(), numberOfMonths = 1 } = props;
   let initialMonth = month || defaultMonth || today;
@@ -17571,7 +17795,7 @@ function getInitialMonth(props, navStart, navEnd, dateLib) {
   return startOfMonth2(initialMonth);
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/getMonths.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/getMonths.js
 function getMonths(displayMonths, dates, props, dateLib) {
   const { addDays: addDays2, endOfBroadcastWeek: endOfBroadcastWeek2, endOfISOWeek: endOfISOWeek2, endOfMonth: endOfMonth2, endOfWeek: endOfWeek2, getISOWeek: getISOWeek2, getWeek: getWeek2, startOfBroadcastWeek: startOfBroadcastWeek2, startOfISOWeek: startOfISOWeek2, startOfWeek: startOfWeek2 } = dateLib;
   const dayPickerMonths = displayMonths.reduce((months, month) => {
@@ -17610,7 +17834,7 @@ function getMonths(displayMonths, dates, props, dateLib) {
   }
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/getNavMonth.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/getNavMonth.js
 function getNavMonths(props, dateLib) {
   let { startMonth, endMonth } = props;
   const { startOfYear: startOfYear2, startOfDay: startOfDay2, startOfMonth: startOfMonth2, endOfMonth: endOfMonth2, addYears: addYears2, endOfYear: endOfYear2, today } = dateLib;
@@ -17631,7 +17855,7 @@ function getNavMonths(props, dateLib) {
   ];
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/getNextMonth.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/getNextMonth.js
 function getNextMonth(firstDisplayedMonth, calendarEndMonth, options, dateLib) {
   if (options.disableNavigation) {
     return void 0;
@@ -17650,7 +17874,7 @@ function getNextMonth(firstDisplayedMonth, calendarEndMonth, options, dateLib) {
   return addMonths2(month, offset4);
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/getPreviousMonth.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/getPreviousMonth.js
 function getPreviousMonth(firstDisplayedMonth, calendarStartMonth, options, dateLib) {
   if (options.disableNavigation) {
     return void 0;
@@ -17669,7 +17893,7 @@ function getPreviousMonth(firstDisplayedMonth, calendarStartMonth, options, date
   return addMonths2(month, -offset4);
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/getWeeks.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/getWeeks.js
 function getWeeks(months) {
   const initialWeeks = [];
   return months.reduce((weeks, month) => {
@@ -17677,7 +17901,7 @@ function getWeeks(months) {
   }, initialWeeks.slice());
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/useControlledValue.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/useControlledValue.js
 var import_react33 = __toESM(require_react(), 1);
 function useControlledValue(defaultValue, controlledValue) {
   const [uncontrolledValue, setValue] = (0, import_react33.useState)(defaultValue);
@@ -17685,7 +17909,7 @@ function useControlledValue(defaultValue, controlledValue) {
   return [value, setValue];
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/useCalendar.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/useCalendar.js
 function useCalendar(props, dateLib) {
   const [navStart, navEnd] = getNavMonths(props, dateLib);
   const { startOfMonth: startOfMonth2, endOfMonth: endOfMonth2 } = dateLib;
@@ -17738,7 +17962,7 @@ function useCalendar(props, dateLib) {
     props.reverseMonths
   ]);
   const { disableNavigation, onMonthChange } = props;
-  const isDayInCalendar = (day) => weeks.some((week) => week.days.some((d2) => d2.isEqualTo(day)));
+  const isDayInCalendar = (day) => weeks.some((week) => week.days.some((d) => d.isEqualTo(day)));
   const goToMonth = (date) => {
     if (disableNavigation) {
       return;
@@ -17773,10 +17997,10 @@ function useCalendar(props, dateLib) {
   return calendar;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/useFocus.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/useFocus.js
 var import_react35 = __toESM(require_react(), 1);
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/calculateFocusTarget.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/calculateFocusTarget.js
 var FocusTargetPriority;
 (function(FocusTargetPriority2) {
   FocusTargetPriority2[FocusTargetPriority2["Today"] = 0] = "Today";
@@ -17814,7 +18038,7 @@ function calculateFocusTarget(days, getModifiers, isSelected, lastFocused) {
   return focusTarget;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/getFocusableDate.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/getFocusableDate.js
 function getFocusableDate(moveBy, moveDir, refDate, navStart, navEnd, props, dateLib) {
   const { ISOWeek, broadcastCalendar } = props;
   const { addDays: addDays2, addMonths: addMonths2, addWeeks: addWeeks2, addYears: addYears2, endOfBroadcastWeek: endOfBroadcastWeek2, endOfISOWeek: endOfISOWeek2, endOfWeek: endOfWeek2, max: max3, min: min3, startOfBroadcastWeek: startOfBroadcastWeek2, startOfISOWeek: startOfISOWeek2, startOfWeek: startOfWeek2 } = dateLib;
@@ -17835,7 +18059,7 @@ function getFocusableDate(moveBy, moveDir, refDate, navStart, navEnd, props, dat
   return focusableDate;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/helpers/getNextFocus.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/helpers/getNextFocus.js
 function getNextFocus(moveBy, moveDir, refDay, calendarStartMonth, calendarEndMonth, props, dateLib, attempt = 0) {
   if (attempt > 365) {
     return void 0;
@@ -17851,7 +18075,7 @@ function getNextFocus(moveBy, moveDir, refDay, calendarStartMonth, calendarEndMo
   return getNextFocus(moveBy, moveDir, focusDay, calendarStartMonth, calendarEndMonth, props, dateLib, attempt + 1);
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/useFocus.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/useFocus.js
 function useFocus2(props, calendar, getModifiers, isSelected, dateLib) {
   const { autoFocus } = props;
   const [lastFocused, setLastFocused] = (0, import_react35.useState)();
@@ -17889,17 +18113,17 @@ function useFocus2(props, calendar, getModifiers, isSelected, dateLib) {
   return useFocus3;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/selection/useMulti.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/selection/useMulti.js
 function useMulti(props, dateLib) {
   const { selected: initiallySelected, required, onSelect } = props;
   const [internallySelected, setSelected] = useControlledValue(initiallySelected, onSelect ? initiallySelected : void 0);
   const selected = !onSelect ? internallySelected : initiallySelected;
   const { isSameDay: isSameDay2 } = dateLib;
   const isSelected = (date) => {
-    return selected?.some((d2) => isSameDay2(d2, date)) ?? false;
+    return selected?.some((d) => isSameDay2(d, date)) ?? false;
   };
   const { min: min3, max: max3 } = props;
-  const select = (triggerDate, modifiers, e2) => {
+  const select = (triggerDate, modifiers, e) => {
     let newDates = [...selected ?? []];
     if (isSelected(triggerDate)) {
       if (selected?.length === min3) {
@@ -17908,7 +18132,7 @@ function useMulti(props, dateLib) {
       if (required && selected?.length === 1) {
         return;
       }
-      newDates = selected?.filter((d2) => !isSameDay2(d2, triggerDate));
+      newDates = selected?.filter((d) => !isSameDay2(d, triggerDate));
     } else {
       if (selected?.length === max3) {
         newDates = [triggerDate];
@@ -17919,7 +18143,7 @@ function useMulti(props, dateLib) {
     if (!onSelect) {
       setSelected(newDates);
     }
-    onSelect?.(newDates, triggerDate, modifiers, e2);
+    onSelect?.(newDates, triggerDate, modifiers, e);
     return newDates;
   };
   return {
@@ -17929,7 +18153,7 @@ function useMulti(props, dateLib) {
   };
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/utils/addToRange.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/utils/addToRange.js
 function addToRange(date, initialRange, min3 = 0, max3 = 0, required = false, dateLib = defaultDateLib) {
   const { from, to } = initialRange || {};
   const { isSameDay: isSameDay2, isAfter: isAfter2, isBefore: isBefore2 } = dateLib;
@@ -17982,13 +18206,13 @@ function addToRange(date, initialRange, min3 = 0, max3 = 0, required = false, da
   return range;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/utils/rangeContainsDayOfWeek.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/utils/rangeContainsDayOfWeek.js
 function rangeContainsDayOfWeek(range, dayOfWeek, dateLib = defaultDateLib) {
   const dayOfWeekArr = !Array.isArray(dayOfWeek) ? [dayOfWeek] : dayOfWeek;
   let date = range.from;
   const totalDays = dateLib.differenceInCalendarDays(range.to, range.from);
   const totalDaysLimit = Math.min(totalDays, 6);
-  for (let i2 = 0; i2 <= totalDaysLimit; i2++) {
+  for (let i = 0; i <= totalDaysLimit; i++) {
     if (dayOfWeekArr.includes(date.getDay())) {
       return true;
     }
@@ -17997,12 +18221,12 @@ function rangeContainsDayOfWeek(range, dayOfWeek, dateLib = defaultDateLib) {
   return false;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/utils/rangeOverlaps.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/utils/rangeOverlaps.js
 function rangeOverlaps(rangeLeft, rangeRight, dateLib = defaultDateLib) {
   return rangeIncludesDate(rangeLeft, rangeRight.from, false, dateLib) || rangeIncludesDate(rangeLeft, rangeRight.to, false, dateLib) || rangeIncludesDate(rangeRight, rangeLeft.from, false, dateLib) || rangeIncludesDate(rangeRight, rangeLeft.to, false, dateLib);
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/utils/rangeContainsModifiers.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/utils/rangeContainsModifiers.js
 function rangeContainsModifiers(range, modifiers, dateLib = defaultDateLib) {
   const matchers = Array.isArray(modifiers) ? modifiers : [modifiers];
   const nonFunctionMatchers = matchers.filter((matcher) => typeof matcher !== "function");
@@ -18046,7 +18270,7 @@ function rangeContainsModifiers(range, modifiers, dateLib = defaultDateLib) {
   if (functionMatchers.length) {
     let date = range.from;
     const totalDays = dateLib.differenceInCalendarDays(range.to, range.from);
-    for (let i2 = 0; i2 <= totalDays; i2++) {
+    for (let i = 0; i <= totalDays; i++) {
       if (functionMatchers.some((matcher) => matcher(date))) {
         return true;
       }
@@ -18056,13 +18280,13 @@ function rangeContainsModifiers(range, modifiers, dateLib = defaultDateLib) {
   return false;
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/selection/useRange.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/selection/useRange.js
 function useRange(props, dateLib) {
   const { disabled: disabled2, excludeDisabled, resetOnSelect, selected: initiallySelected, required, onSelect } = props;
   const [internallySelected, setSelected] = useControlledValue(initiallySelected, onSelect ? initiallySelected : void 0);
   const selected = !onSelect ? internallySelected : initiallySelected;
   const isSelected = (date) => selected && rangeIncludesDate(selected, date, false, dateLib);
-  const select = (triggerDate, modifiers, e2) => {
+  const select = (triggerDate, modifiers, e) => {
     const { min: min3, max: max3 } = props;
     let newRange;
     if (triggerDate) {
@@ -18089,7 +18313,7 @@ function useRange(props, dateLib) {
     if (!onSelect) {
       setSelected(newRange);
     }
-    onSelect?.(newRange, triggerDate, modifiers, e2);
+    onSelect?.(newRange, triggerDate, modifiers, e);
     return newRange;
   };
   return {
@@ -18099,7 +18323,7 @@ function useRange(props, dateLib) {
   };
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/selection/useSingle.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/selection/useSingle.js
 function useSingle(props, dateLib) {
   const { selected: initiallySelected, required, onSelect } = props;
   const [internallySelected, setSelected] = useControlledValue(initiallySelected, onSelect ? initiallySelected : void 0);
@@ -18108,7 +18332,7 @@ function useSingle(props, dateLib) {
   const isSelected = (compareDate) => {
     return selected ? isSameDay2(selected, compareDate) : false;
   };
-  const select = (triggerDate, modifiers, e2) => {
+  const select = (triggerDate, modifiers, e) => {
     let newDate = triggerDate;
     if (!required && selected && selected && isSameDay2(triggerDate, selected)) {
       newDate = void 0;
@@ -18117,9 +18341,9 @@ function useSingle(props, dateLib) {
       setSelected(newDate);
     }
     if (required) {
-      onSelect?.(newDate, triggerDate, modifiers, e2);
+      onSelect?.(newDate, triggerDate, modifiers, e);
     } else {
-      onSelect?.(newDate, triggerDate, modifiers, e2);
+      onSelect?.(newDate, triggerDate, modifiers, e);
     }
     return newDate;
   };
@@ -18130,7 +18354,7 @@ function useSingle(props, dateLib) {
   };
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/useSelection.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/useSelection.js
 function useSelection(props, dateLib) {
   const single = useSingle(props, dateLib);
   const multi = useMulti(props, dateLib);
@@ -18147,7 +18371,7 @@ function useSelection(props, dateLib) {
   }
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/utils/toTimeZone.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/utils/toTimeZone.js
 function toTimeZone(date, timeZone) {
   if (date instanceof TZDate && date.timeZone === timeZone) {
     return date;
@@ -18155,7 +18379,7 @@ function toTimeZone(date, timeZone) {
   return new TZDate(date, timeZone);
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/utils/convertMatchersToTimeZone.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/utils/convertMatchersToTimeZone.js
 function toZoneNoon(date, timeZone, noonSafe) {
   if (!noonSafe)
     return toTimeZone(date, timeZone);
@@ -18208,7 +18432,7 @@ function convertMatchersToTimeZone(matchers, timeZone, noonSafe) {
   return convertMatcher(matchers, timeZone, noonSafe);
 }
 
-// node_modules/@daypicker/react/node_modules/react-day-picker/dist/esm/DayPicker.js
+// node_modules/.store/react-day-picker@10.0.1-y2Oedn4nrpHutk6t6Rk87g/node_modules/react-day-picker/dist/esm/DayPicker.js
 function DayPicker(initialProps) {
   let props = initialProps;
   const timeZone = props.timeZone;
@@ -18322,62 +18546,62 @@ function DayPicker(initialProps) {
     goToMonth(nextMonth);
     onNextClick?.(nextMonth);
   }, [goToMonth, nextMonth, onNextClick]);
-  const handleDayClick = (0, import_react36.useCallback)((day, m2) => (e2) => {
-    e2.preventDefault();
-    e2.stopPropagation();
+  const handleDayClick = (0, import_react36.useCallback)((day, m2) => (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     setFocused(day);
     if (m2.disabled) {
       return;
     }
-    select?.(day.date, m2, e2);
-    onDayClick?.(day.date, m2, e2);
+    select?.(day.date, m2, e);
+    onDayClick?.(day.date, m2, e);
   }, [select, onDayClick, setFocused]);
-  const handleDayFocus = (0, import_react36.useCallback)((day, m2) => (e2) => {
+  const handleDayFocus = (0, import_react36.useCallback)((day, m2) => (e) => {
     setFocused(day);
-    onDayFocus?.(day.date, m2, e2);
+    onDayFocus?.(day.date, m2, e);
   }, [onDayFocus, setFocused]);
-  const handleDayBlur = (0, import_react36.useCallback)((day, m2) => (e2) => {
+  const handleDayBlur = (0, import_react36.useCallback)((day, m2) => (e) => {
     blur();
-    onDayBlur?.(day.date, m2, e2);
+    onDayBlur?.(day.date, m2, e);
   }, [blur, onDayBlur]);
-  const handleDayKeyDown = (0, import_react36.useCallback)((day, modifiers) => (e2) => {
+  const handleDayKeyDown = (0, import_react36.useCallback)((day, modifiers) => (e) => {
     const keyMap = {
       ArrowLeft: [
-        e2.shiftKey ? "month" : "day",
+        e.shiftKey ? "month" : "day",
         props.dir === "rtl" ? "after" : "before"
       ],
       ArrowRight: [
-        e2.shiftKey ? "month" : "day",
+        e.shiftKey ? "month" : "day",
         props.dir === "rtl" ? "before" : "after"
       ],
-      ArrowDown: [e2.shiftKey ? "year" : "week", "after"],
-      ArrowUp: [e2.shiftKey ? "year" : "week", "before"],
-      PageUp: [e2.shiftKey ? "year" : "month", "before"],
-      PageDown: [e2.shiftKey ? "year" : "month", "after"],
+      ArrowDown: [e.shiftKey ? "year" : "week", "after"],
+      ArrowUp: [e.shiftKey ? "year" : "week", "before"],
+      PageUp: [e.shiftKey ? "year" : "month", "before"],
+      PageDown: [e.shiftKey ? "year" : "month", "after"],
       Home: ["startOfWeek", "before"],
       End: ["endOfWeek", "after"]
     };
-    if (keyMap[e2.key]) {
-      e2.preventDefault();
-      e2.stopPropagation();
-      const [moveBy, moveDir] = keyMap[e2.key];
+    if (keyMap[e.key]) {
+      e.preventDefault();
+      e.stopPropagation();
+      const [moveBy, moveDir] = keyMap[e.key];
       moveFocus(moveBy, moveDir);
     }
-    onDayKeyDown?.(day.date, modifiers, e2);
+    onDayKeyDown?.(day.date, modifiers, e);
   }, [moveFocus, onDayKeyDown, props.dir]);
-  const handleDayMouseEnter = (0, import_react36.useCallback)((day, modifiers) => (e2) => {
-    onDayMouseEnter?.(day.date, modifiers, e2);
+  const handleDayMouseEnter = (0, import_react36.useCallback)((day, modifiers) => (e) => {
+    onDayMouseEnter?.(day.date, modifiers, e);
   }, [onDayMouseEnter]);
-  const handleDayMouseLeave = (0, import_react36.useCallback)((day, modifiers) => (e2) => {
-    onDayMouseLeave?.(day.date, modifiers, e2);
+  const handleDayMouseLeave = (0, import_react36.useCallback)((day, modifiers) => (e) => {
+    onDayMouseLeave?.(day.date, modifiers, e);
   }, [onDayMouseLeave]);
-  const handleMonthChange = (0, import_react36.useCallback)((date, monthOffset) => (e2) => {
-    const selectedMonth = Number(e2.target.value);
+  const handleMonthChange = (0, import_react36.useCallback)((date, monthOffset) => (e) => {
+    const selectedMonth = Number(e.target.value);
     const month = dateLib.setMonth(dateLib.startOfMonth(date), selectedMonth);
     goToMonth(dateLib.addMonths(month, -monthOffset));
   }, [dateLib, goToMonth]);
-  const handleYearChange = (0, import_react36.useCallback)((date, monthOffset) => (e2) => {
-    const selectedYear = Number(e2.target.value);
+  const handleYearChange = (0, import_react36.useCallback)((date, monthOffset) => (e) => {
+    const selectedYear = Number(e.target.value);
     const month = dateLib.setYear(dateLib.startOfMonth(date), selectedYear);
     goToMonth(dateLib.addMonths(month, -monthOffset));
   }, [dateLib, goToMonth]);
@@ -18615,7 +18839,7 @@ if (typeof process === "undefined" || true) {
 }
 var style_default9 = { "icon-button": "_28cfdc260e755391__icon-button", "icon": "f1c70d719989a85a__icon" };
 var IconButton = (0, import_element23.forwardRef)(
-  function IconButton2({
+  function UnforwardedIconButton({
     label,
     className,
     // Prevent accidental forwarding of `children`
@@ -18905,9 +19129,9 @@ if (typeof process === "undefined" || true) {
 }
 var resets_default4 = { "box-sizing": "_336cd3e4e743482f__box-sizing" };
 if (typeof process === "undefined" || true) {
-  registerStyle11("08122b3d53", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer utilities{.af79fb116edb0dd7__outset-ring--focus:focus,.dfcfdc28396e5d98__outset-ring--focus-visible:focus-visible,.e5cd9ee879f6403a__outset-ring--focus-within:focus-within,:focus-visible ._81935a08e952f267__outset-ring--focus-parent-visible{--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within,.abc777e9713fa711__outset-ring--focus-except-active:focus{outline:none}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within:not(:has(:active)),.abc777e9713fa711__outset-ring--focus-except-active:focus:not(:active){--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}}}");
+  registerStyle11("7c3267f794", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer utilities{.af79fb116edb0dd7__outset-ring--focus:focus,.dfcfdc28396e5d98__outset-ring--focus-visible:focus-visible,.e5cd9ee879f6403a__outset-ring--focus-within:focus-within{--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within,.abc777e9713fa711__outset-ring--focus-except-active:focus{outline:none}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within:not(:has(:active)),.abc777e9713fa711__outset-ring--focus-except-active:focus:not(:active){--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}}}");
 }
-var focus_module_default3 = { "outset-ring--focus": "af79fb116edb0dd7__outset-ring--focus", "outset-ring--focus-visible": "dfcfdc28396e5d98__outset-ring--focus-visible", "outset-ring--focus-within": "e5cd9ee879f6403a__outset-ring--focus-within", "outset-ring--focus-parent-visible": "_81935a08e952f267__outset-ring--focus-parent-visible", "outset-ring--focus-except-active": "abc777e9713fa711__outset-ring--focus-except-active", "outset-ring--focus-within-except-active": "_3c9f5ee9fc9c136d__outset-ring--focus-within-except-active" };
+var focus_module_default3 = { "outset-ring--focus": "af79fb116edb0dd7__outset-ring--focus", "outset-ring--focus-visible": "dfcfdc28396e5d98__outset-ring--focus-visible", "outset-ring--focus-within": "e5cd9ee879f6403a__outset-ring--focus-within", "outset-ring--focus-except-active": "abc777e9713fa711__outset-ring--focus-except-active", "outset-ring--focus-within-except-active": "_3c9f5ee9fc9c136d__outset-ring--focus-within-except-active" };
 if (typeof process === "undefined" || true) {
   registerStyle11("e8e31009f5", "._6defc79820e382c6__button{box-sizing:var(--_gcd-button-box-sizing,border-box);font-family:var(--_gcd-button-font-family,inherit);font-size:var(--_gcd-button-font-size,inherit);font-weight:var(--_gcd-button-font-weight,inherit)}.d2cff2e5dea83bd1__input{box-sizing:var(--_gcd-input-box-sizing,border-box);font-family:var(--_gcd-input-font-family,inherit);font-size:var(--_gcd-input-font-size,inherit);font-weight:var(--_gcd-input-font-weight,inherit);margin:var(--_gcd-input-margin,0);&::placeholder{color:var(--_gcd-input-placeholder-color,var(--wpds-color-foreground-interactive-neutral-weak,#707070))}&:is(textarea,[type=text],[type=password],[type=color],[type=date],[type=datetime],[type=datetime-local],[type=email],[type=month],[type=number],[type=search],[type=tel],[type=time],[type=url],[type=week]){background-color:var(--_gcd-input-background-color,transparent);border:var(--_gcd-input-border,none);border-radius:var(--_gcd-input-border-radius,0);box-shadow:var(--_gcd-input-box-shadow,0 0 0 transparent);color:var(--_gcd-input-color,var(--wpds-color-foreground-interactive-neutral,#1e1e1e));&:focus{border-color:var(--_gcd-input-border-color-focus,var(--wp-admin-theme-color));box-shadow:var(--_gcd-input-box-shadow-focus,none);outline:var(--_gcd-input-outline-focus,none)}&:disabled{background:var(--_gcd-input-background-disabled,transparent);border-color:var(--_gcd-input-border-color-disabled,transparent);box-shadow:var(--_gcd-input-box-shadow-disabled,none);color:var(--_gcd-input-color-disabled,var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d))}}&:is(textarea,[type=text],[type=password],[type=date],[type=datetime],[type=datetime-local],[type=email],[type=month],[type=number],[type=search],[type=tel],[type=time],[type=url],[type=week]){line-height:var(--_gcd-input-line-height,inherit);min-height:var(--_gcd-input-min-height,auto);padding:var(--_gcd-input-padding,0)}}._547d86373d02e108__textarea{box-sizing:var(--_gcd-textarea-box-sizing,border-box);overflow:var(--_gcd-textarea-overflow,auto);resize:var(--_gcd-textarea-resize,block)}._8c15fd0ed9f28ba4__div{outline:var(--_gcd-div-outline,0 solid transparent)}p._43cec3e1eec1066d__p{font-size:var(--_gcd-p-font-size,13px);line-height:var(--_gcd-p-line-height,1.5);margin:var(--_gcd-p-margin,0)}:is(h1,h2,h3,h4,h5,h6).e97669c6d9a38497__heading{color:var(--_gcd-heading-color,var(--wpds-color-foreground-content-neutral,#1e1e1e));font-size:var(--_gcd-heading-font-size,inherit);font-weight:var(--_gcd-heading-font-weight,var(--wpds-typography-font-weight-emphasis,600));margin:var(--_gcd-heading-margin,0)}._2c0831b0499dbd6e__a,._2c0831b0499dbd6e__a:is(:hover,:focus,:active){border-radius:var(--_gcd-a-border-radius,0);box-shadow:var(--_gcd-a-box-shadow,none);color:var(--_gcd-a-color,inherit);outline:var(--_gcd-a-outline,0 solid transparent);transition:var(--_gcd-a-transition,none)}.c59a0ebebd71fa4a__ol{list-style:var(--_gcd-ol-list-style,none);margin:var(--_gcd-ol-margin,0);padding-block:var(--_gcd-ol-padding-block,0);padding-inline:var(--_gcd-ol-padding-inline,0)}._46b5cb0c8e24e8c9__li{margin:var(--_gcd-li-margin,0)}");
 }
@@ -19238,7 +19462,7 @@ function usePreserveDayFocus(forwardedRef, month) {
 // packages/ui/build-module/calendar/calendar.mjs
 var import_jsx_runtime45 = __toESM(require_jsx_runtime(), 1);
 var Calendar = (0, import_element29.forwardRef)(
-  function Calendar2({
+  function UnforwardedCalendar({
     defaultValue,
     value: valueProp,
     onValueChange,
@@ -19262,12 +19486,12 @@ var Calendar = (0, import_element29.forwardRef)(
       [localizationProps.labels, customLabels]
     );
     const onChange = (0, import_element29.useCallback)(
-      (selected2, triggerDate, modifiers, e2) => {
+      (selected2, triggerDate, modifiers, e) => {
         onValueChange?.(
           selected2 ?? null,
           triggerDate,
           modifiers,
-          e2
+          e
         );
       },
       [onValueChange]
@@ -19395,7 +19619,7 @@ function usePreviewRange({
   ]);
 }
 var RangeCalendar = (0, import_element30.forwardRef)(
-  function RangeCalendar2({
+  function UnforwardedRangeCalendar({
     defaultValue,
     value: valueProp,
     onValueChange,
@@ -19424,12 +19648,12 @@ var RangeCalendar = (0, import_element30.forwardRef)(
       [localizationProps.labels, customLabels]
     );
     const onChange = (0, import_element30.useCallback)(
-      (selected2, triggerDate, modifiers2, e2) => {
+      (selected2, triggerDate, modifiers2, e) => {
         onValueChange?.(
           selected2 ?? null,
           triggerDate,
           modifiers2,
-          e2
+          e
         );
       },
       [onValueChange]
@@ -20067,17 +20291,13 @@ function registerStyle16(hash, css) {
   }
 }
 if (typeof process === "undefined" || true) {
-  registerStyle16("64bdb4d46e", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{._626190151275d6d3__heading-wrapper{--_gcd-heading-color:inherit;--_gcd-heading-font-size:inherit;--_gcd-heading-font-weight:inherit;--_gcd-heading-margin:0;font-family:inherit;line-height:inherit}.cab17c7a373cb60d__header-content{flex:1;min-width:0}._92ebbaa30c8a1d05__header-description{color:var(--wpds-color-foreground-content-neutral-weak,#707070)}.dd89d27c4f15912d__header-trigger-positioner{align-self:flex-start;flex-shrink:0;margin-block-start:calc(var(--wpds-typography-line-height-sm, 20px)/2);max-height:0;overflow:visible}.bcfab5f2448bafef__header-trigger-wrapper{border-radius:var(--wpds-border-radius-sm,2px);display:flex;translate:0 -50%}._3106f8d2b0330faa__header-trigger{@media not (prefers-reduced-motion){transition:rotate .15s ease-out}}._5d2dfcb4085c6d0f__header[data-panel-open] ._3106f8d2b0330faa__header-trigger{rotate:180deg}._5d2dfcb4085c6d0f__header[data-disabled] ._3106f8d2b0330faa__header-trigger{color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d)}.e34cf37ccd0d81e0__content{height:var(--collapsible-panel-height);margin-block-start:var(--wp-ui-card-header-content-margin);overflow:hidden;&._03cfdbcd710393c9__overflow-visible{overflow:visible}&[hidden]:not([hidden=until-found]){display:none}&[data-ending-style],&[data-starting-style]{height:0}@media not (prefers-reduced-motion){transition:all .15s ease-out}}}@layer compositions{._41bfdbf7b6c087c2__content-inner{padding-block-start:0}._5d2dfcb4085c6d0f__header{align-items:stretch;display:flex;flex-direction:row;gap:var(--wpds-dimension-gap-sm,8px);outline:none;&:not([data-disabled]){cursor:var(--wpds-cursor-control,pointer)}}}}");
+  registerStyle16("66b8e83c76", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{._572e7c546522c522__heading-wrapper{--_gcd-heading-color:inherit;--_gcd-heading-font-size:inherit;--_gcd-heading-font-weight:inherit;--_gcd-heading-margin:0;font-family:inherit;line-height:inherit}._7ea7cf191a8d26b8__header-content{flex:1;min-width:0}._8f14576749c57845__header-description{color:var(--wpds-color-foreground-content-neutral-weak,#707070)}._48cdf1e0d42fc13e__header-trigger-positioner{align-self:flex-start;flex-shrink:0;margin-block-start:calc(var(--wpds-typography-line-height-sm, 20px)/2);max-height:0;overflow:visible}._77d30921d8288eaf__header-trigger-wrapper{border-radius:var(--wpds-border-radius-sm,2px);display:flex;translate:0 -50%}.c11e44555738d97f__header:focus-visible ._77d30921d8288eaf__header-trigger-wrapper{--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}@media not (prefers-reduced-motion){._22a30cbbb7b656f4__header-trigger{transition:rotate .15s ease-out}}.c11e44555738d97f__header[data-panel-open] ._22a30cbbb7b656f4__header-trigger{rotate:180deg}.c11e44555738d97f__header[data-disabled] ._22a30cbbb7b656f4__header-trigger{color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d)}._90333ddfaa28d232__content{height:var(--collapsible-panel-height);margin-block-start:var(--wp-ui-card-header-content-margin);overflow:hidden}._90333ddfaa28d232__content._20c2575829a8af9b__overflow-visible{overflow:visible}._90333ddfaa28d232__content[hidden]:not([hidden=until-found]){display:none}._90333ddfaa28d232__content[data-ending-style],._90333ddfaa28d232__content[data-starting-style]{height:0}@media not (prefers-reduced-motion){._90333ddfaa28d232__content{transition:all .15s ease-out}}}@layer compositions{.c269ffa2b76fe947__content-inner{padding-block-start:0}.c11e44555738d97f__header{align-items:stretch;display:flex;flex-direction:row;gap:var(--wpds-dimension-gap-sm,8px);outline:none}.c11e44555738d97f__header:not([data-disabled]){cursor:var(--wpds-cursor-control,pointer)}}}");
 }
-var style_default15 = { "heading-wrapper": "_626190151275d6d3__heading-wrapper", "header-content": "cab17c7a373cb60d__header-content", "header-description": "_92ebbaa30c8a1d05__header-description", "header-trigger-positioner": "dd89d27c4f15912d__header-trigger-positioner", "header-trigger-wrapper": "bcfab5f2448bafef__header-trigger-wrapper", "header-trigger": "_3106f8d2b0330faa__header-trigger", "header": "_5d2dfcb4085c6d0f__header", "content": "e34cf37ccd0d81e0__content", "overflow-visible": "_03cfdbcd710393c9__overflow-visible", "content-inner": "_41bfdbf7b6c087c2__content-inner" };
+var style_module_default = { "heading-wrapper": "_572e7c546522c522__heading-wrapper", "header-content": "_7ea7cf191a8d26b8__header-content", "header-description": "_8f14576749c57845__header-description", "header-trigger-positioner": "_48cdf1e0d42fc13e__header-trigger-positioner", "header-trigger-wrapper": "_77d30921d8288eaf__header-trigger-wrapper", "header": "c11e44555738d97f__header", "header-trigger": "_22a30cbbb7b656f4__header-trigger", "content": "_90333ddfaa28d232__content", "overflow-visible": "_20c2575829a8af9b__overflow-visible", "content-inner": "c269ffa2b76fe947__content-inner" };
 if (typeof process === "undefined" || true) {
   registerStyle16("e8e31009f5", "._6defc79820e382c6__button{box-sizing:var(--_gcd-button-box-sizing,border-box);font-family:var(--_gcd-button-font-family,inherit);font-size:var(--_gcd-button-font-size,inherit);font-weight:var(--_gcd-button-font-weight,inherit)}.d2cff2e5dea83bd1__input{box-sizing:var(--_gcd-input-box-sizing,border-box);font-family:var(--_gcd-input-font-family,inherit);font-size:var(--_gcd-input-font-size,inherit);font-weight:var(--_gcd-input-font-weight,inherit);margin:var(--_gcd-input-margin,0);&::placeholder{color:var(--_gcd-input-placeholder-color,var(--wpds-color-foreground-interactive-neutral-weak,#707070))}&:is(textarea,[type=text],[type=password],[type=color],[type=date],[type=datetime],[type=datetime-local],[type=email],[type=month],[type=number],[type=search],[type=tel],[type=time],[type=url],[type=week]){background-color:var(--_gcd-input-background-color,transparent);border:var(--_gcd-input-border,none);border-radius:var(--_gcd-input-border-radius,0);box-shadow:var(--_gcd-input-box-shadow,0 0 0 transparent);color:var(--_gcd-input-color,var(--wpds-color-foreground-interactive-neutral,#1e1e1e));&:focus{border-color:var(--_gcd-input-border-color-focus,var(--wp-admin-theme-color));box-shadow:var(--_gcd-input-box-shadow-focus,none);outline:var(--_gcd-input-outline-focus,none)}&:disabled{background:var(--_gcd-input-background-disabled,transparent);border-color:var(--_gcd-input-border-color-disabled,transparent);box-shadow:var(--_gcd-input-box-shadow-disabled,none);color:var(--_gcd-input-color-disabled,var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d))}}&:is(textarea,[type=text],[type=password],[type=date],[type=datetime],[type=datetime-local],[type=email],[type=month],[type=number],[type=search],[type=tel],[type=time],[type=url],[type=week]){line-height:var(--_gcd-input-line-height,inherit);min-height:var(--_gcd-input-min-height,auto);padding:var(--_gcd-input-padding,0)}}._547d86373d02e108__textarea{box-sizing:var(--_gcd-textarea-box-sizing,border-box);overflow:var(--_gcd-textarea-overflow,auto);resize:var(--_gcd-textarea-resize,block)}._8c15fd0ed9f28ba4__div{outline:var(--_gcd-div-outline,0 solid transparent)}p._43cec3e1eec1066d__p{font-size:var(--_gcd-p-font-size,13px);line-height:var(--_gcd-p-line-height,1.5);margin:var(--_gcd-p-margin,0)}:is(h1,h2,h3,h4,h5,h6).e97669c6d9a38497__heading{color:var(--_gcd-heading-color,var(--wpds-color-foreground-content-neutral,#1e1e1e));font-size:var(--_gcd-heading-font-size,inherit);font-weight:var(--_gcd-heading-font-weight,var(--wpds-typography-font-weight-emphasis,600));margin:var(--_gcd-heading-margin,0)}._2c0831b0499dbd6e__a,._2c0831b0499dbd6e__a:is(:hover,:focus,:active){border-radius:var(--_gcd-a-border-radius,0);box-shadow:var(--_gcd-a-box-shadow,none);color:var(--_gcd-a-color,inherit);outline:var(--_gcd-a-outline,0 solid transparent);transition:var(--_gcd-a-transition,none)}.c59a0ebebd71fa4a__ol{list-style:var(--_gcd-ol-list-style,none);margin:var(--_gcd-ol-margin,0);padding-block:var(--_gcd-ol-padding-block,0);padding-inline:var(--_gcd-ol-padding-inline,0)}._46b5cb0c8e24e8c9__li{margin:var(--_gcd-li-margin,0)}");
 }
 var global_css_defense_default5 = { "button": "_6defc79820e382c6__button", "input": "d2cff2e5dea83bd1__input", "textarea": "_547d86373d02e108__textarea", "div": "_8c15fd0ed9f28ba4__div", "p": "_43cec3e1eec1066d__p", "heading": "e97669c6d9a38497__heading", "a": "_2c0831b0499dbd6e__a", "ol": "c59a0ebebd71fa4a__ol", "li": "_46b5cb0c8e24e8c9__li" };
-if (typeof process === "undefined" || true) {
-  registerStyle16("08122b3d53", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer utilities{.af79fb116edb0dd7__outset-ring--focus:focus,.dfcfdc28396e5d98__outset-ring--focus-visible:focus-visible,.e5cd9ee879f6403a__outset-ring--focus-within:focus-within,:focus-visible ._81935a08e952f267__outset-ring--focus-parent-visible{--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within,.abc777e9713fa711__outset-ring--focus-except-active:focus{outline:none}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within:not(:has(:active)),.abc777e9713fa711__outset-ring--focus-except-active:focus:not(:active){--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}}}");
-}
-var focus_module_default4 = { "outset-ring--focus": "af79fb116edb0dd7__outset-ring--focus", "outset-ring--focus-visible": "dfcfdc28396e5d98__outset-ring--focus-visible", "outset-ring--focus-within": "e5cd9ee879f6403a__outset-ring--focus-within", "outset-ring--focus-parent-visible": "_81935a08e952f267__outset-ring--focus-parent-visible", "outset-ring--focus-except-active": "abc777e9713fa711__outset-ring--focus-except-active", "outset-ring--focus-within-except-active": "_3c9f5ee9fc9c136d__outset-ring--focus-within-except-active" };
 var Header2 = (0, import_element41.forwardRef)(
   function CollapsibleCardHeader({
     children,
@@ -20137,13 +20357,13 @@ var Header2 = (0, import_element41.forwardRef)(
       props: mergeProps(restProps, {
         className: clsx_default(
           global_css_defense_default5.heading,
-          style_default15["heading-wrapper"],
+          style_module_default["heading-wrapper"],
           className
         ),
         children: /* @__PURE__ */ (0, import_jsx_runtime52.jsx)(HeaderDescriptionIdContext.Provider, { value: contextValue, children: /* @__PURE__ */ (0, import_jsx_runtime52.jsxs)(
           Trigger2,
           {
-            className: style_default15.header,
+            className: style_module_default.header,
             render: /* @__PURE__ */ (0, import_jsx_runtime52.jsx)(Header, {}),
             nativeButton: false,
             "aria-describedby": ariaDescribedBy,
@@ -20152,7 +20372,7 @@ var Header2 = (0, import_element41.forwardRef)(
                 "div",
                 {
                   ref: headerContentRef,
-                  className: style_default15["header-content"],
+                  className: style_module_default["header-content"],
                   children
                 }
               ),
@@ -20160,24 +20380,20 @@ var Header2 = (0, import_element41.forwardRef)(
                 "div",
                 {
                   className: clsx_default(
-                    style_default15["header-trigger-positioner"]
+                    style_module_default["header-trigger-positioner"]
                   ),
                   children: /* @__PURE__ */ (0, import_jsx_runtime52.jsx)(
                     "div",
                     {
                       className: clsx_default(
-                        style_default15["header-trigger-wrapper"],
-                        global_css_defense_default5.div,
-                        // While the interactive trigger element is the whole header,
-                        // the focus ring will be displayed only on the icon to visually
-                        // emulate it being the button.
-                        focus_module_default4["outset-ring--focus-parent-visible"]
+                        style_module_default["header-trigger-wrapper"],
+                        global_css_defense_default5.div
                       ),
                       children: /* @__PURE__ */ (0, import_jsx_runtime52.jsx)(
                         Icon,
                         {
                           icon: chevron_down_default,
-                          className: style_default15["header-trigger"]
+                          className: style_module_default["header-trigger"]
                         }
                       )
                     }
@@ -20276,9 +20492,9 @@ function registerStyle17(hash, css) {
   }
 }
 if (typeof process === "undefined" || true) {
-  registerStyle17("64bdb4d46e", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{._626190151275d6d3__heading-wrapper{--_gcd-heading-color:inherit;--_gcd-heading-font-size:inherit;--_gcd-heading-font-weight:inherit;--_gcd-heading-margin:0;font-family:inherit;line-height:inherit}.cab17c7a373cb60d__header-content{flex:1;min-width:0}._92ebbaa30c8a1d05__header-description{color:var(--wpds-color-foreground-content-neutral-weak,#707070)}.dd89d27c4f15912d__header-trigger-positioner{align-self:flex-start;flex-shrink:0;margin-block-start:calc(var(--wpds-typography-line-height-sm, 20px)/2);max-height:0;overflow:visible}.bcfab5f2448bafef__header-trigger-wrapper{border-radius:var(--wpds-border-radius-sm,2px);display:flex;translate:0 -50%}._3106f8d2b0330faa__header-trigger{@media not (prefers-reduced-motion){transition:rotate .15s ease-out}}._5d2dfcb4085c6d0f__header[data-panel-open] ._3106f8d2b0330faa__header-trigger{rotate:180deg}._5d2dfcb4085c6d0f__header[data-disabled] ._3106f8d2b0330faa__header-trigger{color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d)}.e34cf37ccd0d81e0__content{height:var(--collapsible-panel-height);margin-block-start:var(--wp-ui-card-header-content-margin);overflow:hidden;&._03cfdbcd710393c9__overflow-visible{overflow:visible}&[hidden]:not([hidden=until-found]){display:none}&[data-ending-style],&[data-starting-style]{height:0}@media not (prefers-reduced-motion){transition:all .15s ease-out}}}@layer compositions{._41bfdbf7b6c087c2__content-inner{padding-block-start:0}._5d2dfcb4085c6d0f__header{align-items:stretch;display:flex;flex-direction:row;gap:var(--wpds-dimension-gap-sm,8px);outline:none;&:not([data-disabled]){cursor:var(--wpds-cursor-control,pointer)}}}}");
+  registerStyle17("66b8e83c76", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{._572e7c546522c522__heading-wrapper{--_gcd-heading-color:inherit;--_gcd-heading-font-size:inherit;--_gcd-heading-font-weight:inherit;--_gcd-heading-margin:0;font-family:inherit;line-height:inherit}._7ea7cf191a8d26b8__header-content{flex:1;min-width:0}._8f14576749c57845__header-description{color:var(--wpds-color-foreground-content-neutral-weak,#707070)}._48cdf1e0d42fc13e__header-trigger-positioner{align-self:flex-start;flex-shrink:0;margin-block-start:calc(var(--wpds-typography-line-height-sm, 20px)/2);max-height:0;overflow:visible}._77d30921d8288eaf__header-trigger-wrapper{border-radius:var(--wpds-border-radius-sm,2px);display:flex;translate:0 -50%}.c11e44555738d97f__header:focus-visible ._77d30921d8288eaf__header-trigger-wrapper{--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}@media not (prefers-reduced-motion){._22a30cbbb7b656f4__header-trigger{transition:rotate .15s ease-out}}.c11e44555738d97f__header[data-panel-open] ._22a30cbbb7b656f4__header-trigger{rotate:180deg}.c11e44555738d97f__header[data-disabled] ._22a30cbbb7b656f4__header-trigger{color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d)}._90333ddfaa28d232__content{height:var(--collapsible-panel-height);margin-block-start:var(--wp-ui-card-header-content-margin);overflow:hidden}._90333ddfaa28d232__content._20c2575829a8af9b__overflow-visible{overflow:visible}._90333ddfaa28d232__content[hidden]:not([hidden=until-found]){display:none}._90333ddfaa28d232__content[data-ending-style],._90333ddfaa28d232__content[data-starting-style]{height:0}@media not (prefers-reduced-motion){._90333ddfaa28d232__content{transition:all .15s ease-out}}}@layer compositions{.c269ffa2b76fe947__content-inner{padding-block-start:0}.c11e44555738d97f__header{align-items:stretch;display:flex;flex-direction:row;gap:var(--wpds-dimension-gap-sm,8px);outline:none}.c11e44555738d97f__header:not([data-disabled]){cursor:var(--wpds-cursor-control,pointer)}}}");
 }
-var style_default16 = { "heading-wrapper": "_626190151275d6d3__heading-wrapper", "header-content": "cab17c7a373cb60d__header-content", "header-description": "_92ebbaa30c8a1d05__header-description", "header-trigger-positioner": "dd89d27c4f15912d__header-trigger-positioner", "header-trigger-wrapper": "bcfab5f2448bafef__header-trigger-wrapper", "header-trigger": "_3106f8d2b0330faa__header-trigger", "header": "_5d2dfcb4085c6d0f__header", "content": "e34cf37ccd0d81e0__content", "overflow-visible": "_03cfdbcd710393c9__overflow-visible", "content-inner": "_41bfdbf7b6c087c2__content-inner" };
+var style_module_default2 = { "heading-wrapper": "_572e7c546522c522__heading-wrapper", "header-content": "_7ea7cf191a8d26b8__header-content", "header-description": "_8f14576749c57845__header-description", "header-trigger-positioner": "_48cdf1e0d42fc13e__header-trigger-positioner", "header-trigger-wrapper": "_77d30921d8288eaf__header-trigger-wrapper", "header": "c11e44555738d97f__header", "header-trigger": "_22a30cbbb7b656f4__header-trigger", "content": "_90333ddfaa28d232__content", "overflow-visible": "_20c2575829a8af9b__overflow-visible", "content-inner": "c269ffa2b76fe947__content-inner" };
 var DEFAULT_TAG2 = /* @__PURE__ */ (0, import_jsx_runtime53.jsx)("div", {});
 var HeaderDescription = (0, import_element42.forwardRef)(function CollapsibleCardHeaderDescription({ children, className, id: idProp, render: render4 = DEFAULT_TAG2, ...restProps }, ref) {
   const generatedId = (0, import_element42.useId)();
@@ -20300,7 +20516,7 @@ var HeaderDescription = (0, import_element42.forwardRef)(function CollapsibleCar
       render: render4,
       id: descriptionId,
       "aria-hidden": "true",
-      className: clsx_default(style_default16["header-description"], className),
+      className: clsx_default(style_module_default2["header-description"], className),
       ...restProps,
       children
     }
@@ -20391,9 +20607,9 @@ function registerStyle18(hash, css) {
   }
 }
 if (typeof process === "undefined" || true) {
-  registerStyle18("64bdb4d46e", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{._626190151275d6d3__heading-wrapper{--_gcd-heading-color:inherit;--_gcd-heading-font-size:inherit;--_gcd-heading-font-weight:inherit;--_gcd-heading-margin:0;font-family:inherit;line-height:inherit}.cab17c7a373cb60d__header-content{flex:1;min-width:0}._92ebbaa30c8a1d05__header-description{color:var(--wpds-color-foreground-content-neutral-weak,#707070)}.dd89d27c4f15912d__header-trigger-positioner{align-self:flex-start;flex-shrink:0;margin-block-start:calc(var(--wpds-typography-line-height-sm, 20px)/2);max-height:0;overflow:visible}.bcfab5f2448bafef__header-trigger-wrapper{border-radius:var(--wpds-border-radius-sm,2px);display:flex;translate:0 -50%}._3106f8d2b0330faa__header-trigger{@media not (prefers-reduced-motion){transition:rotate .15s ease-out}}._5d2dfcb4085c6d0f__header[data-panel-open] ._3106f8d2b0330faa__header-trigger{rotate:180deg}._5d2dfcb4085c6d0f__header[data-disabled] ._3106f8d2b0330faa__header-trigger{color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d)}.e34cf37ccd0d81e0__content{height:var(--collapsible-panel-height);margin-block-start:var(--wp-ui-card-header-content-margin);overflow:hidden;&._03cfdbcd710393c9__overflow-visible{overflow:visible}&[hidden]:not([hidden=until-found]){display:none}&[data-ending-style],&[data-starting-style]{height:0}@media not (prefers-reduced-motion){transition:all .15s ease-out}}}@layer compositions{._41bfdbf7b6c087c2__content-inner{padding-block-start:0}._5d2dfcb4085c6d0f__header{align-items:stretch;display:flex;flex-direction:row;gap:var(--wpds-dimension-gap-sm,8px);outline:none;&:not([data-disabled]){cursor:var(--wpds-cursor-control,pointer)}}}}");
+  registerStyle18("66b8e83c76", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{._572e7c546522c522__heading-wrapper{--_gcd-heading-color:inherit;--_gcd-heading-font-size:inherit;--_gcd-heading-font-weight:inherit;--_gcd-heading-margin:0;font-family:inherit;line-height:inherit}._7ea7cf191a8d26b8__header-content{flex:1;min-width:0}._8f14576749c57845__header-description{color:var(--wpds-color-foreground-content-neutral-weak,#707070)}._48cdf1e0d42fc13e__header-trigger-positioner{align-self:flex-start;flex-shrink:0;margin-block-start:calc(var(--wpds-typography-line-height-sm, 20px)/2);max-height:0;overflow:visible}._77d30921d8288eaf__header-trigger-wrapper{border-radius:var(--wpds-border-radius-sm,2px);display:flex;translate:0 -50%}.c11e44555738d97f__header:focus-visible ._77d30921d8288eaf__header-trigger-wrapper{--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}@media not (prefers-reduced-motion){._22a30cbbb7b656f4__header-trigger{transition:rotate .15s ease-out}}.c11e44555738d97f__header[data-panel-open] ._22a30cbbb7b656f4__header-trigger{rotate:180deg}.c11e44555738d97f__header[data-disabled] ._22a30cbbb7b656f4__header-trigger{color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d)}._90333ddfaa28d232__content{height:var(--collapsible-panel-height);margin-block-start:var(--wp-ui-card-header-content-margin);overflow:hidden}._90333ddfaa28d232__content._20c2575829a8af9b__overflow-visible{overflow:visible}._90333ddfaa28d232__content[hidden]:not([hidden=until-found]){display:none}._90333ddfaa28d232__content[data-ending-style],._90333ddfaa28d232__content[data-starting-style]{height:0}@media not (prefers-reduced-motion){._90333ddfaa28d232__content{transition:all .15s ease-out}}}@layer compositions{.c269ffa2b76fe947__content-inner{padding-block-start:0}.c11e44555738d97f__header{align-items:stretch;display:flex;flex-direction:row;gap:var(--wpds-dimension-gap-sm,8px);outline:none}.c11e44555738d97f__header:not([data-disabled]){cursor:var(--wpds-cursor-control,pointer)}}}");
 }
-var style_default17 = { "heading-wrapper": "_626190151275d6d3__heading-wrapper", "header-content": "cab17c7a373cb60d__header-content", "header-description": "_92ebbaa30c8a1d05__header-description", "header-trigger-positioner": "dd89d27c4f15912d__header-trigger-positioner", "header-trigger-wrapper": "bcfab5f2448bafef__header-trigger-wrapper", "header-trigger": "_3106f8d2b0330faa__header-trigger", "header": "_5d2dfcb4085c6d0f__header", "content": "e34cf37ccd0d81e0__content", "overflow-visible": "_03cfdbcd710393c9__overflow-visible", "content-inner": "_41bfdbf7b6c087c2__content-inner" };
+var style_module_default3 = { "heading-wrapper": "_572e7c546522c522__heading-wrapper", "header-content": "_7ea7cf191a8d26b8__header-content", "header-description": "_8f14576749c57845__header-description", "header-trigger-positioner": "_48cdf1e0d42fc13e__header-trigger-positioner", "header-trigger-wrapper": "_77d30921d8288eaf__header-trigger-wrapper", "header": "c11e44555738d97f__header", "header-trigger": "_22a30cbbb7b656f4__header-trigger", "content": "_90333ddfaa28d232__content", "overflow-visible": "_20c2575829a8af9b__overflow-visible", "content-inner": "c269ffa2b76fe947__content-inner" };
 var Content2 = (0, import_element43.forwardRef)(
   function CollapsibleCardContent({ className, render: render4, children, hiddenUntilFound = true, ...restProps }, ref) {
     return /* @__PURE__ */ (0, import_jsx_runtime54.jsx)(
@@ -20401,8 +20617,8 @@ var Content2 = (0, import_element43.forwardRef)(
       {
         ref,
         className: (state) => clsx_default(
-          style_default17.content,
-          state.open && state.transitionStatus === "idle" && style_default17["overflow-visible"],
+          style_module_default3.content,
+          state.open && state.transitionStatus === "idle" && style_module_default3["overflow-visible"],
           className
         ),
         hiddenUntilFound,
@@ -20410,7 +20626,7 @@ var Content2 = (0, import_element43.forwardRef)(
         children: /* @__PURE__ */ (0, import_jsx_runtime54.jsx)(
           Content,
           {
-            className: style_default17["content-inner"],
+            className: style_module_default3["content-inner"],
             render: render4,
             children
           }
@@ -20505,7 +20721,7 @@ function registerStyle19(hash, css) {
 if (typeof process === "undefined" || true) {
   registerStyle19("32aba35fe1", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{._19ce0419607e1896__stack{display:flex}}}");
 }
-var style_default18 = { "stack": "_19ce0419607e1896__stack" };
+var style_default15 = { "stack": "_19ce0419607e1896__stack" };
 var gapTokens = {
   xs: "var(--wpds-dimension-gap-xs, 4px)",
   sm: "var(--wpds-dimension-gap-sm, 8px)",
@@ -20515,21 +20731,26 @@ var gapTokens = {
   "2xl": "var(--wpds-dimension-gap-2xl, 32px)",
   "3xl": "var(--wpds-dimension-gap-3xl, 40px)"
 };
-var Stack = (0, import_element44.forwardRef)(function Stack2({ direction, gap, align, justify, wrap, render: render4, ...props }, ref) {
-  const style = {
-    gap: gap && gapTokens[gap],
-    alignItems: align,
-    justifyContent: justify,
-    flexDirection: direction,
-    flexWrap: wrap
-  };
-  const element = useRender({
-    render: render4,
-    ref,
-    props: mergeProps(props, { style, className: style_default18.stack })
-  });
-  return element;
-});
+var Stack = (0, import_element44.forwardRef)(
+  function UnforwardedStack({ direction, gap, align, justify, wrap, render: render4, ...props }, ref) {
+    const style = {
+      gap: gap && gapTokens[gap],
+      alignItems: align,
+      justifyContent: justify,
+      flexDirection: direction,
+      flexWrap: wrap
+    };
+    const element = useRender({
+      render: render4,
+      ref,
+      props: mergeProps(props, {
+        style,
+        className: style_default15.stack
+      })
+    });
+    return element;
+  }
+);
 
 // packages/ui/build-module/form/primitives/input/input.mjs
 var import_element47 = __toESM(require_element(), 1);
@@ -20626,11 +20847,11 @@ if (typeof process === "undefined" || true) {
 }
 var resets_default6 = { "box-sizing": "_336cd3e4e743482f__box-sizing" };
 if (typeof process === "undefined" || true) {
-  registerStyle20("e4f4f9600b", '@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{.cb2baafdc08746bb__input-layout{--wp-ui-input-layout-padding-inline:var(--wpds-dimension-padding-md,12px);background-color:var(--wpds-color-background-interactive-neutral,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral,#8d8d8d);border-radius:var(--wpds-border-radius-sm,2px);border-style:solid;border-width:var(--wpds-border-width-xs,1px);color:var(--wpds-color-foreground-interactive-neutral,#1e1e1e);display:flex;font-family:var(--wpds-typography-font-family-body,-apple-system,system-ui,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif);font-size:max(var(--wpds-typography-font-size-md,13px),16px);height:var(--wpds-dimension-size-lg,40px);line-height:1;@media (min-width:600px){font-size:var(--wpds-typography-font-size-md,13px)}&._0c807a84cbb94e0c__is-size-compact{height:var(--wpds-dimension-size-md,32px)}&._0c807a84cbb94e0c__is-size-compact,&.ed67cda122dc1e7b__is-size-small{--wp-ui-input-layout-padding-inline:var(--wpds-dimension-padding-sm,8px)}&.ed67cda122dc1e7b__is-size-small{height:var(--wpds-dimension-size-sm,24px)}&._6fb7104732387680__is-disabled,&:has([data-can-disable-input-layout][data-disabled]){color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d);@media (forced-colors:active){color:GrayText}&:not(._8097270636ca6100__is-borderless){background-color:var(--wpds-color-background-interactive-neutral-disabled,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral-disabled,#dbdbdb);@media (forced-colors:active){border-bottom-color:GrayText;border-left-color:GrayText;border-right-color:GrayText;border-top-color:GrayText}}}&._8097270636ca6100__is-borderless{background-color:var(--wpds-color-background-interactive-neutral-weak,#0000);border-color:transparent}&:has(._0d7afad74a057888__input-layout-slot:focus-within){--_gcd-div-outline:none;outline:none}&:hover:not(._6fb7104732387680__is-disabled,:has([data-can-disable-input-layout][data-disabled]),._8097270636ca6100__is-borderless){background-color:var(--wpds-color-background-interactive-neutral-active,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral-active,#6e6e6e)}&:has(:invalid[data-validity-visible]){--focus-color:var(--wpds-color-stroke-interactive-error,#cc1818);border-color:var(--wpds-color-stroke-interactive-error,#cc1818);&:hover{border-color:var(--wpds-color-stroke-interactive-error-active,#9d0000)}}}.c192b41a12b4387b__slot-wrapper{display:contents}._0d7afad74a057888__input-layout-slot{align-items:center;display:flex;&._0c952682762ca288__is-padding-minimal{--wp-ui-input-layout-prefix-padding-start:calc(var(--wp-ui-input-layout-padding-inline) - var(--wpds-dimension-padding-xs, 4px));--wp-ui-input-layout-suffix-padding-end:calc(var(--wp-ui-input-layout-padding-inline) - var(--wpds-dimension-padding-xs, 4px))}[data-slot-type=prefix] &{padding-inline-start:var(--wp-ui-input-layout-prefix-padding-start,var(--wp-ui-input-layout-padding-inline))}[data-slot-type=suffix] &{padding-inline-end:var(--wp-ui-input-layout-suffix-padding-end,var(--wp-ui-input-layout-padding-inline))}}}}');
+  registerStyle20("fae9ae14d3", '@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{.cb2baafdc08746bb__input-layout{--wp-ui-input-layout-padding-inline:var(--wpds-dimension-padding-md,12px);background-color:var(--wpds-color-background-interactive-neutral,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral,#8d8d8d);border-radius:var(--wpds-border-radius-sm,2px);border-style:solid;border-width:var(--wpds-border-width-xs,1px);color:var(--wpds-color-foreground-interactive-neutral,#1e1e1e);display:flex;font-family:var(--wpds-typography-font-family-body,-apple-system,system-ui,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif);font-size:var(--wpds-typography-font-size-md,13px);height:var(--wpds-dimension-size-lg,40px);line-height:1;&._0c807a84cbb94e0c__is-size-compact{height:var(--wpds-dimension-size-md,32px)}&._0c807a84cbb94e0c__is-size-compact,&.ed67cda122dc1e7b__is-size-small{--wp-ui-input-layout-padding-inline:var(--wpds-dimension-padding-sm,8px)}&.ed67cda122dc1e7b__is-size-small{height:var(--wpds-dimension-size-sm,24px)}&._6fb7104732387680__is-disabled,&:has([data-can-disable-input-layout][data-disabled]){color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d);@media (forced-colors:active){color:GrayText}&:not(._8097270636ca6100__is-borderless){background-color:var(--wpds-color-background-interactive-neutral-disabled,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral-disabled,#dbdbdb);@media (forced-colors:active){border-bottom-color:GrayText;border-left-color:GrayText;border-right-color:GrayText;border-top-color:GrayText}}}&._8097270636ca6100__is-borderless{background-color:var(--wpds-color-background-interactive-neutral-weak,#0000);border-color:transparent}&:has(._0d7afad74a057888__input-layout-slot:focus-within){--_gcd-div-outline:none;outline:none}&:hover:not(._6fb7104732387680__is-disabled,:has([data-can-disable-input-layout][data-disabled]),._8097270636ca6100__is-borderless){background-color:var(--wpds-color-background-interactive-neutral-active,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral-active,#6e6e6e)}&:has(:invalid[data-validity-visible]){--focus-color:var(--wpds-color-stroke-interactive-error,#cc1818);border-color:var(--wpds-color-stroke-interactive-error,#cc1818);&:hover{border-color:var(--wpds-color-stroke-interactive-error-active,#9d0000)}}}.c192b41a12b4387b__slot-wrapper{display:contents}._0d7afad74a057888__input-layout-slot{align-items:center;display:flex;&._0c952682762ca288__is-padding-minimal{--wp-ui-input-layout-prefix-padding-start:calc(var(--wp-ui-input-layout-padding-inline) - var(--wpds-dimension-padding-xs, 4px));--wp-ui-input-layout-suffix-padding-end:calc(var(--wp-ui-input-layout-padding-inline) - var(--wpds-dimension-padding-xs, 4px))}[data-slot-type=prefix] &{padding-inline-start:var(--wp-ui-input-layout-prefix-padding-start,var(--wp-ui-input-layout-padding-inline))}[data-slot-type=suffix] &{padding-inline-end:var(--wp-ui-input-layout-suffix-padding-end,var(--wp-ui-input-layout-padding-inline))}}}}');
 }
-var style_default19 = { "input-layout": "cb2baafdc08746bb__input-layout", "is-size-compact": "_0c807a84cbb94e0c__is-size-compact", "is-size-small": "ed67cda122dc1e7b__is-size-small", "is-disabled": "_6fb7104732387680__is-disabled", "is-borderless": "_8097270636ca6100__is-borderless", "input-layout-slot": "_0d7afad74a057888__input-layout-slot", "slot-wrapper": "c192b41a12b4387b__slot-wrapper", "is-padding-minimal": "_0c952682762ca288__is-padding-minimal" };
+var style_default16 = { "input-layout": "cb2baafdc08746bb__input-layout", "is-size-compact": "_0c807a84cbb94e0c__is-size-compact", "is-size-small": "ed67cda122dc1e7b__is-size-small", "is-disabled": "_6fb7104732387680__is-disabled", "is-borderless": "_8097270636ca6100__is-borderless", "input-layout-slot": "_0d7afad74a057888__input-layout-slot", "slot-wrapper": "c192b41a12b4387b__slot-wrapper", "is-padding-minimal": "_0c952682762ca288__is-padding-minimal" };
 var InputLayout = (0, import_element45.forwardRef)(
-  function InputLayout2({
+  function UnforwardedInputLayout({
     className,
     children,
     visuallyDisabled,
@@ -20647,10 +20868,10 @@ var InputLayout = (0, import_element45.forwardRef)(
         className: clsx_default(
           global_css_defense_default6.div,
           resets_default6["box-sizing"],
-          style_default19["input-layout"],
-          style_default19[`is-size-${size4}`],
-          visuallyDisabled && style_default19["is-disabled"],
-          isBorderless && style_default19["is-borderless"],
+          style_default16["input-layout"],
+          style_default16[`is-size-${size4}`],
+          visuallyDisabled && style_default16["is-disabled"],
+          isBorderless && style_default16["is-borderless"],
           className
         ),
         ...restProps,
@@ -20658,7 +20879,7 @@ var InputLayout = (0, import_element45.forwardRef)(
           import_element45.Children.count(prefix) > 0 && /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(
             "div",
             {
-              className: style_default19["slot-wrapper"],
+              className: style_default16["slot-wrapper"],
               "data-slot-type": "prefix",
               children: prefix
             }
@@ -20667,7 +20888,7 @@ var InputLayout = (0, import_element45.forwardRef)(
           import_element45.Children.count(suffix) > 0 && /* @__PURE__ */ (0, import_jsx_runtime55.jsx)(
             "div",
             {
-              className: style_default19["slot-wrapper"],
+              className: style_default16["slot-wrapper"],
               "data-slot-type": "suffix",
               children: suffix
             }
@@ -20762,17 +20983,17 @@ function registerStyle21(hash, css) {
   }
 }
 if (typeof process === "undefined" || true) {
-  registerStyle21("e4f4f9600b", '@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{.cb2baafdc08746bb__input-layout{--wp-ui-input-layout-padding-inline:var(--wpds-dimension-padding-md,12px);background-color:var(--wpds-color-background-interactive-neutral,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral,#8d8d8d);border-radius:var(--wpds-border-radius-sm,2px);border-style:solid;border-width:var(--wpds-border-width-xs,1px);color:var(--wpds-color-foreground-interactive-neutral,#1e1e1e);display:flex;font-family:var(--wpds-typography-font-family-body,-apple-system,system-ui,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif);font-size:max(var(--wpds-typography-font-size-md,13px),16px);height:var(--wpds-dimension-size-lg,40px);line-height:1;@media (min-width:600px){font-size:var(--wpds-typography-font-size-md,13px)}&._0c807a84cbb94e0c__is-size-compact{height:var(--wpds-dimension-size-md,32px)}&._0c807a84cbb94e0c__is-size-compact,&.ed67cda122dc1e7b__is-size-small{--wp-ui-input-layout-padding-inline:var(--wpds-dimension-padding-sm,8px)}&.ed67cda122dc1e7b__is-size-small{height:var(--wpds-dimension-size-sm,24px)}&._6fb7104732387680__is-disabled,&:has([data-can-disable-input-layout][data-disabled]){color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d);@media (forced-colors:active){color:GrayText}&:not(._8097270636ca6100__is-borderless){background-color:var(--wpds-color-background-interactive-neutral-disabled,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral-disabled,#dbdbdb);@media (forced-colors:active){border-bottom-color:GrayText;border-left-color:GrayText;border-right-color:GrayText;border-top-color:GrayText}}}&._8097270636ca6100__is-borderless{background-color:var(--wpds-color-background-interactive-neutral-weak,#0000);border-color:transparent}&:has(._0d7afad74a057888__input-layout-slot:focus-within){--_gcd-div-outline:none;outline:none}&:hover:not(._6fb7104732387680__is-disabled,:has([data-can-disable-input-layout][data-disabled]),._8097270636ca6100__is-borderless){background-color:var(--wpds-color-background-interactive-neutral-active,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral-active,#6e6e6e)}&:has(:invalid[data-validity-visible]){--focus-color:var(--wpds-color-stroke-interactive-error,#cc1818);border-color:var(--wpds-color-stroke-interactive-error,#cc1818);&:hover{border-color:var(--wpds-color-stroke-interactive-error-active,#9d0000)}}}.c192b41a12b4387b__slot-wrapper{display:contents}._0d7afad74a057888__input-layout-slot{align-items:center;display:flex;&._0c952682762ca288__is-padding-minimal{--wp-ui-input-layout-prefix-padding-start:calc(var(--wp-ui-input-layout-padding-inline) - var(--wpds-dimension-padding-xs, 4px));--wp-ui-input-layout-suffix-padding-end:calc(var(--wp-ui-input-layout-padding-inline) - var(--wpds-dimension-padding-xs, 4px))}[data-slot-type=prefix] &{padding-inline-start:var(--wp-ui-input-layout-prefix-padding-start,var(--wp-ui-input-layout-padding-inline))}[data-slot-type=suffix] &{padding-inline-end:var(--wp-ui-input-layout-suffix-padding-end,var(--wp-ui-input-layout-padding-inline))}}}}');
+  registerStyle21("fae9ae14d3", '@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{.cb2baafdc08746bb__input-layout{--wp-ui-input-layout-padding-inline:var(--wpds-dimension-padding-md,12px);background-color:var(--wpds-color-background-interactive-neutral,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral,#8d8d8d);border-radius:var(--wpds-border-radius-sm,2px);border-style:solid;border-width:var(--wpds-border-width-xs,1px);color:var(--wpds-color-foreground-interactive-neutral,#1e1e1e);display:flex;font-family:var(--wpds-typography-font-family-body,-apple-system,system-ui,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif);font-size:var(--wpds-typography-font-size-md,13px);height:var(--wpds-dimension-size-lg,40px);line-height:1;&._0c807a84cbb94e0c__is-size-compact{height:var(--wpds-dimension-size-md,32px)}&._0c807a84cbb94e0c__is-size-compact,&.ed67cda122dc1e7b__is-size-small{--wp-ui-input-layout-padding-inline:var(--wpds-dimension-padding-sm,8px)}&.ed67cda122dc1e7b__is-size-small{height:var(--wpds-dimension-size-sm,24px)}&._6fb7104732387680__is-disabled,&:has([data-can-disable-input-layout][data-disabled]){color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d);@media (forced-colors:active){color:GrayText}&:not(._8097270636ca6100__is-borderless){background-color:var(--wpds-color-background-interactive-neutral-disabled,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral-disabled,#dbdbdb);@media (forced-colors:active){border-bottom-color:GrayText;border-left-color:GrayText;border-right-color:GrayText;border-top-color:GrayText}}}&._8097270636ca6100__is-borderless{background-color:var(--wpds-color-background-interactive-neutral-weak,#0000);border-color:transparent}&:has(._0d7afad74a057888__input-layout-slot:focus-within){--_gcd-div-outline:none;outline:none}&:hover:not(._6fb7104732387680__is-disabled,:has([data-can-disable-input-layout][data-disabled]),._8097270636ca6100__is-borderless){background-color:var(--wpds-color-background-interactive-neutral-active,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral-active,#6e6e6e)}&:has(:invalid[data-validity-visible]){--focus-color:var(--wpds-color-stroke-interactive-error,#cc1818);border-color:var(--wpds-color-stroke-interactive-error,#cc1818);&:hover{border-color:var(--wpds-color-stroke-interactive-error-active,#9d0000)}}}.c192b41a12b4387b__slot-wrapper{display:contents}._0d7afad74a057888__input-layout-slot{align-items:center;display:flex;&._0c952682762ca288__is-padding-minimal{--wp-ui-input-layout-prefix-padding-start:calc(var(--wp-ui-input-layout-padding-inline) - var(--wpds-dimension-padding-xs, 4px));--wp-ui-input-layout-suffix-padding-end:calc(var(--wp-ui-input-layout-padding-inline) - var(--wpds-dimension-padding-xs, 4px))}[data-slot-type=prefix] &{padding-inline-start:var(--wp-ui-input-layout-prefix-padding-start,var(--wp-ui-input-layout-padding-inline))}[data-slot-type=suffix] &{padding-inline-end:var(--wp-ui-input-layout-suffix-padding-end,var(--wp-ui-input-layout-padding-inline))}}}}');
 }
-var style_default20 = { "input-layout": "cb2baafdc08746bb__input-layout", "is-size-compact": "_0c807a84cbb94e0c__is-size-compact", "is-size-small": "ed67cda122dc1e7b__is-size-small", "is-disabled": "_6fb7104732387680__is-disabled", "is-borderless": "_8097270636ca6100__is-borderless", "input-layout-slot": "_0d7afad74a057888__input-layout-slot", "slot-wrapper": "c192b41a12b4387b__slot-wrapper", "is-padding-minimal": "_0c952682762ca288__is-padding-minimal" };
-var InputLayoutSlot = (0, import_element46.forwardRef)(function InputLayoutSlot2({ padding = "default", className, ...restProps }, ref) {
+var style_default17 = { "input-layout": "cb2baafdc08746bb__input-layout", "is-size-compact": "_0c807a84cbb94e0c__is-size-compact", "is-size-small": "ed67cda122dc1e7b__is-size-small", "is-disabled": "_6fb7104732387680__is-disabled", "is-borderless": "_8097270636ca6100__is-borderless", "input-layout-slot": "_0d7afad74a057888__input-layout-slot", "slot-wrapper": "c192b41a12b4387b__slot-wrapper", "is-padding-minimal": "_0c952682762ca288__is-padding-minimal" };
+var InputLayoutSlot = (0, import_element46.forwardRef)(function UnforwardedInputLayoutSlot({ padding = "default", className, ...restProps }, ref) {
   return /* @__PURE__ */ (0, import_jsx_runtime56.jsx)(
     "div",
     {
       ref,
       className: clsx_default(
-        style_default20["input-layout-slot"],
-        style_default20[`is-padding-${padding}`],
+        style_default17["input-layout-slot"],
+        style_default17[`is-padding-${padding}`],
         className
       ),
       ...restProps
@@ -20782,7 +21003,7 @@ var InputLayoutSlot = (0, import_element46.forwardRef)(function InputLayoutSlot2
 InputLayoutSlot.displayName = "InputLayout.Slot";
 
 // packages/ui/build-module/form/primitives/input-layout/index.mjs
-var InputLayout3 = Object.assign(InputLayout, {
+var InputLayout2 = Object.assign(InputLayout, {
   Slot: InputLayoutSlot
 });
 
@@ -20873,37 +21094,40 @@ if (typeof process === "undefined" || true) {
 }
 var global_css_defense_default7 = { "button": "_6defc79820e382c6__button", "input": "d2cff2e5dea83bd1__input", "textarea": "_547d86373d02e108__textarea", "div": "_8c15fd0ed9f28ba4__div", "p": "_43cec3e1eec1066d__p", "heading": "e97669c6d9a38497__heading", "a": "_2c0831b0499dbd6e__a", "ol": "c59a0ebebd71fa4a__ol", "li": "_46b5cb0c8e24e8c9__li" };
 if (typeof process === "undefined" || true) {
-  registerStyle22("08122b3d53", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer utilities{.af79fb116edb0dd7__outset-ring--focus:focus,.dfcfdc28396e5d98__outset-ring--focus-visible:focus-visible,.e5cd9ee879f6403a__outset-ring--focus-within:focus-within,:focus-visible ._81935a08e952f267__outset-ring--focus-parent-visible{--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within,.abc777e9713fa711__outset-ring--focus-except-active:focus{outline:none}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within:not(:has(:active)),.abc777e9713fa711__outset-ring--focus-except-active:focus:not(:active){--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}}}");
+  registerStyle22("7c3267f794", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer utilities{.af79fb116edb0dd7__outset-ring--focus:focus,.dfcfdc28396e5d98__outset-ring--focus-visible:focus-visible,.e5cd9ee879f6403a__outset-ring--focus-within:focus-within{--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within,.abc777e9713fa711__outset-ring--focus-except-active:focus{outline:none}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within:not(:has(:active)),.abc777e9713fa711__outset-ring--focus-except-active:focus:not(:active){--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}}}");
 }
-var focus_module_default5 = { "outset-ring--focus": "af79fb116edb0dd7__outset-ring--focus", "outset-ring--focus-visible": "dfcfdc28396e5d98__outset-ring--focus-visible", "outset-ring--focus-within": "e5cd9ee879f6403a__outset-ring--focus-within", "outset-ring--focus-parent-visible": "_81935a08e952f267__outset-ring--focus-parent-visible", "outset-ring--focus-except-active": "abc777e9713fa711__outset-ring--focus-except-active", "outset-ring--focus-within-except-active": "_3c9f5ee9fc9c136d__outset-ring--focus-within-except-active" };
+var focus_module_default4 = { "outset-ring--focus": "af79fb116edb0dd7__outset-ring--focus", "outset-ring--focus-visible": "dfcfdc28396e5d98__outset-ring--focus-visible", "outset-ring--focus-within": "e5cd9ee879f6403a__outset-ring--focus-within", "outset-ring--focus-except-active": "abc777e9713fa711__outset-ring--focus-except-active", "outset-ring--focus-within-except-active": "_3c9f5ee9fc9c136d__outset-ring--focus-within-except-active" };
 if (typeof process === "undefined" || true) {
-  registerStyle22("1a25f6a232", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{._2ae7be2fc1bb17a3__input{--_gcd-input-padding:var(--wp-ui-input-padding-block,0px) var(--wp-ui-input-layout-padding-inline,0px);background:transparent;border:none;color:var(--wpds-color-foreground-interactive-neutral,#1e1e1e);font-family:inherit;font-size:inherit;line-height:inherit;outline:none;padding-block:var(--wp-ui-input-padding-block,0);padding-inline:var(--wp-ui-input-layout-padding-inline,0);width:100%;&::placeholder{color:var(--wpds-color-foreground-interactive-neutral-weak,#707070)}&:disabled,&[aria-disabled=true]{--_gcd-input-placeholder-color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d);color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d);&::placeholder{color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d)}@media (forced-colors:active){color:GrayText}}&[type=email],&[type=url]{direction:ltr}&[type=number]{appearance:textfield;&::-webkit-inner-spin-button,&::-webkit-outer-spin-button{appearance:none;margin:0}}}}}");
+  registerStyle22("afb8caf1cd", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{._2ae7be2fc1bb17a3__input{--_gcd-input-padding:var(--wp-ui-input-padding-block,0px) var(--wp-ui-input-layout-padding-inline,0px);--_gcd-input-font-size:max(var(--wpds-typography-font-size-md,13px),16px);background:transparent;border:none;color:var(--wpds-color-foreground-interactive-neutral,#1e1e1e);font-family:inherit;font-size:inherit;line-height:inherit;outline:none;padding-block:var(--wp-ui-input-padding-block,0);padding-inline:var(--wp-ui-input-layout-padding-inline,0);width:100%;@media (min-width:600px){--_gcd-input-font-size:inherit}&::placeholder{color:var(--wpds-color-foreground-interactive-neutral-weak,#707070)}&:disabled,&[aria-disabled=true]{--_gcd-input-placeholder-color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d);color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d);&::placeholder{color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d)}@media (forced-colors:active){color:GrayText}}&[type=email],&[type=url]{direction:ltr}&[type=number]{appearance:textfield;&::-webkit-inner-spin-button,&::-webkit-outer-spin-button{appearance:none;margin:0}}}}@layer compositions{.beecada4b38856ab__layout{font-size:max(var(--wpds-typography-font-size-md,13px),16px);@media (min-width:600px){font-size:var(--wpds-typography-font-size-md,13px)}}}}");
 }
-var style_default21 = { "input": "_2ae7be2fc1bb17a3__input" };
-var Input3 = (0, import_element47.forwardRef)(function Input22({ className, size: size4 = "default", prefix, suffix, style, ...restProps }, ref) {
-  return /* @__PURE__ */ (0, import_jsx_runtime57.jsx)(
-    InputLayout3,
-    {
-      className: clsx_default(
-        focus_module_default5["outset-ring--focus-within"],
-        className
-      ),
-      style,
-      size: size4,
-      visuallyDisabled: restProps.disabled,
-      prefix,
-      suffix,
-      children: /* @__PURE__ */ (0, import_jsx_runtime57.jsx)(
-        Input,
-        {
-          ref,
-          className: clsx_default(global_css_defense_default7.input, style_default21.input),
-          ...restProps
-        }
-      )
-    }
-  );
-});
+var style_default18 = { "input": "_2ae7be2fc1bb17a3__input", "layout": "beecada4b38856ab__layout" };
+var Input3 = (0, import_element47.forwardRef)(
+  function UnforwardedInput({ className, size: size4 = "default", prefix, suffix, style, ...restProps }, ref) {
+    return /* @__PURE__ */ (0, import_jsx_runtime57.jsx)(
+      InputLayout2,
+      {
+        className: clsx_default(
+          style_default18.layout,
+          focus_module_default4["outset-ring--focus-within"],
+          className
+        ),
+        style,
+        size: size4,
+        visuallyDisabled: restProps.disabled,
+        prefix,
+        suffix,
+        children: /* @__PURE__ */ (0, import_jsx_runtime57.jsx)(
+          Input,
+          {
+            ref,
+            className: clsx_default(global_css_defense_default7.input, style_default18.input),
+            ...restProps
+          }
+        )
+      }
+    );
+  }
+);
 
 // packages/ui/build-module/form/primitives/control-with-error/control-with-error.mjs
 var import_i18n7 = __toESM(require_i18n(), 1);
@@ -20993,41 +21217,30 @@ function registerStyle23(hash, css) {
   }
 }
 if (typeof process === "undefined" || true) {
-  registerStyle23("bbbecfe373", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{.ab4d64c07c0ba587__spinner{background-color:transparent;display:inline-block;height:var(--wpds-dimension-size-2xs,16px);opacity:1;overflow:visible;position:relative;width:var(--wpds-dimension-size-2xs,16px)}.a7654e10245bb7d2__indicator,.dc51f80c84b35fe2__track{fill:transparent;stroke-width:1.5px}.dc51f80c84b35fe2__track{stroke:var(--wpds-color-background-track-neutral,#dbdbdb)}.a7654e10245bb7d2__indicator{stroke:var(--wpds-color-background-thumb-brand,var(--wp-admin-theme-color,#3858e9));stroke-linecap:round;animation:_02322d973909703c__spinner-spin 1.4s linear infinite both;transform-origin:50% 50%}@keyframes _02322d973909703c__spinner-spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}}}");
+  registerStyle23("bc09fb824f", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{.ab4d64c07c0ba587__spinner{background-color:transparent;color:var(--wpds-color-foreground-content-neutral-weak,#707070);display:inline-block;height:var(--wpds-dimension-size-2xs,16px);opacity:1;overflow:visible;position:relative;width:var(--wpds-dimension-size-2xs,16px)}.a7654e10245bb7d2__indicator{fill:transparent;stroke:currentColor;stroke-width:var(--wpds-border-width-sm,2px);stroke-linecap:round;transform-origin:50% 50%;@media (forced-colors:active){stroke:CanvasText}animation:_02322d973909703c__spinner-spin 1.4s linear infinite both}@keyframes _02322d973909703c__spinner-spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}}}");
 }
-var style_default22 = { "spinner": "ab4d64c07c0ba587__spinner", "track": "dc51f80c84b35fe2__track", "indicator": "a7654e10245bb7d2__indicator", "spinner-spin": "_02322d973909703c__spinner-spin" };
+var style_default19 = { "spinner": "ab4d64c07c0ba587__spinner", "indicator": "a7654e10245bb7d2__indicator", "spinner-spin": "_02322d973909703c__spinner-spin" };
 var Spinner = (0, import_element48.forwardRef)(
-  function Spinner2({ className, ...props }, ref) {
-    return /* @__PURE__ */ (0, import_jsx_runtime58.jsxs)(
+  function UnforwardedSpinner({ className, color, style, ...props }, ref) {
+    return /* @__PURE__ */ (0, import_jsx_runtime58.jsx)(
       "svg",
       {
-        className: clsx_default(style_default22.spinner, className),
+        className: clsx_default(style_default19.spinner, className),
+        style: color === void 0 ? style : { ...style, color },
         viewBox: "0 0 100 100",
         xmlns: "http://www.w3.org/2000/svg",
         role: "presentation",
         focusable: "false",
         ...props,
         ref,
-        children: [
-          /* @__PURE__ */ (0, import_jsx_runtime58.jsx)(
-            "circle",
-            {
-              className: style_default22.track,
-              cx: "50",
-              cy: "50",
-              r: "50",
-              vectorEffect: "non-scaling-stroke"
-            }
-          ),
-          /* @__PURE__ */ (0, import_jsx_runtime58.jsx)(
-            "path",
-            {
-              className: style_default22.indicator,
-              d: "m 50 0 a 50 50 0 0 1 50 50",
-              vectorEffect: "non-scaling-stroke"
-            }
-          )
-        ]
+        children: /* @__PURE__ */ (0, import_jsx_runtime58.jsx)(
+          "path",
+          {
+            className: style_default19.indicator,
+            d: "m 50 0 a 50 50 0 0 1 0 100",
+            vectorEffect: "non-scaling-stroke"
+          }
+        )
       }
     );
   }
@@ -21122,7 +21335,7 @@ var global_css_defense_default8 = { "button": "_6defc79820e382c6__button", "inpu
 if (typeof process === "undefined" || true) {
   registerStyle24("d11816833c", '@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{._7a7ac88e306348e7__indicator{--_gcd-p-font-size:var(--wpds-typography-font-size-sm,12px);--_gcd-p-line-height:var(--wpds-typography-line-height-xs,16px);align-items:flex-start;color:var(--wpds-color-foreground-content-neutral-weak,#707070);display:flex;font-family:var(--wpds-typography-font-family-body,-apple-system,system-ui,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif);font-size:var(--wpds-typography-font-size-sm,12px);gap:var(--wpds-dimension-gap-xs,4px);line-height:var(--wpds-typography-line-height-xs,16px);@media not (prefers-reduced-motion){animation:_48722cc5dd090ce4__indicator-jump var(--wpds-motion-duration-md,.2s) cubic-bezier(.68,-.55,.27,1.55)}}._57a3bbbfbe38a5c6__is-invalid{color:var(--wpds-color-foreground-content-error-weak,#cc1818)}._9e944dc198aac10b__is-valid{color:var(--wpds-color-foreground-content-success-weak,#008030)}.e482806667437c6a__indicator-icon{flex-shrink:0}._6e46434cc23019d2__indicator-spinner{height:var(--wpds-dimension-size-3xs,12px);margin:2px;width:var(--wpds-dimension-size-3xs,12px)}@keyframes _48722cc5dd090ce4__indicator-jump{0%{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}}}');
 }
-var style_default23 = { "indicator": "_7a7ac88e306348e7__indicator", "indicator-jump": "_48722cc5dd090ce4__indicator-jump", "is-invalid": "_57a3bbbfbe38a5c6__is-invalid", "is-valid": "_9e944dc198aac10b__is-valid", "indicator-icon": "e482806667437c6a__indicator-icon", "indicator-spinner": "_6e46434cc23019d2__indicator-spinner" };
+var style_default20 = { "indicator": "_7a7ac88e306348e7__indicator", "indicator-jump": "_48722cc5dd090ce4__indicator-jump", "is-invalid": "_57a3bbbfbe38a5c6__is-invalid", "is-valid": "_9e944dc198aac10b__is-valid", "indicator-icon": "e482806667437c6a__indicator-icon", "indicator-spinner": "_6e46434cc23019d2__indicator-spinner" };
 var ICON = {
   valid: published_default,
   invalid: error_default
@@ -21138,14 +21351,14 @@ function ValidityIndicator({
       id,
       className: clsx_default(
         global_css_defense_default8.p,
-        style_default23.indicator,
-        style_default23[`is-${type}`]
+        style_default20.indicator,
+        style_default20[`is-${type}`]
       ),
       children: [
-        type === "validating" ? /* @__PURE__ */ (0, import_jsx_runtime59.jsx)(Spinner, { className: style_default23["indicator-spinner"] }) : /* @__PURE__ */ (0, import_jsx_runtime59.jsx)(
+        type === "validating" ? /* @__PURE__ */ (0, import_jsx_runtime59.jsx)(Spinner, { className: style_default20["indicator-spinner"] }) : /* @__PURE__ */ (0, import_jsx_runtime59.jsx)(
           Icon,
           {
-            className: style_default23["indicator-icon"],
+            className: style_default20["indicator-icon"],
             icon: ICON[type],
             size: 16,
             fill: "currentColor"
@@ -21180,7 +21393,7 @@ function appendRequiredIndicator(label, required, markWhenOptional) {
   ] });
 }
 var VALIDITY_VISIBLE_ATTRIBUTE = "data-validity-visible";
-var ControlWithError = (0, import_element49.forwardRef)(function ControlWithError2({
+var ControlWithError = (0, import_element49.forwardRef)(function UnforwardedControlWithError({
   required,
   markWhenOptional,
   customValidity,
@@ -21469,22 +21682,24 @@ if (typeof process === "undefined" || true) {
 }
 var resets_default7 = { "box-sizing": "_336cd3e4e743482f__box-sizing" };
 var DEFAULT_RENDER2 = (props) => /* @__PURE__ */ (0, import_jsx_runtime61.jsx)(Stack, { ...props, direction: "column", gap: "sm" });
-var Root6 = (0, import_element50.forwardRef)(function Root22({ className, render: render4 = DEFAULT_RENDER2, ...restProps }, ref) {
-  return /* @__PURE__ */ (0, import_jsx_runtime61.jsx)(
-    index_parts_exports2.Root,
-    {
-      ref,
-      className: clsx_default(resets_default7["box-sizing"], className),
-      render: render4,
-      ...restProps
-    }
-  );
-});
+var Root6 = (0, import_element50.forwardRef)(
+  function UnforwardedRoot({ className, render: render4 = DEFAULT_RENDER2, ...restProps }, ref) {
+    return /* @__PURE__ */ (0, import_jsx_runtime61.jsx)(
+      index_parts_exports2.Root,
+      {
+        ref,
+        className: clsx_default(resets_default7["box-sizing"], className),
+        render: render4,
+        ...restProps
+      }
+    );
+  }
+);
 
 // packages/ui/build-module/form/primitives/field/item.mjs
 var import_element51 = __toESM(require_element(), 1);
 var import_jsx_runtime62 = __toESM(require_jsx_runtime(), 1);
-var Item = (0, import_element51.forwardRef)(function Item2(props, ref) {
+var Item = (0, import_element51.forwardRef)(function UnforwardedItem(props, ref) {
   return /* @__PURE__ */ (0, import_jsx_runtime62.jsx)(index_parts_exports2.Item, { ref, ...props });
 });
 
@@ -21576,7 +21791,7 @@ if (typeof process === "undefined" || true) {
 }
 var field_default = { "label": "_2d5ad850b2f90964__label", "is-plain": "_17c4214649230bea__is-plain", "description": "_08a3750500e0233f__description" };
 var Label = (0, import_element52.forwardRef)(
-  function Label2({ className, hideFromVision, variant, ...restProps }, ref) {
+  function UnforwardedLabel({ className, hideFromVision, variant, ...restProps }, ref) {
     const label = /* @__PURE__ */ (0, import_jsx_runtime63.jsx)(
       index_parts_exports2.Label,
       {
@@ -21687,7 +21902,7 @@ if (typeof process === "undefined" || true) {
   registerStyle27("df33c48b2d", '@layer wp-ui{@layer utilities, components, compositions, overrides;@layer utilities{._2d5ad850b2f90964__label{--wp-ui-field-label-line-height:var(--wpds-typography-line-height-xs,16px);color:var(--wpds-color-foreground-content-neutral,#1e1e1e);font-family:var(--wpds-typography-font-family-body,-apple-system,system-ui,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif);font-size:var(--wpds-typography-font-size-xs,11px);font-weight:var(--wpds-typography-font-weight-emphasis,600);line-height:var(--wp-ui-field-label-line-height);text-transform:uppercase;&._17c4214649230bea__is-plain{font-size:var(--wpds-typography-font-size-md,13px);font-weight:var(--wpds-typography-font-weight-default,400);text-transform:none}}._08a3750500e0233f__description{--_gcd-p-font-size:var(--wpds-typography-font-size-sm,12px);--_gcd-p-line-height:var(--wpds-typography-line-height-xs,16px);--_gcd-p-margin:0;text-wrap:pretty;color:var(--wpds-color-foreground-content-neutral-weak,#707070);font-family:var(--wpds-typography-font-family-body,-apple-system,system-ui,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif);font-size:var(--wpds-typography-font-size-sm,12px);line-height:var(--wpds-typography-line-height-xs,16px)}}}');
 }
 var field_default2 = { "label": "_2d5ad850b2f90964__label", "is-plain": "_17c4214649230bea__is-plain", "description": "_08a3750500e0233f__description" };
-var Description = (0, import_element53.forwardRef)(function Description2({ className, ...restProps }, ref) {
+var Description = (0, import_element53.forwardRef)(function UnforwardedDescription({ className, ...restProps }, ref) {
   return /* @__PURE__ */ (0, import_jsx_runtime64.jsx)(
     index_parts_exports2.Description,
     {
@@ -21791,7 +22006,7 @@ if (typeof process === "undefined" || true) {
 }
 var field_default3 = { "label": "_2d5ad850b2f90964__label", "is-plain": "_17c4214649230bea__is-plain", "description": "_08a3750500e0233f__description" };
 var Details = (0, import_element54.forwardRef)(
-  function Details2({ className, ...restProps }, ref) {
+  function UnforwardedDetails({ className, ...restProps }, ref) {
     return /* @__PURE__ */ (0, import_jsx_runtime65.jsxs)(import_jsx_runtime65.Fragment, { children: [
       /* @__PURE__ */ (0, import_jsx_runtime65.jsx)(VisuallyHidden, { render: /* @__PURE__ */ (0, import_jsx_runtime65.jsx)(index_parts_exports2.Description, {}), children: (0, import_i18n8.__)("More details follow the field.") }),
       /* @__PURE__ */ (0, import_jsx_runtime65.jsx)(
@@ -21810,7 +22025,7 @@ var Details = (0, import_element54.forwardRef)(
 var import_element55 = __toESM(require_element(), 1);
 var import_jsx_runtime66 = __toESM(require_jsx_runtime(), 1);
 var Control = (0, import_element55.forwardRef)(
-  function Control2(props, ref) {
+  function UnforwardedControl(props, ref) {
     return /* @__PURE__ */ (0, import_jsx_runtime66.jsx)(index_parts_exports2.Control, { ref, ...props });
   }
 );
@@ -21902,7 +22117,7 @@ if (typeof process === "undefined" || true) {
 }
 var field_default4 = { "label": "_2d5ad850b2f90964__label", "is-plain": "_17c4214649230bea__is-plain", "description": "_08a3750500e0233f__description" };
 var VisualLabel = (0, import_element56.forwardRef)(
-  function VisualLabel2({ className, render: render4, variant, ...restProps }, ref) {
+  function UnforwardedVisualLabel({ className, render: render4, variant, ...restProps }, ref) {
     return useRender({
       defaultTagName: "span",
       render: render4,
@@ -22005,7 +22220,7 @@ function registerStyle30(hash, css) {
 if (typeof process === "undefined" || true) {
   registerStyle30("1540cbc709", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{._1e441c22c9dc5d28__wrapper{--wp-ui-textarea-min-height:var(--wpds-dimension-size-lg,40px)}._414844876c32ecee__textarea{min-height:calc(var(--wp-ui-textarea-min-height) - 2px);resize:block}}@layer compositions{._1e441c22c9dc5d28__wrapper{--wp-ui-input-padding-block:9.9px;height:auto;line-height:1.4}}}");
 }
-var style_default24 = { "wrapper": "_1e441c22c9dc5d28__wrapper", "textarea": "_414844876c32ecee__textarea" };
+var style_default21 = { "wrapper": "_1e441c22c9dc5d28__wrapper", "textarea": "_414844876c32ecee__textarea" };
 if (typeof process === "undefined" || true) {
   registerStyle30("e8e31009f5", "._6defc79820e382c6__button{box-sizing:var(--_gcd-button-box-sizing,border-box);font-family:var(--_gcd-button-font-family,inherit);font-size:var(--_gcd-button-font-size,inherit);font-weight:var(--_gcd-button-font-weight,inherit)}.d2cff2e5dea83bd1__input{box-sizing:var(--_gcd-input-box-sizing,border-box);font-family:var(--_gcd-input-font-family,inherit);font-size:var(--_gcd-input-font-size,inherit);font-weight:var(--_gcd-input-font-weight,inherit);margin:var(--_gcd-input-margin,0);&::placeholder{color:var(--_gcd-input-placeholder-color,var(--wpds-color-foreground-interactive-neutral-weak,#707070))}&:is(textarea,[type=text],[type=password],[type=color],[type=date],[type=datetime],[type=datetime-local],[type=email],[type=month],[type=number],[type=search],[type=tel],[type=time],[type=url],[type=week]){background-color:var(--_gcd-input-background-color,transparent);border:var(--_gcd-input-border,none);border-radius:var(--_gcd-input-border-radius,0);box-shadow:var(--_gcd-input-box-shadow,0 0 0 transparent);color:var(--_gcd-input-color,var(--wpds-color-foreground-interactive-neutral,#1e1e1e));&:focus{border-color:var(--_gcd-input-border-color-focus,var(--wp-admin-theme-color));box-shadow:var(--_gcd-input-box-shadow-focus,none);outline:var(--_gcd-input-outline-focus,none)}&:disabled{background:var(--_gcd-input-background-disabled,transparent);border-color:var(--_gcd-input-border-color-disabled,transparent);box-shadow:var(--_gcd-input-box-shadow-disabled,none);color:var(--_gcd-input-color-disabled,var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d))}}&:is(textarea,[type=text],[type=password],[type=date],[type=datetime],[type=datetime-local],[type=email],[type=month],[type=number],[type=search],[type=tel],[type=time],[type=url],[type=week]){line-height:var(--_gcd-input-line-height,inherit);min-height:var(--_gcd-input-min-height,auto);padding:var(--_gcd-input-padding,0)}}._547d86373d02e108__textarea{box-sizing:var(--_gcd-textarea-box-sizing,border-box);overflow:var(--_gcd-textarea-overflow,auto);resize:var(--_gcd-textarea-resize,block)}._8c15fd0ed9f28ba4__div{outline:var(--_gcd-div-outline,0 solid transparent)}p._43cec3e1eec1066d__p{font-size:var(--_gcd-p-font-size,13px);line-height:var(--_gcd-p-line-height,1.5);margin:var(--_gcd-p-margin,0)}:is(h1,h2,h3,h4,h5,h6).e97669c6d9a38497__heading{color:var(--_gcd-heading-color,var(--wpds-color-foreground-content-neutral,#1e1e1e));font-size:var(--_gcd-heading-font-size,inherit);font-weight:var(--_gcd-heading-font-weight,var(--wpds-typography-font-weight-emphasis,600));margin:var(--_gcd-heading-margin,0)}._2c0831b0499dbd6e__a,._2c0831b0499dbd6e__a:is(:hover,:focus,:active){border-radius:var(--_gcd-a-border-radius,0);box-shadow:var(--_gcd-a-box-shadow,none);color:var(--_gcd-a-color,inherit);outline:var(--_gcd-a-outline,0 solid transparent);transition:var(--_gcd-a-transition,none)}.c59a0ebebd71fa4a__ol{list-style:var(--_gcd-ol-list-style,none);margin:var(--_gcd-ol-margin,0);padding-block:var(--_gcd-ol-padding-block,0);padding-inline:var(--_gcd-ol-padding-inline,0)}._46b5cb0c8e24e8c9__li{margin:var(--_gcd-li-margin,0)}");
 }
@@ -22016,7 +22231,7 @@ var wrappedRender = (render4, restProps) => {
   };
 };
 var Textarea = (0, import_element57.forwardRef)(
-  function Textarea2({
+  function UnforwardedTextarea({
     className,
     defaultValue,
     disabled: disabled2,
@@ -22030,14 +22245,14 @@ var Textarea = (0, import_element57.forwardRef)(
     return /* @__PURE__ */ (0, import_jsx_runtime67.jsx)(
       Input3,
       {
-        className: clsx_default(style_default24.wrapper, className),
+        className: clsx_default(style_default21.wrapper, className),
         style,
         render: wrappedRender(
           render4 || ((props) => /* @__PURE__ */ (0, import_jsx_runtime67.jsx)("textarea", { ...props })),
           {
             className: clsx_default(
               global_css_defense_default10.textarea,
-              style_default24.textarea
+              style_default21.textarea
             ),
             ref,
             rows,
@@ -22139,9 +22354,9 @@ function registerStyle31(hash, css) {
 if (typeof process === "undefined" || true) {
   registerStyle31("0c752c3d08", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer compositions{@supports (-webkit-hyphens:none) and (not (-moz-appearance:none)){.a9211a7e6af24bed__root input[type=date]:not([data-filled]):not(:focus),.a9211a7e6af24bed__root input[type=datetime-local]:not([data-filled]):not(:focus),.a9211a7e6af24bed__root input[type=time]:not([data-filled]):not(:focus){--_gcd-input-color:transparent;--_gcd-input-color-disabled:transparent;color:transparent;&:disabled::-webkit-datetime-edit-text{color:transparent}}}}}");
 }
-var style_default25 = { "root": "a9211a7e6af24bed__root" };
+var style_default22 = { "root": "a9211a7e6af24bed__root" };
 var InputControl = (0, import_element58.forwardRef)(
-  function InputControl2({
+  function UnforwardedInputControl({
     className,
     label,
     description,
@@ -22149,7 +22364,7 @@ var InputControl = (0, import_element58.forwardRef)(
     hideLabelFromVision,
     ...restProps
   }, ref) {
-    return /* @__PURE__ */ (0, import_jsx_runtime68.jsxs)(field_exports.Root, { className: clsx_default(style_default25.root, className), children: [
+    return /* @__PURE__ */ (0, import_jsx_runtime68.jsxs)(field_exports.Root, { className: clsx_default(style_default22.root, className), children: [
       /* @__PURE__ */ (0, import_jsx_runtime68.jsx)(field_exports.Label, { hideFromVision: hideLabelFromVision, children: label }),
       /* @__PURE__ */ (0, import_jsx_runtime68.jsx)(Input3, { ref, ...restProps }),
       description && /* @__PURE__ */ (0, import_jsx_runtime68.jsx)(field_exports.Description, { children: description }),
@@ -22161,7 +22376,7 @@ var InputControl = (0, import_element58.forwardRef)(
 // packages/ui/build-module/form/textarea-control/textarea-control.mjs
 var import_element59 = __toESM(require_element(), 1);
 var import_jsx_runtime69 = __toESM(require_jsx_runtime(), 1);
-var TextareaControl = (0, import_element59.forwardRef)(function TextareaControl2({
+var TextareaControl = (0, import_element59.forwardRef)(function UnforwardedTextareaControl({
   className,
   label,
   description,
@@ -22181,7 +22396,7 @@ var TextareaControl = (0, import_element59.forwardRef)(function TextareaControl2
 var import_element60 = __toESM(require_element(), 1);
 var import_compose4 = __toESM(require_compose(), 1);
 var import_jsx_runtime70 = __toESM(require_jsx_runtime(), 1);
-var ValidatedInputControl = (0, import_element60.forwardRef)(function ValidatedInputControl2({ required, markWhenOptional, customValidity, ...restProps }, forwardedRef) {
+var ValidatedInputControl = (0, import_element60.forwardRef)(function UnforwardedValidatedInputControl({ required, markWhenOptional, customValidity, ...restProps }, forwardedRef) {
   const validityTargetRef = (0, import_element60.useRef)(null);
   const mergedRefs = (0, import_compose4.useMergeRefs)([forwardedRef, validityTargetRef]);
   return /* @__PURE__ */ (0, import_jsx_runtime70.jsx)(
@@ -22200,7 +22415,7 @@ var ValidatedInputControl = (0, import_element60.forwardRef)(function ValidatedI
 var import_element61 = __toESM(require_element(), 1);
 var import_compose5 = __toESM(require_compose(), 1);
 var import_jsx_runtime71 = __toESM(require_jsx_runtime(), 1);
-var ValidatedTextareaControl = (0, import_element61.forwardRef)(function ValidatedTextareaControl2({ required, markWhenOptional, customValidity, ...restProps }, forwardedRef) {
+var ValidatedTextareaControl = (0, import_element61.forwardRef)(function UnforwardedValidatedTextareaControl({ required, markWhenOptional, customValidity, ...restProps }, forwardedRef) {
   const validityTargetRef = (0, import_element61.useRef)(null);
   const mergedRefs = (0, import_compose5.useMergeRefs)([forwardedRef, validityTargetRef]);
   return /* @__PURE__ */ (0, import_jsx_runtime71.jsx)(
@@ -22323,7 +22538,7 @@ function registerStyle32(hash, css) {
 if (typeof process === "undefined" || true) {
   registerStyle32("72ef022400", ".bfb5a2dd8cceebd3__list{--focus-ring-size:calc(var(--wpds-border-width-focus, var(--wp-admin-border-width-focus, 2px))*2);list-style:none;margin:calc(var(--focus-ring-size)*-1);overflow-x:auto;padding:var(--focus-ring-size);scroll-padding:var(--focus-ring-size)}.a4759b4cb2c8bd92__li{flex-shrink:0}._07da506d3f2d9afe__item{align-items:center;color:var(--wpds-color-foreground-interactive-neutral-weak,#707070);display:flex;font-weight:var(--wpds-typography-font-weight-default,400);min-block-size:44px;min-inline-size:44px;text-decoration:none}._07da506d3f2d9afe__item:hover,._07da506d3f2d9afe__item[aria-current=page]{color:var(--wpds-color-foreground-interactive-neutral-weak-active,#1e1e1e)}._07da506d3f2d9afe__item[aria-current=page]{font-weight:var(--wpds-typography-font-weight-emphasis,600)}");
 }
-var style_default26 = { "list": "bfb5a2dd8cceebd3__list", "li": "a4759b4cb2c8bd92__li", "item": "_07da506d3f2d9afe__item" };
+var style_default23 = { "list": "bfb5a2dd8cceebd3__list", "li": "a4759b4cb2c8bd92__li", "item": "_07da506d3f2d9afe__item" };
 var Navigation = ({
   items,
   currentHref,
@@ -22360,12 +22575,12 @@ var Navigation = ({
       direction: "row",
       align: "center",
       gap: "md",
-      className: style_default26.list,
-      children: items.map((item) => /* @__PURE__ */ (0, import_jsx_runtime73.jsx)("li", { className: style_default26.li, children: /* @__PURE__ */ (0, import_jsx_runtime73.jsx)(
+      className: style_default23.list,
+      children: items.map((item) => /* @__PURE__ */ (0, import_jsx_runtime73.jsx)("li", { className: style_default23.li, children: /* @__PURE__ */ (0, import_jsx_runtime73.jsx)(
         Text,
         {
           variant: "body-md",
-          className: style_default26.item,
+          className: style_default23.item,
           render: /* @__PURE__ */ (0, import_jsx_runtime73.jsx)(
             Link,
             {
@@ -22471,7 +22686,7 @@ function registerStyle33(hash, css) {
 if (typeof process === "undefined" || true) {
   registerStyle33("1f3750277d", "._956b6df0898efed0__page{text-wrap:pretty;background-color:var(--wpds-color-background-surface-neutral,#fcfcfc);color:var(--wpds-color-foreground-content-neutral,#1e1e1e);display:flex;flex-flow:column;height:100%;position:relative;z-index:1}._0625b55e82a0d93d__header{background:var(--wpds-color-background-surface-neutral-strong,#fff);border-block-end:var(--wpds-border-width-xs,1px) solid var(--wpds-color-stroke-surface-neutral-weak,#f0f0f0);inset-block-start:0;padding:var(--wpds-dimension-padding-lg,16px) var(--wpds-dimension-padding-2xl,24px);position:sticky;z-index:1}.a43c44d5ae28b2e8__header-content{min-height:var(--wpds-dimension-size-md,32px)}.b7cb5b9daf3a3b25__header-actions{flex-shrink:0}._8bcd33103b451f30__header-lockup{min-width:0}._8113be94e7caf73c__header-title{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._9a776c7f70996f61__header-visual{display:grid;flex-shrink:0;grid-template-columns:1fr;grid-template-rows:1fr;height:var(--wpds-dimension-size-sm,24px);width:var(--wpds-dimension-size-sm,24px);>*{grid-column:1/-1;grid-row:1/-1;max-height:100%;max-width:100%}}.d5e0920cd15d35bc__sidebar-toggle-slot:empty{display:none}._60fea2f6bf5319cd__header-subtitle{color:var(--wpds-color-foreground-content-neutral-weak,#707070);padding-block-end:var(--wpds-dimension-padding-xs,4px)}._0625b55e82a0d93d__header._4b0f17e503d11619__has-navigation,._0625b55e82a0d93d__header._4b0f17e503d11619__has-navigation ._60fea2f6bf5319cd__header-subtitle{padding-block-end:0}._673c99dcbfb58211__header-navigation{margin-block-start:var(--wpds-dimension-gap-md,12px)}.be5e57d029ec4036__content{display:flex;flex-direction:column;flex-grow:1;overflow:auto;&._128806d0b26e3a50__has-padding{padding:var(--wpds-dimension-padding-lg,16px) var(--wpds-dimension-padding-2xl,24px)}}");
 }
-var style_default27 = { "page": "_956b6df0898efed0__page", "header": "_0625b55e82a0d93d__header", "header-content": "a43c44d5ae28b2e8__header-content", "header-actions": "b7cb5b9daf3a3b25__header-actions", "header-lockup": "_8bcd33103b451f30__header-lockup", "header-title": "_8113be94e7caf73c__header-title", "header-visual": "_9a776c7f70996f61__header-visual", "sidebar-toggle-slot": "d5e0920cd15d35bc__sidebar-toggle-slot", "header-subtitle": "_60fea2f6bf5319cd__header-subtitle", "has-navigation": "_4b0f17e503d11619__has-navigation", "header-navigation": "_673c99dcbfb58211__header-navigation", "content": "be5e57d029ec4036__content", "has-padding": "_128806d0b26e3a50__has-padding" };
+var style_default24 = { "page": "_956b6df0898efed0__page", "header": "_0625b55e82a0d93d__header", "header-content": "a43c44d5ae28b2e8__header-content", "header-actions": "b7cb5b9daf3a3b25__header-actions", "header-lockup": "_8bcd33103b451f30__header-lockup", "header-title": "_8113be94e7caf73c__header-title", "header-visual": "_9a776c7f70996f61__header-visual", "sidebar-toggle-slot": "d5e0920cd15d35bc__sidebar-toggle-slot", "header-subtitle": "_60fea2f6bf5319cd__header-subtitle", "has-navigation": "_4b0f17e503d11619__has-navigation", "header-navigation": "_673c99dcbfb58211__header-navigation", "content": "be5e57d029ec4036__content", "has-padding": "_128806d0b26e3a50__has-padding" };
 function Header3({
   headingLevel = 1,
   breadcrumbs,
@@ -22491,14 +22706,14 @@ function Header3({
     {
       direction: "column",
       className: clsx_default(
-        style_default27.header,
-        hasNavigation && style_default27["has-navigation"]
+        style_default24.header,
+        hasNavigation && style_default24["has-navigation"]
       ),
       children: [
         /* @__PURE__ */ (0, import_jsx_runtime74.jsxs)(
           Stack,
           {
-            className: style_default27["header-content"],
+            className: style_default24["header-content"],
             direction: "row",
             gap: "sm",
             justify: "space-between",
@@ -22510,19 +22725,19 @@ function Header3({
                   gap: "sm",
                   align: "center",
                   justify: "start",
-                  className: style_default27["header-lockup"],
+                  className: style_default24["header-lockup"],
                   children: [
                     showSidebarToggle && /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(
                       SidebarToggleSlot,
                       {
                         bubblesVirtually: true,
-                        className: style_default27["sidebar-toggle-slot"]
+                        className: style_default24["sidebar-toggle-slot"]
                       }
                     ),
                     visual && /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(
                       "div",
                       {
-                        className: style_default27["header-visual"],
+                        className: style_default24["header-visual"],
                         "aria-hidden": "true",
                         children: visual
                       }
@@ -22530,7 +22745,7 @@ function Header3({
                     title && /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(
                       Text,
                       {
-                        className: style_default27["header-title"],
+                        className: style_default24["header-title"],
                         render: /* @__PURE__ */ (0, import_jsx_runtime74.jsx)(HeadingTag, {}),
                         variant: "heading-lg",
                         children: title
@@ -22545,7 +22760,7 @@ function Header3({
                 Stack,
                 {
                   align: "center",
-                  className: style_default27["header-actions"],
+                  className: style_default24["header-actions"],
                   direction: "row",
                   gap: "sm",
                   children: actions
@@ -22559,7 +22774,7 @@ function Header3({
           {
             render: /* @__PURE__ */ (0, import_jsx_runtime74.jsx)("p", {}),
             variant: "body-md",
-            className: style_default27["header-subtitle"],
+            className: style_default24["header-subtitle"],
             children: subTitle
           }
         ),
@@ -22568,7 +22783,7 @@ function Header3({
           {
             ...navigation,
             linkComponent: components?.link,
-            className: style_default27["header-navigation"]
+            className: style_default24["header-navigation"]
           }
         )
       ]
@@ -22661,7 +22876,7 @@ function registerStyle34(hash, css) {
 if (typeof process === "undefined" || true) {
   registerStyle34("1f3750277d", "._956b6df0898efed0__page{text-wrap:pretty;background-color:var(--wpds-color-background-surface-neutral,#fcfcfc);color:var(--wpds-color-foreground-content-neutral,#1e1e1e);display:flex;flex-flow:column;height:100%;position:relative;z-index:1}._0625b55e82a0d93d__header{background:var(--wpds-color-background-surface-neutral-strong,#fff);border-block-end:var(--wpds-border-width-xs,1px) solid var(--wpds-color-stroke-surface-neutral-weak,#f0f0f0);inset-block-start:0;padding:var(--wpds-dimension-padding-lg,16px) var(--wpds-dimension-padding-2xl,24px);position:sticky;z-index:1}.a43c44d5ae28b2e8__header-content{min-height:var(--wpds-dimension-size-md,32px)}.b7cb5b9daf3a3b25__header-actions{flex-shrink:0}._8bcd33103b451f30__header-lockup{min-width:0}._8113be94e7caf73c__header-title{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._9a776c7f70996f61__header-visual{display:grid;flex-shrink:0;grid-template-columns:1fr;grid-template-rows:1fr;height:var(--wpds-dimension-size-sm,24px);width:var(--wpds-dimension-size-sm,24px);>*{grid-column:1/-1;grid-row:1/-1;max-height:100%;max-width:100%}}.d5e0920cd15d35bc__sidebar-toggle-slot:empty{display:none}._60fea2f6bf5319cd__header-subtitle{color:var(--wpds-color-foreground-content-neutral-weak,#707070);padding-block-end:var(--wpds-dimension-padding-xs,4px)}._0625b55e82a0d93d__header._4b0f17e503d11619__has-navigation,._0625b55e82a0d93d__header._4b0f17e503d11619__has-navigation ._60fea2f6bf5319cd__header-subtitle{padding-block-end:0}._673c99dcbfb58211__header-navigation{margin-block-start:var(--wpds-dimension-gap-md,12px)}.be5e57d029ec4036__content{display:flex;flex-direction:column;flex-grow:1;overflow:auto;&._128806d0b26e3a50__has-padding{padding:var(--wpds-dimension-padding-lg,16px) var(--wpds-dimension-padding-2xl,24px)}}");
 }
-var style_default28 = { "page": "_956b6df0898efed0__page", "header": "_0625b55e82a0d93d__header", "header-content": "a43c44d5ae28b2e8__header-content", "header-actions": "b7cb5b9daf3a3b25__header-actions", "header-lockup": "_8bcd33103b451f30__header-lockup", "header-title": "_8113be94e7caf73c__header-title", "header-visual": "_9a776c7f70996f61__header-visual", "sidebar-toggle-slot": "d5e0920cd15d35bc__sidebar-toggle-slot", "header-subtitle": "_60fea2f6bf5319cd__header-subtitle", "has-navigation": "_4b0f17e503d11619__has-navigation", "header-navigation": "_673c99dcbfb58211__header-navigation", "content": "be5e57d029ec4036__content", "has-padding": "_128806d0b26e3a50__has-padding" };
+var style_default25 = { "page": "_956b6df0898efed0__page", "header": "_0625b55e82a0d93d__header", "header-content": "a43c44d5ae28b2e8__header-content", "header-actions": "b7cb5b9daf3a3b25__header-actions", "header-lockup": "_8bcd33103b451f30__header-lockup", "header-title": "_8113be94e7caf73c__header-title", "header-visual": "_9a776c7f70996f61__header-visual", "sidebar-toggle-slot": "d5e0920cd15d35bc__sidebar-toggle-slot", "header-subtitle": "_60fea2f6bf5319cd__header-subtitle", "has-navigation": "_4b0f17e503d11619__has-navigation", "header-navigation": "_673c99dcbfb58211__header-navigation", "content": "be5e57d029ec4036__content", "has-padding": "_128806d0b26e3a50__has-padding" };
 function Page({
   headingLevel,
   breadcrumbs,
@@ -22678,7 +22893,7 @@ function Page({
   hasPadding = false,
   showSidebarToggle = true
 }) {
-  const classes = clsx_default(style_default28.page, className);
+  const classes = clsx_default(style_default25.page, className);
   const effectiveAriaLabel = ariaLabel ?? (typeof title === "string" ? title : "");
   return /* @__PURE__ */ (0, import_jsx_runtime75.jsxs)(navigable_region_default, { className: classes, ariaLabel: effectiveAriaLabel, children: [
     (title || breadcrumbs || badges || actions || visual || !!navigation?.items?.length) && /* @__PURE__ */ (0, import_jsx_runtime75.jsx)(
@@ -22700,8 +22915,8 @@ function Page({
       "div",
       {
         className: clsx_default(
-          style_default28.content,
-          style_default28["has-padding"]
+          style_default25.content,
+          style_default25["has-padding"]
         ),
         children
       }
@@ -23498,8 +23713,8 @@ var UnforwardedValidatedFormTokenField = ({
             tabIndex: -1,
             onChange: () => {
             },
-            onFocus: (e2) => {
-              e2.target.previousElementSibling?.querySelector(
+            onFocus: (e) => {
+              e.target.previousElementSibling?.querySelector(
                 'input[type="text"]'
               )?.focus();
             }
@@ -23678,8 +23893,8 @@ var UnforwardedValidatedToggleGroupControl = ({
         name: nameAttr,
         onChange: () => {
         },
-        onFocus: (e2) => {
-          e2.target.previousElementSibling?.querySelector(
+        onFocus: (e) => {
+          e.target.previousElementSibling?.querySelector(
             '[data-active-item="true"]'
           )?.focus();
         }
@@ -24938,7 +25153,7 @@ function Email({
         markWhenOptional,
         validity,
         type: "email",
-        prefix: /* @__PURE__ */ (0, import_jsx_runtime93.jsx)(InputLayout3.Slot, { padding: "minimal", children: /* @__PURE__ */ (0, import_jsx_runtime93.jsx)(Icon, { icon: envelope_default }) })
+        prefix: /* @__PURE__ */ (0, import_jsx_runtime93.jsx)(InputLayout2.Slot, { padding: "minimal", children: /* @__PURE__ */ (0, import_jsx_runtime93.jsx)(Icon, { icon: envelope_default }) })
       }
     }
   );
@@ -24965,7 +25180,7 @@ function Telephone({
         markWhenOptional,
         validity,
         type: "tel",
-        prefix: /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(InputLayout3.Slot, { padding: "minimal", children: /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(Icon, { icon: mobile_default }) })
+        prefix: /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(InputLayout2.Slot, { padding: "minimal", children: /* @__PURE__ */ (0, import_jsx_runtime94.jsx)(Icon, { icon: mobile_default }) })
       }
     }
   );
@@ -24992,7 +25207,7 @@ function Url({
         markWhenOptional,
         validity,
         type: "url",
-        prefix: /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(InputLayout3.Slot, { padding: "minimal", children: /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(Icon, { icon: link_default }) })
+        prefix: /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(InputLayout2.Slot, { padding: "minimal", children: /* @__PURE__ */ (0, import_jsx_runtime95.jsx)(Icon, { icon: link_default }) })
       }
     }
   );
@@ -25189,7 +25404,7 @@ function Radio({
 // packages/dataviews/build-module/components/dataform-controls/text.mjs
 var import_element83 = __toESM(require_element(), 1);
 var import_jsx_runtime100 = __toESM(require_jsx_runtime(), 1);
-function Text3({
+function Text2({
   data,
   field,
   onChange,
@@ -25410,7 +25625,7 @@ function Toggle({
 // packages/dataviews/build-module/components/dataform-controls/textarea.mjs
 var import_element86 = __toESM(require_element(), 1);
 var import_jsx_runtime103 = __toESM(require_jsx_runtime(), 1);
-function Textarea3({
+function Textarea2({
   data,
   field,
   onChange,
@@ -25593,162 +25808,175 @@ function ArrayControl({
   );
 }
 
-// node_modules/colord/index.mjs
-var r2 = { grad: 0.9, turn: 360, rad: 360 / (2 * Math.PI) };
-var t = function(r3) {
+// node_modules/.store/colord@2.10.0-Qx66Amv6c9C3nDPQDizV6Q/node_modules/colord/index.mjs
+for (r2 = { grad: 0.9, turn: 360, rad: 360 / (2 * Math.PI) }, t = function(r3) {
   return "string" == typeof r3 ? r3.length > 0 : "number" == typeof r3;
-};
-var n = function(r3, t2, n2) {
+}, n = function(r3, t2, n2) {
   return void 0 === t2 && (t2 = 0), void 0 === n2 && (n2 = Math.pow(10, t2)), Math.round(n2 * r3) / n2 + 0;
-};
-var e = function(r3, t2, n2) {
+}, u = function(r3, t2, n2) {
   return void 0 === t2 && (t2 = 0), void 0 === n2 && (n2 = 1), r3 > n2 ? n2 : r3 > t2 ? r3 : t2;
-};
-var u = function(r3) {
-  return (r3 = isFinite(r3) ? r3 % 360 : 0) > 0 ? r3 : r3 + 360;
-};
-var a = function(r3) {
-  return { r: e(r3.r, 0, 255), g: e(r3.g, 0, 255), b: e(r3.b, 0, 255), a: e(r3.a) };
-};
-var o = function(r3) {
+}, e = function(r3) {
+  return (r3 = isFinite(r3) ? r3 % 360 : 0) < 0 ? r3 + 360 : r3;
+}, o = function(r3, t2) {
+  return void 0 === t2 && (t2 = 0), n(r3, t2) % 360;
+}, a = function(r3) {
+  return { r: u(r3.r, 0, 255), g: u(r3.g, 0, 255), b: u(r3.b, 0, 255), a: u(r3.a) };
+}, i = function(r3) {
   return { r: n(r3.r), g: n(r3.g), b: n(r3.b), a: n(r3.a, 3) };
+}, s = /^#([0-9a-f]{3,8})$/i, d = function(r3, t2) {
+  var n2 = r3.charCodeAt(t2);
+  return (15 & n2) + 9 * (n2 >> 6);
+}, h = function(r3, t2) {
+  return d(r3, t2) << 4 | d(r3, t2 + 1);
+}, b = [], f = 0; f < 256; f++) b.push((f < 16 ? "0" : "") + f.toString(16));
+var r2;
+var t;
+var n;
+var u;
+var e;
+var o;
+var a;
+var i;
+var s;
+var d;
+var h;
+var b;
+var f;
+var g = function(r2) {
+  return b[u(r2, 0, 255)];
 };
-var i = /^#([0-9a-f]{3,8})$/i;
-var s = function(r3) {
-  var t2 = r3.toString(16);
-  return t2.length < 2 ? "0" + t2 : t2;
+var c = function(r2) {
+  var t = r2.r, n = r2.g, u = r2.b, e = r2.a, o = Math.max(t, n, u), a = o - Math.min(t, n, u), i = a ? o === t ? (n - u) / a : o === n ? 2 + (u - t) / a : 4 + (t - n) / a : 0;
+  return { h: 60 * (i < 0 ? i + 6 : i), s: o ? a / o * 100 : 0, v: o / 255 * 100, a: e };
 };
-var h = function(r3) {
-  var t2 = r3.r, n2 = r3.g, e2 = r3.b, u2 = r3.a, a2 = Math.max(t2, n2, e2), o2 = a2 - Math.min(t2, n2, e2), i2 = o2 ? a2 === t2 ? (n2 - e2) / o2 : a2 === n2 ? 2 + (e2 - t2) / o2 : 4 + (t2 - n2) / o2 : 0;
-  return { h: 60 * (i2 < 0 ? i2 + 6 : i2), s: a2 ? o2 / a2 * 100 : 0, v: a2 / 255 * 100, a: u2 };
+var v = function(r2) {
+  var t = r2.h, n = r2.s, u = r2.v, e = r2.a;
+  t = t / 360 * 6, n /= 100, u /= 100;
+  var o = Math.floor(t), a = u * (1 - n), i = u * (1 - (t - o) * n), s = u * (1 - (1 - t + o) * n), d = o % 6;
+  return { r: 255 * [u, i, a, a, s, u][d], g: 255 * [s, u, u, i, a, a][d], b: 255 * [a, a, s, u, u, i][d], a: e };
 };
-var b = function(r3) {
-  var t2 = r3.h, n2 = r3.s, e2 = r3.v, u2 = r3.a;
-  t2 = t2 / 360 * 6, n2 /= 100, e2 /= 100;
-  var a2 = Math.floor(t2), o2 = e2 * (1 - n2), i2 = e2 * (1 - (t2 - a2) * n2), s2 = e2 * (1 - (1 - t2 + a2) * n2), h2 = a2 % 6;
-  return { r: 255 * [e2, i2, o2, o2, s2, e2][h2], g: 255 * [s2, e2, e2, i2, o2, o2][h2], b: 255 * [o2, o2, s2, e2, e2, i2][h2], a: u2 };
+var l = function(r2) {
+  return { h: e(r2.h), s: u(r2.s, 0, 100), l: u(r2.l, 0, 100), a: u(r2.a) };
 };
-var g = function(r3) {
-  return { h: u(r3.h), s: e(r3.s, 0, 100), l: e(r3.l, 0, 100), a: e(r3.a) };
+var p = function(r2) {
+  return { h: o(r2.h), s: n(r2.s), l: n(r2.l), a: n(r2.a, 3) };
 };
-var d = function(r3) {
-  return { h: n(r3.h), s: n(r3.s), l: n(r3.l), a: n(r3.a, 3) };
+var m = function(r2) {
+  return v((n = (t = r2).s, { h: t.h, s: (n *= ((u = t.l) < 50 ? u : 100 - u) / 100) > 0 ? 2 * n / (u + n) * 100 : 0, v: u + n, a: t.a }));
+  var t, n, u;
 };
-var f = function(r3) {
-  return b((n2 = (t2 = r3).s, { h: t2.h, s: (n2 *= ((e2 = t2.l) < 50 ? e2 : 100 - e2) / 100) > 0 ? 2 * n2 / (e2 + n2) * 100 : 0, v: e2 + n2, a: t2.a }));
-  var t2, n2, e2;
+var y = function(r2) {
+  return { h: (t = c(r2)).h, s: (e = (200 - (n = t.s)) * (u = t.v) / 100) > 0 && e < 200 ? n * u / 100 / (e <= 100 ? e : 200 - e) * 100 : 0, l: e / 2, a: t.a };
+  var t, n, u, e;
 };
-var c = function(r3) {
-  return { h: (t2 = h(r3)).h, s: (u2 = (200 - (n2 = t2.s)) * (e2 = t2.v) / 100) > 0 && u2 < 200 ? n2 * e2 / 100 / (u2 <= 100 ? u2 : 200 - u2) * 100 : 0, l: u2 / 2, a: t2.a };
-  var t2, n2, e2, u2;
-};
-var l = /^hsla?\(\s*([+-]?\d*\.?\d+)(deg|rad|grad|turn)?\s*,\s*([+-]?\d*\.?\d+)%\s*,\s*([+-]?\d*\.?\d+)%\s*(?:,\s*([+-]?\d*\.?\d+)(%)?\s*)?\)$/i;
-var p = /^hsla?\(\s*([+-]?\d*\.?\d+)(deg|rad|grad|turn)?\s+([+-]?\d*\.?\d+)%\s+([+-]?\d*\.?\d+)%\s*(?:\/\s*([+-]?\d*\.?\d+)(%)?\s*)?\)$/i;
-var v = /^rgba?\(\s*([+-]?\d*\.?\d+)(%)?\s*,\s*([+-]?\d*\.?\d+)(%)?\s*,\s*([+-]?\d*\.?\d+)(%)?\s*(?:,\s*([+-]?\d*\.?\d+)(%)?\s*)?\)$/i;
-var m = /^rgba?\(\s*([+-]?\d*\.?\d+)(%)?\s+([+-]?\d*\.?\d+)(%)?\s+([+-]?\d*\.?\d+)(%)?\s*(?:\/\s*([+-]?\d*\.?\d+)(%)?\s*)?\)$/i;
-var y = { string: [[function(r3) {
-  var t2 = i.exec(r3);
-  return t2 ? (r3 = t2[1]).length <= 4 ? { r: parseInt(r3[0] + r3[0], 16), g: parseInt(r3[1] + r3[1], 16), b: parseInt(r3[2] + r3[2], 16), a: 4 === r3.length ? n(parseInt(r3[3] + r3[3], 16) / 255, 2) : 1 } : 6 === r3.length || 8 === r3.length ? { r: parseInt(r3.substr(0, 2), 16), g: parseInt(r3.substr(2, 2), 16), b: parseInt(r3.substr(4, 2), 16), a: 8 === r3.length ? n(parseInt(r3.substr(6, 2), 16) / 255, 2) : 1 } : null : null;
-}, "hex"], [function(r3) {
-  var t2 = v.exec(r3) || m.exec(r3);
-  return t2 ? t2[2] !== t2[4] || t2[4] !== t2[6] ? null : a({ r: Number(t2[1]) / (t2[2] ? 100 / 255 : 1), g: Number(t2[3]) / (t2[4] ? 100 / 255 : 1), b: Number(t2[5]) / (t2[6] ? 100 / 255 : 1), a: void 0 === t2[7] ? 1 : Number(t2[7]) / (t2[8] ? 100 : 1) }) : null;
-}, "rgb"], [function(t2) {
-  var n2 = l.exec(t2) || p.exec(t2);
-  if (!n2) return null;
-  var e2, u2, a2 = g({ h: (e2 = n2[1], u2 = n2[2], void 0 === u2 && (u2 = "deg"), Number(e2) * (r2[u2] || 1)), s: Number(n2[3]), l: Number(n2[4]), a: void 0 === n2[5] ? 1 : Number(n2[5]) / (n2[6] ? 100 : 1) });
-  return f(a2);
-}, "hsl"]], object: [[function(r3) {
-  var n2 = r3.r, e2 = r3.g, u2 = r3.b, o2 = r3.a, i2 = void 0 === o2 ? 1 : o2;
-  return t(n2) && t(e2) && t(u2) ? a({ r: Number(n2), g: Number(e2), b: Number(u2), a: Number(i2) }) : null;
-}, "rgb"], [function(r3) {
-  var n2 = r3.h, e2 = r3.s, u2 = r3.l, a2 = r3.a, o2 = void 0 === a2 ? 1 : a2;
-  if (!t(n2) || !t(e2) || !t(u2)) return null;
-  var i2 = g({ h: Number(n2), s: Number(e2), l: Number(u2), a: Number(o2) });
-  return f(i2);
-}, "hsl"], [function(r3) {
-  var n2 = r3.h, a2 = r3.s, o2 = r3.v, i2 = r3.a, s2 = void 0 === i2 ? 1 : i2;
-  if (!t(n2) || !t(a2) || !t(o2)) return null;
-  var h2 = (function(r4) {
-    return { h: u(r4.h), s: e(r4.s, 0, 100), v: e(r4.v, 0, 100), a: e(r4.a) };
-  })({ h: Number(n2), s: Number(a2), v: Number(o2), a: Number(s2) });
-  return b(h2);
+var N = /^hsla?\(\s*([+-]?(?:\d*\.\d+|\d+))(deg|rad|grad|turn)?\s*,\s*([+-]?(?:\d*\.\d+|\d+))%\s*,\s*([+-]?(?:\d*\.\d+|\d+))%\s*(?:,\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s*)?\)$/i;
+var x = /^hsla?\(\s*([+-]?(?:\d*\.\d+|\d+))(deg|rad|grad|turn)?\s+([+-]?(?:\d*\.\d+|\d+))%\s+([+-]?(?:\d*\.\d+|\d+))%\s*(?:\/\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s*)?\)$/i;
+var M = /^rgba?\(\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s*,\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s*,\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s*(?:,\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s*)?\)$/i;
+var H = /^rgba?\(\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s+([+-]?(?:\d*\.\d+|\d+))(%)?\s+([+-]?(?:\d*\.\d+|\d+))(%)?\s*(?:\/\s*([+-]?(?:\d*\.\d+|\d+))(%)?\s*)?\)$/i;
+var $ = { string: [[function(r2) {
+  if (!s.test(r2)) return null;
+  var t = r2.length;
+  return t <= 5 ? { r: 17 * d(r2, 1), g: 17 * d(r2, 2), b: 17 * d(r2, 3), a: 5 === t ? n(17 * d(r2, 4) / 255, 2) : 1 } : 7 === t || 9 === t ? { r: h(r2, 1), g: h(r2, 3), b: h(r2, 5), a: 9 === t ? n(h(r2, 7) / 255, 2) : 1 } : null;
+}, "hex"], [function(r2) {
+  var t = M.exec(r2) || H.exec(r2);
+  return t ? t[2] !== t[4] || t[4] !== t[6] ? null : a({ r: Number(t[1]) / (t[2] ? 100 / 255 : 1), g: Number(t[3]) / (t[4] ? 100 / 255 : 1), b: Number(t[5]) / (t[6] ? 100 / 255 : 1), a: void 0 === t[7] ? 1 : Number(t[7]) / (t[8] ? 100 : 1) }) : null;
+}, "rgb"], [function(t) {
+  var n = N.exec(t) || x.exec(t);
+  if (!n) return null;
+  var u, e, o = l({ h: (u = n[1], e = n[2], void 0 === e && (e = "deg"), Number(u) * (r2[e] || 1)), s: Number(n[3]), l: Number(n[4]), a: void 0 === n[5] ? 1 : Number(n[5]) / (n[6] ? 100 : 1) });
+  return m(o);
+}, "hsl"]], object: [[function(r2) {
+  var n = r2.r, u = r2.g, e = r2.b, o = r2.a, i = void 0 === o ? 1 : o;
+  return t(n) && t(u) && t(e) ? a({ r: Number(n), g: Number(u), b: Number(e), a: Number(i) }) : null;
+}, "rgb"], [function(r2) {
+  var n = r2.h, u = r2.s, e = r2.l, o = r2.a, a = void 0 === o ? 1 : o;
+  if (!t(n) || !t(u) || !t(e)) return null;
+  var i = l({ h: Number(n), s: Number(u), l: Number(e), a: Number(a) });
+  return m(i);
+}, "hsl"], [function(r2) {
+  var n = r2.h, o = r2.s, a = r2.v, i = r2.a, s = void 0 === i ? 1 : i;
+  if (!t(n) || !t(o) || !t(a)) return null;
+  var d = (function(r3) {
+    return { h: e(r3.h), s: u(r3.s, 0, 100), v: u(r3.v, 0, 100), a: u(r3.a) };
+  })({ h: Number(n), s: Number(o), v: Number(a), a: Number(s) });
+  return v(d);
 }, "hsv"]] };
-var N = function(r3, t2) {
-  for (var n2 = 0; n2 < t2.length; n2++) {
-    var e2 = t2[n2][0](r3);
-    if (e2) return [e2, t2[n2][1]];
+var j = function(r2, t) {
+  for (var n = 0; n < t.length; n++) {
+    var u = t[n][0](r2);
+    if (u) return [u, t[n][1]];
   }
   return [null, void 0];
 };
-var x = function(r3) {
-  return "string" == typeof r3 ? N(r3.trim(), y.string) : "object" == typeof r3 && null !== r3 ? N(r3, y.object) : [null, void 0];
+var w = function(r2) {
+  return "string" == typeof r2 ? j(r2.trim(), $.string) : "object" == typeof r2 && null !== r2 ? j(r2, $.object) : [null, void 0];
 };
-var M = function(r3, t2) {
-  var n2 = c(r3);
-  return { h: n2.h, s: e(n2.s + 100 * t2, 0, 100), l: n2.l, a: n2.a };
+var k = function(r2, t) {
+  var n = y(r2);
+  return { h: n.h, s: u(n.s + 100 * t, 0, 100), l: n.l, a: n.a };
 };
-var H = function(r3) {
-  return (299 * r3.r + 587 * r3.g + 114 * r3.b) / 1e3 / 255;
+var E = function(r2) {
+  return (299 * r2.r + 587 * r2.g + 114 * r2.b) / 1e3 / 255;
 };
-var $ = function(r3, t2) {
-  var n2 = c(r3);
-  return { h: n2.h, s: n2.s, l: e(n2.l + 100 * t2, 0, 100), a: n2.a };
+var R = function(r2, t) {
+  var n = y(r2);
+  return { h: n.h, s: n.s, l: u(n.l + 100 * t, 0, 100), a: n.a };
 };
-var j = (function() {
-  function r3(r4) {
-    this.parsed = x(r4)[0], this.rgba = this.parsed || { r: 0, g: 0, b: 0, a: 1 };
+var q = (function() {
+  function r2(r3) {
+    this.parsed = w(r3)[0], this.rgba = this.parsed || { r: 0, g: 0, b: 0, a: 1 };
   }
-  return r3.prototype.isValid = function() {
+  return r2.prototype.isValid = function() {
     return null !== this.parsed;
-  }, r3.prototype.brightness = function() {
-    return n(H(this.rgba), 2);
-  }, r3.prototype.isDark = function() {
-    return H(this.rgba) < 0.5;
-  }, r3.prototype.isLight = function() {
-    return H(this.rgba) >= 0.5;
-  }, r3.prototype.toHex = function() {
-    return r4 = o(this.rgba), t2 = r4.r, e2 = r4.g, u2 = r4.b, i2 = (a2 = r4.a) < 1 ? s(n(255 * a2)) : "", "#" + s(t2) + s(e2) + s(u2) + i2;
-    var r4, t2, e2, u2, a2, i2;
-  }, r3.prototype.toRgb = function() {
-    return o(this.rgba);
-  }, r3.prototype.toRgbString = function() {
-    return r4 = o(this.rgba), t2 = r4.r, n2 = r4.g, e2 = r4.b, (u2 = r4.a) < 1 ? "rgba(" + t2 + ", " + n2 + ", " + e2 + ", " + u2 + ")" : "rgb(" + t2 + ", " + n2 + ", " + e2 + ")";
-    var r4, t2, n2, e2, u2;
-  }, r3.prototype.toHsl = function() {
-    return d(c(this.rgba));
-  }, r3.prototype.toHslString = function() {
-    return r4 = d(c(this.rgba)), t2 = r4.h, n2 = r4.s, e2 = r4.l, (u2 = r4.a) < 1 ? "hsla(" + t2 + ", " + n2 + "%, " + e2 + "%, " + u2 + ")" : "hsl(" + t2 + ", " + n2 + "%, " + e2 + "%)";
-    var r4, t2, n2, e2, u2;
-  }, r3.prototype.toHsv = function() {
-    return r4 = h(this.rgba), { h: n(r4.h), s: n(r4.s), v: n(r4.v), a: n(r4.a, 3) };
-    var r4;
-  }, r3.prototype.invert = function() {
-    return w({ r: 255 - (r4 = this.rgba).r, g: 255 - r4.g, b: 255 - r4.b, a: r4.a });
-    var r4;
-  }, r3.prototype.saturate = function(r4) {
-    return void 0 === r4 && (r4 = 0.1), w(M(this.rgba, r4));
-  }, r3.prototype.desaturate = function(r4) {
-    return void 0 === r4 && (r4 = 0.1), w(M(this.rgba, -r4));
-  }, r3.prototype.grayscale = function() {
-    return w(M(this.rgba, -1));
-  }, r3.prototype.lighten = function(r4) {
-    return void 0 === r4 && (r4 = 0.1), w($(this.rgba, r4));
-  }, r3.prototype.darken = function(r4) {
-    return void 0 === r4 && (r4 = 0.1), w($(this.rgba, -r4));
-  }, r3.prototype.rotate = function(r4) {
-    return void 0 === r4 && (r4 = 15), this.hue(this.hue() + r4);
-  }, r3.prototype.alpha = function(r4) {
-    return "number" == typeof r4 ? w({ r: (t2 = this.rgba).r, g: t2.g, b: t2.b, a: r4 }) : n(this.rgba.a, 3);
-    var t2;
-  }, r3.prototype.hue = function(r4) {
-    var t2 = c(this.rgba);
-    return "number" == typeof r4 ? w({ h: r4, s: t2.s, l: t2.l, a: t2.a }) : n(t2.h);
-  }, r3.prototype.isEqual = function(r4) {
-    return this.toHex() === w(r4).toHex();
-  }, r3;
+  }, r2.prototype.brightness = function() {
+    return n(E(this.rgba), 2);
+  }, r2.prototype.isDark = function() {
+    return E(this.rgba) < 0.5;
+  }, r2.prototype.isLight = function() {
+    return E(this.rgba) >= 0.5;
+  }, r2.prototype.toHex = function() {
+    return r3 = i(this.rgba), t = r3.r, u = r3.g, e = r3.b, a = (o = r3.a) < 1 ? g(n(255 * o)) : "", "#" + g(t) + g(u) + g(e) + a;
+    var r3, t, u, e, o, a;
+  }, r2.prototype.toRgb = function() {
+    return i(this.rgba);
+  }, r2.prototype.toRgbString = function() {
+    return r3 = i(this.rgba), t = r3.r, n = r3.g, u = r3.b, (e = r3.a) < 1 ? "rgba(" + t + ", " + n + ", " + u + ", " + e + ")" : "rgb(" + t + ", " + n + ", " + u + ")";
+    var r3, t, n, u, e;
+  }, r2.prototype.toHsl = function() {
+    return p(y(this.rgba));
+  }, r2.prototype.toHslString = function() {
+    return r3 = p(y(this.rgba)), t = r3.h, n = r3.s, u = r3.l, (e = r3.a) < 1 ? "hsla(" + t + ", " + n + "%, " + u + "%, " + e + ")" : "hsl(" + t + ", " + n + "%, " + u + "%)";
+    var r3, t, n, u, e;
+  }, r2.prototype.toHsv = function() {
+    return r3 = c(this.rgba), { h: o(r3.h), s: n(r3.s), v: n(r3.v), a: n(r3.a, 3) };
+    var r3;
+  }, r2.prototype.invert = function() {
+    return A({ r: 255 - (r3 = this.rgba).r, g: 255 - r3.g, b: 255 - r3.b, a: r3.a });
+    var r3;
+  }, r2.prototype.saturate = function(r3) {
+    return void 0 === r3 && (r3 = 0.1), A(k(this.rgba, r3));
+  }, r2.prototype.desaturate = function(r3) {
+    return void 0 === r3 && (r3 = 0.1), A(k(this.rgba, -r3));
+  }, r2.prototype.grayscale = function() {
+    return A(k(this.rgba, -1));
+  }, r2.prototype.lighten = function(r3) {
+    return void 0 === r3 && (r3 = 0.1), A(R(this.rgba, r3));
+  }, r2.prototype.darken = function(r3) {
+    return void 0 === r3 && (r3 = 0.1), A(R(this.rgba, -r3));
+  }, r2.prototype.rotate = function(r3) {
+    return void 0 === r3 && (r3 = 15), this.hue(y(this.rgba).h + r3);
+  }, r2.prototype.alpha = function(r3) {
+    return "number" == typeof r3 ? A({ r: (t = this.rgba).r, g: t.g, b: t.b, a: r3 }) : n(this.rgba.a, 3);
+    var t;
+  }, r2.prototype.hue = function(r3) {
+    var t = y(this.rgba);
+    return "number" == typeof r3 ? A({ h: r3, s: t.s, l: t.l, a: t.a }) : o(t.h);
+  }, r2.prototype.isEqual = function(r3) {
+    return this.toHex() === A(r3).toHex();
+  }, r2;
 })();
-var w = function(r3) {
-  return r3 instanceof j ? r3 : new j(r3);
+var A = function(r2) {
+  return r2 instanceof q ? r2 : new q(r2);
 };
 
 // packages/dataviews/build-module/components/dataform-controls/color.mjs
@@ -25761,7 +25989,7 @@ var ColorPickerDropdown = ({
   onColorChange,
   disabled: disabled2
 }) => {
-  const validColor = color && w(color).isValid() ? color : "#ffffff";
+  const validColor = color && A(color).isValid() ? color : "#ffffff";
   return /* @__PURE__ */ (0, import_jsx_runtime106.jsx)(
     import_components21.Dropdown,
     {
@@ -25827,7 +26055,7 @@ function Color({
       hideLabelFromVision,
       type: "text",
       disabled: disabled2,
-      prefix: /* @__PURE__ */ (0, import_jsx_runtime106.jsx)(InputLayout3.Slot, { padding: "minimal", children: /* @__PURE__ */ (0, import_jsx_runtime106.jsx)(
+      prefix: /* @__PURE__ */ (0, import_jsx_runtime106.jsx)(InputLayout2.Slot, { padding: "minimal", children: /* @__PURE__ */ (0, import_jsx_runtime106.jsx)(
         ColorPickerDropdown,
         {
           color: value,
@@ -25868,7 +26096,7 @@ function Password({
         markWhenOptional,
         validity,
         type: isVisible ? "text" : "password",
-        suffix: /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(InputLayout3.Slot, { padding: "minimal", children: /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(
+        suffix: /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(InputLayout2.Slot, { padding: "minimal", children: /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(
           import_components22.Button,
           {
             icon: isVisible ? unseen_default : seen_default,
@@ -25907,10 +26135,10 @@ var FORM_CONTROLS = {
   password: Password,
   radio: Radio,
   select: Select2,
-  text: Text3,
+  text: Text2,
   time: Time,
   toggle: Toggle,
-  textarea: Textarea3,
+  textarea: Textarea2,
   toggleGroup: ToggleGroup
 };
 function isEditConfig(value) {
@@ -26033,8 +26261,8 @@ function render({
 }
 
 // packages/dataviews/build-module/field-types/utils/sort-text.mjs
-var sort_text_default = (a2, b2, direction) => {
-  return direction === "asc" ? a2.localeCompare(b2) : b2.localeCompare(a2);
+var sort_text_default = (a, b, direction) => {
+  return direction === "asc" ? a.localeCompare(b) : b.localeCompare(a);
 };
 
 // packages/dataviews/build-module/field-types/utils/is-valid-required.mjs
@@ -26148,8 +26376,8 @@ var email_default = {
 var import_i18n21 = __toESM(require_i18n(), 1);
 
 // packages/dataviews/build-module/field-types/utils/sort-number.mjs
-var sort_number_default = (a2, b2, direction) => {
-  return direction === "asc" ? a2 - b2 : b2 - a2;
+var sort_number_default = (a, b, direction) => {
+  return direction === "asc" ? a - b : b - a;
 };
 
 // packages/dataviews/build-module/field-types/utils/is-valid-min.mjs
@@ -26433,9 +26661,9 @@ function getValueFormatted4({
   }
   return (0, import_date9.dateI18n)(formatDatetime.datetime, (0, import_date9.getDate)(value));
 }
-var sort = (a2, b2, direction) => {
-  const timeA = new Date(a2).getTime();
-  const timeB = new Date(b2).getTime();
+var sort = (a, b, direction) => {
+  const timeA = new Date(a).getTime();
+  const timeB = new Date(b).getTime();
   return direction === "asc" ? timeA - timeB : timeB - timeA;
 };
 var datetime_default = {
@@ -26497,9 +26725,9 @@ function getValueFormatted5({
   }
   return (0, import_date10.dateI18n)(formatDate2.date, (0, import_date10.getDate)(value));
 }
-var sort2 = (a2, b2, direction) => {
-  const timeA = new Date(a2).getTime();
-  const timeB = new Date(b2).getTime();
+var sort2 = (a, b, direction) => {
+  const timeA = new Date(a).getTime();
+  const timeB = new Date(b).getTime();
   return direction === "asc" ? timeA - timeB : timeB - timeA;
 };
 var date_default = {
@@ -26570,9 +26798,9 @@ function getValueFormatted6({
   }
   return (0, import_date11.dateI18n)(formatTime.time, toAnchoredDate(secondsSinceMidnight));
 }
-var sort3 = (a2, b2, direction) => {
-  const timeA = parseTime2(a2);
-  const timeB = parseTime2(b2);
+var sort3 = (a, b, direction) => {
+  const timeA = parseTime2(a);
+  const timeB = parseTime2(b);
   if (timeA === null || timeB === null) {
     if (timeA === timeB) {
       return 0;
@@ -26646,9 +26874,9 @@ function isValidCustom4(item, field) {
   }
   return null;
 }
-var sort4 = (a2, b2, direction) => {
-  const boolA = Boolean(a2);
-  const boolB = Boolean(b2);
+var sort4 = (a, b, direction) => {
+  const boolA = Boolean(a);
+  const boolB = Boolean(b);
   if (boolA === boolB) {
     return 0;
   }
@@ -26729,9 +26957,9 @@ function isValidCustom5(item, field) {
   }
   return null;
 }
-var sort5 = (a2, b2, direction) => {
-  const arrA = Array.isArray(a2) ? a2 : [];
-  const arrB = Array.isArray(b2) ? b2 : [];
+var sort5 = (a, b, direction) => {
+  const arrA = Array.isArray(a) ? a : [];
+  const arrB = Array.isArray(b) ? b : [];
   if (arrA.length !== arrB.length) {
     return direction === "asc" ? arrA.length - arrB.length : arrB.length - arrA.length;
   }
@@ -26829,7 +27057,7 @@ function render3({ item, field }) {
     return /* @__PURE__ */ (0, import_jsx_runtime110.jsx)(RenderFromElements, { item, field });
   }
   const value = get_value_formatted_default_default({ item, field });
-  if (!value || !w(value).isValid()) {
+  if (!value || !A(value).isValid()) {
     return value;
   }
   return /* @__PURE__ */ (0, import_jsx_runtime110.jsxs)("div", { style: { display: "flex", alignItems: "center", gap: "8px" }, children: [
@@ -26851,14 +27079,14 @@ function render3({ item, field }) {
 }
 function isValidCustom6(item, field) {
   const value = field.getValue({ item });
-  if (![void 0, "", null].includes(value) && !w(value).isValid()) {
+  if (![void 0, "", null].includes(value) && !A(value).isValid()) {
     return (0, import_i18n25.__)("Value must be a valid color.");
   }
   return null;
 }
-var sort6 = (a2, b2, direction) => {
-  const colorA = w(a2);
-  const colorB = w(b2);
+var sort6 = (a, b, direction) => {
+  const colorA = A(a);
+  const colorB = A(b);
   if (!colorA.isValid() && !colorB.isValid()) {
     return 0;
   }
@@ -26933,11 +27161,11 @@ var url_default = {
 };
 
 // packages/dataviews/build-module/field-types/no-type.mjs
-var sort7 = (a2, b2, direction) => {
-  if (typeof a2 === "number" && typeof b2 === "number") {
-    return sort_number_default(a2, b2, direction);
+var sort7 = (a, b, direction) => {
+  if (typeof a === "number" && typeof b === "number") {
+    return sort_number_default(a, b, direction);
   }
-  return sort_text_default(a2, b2, direction);
+  return sort_text_default(a, b, direction);
 };
 var no_type_default = {
   // type: no type for this one
@@ -27073,9 +27301,9 @@ function normalizeFields(fields) {
   return fields.map((field) => {
     const fieldType = getFieldTypeByName(field.type);
     const getValue = field.getValue || get_value_from_id_default(field.id);
-    const sort8 = function(a2, b2, direction) {
-      const aValue = getValue({ item: a2 });
-      const bValue = getValue({ item: b2 });
+    const sort8 = function(a, b, direction) {
+      const aValue = getValue({ item: a });
+      const bValue = getValue({ item: b });
       return field.sort ? field.sort(aValue, bValue, direction) : fieldType.sort(aValue, bValue, direction);
     };
     return {
@@ -27639,8 +27867,8 @@ function setValidityAtPath(formValidity, fieldValidity, path) {
   }
   const result = { ...formValidity };
   let current = result;
-  for (let i2 = 0; i2 < path.length - 1; i2++) {
-    const segment = path[i2];
+  for (let i = 0; i < path.length - 1; i++) {
+    const segment = path[i];
     if (!current[segment]) {
       current[segment] = {};
     }
@@ -27660,8 +27888,8 @@ function removeValidationProperty(formValidity, path, property) {
   }
   const result = { ...formValidity };
   let current = result;
-  for (let i2 = 0; i2 < path.length - 1; i2++) {
-    const segment = path[i2];
+  for (let i = 0; i < path.length - 1; i++) {
+    const segment = path[i];
     if (!current[segment]) {
       return formValidity;
     }
@@ -28185,17 +28413,17 @@ function ModalContent({
     }),
     [field]
   );
-  const fieldsAsFieldType = fields.map((f2) => ({
-    ...f2,
-    Edit: f2.Edit === null ? void 0 : f2.Edit,
+  const fieldsAsFieldType = fields.map((f) => ({
+    ...f,
+    Edit: f.Edit === null ? void 0 : f.Edit,
     isValid: {
-      required: f2.isValid.required?.constraint,
-      elements: f2.isValid.elements?.constraint,
-      min: f2.isValid.min?.constraint,
-      max: f2.isValid.max?.constraint,
-      pattern: f2.isValid.pattern?.constraint,
-      minLength: f2.isValid.minLength?.constraint,
-      maxLength: f2.isValid.maxLength?.constraint
+      required: f.isValid.required?.constraint,
+      elements: f.isValid.elements?.constraint,
+      min: f.isValid.min?.constraint,
+      max: f.isValid.max?.constraint,
+      pattern: f.isValid.pattern?.constraint,
+      minLength: f.isValid.minLength?.constraint,
+      maxLength: f.isValid.maxLength?.constraint
     }
   }));
   const { validity } = use_form_validity_default(modalData, fieldsAsFieldType, form);
@@ -28289,6 +28517,7 @@ function PanelModal({
   if (!fieldDefinition) {
     return null;
   }
+  const isDisabled = fieldDefinition.readOnly === true || fieldDefinition.isDisabled({ item: data, field: fieldDefinition });
   const handleClose = () => {
     setIsOpen(false);
     setTouched(true);
@@ -28303,7 +28532,7 @@ function PanelModal({
         summaryFields,
         validity,
         touched,
-        disabled: fieldDefinition.readOnly === true,
+        disabled: isDisabled,
         onClick: () => setIsOpen(true),
         isOpen
       }
@@ -28410,6 +28639,7 @@ function PanelDropdown({
   if (!fieldDefinition) {
     return null;
   }
+  const isDisabled = fieldDefinition.readOnly === true || fieldDefinition.isDisabled({ item: data, field: fieldDefinition });
   return /* @__PURE__ */ (0, import_jsx_runtime116.jsx)(
     "div",
     {
@@ -28435,7 +28665,7 @@ function PanelDropdown({
               summaryFields,
               validity,
               touched,
-              disabled: fieldDefinition.readOnly === true,
+              disabled: isDisabled,
               isOpen,
               onClick: onToggle
             }
@@ -28694,11 +28924,11 @@ function FormCardField({
   (0, import_element98.useEffect)(() => {
     setIsOpen(isOpened);
   }, [isOpened]);
-  const handleOpenChange = (0, import_element98.useCallback)((open) => {
-    if (!open) {
+  const handleOpenChange = (0, import_element98.useCallback)((open3) => {
+    if (!open3) {
       setTouched(true);
     }
-    setIsOpen(open);
+    setIsOpen(open3);
   }, []);
   const revealValidity = useRevealValidity(
     contentRef,
@@ -29077,7 +29307,7 @@ function DataFormLayout({
   const { fields: fieldDefinitions } = (0, import_element100.useContext)(dataform_context_default);
   const markWhenOptional = (0, import_element100.useMemo)(() => {
     const requiredCount = fieldDefinitions.filter(
-      (f2) => !!f2.isValid?.required
+      (f) => !!f.isValid?.required
     ).length;
     const optionalCount = fieldDefinitions.length - requiredCount;
     return requiredCount > optionalCount;
@@ -29089,7 +29319,9 @@ function DataFormLayout({
   }
   const Wrapper = as ?? getFormFieldLayout(form.layout.type)?.wrapper ?? DEFAULT_WRAPPER;
   return /* @__PURE__ */ (0, import_jsx_runtime123.jsx)(Wrapper, { layout: form.layout, children: form.fields.map((formField) => {
-    const FieldLayout = getFormFieldLayout(formField.layout.type)?.component;
+    const FieldLayout = getFormFieldLayout(
+      formField.layout.type
+    )?.component;
     if (!FieldLayout) {
       return null;
     }
@@ -29173,7 +29405,8 @@ async function fetchExperiments() {
     label: schema.title ?? id,
     description: schema.description ?? "",
     group: schema.group ?? "other",
-    groupLabel: schema.group_label ?? ""
+    groupLabel: schema.group_label ?? "",
+    defaultValue: schema.default ?? false
   }));
 }
 
@@ -29200,7 +29433,7 @@ function ExperimentsPage() {
   const settings = (0, import_element102.useMemo)(() => {
     const combined = {};
     for (const exp of experiments ?? []) {
-      combined[exp.id] = false;
+      combined[exp.id] = exp.defaultValue;
     }
     for (const [key, value] of Object.entries(gutenbergExperiments)) {
       combined[key] = Boolean(value);

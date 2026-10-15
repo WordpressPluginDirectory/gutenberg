@@ -101,16 +101,16 @@ var wp;
     }
   });
 
-  // node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js
+  // node_modules/.store/use-sync-external-store@1.6.0-I0W9gfWaba5M6uWU9Ouj4A/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js
   var require_use_sync_external_store_shim_development = __commonJS({
-    "node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js"(exports) {
+    "node_modules/.store/use-sync-external-store@1.6.0-I0W9gfWaba5M6uWU9Ouj4A/node_modules/use-sync-external-store/cjs/use-sync-external-store-shim.development.js"(exports) {
       "use strict";
       (function() {
         function is(x, y) {
           return x === y && (0 !== x || 1 / x === 1 / y) || x !== x && y !== y;
         }
         function useSyncExternalStore$2(subscribe2, getSnapshot2) {
-          didWarnOld18Alpha || void 0 === React50.startTransition || (didWarnOld18Alpha = true, console.error(
+          didWarnOld18Alpha || void 0 === React51.startTransition || (didWarnOld18Alpha = true, console.error(
             "You are using an outdated, pre-release alpha of React 18 that does not support useSyncExternalStore. The use-sync-external-store shim will not work correctly. Upgrade to a newer pre-release."
           ));
           var value = getSnapshot2();
@@ -132,7 +132,7 @@ var wp;
             },
             [subscribe2, value, getSnapshot2]
           );
-          useEffect15(
+          useEffect14(
             function() {
               checkIfSnapshotChanged(inst) && forceUpdate({ inst });
               return subscribe2(function() {
@@ -158,16 +158,16 @@ var wp;
           return getSnapshot2();
         }
         "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-        var React50 = require_react(), objectIs = "function" === typeof Object.is ? Object.is : is, useState21 = React50.useState, useEffect15 = React50.useEffect, useLayoutEffect3 = React50.useLayoutEffect, useDebugValue = React50.useDebugValue, didWarnOld18Alpha = false, didWarnUncachedGetSnapshot = false, shim = "undefined" === typeof window || "undefined" === typeof window.document || "undefined" === typeof window.document.createElement ? useSyncExternalStore$1 : useSyncExternalStore$2;
-        exports.useSyncExternalStore = void 0 !== React50.useSyncExternalStore ? React50.useSyncExternalStore : shim;
+        var React51 = require_react(), objectIs = "function" === typeof Object.is ? Object.is : is, useState21 = React51.useState, useEffect14 = React51.useEffect, useLayoutEffect3 = React51.useLayoutEffect, useDebugValue = React51.useDebugValue, didWarnOld18Alpha = false, didWarnUncachedGetSnapshot = false, shim = "undefined" === typeof window || "undefined" === typeof window.document || "undefined" === typeof window.document.createElement ? useSyncExternalStore$1 : useSyncExternalStore$2;
+        exports.useSyncExternalStore = void 0 !== React51.useSyncExternalStore ? React51.useSyncExternalStore : shim;
         "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(Error());
       })();
     }
   });
 
-  // node_modules/use-sync-external-store/shim/index.js
+  // node_modules/.store/use-sync-external-store@1.6.0-I0W9gfWaba5M6uWU9Ouj4A/node_modules/use-sync-external-store/shim/index.js
   var require_shim = __commonJS({
-    "node_modules/use-sync-external-store/shim/index.js"(exports, module) {
+    "node_modules/.store/use-sync-external-store@1.6.0-I0W9gfWaba5M6uWU9Ouj4A/node_modules/use-sync-external-store/shim/index.js"(exports, module) {
       "use strict";
       if (false) {
         module.exports = null;
@@ -242,93 +242,105 @@ var wp;
   // packages/icons/build-module/library/button.mjs
   var import_primitives = __toESM(require_primitives(), 1);
   var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
-  var button_default = /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_primitives.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_primitives.Path, { d: "M8 12.5h8V11H8v1.5Z M19 6.5H5a2 2 0 0 0-2 2V15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a2 2 0 0 0-2-2ZM5 8h14a.5.5 0 0 1 .5.5V15a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V8.5A.5.5 0 0 1 5 8Z" }) });
+  var button_default = /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_primitives.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_primitives.Path, { d: "M8 11.75H16M5 16.25H19C19.6904 16.25 20.25 15.6904 20.25 15V8.5C20.25 7.80964 19.6904 7.25 19 7.25H5C4.30964 7.25 3.75 7.80964 3.75 8.5V15C3.75 15.6904 4.30964 16.25 5 16.25Z" }) });
 
   // packages/icons/build-module/library/chevron-right.mjs
   var import_primitives2 = __toESM(require_primitives(), 1);
   var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
-  var chevron_right_default = /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_primitives2.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_primitives2.Path, { d: "M10 6.5L15 12L10 17.5", vectorEffect: "non-scaling-stroke" }) });
+  var chevron_right_default = /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_primitives2.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_primitives2.Path, { d: "M10 6.5L15 12L10 17.5" }) });
 
   // packages/icons/build-module/library/code.mjs
   var import_primitives3 = __toESM(require_primitives(), 1);
   var import_jsx_runtime3 = __toESM(require_jsx_runtime(), 1);
-  var code_default = /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_primitives3.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_primitives3.Path, { d: "M7.99997 7L3.70708 11.2929C3.31655 11.6834 3.31655 12.3166 3.70708 12.7071L7.99997 17M16 17L20.2929 12.7071C20.6834 12.3166 20.6834 11.6834 20.2929 11.2929L16 7", strokeLinejoin: "round", vectorEffect: "non-scaling-stroke" }) });
+  var code_default = /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_primitives3.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_primitives3.Path, { d: "M7.99997 7L3.70708 11.2929C3.31655 11.6834 3.31655 12.3166 3.70708 12.7071L7.99997 17M16 17L20.2929 12.7071C20.6834 12.3166 20.6834 11.6834 20.2929 11.2929L16 7", strokeLinejoin: "round" }) });
 
   // packages/icons/build-module/library/color.mjs
   var import_primitives4 = __toESM(require_primitives(), 1);
   var import_jsx_runtime4 = __toESM(require_jsx_runtime(), 1);
-  var color_default = /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(import_primitives4.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(import_primitives4.Path, { d: "M17.2 10.9c-.5-1-1.2-2.1-2.1-3.2-.6-.9-1.3-1.7-2.1-2.6L12 4l-1 1.1c-.6.9-1.3 1.7-2 2.6-.8 1.2-1.5 2.3-2 3.2-.6 1.2-1 2.2-1 3 0 3.4 2.7 6.1 6.1 6.1s6.1-2.7 6.1-6.1c0-.8-.3-1.8-1-3zm-5.1 7.6c-2.5 0-4.6-2.1-4.6-4.6 0-.3.1-1 .8-2.3.5-.9 1.1-1.9 2-3.1.7-.9 1.3-1.7 1.8-2.3.7.8 1.3 1.6 1.8 2.3.8 1.1 1.5 2.2 2 3.1.7 1.3.8 2 .8 2.3 0 2.5-2.1 4.6-4.6 4.6z" }) });
+  var color_default = /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(import_primitives4.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(import_primitives4.Path, { d: "M17.25 14C17.25 16.8995 14.8995 19.25 12 19.25C9.10051 19.25 6.75 16.8995 6.75 14C6.75 11.1005 10 7.37 12 5.12C14 7.37 17.25 11.1005 17.25 14Z" }) });
 
   // packages/icons/build-module/library/error.mjs
   var import_primitives5 = __toESM(require_primitives(), 1);
   var import_jsx_runtime5 = __toESM(require_jsx_runtime(), 1);
-  var error_default = /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(import_primitives5.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(import_primitives5.Path, { fillRule: "evenodd", clipRule: "evenodd", d: "M12.218 5.377a.25.25 0 0 0-.436 0l-7.29 12.96a.25.25 0 0 0 .218.373h14.58a.25.25 0 0 0 .218-.372l-7.29-12.96Zm-1.743-.735c.669-1.19 2.381-1.19 3.05 0l7.29 12.96a1.75 1.75 0 0 1-1.525 2.608H4.71a1.75 1.75 0 0 1-1.525-2.608l7.29-12.96ZM12.75 17.46h-1.5v-1.5h1.5v1.5Zm-1.5-3h1.5v-5h-1.5v5Z" }) });
+  var error_default = /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(import_primitives5.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(import_primitives5.Path, { d: "M12 9L12 14M12 15.5V17M11.1284 5.04947L3.83827 18.0097C3.46331 18.6763 3.94502 19.5 4.70985 19.5H19.2902C20.055 19.5 20.5367 18.6763 20.1617 18.0097L12.8716 5.04947C12.4893 4.36982 11.5107 4.36982 11.1284 5.04947Z" }) });
 
   // packages/icons/build-module/library/format-bold.mjs
   var import_primitives6 = __toESM(require_primitives(), 1);
   var import_jsx_runtime6 = __toESM(require_jsx_runtime(), 1);
-  var format_bold_default = /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_primitives6.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_primitives6.Path, { d: "M14.7 11.3c1-.6 1.5-1.6 1.5-3 0-2.3-1.3-3.4-4-3.4H7v14h5.8c1.4 0 2.5-.3 3.3-1 .8-.7 1.2-1.7 1.2-2.9.1-1.9-.8-3.1-2.6-3.7zm-5.1-4h2.3c.6 0 1.1.1 1.4.4.3.3.5.7.5 1.2s-.2 1-.5 1.2c-.3.3-.8.4-1.4.4H9.6V7.3zm4.6 9c-.4.3-1 .4-1.7.4H9.6v-3.9h2.9c.7 0 1.3.2 1.7.5.4.3.6.8.6 1.5s-.2 1.2-.6 1.5z" }) });
+  var format_bold_default = /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(import_primitives6.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_primitives6.Path, { d: "M7.75 11.5V18H13.25C15.0449 18 16.5 16.5449 16.5 14.75C16.5 12.9551 15.0449 11.5 13.25 11.5H13M7.75 11.5V6H12.7441C14.2661 6 15.5 7.23387 15.5 8.75592C15.5 10.1718 14.4088 11.3591 13 11.5M7.75 11.5H13" }),
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_primitives6.Path, { d: "M8.25 11.75V17.5H12.8642C14.5503 17.5 15.8744 16.0557 15.7283 14.3759C15.5992 12.8903 14.3554 11.75 12.8642 11.75H8.25ZM8.25 11.75V11.25M8.25 11.25V6.5H12.625C13.9367 6.5 15 7.56332 15 8.875C15 10.1867 13.9367 11.25 12.625 11.25H8.25Z" })
+  ] });
 
   // packages/icons/build-module/library/format-italic.mjs
   var import_primitives7 = __toESM(require_primitives(), 1);
   var import_jsx_runtime7 = __toESM(require_jsx_runtime(), 1);
-  var format_italic_default = /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(import_primitives7.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(import_primitives7.Path, { d: "M12.5 5L10 19h1.9l2.5-14z" }) });
+  var format_italic_default = /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(import_primitives7.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(import_primitives7.Path, { d: "M11 19L13.5 5" }) });
 
   // packages/icons/build-module/library/format-strikethrough.mjs
   var import_primitives8 = __toESM(require_primitives(), 1);
   var import_jsx_runtime8 = __toESM(require_jsx_runtime(), 1);
-  var format_strikethrough_default = /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(import_primitives8.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(import_primitives8.Path, { d: "M9.1 9v-.5c0-.6.2-1.1.7-1.4.5-.3 1.2-.5 2-.5.7 0 1.4.1 2.1.3.7.2 1.4.5 2.1.9l.2-1.9c-.6-.3-1.2-.5-1.9-.7-.8-.1-1.6-.2-2.4-.2-1.5 0-2.7.3-3.6 1-.8.7-1.2 1.5-1.2 2.6V9h2zM20 12H4v1h8.3c.3.1.6.2.8.3.5.2.9.5 1.1.8.3.3.4.7.4 1.2 0 .7-.2 1.1-.8 1.5-.5.3-1.2.5-2.1.5-.8 0-1.6-.1-2.4-.3-.8-.2-1.5-.5-2.2-.8L7 18.1c.5.2 1.2.4 2 .6.8.2 1.6.3 2.4.3 1.7 0 3-.3 3.9-1 .9-.7 1.3-1.6 1.3-2.8 0-.9-.2-1.7-.7-2.2H20v-1z" }) });
+  var format_strikethrough_default = /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(import_primitives8.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime8.jsx)(import_primitives8.Path, { d: "M9 16.1554C12 18.02 15 16.5283 15 14.2908C15 13.6314 14.6839 12.999 14.1213 12.5328C14.108 12.5217 14.0945 12.5108 14.081 12.5M9 9.31845C9 7.49773 11.4313 6.3247 13.9199 7.4278M5.5 12.5H14.081M18.5 12.5H14.081", strokeLinecap: "square" }) });
 
   // packages/icons/build-module/library/help.mjs
   var import_primitives9 = __toESM(require_primitives(), 1);
   var import_jsx_runtime9 = __toESM(require_jsx_runtime(), 1);
   var help_default = /* @__PURE__ */ (0, import_jsx_runtime9.jsxs)(import_primitives9.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(import_primitives9.Path, { d: "M9.75 10.25C9.75 9.00736 10.7574 8 12 8C13.2426 8 14.25 9.00736 14.25 10.25C14.25 11.4083 13.3748 12.3621 12.2496 12.4863C12.1124 12.5015 12 12.6119 12 12.75V14M12 15V16.5", vectorEffect: "non-scaling-stroke" }),
-    /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(import_primitives9.Path, { d: "M19.25 12C19.25 16.0041 16.0041 19.25 12 19.25C7.99594 19.25 4.75 16.0041 4.75 12C4.75 7.99594 7.99594 4.75 12 4.75C16.0041 4.75 19.25 7.99594 19.25 12Z", strokeLinejoin: "round", vectorEffect: "non-scaling-stroke" })
+    /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(import_primitives9.Path, { d: "M9.75 10.25C9.75 9.00736 10.7574 8 12 8C13.2426 8 14.25 9.00736 14.25 10.25C14.25 11.4083 13.3748 12.3621 12.2496 12.4863C12.1124 12.5015 12 12.6119 12 12.75V14M12 15V16.5" }),
+    /* @__PURE__ */ (0, import_jsx_runtime9.jsx)(import_primitives9.Path, { d: "M19.25 12C19.25 16.0041 16.0041 19.25 12 19.25C7.99594 19.25 4.75 16.0041 4.75 12C4.75 7.99594 7.99594 4.75 12 4.75C16.0041 4.75 19.25 7.99594 19.25 12Z", strokeLinejoin: "round" })
   ] });
 
   // packages/icons/build-module/library/inline-image.mjs
   var import_primitives10 = __toESM(require_primitives(), 1);
   var import_jsx_runtime10 = __toESM(require_jsx_runtime(), 1);
-  var inline_image_default = /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_primitives10.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_primitives10.Path, { d: "M4 18.5h16V17H4v1.5zM16 13v1.5h4V13h-4zM5.1 15h7.8c.6 0 1.1-.5 1.1-1.1V6.1c0-.6-.5-1.1-1.1-1.1H5.1C4.5 5 4 5.5 4 6.1v7.8c0 .6.5 1.1 1.1 1.1zm.4-8.5h7V10l-1-1c-.3-.3-.8-.3-1 0l-1.6 1.5-1.2-.7c-.3-.2-.6-.2-.9 0l-1.3 1V6.5zm0 6.1l1.8-1.3 1.3.8c.3.2.7.2.9-.1l1.5-1.4 1.5 1.4v1.5h-7v-.9z" }) });
+  var inline_image_default = /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_primitives10.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime10.jsx)(import_primitives10.Path, { d: "M13.25 11.3197L11.4155 9.48453C11.3765 9.44547 11.3132 9.44546 11.2741 9.48452L9.05837 11.7003C9.02448 11.7341 8.97132 11.7392 8.93163 11.7124L7.0648 10.4495C7.03003 10.426 6.98426 10.4267 6.95022 10.4513L4.75 12.0405M13.25 11.3197V7C13.25 6.30964 12.6904 5.75 12 5.75H6C5.30964 5.75 4.75 6.30965 4.75 7V12.0405M13.25 11.3197V13C13.25 13.6904 12.6904 14.25 12 14.25H6C5.30964 14.25 4.75 13.6904 4.75 13V12.0405M16 14H20M4 18H20" }) });
 
   // packages/icons/build-module/library/language.mjs
   var import_primitives11 = __toESM(require_primitives(), 1);
   var import_jsx_runtime11 = __toESM(require_jsx_runtime(), 1);
-  var language_default = /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(import_primitives11.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(import_primitives11.Path, { d: "M17.5 10h-1.7l-3.7 10.5h1.7l.9-2.6h3.9l.9 2.6h1.7L17.5 10zm-2.2 6.3 1.4-4 1.4 4h-2.8zm-4.8-3.8c1.6-1.8 2.9-3.6 3.7-5.7H16V5.2h-5.8V3H8.8v2.2H3v1.5h9.6c-.7 1.6-1.8 3.1-3.1 4.6C8.6 10.2 7.8 9 7.2 8H5.6c.6 1.4 1.7 2.9 2.9 4.4l-2.4 2.4c-.3.4-.7.8-1.1 1.2l1 1 1.2-1.2c.8-.8 1.6-1.5 2.3-2.3.8.9 1.7 1.7 2.5 2.5l.6-1.5c-.7-.6-1.4-1.3-2.1-2z" }) });
+  var language_default = /* @__PURE__ */ (0, import_jsx_runtime11.jsxs)(import_primitives11.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(import_primitives11.Path, { d: "M3 6H9.5M16 6H13.5M9.5 6V3M9.5 6H13.5M13.5 6C13.0477 7.24386 11.7361 9.79194 9.44037 12.5512M5.5 16.5C7.04336 15.2139 8.35238 13.8588 9.44037 12.5512M6.5 8C6.9232 8.9522 7.93743 10.7507 9.44037 12.5512M12.5 15.5C11.3314 14.6235 10.305 13.587 9.44037 12.5512" }),
+    /* @__PURE__ */ (0, import_jsx_runtime11.jsx)(import_primitives11.Path, { d: "M13.75 20V19.75L14.6667 17M14.6667 17L16.75 10.75H17.25L19.3333 17L20.25 19.75V20M19.3333 17H14.6667" })
+  ] });
 
   // packages/icons/build-module/library/link.mjs
   var import_primitives12 = __toESM(require_primitives(), 1);
   var import_jsx_runtime12 = __toESM(require_jsx_runtime(), 1);
-  var link_default = /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(import_primitives12.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(import_primitives12.Path, { d: "M9.5 12L14.5 12M10 7.75H8.25C5.90279 7.75 4 9.65279 4 12C4 14.3472 5.90279 16.25 8.25 16.25H10M14 16.25H15.75C18.0972 16.25 20 14.3472 20 12C20 9.65279 18.0972 7.75 15.75 7.75L14 7.75", vectorEffect: "non-scaling-stroke" }) });
+  var link_default = /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(import_primitives12.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime12.jsx)(import_primitives12.Path, { d: "M9.5 12L14.5 12M10 7.75H8.25C5.90279 7.75 4 9.65279 4 12C4 14.3472 5.90279 16.25 8.25 16.25H10M14 16.25H15.75C18.0972 16.25 20 14.3472 20 12C20 9.65279 18.0972 7.75 15.75 7.75L14 7.75" }) });
 
   // packages/icons/build-module/library/math.mjs
   var import_primitives13 = __toESM(require_primitives(), 1);
   var import_jsx_runtime13 = __toESM(require_jsx_runtime(), 1);
-  var math_default = /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(import_primitives13.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(import_primitives13.Path, { d: "M11.2 6.8c-.7 0-1.4.5-1.6 1.1l-2.8 7.5-1.2-1.8c-.1-.2-.4-.3-.6-.3H3v1.5h1.6l1.2 1.8c.6.9 1.9.7 2.2-.3l2.9-7.9s.1-.2.2-.2h7.8V6.7h-7.8Zm5.3 3.4-1.9 1.9-1.9-1.9-1.1 1.1 1.9 1.9-1.9 1.9 1.1 1.1 1.9-1.9 1.9 1.9 1.1-1.1-1.9-1.9 1.9-1.9-1.1-1.1Z" }) });
+  var math_default = /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(import_primitives13.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime13.jsx)(import_primitives13.Path, { d: "M3 14H5L6.8916 16.3645C6.93974 16.4247 7.03496 16.4101 7.06289 16.3383L10.2521 8.13755C10.4015 7.75318 10.7717 7.5 11.1841 7.5H19M17 11L14.5 13.5M12 16L14.5 13.5M14.5 13.5L17 16M14.5 13.5L12 11" }) });
 
   // packages/icons/build-module/library/published.mjs
   var import_primitives14 = __toESM(require_primitives(), 1);
   var import_jsx_runtime14 = __toESM(require_jsx_runtime(), 1);
   var published_default = /* @__PURE__ */ (0, import_jsx_runtime14.jsxs)(import_primitives14.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: [
-    /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(import_primitives14.Path, { d: "M12 19.25C16.0041 19.25 19.25 16.0041 19.25 12C19.25 7.99594 16.0041 4.75 12 4.75C7.99594 4.75 4.75 7.99594 4.75 12C4.75 16.0041 7.99594 19.25 12 19.25Z", strokeLinejoin: "round", vectorEffect: "non-scaling-stroke" }),
-    /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(import_primitives14.Path, { d: "M9 12L11 14L15 10", vectorEffect: "non-scaling-stroke" })
+    /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(import_primitives14.Path, { d: "M12 19.25C16.0041 19.25 19.25 16.0041 19.25 12C19.25 7.99594 16.0041 4.75 12 4.75C7.99594 4.75 4.75 7.99594 4.75 12C4.75 16.0041 7.99594 19.25 12 19.25Z", strokeLinejoin: "round" }),
+    /* @__PURE__ */ (0, import_jsx_runtime14.jsx)(import_primitives14.Path, { d: "M9 12L11 14L15 10" })
   ] });
 
   // packages/icons/build-module/library/subscript.mjs
   var import_primitives15 = __toESM(require_primitives(), 1);
   var import_jsx_runtime15 = __toESM(require_jsx_runtime(), 1);
-  var subscript_default = /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(import_primitives15.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(import_primitives15.Path, { d: "M16.9 18.3l.8-1.2c.4-.6.7-1.2.9-1.6.2-.4.3-.8.3-1.2 0-.3-.1-.7-.2-1-.1-.3-.4-.5-.6-.7-.3-.2-.6-.3-1-.3s-.8.1-1.1.2c-.3.1-.7.3-1 .6l.2 1.3c.3-.3.5-.5.8-.6s.6-.2.9-.2c.3 0 .5.1.7.2.2.2.2.4.2.7 0 .3-.1.5-.2.8-.1.3-.4.7-.8 1.3L15 19.4h4.3v-1.2h-2.4zM14.1 7.2h-2L9.5 11 6.9 7.2h-2l3.6 5.3L4.7 18h2l2.7-4 2.7 4h2l-3.8-5.5 3.8-5.3z" }) });
+  var subscript_default = /* @__PURE__ */ (0, import_jsx_runtime15.jsxs)(import_primitives15.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(import_primitives15.Path, { d: "M17.75 18.5988H15.75C15.75 16.5322 17.75 17.0489 17.75 15.4989C17.75 14.7239 16.75 14.0738 15.75 14.8488", strokeLinecap: "square" }),
+    /* @__PURE__ */ (0, import_jsx_runtime15.jsx)(import_primitives15.Path, { d: "M10 12L13 7.4V7M10 12L7 7.4L7.00004 7M10 12L7 16.6V17M10 12L13 16.6V17" })
+  ] });
 
   // packages/icons/build-module/library/superscript.mjs
   var import_primitives16 = __toESM(require_primitives(), 1);
   var import_jsx_runtime16 = __toESM(require_jsx_runtime(), 1);
-  var superscript_default = /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(import_primitives16.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(import_primitives16.Path, { d: "M16.9 10.3l.8-1.3c.4-.6.7-1.2.9-1.6.2-.4.3-.8.3-1.2 0-.3-.1-.7-.2-1-.2-.2-.4-.4-.7-.6-.3-.2-.6-.3-1-.3s-.8.1-1.1.2c-.3.1-.7.3-1 .6l.1 1.3c.3-.3.5-.5.8-.6s.6-.2.9-.2c.3 0 .5.1.7.2.2.2.2.4.2.7 0 .3-.1.5-.2.8-.1.3-.4.7-.8 1.3l-1.8 2.8h4.3v-1.2h-2.2zm-2.8-3.1h-2L9.5 11 6.9 7.2h-2l3.6 5.3L4.7 18h2l2.7-4 2.7 4h2l-3.8-5.5 3.8-5.3z" }) });
+  var superscript_default = /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(import_primitives16.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(import_primitives16.Path, { d: "M17.75 8.59884H15.75C15.75 6.53219 17.75 7.04885 17.75 5.49887C17.75 4.72388 16.75 4.07384 15.75 4.84884", strokeLinecap: "square" }),
+    /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(import_primitives16.Path, { d: "M10 12L13 7.4V7M10 12L7 7.4L7.00004 7M10 12L7 16.6V17M10 12L13 16.6V17" })
+  ] });
 
   // packages/icons/build-module/library/text-color.mjs
   var import_primitives17 = __toESM(require_primitives(), 1);
   var import_jsx_runtime17 = __toESM(require_jsx_runtime(), 1);
-  var text_color_default = /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(import_primitives17.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(import_primitives17.Path, { d: "M12.9 6h-2l-4 11h1.9l1.1-3h4.2l1.1 3h1.9L12.9 6zm-2.5 6.5l1.5-4.9 1.7 4.9h-3.2z" }) });
+  var text_color_default = /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(import_primitives17.SVG, { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", style: { fill: "none" }, stroke: "currentColor", strokeWidth: "1.5", children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(import_primitives17.Path, { d: "M8 17.5V17.223L9.01577 14.1757M9.01577 14.1757L11.3243 7.25H11.8784L14.1869 14.1757L15.2027 17.223V17.5M14.1869 14.1757H9.01577" }) });
 
   // packages/format-library/build-module/bold/index.mjs
   var import_jsx_runtime18 = __toESM(require_jsx_runtime(), 1);
@@ -457,7 +469,7 @@ var wp;
   // packages/format-library/build-module/image/index.mjs
   var import_components = __toESM(require_components(), 1);
 
-  // node_modules/clsx/dist/clsx.mjs
+  // node_modules/.store/clsx@2.1.1-XOLP1vUL9vEGfpiXm37fAw/node_modules/clsx/dist/clsx.mjs
   function r(e) {
     var t, f, n = "";
     if ("string" == typeof e || "number" == typeof e) n += e;
@@ -473,25 +485,36 @@ var wp;
   }
   var clsx_default = clsx;
 
-  // node_modules/@base-ui/utils/useControlled.mjs
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/useControlled.mjs
   var React = __toESM(require_react(), 1);
 
-  // node_modules/@base-ui/utils/error.mjs
-  var set;
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/createLogOnce.mjs
+  var loggedMessages;
   if (true) {
-    set = /* @__PURE__ */ new Set();
+    loggedMessages = /* @__PURE__ */ new Set();
   }
-  function error(...messages) {
-    if (true) {
-      const messageKey = messages.join(" ");
-      if (!set.has(messageKey)) {
-        set.add(messageKey);
-        console.error(`Base UI: ${messageKey}`);
+  function createLogOnce(severity, prefix) {
+    return function logOnce(...messages) {
+      if (true) {
+        const message = messages.join(" ");
+        const output = prefix ? `${prefix}: ${message}` : message;
+        const key = `${severity}:${output}`;
+        if (!loggedMessages.has(key)) {
+          loggedMessages.add(key);
+          if (severity === "warn") {
+            console.warn(output);
+          } else {
+            console.error(output);
+          }
+        }
       }
-    }
+    };
   }
 
-  // node_modules/@base-ui/utils/useControlled.mjs
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/error.mjs
+  var error = createLogOnce("error", "Base UI");
+
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/useControlled.mjs
   function useControlled({
     controlled,
     default: defaultProp,
@@ -502,7 +525,7 @@ var wp;
       current: isControlled
     } = React.useRef(controlled !== void 0);
     const [valueState, setValue] = React.useState(defaultProp);
-    const value = isControlled ? controlled : valueState;
+    const value = isControlled && controlled !== void 0 ? controlled : valueState;
     if (true) {
       React.useEffect(() => {
         if (isControlled !== (controlled !== void 0)) {
@@ -552,13 +575,13 @@ var wp;
     }
   }
 
-  // node_modules/@base-ui/utils/safeReact.mjs
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/safeReact.mjs
   var React2 = __toESM(require_react(), 1);
   var SafeReact = {
     ...React2
   };
 
-  // node_modules/@base-ui/utils/useRefWithInit.mjs
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/useRefWithInit.mjs
   var React3 = __toESM(require_react(), 1);
   var UNINITIALIZED = {};
   function useRefWithInit(init, initArg) {
@@ -569,7 +592,7 @@ var wp;
     return ref;
   }
 
-  // node_modules/@base-ui/utils/useStableCallback.mjs
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/useStableCallback.mjs
   var useInsertionEffect = SafeReact.useInsertionEffect;
   var useSafeInsertionEffect = (
     // React 17 doesn't have useInsertionEffect.
@@ -602,31 +625,25 @@ var wp;
     }
   }
 
-  // node_modules/@base-ui/utils/warn.mjs
-  var set2;
-  if (true) {
-    set2 = /* @__PURE__ */ new Set();
-  }
-  function warn(...messages) {
-    if (true) {
-      const messageKey = messages.join(" ");
-      if (!set2.has(messageKey)) {
-        set2.add(messageKey);
-        console.warn(`Base UI: ${messageKey}`);
-      }
-    }
-  }
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/warn.mjs
+  var warn = createLogOnce("warn", "Base UI");
 
-  // node_modules/@base-ui/react/internals/composite/list/CompositeList.mjs
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/empty.mjs
+  function NOOP() {
+  }
+  var EMPTY_ARRAY = Object.freeze([]);
+  var EMPTY_OBJECT = Object.freeze({});
+
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/composite/list/CompositeList.mjs
   var React6 = __toESM(require_react(), 1);
 
-  // node_modules/@base-ui/utils/useIsoLayoutEffect.mjs
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/useIsoLayoutEffect.mjs
   var React4 = __toESM(require_react(), 1);
   var noop = () => {
   };
   var useIsoLayoutEffect = typeof document !== "undefined" ? React4.useLayoutEffect : noop;
 
-  // node_modules/@base-ui/react/internals/composite/list/CompositeListContext.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/composite/list/CompositeListContext.mjs
   var React5 = __toESM(require_react(), 1);
   var CompositeListContext = /* @__PURE__ */ React5.createContext({
     register: () => {
@@ -644,7 +661,7 @@ var wp;
     return React5.useContext(CompositeListContext);
   }
 
-  // node_modules/@base-ui/react/internals/composite/list/CompositeList.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/composite/list/CompositeList.mjs
   var import_jsx_runtime20 = __toESM(require_jsx_runtime(), 1);
   function CompositeList(props) {
     const {
@@ -659,7 +676,7 @@ var wp;
     const map = useRefWithInit(createMap).current;
     const nextIndexRef = React6.useRef(0);
     const isDirtyRef = React6.useRef(true);
-    const itemsRef = React6.useRef([]);
+    const itemsRef = React6.useRef(null);
     const mutationObserverRef = React6.useRef(null);
     const scheduleMapUpdate = useStableCallback(() => {
       if (isDirtyRef.current) {
@@ -733,14 +750,22 @@ var wp;
     const flush = useStableCallback(() => {
       const [items, automaticNodes] = getCompositeListSnapshot(map);
       const nextMap = syncRefs(items);
+      const previousItems = itemsRef.current;
+      const changed = !previousItems || previousItems.length !== items.length || items.some((item, index2) => {
+        const previousItem = previousItems[index2];
+        return item.index !== previousItem.index || item.element !== previousItem.element || item.registration.index !== previousItem.registration.index || item.registration.metadata !== previousItem.registration.metadata;
+      });
       observe(automaticNodes);
       itemsRef.current = items;
       isDirtyRef.current = false;
+      if (!changed) {
+        return;
+      }
       listeners.forEach((listener) => listener(nextMap));
       onMapChange(nextMap);
     });
     useIsoLayoutEffect(() => {
-      if (!isDirtyRef.current) {
+      if (!isDirtyRef.current && itemsRef.current) {
         syncRefs(itemsRef.current);
       }
       return () => {
@@ -792,16 +817,16 @@ var wp;
       if (!node.isConnected) {
         return;
       }
-      const index = registration.index;
+      const index2 = registration.index;
       const item = {
-        index: index ?? -1,
+        index: index2 ?? -1,
         element: node,
         registration
       };
-      if (index === null) {
+      if (index2 === null) {
         automaticItems.push(item);
-      } else if (index >= 0) {
-        reservedIndices.add(index);
+      } else if (index2 >= 0) {
+        reservedIndices.add(index2);
         items.push(item);
       }
     });
@@ -841,10 +866,10 @@ var wp;
     return a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1;
   }
 
-  // node_modules/@base-ui/react/internals/useRenderElement.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/useRenderElement.mjs
   var React9 = __toESM(require_react(), 1);
 
-  // node_modules/@base-ui/utils/useMergedRefs.mjs
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/useMergedRefs.mjs
   function useMergedRefs(a, b, c, d) {
     const forkRef = useRefWithInit(createForkRef).current;
     if (didChange(forkRef, a, b, c, d)) {
@@ -870,7 +895,7 @@ var wp;
     return forkRef.refs[0] !== a || forkRef.refs[1] !== b || forkRef.refs[2] !== c || forkRef.refs[3] !== d;
   }
   function didChangeN(forkRef, newRefs) {
-    return forkRef.refs.length !== newRefs.length || forkRef.refs.some((ref, index) => ref !== newRefs[index]);
+    return forkRef.refs.length !== newRefs.length || forkRef.refs.some((ref, index2) => ref !== newRefs[index2]);
   }
   function update(forkRef, refs) {
     forkRef.refs = refs;
@@ -933,17 +958,17 @@ var wp;
     };
   }
 
-  // node_modules/@base-ui/utils/getReactElementRef.mjs
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/getReactElementRef.mjs
   var React8 = __toESM(require_react(), 1);
 
-  // node_modules/@base-ui/utils/reactVersion.mjs
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/reactVersion.mjs
   var React7 = __toESM(require_react(), 1);
   var majorVersion = parseInt(React7.version, 10);
   function isReactVersionAtLeast(reactVersionToCheck) {
     return majorVersion >= reactVersionToCheck;
   }
 
-  // node_modules/@base-ui/utils/getReactElementRef.mjs
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/getReactElementRef.mjs
   function getReactElementRef(element) {
     if (!/* @__PURE__ */ React8.isValidElement(element)) {
       return null;
@@ -953,7 +978,7 @@ var wp;
     return (isReactVersionAtLeast(19) ? propsWithRef?.ref : reactElement.ref) ?? null;
   }
 
-  // node_modules/@base-ui/utils/mergeObjects.mjs
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/mergeObjects.mjs
   function mergeObjects(a, b) {
     if (a && !b) {
       return a;
@@ -970,13 +995,7 @@ var wp;
     return void 0;
   }
 
-  // node_modules/@base-ui/utils/empty.mjs
-  function NOOP() {
-  }
-  var EMPTY_ARRAY = Object.freeze([]);
-  var EMPTY_OBJECT = Object.freeze({});
-
-  // node_modules/@base-ui/react/internals/getStateAttributesProps.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/getStateAttributesProps.mjs
   function getStateAttributesProps(state, customMapping) {
     const props = {};
     for (const key in state) {
@@ -997,17 +1016,17 @@ var wp;
     return props;
   }
 
-  // node_modules/@base-ui/react/utils/resolveClassName.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/resolveClassName.mjs
   function resolveClassName(className, state) {
     return typeof className === "function" ? className(state) : className;
   }
 
-  // node_modules/@base-ui/react/utils/resolveStyle.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/resolveStyle.mjs
   function resolveStyle(style, state) {
     return typeof style === "function" ? style(state) : style;
   }
 
-  // node_modules/@base-ui/react/merge-props/mergeProps.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/merge-props/mergeProps.mjs
   var EMPTY_PROPS = {};
   function mergeProps(a, b, c, d, e) {
     if (!c && !d && !e && !a) {
@@ -1162,22 +1181,24 @@ var wp;
     return event != null && typeof event === "object" && "nativeEvent" in event;
   }
 
-  // node_modules/@base-ui/react/internals/useRenderElement.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/useRenderElement.mjs
   var import_react = __toESM(require_react(), 1);
   function useRenderElement(element, componentProps, params = {}) {
-    const renderProp = componentProps.render;
-    const outProps = useRenderElementProps(componentProps, params);
+    let renderProp = componentProps.render;
+    if (params.enabled !== false) {
+      renderProp = unwrapLazyRenderProp(renderProp);
+    }
+    const outProps = useRenderElementProps(componentProps, params, renderProp);
     if (params.enabled === false) {
       return null;
     }
     const state = params.state ?? EMPTY_OBJECT;
     return evaluateRenderProp(element, renderProp, outProps, state);
   }
-  function useRenderElementProps(componentProps, params = {}) {
+  function useRenderElementProps(componentProps, params, renderProp) {
     const {
       className: classNameProp,
-      style: styleProp,
-      render: renderProp
+      style: styleProp
     } = componentProps;
     const {
       state = EMPTY_OBJECT,
@@ -1220,6 +1241,13 @@ var wp;
   var REACT_LAZY_TYPE = /* @__PURE__ */ Symbol.for("react.lazy");
   var COMPONENT_IDENTIFIER_PATTERN = /^[A-Z][A-Za-z0-9$]*$/;
   var LOWERCASE_CHARACTER_PATTERN = /[a-z]/;
+  function unwrapLazyRenderProp(render) {
+    if (render?.$$typeof !== REACT_LAZY_TYPE) {
+      return render;
+    }
+    const unwrapped = React9.Children.toArray(render)[0];
+    return /* @__PURE__ */ React9.isValidElement(unwrapped) ? unwrapped : render;
+  }
   function evaluateRenderProp(element, render, props, state) {
     if (render) {
       if (typeof render === "function") {
@@ -1230,17 +1258,12 @@ var wp;
       }
       const mergedProps = mergeProps(props, render.props);
       mergedProps.ref = props.ref;
-      let newElement = render;
-      if (newElement?.$$typeof === REACT_LAZY_TYPE) {
-        const children = React9.Children.toArray(render);
-        newElement = children[0];
-      }
       if (true) {
-        if (!/* @__PURE__ */ React9.isValidElement(newElement)) {
+        if (!/* @__PURE__ */ React9.isValidElement(render)) {
           throw new Error(["Base UI: The `render` prop was provided an invalid React element as `React.isValidElement(render)` is `false`.", "A valid React element must be provided to the `render` prop because it is cloned with props to replace the default element.", "https://base-ui.com/r/invalid-render-prop"].join("\n"));
         }
       }
-      return /* @__PURE__ */ React9.cloneElement(newElement, mergedProps);
+      return /* @__PURE__ */ React9.cloneElement(render, mergedProps);
     }
     if (element) {
       if (typeof element === "string") {
@@ -1280,7 +1303,7 @@ var wp;
     return /* @__PURE__ */ React9.createElement(Tag, props);
   }
 
-  // node_modules/@base-ui/utils/useId.mjs
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/useId.mjs
   var React10 = __toESM(require_react(), 1);
   var globalId = 0;
   function useGlobalId(idOverride, prefix = "mui") {
@@ -1303,12 +1326,12 @@ var wp;
     return useGlobalId(idOverride, prefix);
   }
 
-  // node_modules/@base-ui/react/internals/useBaseUiId.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/useBaseUiId.mjs
   function useBaseUiId(idOverride) {
     return useId(idOverride, "base-ui");
   }
 
-  // node_modules/@base-ui/react/internals/reason-parts.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/reason-parts.mjs
   var reason_parts_exports = {};
   __export(reason_parts_exports, {
     cancelOpen: () => cancelOpen,
@@ -1383,7 +1406,7 @@ var wp;
   var swipe = "swipe";
   var windowResize = "window-resize";
 
-  // node_modules/@base-ui/react/internals/createBaseUIEventDetails.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/createBaseUIEventDetails.mjs
   function createChangeEventDetails(reason, event, trigger, customProperties) {
     let canceled = false;
     let allowPropagation = false;
@@ -1409,16 +1432,16 @@ var wp;
     return details;
   }
 
-  // node_modules/@base-ui/react/internals/useTransitionStatus.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/useTransitionStatus.mjs
   var React12 = __toESM(require_react(), 1);
 
-  // node_modules/@base-ui/utils/useOnMount.mjs
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/useOnMount.mjs
   var React11 = __toESM(require_react(), 1);
   function useOnMount(fn) {
     React11.useEffect(fn, EMPTY_ARRAY);
   }
 
-  // node_modules/@base-ui/utils/useAnimationFrame.mjs
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/useAnimationFrame.mjs
   var EMPTY = null;
   var LAST_RAF = globalThis.requestAnimationFrame;
   var Scheduler = class {
@@ -1460,11 +1483,14 @@ var wp;
       return id;
     }
     cancel(id) {
-      const index = id - this.startId;
-      if (index < 0 || index >= this.callbacks.length) {
+      const index2 = id - this.startId;
+      if (index2 < 0 || index2 >= this.callbacks.length) {
         return;
       }
-      this.callbacks[index] = null;
+      if (this.callbacks[index2] === null) {
+        return;
+      }
+      this.callbacks[index2] = null;
       this.callbacksCount -= 1;
     }
   };
@@ -1506,10 +1532,10 @@ var wp;
     return timeout;
   }
 
-  // node_modules/@base-ui/react/internals/useTransitionStatus.mjs
-  function useTransitionStatus(open, enableIdleState = false, deferEndingState = false) {
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/useTransitionStatus.mjs
+  function useTransitionStatus(open, enableIdleState = false, deferEndingState = false, animateInitialOpen = false) {
     const [transitionStatus, setTransitionStatus] = React12.useState(open && enableIdleState ? "idle" : void 0);
-    const [mounted, setMounted] = React12.useState(open);
+    const [mounted, setMounted] = React12.useState(open && !animateInitialOpen);
     if (open && !mounted) {
       setMounted(true);
       setTransitionStatus("starting");
@@ -1563,7 +1589,7 @@ var wp;
     };
   }
 
-  // node_modules/@base-ui/react/internals/composite/list/useCompositeListItem.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/composite/list/useCompositeListItem.mjs
   var React13 = __toESM(require_react(), 1);
   function useCompositeListItem(params = {}) {
     const {
@@ -1588,7 +1614,7 @@ var wp;
       }
       return indexRef.current;
     } : -1);
-    const index = externalIndex ?? internalIndex;
+    const index2 = externalIndex ?? internalIndex;
     const componentRef = React13.useRef(null);
     const ref = React13.useCallback((node) => {
       const previousNode = componentRef.current;
@@ -1618,16 +1644,25 @@ var wp;
     }, [externalIndex, subscribeMapChange]);
     return {
       ref,
-      index
+      index: index2
     };
   }
 
-  // node_modules/@base-ui/react/internals/stateAttributesMapping.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/TransitionStatusDataAttributes.mjs
+  var TransitionStatusDataAttributes_exports = {};
+  __export(TransitionStatusDataAttributes_exports, {
+    endingStyle: () => endingStyle,
+    startingStyle: () => startingStyle
+  });
+  var startingStyle = "data-starting-style";
+  var endingStyle = "data-ending-style";
+
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/stateAttributesMapping.mjs
   var STARTING_HOOK = {
-    "data-starting-style": ""
+    [startingStyle]: ""
   };
   var ENDING_HOOK = {
-    "data-ending-style": ""
+    [endingStyle]: ""
   };
   var transitionStatusMapping = {
     transitionStatus(value) {
@@ -1641,22 +1676,32 @@ var wp;
     }
   };
 
-  // node_modules/@base-ui/react/internals/use-button/useButton.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/use-button/useButton.mjs
   var React16 = __toESM(require_react(), 1);
 
-  // node_modules/@floating-ui/utils/dist/floating-ui.utils.dom.mjs
+  // node_modules/.store/@floating-ui/utils@0.2.12-gOxTzMf36nCrbeHpEew-rw/node_modules/@floating-ui/utils/dist/floating-ui.utils.dom.mjs
   function hasWindow() {
     return typeof window !== "undefined";
+  }
+  function getNodeName(node) {
+    if (isNode(node)) {
+      return (node.nodeName || "").toLowerCase();
+    }
+    return "#document";
   }
   function getWindow(node) {
     var _node$ownerDocument;
     return (node == null || (_node$ownerDocument = node.ownerDocument) == null ? void 0 : _node$ownerDocument.defaultView) || window;
   }
-  function isElement(value) {
+  function getDocumentElement(node) {
+    var _ref;
+    return (_ref = (isNode(node) ? node.ownerDocument : node.document) || window.document) == null ? void 0 : _ref.documentElement;
+  }
+  function isNode(value) {
     if (!hasWindow()) {
       return false;
     }
-    return value instanceof Element || value instanceof getWindow(value).Element;
+    return value instanceof Node || value instanceof getWindow(value).Node;
   }
   function isHTMLElement(value) {
     if (!hasWindow()) {
@@ -1670,11 +1715,27 @@ var wp;
     }
     return value instanceof ShadowRoot || value instanceof getWindow(value).ShadowRoot;
   }
+  function isLastTraversableNode(node) {
+    return /^(html|body|#document)$/.test(getNodeName(node));
+  }
   function getComputedStyle2(element) {
     return getWindow(element).getComputedStyle(element);
   }
+  function getParentNode(node) {
+    if (getNodeName(node) === "html") {
+      return node;
+    }
+    const result = (
+      // Step into the shadow DOM of the parent of a slotted node.
+      node.assignedSlot || // DOM Element detected.
+      node.parentNode || // ShadowRoot detected.
+      isShadowRoot(node) && node.host || // Fallback.
+      getDocumentElement(node)
+    );
+    return isShadowRoot(result) ? result.host : result;
+  }
 
-  // node_modules/@base-ui/react/internals/composite/root/CompositeRootContext.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/composite/root/CompositeRootContext.mjs
   var React14 = __toESM(require_react(), 1);
   var CompositeRootContext = /* @__PURE__ */ React14.createContext(void 0);
   if (true) CompositeRootContext.displayName = "CompositeRootContext";
@@ -1686,7 +1747,7 @@ var wp;
     return context;
   }
 
-  // node_modules/@base-ui/react/utils/useFocusableWhenDisabled.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/useFocusableWhenDisabled.mjs
   var React15 = __toESM(require_react(), 1);
   function useFocusableWhenDisabled(parameters) {
     const {
@@ -1726,12 +1787,12 @@ var wp;
     };
   }
 
-  // node_modules/@base-ui/utils/owner.mjs
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/owner.mjs
   function ownerDocument(node) {
     return node?.ownerDocument || document;
   }
 
-  // node_modules/@base-ui/react/utils/dispatchClickWithModifiers.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/dispatchClickWithModifiers.mjs
   function dispatchClickWithModifiers(target, sourceEvent, {
     detail = 0
   } = {}) {
@@ -1747,7 +1808,7 @@ var wp;
     }));
   }
 
-  // node_modules/@base-ui/react/internals/use-button/useButton.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/use-button/useButton.mjs
   function useButton(parameters = {}) {
     const {
       disabled: disabled2 = false,
@@ -1910,13 +1971,13 @@ var wp;
     return isHTMLElement(elem) && elem.tagName === "A" && Boolean(elem.href);
   }
 
-  // node_modules/@base-ui/react/internals/useOpenChangeComplete.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/useOpenChangeComplete.mjs
   var React17 = __toESM(require_react(), 1);
 
-  // node_modules/@base-ui/react/internals/useAnimationsFinished.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/useAnimationsFinished.mjs
   var ReactDOM = __toESM(require_react_dom(), 1);
 
-  // node_modules/@base-ui/react/utils/resolveRef.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/resolveRef.mjs
   function resolveRef(maybeRef) {
     if (maybeRef == null) {
       return maybeRef;
@@ -1924,8 +1985,24 @@ var wp;
     return "current" in maybeRef ? maybeRef.current : maybeRef;
   }
 
-  // node_modules/@base-ui/react/internals/useAnimationsFinished.mjs
-  function useAnimationsFinished(elementOrRef, waitForStartingStyleRemoved = false) {
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/useAnimationsFinished.mjs
+  var pendingCallbacks = null;
+  function flushBeforePaint(fn) {
+    if (!pendingCallbacks) {
+      const callbacks = [];
+      pendingCallbacks = callbacks;
+      queueMicrotask(() => {
+        pendingCallbacks = null;
+        ReactDOM.flushSync(() => {
+          for (const callback of callbacks) {
+            callback();
+          }
+        });
+      });
+    }
+    pendingCallbacks.push(fn);
+  }
+  function useAnimationsFinished(elementOrRef, waitForStartingStyleRemoved = false, batch = false) {
     const frame = useAnimationFrame();
     return useStableCallback((fnToExecute, signal = null) => {
       frame.cancel();
@@ -1935,7 +2012,15 @@ var wp;
       }
       const resolvedElement = element;
       const done = () => {
-        ReactDOM.flushSync(fnToExecute);
+        if (!batch) {
+          ReactDOM.flushSync(fnToExecute);
+          return;
+        }
+        flushBeforePaint(() => {
+          if (!signal?.aborted) {
+            fnToExecute();
+          }
+        });
       };
       if (typeof resolvedElement.getAnimations !== "function" || globalThis.BASE_UI_ANIMATIONS_DISABLED) {
         fnToExecute();
@@ -1959,7 +2044,7 @@ var wp;
         });
       }
       if (waitForStartingStyleRemoved) {
-        const startingStyleAttribute = "data-starting-style";
+        const startingStyleAttribute = startingStyle;
         if (!resolvedElement.hasAttribute(startingStyleAttribute)) {
           frame.request(exec);
           return;
@@ -1983,16 +2068,17 @@ var wp;
     });
   }
 
-  // node_modules/@base-ui/react/internals/useOpenChangeComplete.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/useOpenChangeComplete.mjs
   function useOpenChangeComplete(parameters) {
     const {
       enabled = true,
       open,
       ref,
+      batch = false,
       onComplete: onCompleteParam
     } = parameters;
     const onComplete = useStableCallback(onCompleteParam);
-    const runOnceAnimationsFinish = useAnimationsFinished(ref, open);
+    const runOnceAnimationsFinish = useAnimationsFinished(ref, open, batch);
     React17.useEffect(() => {
       if (!enabled) {
         return void 0;
@@ -2005,7 +2091,7 @@ var wp;
     }, [enabled, open, onComplete, runOnceAnimationsFinish]);
   }
 
-  // node_modules/@base-ui/utils/useTimeout.mjs
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/useTimeout.mjs
   var EMPTY2 = 0;
   var Timeout = class _Timeout {
     static create() {
@@ -2041,7 +2127,7 @@ var wp;
     return timeout;
   }
 
-  // node_modules/@base-ui/react/internals/shadowDom.mjs
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/shadowDom.mjs
   function activeElement(doc) {
     let element = doc.activeElement;
     while (element?.shadowRoot?.activeElement != null) {
@@ -2070,17 +2156,17 @@ var wp;
   }
   function getTarget(event) {
     if ("composedPath" in event) {
-      return event.composedPath()[0];
+      return event.composedPath()[0] ?? event.target;
     }
     return event.target;
   }
 
-  // node_modules/@floating-ui/utils/dist/floating-ui.utils.mjs
+  // node_modules/.store/@floating-ui/utils@0.2.12-gOxTzMf36nCrbeHpEew-rw/node_modules/@floating-ui/utils/dist/floating-ui.utils.mjs
   var round = Math.round;
 
-  // node_modules/@base-ui/react/floating-ui-react/utils/composite.mjs
-  function isIndexOutOfListBounds(list, index) {
-    return index < 0 || index >= list.length;
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/floating-ui-react/utils/composite.mjs
+  function isIndexOutOfListBounds(list, index2) {
+    return index2 < 0 || index2 >= list.length;
   }
   function getMinListIndex(listRef, disabledIndices) {
     return findNonDisabledListIndex(listRef.current, {
@@ -2100,18 +2186,18 @@ var wp;
     disabledIndices,
     amount = 1
   } = {}) {
-    let index = startingIndex;
+    let index2 = startingIndex;
     do {
-      index += decrement ? -amount : amount;
-    } while (index >= 0 && index <= list.length - 1 && isListIndexDisabled(list, index, disabledIndices));
-    return index;
+      index2 += decrement ? -amount : amount;
+    } while (index2 >= 0 && index2 <= list.length - 1 && isListIndexDisabled(list, index2, disabledIndices));
+    return index2;
   }
-  function isListIndexDisabled(list, index, disabledIndices) {
-    const isExplicitlyDisabled = typeof disabledIndices === "function" ? disabledIndices(index) : disabledIndices?.includes(index) ?? false;
+  function isListIndexDisabled(list, index2, disabledIndices) {
+    const isExplicitlyDisabled = typeof disabledIndices === "function" ? disabledIndices(index2) : disabledIndices?.includes(index2) ?? false;
     if (isExplicitlyDisabled) {
       return true;
     }
-    const element = list[index];
+    const element = list[index2];
     if (!element) {
       return false;
     }
@@ -2136,7 +2222,7 @@ var wp;
     return styles.display !== "none" && styles.display !== "contents";
   }
 
-  // node_modules/@base-ui/utils/useForcedRerendering.mjs
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/useForcedRerendering.mjs
   var React18 = __toESM(require_react(), 1);
   function useForcedRerendering() {
     const [, setState] = React18.useState({});
@@ -2145,7 +2231,7 @@ var wp;
     }, []);
   }
 
-  // node_modules/@base-ui/react/internals/composite/composite.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/composite/composite.mjs
   var ARROW_UP = "ArrowUp";
   var ARROW_DOWN = "ArrowDown";
   var ARROW_LEFT = "ArrowLeft";
@@ -2236,7 +2322,7 @@ var wp;
     };
   }
 
-  // node_modules/@base-ui/utils/inertValue.mjs
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/inertValue.mjs
   function inertValue(value) {
     if (isReactVersionAtLeast(19)) {
       return value;
@@ -2244,10 +2330,27 @@ var wp;
     return value ? "true" : void 0;
   }
 
-  // node_modules/@base-ui/react/internals/field-root-context/FieldRootContext.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/useValueChanged.mjs
   var React19 = __toESM(require_react(), 1);
+  function useValueChanged(value, onChange) {
+    const valueRef = React19.useRef(value);
+    const onChangeCallback = useStableCallback(onChange);
+    useIsoLayoutEffect(() => {
+      if (valueRef.current !== value) {
+        onChangeCallback(valueRef.current);
+      }
+      valueRef.current = value;
+    }, [value, onChangeCallback]);
+  }
 
-  // node_modules/@base-ui/react/internals/field-constants/constants.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/field-root-context/FieldRootContext.mjs
+  var React20 = __toESM(require_react(), 1);
+
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/control/FieldControlDataAttributes.mjs
+  var valid = "data-valid";
+  var invalid = "data-invalid";
+
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/field-constants/constants.mjs
   var DEFAULT_VALIDITY_STATE = {
     badInput: false,
     customError: false,
@@ -2279,16 +2382,16 @@ var wp;
       }
       if (value) {
         return {
-          "data-valid": ""
+          [valid]: ""
         };
       }
       return {
-        "data-invalid": ""
+        [invalid]: ""
       };
     }
   };
 
-  // node_modules/@base-ui/react/internals/field-root-context/FieldRootContext.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/field-root-context/FieldRootContext.mjs
   var DEFAULT_FIELD_ROOT_CONTEXT = {
     invalid: void 0,
     name: void 0,
@@ -2322,17 +2425,17 @@ var wp;
       change: NOOP
     }
   };
-  var FieldRootContext = /* @__PURE__ */ React19.createContext(DEFAULT_FIELD_ROOT_CONTEXT);
+  var FieldRootContext = /* @__PURE__ */ React20.createContext(DEFAULT_FIELD_ROOT_CONTEXT);
   if (true) FieldRootContext.displayName = "FieldRootContext";
   function useFieldRootContext(optional = true) {
-    const context = React19.useContext(FieldRootContext);
+    const context = React20.useContext(FieldRootContext);
     if (context.setValidityData === NOOP && !optional) {
       throw new Error(true ? "Base UI: FieldRootContext is missing. Field parts must be placed within <Field.Root>." : formatErrorMessage_default(28));
     }
     return context;
   }
 
-  // node_modules/@base-ui/react/internals/field-register-control/useRegisterFieldControl.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/field-register-control/useRegisterFieldControl.mjs
   function useRegisterFieldControl(controlRef, id, value, getFormValueOverride, enabled = true, name16) {
     const {
       registerFieldControl
@@ -2361,9 +2464,9 @@ var wp;
     }, [registerFieldControl, sourceRef]);
   }
 
-  // node_modules/@base-ui/react/internals/form-context/FormContext.mjs
-  var React20 = __toESM(require_react(), 1);
-  var FormContext = /* @__PURE__ */ React20.createContext({
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/form-context/FormContext.mjs
+  var React21 = __toESM(require_react(), 1);
+  var FormContext = /* @__PURE__ */ React21.createContext({
     elementRef: {
       current: null
     },
@@ -2375,23 +2478,24 @@ var wp;
     errors: {},
     clearErrors: NOOP,
     validationMode: "onSubmit",
-    submitAttemptedRef: {
-      current: false
+    submitCountRef: {
+      current: 0
     }
   });
   if (true) FormContext.displayName = "FormContext";
   function useFormContext() {
-    return React20.useContext(FormContext);
+    return React21.useContext(FormContext);
   }
 
-  // node_modules/@base-ui/react/internals/labelable-provider/useLabelableId.mjs
-  var React22 = __toESM(require_react(), 1);
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/labelable-provider/useLabelableId.mjs
+  var React23 = __toESM(require_react(), 1);
 
-  // node_modules/@base-ui/react/internals/labelable-provider/LabelableContext.mjs
-  var React21 = __toESM(require_react(), 1);
-  var LabelableContext = /* @__PURE__ */ React21.createContext({
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/labelable-provider/LabelableContext.mjs
+  var React22 = __toESM(require_react(), 1);
+  var LabelableContext = /* @__PURE__ */ React22.createContext({
     controlId: void 0,
     registerControlId: NOOP,
+    resetControlId: NOOP,
     labelId: void 0,
     setLabelId: NOOP,
     messageIds: [],
@@ -2400,25 +2504,24 @@ var wp;
   });
   if (true) LabelableContext.displayName = "LabelableContext";
   function useLabelableContext() {
-    return React21.useContext(LabelableContext);
+    return React22.useContext(LabelableContext);
   }
 
-  // node_modules/@base-ui/react/internals/labelable-provider/useLabelableId.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/labelable-provider/useLabelableId.mjs
   function useLabelableId(params = {}) {
     const {
       id,
-      implicit = false,
-      controlRef
+      enabled = true
     } = params;
     const {
       controlId,
-      registerControlId
+      registerControlId,
+      resetControlId
     } = useLabelableContext();
-    const defaultId = useBaseUiId(id);
-    const controlIdForEffect = implicit ? controlId : void 0;
+    const defaultId = useBaseUiId();
     const controlSourceRef = useRefWithInit(() => /* @__PURE__ */ Symbol());
-    const hasRegisteredRef = React22.useRef(false);
-    const hadExplicitIdRef = React22.useRef(id != null);
+    const hasRegisteredRef = React23.useRef(false);
+    const hadExplicitIdRef = React23.useRef(false);
     const unregisterControlId = useStableCallback(() => {
       if (!hasRegisteredRef.current || registerControlId === NOOP) {
         return;
@@ -2427,24 +2530,18 @@ var wp;
       registerControlId(controlSourceRef.current, void 0);
     });
     useIsoLayoutEffect(() => {
-      if (registerControlId === NOOP) {
+      if (!enabled || registerControlId === NOOP) {
+        unregisterControlId();
         return void 0;
       }
       let nextId;
-      if (implicit) {
-        const elem = controlRef?.current;
-        if (isElement(elem) && elem.closest("label") != null) {
-          nextId = id ?? null;
-        } else {
-          nextId = controlIdForEffect ?? defaultId;
-        }
-      } else if (id != null) {
+      if (id !== void 0) {
         hadExplicitIdRef.current = true;
         nextId = id;
       } else if (hadExplicitIdRef.current) {
         nextId = defaultId;
       } else {
-        unregisterControlId();
+        resetControlId();
         return void 0;
       }
       if (nextId === void 0) {
@@ -2454,48 +2551,48 @@ var wp;
       hasRegisteredRef.current = true;
       registerControlId(controlSourceRef.current, nextId);
       return void 0;
-    }, [id, controlRef, controlIdForEffect, registerControlId, implicit, defaultId, controlSourceRef, unregisterControlId]);
-    React22.useEffect(() => {
+    }, [id, enabled, registerControlId, resetControlId, defaultId, controlSourceRef, unregisterControlId]);
+    useIsoLayoutEffect(() => {
       return unregisterControlId;
     }, [unregisterControlId]);
-    return controlId ?? defaultId;
+    return (enabled ? controlId : void 0) ?? id ?? defaultId;
   }
 
-  // node_modules/@base-ui/react/internals/direction-context/DirectionContext.mjs
-  var React23 = __toESM(require_react(), 1);
-  var DirectionContext = /* @__PURE__ */ React23.createContext(void 0);
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/direction-context/DirectionContext.mjs
+  var React24 = __toESM(require_react(), 1);
+  var DirectionContext = /* @__PURE__ */ React24.createContext(void 0);
   if (true) DirectionContext.displayName = "DirectionContext";
   function useDirection() {
-    const context = React23.useContext(DirectionContext);
+    const context = React24.useContext(DirectionContext);
     return context?.direction ?? "ltr";
   }
 
-  // node_modules/@base-ui/react/field/item/FieldItemContext.mjs
-  var React24 = __toESM(require_react(), 1);
-  var FieldItemContext = /* @__PURE__ */ React24.createContext({
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/item/FieldItemContext.mjs
+  var React25 = __toESM(require_react(), 1);
+  var FieldItemContext = /* @__PURE__ */ React25.createContext({
     disabled: false
   });
   if (true) FieldItemContext.displayName = "FieldItemContext";
   function useFieldItemContext() {
-    const context = React24.useContext(FieldItemContext);
+    const context = React25.useContext(FieldItemContext);
     return context;
   }
 
-  // node_modules/@base-ui/react/field/root/useFieldValidation.mjs
-  var React25 = __toESM(require_react(), 1);
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/root/useFieldValidation.mjs
+  var React26 = __toESM(require_react(), 1);
 
-  // node_modules/@base-ui/react/field/utils/getCombinedFieldValidityData.mjs
-  function getCombinedFieldValidityData(validityData, invalid) {
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/utils/getCombinedFieldValidityData.mjs
+  function getCombinedFieldValidityData(validityData, invalid2) {
     return {
       ...validityData,
       state: {
         ...validityData.state,
-        valid: !invalid && validityData.state.valid
+        valid: !invalid2 && validityData.state.valid
       }
     };
   }
 
-  // node_modules/@base-ui/react/field/root/useFieldValidation.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/root/useFieldValidation.mjs
   var validityKeys = Object.keys(DEFAULT_VALIDITY_STATE);
   function isEligibleInput(input, formElement) {
     if (input.matches(":disabled")) {
@@ -2519,11 +2616,15 @@ var wp;
     }
     return fallback;
   }
-  function clearCustomValidity(element, inputs) {
-    for (const input of inputs.keys()) {
-      input.setCustomValidity("");
-    }
-    element?.setCustomValidity("");
+  function makeState(customError) {
+    return {
+      ...DEFAULT_VALIDITY_STATE,
+      valid: !customError,
+      customError
+    };
+  }
+  function getNativeErrors(element) {
+    return element && element.validationMessage ? [element.validationMessage] : [];
   }
   function useFieldValidation(params) {
     const {
@@ -2535,10 +2636,11 @@ var wp;
       validate,
       validityData,
       validationDebounceTime,
-      invalid,
+      invalid: invalid2,
       markedDirtyRef,
       state,
       shouldValidateOnChange,
+      validationMode,
       registeredFieldIdRef
     } = params;
     const {
@@ -2546,10 +2648,11 @@ var wp;
       getDescriptionProps
     } = useLabelableContext();
     const timeout = useTimeout();
-    const inputRef = React25.useRef(null);
+    const inputRef = React26.useRef(null);
     const registeredInputs = useRefWithInit(() => /* @__PURE__ */ new Map()).current;
-    const validationCommitIdRef = React25.useRef(0);
-    const registerInput = React25.useCallback((element, registration) => {
+    const validationCommitIdRef = React26.useRef(0);
+    const customValidityRef = React26.useRef(null);
+    const registerInput = React26.useCallback((element, registration) => {
       registeredInputs.set(element, registration);
       return () => {
         registeredInputs.delete(element);
@@ -2562,7 +2665,7 @@ var wp;
     const commit = useStableCallback(async (value, revalidate = false) => {
       validationCommitIdRef.current += 1;
       const validationCommitId = validationCommitIdRef.current;
-      function updateRegisteredFieldValidity(nextValidityData2, externalInvalid = invalid) {
+      function updateRegisteredFieldValidity(nextValidityData, externalInvalid = invalid2) {
         const fieldId = registeredFieldIdRef.current ?? controlId;
         if (fieldId == null) {
           return;
@@ -2571,42 +2674,39 @@ var wp;
         if (!currentFieldData) {
           return;
         }
-        const validityDataWithFormErrors = getCombinedFieldValidityData(nextValidityData2, externalInvalid);
+        const validityDataWithFormErrors = getCombinedFieldValidityData(nextValidityData, externalInvalid);
         formRef.current.fields.set(fieldId, {
           ...currentFieldData,
           validityData: validityDataWithFormErrors
         });
       }
-      function publishAllValid(input, externalInvalid) {
-        const nextValidityData2 = {
+      function makeValidityData(validityState, errorMessages) {
+        const errors = validityState.valid === false ? errorMessages : [];
+        return {
           value,
-          state: {
-            ...DEFAULT_VALIDITY_STATE,
-            valid: true
-          },
-          error: "",
-          errors: [],
+          state: validityState,
+          error: errors[0] ?? "",
+          errors,
           initialValue: validityData.initialValue
         };
-        clearCustomValidity(input, registeredInputs);
-        updateRegisteredFieldValidity(nextValidityData2, externalInvalid);
-        setValidityData(nextValidityData2);
       }
-      const element = registeredInputs.size > 0 ? findRepresentativeInput(registeredInputs, elementRef.current) : inputRef.current;
-      if (revalidate) {
-        if (state.valid !== false || !element) {
-          return;
+      function setCustomValidity(element2, message) {
+        const displaced = element2.validity.customError ? element2.validationMessage : "";
+        const ownedMessage = message.replace(/\r\n?/g, "\n");
+        element2.setCustomValidity(ownedMessage);
+        customValidityRef.current = [element2, ownedMessage, displaced];
+      }
+      function clearCustomValidity() {
+        const record = customValidityRef.current;
+        customValidityRef.current = null;
+        if (record && (!record[0].willValidate || record[0].validationMessage === record[1])) {
+          record[0].setCustomValidity(record[2]);
         }
-        const currentNativeValidity = element.validity;
-        if (!currentNativeValidity.valueMissing) {
-          publishAllValid(element, false);
-          return;
-        }
-        for (const key of validityKeys) {
-          if (key !== "valid" && key !== "valueMissing" && key !== "customError" && currentNativeValidity[key]) {
-            return;
-          }
-        }
+      }
+      function publish(validityState, errorMessages, externalInvalid) {
+        const nextValidityData = makeValidityData(validityState, errorMessages);
+        updateRegisteredFieldValidity(nextValidityData, externalInvalid);
+        setValidityData(nextValidityData);
       }
       function getState(el) {
         const computedState = validityKeys.reduce((acc, key) => {
@@ -2630,19 +2730,37 @@ var wp;
         }
         return computedState;
       }
+      function resolveRepresentativeInput() {
+        return registeredInputs.size > 0 ? findRepresentativeInput(registeredInputs, elementRef.current) : inputRef.current;
+      }
+      let element = resolveRepresentativeInput();
+      function refreshState() {
+        element = resolveRepresentativeInput();
+        return element?.willValidate ? getState(element) : makeState(false);
+      }
+      if (revalidate) {
+        if (state.valid !== false || !element) {
+          return;
+        }
+        if (!element.validity.valueMissing) {
+          clearCustomValidity();
+          const currentElement = resolveRepresentativeInput();
+          const foreign = currentElement?.validity.customError ? getNativeErrors(currentElement) : [];
+          publish(makeState(foreign.length > 0), foreign, false);
+          return;
+        }
+        for (const key of validityKeys) {
+          if (key !== "valid" && key !== "valueMissing" && key !== "customError" && element.validity[key]) {
+            return;
+          }
+        }
+      }
       timeout.clear();
-      let result = null;
-      let validationErrors = [];
-      const nextState = element ? getState(element) : {
-        ...DEFAULT_VALIDITY_STATE,
-        valid: true
-      };
-      let defaultValidationMessage;
+      clearCustomValidity();
+      let nextState = refreshState();
+      let validationErrors = getNativeErrors(element);
       const isValidatingOnChange = shouldValidateOnChange();
-      if (element && element.validationMessage && !isValidatingOnChange) {
-        defaultValidationMessage = element.validationMessage;
-        validationErrors = [element.validationMessage];
-      } else {
+      if (validationErrors.length === 0 || isValidatingOnChange) {
         const formValues = Array.from(formRef.current.fields.values()).reduce((acc, field) => {
           if (field.name) {
             acc[field.name] = field.getValue();
@@ -2650,50 +2768,43 @@ var wp;
           return acc;
         }, {});
         const resultOrPromise = validate(value, formValues);
+        let result;
         if (typeof resultOrPromise === "object" && resultOrPromise !== null && "then" in resultOrPromise) {
+          if (nextState.valid === false) {
+            publish(nextState, validationErrors);
+          } else if (validationMode === "onSubmit" || !validityData.state.customError) {
+            nextState.valid = null;
+            publish(nextState, validationErrors);
+          }
           result = await resultOrPromise;
           if (validationCommitId !== validationCommitIdRef.current) {
             return;
           }
+          nextState = refreshState();
         } else {
           result = resultOrPromise;
         }
-        if (result !== null) {
+        validationErrors = result ? [].concat(result).filter(Boolean) : [];
+        if (validationErrors.length > 0) {
           nextState.valid = false;
           nextState.customError = true;
-          if (Array.isArray(result)) {
-            validationErrors = result;
-            element?.setCustomValidity(result.join("\n"));
-          } else if (result) {
-            validationErrors = [result];
-            element?.setCustomValidity(result);
+          if (element?.willValidate) {
+            setCustomValidity(element, validationErrors.join("\n"));
           }
-        } else if (isValidatingOnChange) {
-          clearCustomValidity(element, registeredInputs);
-          nextState.customError = false;
-          if (element && element.validationMessage) {
-            defaultValidationMessage = element.validationMessage;
-            validationErrors = [element.validationMessage];
-          } else if ((!element || element.validity.valid) && !nextState.valid) {
-            nextState.valid = true;
-          }
+        } else {
+          validationErrors = getNativeErrors(element);
         }
       }
-      const nextValidityData = {
-        value,
-        state: nextState,
-        error: defaultValidationMessage ?? (Array.isArray(result) ? result[0] : result ?? ""),
-        errors: validationErrors,
-        initialValue: validityData.initialValue
-      };
-      updateRegisteredFieldValidity(nextValidityData);
-      setValidityData(nextValidityData);
+      publish(nextState, validationErrors);
     });
-    const change = useStableCallback((value) => {
+    const change = useStableCallback((value, cancelPending = false) => {
       timeout.clear();
+      validationCommitIdRef.current += 1;
+      if (cancelPending) {
+        return;
+      }
       const validateOnChange = shouldValidateOnChange();
       if (validateOnChange && value !== "" && validationDebounceTime) {
-        validationCommitIdRef.current += 1;
         timeout.start(validationDebounceTime, () => {
           commit(value);
         });
@@ -2701,10 +2812,10 @@ var wp;
         commit(value, !validateOnChange);
       }
     });
-    const getValidationProps = React25.useCallback((disabled2, externalProps = {}) => mergeProps(getDescriptionProps(externalProps), state.valid === false && !state.disabled && !disabled2 ? {
+    const getValidationProps = React26.useCallback((disabled2, externalProps = {}) => mergeProps(getDescriptionProps(externalProps), state.valid === false && !state.disabled && !disabled2 ? {
       "aria-invalid": true
     } : EMPTY_OBJECT), [getDescriptionProps, state.disabled, state.valid]);
-    return React25.useMemo(() => ({
+    return React26.useMemo(() => ({
       getValidationProps,
       inputRef,
       registeredInputs,
@@ -2715,7 +2826,7 @@ var wp;
     }), [getValidationProps, registeredInputs, registerInput, getInputControl, commit, change]);
   }
 
-  // node_modules/@base-ui/react/utils/useRegisteredLabelId.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/useRegisteredLabelId.mjs
   function useRegisteredLabelId(idProp, setLabelId) {
     const id = useBaseUiId(idProp);
     useIsoLayoutEffect(() => {
@@ -2727,7 +2838,7 @@ var wp;
     return id;
   }
 
-  // node_modules/@base-ui/react/internals/labelable-provider/useLabel.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/labelable-provider/useLabel.mjs
   function useLabel(params = {}) {
     const {
       id: idProp,
@@ -2774,7 +2885,7 @@ var wp;
     }
     return native ? {
       id,
-      htmlFor: resolvedControlId ?? void 0,
+      htmlFor: resolvedControlId,
       onMouseDown: handleInteraction
     } : {
       id,
@@ -2792,8 +2903,8 @@ var wp;
     });
   }
 
-  // node_modules/@base-ui/react/internals/composite/item/useCompositeItem.mjs
-  var React26 = __toESM(require_react(), 1);
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/composite/item/useCompositeItem.mjs
+  var React27 = __toESM(require_react(), 1);
   function useCompositeItem(params = {}) {
     const {
       highlightItemOnHover,
@@ -2802,15 +2913,15 @@ var wp;
     } = useCompositeRootContext();
     const {
       ref,
-      index
+      index: index2
     } = useCompositeListItem(params);
-    const isHighlighted = highlightedIndex === index;
-    const itemRef = React26.useRef(null);
+    const isHighlighted = highlightedIndex === index2;
+    const itemRef = React27.useRef(null);
     const mergedRef = useMergedRefs(ref, itemRef);
     const compositeProps = {
       tabIndex: isHighlighted ? 0 : -1,
       onFocus() {
-        onHighlightedIndexChange(index);
+        onHighlightedIndexChange(index2);
       },
       onMouseMove() {
         const item = itemRef.current;
@@ -2826,11 +2937,11 @@ var wp;
     return {
       compositeProps,
       compositeRef: mergedRef,
-      index
+      index: index2
     };
   }
 
-  // node_modules/@base-ui/react/utils/getCssDimensions.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/getCssDimensions.mjs
   function getCssDimensions(element) {
     const css = getComputedStyle2(element);
     let width = parseFloat(css.width) || 0;
@@ -2849,14 +2960,14 @@ var wp;
     };
   }
 
-  // node_modules/@base-ui/react/direction-provider/DirectionProvider.mjs
-  var React27 = __toESM(require_react(), 1);
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/direction-provider/DirectionProvider.mjs
+  var React28 = __toESM(require_react(), 1);
   var import_jsx_runtime21 = __toESM(require_jsx_runtime(), 1);
   var DirectionProvider = function DirectionProvider2(props) {
     const {
       direction = "ltr"
     } = props;
-    const contextValue = React27.useMemo(() => ({
+    const contextValue = React28.useMemo(() => ({
       direction
     }), [direction]);
     return /* @__PURE__ */ (0, import_jsx_runtime21.jsx)(DirectionContext.Provider, {
@@ -2866,23 +2977,51 @@ var wp;
   };
   if (true) DirectionProvider.displayName = "DirectionProvider";
 
-  // node_modules/@base-ui/utils/isElementDisabled.mjs
+  // node_modules/.store/@base-ui/utils@0.4.0-Z81C5N42agUorsFwt3T4Yw/node_modules/@base-ui/utils/isElementDisabled.mjs
   function isElementDisabled(element) {
     return element == null || element.hasAttribute("disabled") || element.getAttribute("aria-disabled") === "true";
   }
 
-  // node_modules/@base-ui/react/internals/csp-context/CSPContext.mjs
-  var React28 = __toESM(require_react(), 1);
-  var CSPContext = /* @__PURE__ */ React28.createContext(void 0);
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/csp-context/CSPContext.mjs
+  var React29 = __toESM(require_react(), 1);
+  var CSPContext = /* @__PURE__ */ React29.createContext(void 0);
   if (true) CSPContext.displayName = "CSPContext";
   var DEFAULT_CSP_CONTEXT_VALUE = {
     disableStyleElements: false
   };
   function useCSPContext() {
-    return React28.useContext(CSPContext) ?? DEFAULT_CSP_CONTEXT_VALUE;
+    return React29.useContext(CSPContext) ?? DEFAULT_CSP_CONTEXT_VALUE;
   }
 
-  // node_modules/@base-ui/react/field/index.parts.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/getElementTransform.mjs
+  function getElementTransform(element, computedStyle) {
+    const transform = (computedStyle ?? getWindow(element).getComputedStyle(element)).transform;
+    let translateX = 0;
+    let translateY = 0;
+    let scale = 1;
+    if (transform && transform !== "none") {
+      const matrix = transform.match(/matrix(?:3d)?\(([^)]+)\)/);
+      if (matrix) {
+        const values = matrix[1].split(", ").map(parseFloat);
+        if (values.length === 6) {
+          translateX = values[4];
+          translateY = values[5];
+          scale = Math.sqrt(values[0] * values[0] + values[1] * values[1]);
+        } else if (values.length === 16) {
+          translateX = values[12];
+          translateY = values[13];
+          scale = values[0];
+        }
+      }
+    }
+    return {
+      x: translateX,
+      y: translateY,
+      scale
+    };
+  }
+
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/index.parts.mjs
   var index_parts_exports = {};
   __export(index_parts_exports, {
     Control: () => FieldControl,
@@ -2894,30 +3033,30 @@ var wp;
     Validity: () => FieldValidity
   });
 
-  // node_modules/@base-ui/react/field/root/FieldRoot.mjs
-  var React32 = __toESM(require_react(), 1);
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/root/FieldRoot.mjs
+  var React33 = __toESM(require_react(), 1);
 
-  // node_modules/@base-ui/react/fieldset/root/FieldsetRootContext.mjs
-  var React29 = __toESM(require_react(), 1);
-  var FieldsetRootContext = /* @__PURE__ */ React29.createContext(void 0);
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/fieldset/root/FieldsetRootContext.mjs
+  var React30 = __toESM(require_react(), 1);
+  var FieldsetRootContext = /* @__PURE__ */ React30.createContext(void 0);
   if (true) FieldsetRootContext.displayName = "FieldsetRootContext";
   function useFieldsetRootContext(optional = false) {
-    const context = React29.useContext(FieldsetRootContext);
+    const context = React30.useContext(FieldsetRootContext);
     if (!context && !optional) {
       throw new Error(true ? "Base UI: FieldsetRootContext is missing. Fieldset parts must be placed within <Fieldset.Root>." : formatErrorMessage_default(86));
     }
     return context;
   }
 
-  // node_modules/@base-ui/react/internals/labelable-provider/LabelableProvider.mjs
-  var React30 = __toESM(require_react(), 1);
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/labelable-provider/LabelableProvider.mjs
+  var React31 = __toESM(require_react(), 1);
   var import_jsx_runtime22 = __toESM(require_jsx_runtime(), 1);
   var LabelableProvider = function LabelableProvider2(props) {
     const defaultId = useBaseUiId();
-    const initialControlId = props.controlId === void 0 ? defaultId : props.controlId;
-    const [controlId, setControlIdState] = React30.useState(initialControlId);
-    const [labelId, setLabelId] = React30.useState(props.labelId);
-    const [messageIds, setMessageIds] = React30.useState([]);
+    const [controlIdState, setControlIdState] = React31.useState(defaultId);
+    const [labelId, setLabelId] = React31.useState();
+    const [messageIds, setMessageIds] = React31.useState([]);
+    const controlId = controlIdState === void 0 ? defaultId : controlIdState;
     const registrationsRef = useRefWithInit(() => /* @__PURE__ */ new Map());
     const {
       messageIds: parentMessageIds
@@ -2926,16 +3065,16 @@ var wp;
       const registrations = registrationsRef.current;
       if (nextId === void 0) {
         registrations.delete(source);
-        return;
+      } else {
+        registrations.set(source, nextId);
       }
-      registrations.set(source, nextId);
       setControlIdState((prev) => {
         if (registrations.size === 0) {
-          return void 0;
+          return prev;
         }
         let nextControlId;
         for (const id of registrations.values()) {
-          if (prev !== void 0 && id === prev) {
+          if (id === prev) {
             return prev;
           }
           if (nextControlId === void 0) {
@@ -2945,7 +3084,12 @@ var wp;
         return nextControlId;
       });
     });
-    const getDescriptionProps = React30.useCallback((externalProps) => {
+    const resetControlId = useStableCallback(() => {
+      if (registrationsRef.current.size === 0) {
+        setControlIdState(defaultId);
+      }
+    });
+    const getDescriptionProps = React31.useCallback((externalProps) => {
       const ids = externalProps["aria-describedby"] ? externalProps["aria-describedby"].split(" ") : [];
       ids.push(...parentMessageIds, ...messageIds);
       return {
@@ -2953,15 +3097,16 @@ var wp;
         "aria-describedby": Array.from(new Set(ids)).join(" ") || void 0
       };
     }, [parentMessageIds, messageIds]);
-    const contextValue = React30.useMemo(() => ({
+    const contextValue = React31.useMemo(() => ({
       controlId,
       registerControlId,
+      resetControlId,
       labelId,
       setLabelId,
       messageIds,
       setMessageIds,
       getDescriptionProps
-    }), [controlId, registerControlId, labelId, setLabelId, messageIds, setMessageIds, getDescriptionProps]);
+    }), [controlId, registerControlId, resetControlId, labelId, setLabelId, messageIds, setMessageIds, getDescriptionProps]);
     return /* @__PURE__ */ (0, import_jsx_runtime22.jsx)(LabelableContext.Provider, {
       value: contextValue,
       children: props.children
@@ -2969,12 +3114,13 @@ var wp;
   };
   if (true) LabelableProvider.displayName = "LabelableProvider";
 
-  // node_modules/@base-ui/react/internals/field-register-control/useFieldControlRegistration.mjs
-  var React31 = __toESM(require_react(), 1);
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/field-register-control/useFieldControlRegistration.mjs
+  var React32 = __toESM(require_react(), 1);
   function useFieldControlRegistration(params) {
     const {
+      change,
       commit,
-      invalid,
+      invalid: invalid2,
       markedDirtyRef,
       name: name16,
       setRegisteredFieldName,
@@ -2985,9 +3131,9 @@ var wp;
     const {
       formRef
     } = useFormContext();
-    const activeFieldControlSourceRef = React31.useRef(null);
-    const registrationRef = React31.useRef(null);
-    const initialValueCapturedRef = React31.useRef(false);
+    const activeFieldControlSourceRef = React32.useRef(null);
+    const registrationRef = React32.useRef(null);
+    const initialValueCapturedRef = React32.useRef(false);
     const getValueForForm = useStableCallback(() => {
       const registration = registrationRef.current;
       if (!registration) {
@@ -3019,7 +3165,7 @@ var wp;
         getValue: getValueForForm,
         name: name16 ?? registration.name,
         controlRef: registration.controlRef,
-        validityData: getCombinedFieldValidityData(validityData, invalid),
+        validityData: getCombinedFieldValidityData(validityData, invalid2),
         validate
       });
     }
@@ -3049,10 +3195,10 @@ var wp;
         getValue: getValueForForm,
         name: name16 ?? registration.name,
         controlRef: registration.controlRef,
-        validityData: getCombinedFieldValidityData(validityData, invalid),
+        validityData: getCombinedFieldValidityData(validityData, invalid2),
         validate
       });
-    }, [formRef, getValueForForm, invalid, name16, setRegisteredFieldName, validate, validityData]);
+    }, [formRef, getValueForForm, invalid2, name16, setRegisteredFieldName, validate, validityData]);
     useIsoLayoutEffect(() => {
       const fields = formRef.current.fields;
       return () => {
@@ -3066,6 +3212,7 @@ var wp;
       if (!registration) {
         if (activeFieldControlSourceRef.current === source) {
           activeFieldControlSourceRef.current = null;
+          change(void 0, true);
           deleteRegistration();
           registrationRef.current = null;
           setRegisteredFieldName(void 0);
@@ -3074,6 +3221,10 @@ var wp;
         return;
       }
       const previousId = registrationRef.current?.id;
+      const previousSource = activeFieldControlSourceRef.current;
+      if (previousSource && previousSource !== source) {
+        change(void 0, true);
+      }
       activeFieldControlSourceRef.current = source;
       registrationRef.current = registration;
       if (!name16) {
@@ -3089,13 +3240,13 @@ var wp;
     return [validate, register];
   }
 
-  // node_modules/@base-ui/react/field/root/FieldRoot.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/root/FieldRoot.mjs
   var import_jsx_runtime23 = __toESM(require_jsx_runtime(), 1);
-  var FieldRootInner = /* @__PURE__ */ React32.forwardRef(function FieldRootInner2(componentProps, forwardedRef) {
+  var FieldRootInner = /* @__PURE__ */ React33.forwardRef(function FieldRootInner2(componentProps, forwardedRef) {
     const {
       errors,
       validationMode: formValidationMode,
-      submitAttemptedRef
+      submitCountRef
     } = useFormContext();
     const {
       render,
@@ -3115,15 +3266,15 @@ var wp;
     const disabledFieldset = useFieldsetRootContext(true)?.disabled;
     const validate = useStableCallback(validateProp || (() => null));
     const disabled2 = disabledFieldset || disabledProp;
-    const [touchedState, setTouchedUnwrapped] = React32.useState(false);
-    const [dirtyState, setDirtyUnwrapped] = React32.useState(false);
-    const [filled, setFilled] = React32.useState(false);
-    const [focused, setFocused] = React32.useState(false);
+    const [touchedState, setTouchedUnwrapped] = React33.useState(false);
+    const [dirtyState, setDirtyUnwrapped] = React33.useState(false);
+    const [filled, setFilled] = React33.useState(false);
+    const [focused, setFocused] = React33.useState(false);
     const dirty = dirtyProp ?? dirtyState;
     const touched = touchedProp ?? touchedState;
-    const markedDirtyRef = React32.useRef(dirty);
-    const registeredFieldIdRef = React32.useRef(void 0);
-    const [registeredFieldName, setRegisteredFieldName] = React32.useState();
+    const markedDirtyRef = React33.useRef(dirty);
+    const registeredFieldIdRef = React33.useRef(void 0);
+    const [registeredFieldName, setRegisteredFieldName] = React33.useState();
     const effectiveName = name16 ?? registeredFieldName;
     useIsoLayoutEffect(() => {
       if (dirtyProp !== void 0) {
@@ -3145,40 +3296,42 @@ var wp;
       }
       setTouchedUnwrapped(value);
     });
-    const shouldValidateOnChange = useStableCallback(() => validationMode === "onChange" || validationMode === "onSubmit" && submitAttemptedRef.current);
+    const shouldValidateOnChange = useStableCallback(() => validationMode === "onChange" || validationMode === "onSubmit" && submitCountRef.current > 0);
     const formError = effectiveName && Object.hasOwn(errors, effectiveName) ? errors[effectiveName] : null;
     const hasFormError = !!(Array.isArray(formError) ? formError.length : formError);
-    const invalid = invalidProp === true || hasFormError;
-    const [validityData, setValidityData] = React32.useState({
+    const invalid2 = invalidProp === true || hasFormError;
+    const [validityData, setValidityData] = React33.useState({
       state: DEFAULT_VALIDITY_STATE,
       error: "",
       errors: [],
       value: null,
       initialValue: null
     });
-    const valid = !invalid && (disabled2 ? null : validityData.state.valid);
-    const state = React32.useMemo(() => ({
+    const valid2 = !invalid2 && (disabled2 ? null : validityData.state.valid);
+    const state = React33.useMemo(() => ({
       disabled: disabled2,
       touched,
       dirty,
-      valid,
+      valid: valid2,
       filled,
       focused
-    }), [disabled2, touched, dirty, valid, filled, focused]);
+    }), [disabled2, touched, dirty, valid2, filled, focused]);
     const validation = useFieldValidation({
       setValidityData,
       validate,
       validityData,
       validationDebounceTime,
-      invalid,
+      invalid: invalid2,
       markedDirtyRef,
       state,
       shouldValidateOnChange,
+      validationMode,
       registeredFieldIdRef
     });
     const [validateFieldControl, registerFieldControl] = useFieldControlRegistration({
+      change: validation.change,
       commit: validation.commit,
-      invalid,
+      invalid: invalid2,
       markedDirtyRef,
       name: name16,
       setRegisteredFieldName,
@@ -3186,11 +3339,11 @@ var wp;
       setValidityData,
       validityData
     });
-    React32.useImperativeHandle(actionsRef, () => ({
+    React33.useImperativeHandle(actionsRef, () => ({
       validate: validateFieldControl
     }), [validateFieldControl]);
-    const contextValue = React32.useMemo(() => ({
-      invalid,
+    const contextValue = React33.useMemo(() => ({
+      invalid: invalid2,
       name: effectiveName,
       validityData,
       setValidityData,
@@ -3204,7 +3357,7 @@ var wp;
       state,
       registerFieldControl,
       validation
-    }), [invalid, effectiveName, validityData, disabled2, setTouched, setDirty, setFilled, setFocused, validationMode, shouldValidateOnChange, state, registerFieldControl, validation]);
+    }), [invalid2, effectiveName, validityData, disabled2, setTouched, setDirty, setFilled, setFocused, validationMode, shouldValidateOnChange, state, registerFieldControl, validation]);
     const element = useRenderElement("div", componentProps, {
       ref: forwardedRef,
       state,
@@ -3217,7 +3370,7 @@ var wp;
     });
   });
   if (true) FieldRootInner.displayName = "FieldRootInner";
-  var FieldRoot = /* @__PURE__ */ React32.forwardRef(function FieldRoot2(componentProps, forwardedRef) {
+  var FieldRoot = /* @__PURE__ */ React33.forwardRef(function FieldRoot2(componentProps, forwardedRef) {
     return /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(LabelableProvider, {
       children: /* @__PURE__ */ (0, import_jsx_runtime23.jsx)(FieldRootInner, {
         ...componentProps,
@@ -3227,9 +3380,9 @@ var wp;
   });
   if (true) FieldRoot.displayName = "FieldRoot";
 
-  // node_modules/@base-ui/react/field/label/FieldLabel.mjs
-  var React33 = __toESM(require_react(), 1);
-  var FieldLabel = /* @__PURE__ */ React33.forwardRef(function FieldLabel2(componentProps, forwardedRef) {
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/label/FieldLabel.mjs
+  var React34 = __toESM(require_react(), 1);
+  var FieldLabel = /* @__PURE__ */ React34.forwardRef(function FieldLabel2(componentProps, forwardedRef) {
     const {
       render,
       className,
@@ -3247,13 +3400,13 @@ var wp;
       ...fieldRootContext.state,
       disabled: fieldRootContext.disabled || fieldItemContext.disabled
     };
-    const labelRef = React33.useRef(null);
+    const labelRef = React34.useRef(null);
     const labelProps = useLabel({
       id: labelId ?? idProp,
       native: nativeLabel
     });
     if (true) {
-      React33.useEffect(() => {
+      React34.useEffect(() => {
         if (!labelRef.current) {
           return;
         }
@@ -3281,14 +3434,14 @@ var wp;
   });
   if (true) FieldLabel.displayName = "FieldLabel";
 
-  // node_modules/@base-ui/react/field/error/FieldError.mjs
-  var React34 = __toESM(require_react(), 1);
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/error/FieldError.mjs
+  var React35 = __toESM(require_react(), 1);
   var import_jsx_runtime24 = __toESM(require_jsx_runtime(), 1);
   var stateAttributesMapping = {
     ...fieldValidityMapping,
     ...transitionStatusMapping
   };
-  var FieldError = /* @__PURE__ */ React34.forwardRef(function FieldError2(componentProps, forwardedRef) {
+  var FieldError = /* @__PURE__ */ React35.forwardRef(function FieldError2(componentProps, forwardedRef) {
     const {
       render,
       id: idProp,
@@ -3336,9 +3489,9 @@ var wp;
         setMessageIds((v) => v.filter((item) => item !== id));
       };
     }, [rendered, id, setMessageIds]);
-    const errorRef = React34.useRef(null);
-    const [lastRenderedMessage, setLastRenderedMessage] = React34.useState(null);
-    const [lastRenderedMessageKey, setLastRenderedMessageKey] = React34.useState(null);
+    const errorRef = React35.useRef(null);
+    const [lastRenderedMessage, setLastRenderedMessage] = React35.useState(null);
+    const [lastRenderedMessageKey, setLastRenderedMessageKey] = React35.useState(null);
     let error2 = validityData.error;
     if (!hasSpecificMatch && hasFormError) {
       error2 = formError;
@@ -3388,9 +3541,9 @@ var wp;
   });
   if (true) FieldError.displayName = "FieldError";
 
-  // node_modules/@base-ui/react/field/description/FieldDescription.mjs
-  var React35 = __toESM(require_react(), 1);
-  var FieldDescription = /* @__PURE__ */ React35.forwardRef(function FieldDescription2(componentProps, forwardedRef) {
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/description/FieldDescription.mjs
+  var React36 = __toESM(require_react(), 1);
+  var FieldDescription = /* @__PURE__ */ React36.forwardRef(function FieldDescription2(componentProps, forwardedRef) {
     const {
       render,
       id: idProp,
@@ -3429,9 +3582,9 @@ var wp;
   });
   if (true) FieldDescription.displayName = "FieldDescription";
 
-  // node_modules/@base-ui/react/field/control/FieldControl.mjs
-  var React36 = __toESM(require_react(), 1);
-  var FieldControl = /* @__PURE__ */ React36.forwardRef(function FieldControl2(componentProps, forwardedRef) {
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/control/FieldControl.mjs
+  var React37 = __toESM(require_react(), 1);
+  var FieldControl = /* @__PURE__ */ React37.forwardRef(function FieldControl2(componentProps, forwardedRef) {
     const {
       render,
       className,
@@ -3458,7 +3611,9 @@ var wp;
       validation
     } = useFieldRootContext();
     const {
-      clearErrors
+      clearErrors,
+      elementRef: formElementRef,
+      submitCountRef
     } = useFormContext();
     const disabled2 = fieldDisabled || disabledProp;
     const name16 = fieldName ?? nameProp;
@@ -3472,20 +3627,6 @@ var wp;
     const id = useLabelableId({
       id: idProp
     });
-    useIsoLayoutEffect(() => {
-      const hasExternalValue = valueProp != null;
-      if (validation.inputRef.current?.value || hasExternalValue && valueProp !== "") {
-        setFilled(true);
-      } else if (hasExternalValue && valueProp === "") {
-        setFilled(false);
-      }
-    }, [validation.inputRef, setFilled, valueProp]);
-    const inputRef = React36.useRef(null);
-    useIsoLayoutEffect(() => {
-      if (autoFocus && inputRef.current === activeElement(ownerDocument(inputRef.current))) {
-        setFocused(true);
-      }
-    }, [autoFocus, setFocused]);
     const [valueUnwrapped] = useControlled({
       controlled: valueProp,
       default: defaultValue,
@@ -3494,8 +3635,30 @@ var wp;
     });
     const isControlled = valueProp !== void 0;
     const value = isControlled ? valueUnwrapped : void 0;
+    const serializedValue = value == null ? void 0 : String(value);
     const getValueFromInput = useStableCallback(() => validation.inputRef.current?.value);
-    useRegisterFieldControl(validation.inputRef, id, value, getValueFromInput, !disabled2, nameProp);
+    useRegisterFieldControl(validation.inputRef, id, serializedValue, getValueFromInput, !disabled2, nameProp);
+    useIsoLayoutEffect(() => {
+      const currentValue = serializedValue ?? validation.inputRef.current?.value;
+      if (currentValue !== void 0) {
+        setFilled(currentValue !== "");
+      }
+    }, [serializedValue, validation.inputRef, setFilled]);
+    useValueChanged(serializedValue, () => {
+      if (serializedValue === void 0) {
+        return;
+      }
+      clearErrors(name16);
+      setDirty(serializedValue !== (validityData.initialValue ?? ""));
+      validation.change(serializedValue);
+    });
+    const inputRef = React37.useRef(null);
+    const enterValidationTimeout = useTimeout();
+    useIsoLayoutEffect(() => {
+      if (autoFocus && inputRef.current === activeElement(ownerDocument(inputRef.current))) {
+        setFocused(true);
+      }
+    }, [autoFocus, setFocused]);
     const element = useRenderElement("input", componentProps, {
       ref: [forwardedRef, inputRef],
       state,
@@ -3513,10 +3676,14 @@ var wp;
         },
         onChange(event) {
           const inputValue = event.currentTarget.value;
-          onValueChange?.(inputValue, createChangeEventDetails(reason_parts_exports.none, event.nativeEvent));
+          const details = createChangeEventDetails(reason_parts_exports.none, event.nativeEvent);
+          onValueChange?.(inputValue, details);
+          if (isControlled) {
+            return;
+          }
           setDirty(inputValue !== (validityData.initialValue ?? ""));
           setFilled(inputValue !== "");
-          if (!event.nativeEvent.defaultPrevented) {
+          if (!event.nativeEvent.defaultPrevented && !details.isCanceled) {
             clearErrors(name16);
             validation.change(inputValue);
           }
@@ -3528,13 +3695,34 @@ var wp;
           setTouched(true);
           setFocused(false);
           if (validationMode === "onBlur") {
-            validation.commit(event.currentTarget.value);
+            const inputValue = event.currentTarget.value;
+            validation.commit(inputValue);
+            if (isControlled) {
+              queueMicrotask(() => {
+                const nextValue = validation.inputRef.current?.value;
+                if (nextValue !== void 0 && nextValue !== inputValue && nextValue !== (validityData.initialValue ?? "")) {
+                  validation.commit(nextValue);
+                }
+              });
+            }
           }
         },
         onKeyDown(event) {
           if (event.currentTarget.tagName === "INPUT" && event.key === "Enter") {
             setTouched(true);
-            validation.commit(event.currentTarget.value);
+            const value2 = event.currentTarget.value;
+            const form = event.currentTarget.form;
+            if (form && form === formElementRef.current && !event.defaultPrevented) {
+              const input = event.currentTarget;
+              const submitCount = submitCountRef.current;
+              enterValidationTimeout.start(0, () => {
+                if (submitCountRef.current === submitCount) {
+                  validation.commit(input.value);
+                }
+              });
+            } else {
+              validation.commit(value2);
+            }
           }
         }
       }, elementProps, (props) => validation.getValidationProps(disabled2, props)],
@@ -3544,8 +3732,8 @@ var wp;
   });
   if (true) FieldControl.displayName = "FieldControl";
 
-  // node_modules/@base-ui/react/field/validity/FieldValidity.mjs
-  var React37 = __toESM(require_react(), 1);
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/validity/FieldValidity.mjs
+  var React38 = __toESM(require_react(), 1);
   var import_jsx_runtime25 = __toESM(require_jsx_runtime(), 1);
   var FieldValidity = function FieldValidity2(props) {
     const {
@@ -3553,30 +3741,30 @@ var wp;
     } = props;
     const {
       validityData,
-      invalid
+      invalid: invalid2
     } = useFieldRootContext(false);
-    const combinedFieldValidityData = React37.useMemo(() => getCombinedFieldValidityData(validityData, invalid), [validityData, invalid]);
+    const combinedFieldValidityData = React38.useMemo(() => getCombinedFieldValidityData(validityData, invalid2), [validityData, invalid2]);
     const isInvalid = combinedFieldValidityData.state.valid === false;
     const {
       transitionStatus
     } = useTransitionStatus(isInvalid);
-    const fieldValidityState = React37.useMemo(() => {
+    const fieldValidityState = React38.useMemo(() => {
       return {
         ...combinedFieldValidityData,
         validity: combinedFieldValidityData.state,
         transitionStatus
       };
     }, [combinedFieldValidityData, transitionStatus]);
-    return /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(React37.Fragment, {
+    return /* @__PURE__ */ (0, import_jsx_runtime25.jsx)(React38.Fragment, {
       children: children(fieldValidityState)
     });
   };
   if (true) FieldValidity.displayName = "FieldValidity";
 
-  // node_modules/@base-ui/react/field/item/FieldItem.mjs
-  var React38 = __toESM(require_react(), 1);
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/field/item/FieldItem.mjs
+  var React39 = __toESM(require_react(), 1);
   var import_jsx_runtime26 = __toESM(require_jsx_runtime(), 1);
-  var FieldItem = /* @__PURE__ */ React38.forwardRef(function FieldItem2(componentProps, forwardedRef) {
+  var FieldItem = /* @__PURE__ */ React39.forwardRef(function FieldItem2(componentProps, forwardedRef) {
     const {
       render,
       className,
@@ -3593,7 +3781,7 @@ var wp;
       ...fieldState,
       disabled: disabled2
     };
-    const fieldItemContext = React38.useMemo(() => ({
+    const fieldItemContext = React39.useMemo(() => ({
       disabled: disabled2
     }), [disabled2]);
     const element = useRenderElement("div", componentProps, {
@@ -3611,10 +3799,10 @@ var wp;
   });
   if (true) FieldItem.displayName = "FieldItem";
 
-  // node_modules/@base-ui/react/input/Input.mjs
-  var React39 = __toESM(require_react(), 1);
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/input/Input.mjs
+  var React40 = __toESM(require_react(), 1);
   var import_jsx_runtime27 = __toESM(require_jsx_runtime(), 1);
-  var Input = /* @__PURE__ */ React39.forwardRef(function Input2(props, forwardedRef) {
+  var Input = /* @__PURE__ */ React40.forwardRef(function Input2(props, forwardedRef) {
     return /* @__PURE__ */ (0, import_jsx_runtime27.jsx)(index_parts_exports.Control, {
       ref: forwardedRef,
       ...props
@@ -3622,17 +3810,16 @@ var wp;
   });
   if (true) Input.displayName = "Input";
 
-  // node_modules/@base-ui/react/internals/composite/root/CompositeRoot.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/composite/root/CompositeRoot.mjs
+  var React42 = __toESM(require_react(), 1);
+
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/composite/root/useCompositeRoot.mjs
   var React41 = __toESM(require_react(), 1);
 
-  // node_modules/@base-ui/react/internals/composite/root/useCompositeRoot.mjs
-  var React40 = __toESM(require_react(), 1);
-
-  // node_modules/@base-ui/react/internals/composite/constants.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/composite/constants.mjs
   var ACTIVE_COMPOSITE_ITEM = "data-composite-item-active";
 
-  // node_modules/@base-ui/react/internals/composite/root/useCompositeRoot.mjs
-  var EMPTY_ARRAY2 = [];
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/composite/root/useCompositeRoot.mjs
   function useCompositeRoot(params) {
     const {
       loopFocus = true,
@@ -3646,24 +3833,41 @@ var wp;
       enableHomeAndEndKeys = false,
       stopEventPropagation,
       disabledIndices,
-      modifierKeys = EMPTY_ARRAY2
+      modifierKeys = EMPTY_ARRAY
     } = params;
-    const [internalHighlightedIndex, internalSetHighlightedIndex] = React40.useState(0);
+    const [internalHighlightedIndex, internalSetHighlightedIndex] = React41.useState(0);
     const isGrid = grid != null;
-    const rootRef = React40.useRef(null);
+    const rootRef = React41.useRef(null);
     const mergedRef = useMergedRefs(rootRef, externalRef);
-    const elementsRef = React40.useRef([]);
-    const hasSetDefaultIndexRef = React40.useRef(false);
+    const elementsRef = React41.useRef([]);
+    const hasSetDefaultIndexRef = React41.useRef(false);
+    const highlightedElementRef = React41.useRef(null);
     const highlightedIndex = externalHighlightedIndex ?? internalHighlightedIndex;
-    const onHighlightedIndexChange = useStableCallback((index, shouldScrollIntoView = false) => {
-      (externalSetHighlightedIndex ?? internalSetHighlightedIndex)(index);
+    const onHighlightedIndexChange = useStableCallback((index2, shouldScrollIntoView = false) => {
+      highlightedElementRef.current = elementsRef.current[index2] ?? null;
+      (externalSetHighlightedIndex ?? internalSetHighlightedIndex)(index2);
       if (shouldScrollIntoView) {
-        const newActiveItem = elementsRef.current[index];
+        const newActiveItem = elementsRef.current[index2];
         scrollIntoViewIfNeeded(rootRef.current, newActiveItem, direction, orientation);
       }
     });
     const onMapChange = useStableCallback((map) => {
-      if (map.size === 0 || hasSetDefaultIndexRef.current) {
+      if (map.size === 0) {
+        return;
+      }
+      if (hasSetDefaultIndexRef.current) {
+        const elements = elementsRef.current;
+        const nextIndex = elements.indexOf(highlightedElementRef.current);
+        if (nextIndex === -1) {
+          const replacement = elements[highlightedIndex];
+          if (!replacement || isListIndexDisabled(elements, highlightedIndex, disabledIndices)) {
+            onHighlightedIndexChange(getFallbackIndex(elements, disabledIndices));
+          } else {
+            highlightedElementRef.current = replacement;
+          }
+        } else if (nextIndex !== highlightedIndex) {
+          onHighlightedIndexChange(nextIndex);
+        }
         return;
       }
       hasSetDefaultIndexRef.current = true;
@@ -3813,6 +4017,22 @@ var wp;
       relayKeyboardEvent: onKeyDown
     };
   }
+  function getFallbackIndex(elements, disabledIndices) {
+    let fallbackIndex = -1;
+    for (let index2 = 0; index2 < elements.length; index2 += 1) {
+      const element = elements[index2];
+      if (!element || isListIndexDisabled(elements, index2, disabledIndices)) {
+        continue;
+      }
+      if (element.hasAttribute(ACTIVE_COMPOSITE_ITEM)) {
+        return index2;
+      }
+      if (fallbackIndex === -1) {
+        fallbackIndex = index2;
+      }
+    }
+    return Math.max(fallbackIndex, 0);
+  }
   function isModifierKeySet(event, ignoredModifierKeys) {
     for (const key of MODIFIER_KEYS) {
       if (ignoredModifierKeys.includes(key)) {
@@ -3825,7 +4045,7 @@ var wp;
     return false;
   }
 
-  // node_modules/@base-ui/react/internals/composite/root/CompositeRoot.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/composite/root/CompositeRoot.mjs
   var import_jsx_runtime28 = __toESM(require_jsx_runtime(), 1);
   function CompositeRoot(componentProps) {
     const {
@@ -3880,7 +4100,7 @@ var wp;
       props: [defaultProps, ...props, elementProps],
       stateAttributesMapping: stateAttributesMapping4
     });
-    const contextValue = React41.useMemo(() => ({
+    const contextValue = React42.useMemo(() => ({
       highlightedIndex,
       onHighlightedIndexChange,
       highlightItemOnHover,
@@ -3899,10 +4119,10 @@ var wp;
     });
   }
 
-  // node_modules/@base-ui/react/internals/prehydrationScript.stub.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/prehydrationScript.stub.mjs
   var script = "";
 
-  // node_modules/@base-ui/react/utils/useIsHydrating.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/utils/useIsHydrating.mjs
   var import_shim = __toESM(require_shim(), 1);
   function subscribe() {
     return NOOP;
@@ -3917,8 +4137,8 @@ var wp;
     return (0, import_shim.useSyncExternalStore)(subscribe, getSnapshot, getServerSnapshot);
   }
 
-  // node_modules/@base-ui/react/internals/PrehydrationScript.mjs
-  var React42 = __toESM(require_react(), 1);
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/internals/PrehydrationScript.mjs
+  var React43 = __toESM(require_react(), 1);
   var import_jsx_runtime29 = __toESM(require_jsx_runtime(), 1);
   function PrehydrationScript(props) {
     const {
@@ -3940,7 +4160,7 @@ var wp;
     });
   }
 
-  // node_modules/@base-ui/react/tabs/index.parts.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tabs/index.parts.mjs
   var index_parts_exports2 = {};
   __export(index_parts_exports2, {
     Indicator: () => TabsIndicator,
@@ -3950,31 +4170,34 @@ var wp;
     Tab: () => TabsTab
   });
 
-  // node_modules/@base-ui/react/tabs/root/TabsRoot.mjs
-  var React44 = __toESM(require_react(), 1);
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tabs/root/TabsRoot.mjs
+  var React45 = __toESM(require_react(), 1);
 
-  // node_modules/@base-ui/react/tabs/root/TabsRootContext.mjs
-  var React43 = __toESM(require_react(), 1);
-  var TabsRootContext = /* @__PURE__ */ React43.createContext(void 0);
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tabs/root/TabsRootContext.mjs
+  var React44 = __toESM(require_react(), 1);
+  var TabsRootContext = /* @__PURE__ */ React44.createContext(void 0);
   if (true) TabsRootContext.displayName = "TabsRootContext";
   function useTabsRootContext() {
-    const context = React43.useContext(TabsRootContext);
+    const context = React44.useContext(TabsRootContext);
     if (context === void 0) {
       throw new Error(true ? "Base UI: TabsRootContext is missing. Tabs parts must be placed within <Tabs.Root>." : formatErrorMessage_default(64));
     }
     return context;
   }
 
-  // node_modules/@base-ui/react/tabs/root/stateAttributesMapping.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tabs/root/TabsRootDataAttributes.mjs
+  var activationDirection = "data-activation-direction";
+
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tabs/root/stateAttributesMapping.mjs
   var tabsStateAttributesMapping = {
     tabActivationDirection: (dir) => ({
-      "data-activation-direction": dir
+      [activationDirection]: dir
     })
   };
 
-  // node_modules/@base-ui/react/tabs/root/TabsRoot.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tabs/root/TabsRoot.mjs
   var import_jsx_runtime30 = __toESM(require_jsx_runtime(), 1);
-  var TabsRoot = /* @__PURE__ */ React44.forwardRef(function TabsRoot2(componentProps, forwardedRef) {
+  var TabsRoot = /* @__PURE__ */ React45.forwardRef(function TabsRoot2(componentProps, forwardedRef) {
     const {
       className,
       defaultValue: defaultValueProp = 0,
@@ -3986,8 +4209,8 @@ var wp;
       ...elementProps
     } = componentProps;
     const hasExplicitDefaultValueProp = componentProps.defaultValue !== void 0;
-    const tabPanelRefs = React44.useRef([]);
-    const [mountedTabPanels, setMountedTabPanels] = React44.useState(() => /* @__PURE__ */ new Map());
+    const tabPanelRefs = React45.useRef([]);
+    const [mountedTabPanels, setMountedTabPanels] = React45.useState(() => /* @__PURE__ */ new Map());
     const [value, setValue] = useControlled({
       controlled: valueProp,
       default: defaultValueProp,
@@ -3995,10 +4218,10 @@ var wp;
       state: "value"
     });
     const isControlled = valueProp !== void 0;
-    const [tabMap, setTabMap] = React44.useState(() => /* @__PURE__ */ new Map());
-    const lastKnownTabElementRef = React44.useRef(void 0);
-    const getTabElementBySelectedValue = React44.useCallback((selectedValue) => findTabElement(tabMap, selectedValue), [tabMap]);
-    const [activationDirectionState, setActivationDirectionState] = React44.useState(() => ({
+    const [tabMap, setTabMap] = React45.useState(() => /* @__PURE__ */ new Map());
+    const lastKnownTabElementRef = React45.useRef(void 0);
+    const getTabElementBySelectedValue = React45.useCallback((selectedValue) => findTabElement(tabMap, selectedValue), [tabMap]);
+    const [activationDirectionState, setActivationDirectionState] = React45.useState(() => ({
       previousValue: value,
       tabActivationDirection: "none"
     }));
@@ -4024,8 +4247,8 @@ var wp;
       });
     }, [nextPreviousValue, shouldSyncActivationDirectionState, tabActivationDirection]);
     const onValueChange = useStableCallback((newValue, eventDetails) => {
-      const activationDirection = computeActivationDirection(value, newValue, orientation, tabMap);
-      eventDetails.activationDirection = activationDirection;
+      const activationDirection2 = computeActivationDirection(value, newValue, orientation, tabMap);
+      eventDetails.activationDirection = activationDirection2;
       onValueChangeProp?.(newValue, eventDetails);
       if (eventDetails.isCanceled) {
         return;
@@ -4054,10 +4277,10 @@ var wp;
         });
       };
     });
-    const getTabPanelIdByValue = React44.useCallback((tabValue) => {
+    const getTabPanelIdByValue = React45.useCallback((tabValue) => {
       return mountedTabPanels.get(tabValue);
     }, [mountedTabPanels]);
-    const getTabIdByPanelValue = React44.useCallback((tabPanelValue) => {
+    const getTabIdByPanelValue = React45.useCallback((tabPanelValue) => {
       for (const tabMetadata of tabMap.values()) {
         if (tabPanelValue === tabMetadata.value) {
           return tabMetadata.id;
@@ -4065,7 +4288,7 @@ var wp;
       }
       return void 0;
     }, [tabMap]);
-    const tabsContextValue = React44.useMemo(() => ({
+    const tabsContextValue = React45.useMemo(() => ({
       getTabElementBySelectedValue,
       getTabIdByPanelValue,
       getTabPanelIdByValue,
@@ -4076,7 +4299,7 @@ var wp;
       tabActivationDirection,
       value
     }), [getTabElementBySelectedValue, getTabIdByPanelValue, getTabPanelIdByValue, onValueChange, orientation, registerMountedTabPanel, setTabMap, tabActivationDirection, value]);
-    const selectedTabMetadata = React44.useMemo(() => {
+    const selectedTabMetadata = React45.useMemo(() => {
       for (const tabMetadata of tabMap.values()) {
         if (tabMetadata.value === value) {
           return tabMetadata;
@@ -4084,7 +4307,7 @@ var wp;
       }
       return void 0;
     }, [tabMap, value]);
-    const firstEnabledTabValue = React44.useMemo(() => {
+    const firstEnabledTabValue = React45.useMemo(() => {
       for (const tabMetadata of tabMap.values()) {
         if (!tabMetadata.disabled) {
           return tabMetadata.value;
@@ -4092,10 +4315,10 @@ var wp;
       }
       return void 0;
     }, [tabMap]);
-    const shouldNotifyInitialValueChangeRef = React44.useRef(!hasExplicitDefaultValueProp);
-    const initialDefaultValueRef = React44.useRef(defaultValueProp);
-    const shouldHonorDisabledDefaultValueRef = React44.useRef(hasExplicitDefaultValueProp);
-    const didRegisterTabsRef = React44.useRef(false);
+    const shouldNotifyInitialValueChangeRef = React45.useRef(!hasExplicitDefaultValueProp);
+    const initialDefaultValueRef = React45.useRef(defaultValueProp);
+    const shouldHonorDisabledDefaultValueRef = React45.useRef(hasExplicitDefaultValueProp);
+    const didRegisterTabsRef = React45.useRef(false);
     useIsoLayoutEffect(() => {
       if (isControlled) {
         return;
@@ -4197,23 +4420,23 @@ var wp;
     return "none";
   }
 
-  // node_modules/@base-ui/react/tabs/tab/TabsTab.mjs
-  var React46 = __toESM(require_react(), 1);
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tabs/tab/TabsTab.mjs
+  var React47 = __toESM(require_react(), 1);
 
-  // node_modules/@base-ui/react/tabs/list/TabsListContext.mjs
-  var React45 = __toESM(require_react(), 1);
-  var TabsListContext = /* @__PURE__ */ React45.createContext(void 0);
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tabs/list/TabsListContext.mjs
+  var React46 = __toESM(require_react(), 1);
+  var TabsListContext = /* @__PURE__ */ React46.createContext(void 0);
   if (true) TabsListContext.displayName = "TabsListContext";
   function useTabsListContext() {
-    const context = React45.useContext(TabsListContext);
+    const context = React46.useContext(TabsListContext);
     if (context === void 0) {
       throw new Error(true ? "Base UI: TabsListContext is missing. TabsList parts must be placed within <Tabs.List>." : formatErrorMessage_default(65));
     }
     return context;
   }
 
-  // node_modules/@base-ui/react/tabs/tab/TabsTab.mjs
-  var TabsTab = /* @__PURE__ */ React46.forwardRef(function TabsTab2(componentProps, forwardedRef) {
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tabs/tab/TabsTab.mjs
+  var TabsTab = /* @__PURE__ */ React47.forwardRef(function TabsTab2(componentProps, forwardedRef) {
     const {
       className,
       disabled: disabled2 = false,
@@ -4241,7 +4464,7 @@ var wp;
       onHighlightedIndexChange
     } = useCompositeRootContext();
     const id = useBaseUiId(idProp);
-    const tabMetadata = React46.useMemo(() => ({
+    const tabMetadata = React47.useMemo(() => ({
       disabled: disabled2,
       id,
       value
@@ -4249,15 +4472,15 @@ var wp;
     const {
       compositeProps,
       compositeRef,
-      index
+      index: index2
       // hook is used instead of the CompositeItem component
       // because the index is needed for Tab internals
     } = useCompositeItem({
       metadata: tabMetadata
     });
     const active = value === activeTabValue;
-    const isNavigatingRef = React46.useRef(false);
-    const unobserveTabElementRef = React46.useRef(null);
+    const isNavigatingRef = React47.useRef(false);
+    const unobserveTabElementRef = React47.useRef(null);
     const observeTabElement = useStableCallback((element2) => {
       unobserveTabElementRef.current?.();
       unobserveTabElementRef.current = element2 ? registerTabResizeObserverElement(element2) : null;
@@ -4267,7 +4490,7 @@ var wp;
         isNavigatingRef.current = false;
         return;
       }
-      if (!(active && index > -1 && highlightedIndex !== index)) {
+      if (!(active && index2 > -1 && highlightedIndex !== index2)) {
         return;
       }
       const listElement = tabsListElement;
@@ -4278,9 +4501,9 @@ var wp;
         }
       }
       if (!disabled2) {
-        onHighlightedIndexChange(index);
+        onHighlightedIndexChange(index2);
       }
-    }, [active, index, highlightedIndex, onHighlightedIndexChange, disabled2, tabsListElement]);
+    }, [active, index2, highlightedIndex, onHighlightedIndexChange, disabled2, tabsListElement]);
     const {
       getButtonProps,
       buttonRef
@@ -4290,8 +4513,8 @@ var wp;
       focusableWhenDisabled: true
     });
     const tabPanelId = getTabPanelIdByValue(value);
-    const isPressingRef = React46.useRef(false);
-    const isMainButtonRef = React46.useRef(false);
+    const isPressingRef = React47.useRef(false);
+    const isMainButtonRef = React47.useRef(false);
     function activate(event) {
       onValueChange(value, createChangeEventDetails(reason_parts_exports.none, event.nativeEvent, void 0, {
         activationDirection: "none"
@@ -4356,8 +4579,18 @@ var wp;
   });
   if (true) TabsTab.displayName = "TabsTab";
 
-  // node_modules/@base-ui/react/tabs/indicator/TabsIndicator.mjs
-  var React47 = __toESM(require_react(), 1);
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tabs/indicator/TabsIndicator.mjs
+  var React48 = __toESM(require_react(), 1);
+
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tabs/indicator/TabsIndicatorCssVars.mjs
+  var activeTabLeft = "--active-tab-left";
+  var activeTabRight = "--active-tab-right";
+  var activeTabTop = "--active-tab-top";
+  var activeTabBottom = "--active-tab-bottom";
+  var activeTabWidth = "--active-tab-width";
+  var activeTabHeight = "--active-tab-height";
+
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tabs/indicator/TabsIndicator.mjs
   var import_jsx_runtime31 = __toESM(require_jsx_runtime(), 1);
   var _PrehydrationScript;
   var stateAttributesMapping2 = {
@@ -4365,7 +4598,8 @@ var wp;
     activeTabPosition: () => null,
     activeTabSize: () => null
   };
-  var TabsIndicator = /* @__PURE__ */ React47.forwardRef(function TabsIndicator2(componentProps, forwardedRef) {
+  var MAX_LAYOUT_ROUNDING_ERROR = 2;
+  var TabsIndicator = /* @__PURE__ */ React48.forwardRef(function TabsIndicator2(componentProps, forwardedRef) {
     const {
       className,
       render,
@@ -4384,7 +4618,7 @@ var wp;
       registerIndicatorUpdateListener
     } = useTabsListContext();
     const rerender = useForcedRerendering();
-    React47.useEffect(() => {
+    React48.useEffect(() => {
       return registerIndicatorUpdateListener(rerender);
     }, [registerIndicatorUpdateListener, rerender]);
     let left = 0;
@@ -4410,15 +4644,15 @@ var wp;
         const tabsListRect = tabsListElement.getBoundingClientRect();
         const scaleX = tabListWidth > 0 ? tabsListRect.width / tabListWidth : 1;
         const scaleY = tabListHeight > 0 ? tabsListRect.height / tabListHeight : 1;
-        const hasNonZeroScale = scaleX > Number.EPSILON && scaleY > Number.EPSILON;
-        if (hasNonZeroScale) {
-          const tabLeftDelta = tabRect.left - tabsListRect.left;
-          const tabTopDelta = tabRect.top - tabsListRect.top;
-          left = tabLeftDelta / scaleX + tabsListElement.scrollLeft - tabsListElement.clientLeft;
-          top = tabTopDelta / scaleY + tabsListElement.scrollTop - tabsListElement.clientTop;
-        } else {
-          left = activeTab.offsetLeft;
-          top = activeTab.offsetTop;
+        const layoutOffset = getLayoutOffset(activeTab, tabsListElement);
+        left = layoutOffset.left;
+        top = layoutOffset.top;
+        const rectLeft = (tabRect.left - tabsListRect.left) / scaleX + tabsListElement.scrollLeft - tabsListElement.clientLeft;
+        const rectTop = (tabRect.top - tabsListRect.top) / scaleY + tabsListElement.scrollTop - tabsListElement.clientTop;
+        const tabTranslation = getActiveTabTranslation(activeTab);
+        if (Math.abs(rectLeft - tabTranslation.x - left) <= MAX_LAYOUT_ROUNDING_ERROR && Math.abs(rectTop - tabTranslation.y - top) <= MAX_LAYOUT_ROUNDING_ERROR) {
+          left = rectLeft;
+          top = rectTop;
         }
         width = computedWidth;
         height = computedHeight;
@@ -4437,12 +4671,12 @@ var wp;
       height
     } : null;
     const style = isTabSelected ? {
-      "--active-tab-left": `${left}px`,
-      "--active-tab-right": `${right}px`,
-      "--active-tab-top": `${top}px`,
-      "--active-tab-bottom": `${bottom}px`,
-      "--active-tab-width": `${width}px`,
-      "--active-tab-height": `${height}px`
+      [activeTabLeft]: `${left}px`,
+      [activeTabRight]: `${right}px`,
+      [activeTabTop]: `${top}px`,
+      [activeTabBottom]: `${bottom}px`,
+      [activeTabWidth]: `${width}px`,
+      [activeTabHeight]: `${height}px`
     } : void 0;
     const displayIndicator = isTabSelected && width > 0 && height > 0;
     const state = {
@@ -4467,21 +4701,94 @@ var wp;
     if (value == null) {
       return null;
     }
-    return /* @__PURE__ */ (0, import_jsx_runtime31.jsxs)(React47.Fragment, {
+    return /* @__PURE__ */ (0, import_jsx_runtime31.jsxs)(React48.Fragment, {
       children: [element, renderBeforeHydration && (_PrehydrationScript || (_PrehydrationScript = /* @__PURE__ */ (0, import_jsx_runtime31.jsx)(PrehydrationScript, {
         script
       })))]
     });
   });
   if (true) TabsIndicator.displayName = "TabsIndicator";
+  function getLayoutOffset(element, ancestor) {
+    const elementOffset = getCumulativeOffset(element);
+    const ancestorOffset = getCumulativeOffset(ancestor);
+    let left = elementOffset.left - ancestorOffset.left - ancestor.clientLeft;
+    let top = elementOffset.top - ancestorOffset.top - ancestor.clientTop;
+    let node = getParentNode(element);
+    while (isHTMLElement(node) && node !== ancestor && !isLastTraversableNode(node)) {
+      left -= node.scrollLeft;
+      top -= node.scrollTop;
+      node = getParentNode(node);
+    }
+    return {
+      left,
+      top
+    };
+  }
+  function getCumulativeOffset(element) {
+    let left = 0;
+    let top = 0;
+    let currentElement = element;
+    while (currentElement != null) {
+      left += currentElement.offsetLeft;
+      top += currentElement.offsetTop;
+      const offsetParent = currentElement.offsetParent;
+      if (offsetParent != null) {
+        left += offsetParent.clientLeft;
+        top += offsetParent.clientTop;
+      }
+      currentElement = offsetParent;
+    }
+    return {
+      left,
+      top
+    };
+  }
+  function getActiveTabTranslation(element) {
+    const computedStyle = getWindow(element).getComputedStyle(element);
+    const {
+      x,
+      y
+    } = getElementTransform(element, computedStyle);
+    let translateX = x;
+    let translateY = y;
+    const {
+      translate
+    } = computedStyle;
+    if (translate && translate !== "none") {
+      const parts = translate.split(" ");
+      translateX += resolveTranslateLength(parts[0], element.offsetWidth);
+      translateY += resolveTranslateLength(parts[1], element.offsetHeight);
+    }
+    return {
+      x: translateX,
+      y: translateY
+    };
+  }
+  function resolveTranslateLength(value, referenceSize) {
+    if (!value) {
+      return 0;
+    }
+    const numeric = parseFloat(value);
+    if (!Number.isFinite(numeric)) {
+      return 0;
+    }
+    return value.endsWith("%") ? numeric / 100 * referenceSize : numeric;
+  }
 
-  // node_modules/@base-ui/react/tabs/panel/TabsPanel.mjs
-  var React48 = __toESM(require_react(), 1);
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tabs/panel/TabsPanel.mjs
+  var React49 = __toESM(require_react(), 1);
+
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tabs/panel/TabsPanelDataAttributes.mjs
+  var index = "data-index";
+  var startingStyle2 = TransitionStatusDataAttributes_exports.startingStyle;
+  var endingStyle2 = TransitionStatusDataAttributes_exports.endingStyle;
+
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tabs/panel/TabsPanel.mjs
   var stateAttributesMapping3 = {
     ...tabsStateAttributesMapping,
     ...transitionStatusMapping
   };
-  var TabsPanel = /* @__PURE__ */ React48.forwardRef(function TabsPanel2(componentProps, forwardedRef) {
+  var TabsPanel = /* @__PURE__ */ React49.forwardRef(function TabsPanel2(componentProps, forwardedRef) {
     const {
       className,
       value,
@@ -4500,7 +4807,7 @@ var wp;
     const id = useBaseUiId();
     const {
       ref: listItemRef,
-      index
+      index: index2
     } = useCompositeListItem();
     const open = value === selectedValue;
     const {
@@ -4516,7 +4823,7 @@ var wp;
       tabActivationDirection,
       transitionStatus
     };
-    const panelRef = React48.useRef(null);
+    const panelRef = React49.useRef(null);
     const element = useRenderElement("div", componentProps, {
       state,
       ref: [forwardedRef, listItemRef, panelRef],
@@ -4528,7 +4835,7 @@ var wp;
         tabIndex: open ? 0 : -1,
         inert: inertValue(!open),
         // Computed key: a plain literal key fails the DOM-props excess property check.
-        ["data-index"]: index
+        [index]: index2
       }, elementProps],
       stateAttributesMapping: stateAttributesMapping3
     });
@@ -4555,10 +4862,10 @@ var wp;
   });
   if (true) TabsPanel.displayName = "TabsPanel";
 
-  // node_modules/@base-ui/react/tabs/list/TabsList.mjs
-  var React49 = __toESM(require_react(), 1);
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/tabs/list/TabsList.mjs
+  var React50 = __toESM(require_react(), 1);
   var import_jsx_runtime32 = __toESM(require_jsx_runtime(), 1);
-  var TabsList = /* @__PURE__ */ React49.forwardRef(function TabsList2(componentProps, forwardedRef) {
+  var TabsList = /* @__PURE__ */ React50.forwardRef(function TabsList2(componentProps, forwardedRef) {
     const {
       activateOnFocus = false,
       className,
@@ -4572,11 +4879,11 @@ var wp;
       setTabMap,
       tabActivationDirection
     } = useTabsRootContext();
-    const [highlightedTabIndex, setHighlightedTabIndex] = React49.useState(0);
-    const [tabsListElement, setTabsListElement] = React49.useState(null);
-    const indicatorUpdateListenersRef = React49.useRef(/* @__PURE__ */ new Set());
-    const tabResizeObserverElementsRef = React49.useRef(/* @__PURE__ */ new Set());
-    const resizeObserverRef = React49.useRef(null);
+    const [highlightedTabIndex, setHighlightedTabIndex] = React50.useState(0);
+    const [tabsListElement, setTabsListElement] = React50.useState(null);
+    const indicatorUpdateListenersRef = React50.useRef(/* @__PURE__ */ new Set());
+    const tabResizeObserverElementsRef = React50.useRef(/* @__PURE__ */ new Set());
+    const resizeObserverRef = React50.useRef(null);
     useIsoLayoutEffect(() => {
       if (typeof ResizeObserver === "undefined") {
         return void 0;
@@ -4620,7 +4927,7 @@ var wp;
       "aria-orientation": orientation === "vertical" ? "vertical" : void 0,
       role: "tablist"
     };
-    const tabsListContextValue = React49.useMemo(() => ({
+    const tabsListContextValue = React50.useMemo(() => ({
       activateOnFocus,
       registerIndicatorUpdateListener,
       registerTabResizeObserverElement,
@@ -4648,7 +4955,7 @@ var wp;
   });
   if (true) TabsList.displayName = "TabsList";
 
-  // node_modules/@base-ui/react/use-render/useRender.mjs
+  // node_modules/.store/@base-ui/react@1.8.0-AmwqKTN4N3wuPkzw6LPphA/node_modules/@base-ui/react/use-render/useRender.mjs
   function useRender(params) {
     return useRenderElement(params.defaultTagName ?? "div", params, params);
   }
@@ -4749,9 +5056,9 @@ var wp;
   }
   var resets_default = { "box-sizing": "_336cd3e4e743482f__box-sizing" };
   if (typeof process === "undefined" || true) {
-    registerStyle("08122b3d53", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer utilities{.af79fb116edb0dd7__outset-ring--focus:focus,.dfcfdc28396e5d98__outset-ring--focus-visible:focus-visible,.e5cd9ee879f6403a__outset-ring--focus-within:focus-within,:focus-visible ._81935a08e952f267__outset-ring--focus-parent-visible{--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within,.abc777e9713fa711__outset-ring--focus-except-active:focus{outline:none}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within:not(:has(:active)),.abc777e9713fa711__outset-ring--focus-except-active:focus:not(:active){--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}}}");
+    registerStyle("7c3267f794", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer utilities{.af79fb116edb0dd7__outset-ring--focus:focus,.dfcfdc28396e5d98__outset-ring--focus-visible:focus-visible,.e5cd9ee879f6403a__outset-ring--focus-within:focus-within{--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within,.abc777e9713fa711__outset-ring--focus-except-active:focus{outline:none}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within:not(:has(:active)),.abc777e9713fa711__outset-ring--focus-except-active:focus:not(:active){--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}}}");
   }
-  var focus_module_default = { "outset-ring--focus": "af79fb116edb0dd7__outset-ring--focus", "outset-ring--focus-visible": "dfcfdc28396e5d98__outset-ring--focus-visible", "outset-ring--focus-within": "e5cd9ee879f6403a__outset-ring--focus-within", "outset-ring--focus-parent-visible": "_81935a08e952f267__outset-ring--focus-parent-visible", "outset-ring--focus-except-active": "abc777e9713fa711__outset-ring--focus-except-active", "outset-ring--focus-within-except-active": "_3c9f5ee9fc9c136d__outset-ring--focus-within-except-active" };
+  var focus_module_default = { "outset-ring--focus": "af79fb116edb0dd7__outset-ring--focus", "outset-ring--focus-visible": "dfcfdc28396e5d98__outset-ring--focus-visible", "outset-ring--focus-within": "e5cd9ee879f6403a__outset-ring--focus-within", "outset-ring--focus-except-active": "abc777e9713fa711__outset-ring--focus-except-active", "outset-ring--focus-within-except-active": "_3c9f5ee9fc9c136d__outset-ring--focus-within-except-active" };
   if (typeof process === "undefined" || true) {
     registerStyle("e8e6a9be37", '@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{.d4250949359b05ce__link{text-decoration-thickness:from-font;text-underline-offset:.2em}.c6055659b8e2cd2c__is-brand,.c6055659b8e2cd2c__is-brand:visited{--_gcd-a-color:var(--wpds-color-foreground-interactive-brand,var(--wp-admin-theme-color,#3858e9));color:var(--wpds-color-foreground-interactive-brand,var(--wp-admin-theme-color,#3858e9))}.c6055659b8e2cd2c__is-brand:active,.c6055659b8e2cd2c__is-brand:hover{--_gcd-a-color:var(--wpds-color-foreground-interactive-brand-active,color-mix(in oklch,var(--wp-admin-theme-color,#3858e9) 52%,#000));color:var(--wpds-color-foreground-interactive-brand-active,color-mix(in oklch,var(--wp-admin-theme-color,#3858e9) 52%,#000))}._92e0dfcaeee15b88__is-neutral,._92e0dfcaeee15b88__is-neutral:visited{--_gcd-a-color:var(--wpds-color-foreground-interactive-neutral,#1e1e1e);color:var(--wpds-color-foreground-interactive-neutral,#1e1e1e);text-decoration-color:var(--wpds-color-stroke-interactive-neutral,#8d8d8d)}._92e0dfcaeee15b88__is-neutral:active,._92e0dfcaeee15b88__is-neutral:hover{--_gcd-a-color:var(--wpds-color-foreground-interactive-neutral-active,#1e1e1e);color:var(--wpds-color-foreground-interactive-neutral-active,#1e1e1e)}.cf122a9bf1035d42__is-unstyled{--_gcd-a-color:inherit;color:inherit;text-decoration:none}._0cb411afac4c86c7__link-icon{display:inline-block;font-weight:var(--wpds-typography-font-weight-default,400);line-height:1;margin-inline-start:var(--wpds-dimension-padding-xs,4px);text-decoration:none}._0cb411afac4c86c7__link-icon:after{content:"\\2197"}._0cb411afac4c86c7__link-icon:dir(rtl):after{content:"\\2196"}}}');
   }
@@ -4760,69 +5067,73 @@ var wp;
     registerStyle("e8e31009f5", "._6defc79820e382c6__button{box-sizing:var(--_gcd-button-box-sizing,border-box);font-family:var(--_gcd-button-font-family,inherit);font-size:var(--_gcd-button-font-size,inherit);font-weight:var(--_gcd-button-font-weight,inherit)}.d2cff2e5dea83bd1__input{box-sizing:var(--_gcd-input-box-sizing,border-box);font-family:var(--_gcd-input-font-family,inherit);font-size:var(--_gcd-input-font-size,inherit);font-weight:var(--_gcd-input-font-weight,inherit);margin:var(--_gcd-input-margin,0);&::placeholder{color:var(--_gcd-input-placeholder-color,var(--wpds-color-foreground-interactive-neutral-weak,#707070))}&:is(textarea,[type=text],[type=password],[type=color],[type=date],[type=datetime],[type=datetime-local],[type=email],[type=month],[type=number],[type=search],[type=tel],[type=time],[type=url],[type=week]){background-color:var(--_gcd-input-background-color,transparent);border:var(--_gcd-input-border,none);border-radius:var(--_gcd-input-border-radius,0);box-shadow:var(--_gcd-input-box-shadow,0 0 0 transparent);color:var(--_gcd-input-color,var(--wpds-color-foreground-interactive-neutral,#1e1e1e));&:focus{border-color:var(--_gcd-input-border-color-focus,var(--wp-admin-theme-color));box-shadow:var(--_gcd-input-box-shadow-focus,none);outline:var(--_gcd-input-outline-focus,none)}&:disabled{background:var(--_gcd-input-background-disabled,transparent);border-color:var(--_gcd-input-border-color-disabled,transparent);box-shadow:var(--_gcd-input-box-shadow-disabled,none);color:var(--_gcd-input-color-disabled,var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d))}}&:is(textarea,[type=text],[type=password],[type=date],[type=datetime],[type=datetime-local],[type=email],[type=month],[type=number],[type=search],[type=tel],[type=time],[type=url],[type=week]){line-height:var(--_gcd-input-line-height,inherit);min-height:var(--_gcd-input-min-height,auto);padding:var(--_gcd-input-padding,0)}}._547d86373d02e108__textarea{box-sizing:var(--_gcd-textarea-box-sizing,border-box);overflow:var(--_gcd-textarea-overflow,auto);resize:var(--_gcd-textarea-resize,block)}._8c15fd0ed9f28ba4__div{outline:var(--_gcd-div-outline,0 solid transparent)}p._43cec3e1eec1066d__p{font-size:var(--_gcd-p-font-size,13px);line-height:var(--_gcd-p-line-height,1.5);margin:var(--_gcd-p-margin,0)}:is(h1,h2,h3,h4,h5,h6).e97669c6d9a38497__heading{color:var(--_gcd-heading-color,var(--wpds-color-foreground-content-neutral,#1e1e1e));font-size:var(--_gcd-heading-font-size,inherit);font-weight:var(--_gcd-heading-font-weight,var(--wpds-typography-font-weight-emphasis,600));margin:var(--_gcd-heading-margin,0)}._2c0831b0499dbd6e__a,._2c0831b0499dbd6e__a:is(:hover,:focus,:active){border-radius:var(--_gcd-a-border-radius,0);box-shadow:var(--_gcd-a-box-shadow,none);color:var(--_gcd-a-color,inherit);outline:var(--_gcd-a-outline,0 solid transparent);transition:var(--_gcd-a-transition,none)}.c59a0ebebd71fa4a__ol{list-style:var(--_gcd-ol-list-style,none);margin:var(--_gcd-ol-margin,0);padding-block:var(--_gcd-ol-padding-block,0);padding-inline:var(--_gcd-ol-padding-inline,0)}._46b5cb0c8e24e8c9__li{margin:var(--_gcd-li-margin,0)}");
   }
   var global_css_defense_default = { "button": "_6defc79820e382c6__button", "input": "d2cff2e5dea83bd1__input", "textarea": "_547d86373d02e108__textarea", "div": "_8c15fd0ed9f28ba4__div", "p": "_43cec3e1eec1066d__p", "heading": "e97669c6d9a38497__heading", "a": "_2c0831b0499dbd6e__a", "ol": "c59a0ebebd71fa4a__ol", "li": "_46b5cb0c8e24e8c9__li" };
-  var Link = (0, import_element2.forwardRef)(function Link2({
-    children,
-    variant = "default",
-    tone = "brand",
-    openInNewTab = false,
-    target,
-    render,
-    className,
-    ...props
-  }, ref) {
-    const shouldShowNewTabIndicator = openInNewTab || /^_blank$/i.test(target ?? "");
-    const element = useRender({
+  var Link = (0, import_element2.forwardRef)(
+    function UnforwardedLink({
+      children,
+      variant = "default",
+      tone = "brand",
+      openInNewTab = false,
+      target,
       render,
-      defaultTagName: "a",
-      ref,
-      props: mergeProps(props, {
-        className: clsx_default(
-          global_css_defense_default.a,
-          resets_default["box-sizing"],
-          focus_module_default["outset-ring--focus-except-active"],
-          variant !== "unstyled" && style_default.link,
-          variant !== "unstyled" && style_default[`is-${tone}`],
-          variant === "unstyled" && style_default["is-unstyled"],
-          className
-        ),
-        target: target ?? (openInNewTab ? "_blank" : void 0),
-        children: /* @__PURE__ */ (0, import_jsx_runtime34.jsxs)(import_jsx_runtime34.Fragment, { children: [
-          children,
-          shouldShowNewTabIndicator && /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
-            "span",
-            {
-              className: style_default["link-icon"],
-              role: "img",
-              "aria-label": (
-                /* translators: accessibility text appended to link text */
-                (0, import_i18n4.__)("(opens in a new tab)")
-              )
-            }
-          )
-        ] })
-      })
-    });
-    return element;
-  });
+      className,
+      ...props
+    }, ref) {
+      const shouldShowNewTabIndicator = openInNewTab || /^_blank$/i.test(target ?? "");
+      const element = useRender({
+        render,
+        defaultTagName: "a",
+        ref,
+        props: mergeProps(props, {
+          className: clsx_default(
+            global_css_defense_default.a,
+            resets_default["box-sizing"],
+            focus_module_default["outset-ring--focus-except-active"],
+            variant !== "unstyled" && style_default.link,
+            variant !== "unstyled" && style_default[`is-${tone}`],
+            variant === "unstyled" && style_default["is-unstyled"],
+            className
+          ),
+          target: target ?? (openInNewTab ? "_blank" : void 0),
+          children: /* @__PURE__ */ (0, import_jsx_runtime34.jsxs)(import_jsx_runtime34.Fragment, { children: [
+            children,
+            shouldShowNewTabIndicator && /* @__PURE__ */ (0, import_jsx_runtime34.jsx)(
+              "span",
+              {
+                className: style_default["link-icon"],
+                role: "img",
+                "aria-label": (
+                  /* translators: accessibility text appended to link text */
+                  (0, import_i18n4.__)("(opens in a new tab)")
+                )
+              }
+            )
+          ] })
+        })
+      });
+      return element;
+    }
+  );
 
   // packages/ui/build-module/icon/icon.mjs
   var import_element3 = __toESM(require_element(), 1);
   var import_primitives18 = __toESM(require_primitives(), 1);
   var import_jsx_runtime35 = __toESM(require_jsx_runtime(), 1);
-  var Icon = (0, import_element3.forwardRef)(function Icon2({ icon, size = 24, style, ...restProps }, ref) {
-    const mergedStyle = icon.props.style || style ? { ...icon.props.style, ...style } : void 0;
-    return /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(
-      import_primitives18.SVG,
-      {
-        ref,
-        ...icon.props,
-        ...restProps,
-        ...mergedStyle ? { style: mergedStyle } : {},
-        width: size,
-        height: size
-      }
-    );
-  });
+  var Icon = (0, import_element3.forwardRef)(
+    function UnforwardedIcon({ icon, size = 24, style, ...restProps }, ref) {
+      const mergedStyle = icon.props.style || style ? { ...icon.props.style, ...style } : void 0;
+      return /* @__PURE__ */ (0, import_jsx_runtime35.jsx)(
+        import_primitives18.SVG,
+        {
+          ref,
+          ...icon.props,
+          ...restProps,
+          ...mergedStyle ? { style: mergedStyle } : {},
+          width: size,
+          height: size
+        }
+      );
+    }
+  );
 
   // packages/ui/build-module/visually-hidden/visually-hidden.mjs
   var import_element4 = __toESM(require_element(), 1);
@@ -4907,11 +5218,11 @@ var wp;
     }
   }
   if (typeof process === "undefined" || true) {
-    registerStyle2("fa606a57ae", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{.f37b9e2e191ebd66__visually-hidden{word-wrap:normal;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal}}}");
+    registerStyle2("15abcab4d0", ".f37b9e2e191ebd66__visually-hidden{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;overflow-wrap:normal;padding:0;position:absolute;width:1px;word-break:normal}");
   }
   var style_default2 = { "visually-hidden": "f37b9e2e191ebd66__visually-hidden" };
   var VisuallyHidden = (0, import_element4.forwardRef)(
-    function VisuallyHidden2({ render, ...restProps }, ref) {
+    function UnforwardedVisuallyHidden({ render, ...restProps }, ref) {
       const element = useRender({
         render,
         ref,
@@ -5023,21 +5334,26 @@ var wp;
     "2xl": "var(--wpds-dimension-gap-2xl, 32px)",
     "3xl": "var(--wpds-dimension-gap-3xl, 40px)"
   };
-  var Stack = (0, import_element5.forwardRef)(function Stack2({ direction, gap, align, justify, wrap, render, ...props }, ref) {
-    const style = {
-      gap: gap && gapTokens[gap],
-      alignItems: align,
-      justifyContent: justify,
-      flexDirection: direction,
-      flexWrap: wrap
-    };
-    const element = useRender({
-      render,
-      ref,
-      props: mergeProps(props, { style, className: style_default3.stack })
-    });
-    return element;
-  });
+  var Stack = (0, import_element5.forwardRef)(
+    function UnforwardedStack({ direction, gap, align, justify, wrap, render, ...props }, ref) {
+      const style = {
+        gap: gap && gapTokens[gap],
+        alignItems: align,
+        justifyContent: justify,
+        flexDirection: direction,
+        flexWrap: wrap
+      };
+      const element = useRender({
+        render,
+        ref,
+        props: mergeProps(props, {
+          style,
+          className: style_default3.stack
+        })
+      });
+      return element;
+    }
+  );
 
   // packages/ui/build-module/utils/use-schedule-validation.mjs
   var import_compose = __toESM(require_compose(), 1);
@@ -5165,11 +5481,11 @@ var wp;
   }
   var resets_default2 = { "box-sizing": "_336cd3e4e743482f__box-sizing" };
   if (typeof process === "undefined" || true) {
-    registerStyle4("e4f4f9600b", '@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{.cb2baafdc08746bb__input-layout{--wp-ui-input-layout-padding-inline:var(--wpds-dimension-padding-md,12px);background-color:var(--wpds-color-background-interactive-neutral,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral,#8d8d8d);border-radius:var(--wpds-border-radius-sm,2px);border-style:solid;border-width:var(--wpds-border-width-xs,1px);color:var(--wpds-color-foreground-interactive-neutral,#1e1e1e);display:flex;font-family:var(--wpds-typography-font-family-body,-apple-system,system-ui,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif);font-size:max(var(--wpds-typography-font-size-md,13px),16px);height:var(--wpds-dimension-size-lg,40px);line-height:1;@media (min-width:600px){font-size:var(--wpds-typography-font-size-md,13px)}&._0c807a84cbb94e0c__is-size-compact{height:var(--wpds-dimension-size-md,32px)}&._0c807a84cbb94e0c__is-size-compact,&.ed67cda122dc1e7b__is-size-small{--wp-ui-input-layout-padding-inline:var(--wpds-dimension-padding-sm,8px)}&.ed67cda122dc1e7b__is-size-small{height:var(--wpds-dimension-size-sm,24px)}&._6fb7104732387680__is-disabled,&:has([data-can-disable-input-layout][data-disabled]){color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d);@media (forced-colors:active){color:GrayText}&:not(._8097270636ca6100__is-borderless){background-color:var(--wpds-color-background-interactive-neutral-disabled,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral-disabled,#dbdbdb);@media (forced-colors:active){border-bottom-color:GrayText;border-left-color:GrayText;border-right-color:GrayText;border-top-color:GrayText}}}&._8097270636ca6100__is-borderless{background-color:var(--wpds-color-background-interactive-neutral-weak,#0000);border-color:transparent}&:has(._0d7afad74a057888__input-layout-slot:focus-within){--_gcd-div-outline:none;outline:none}&:hover:not(._6fb7104732387680__is-disabled,:has([data-can-disable-input-layout][data-disabled]),._8097270636ca6100__is-borderless){background-color:var(--wpds-color-background-interactive-neutral-active,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral-active,#6e6e6e)}&:has(:invalid[data-validity-visible]){--focus-color:var(--wpds-color-stroke-interactive-error,#cc1818);border-color:var(--wpds-color-stroke-interactive-error,#cc1818);&:hover{border-color:var(--wpds-color-stroke-interactive-error-active,#9d0000)}}}.c192b41a12b4387b__slot-wrapper{display:contents}._0d7afad74a057888__input-layout-slot{align-items:center;display:flex;&._0c952682762ca288__is-padding-minimal{--wp-ui-input-layout-prefix-padding-start:calc(var(--wp-ui-input-layout-padding-inline) - var(--wpds-dimension-padding-xs, 4px));--wp-ui-input-layout-suffix-padding-end:calc(var(--wp-ui-input-layout-padding-inline) - var(--wpds-dimension-padding-xs, 4px))}[data-slot-type=prefix] &{padding-inline-start:var(--wp-ui-input-layout-prefix-padding-start,var(--wp-ui-input-layout-padding-inline))}[data-slot-type=suffix] &{padding-inline-end:var(--wp-ui-input-layout-suffix-padding-end,var(--wp-ui-input-layout-padding-inline))}}}}');
+    registerStyle4("fae9ae14d3", '@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{.cb2baafdc08746bb__input-layout{--wp-ui-input-layout-padding-inline:var(--wpds-dimension-padding-md,12px);background-color:var(--wpds-color-background-interactive-neutral,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral,#8d8d8d);border-radius:var(--wpds-border-radius-sm,2px);border-style:solid;border-width:var(--wpds-border-width-xs,1px);color:var(--wpds-color-foreground-interactive-neutral,#1e1e1e);display:flex;font-family:var(--wpds-typography-font-family-body,-apple-system,system-ui,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif);font-size:var(--wpds-typography-font-size-md,13px);height:var(--wpds-dimension-size-lg,40px);line-height:1;&._0c807a84cbb94e0c__is-size-compact{height:var(--wpds-dimension-size-md,32px)}&._0c807a84cbb94e0c__is-size-compact,&.ed67cda122dc1e7b__is-size-small{--wp-ui-input-layout-padding-inline:var(--wpds-dimension-padding-sm,8px)}&.ed67cda122dc1e7b__is-size-small{height:var(--wpds-dimension-size-sm,24px)}&._6fb7104732387680__is-disabled,&:has([data-can-disable-input-layout][data-disabled]){color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d);@media (forced-colors:active){color:GrayText}&:not(._8097270636ca6100__is-borderless){background-color:var(--wpds-color-background-interactive-neutral-disabled,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral-disabled,#dbdbdb);@media (forced-colors:active){border-bottom-color:GrayText;border-left-color:GrayText;border-right-color:GrayText;border-top-color:GrayText}}}&._8097270636ca6100__is-borderless{background-color:var(--wpds-color-background-interactive-neutral-weak,#0000);border-color:transparent}&:has(._0d7afad74a057888__input-layout-slot:focus-within){--_gcd-div-outline:none;outline:none}&:hover:not(._6fb7104732387680__is-disabled,:has([data-can-disable-input-layout][data-disabled]),._8097270636ca6100__is-borderless){background-color:var(--wpds-color-background-interactive-neutral-active,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral-active,#6e6e6e)}&:has(:invalid[data-validity-visible]){--focus-color:var(--wpds-color-stroke-interactive-error,#cc1818);border-color:var(--wpds-color-stroke-interactive-error,#cc1818);&:hover{border-color:var(--wpds-color-stroke-interactive-error-active,#9d0000)}}}.c192b41a12b4387b__slot-wrapper{display:contents}._0d7afad74a057888__input-layout-slot{align-items:center;display:flex;&._0c952682762ca288__is-padding-minimal{--wp-ui-input-layout-prefix-padding-start:calc(var(--wp-ui-input-layout-padding-inline) - var(--wpds-dimension-padding-xs, 4px));--wp-ui-input-layout-suffix-padding-end:calc(var(--wp-ui-input-layout-padding-inline) - var(--wpds-dimension-padding-xs, 4px))}[data-slot-type=prefix] &{padding-inline-start:var(--wp-ui-input-layout-prefix-padding-start,var(--wp-ui-input-layout-padding-inline))}[data-slot-type=suffix] &{padding-inline-end:var(--wp-ui-input-layout-suffix-padding-end,var(--wp-ui-input-layout-padding-inline))}}}}');
   }
   var style_default4 = { "input-layout": "cb2baafdc08746bb__input-layout", "is-size-compact": "_0c807a84cbb94e0c__is-size-compact", "is-size-small": "ed67cda122dc1e7b__is-size-small", "is-disabled": "_6fb7104732387680__is-disabled", "is-borderless": "_8097270636ca6100__is-borderless", "input-layout-slot": "_0d7afad74a057888__input-layout-slot", "slot-wrapper": "c192b41a12b4387b__slot-wrapper", "is-padding-minimal": "_0c952682762ca288__is-padding-minimal" };
   var InputLayout = (0, import_element7.forwardRef)(
-    function InputLayout2({
+    function UnforwardedInputLayout({
       className,
       children,
       visuallyDisabled,
@@ -5301,10 +5617,10 @@ var wp;
     }
   }
   if (typeof process === "undefined" || true) {
-    registerStyle5("e4f4f9600b", '@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{.cb2baafdc08746bb__input-layout{--wp-ui-input-layout-padding-inline:var(--wpds-dimension-padding-md,12px);background-color:var(--wpds-color-background-interactive-neutral,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral,#8d8d8d);border-radius:var(--wpds-border-radius-sm,2px);border-style:solid;border-width:var(--wpds-border-width-xs,1px);color:var(--wpds-color-foreground-interactive-neutral,#1e1e1e);display:flex;font-family:var(--wpds-typography-font-family-body,-apple-system,system-ui,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif);font-size:max(var(--wpds-typography-font-size-md,13px),16px);height:var(--wpds-dimension-size-lg,40px);line-height:1;@media (min-width:600px){font-size:var(--wpds-typography-font-size-md,13px)}&._0c807a84cbb94e0c__is-size-compact{height:var(--wpds-dimension-size-md,32px)}&._0c807a84cbb94e0c__is-size-compact,&.ed67cda122dc1e7b__is-size-small{--wp-ui-input-layout-padding-inline:var(--wpds-dimension-padding-sm,8px)}&.ed67cda122dc1e7b__is-size-small{height:var(--wpds-dimension-size-sm,24px)}&._6fb7104732387680__is-disabled,&:has([data-can-disable-input-layout][data-disabled]){color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d);@media (forced-colors:active){color:GrayText}&:not(._8097270636ca6100__is-borderless){background-color:var(--wpds-color-background-interactive-neutral-disabled,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral-disabled,#dbdbdb);@media (forced-colors:active){border-bottom-color:GrayText;border-left-color:GrayText;border-right-color:GrayText;border-top-color:GrayText}}}&._8097270636ca6100__is-borderless{background-color:var(--wpds-color-background-interactive-neutral-weak,#0000);border-color:transparent}&:has(._0d7afad74a057888__input-layout-slot:focus-within){--_gcd-div-outline:none;outline:none}&:hover:not(._6fb7104732387680__is-disabled,:has([data-can-disable-input-layout][data-disabled]),._8097270636ca6100__is-borderless){background-color:var(--wpds-color-background-interactive-neutral-active,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral-active,#6e6e6e)}&:has(:invalid[data-validity-visible]){--focus-color:var(--wpds-color-stroke-interactive-error,#cc1818);border-color:var(--wpds-color-stroke-interactive-error,#cc1818);&:hover{border-color:var(--wpds-color-stroke-interactive-error-active,#9d0000)}}}.c192b41a12b4387b__slot-wrapper{display:contents}._0d7afad74a057888__input-layout-slot{align-items:center;display:flex;&._0c952682762ca288__is-padding-minimal{--wp-ui-input-layout-prefix-padding-start:calc(var(--wp-ui-input-layout-padding-inline) - var(--wpds-dimension-padding-xs, 4px));--wp-ui-input-layout-suffix-padding-end:calc(var(--wp-ui-input-layout-padding-inline) - var(--wpds-dimension-padding-xs, 4px))}[data-slot-type=prefix] &{padding-inline-start:var(--wp-ui-input-layout-prefix-padding-start,var(--wp-ui-input-layout-padding-inline))}[data-slot-type=suffix] &{padding-inline-end:var(--wp-ui-input-layout-suffix-padding-end,var(--wp-ui-input-layout-padding-inline))}}}}');
+    registerStyle5("fae9ae14d3", '@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{.cb2baafdc08746bb__input-layout{--wp-ui-input-layout-padding-inline:var(--wpds-dimension-padding-md,12px);background-color:var(--wpds-color-background-interactive-neutral,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral,#8d8d8d);border-radius:var(--wpds-border-radius-sm,2px);border-style:solid;border-width:var(--wpds-border-width-xs,1px);color:var(--wpds-color-foreground-interactive-neutral,#1e1e1e);display:flex;font-family:var(--wpds-typography-font-family-body,-apple-system,system-ui,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif);font-size:var(--wpds-typography-font-size-md,13px);height:var(--wpds-dimension-size-lg,40px);line-height:1;&._0c807a84cbb94e0c__is-size-compact{height:var(--wpds-dimension-size-md,32px)}&._0c807a84cbb94e0c__is-size-compact,&.ed67cda122dc1e7b__is-size-small{--wp-ui-input-layout-padding-inline:var(--wpds-dimension-padding-sm,8px)}&.ed67cda122dc1e7b__is-size-small{height:var(--wpds-dimension-size-sm,24px)}&._6fb7104732387680__is-disabled,&:has([data-can-disable-input-layout][data-disabled]){color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d);@media (forced-colors:active){color:GrayText}&:not(._8097270636ca6100__is-borderless){background-color:var(--wpds-color-background-interactive-neutral-disabled,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral-disabled,#dbdbdb);@media (forced-colors:active){border-bottom-color:GrayText;border-left-color:GrayText;border-right-color:GrayText;border-top-color:GrayText}}}&._8097270636ca6100__is-borderless{background-color:var(--wpds-color-background-interactive-neutral-weak,#0000);border-color:transparent}&:has(._0d7afad74a057888__input-layout-slot:focus-within){--_gcd-div-outline:none;outline:none}&:hover:not(._6fb7104732387680__is-disabled,:has([data-can-disable-input-layout][data-disabled]),._8097270636ca6100__is-borderless){background-color:var(--wpds-color-background-interactive-neutral-active,var(--wpds-color-background-surface-neutral-strong,#fff));border-color:var(--wpds-color-stroke-interactive-neutral-active,#6e6e6e)}&:has(:invalid[data-validity-visible]){--focus-color:var(--wpds-color-stroke-interactive-error,#cc1818);border-color:var(--wpds-color-stroke-interactive-error,#cc1818);&:hover{border-color:var(--wpds-color-stroke-interactive-error-active,#9d0000)}}}.c192b41a12b4387b__slot-wrapper{display:contents}._0d7afad74a057888__input-layout-slot{align-items:center;display:flex;&._0c952682762ca288__is-padding-minimal{--wp-ui-input-layout-prefix-padding-start:calc(var(--wp-ui-input-layout-padding-inline) - var(--wpds-dimension-padding-xs, 4px));--wp-ui-input-layout-suffix-padding-end:calc(var(--wp-ui-input-layout-padding-inline) - var(--wpds-dimension-padding-xs, 4px))}[data-slot-type=prefix] &{padding-inline-start:var(--wp-ui-input-layout-prefix-padding-start,var(--wp-ui-input-layout-padding-inline))}[data-slot-type=suffix] &{padding-inline-end:var(--wp-ui-input-layout-suffix-padding-end,var(--wp-ui-input-layout-padding-inline))}}}}');
   }
   var style_default5 = { "input-layout": "cb2baafdc08746bb__input-layout", "is-size-compact": "_0c807a84cbb94e0c__is-size-compact", "is-size-small": "ed67cda122dc1e7b__is-size-small", "is-disabled": "_6fb7104732387680__is-disabled", "is-borderless": "_8097270636ca6100__is-borderless", "input-layout-slot": "_0d7afad74a057888__input-layout-slot", "slot-wrapper": "c192b41a12b4387b__slot-wrapper", "is-padding-minimal": "_0c952682762ca288__is-padding-minimal" };
-  var InputLayoutSlot = (0, import_element8.forwardRef)(function InputLayoutSlot2({ padding = "default", className, ...restProps }, ref) {
+  var InputLayoutSlot = (0, import_element8.forwardRef)(function UnforwardedInputLayoutSlot({ padding = "default", className, ...restProps }, ref) {
     return /* @__PURE__ */ (0, import_jsx_runtime37.jsx)(
       "div",
       {
@@ -5321,7 +5637,7 @@ var wp;
   InputLayoutSlot.displayName = "InputLayout.Slot";
 
   // packages/ui/build-module/form/primitives/input-layout/index.mjs
-  var InputLayout3 = Object.assign(InputLayout, {
+  var InputLayout2 = Object.assign(InputLayout, {
     Slot: InputLayoutSlot
   });
 
@@ -5412,37 +5728,40 @@ var wp;
   }
   var global_css_defense_default3 = { "button": "_6defc79820e382c6__button", "input": "d2cff2e5dea83bd1__input", "textarea": "_547d86373d02e108__textarea", "div": "_8c15fd0ed9f28ba4__div", "p": "_43cec3e1eec1066d__p", "heading": "e97669c6d9a38497__heading", "a": "_2c0831b0499dbd6e__a", "ol": "c59a0ebebd71fa4a__ol", "li": "_46b5cb0c8e24e8c9__li" };
   if (typeof process === "undefined" || true) {
-    registerStyle6("08122b3d53", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer utilities{.af79fb116edb0dd7__outset-ring--focus:focus,.dfcfdc28396e5d98__outset-ring--focus-visible:focus-visible,.e5cd9ee879f6403a__outset-ring--focus-within:focus-within,:focus-visible ._81935a08e952f267__outset-ring--focus-parent-visible{--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within,.abc777e9713fa711__outset-ring--focus-except-active:focus{outline:none}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within:not(:has(:active)),.abc777e9713fa711__outset-ring--focus-except-active:focus:not(:active){--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}}}");
+    registerStyle6("7c3267f794", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer utilities{.af79fb116edb0dd7__outset-ring--focus:focus,.dfcfdc28396e5d98__outset-ring--focus-visible:focus-visible,.e5cd9ee879f6403a__outset-ring--focus-within:focus-within{--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within,.abc777e9713fa711__outset-ring--focus-except-active:focus{outline:none}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within:not(:has(:active)),.abc777e9713fa711__outset-ring--focus-except-active:focus:not(:active){--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}}}");
   }
-  var focus_module_default2 = { "outset-ring--focus": "af79fb116edb0dd7__outset-ring--focus", "outset-ring--focus-visible": "dfcfdc28396e5d98__outset-ring--focus-visible", "outset-ring--focus-within": "e5cd9ee879f6403a__outset-ring--focus-within", "outset-ring--focus-parent-visible": "_81935a08e952f267__outset-ring--focus-parent-visible", "outset-ring--focus-except-active": "abc777e9713fa711__outset-ring--focus-except-active", "outset-ring--focus-within-except-active": "_3c9f5ee9fc9c136d__outset-ring--focus-within-except-active" };
+  var focus_module_default2 = { "outset-ring--focus": "af79fb116edb0dd7__outset-ring--focus", "outset-ring--focus-visible": "dfcfdc28396e5d98__outset-ring--focus-visible", "outset-ring--focus-within": "e5cd9ee879f6403a__outset-ring--focus-within", "outset-ring--focus-except-active": "abc777e9713fa711__outset-ring--focus-except-active", "outset-ring--focus-within-except-active": "_3c9f5ee9fc9c136d__outset-ring--focus-within-except-active" };
   if (typeof process === "undefined" || true) {
-    registerStyle6("1a25f6a232", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{._2ae7be2fc1bb17a3__input{--_gcd-input-padding:var(--wp-ui-input-padding-block,0px) var(--wp-ui-input-layout-padding-inline,0px);background:transparent;border:none;color:var(--wpds-color-foreground-interactive-neutral,#1e1e1e);font-family:inherit;font-size:inherit;line-height:inherit;outline:none;padding-block:var(--wp-ui-input-padding-block,0);padding-inline:var(--wp-ui-input-layout-padding-inline,0);width:100%;&::placeholder{color:var(--wpds-color-foreground-interactive-neutral-weak,#707070)}&:disabled,&[aria-disabled=true]{--_gcd-input-placeholder-color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d);color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d);&::placeholder{color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d)}@media (forced-colors:active){color:GrayText}}&[type=email],&[type=url]{direction:ltr}&[type=number]{appearance:textfield;&::-webkit-inner-spin-button,&::-webkit-outer-spin-button{appearance:none;margin:0}}}}}");
+    registerStyle6("afb8caf1cd", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{._2ae7be2fc1bb17a3__input{--_gcd-input-padding:var(--wp-ui-input-padding-block,0px) var(--wp-ui-input-layout-padding-inline,0px);--_gcd-input-font-size:max(var(--wpds-typography-font-size-md,13px),16px);background:transparent;border:none;color:var(--wpds-color-foreground-interactive-neutral,#1e1e1e);font-family:inherit;font-size:inherit;line-height:inherit;outline:none;padding-block:var(--wp-ui-input-padding-block,0);padding-inline:var(--wp-ui-input-layout-padding-inline,0);width:100%;@media (min-width:600px){--_gcd-input-font-size:inherit}&::placeholder{color:var(--wpds-color-foreground-interactive-neutral-weak,#707070)}&:disabled,&[aria-disabled=true]{--_gcd-input-placeholder-color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d);color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d);&::placeholder{color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d)}@media (forced-colors:active){color:GrayText}}&[type=email],&[type=url]{direction:ltr}&[type=number]{appearance:textfield;&::-webkit-inner-spin-button,&::-webkit-outer-spin-button{appearance:none;margin:0}}}}@layer compositions{.beecada4b38856ab__layout{font-size:max(var(--wpds-typography-font-size-md,13px),16px);@media (min-width:600px){font-size:var(--wpds-typography-font-size-md,13px)}}}}");
   }
-  var style_default6 = { "input": "_2ae7be2fc1bb17a3__input" };
-  var Input3 = (0, import_element9.forwardRef)(function Input22({ className, size = "default", prefix, suffix, style, ...restProps }, ref) {
-    return /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(
-      InputLayout3,
-      {
-        className: clsx_default(
-          focus_module_default2["outset-ring--focus-within"],
-          className
-        ),
-        style,
-        size,
-        visuallyDisabled: restProps.disabled,
-        prefix,
-        suffix,
-        children: /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(
-          Input,
-          {
-            ref,
-            className: clsx_default(global_css_defense_default3.input, style_default6.input),
-            ...restProps
-          }
-        )
-      }
-    );
-  });
+  var style_default6 = { "input": "_2ae7be2fc1bb17a3__input", "layout": "beecada4b38856ab__layout" };
+  var Input3 = (0, import_element9.forwardRef)(
+    function UnforwardedInput({ className, size = "default", prefix, suffix, style, ...restProps }, ref) {
+      return /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(
+        InputLayout2,
+        {
+          className: clsx_default(
+            style_default6.layout,
+            focus_module_default2["outset-ring--focus-within"],
+            className
+          ),
+          style,
+          size,
+          visuallyDisabled: restProps.disabled,
+          prefix,
+          suffix,
+          children: /* @__PURE__ */ (0, import_jsx_runtime38.jsx)(
+            Input,
+            {
+              ref,
+              className: clsx_default(global_css_defense_default3.input, style_default6.input),
+              ...restProps
+            }
+          )
+        }
+      );
+    }
+  );
 
   // packages/ui/build-module/form/primitives/control-with-error/control-with-error.mjs
   var import_i18n5 = __toESM(require_i18n(), 1);
@@ -5532,41 +5851,30 @@ var wp;
     }
   }
   if (typeof process === "undefined" || true) {
-    registerStyle7("bbbecfe373", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{.ab4d64c07c0ba587__spinner{background-color:transparent;display:inline-block;height:var(--wpds-dimension-size-2xs,16px);opacity:1;overflow:visible;position:relative;width:var(--wpds-dimension-size-2xs,16px)}.a7654e10245bb7d2__indicator,.dc51f80c84b35fe2__track{fill:transparent;stroke-width:1.5px}.dc51f80c84b35fe2__track{stroke:var(--wpds-color-background-track-neutral,#dbdbdb)}.a7654e10245bb7d2__indicator{stroke:var(--wpds-color-background-thumb-brand,var(--wp-admin-theme-color,#3858e9));stroke-linecap:round;animation:_02322d973909703c__spinner-spin 1.4s linear infinite both;transform-origin:50% 50%}@keyframes _02322d973909703c__spinner-spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}}}");
+    registerStyle7("bc09fb824f", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{.ab4d64c07c0ba587__spinner{background-color:transparent;color:var(--wpds-color-foreground-content-neutral-weak,#707070);display:inline-block;height:var(--wpds-dimension-size-2xs,16px);opacity:1;overflow:visible;position:relative;width:var(--wpds-dimension-size-2xs,16px)}.a7654e10245bb7d2__indicator{fill:transparent;stroke:currentColor;stroke-width:var(--wpds-border-width-sm,2px);stroke-linecap:round;transform-origin:50% 50%;@media (forced-colors:active){stroke:CanvasText}animation:_02322d973909703c__spinner-spin 1.4s linear infinite both}@keyframes _02322d973909703c__spinner-spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}}}");
   }
-  var style_default7 = { "spinner": "ab4d64c07c0ba587__spinner", "track": "dc51f80c84b35fe2__track", "indicator": "a7654e10245bb7d2__indicator", "spinner-spin": "_02322d973909703c__spinner-spin" };
+  var style_default7 = { "spinner": "ab4d64c07c0ba587__spinner", "indicator": "a7654e10245bb7d2__indicator", "spinner-spin": "_02322d973909703c__spinner-spin" };
   var Spinner = (0, import_element10.forwardRef)(
-    function Spinner2({ className, ...props }, ref) {
-      return /* @__PURE__ */ (0, import_jsx_runtime39.jsxs)(
+    function UnforwardedSpinner({ className, color, style, ...props }, ref) {
+      return /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(
         "svg",
         {
           className: clsx_default(style_default7.spinner, className),
+          style: color === void 0 ? style : { ...style, color },
           viewBox: "0 0 100 100",
           xmlns: "http://www.w3.org/2000/svg",
           role: "presentation",
           focusable: "false",
           ...props,
           ref,
-          children: [
-            /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(
-              "circle",
-              {
-                className: style_default7.track,
-                cx: "50",
-                cy: "50",
-                r: "50",
-                vectorEffect: "non-scaling-stroke"
-              }
-            ),
-            /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(
-              "path",
-              {
-                className: style_default7.indicator,
-                d: "m 50 0 a 50 50 0 0 1 50 50",
-                vectorEffect: "non-scaling-stroke"
-              }
-            )
-          ]
+          children: /* @__PURE__ */ (0, import_jsx_runtime39.jsx)(
+            "path",
+            {
+              className: style_default7.indicator,
+              d: "m 50 0 a 50 50 0 0 1 0 100",
+              vectorEffect: "non-scaling-stroke"
+            }
+          )
         }
       );
     }
@@ -5719,7 +6027,7 @@ var wp;
     ] });
   }
   var VALIDITY_VISIBLE_ATTRIBUTE = "data-validity-visible";
-  var ControlWithError = (0, import_element11.forwardRef)(function ControlWithError2({
+  var ControlWithError = (0, import_element11.forwardRef)(function UnforwardedControlWithError({
     required,
     markWhenOptional,
     customValidity,
@@ -6008,22 +6316,24 @@ var wp;
   }
   var resets_default3 = { "box-sizing": "_336cd3e4e743482f__box-sizing" };
   var DEFAULT_RENDER2 = (props) => /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(Stack, { ...props, direction: "column", gap: "sm" });
-  var Root = (0, import_element12.forwardRef)(function Root2({ className, render = DEFAULT_RENDER2, ...restProps }, ref) {
-    return /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
-      index_parts_exports.Root,
-      {
-        ref,
-        className: clsx_default(resets_default3["box-sizing"], className),
-        render,
-        ...restProps
-      }
-    );
-  });
+  var Root = (0, import_element12.forwardRef)(
+    function UnforwardedRoot({ className, render = DEFAULT_RENDER2, ...restProps }, ref) {
+      return /* @__PURE__ */ (0, import_jsx_runtime42.jsx)(
+        index_parts_exports.Root,
+        {
+          ref,
+          className: clsx_default(resets_default3["box-sizing"], className),
+          render,
+          ...restProps
+        }
+      );
+    }
+  );
 
   // packages/ui/build-module/form/primitives/field/item.mjs
   var import_element13 = __toESM(require_element(), 1);
   var import_jsx_runtime43 = __toESM(require_jsx_runtime(), 1);
-  var Item = (0, import_element13.forwardRef)(function Item2(props, ref) {
+  var Item = (0, import_element13.forwardRef)(function UnforwardedItem(props, ref) {
     return /* @__PURE__ */ (0, import_jsx_runtime43.jsx)(index_parts_exports.Item, { ref, ...props });
   });
 
@@ -6115,7 +6425,7 @@ var wp;
   }
   var field_default = { "label": "_2d5ad850b2f90964__label", "is-plain": "_17c4214649230bea__is-plain", "description": "_08a3750500e0233f__description" };
   var Label = (0, import_element14.forwardRef)(
-    function Label2({ className, hideFromVision, variant, ...restProps }, ref) {
+    function UnforwardedLabel({ className, hideFromVision, variant, ...restProps }, ref) {
       const label = /* @__PURE__ */ (0, import_jsx_runtime44.jsx)(
         index_parts_exports.Label,
         {
@@ -6226,7 +6536,7 @@ var wp;
     registerStyle11("df33c48b2d", '@layer wp-ui{@layer utilities, components, compositions, overrides;@layer utilities{._2d5ad850b2f90964__label{--wp-ui-field-label-line-height:var(--wpds-typography-line-height-xs,16px);color:var(--wpds-color-foreground-content-neutral,#1e1e1e);font-family:var(--wpds-typography-font-family-body,-apple-system,system-ui,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif);font-size:var(--wpds-typography-font-size-xs,11px);font-weight:var(--wpds-typography-font-weight-emphasis,600);line-height:var(--wp-ui-field-label-line-height);text-transform:uppercase;&._17c4214649230bea__is-plain{font-size:var(--wpds-typography-font-size-md,13px);font-weight:var(--wpds-typography-font-weight-default,400);text-transform:none}}._08a3750500e0233f__description{--_gcd-p-font-size:var(--wpds-typography-font-size-sm,12px);--_gcd-p-line-height:var(--wpds-typography-line-height-xs,16px);--_gcd-p-margin:0;text-wrap:pretty;color:var(--wpds-color-foreground-content-neutral-weak,#707070);font-family:var(--wpds-typography-font-family-body,-apple-system,system-ui,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif);font-size:var(--wpds-typography-font-size-sm,12px);line-height:var(--wpds-typography-line-height-xs,16px)}}}');
   }
   var field_default2 = { "label": "_2d5ad850b2f90964__label", "is-plain": "_17c4214649230bea__is-plain", "description": "_08a3750500e0233f__description" };
-  var Description = (0, import_element15.forwardRef)(function Description2({ className, ...restProps }, ref) {
+  var Description = (0, import_element15.forwardRef)(function UnforwardedDescription({ className, ...restProps }, ref) {
     return /* @__PURE__ */ (0, import_jsx_runtime45.jsx)(
       index_parts_exports.Description,
       {
@@ -6330,7 +6640,7 @@ var wp;
   }
   var field_default3 = { "label": "_2d5ad850b2f90964__label", "is-plain": "_17c4214649230bea__is-plain", "description": "_08a3750500e0233f__description" };
   var Details = (0, import_element16.forwardRef)(
-    function Details2({ className, ...restProps }, ref) {
+    function UnforwardedDetails({ className, ...restProps }, ref) {
       return /* @__PURE__ */ (0, import_jsx_runtime46.jsxs)(import_jsx_runtime46.Fragment, { children: [
         /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(VisuallyHidden, { render: /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(index_parts_exports.Description, {}), children: (0, import_i18n6.__)("More details follow the field.") }),
         /* @__PURE__ */ (0, import_jsx_runtime46.jsx)(
@@ -6349,7 +6659,7 @@ var wp;
   var import_element17 = __toESM(require_element(), 1);
   var import_jsx_runtime47 = __toESM(require_jsx_runtime(), 1);
   var Control = (0, import_element17.forwardRef)(
-    function Control2(props, ref) {
+    function UnforwardedControl(props, ref) {
       return /* @__PURE__ */ (0, import_jsx_runtime47.jsx)(index_parts_exports.Control, { ref, ...props });
     }
   );
@@ -6441,7 +6751,7 @@ var wp;
   }
   var field_default4 = { "label": "_2d5ad850b2f90964__label", "is-plain": "_17c4214649230bea__is-plain", "description": "_08a3750500e0233f__description" };
   var VisualLabel = (0, import_element18.forwardRef)(
-    function VisualLabel2({ className, render, variant, ...restProps }, ref) {
+    function UnforwardedVisualLabel({ className, render, variant, ...restProps }, ref) {
       return useRender({
         defaultTagName: "span",
         render,
@@ -6546,7 +6856,7 @@ var wp;
   }
   var style_default9 = { "root": "a9211a7e6af24bed__root" };
   var InputControl = (0, import_element19.forwardRef)(
-    function InputControl2({
+    function UnforwardedInputControl({
       className,
       label,
       description,
@@ -6567,7 +6877,7 @@ var wp;
   var import_element20 = __toESM(require_element(), 1);
   var import_compose2 = __toESM(require_compose(), 1);
   var import_jsx_runtime49 = __toESM(require_jsx_runtime(), 1);
-  var ValidatedInputControl = (0, import_element20.forwardRef)(function ValidatedInputControl2({ required, markWhenOptional, customValidity, ...restProps }, forwardedRef) {
+  var ValidatedInputControl = (0, import_element20.forwardRef)(function UnforwardedValidatedInputControl({ required, markWhenOptional, customValidity, ...restProps }, forwardedRef) {
     const validityTargetRef = (0, import_element20.useRef)(null);
     const mergedRefs = (0, import_compose2.useMergeRefs)([forwardedRef, validityTargetRef]);
     return /* @__PURE__ */ (0, import_jsx_runtime49.jsx)(
@@ -6587,7 +6897,7 @@ var wp;
   __export(tabs_exports, {
     List: () => List,
     Panel: () => Panel,
-    Root: () => Root3,
+    Root: () => Root2,
     Tab: () => Tab
   });
 
@@ -6947,9 +7257,9 @@ var wp;
   }
   var global_css_defense_default6 = { "button": "_6defc79820e382c6__button", "input": "d2cff2e5dea83bd1__input", "textarea": "_547d86373d02e108__textarea", "div": "_8c15fd0ed9f28ba4__div", "p": "_43cec3e1eec1066d__p", "heading": "e97669c6d9a38497__heading", "a": "_2c0831b0499dbd6e__a", "ol": "c59a0ebebd71fa4a__ol", "li": "_46b5cb0c8e24e8c9__li" };
   if (typeof process === "undefined" || true) {
-    registerStyle16("08122b3d53", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer utilities{.af79fb116edb0dd7__outset-ring--focus:focus,.dfcfdc28396e5d98__outset-ring--focus-visible:focus-visible,.e5cd9ee879f6403a__outset-ring--focus-within:focus-within,:focus-visible ._81935a08e952f267__outset-ring--focus-parent-visible{--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within,.abc777e9713fa711__outset-ring--focus-except-active:focus{outline:none}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within:not(:has(:active)),.abc777e9713fa711__outset-ring--focus-except-active:focus:not(:active){--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}}}");
+    registerStyle16("7c3267f794", "@layer wp-ui{@layer utilities, components, compositions, overrides;@layer utilities{.af79fb116edb0dd7__outset-ring--focus:focus,.dfcfdc28396e5d98__outset-ring--focus-visible:focus-visible,.e5cd9ee879f6403a__outset-ring--focus-within:focus-within{--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within,.abc777e9713fa711__outset-ring--focus-except-active:focus{outline:none}._3c9f5ee9fc9c136d__outset-ring--focus-within-except-active:focus-within:not(:has(:active)),.abc777e9713fa711__outset-ring--focus-except-active:focus:not(:active){--_gcd-a-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));--_gcd-div-outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--focus-color,var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9)));outline-offset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}}}");
   }
-  var focus_module_default3 = { "outset-ring--focus": "af79fb116edb0dd7__outset-ring--focus", "outset-ring--focus-visible": "dfcfdc28396e5d98__outset-ring--focus-visible", "outset-ring--focus-within": "e5cd9ee879f6403a__outset-ring--focus-within", "outset-ring--focus-parent-visible": "_81935a08e952f267__outset-ring--focus-parent-visible", "outset-ring--focus-except-active": "abc777e9713fa711__outset-ring--focus-except-active", "outset-ring--focus-within-except-active": "_3c9f5ee9fc9c136d__outset-ring--focus-within-except-active" };
+  var focus_module_default3 = { "outset-ring--focus": "af79fb116edb0dd7__outset-ring--focus", "outset-ring--focus-visible": "dfcfdc28396e5d98__outset-ring--focus-visible", "outset-ring--focus-within": "e5cd9ee879f6403a__outset-ring--focus-within", "outset-ring--focus-except-active": "abc777e9713fa711__outset-ring--focus-except-active", "outset-ring--focus-within-except-active": "_3c9f5ee9fc9c136d__outset-ring--focus-within-except-active" };
   var Panel = (0, import_element23.forwardRef)(
     function TabPanel({ className, ...otherProps }, forwardedRef) {
       useRegisterPanel();
@@ -6971,7 +7281,7 @@ var wp;
   // packages/ui/build-module/tabs/root.mjs
   var import_element24 = __toESM(require_element(), 1);
   var import_jsx_runtime53 = __toESM(require_jsx_runtime(), 1);
-  var Root3 = (0, import_element24.forwardRef)(
+  var Root2 = (0, import_element24.forwardRef)(
     function TabsRoot3({ ...otherProps }, forwardedRef) {
       return /* @__PURE__ */ (0, import_jsx_runtime53.jsx)(DirectionProvider3, { children: /* @__PURE__ */ (0, import_jsx_runtime53.jsx)(TabsValidationProvider, { children: /* @__PURE__ */ (0, import_jsx_runtime53.jsx)(index_parts_exports2.Root, { ref: forwardedRef, ...otherProps }) }) });
     }
@@ -7064,21 +7374,29 @@ var wp;
     registerStyle17("54ae3f4680", '@layer wp-ui{@layer utilities, components, compositions, overrides;@layer components{._7313adbc8a112e90__tablist{--direction-start:left;--direction-end:right;align-items:stretch;display:flex;overflow-inline:auto;overscroll-behavior-inline:none;position:relative;&:dir(rtl){--direction-start:right;--direction-end:left}&[data-orientation=horizontal]{--fade-width:4rem;--fade-gradient-base:transparent 0%,#000 var(--fade-width);--fade-gradient-composed:var(--fade-gradient-base),#000 60%,transparent 50%;width:fit-content;&._9f2ac729c68a735a__is-overflowing-first{mask-image:linear-gradient(to var(--direction-end),var(--fade-gradient-base))}&._81c799c1f3cdd261__is-overflowing-last{mask-image:linear-gradient(to var(--direction-start),var(--fade-gradient-base))}&._9f2ac729c68a735a__is-overflowing-first._81c799c1f3cdd261__is-overflowing-last{mask-image:linear-gradient(to right,var(--fade-gradient-composed)),linear-gradient(to left,var(--fade-gradient-composed))}&._59228b5227f38a99__is-minimal-variant{gap:1rem}}&[data-orientation=vertical]{flex-direction:column}}._1c37dcfaa1ad8cda__indicator{@media not (prefers-reduced-motion){transition-duration:.2s;transition-property:translate,width,height,border-radius,border-block;transition-timing-function:ease-out}outline:2px solid transparent;outline-offset:-1px;pointer-events:none;position:absolute;&[data-orientation=horizontal]{background-color:var(--wpds-color-stroke-interactive-neutral-strong,#6e6e6e);bottom:0;height:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px));left:0;translate:var(--active-tab-left) 0;width:var(--active-tab-width);z-index:1}&[data-orientation=vertical]{background-color:var(--wpds-color-background-interactive-neutral-weak-active,#ededed);border-radius:var(--wpds-border-radius-sm,2px);height:var(--active-tab-height);left:50%;top:0;translate:-50% var(--active-tab-top);width:100%;z-index:0}._7313adbc8a112e90__tablist[data-select-on-move=true]:has(:focus-visible)\n			&[data-orientation=vertical]{border:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9));box-sizing:border-box}}.a5fd8814f195aa5e__tab{align-items:center;background:transparent;border:none;border-radius:0;box-shadow:none;color:var(--wpds-color-foreground-interactive-neutral,#1e1e1e);cursor:var(--wpds-cursor-control,pointer);display:flex;flex:1 0 auto;font-family:var(--wpds-typography-font-family-body,-apple-system,system-ui,"Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif);font-size:var(--wpds-typography-font-size-md,13px);font-weight:400;line-height:1.2;outline:none;padding:0;position:relative;white-space:nowrap;z-index:1;&[data-disabled]{color:var(--wpds-color-foreground-interactive-neutral-disabled,#8d8d8d);cursor:default;@media (forced-colors:active){color:GrayText}}&:not([data-disabled]):is(:hover,:focus-visible){color:var(--wpds-color-foreground-interactive-neutral-active,#1e1e1e)}&:after{border-radius:var(--wpds-border-radius-sm,2px);opacity:0;outline:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)) solid var(--wpds-color-stroke-focus,var(--wp-admin-theme-color,#3858e9));pointer-events:none;position:absolute;z-index:-1;@media not (prefers-reduced-motion){transition:opacity .1s linear}}&:focus-visible:after{opacity:1}[data-orientation=horizontal] &{height:48px;padding-inline:var(--wpds-dimension-padding-lg,16px);scroll-margin:24px;&:after{content:"";inset:var(--wpds-dimension-padding-md,12px)}}._59228b5227f38a99__is-minimal-variant[data-orientation=horizontal] &{padding-inline:0;&:after{inset-inline:round(up,var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px)),1px)}}[data-orientation=vertical] &{min-height:var(--wpds-dimension-size-lg,40px);padding:var(--wpds-dimension-padding-sm,8px) var(--wpds-dimension-padding-md,12px)}[data-orientation=vertical][data-select-on-move=false] &:after{content:"";inset:var(--wpds-border-width-focus,var(--wp-admin-border-width-focus,2px))}}._5dfc77e6edd345d4__tab-children{align-items:center;display:flex;flex-grow:1;[data-orientation=horizontal] &{justify-content:center}[data-orientation=vertical] &{justify-content:start}}._4a20e969d15e5ac1__tab-chevron{flex-shrink:0;margin-inline-end:calc(var(--wpds-dimension-gap-xs, 4px)*-1);opacity:0;[data-orientation=horizontal] &{display:none}[role=tab]:is([aria-selected=true],:focus-visible,:hover) &{opacity:1}@media not (prefers-reduced-motion){[data-select-on-move=true]\n				[role=tab]:is([aria-selected=true])\n				&{transition:opacity .15s linear .15s}}&:dir(rtl){rotate:180deg}}}}');
   }
   var style_default11 = { "tablist": "_7313adbc8a112e90__tablist", "is-overflowing-first": "_9f2ac729c68a735a__is-overflowing-first", "is-overflowing-last": "_81c799c1f3cdd261__is-overflowing-last", "is-minimal-variant": "_59228b5227f38a99__is-minimal-variant", "indicator": "_1c37dcfaa1ad8cda__indicator", "tab": "a5fd8814f195aa5e__tab", "tab-children": "_5dfc77e6edd345d4__tab-children", "tab-chevron": "_4a20e969d15e5ac1__tab-chevron" };
-  var Tab = (0, import_element25.forwardRef)(function Tab2({ className, children, ...otherProps }, forwardedRef) {
-    useRegisterTab();
-    return /* @__PURE__ */ (0, import_jsx_runtime54.jsxs)(
-      index_parts_exports2.Tab,
-      {
-        ref: forwardedRef,
-        className: clsx_default(style_default11.tab, className),
-        ...otherProps,
-        children: [
-          /* @__PURE__ */ (0, import_jsx_runtime54.jsx)("span", { className: style_default11["tab-children"], children }),
-          /* @__PURE__ */ (0, import_jsx_runtime54.jsx)(Icon, { icon: chevron_right_default, className: style_default11["tab-chevron"] })
-        ]
-      }
-    );
-  });
+  var Tab = (0, import_element25.forwardRef)(
+    function UnforwardedTab({ className, children, ...otherProps }, forwardedRef) {
+      useRegisterTab();
+      return /* @__PURE__ */ (0, import_jsx_runtime54.jsxs)(
+        index_parts_exports2.Tab,
+        {
+          ref: forwardedRef,
+          className: clsx_default(style_default11.tab, className),
+          ...otherProps,
+          children: [
+            /* @__PURE__ */ (0, import_jsx_runtime54.jsx)("span", { className: style_default11["tab-children"], children }),
+            /* @__PURE__ */ (0, import_jsx_runtime54.jsx)(
+              Icon,
+              {
+                icon: chevron_right_default,
+                className: style_default11["tab-chevron"]
+              }
+            )
+          ]
+        }
+      );
+    }
+  );
 
   // packages/format-library/build-module/image/index.mjs
   var import_i18n7 = __toESM(require_i18n(), 1);
@@ -7090,7 +7408,7 @@ var wp;
   var name3 = "core/image";
   var title3 = (0, import_i18n7.__)("Inline image");
   function getCurrentImageId(activeObjectAttributes) {
-    if (!activeObjectAttributes?.className) {
+    if (!activeObjectAttributes.className) {
       return void 0;
     }
     const [, id] = activeObjectAttributes.className.match(/wp-image-(\d+)/) ?? [];
@@ -7117,8 +7435,8 @@ var wp;
     activeObjectAttributes,
     contentRef
   }) {
-    const style = activeObjectAttributes?.style;
-    const alt = activeObjectAttributes?.alt;
+    const style = activeObjectAttributes.style;
+    const alt = activeObjectAttributes.alt;
     const width = style?.replace(/\D/g, "");
     const [editedWidth, setEditedWidth] = (0, import_element26.useState)(width);
     const [editedAlt, setEditedAlt] = (0, import_element26.useState)(alt);
@@ -7454,9 +7772,9 @@ var wp;
     } else {
       return EMPTY_BOUNDARIES;
     }
-    const index = newFormats[initialIndex].indexOf(targetFormat);
-    startIndex = walkToStart(newFormats, initialIndex, targetFormat, index);
-    endIndex = walkToEnd(newFormats, initialIndex, targetFormat, index);
+    const index2 = newFormats[initialIndex].indexOf(targetFormat);
+    startIndex = walkToStart(newFormats, initialIndex, targetFormat, index2);
+    endIndex = walkToEnd(newFormats, initialIndex, targetFormat, index2);
     startIndex = startIndex < 0 ? 0 : startIndex;
     return {
       start: startIndex,
@@ -7464,18 +7782,18 @@ var wp;
     };
   }
   function walkToBoundary(formats, initialIndex, targetFormatRef, formatIndex, direction) {
-    let index = initialIndex;
+    let index2 = initialIndex;
     const directions = {
       forwards: 1,
       backwards: -1
     };
     const directionIncrement = directions[direction] || 1;
     const inverseDirectionIncrement = directionIncrement * -1;
-    while (formats[index] && formats[index][formatIndex] === targetFormatRef) {
-      index = index + directionIncrement;
+    while (formats[index2] && formats[index2][formatIndex] === targetFormatRef) {
+      index2 = index2 + directionIncrement;
     }
-    index = index + inverseDirectionIncrement;
-    return index;
+    index2 = index2 + inverseDirectionIncrement;
+    return index2;
   }
   var walkToStart = (...args) => walkToBoundary(...args, "backwards");
   var walkToEnd = (...args) => walkToBoundary(...args, "forwards");
@@ -8212,7 +8530,7 @@ var wp;
   var transparentValue = "rgba(0, 0, 0, 0)";
   var name8 = "core/text-color";
   var title8 = (0, import_i18n15.__)("Highlight");
-  var EMPTY_ARRAY3 = [];
+  var EMPTY_ARRAY2 = [];
   function getComputedStyleProperty(element, property) {
     const { ownerDocument: ownerDocument2 } = element;
     const { defaultView } = ownerDocument2;
@@ -8239,7 +8557,7 @@ var wp;
     activeAttributes,
     contentRef
   }) {
-    const [allowCustomControl, colors = EMPTY_ARRAY3] = (0, import_block_editor10.useSettings)(
+    const [allowCustomControl, colors = EMPTY_ARRAY2] = (0, import_block_editor10.useSettings)(
       "color.custom",
       "color.palette"
     );
@@ -8590,12 +8908,12 @@ var wp;
   function InlineUI2({
     value,
     onChange,
-    activeAttributes,
+    activeObjectAttributes,
     contentRef,
     latexToMathML
   }) {
     const [latex, setLatex] = (0, import_element33.useState)(
-      activeAttributes?.["data-latex"] || ""
+      activeObjectAttributes["data-latex"] || ""
     );
     const [error2, setError] = (0, import_element33.useState)(null);
     const formRef = (0, import_element33.useRef)(null);
@@ -8641,25 +8959,37 @@ var wp;
         anchor: popoverAnchor,
         onFocusOutside: () => formRef.current?.reportValidity(),
         className: "block-editor-format-toolbar__math-popover",
-        children: /* @__PURE__ */ (0, import_jsx_runtime69.jsx)(
+        children: /* @__PURE__ */ (0, import_jsx_runtime69.jsxs)(
           "form",
           {
             ref: formRef,
-            style: { minWidth: "300px", padding: "4px" },
+            style: { minWidth: "300px", padding: "16px" },
             onSubmit: (event) => event.preventDefault(),
-            children: /* @__PURE__ */ (0, import_jsx_runtime69.jsx)(
-              ValidatedInputControl,
-              {
-                hideLabelFromVision: true,
-                label: (0, import_i18n21.__)("LaTeX math syntax"),
-                value: latex,
-                customValidity: error2 ? { type: "invalid", message: error2 } : void 0,
-                onValueChange: handleLatexChange,
-                placeholder: (0, import_i18n21.__)("e.g., x^2, \\frac{a}{b}"),
-                autoComplete: "off",
-                className: "block-editor-format-toolbar__math-input"
-              }
-            )
+            children: [
+              /* @__PURE__ */ (0, import_jsx_runtime69.jsx)(
+                ValidatedInputControl,
+                {
+                  label: (0, import_i18n21.__)("LaTeX math syntax"),
+                  value: latex,
+                  customValidity: error2 ? { type: "invalid", message: error2 } : void 0,
+                  onValueChange: handleLatexChange,
+                  placeholder: (0, import_i18n21.__)("e.g., x^2, \\frac{a}{b}, \\sqrt{x}"),
+                  autoComplete: "off",
+                  className: "block-editor-format-toolbar__math-input"
+                }
+              ),
+              /* @__PURE__ */ (0, import_jsx_runtime69.jsx)(
+                Link,
+                {
+                  openInNewTab: true,
+                  className: "block-editor-format-toolbar__math-learn-more",
+                  href: (0, import_i18n21.__)(
+                    "https://wordpress.org/documentation/article/math-block/"
+                  ),
+                  children: (0, import_i18n21.__)("Learn more about LaTeX syntax")
+                }
+              )
+            ]
           }
         )
       }
@@ -8682,7 +9012,7 @@ var wp;
     function onClick() {
       let newValue;
       if (isObjectActive) {
-        const latex = activeObjectAttributes?.["data-latex"] || "";
+        const latex = activeObjectAttributes["data-latex"] || "";
         newValue = (0, import_rich_text16.insert)(value, latex);
         newValue.start = newValue.end - latex.length;
       } else {
@@ -8721,7 +9051,7 @@ var wp;
         {
           value,
           onChange,
-          activeAttributes: activeObjectAttributes,
+          activeObjectAttributes,
           contentRef,
           latexToMathML
         }
@@ -8748,7 +9078,9 @@ var wp;
   var import_jsx_runtime70 = __toESM(require_jsx_runtime(), 1);
   var name15 = "core/non-breaking-space";
   var title15 = (0, import_i18n22.__)("Non breaking space");
-  function PopoverAnchor({ contentRef }) {
+  function PopoverAnchor({
+    contentRef
+  }) {
     const popoverAnchor = (0, import_rich_text17.useAnchor)({
       // eslint-disable-next-line react-hooks/refs
       editableContentElement: contentRef.current,
@@ -8782,18 +9114,18 @@ var wp;
       return (formats, text) => {
         const NBSP = "\xA0";
         let record = { formats, text };
-        let index = -1;
+        let index2 = -1;
         do {
-          index = text.indexOf(NBSP, index + 1);
-          if (index !== -1) {
+          index2 = text.indexOf(NBSP, index2 + 1);
+          if (index2 !== -1) {
             record = (0, import_rich_text17.applyFormat)(
               record,
               { type: name15 },
-              index,
-              index + 1
+              index2,
+              index2 + 1
             );
           }
-        } while (index !== -1);
+        } while (index2 !== -1);
         return record.formats;
       };
     }
